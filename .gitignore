@@ -1,0 +1,12 @@
+node_modules/
+dist/
+cdk.out/
+data/
+.env
+.env.*
+*.duckdb
+*.duckdb.wal
+.turbo/
+
+# local-only demo notes (not part of the PR)
+docs/DEMO.md
