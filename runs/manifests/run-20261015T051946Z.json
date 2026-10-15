@@ -1,0 +1,412 @@
+{
+  "schemaVersion": "oracle-artifact-manifest/v1",
+  "county": "travis",
+  "state": "TX",
+  "fips": "48453",
+  "runId": "run-20261015T051946Z",
+  "createdAt": "2026-10-15T05:29:12.730Z",
+  "cidProfile": "unixfs-v1-2025",
+  "previous": {
+    "runId": "run-20261014T204527Z",
+    "rootCid": "bafybeic3pzmw7facz2kcxgwxdpeysmma6d4iasi7eqpwyu2tdlz4gkmmwa",
+    "manifestCid": "bafkreiazmp3nyr7rojid5naxeqtyz6h5juaf5kegiiubsm2dva6dcbnfbi"
+  },
+  "root": {
+    "name": "travis-tx-run-20261015t051946z",
+    "cid": "bafybeidn6o4enpjappzak7vg27efdrx5g3rjfujd27vpsvsflxx5fjqj44",
+    "codec": "directory",
+    "size": 362887179,
+    "car": {
+      "fileName": "travis-tx-run-20261015t051946z.car",
+      "cid": "bafybeifna5aly3qxiqp2jxq4rryyacnzb25nq4j44ff6vpybbocgddrijq",
+      "size": 362920680,
+      "sha256": "71dab4d2fc73458e1c10fab15adea15dd38cdfd8bf92104bf80fb93fe085a826"
+    }
+  },
+  "objects": [
+    {
+      "name": "coverage.json",
+      "path": "travis-tx-run-20261015t051946z/coverage.json",
+      "cid": "bafkreibdln2itvxx7tjb3mdvznaofrxq4bccoqt3yluayxca62lwpgp6tm",
+      "codec": "file",
+      "size": 607,
+      "sha256": "235b7489d6f7fcd21db075cb40e2c6f0e04427427bc2e80c5c40f6976799fe9b"
+    },
+    {
+      "name": "geo",
+      "path": "travis-tx-run-20261015t051946z/geo",
+      "cid": "bafybeifkinpnopflb2cckwlfj5qu626o7bqvpp7w54niqhrvd4pzhteaem",
+      "codec": "directory",
+      "size": 81455943,
+      "sha256": null
+    },
+    {
+      "name": "geo/county_boundary.parquet",
+      "path": "travis-tx-run-20261015t051946z/geo/county_boundary.parquet",
+      "cid": "bafkreibyoxxs2rxydr2x4u23bjwiiht75xhru3dxbefkelpsqq576uxuem",
+      "codec": "file",
+      "size": 31448,
+      "sha256": "3875ef2d46f81c757e535b0a6c841e7fedcf1a6c77090aa22df2843bff52f423",
+      "rows": 1,
+      "description": "Census TIGER county polygon used for scope clipping."
+    },
+    {
+      "name": "geo/parcel_geometries.parquet",
+      "path": "travis-tx-run-20261015t051946z/geo/parcel_geometries.parquet",
+      "cid": "bafybeibonpd6537cwtpxub3m2hkwm5xqdmqpe4czf2gkhuoeohfrcpais4",
+      "codec": "file",
+      "size": 81420440,
+      "sha256": "93acb7137380bf0916e2465ad0e03fd2cda416cb204c27affc482e7a29b4dc5d",
+      "rows": 386241,
+      "description": "Parcel polygons (WKB, EPSG:4326) keyed by prop_id."
+    },
+    {
+      "name": "NOTICE.txt",
+      "path": "travis-tx-run-20261015t051946z/NOTICE.txt",
+      "cid": "bafkreibywmhgkdohvf234uqn7ys54hpmwrvhnr5vfs537tflsuaxpcciru",
+      "codec": "file",
+      "size": 881,
+      "sha256": "38b30e650dc7a975be520dfe25de1decb46a76c7b52cbbbfccab95017788488d"
+    },
+    {
+      "name": "run.json",
+      "path": "travis-tx-run-20261015t051946z/run.json",
+      "cid": "bafkreidu5lps32denpebwck6fihhcovchfqxhun4wkw7vscav4f373odae",
+      "codec": "file",
+      "size": 11453,
+      "sha256": "74eadf2de8646bc81b095e2a0e713aa2396173d1bcb2adfac840af0bbfedc301"
+    },
+    {
+      "name": "samples",
+      "path": "travis-tx-run-20261015t051946z/samples",
+      "cid": "bafybeigsijaavfapqosejv75z3h4qxldjoj7mhssh3y5i4mnlsxspaid3m",
+      "codec": "directory",
+      "size": 226569,
+      "sha256": null
+    },
+    {
+      "name": "samples/aged_roof_open_permit_leads.json",
+      "path": "travis-tx-run-20261015t051946z/samples/aged_roof_open_permit_leads.json",
+      "cid": "bafkreid26wfjwp7nez6ti57wnnre4oix5pta4fsvueelsyd3365dy7pai4",
+      "codec": "file",
+      "size": 104787,
+      "sha256": "7af58a9b3fed267d3477f66b624e3917ebe60e1655a108b9607bdfba3c7de047"
+    },
+    {
+      "name": "samples/longest_open_roofing_permits.json",
+      "path": "travis-tx-run-20261015t051946z/samples/longest_open_roofing_permits.json",
+      "cid": "bafkreidjbm6cdz5fks2hdkpiegv2lg4u5rfqjzqnnajo3ghbe67x4etway",
+      "codec": "file",
+      "size": 121621,
+      "sha256": "690b3c21e7a554b471a9e821aba59b94ec4b04e60d6812ed98e127bf7e127606"
+    },
+    {
+      "name": "schema.json",
+      "path": "travis-tx-run-20261015t051946z/schema.json",
+      "cid": "bafkreiaf2z3qsc5sfy7dzvibjnygmr3u35bmz6zlw2dg266n6xpulyfgdm",
+      "codec": "file",
+      "size": 26869,
+      "sha256": "05d677090bb22e3e3cd5014b70664774df42ccfb2bb6866d7bcdf5df45e0a61b"
+    },
+    {
+      "name": "tables",
+      "path": "travis-tx-run-20261015t051946z/tables",
+      "cid": "bafybeihqonpanpm35myqh3pcjcpspqeoehkgtz44jh32aqnqcwaix6pn5m",
+      "codec": "directory",
+      "size": 281180469,
+      "sha256": null
+    },
+    {
+      "name": "tables.json",
+      "path": "travis-tx-run-20261015t051946z/tables.json",
+      "cid": "bafkreictvycmmhe3zi3ma2j3psiysxic5kafmchkakelxdhyewmmra3pfq",
+      "codec": "file",
+      "size": 2902,
+      "sha256": "53ae04c61c9bca36c0693b7c91895d02ea805608ea0288bb8cf82598c8836f2c"
+    },
+    {
+      "name": "tables/bbb_profiles.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/bbb_profiles.parquet",
+      "cid": "bafkreidflxivpixuytemrrcw7mmf3fvc37v2g2wimvtskdsumnzsz3w5h4",
+      "codec": "file",
+      "size": 563,
+      "sha256": "655dd157a2f4c4c8c8c456fb185d96a2dfeba36ac86567250e5463732ceedd3f",
+      "rows": 0,
+      "description": "BBB contractor profiles (empty until a BBB harvest runs from US egress)."
+    },
+    {
+      "name": "tables/businesses.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/businesses.parquet",
+      "cid": "bafybeid6e6q5rnlygellpf2g3t63lg4rb7szm6tokyr4nvtntlzdy6qguy",
+      "codec": "file",
+      "size": 19648480,
+      "sha256": "adb5e9692f4148efed8f38beef877f1cf2286afdbaae7acbfe3e3aa1e031de08",
+      "rows": 342337,
+      "description": "Texas Comptroller active franchise taxpayers registered in Travis County (code 227)."
+    },
+    {
+      "name": "tables/contractor_ambiguous_links.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/contractor_ambiguous_links.parquet",
+      "cid": "bafkreigqopdvmowhl4mpotkguv4bjsxfkubtdqux7dyaumv5wzwudmufy4",
+      "codec": "file",
+      "size": 1009,
+      "sha256": "d073c7563ac75f18f74d46a57814cae5550331c297f8f00a32bdb66d41b285c7",
+      "rows": 20,
+      "description": "Contractors whose name key matched several business records; preserved unlinked for review."
+    },
+    {
+      "name": "tables/contractors.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/contractors.parquet",
+      "cid": "bafybeih7tp75zd3uor2vbqkykt6ozuhwuujguuyamyjd3ivom6ons346cq",
+      "codec": "file",
+      "size": 2927078,
+      "sha256": "efd5c7b18cd7363d5e8e1ef2c9861e5fc69dd95973ca4b8962c60395591138ee",
+      "rows": 52413,
+      "description": "Contractors reconciled across permit name variants (normalized name key), linked to Comptroller business records, Overture places and BBB profiles where unambiguous."
+    },
+    {
+      "name": "tables/geo_places.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/geo_places.parquet",
+      "cid": "bafkreidcjvz7xzcll3uxtncyvomou7kw2diwoobikfdys44b6bs6gezity",
+      "codec": "file",
+      "size": 7949,
+      "sha256": "624d73fbe44b5ee979b458ab98ea7d56d0d16738285147897381f065e313289e",
+      "rows": 49,
+      "description": "Census incorporated places and CDPs with internal points, used to geocode city names for radius queries."
+    },
+    {
+      "name": "tables/parcels.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/parcels.parquet",
+      "cid": "bafybeib44ow5hyfqyjmk5frwa57luidblbpe63jl6uswpbhxawhh5z3zby",
+      "codec": "file",
+      "size": 48122213,
+      "sha256": "1174177525ccea4e92e6e7053e2550d919a7781166456fbd68a6ea51cb015b80",
+      "rows": 386241,
+      "description": "TCAD-contributed StratMap parcel attributes (owner, situs, mailing, values, land use) with provenance."
+    },
+    {
+      "name": "tables/permits.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/permits.parquet",
+      "cid": "bafybeidvwzdn3mqqp26amh6fahjeloyuzzod7v7jyual4x4hlfdrpbyjcm",
+      "codec": "file",
+      "size": 164342804,
+      "sha256": "3a58fff08b253170c454060ff39dcd9823e1960de6a669b26256f1a00062d8d4",
+      "rows": 2380118,
+      "description": "All ingested City of Austin construction permits with parcel resolution and county scope."
+    },
+    {
+      "name": "tables/places.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/places.parquet",
+      "cid": "bafybeif2hlg4xwhvwcemwfelt6b5y5pk6xvlijs3kznhjrjvjidxluw6ei",
+      "codec": "file",
+      "size": 11108479,
+      "sha256": "0b5ac74905a60b41c74f2029500a20e8a28265a112c24c84a49f334fcac8ef39",
+      "rows": 93331,
+      "description": "Overture Maps places clipped to the Travis County boundary (OSM-sourced rows excluded)."
+    },
+    {
+      "name": "tables/property_leads.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/property_leads.parquet",
+      "cid": "bafybeibfhh446putungxeahtupaerva3ptsrg7uwe3trevppq6fp62geny",
+      "codec": "file",
+      "size": 33540887,
+      "sha256": "727ce0e79b2f9b79091da32699e0a1099935e3c6229497703570a49aad032c9a",
+      "rows": 386241,
+      "description": "One row per Travis parcel: situs, coordinates, owner + mailing address, owner location class, roof year/age with basis and evidence permit, roofing-permit rollups, provenance."
+    },
+    {
+      "name": "tables/roofing_permits.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/roofing_permits.parquet",
+      "cid": "bafybeifcd3bm5eji3cvvccp3hlmqwmk3rgo6iddxug6ufb6sywgkg6bi24",
+      "codec": "file",
+      "size": 1465791,
+      "sha256": "ded08261a0aaea50b25e40d687d7fe28640b108fda197e1c9b0adc5cd65d454a",
+      "rows": 23868,
+      "description": "In-county roofing permits with status, open duration, expired-without-final flag, contractor identity, business/BBB links and provenance."
+    },
+    {
+      "name": "tables/tcad_properties.parquet",
+      "path": "travis-tx-run-20261015t051946z/tables/tcad_properties.parquet",
+      "cid": "bafkreief7cdald6d4ad36st4ohdvv7jv3p7bvngifj2xwzb55jl4g5mjvy",
+      "codec": "file",
+      "size": 918,
+      "sha256": "85f886058fc3e007bf4a7c71c75afd35dbfe1ab4c82a757b643dea57c37589ae",
+      "rows": 0,
+      "description": "TCAD appraisal-roll fields (deed date, year built, roof attributes); empty until the export is ingested from US egress."
+    },
+    {
+      "name": "travis-tx-run-20261015t051946z.car",
+      "path": "travis-tx-run-20261015t051946z-car/travis-tx-run-20261015t051946z.car",
+      "cid": "bafybeifna5aly3qxiqp2jxq4rryyacnzb25nq4j44ff6vpybbocgddrijq",
+      "codec": "file",
+      "size": 362920680,
+      "sha256": "71dab4d2fc73458e1c10fab15adea15dd38cdfd8bf92104bf80fb93fe085a826",
+      "description": "CARv1 of the snapshot DAG rooted at root.cid; import with `ipfs dag import`."
+    }
+  ],
+  "ipns": null,
+  "providers": [
+    {
+      "provider": "filebase",
+      "type": "kubo-rpc",
+      "status": "pinned",
+      "detail": "travis-tx-run-20261015t051946z: ok"
+    },
+    {
+      "provider": "filebase",
+      "type": "kubo-rpc",
+      "status": "pinned",
+      "detail": "travis-tx-run-20261015t051946z-car: ok"
+    }
+  ],
+  "gateways": [
+    "https://ipfs.io",
+    "https://dweb.link"
+  ],
+  "runSummary": {
+    "status": "succeeded",
+    "coverage": {
+      "properties": 386241,
+      "properties_with_owner": 379607,
+      "properties_with_coordinates": 386241,
+      "properties_with_year_built": 0,
+      "properties_with_roof_age": 109024,
+      "properties_roof_age_at_least_threshold": 75592,
+      "permits_ingested": 2380118,
+      "permits_in_county": 2199708,
+      "roofing_permits": 23868,
+      "open_roofing_permits": 250,
+      "open_roofing_permits_5y_plus": 6,
+      "contractors": 52413,
+      "contractors_linked_business": 3488,
+      "contractors_with_bbb": 0,
+      "businesses": 342337,
+      "places": 93331,
+      "bbb_profiles": 0,
+      "out_of_state_owners": 22119,
+      "regional_texas_owners": 25509
+    },
+    "sources": [
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "census_tiger_county",
+        "status": "ok",
+        "started_at": "2026-10-15 07:19:46.766+02",
+        "finished_at": "2026-10-15 07:19:50.434+02",
+        "records_seen": "1",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "1",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": null,
+        "detail": "{\"url\":\"https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1/query?where=GEOID%3D%2748453%27&outFields=GEOID,NAME&returnGeometry=true&outSR=4326&f=geojson\",\"sha256\":\"9d5550511cd296efdb6aee9ab9e3a62d33bb4b7dce0691cfa42e8c3cf056d7e4\"}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "census_tiger_places",
+        "status": "ok",
+        "started_at": "2026-10-15 07:19:50.44+02",
+        "finished_at": "2026-10-15 07:19:50.833+02",
+        "records_seen": "49",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "49",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": null,
+        "detail": "{}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "txgio_stratmap_parcels",
+        "status": "unchanged",
+        "started_at": "2026-10-15 07:19:50.837+02",
+        "finished_at": "2026-10-15 07:20:08.886+02",
+        "records_seen": "386241",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "386241",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": null,
+        "detail": "{\"url\":\"https://data.geographic.texas.gov/1d33dafb-6e9c-40ac-887d-f4577909ed9b/resources/stratmap26-landparcels_48453_lp.zip\",\"acquisitionDate\":\"2026-09-25\",\"sha256\":\"19bef7f8579207d57970bd8024efe012d65d1821693fd6caf2ef4d58e71116f6\",\"bytes\":187480847}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "austin_issued_construction_permits",
+        "status": "ok",
+        "started_at": "2026-10-15 07:20:08.889+02",
+        "finished_at": "2026-10-15 07:20:17.346+02",
+        "records_seen": "13701",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "13701",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": "Socrata :updated_at is rewritten on every daily reload, so change detection uses per-record content hashes plus a status/issue/applied date window. Covers City of Austin full-purpose, limited-purpose and ETJ review areas only; other Travis municipalities and unincorporated county permits are separate portals.",
+        "detail": "{\"pages\":1,\"windowStart\":\"2026-09-30\",\"windowEnd\":null,\"watermark\":\"2026-10-14\"}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "tx_comptroller_active_franchise_taxpayers",
+        "status": "ok",
+        "started_at": "2026-10-15 07:20:17.35+02",
+        "finished_at": "2026-10-15 07:21:43.101+02",
+        "records_seen": "342337",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "342337",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": "Active franchise taxpayers only (county code 227 = Travis). Sole proprietors and inactive entities are not in this dataset; Texas has no statewide roofing-contractor license registry.",
+        "detail": "{\"pages\":2}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "overture_places",
+        "status": "ok",
+        "started_at": "2026-10-15 07:21:43.111+02",
+        "finished_at": "2026-10-15 07:24:01.221+02",
+        "records_seen": "93331",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "93331",
+        "deleted": "0",
+        "out_of_scope": "32263",
+        "limitation": "Overture supplies business locations/categories only (numerator, no authoritative denominator). Rows sourced from OSM are excluded at the licence gate.",
+        "detail": "{\"release\":\"2026-09-23.1\",\"bboxCount\":125594,\"excludedByLicence\":0}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "tcad_appraisal_roll",
+        "status": "blocked",
+        "started_at": "2026-10-15 07:24:01.226+02",
+        "finished_at": "2026-10-15 07:24:02.221+02",
+        "records_seen": "0",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "0",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": "Year built, improvement detail and deed/sale dates are only in the TCAD appraisal export; roof age falls back to permit evidence and ownership tenure is unavailable until it is ingested. Source is reachable from this egress (PL) but no ingest artifact has been supplied yet.",
+        "detail": "{\"egressCountry\":\"PL\",\"probes\":[{\"url\":\"https://traviscad.org/publicinformation\",\"status\":200,\"server\":\"cloudflare\"},{\"url\":\"https://travis.prodigycad.com/\",\"status\":200,\"server\":\"AmazonS3\"}]}"
+      },
+      {
+        "run_id": "run-20261015T051946Z",
+        "source_id": "bbb_roofing_contractors",
+        "status": "blocked",
+        "started_at": "2026-10-15 07:24:02.235+02",
+        "finished_at": "2026-10-15 07:24:02.643+02",
+        "records_seen": "0",
+        "inserted": "0",
+        "updated": "0",
+        "unchanged": "0",
+        "deleted": "0",
+        "out_of_scope": "0",
+        "limitation": "BBB ratings require a BBB harvest; contractor BBB fields stay null until then. Not reachable from egress country PL (HTTP 403); run from US egress (AWS us-east-2 runner).",
+        "detail": "{\"egressCountry\":\"PL\",\"probes\":[{\"url\":\"https://www.bbb.org/us/tx/austin/category/roofing-contractors\",\"status\":403,\"server\":\"cloudflare\"}]}"
+      }
+    ]
+  }
+}

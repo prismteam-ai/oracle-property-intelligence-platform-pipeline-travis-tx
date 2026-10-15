@@ -1,0 +1,477 @@
+{
+  "county": "travis",
+  "state": "TX",
+  "generatedAt": "2026-10-15T06:15:48.769Z",
+  "runs": [
+    {
+      "runId": "run-20261014T204527Z",
+      "createdAt": "2026-10-14T21:04:12.741Z",
+      "status": "succeeded",
+      "rootCid": "bafybeic3pzmw7facz2kcxgwxdpeysmma6d4iasi7eqpwyu2tdlz4gkmmwa",
+      "carCid": "bafybeibesds44spsor3zw4b4lqjlqjunwwixe5pkja2jsl5uwx3hawsuay",
+      "manifestPath": "runs/manifests/run-20261014T204527Z.json",
+      "manifestCid": "bafkreiazmp3nyr7rojid5naxeqtyz6h5juaf5kegiiubsm2dva6dcbnfbi",
+      "previousRootCid": null,
+      "ipns": null,
+      "published": true,
+      "providers": [
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        },
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        }
+      ],
+      "coverage": {
+        "properties": 386241,
+        "properties_with_owner": 379607,
+        "properties_with_coordinates": 386241,
+        "properties_with_year_built": 0,
+        "properties_with_roof_age": 109024,
+        "properties_roof_age_at_least_threshold": 75592,
+        "permits_ingested": 2380118,
+        "permits_in_county": 2199708,
+        "roofing_permits": 23868,
+        "open_roofing_permits": 250,
+        "open_roofing_permits_5y_plus": 6,
+        "contractors": 52413,
+        "contractors_linked_business": 3488,
+        "contractors_with_bbb": 0,
+        "businesses": 342337,
+        "places": 93331,
+        "bbb_profiles": 0,
+        "out_of_state_owners": 22119,
+        "regional_texas_owners": 25509
+      },
+      "sources": [
+        {
+          "sourceId": "census_tiger_county",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 1,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "census_tiger_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 49,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "txgio_stratmap_parcels",
+          "status": "unchanged",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 386241,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "austin_issued_construction_permits",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 13701,
+          "deleted": 0,
+          "limitation": "Socrata :updated_at is rewritten on every daily reload, so change detection uses per-record content hashes plus a status/issue/applied date window. Covers City of Austin full-purpose, limited-purpose and ETJ review areas only; other Travis municipalities and unincorporated county permits are separate portals."
+        },
+        {
+          "sourceId": "tx_comptroller_active_franchise_taxpayers",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 342337,
+          "deleted": 0,
+          "limitation": "Active franchise taxpayers only (county code 227 = Travis). Sole proprietors and inactive entities are not in this dataset; Texas has no statewide roofing-contractor license registry."
+        },
+        {
+          "sourceId": "overture_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 93331,
+          "deleted": 0,
+          "limitation": "Overture supplies business locations/categories only (numerator, no authoritative denominator). Rows sourced from OSM are excluded at the licence gate."
+        },
+        {
+          "sourceId": "tcad_appraisal_roll",
+          "status": "blocked",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "deleted": 0,
+          "limitation": "Year built, improvement detail and deed/sale dates are only in the TCAD appraisal export; roof age falls back to permit evidence and ownership tenure is unavailable until it is ingested. Source is reachable from this egress (PL) but no ingest artifact has been supplied yet."
+        },
+        {
+          "sourceId": "bbb_roofing_contractors",
+          "status": "blocked",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "deleted": 0,
+          "limitation": "BBB ratings require a BBB harvest; contractor BBB fields stay null until then. Not reachable from egress country PL (HTTP 403); run from US egress (AWS us-east-2 runner)."
+        }
+      ]
+    },
+    {
+      "runId": "run-20261015T051946Z",
+      "createdAt": "2026-10-15T05:29:12.730Z",
+      "status": "succeeded",
+      "rootCid": "bafybeidn6o4enpjappzak7vg27efdrx5g3rjfujd27vpsvsflxx5fjqj44",
+      "carCid": "bafybeifna5aly3qxiqp2jxq4rryyacnzb25nq4j44ff6vpybbocgddrijq",
+      "manifestPath": "runs/manifests/run-20261015T051946Z.json",
+      "manifestCid": "bafkreigsmgyltfxadytxprey43rxooemhf2fz6okxi4eyrov2hk3bvnoai",
+      "previousRootCid": "bafybeic3pzmw7facz2kcxgwxdpeysmma6d4iasi7eqpwyu2tdlz4gkmmwa",
+      "ipns": null,
+      "published": true,
+      "providers": [
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        },
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        }
+      ],
+      "coverage": {
+        "properties": 386241,
+        "properties_with_owner": 379607,
+        "properties_with_coordinates": 386241,
+        "properties_with_year_built": 0,
+        "properties_with_roof_age": 109024,
+        "properties_roof_age_at_least_threshold": 75592,
+        "permits_ingested": 2380118,
+        "permits_in_county": 2199708,
+        "roofing_permits": 23868,
+        "open_roofing_permits": 250,
+        "open_roofing_permits_5y_plus": 6,
+        "contractors": 52413,
+        "contractors_linked_business": 3488,
+        "contractors_with_bbb": 0,
+        "businesses": 342337,
+        "places": 93331,
+        "bbb_profiles": 0,
+        "out_of_state_owners": 22119,
+        "regional_texas_owners": 25509
+      },
+      "sources": [
+        {
+          "sourceId": "census_tiger_county",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 1,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "census_tiger_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 49,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "txgio_stratmap_parcels",
+          "status": "unchanged",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 386241,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "austin_issued_construction_permits",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 13701,
+          "deleted": 0,
+          "limitation": "Socrata :updated_at is rewritten on every daily reload, so change detection uses per-record content hashes plus a status/issue/applied date window. Covers City of Austin full-purpose, limited-purpose and ETJ review areas only; other Travis municipalities and unincorporated county permits are separate portals."
+        },
+        {
+          "sourceId": "tx_comptroller_active_franchise_taxpayers",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 342337,
+          "deleted": 0,
+          "limitation": "Active franchise taxpayers only (county code 227 = Travis). Sole proprietors and inactive entities are not in this dataset; Texas has no statewide roofing-contractor license registry."
+        },
+        {
+          "sourceId": "overture_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 93331,
+          "deleted": 0,
+          "limitation": "Overture supplies business locations/categories only (numerator, no authoritative denominator). Rows sourced from OSM are excluded at the licence gate."
+        },
+        {
+          "sourceId": "tcad_appraisal_roll",
+          "status": "blocked",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "deleted": 0,
+          "limitation": "Year built, improvement detail and deed/sale dates are only in the TCAD appraisal export; roof age falls back to permit evidence and ownership tenure is unavailable until it is ingested. Source is reachable from this egress (PL) but no ingest artifact has been supplied yet."
+        },
+        {
+          "sourceId": "bbb_roofing_contractors",
+          "status": "blocked",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "deleted": 0,
+          "limitation": "BBB ratings require a BBB harvest; contractor BBB fields stay null until then. Not reachable from egress country PL (HTTP 403); run from US egress (AWS us-east-2 runner)."
+        }
+      ]
+    },
+    {
+      "runId": "run-20261015T055323Z",
+      "createdAt": "2026-10-15T06:00:50.547Z",
+      "status": "succeeded",
+      "rootCid": "bafybeibcg6m3vs3mty6zrjjayeaj3zadanj2iz7d3q2thyobvl76g76ddi",
+      "carCid": "bafybeife4eqf3ned7lmaaiaxbmjhnujn6y7qnqhpabmbwzm3qx6mvzm7sq",
+      "manifestPath": "runs/manifests/run-20261015T055323Z.json",
+      "manifestCid": "bafkreihwa7njby2wap6rxbdgfcc6jezuw5c3rgki4bd3nij6xkaxsflome",
+      "previousRootCid": "bafybeidn6o4enpjappzak7vg27efdrx5g3rjfujd27vpsvsflxx5fjqj44",
+      "ipns": null,
+      "published": true,
+      "providers": [
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        },
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        }
+      ],
+      "coverage": {
+        "properties": 386241,
+        "properties_with_owner": 379607,
+        "properties_with_coordinates": 386241,
+        "properties_with_year_built": 0,
+        "properties_with_roof_age": 332460,
+        "properties_roof_age_at_least_threshold": 247981,
+        "permits_ingested": 2380118,
+        "permits_in_county": 2199708,
+        "roofing_permits": 23868,
+        "open_roofing_permits": 250,
+        "open_roofing_permits_5y_plus": 6,
+        "contractors": 52413,
+        "contractors_linked_business": 3488,
+        "contractors_with_bbb": 0,
+        "businesses": 342337,
+        "places": 93331,
+        "bbb_profiles": 0,
+        "out_of_state_owners": 22119,
+        "regional_texas_owners": 25509
+      },
+      "sources": [
+        {
+          "sourceId": "census_tiger_county",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 1,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "census_tiger_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 49,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "txgio_stratmap_parcels",
+          "status": "unchanged",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 386241,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "austin_issued_construction_permits",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 13701,
+          "deleted": 0,
+          "limitation": "Socrata :updated_at is rewritten on every daily reload, so change detection uses per-record content hashes plus a status/issue/applied date window. Covers City of Austin full-purpose, limited-purpose and ETJ review areas only; other Travis municipalities and unincorporated county permits are separate portals."
+        },
+        {
+          "sourceId": "tx_comptroller_active_franchise_taxpayers",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 342337,
+          "deleted": 0,
+          "limitation": "Active franchise taxpayers only (county code 227 = Travis). Sole proprietors and inactive entities are not in this dataset; Texas has no statewide roofing-contractor license registry."
+        },
+        {
+          "sourceId": "overture_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 93331,
+          "deleted": 0,
+          "limitation": "Overture supplies business locations/categories only (numerator, no authoritative denominator). Rows sourced from OSM are excluded at the licence gate."
+        },
+        {
+          "sourceId": "tcad_appraisal_roll",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 11,
+          "unchanged": 453694,
+          "deleted": 0,
+          "limitation": "Parser follows the published True Prodigy 8.0.x export layout; field positions must be re-validated against each TCAD export release (unparsed deed dates are counted in detail)."
+        },
+        {
+          "sourceId": "bbb_roofing_contractors",
+          "status": "blocked",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "deleted": 0,
+          "limitation": "BBB ratings require a BBB harvest; contractor BBB fields stay null until then. Not reachable from egress country PL (HTTP 403); run from US egress (AWS us-east-2 runner)."
+        }
+      ]
+    },
+    {
+      "runId": "run-20261015T060821Z",
+      "createdAt": "2026-10-15T06:15:48.180Z",
+      "status": "succeeded",
+      "rootCid": "bafybeiawnfo4kvfsjwusazr3cjti53zqcowubwmlw7njbq6fxytnn2ijqm",
+      "carCid": "bafybeif2uti6fsd63llp7edq3rv2z53g7cekbcd6rkr2l5fjvnd3uywide",
+      "manifestPath": "runs/manifests/run-20261015T060821Z.json",
+      "manifestCid": "bafkreiebkknpdef5rkavvm23w5udfcxkywrbw6hii6lsjwmd2ujapcrzhe",
+      "previousRootCid": "bafybeibcg6m3vs3mty6zrjjayeaj3zadanj2iz7d3q2thyobvl76g76ddi",
+      "ipns": null,
+      "published": true,
+      "providers": [
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        },
+        {
+          "provider": "filebase",
+          "status": "pinned"
+        }
+      ],
+      "coverage": {
+        "properties": 386241,
+        "properties_with_owner": 379607,
+        "properties_with_coordinates": 386241,
+        "properties_with_year_built": 327006,
+        "properties_with_deed_date": 365846,
+        "properties_owned_10y_plus": 161304,
+        "properties_with_roof_age": 332460,
+        "properties_roof_age_at_least_threshold": 247981,
+        "permits_ingested": 2380118,
+        "permits_in_county": 2199708,
+        "roofing_permits": 23868,
+        "open_roofing_permits": 250,
+        "open_roofing_permits_5y_plus": 6,
+        "contractors": 52413,
+        "contractors_linked_business": 3488,
+        "contractors_with_bbb": 0,
+        "businesses": 342337,
+        "places": 93331,
+        "bbb_profiles": 0,
+        "out_of_state_owners": 22119,
+        "regional_texas_owners": 25509
+      },
+      "sources": [
+        {
+          "sourceId": "census_tiger_county",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 1,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "census_tiger_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 49,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "txgio_stratmap_parcels",
+          "status": "unchanged",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 386241,
+          "deleted": 0,
+          "limitation": null
+        },
+        {
+          "sourceId": "austin_issued_construction_permits",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 13701,
+          "deleted": 0,
+          "limitation": "Socrata :updated_at is rewritten on every daily reload, so change detection uses per-record content hashes plus a status/issue/applied date window. Covers City of Austin full-purpose, limited-purpose and ETJ review areas only; other Travis municipalities and unincorporated county permits are separate portals."
+        },
+        {
+          "sourceId": "tx_comptroller_active_franchise_taxpayers",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 342337,
+          "deleted": 0,
+          "limitation": "Active franchise taxpayers only (county code 227 = Travis). Sole proprietors and inactive entities are not in this dataset; Texas has no statewide roofing-contractor license registry."
+        },
+        {
+          "sourceId": "overture_places",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 93331,
+          "deleted": 0,
+          "limitation": "Overture supplies business locations/categories only (numerator, no authoritative denominator). Rows sourced from OSM are excluded at the licence gate."
+        },
+        {
+          "sourceId": "tcad_appraisal_roll",
+          "status": "ok",
+          "inserted": 0,
+          "updated": 4,
+          "unchanged": 453701,
+          "deleted": 0,
+          "limitation": "Parser follows the published True Prodigy 8.0.x export layout; field positions must be re-validated against each TCAD export release (unparsed deed dates are counted in detail)."
+        },
+        {
+          "sourceId": "bbb_roofing_contractors",
+          "status": "blocked",
+          "inserted": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "deleted": 0,
+          "limitation": "BBB ratings require a BBB harvest; contractor BBB fields stay null until then. Not reachable from egress country PL (HTTP 403); run from US egress (AWS us-east-2 runner)."
+        }
+      ]
+    }
+  ]
+}

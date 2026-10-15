@@ -1,0 +1,13 @@
+services:
+  kubo:
+    image: ipfs/kubo:v0.43.1
+    ports:
+      - "127.0.0.1:5001:5001"
+      - "127.0.0.1:8080:8080"
+      - "4001:4001"
+      - "4001:4001/udp"
+    volumes:
+      - kubo-data:/data/ipfs
+    restart: unless-stopped
+volumes:
+  kubo-data:
