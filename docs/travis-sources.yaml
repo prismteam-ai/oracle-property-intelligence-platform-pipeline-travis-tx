@@ -1,0 +1,86 @@
+# Travis County, TX source catalog (county-discovery output). Probed 2026-10-14.
+# probe = result from the development runner (egress country PL); "us-egress" = must run from the AWS us-east-2 runner.
+county: travis
+state: TX
+fips: "48453"
+comptroller_county_code: "227"
+
+appraisal:
+  - id: txgio_stratmap_parcels
+    name: TxGIO StratMap Land Parcels (compiled from TCAD)
+    url: https://data.geographic.texas.gov/1d33dafb-6e9c-40ac-887d-f4577909ed9b/resources/stratmap26-landparcels_48453_lp.zip
+    discovery: https://api.tnris.org/api/v1/resources/?collection_id=<latest Land Parcels collection>
+    mode: bulk-download (zip, shapefile + FGDB); resolved at run time from the TxGIO API (latest collection containing Travis)
+    probe: ok (CloudFront returns 403 without a browser User-Agent/Referer; 200 with them)
+    size: 187 MB zip / ~1.2 GB extracted
+    records: 386,752 polygons; 386,241 distinct PROP_ID
+    fields: prop_id, geo_id (10-digit TCAD id = Austin permit tcad_id), owner, care-of, situs, mailing address, land/improvement/market value, state & local land use, tax_year
+    gaps: YEAR_BUILT empty for 100% of Travis rows; no deed/sale date; situs city mostly empty
+    cadence: annual (collection acquisition date 2026-09-25; DATE_ACQ 2026-07-01, TAX_YEAR 2026)
+    status: certified
+  - id: tcad_appraisal_roll
+    name: Travis Central Appraisal District appraisal-roll export (True Prodigy legacy 8.0.x layout)
+    url: https://traviscad.org/publicinformation
+    probe: blocked (Cloudflare HTTP 403 from PL egress)
+    expected_value: year built / improvement detail (roof-age fallback), deed dates (ownership tenure)
+    mode: us-egress bulk download
+    status: needs-review
+  - id: tcad_property_search
+    url: https://travis.prodigycad.com/
+    probe: HTTP 200 (portal shell); per-property API not yet explored
+    status: needs-review
+
+permits:
+  - jurisdiction: City of Austin (full purpose, limited purpose, 2-mile/5-mile ETJ, plus Austin-reviewed permits in some small cities)
+    id: austin_issued_construction_permits
+    vendor: Socrata open data (dataset 3syk-w9eu)
+    url: https://data.austintexas.gov/resource/3syk-w9eu.csv
+    search: bulk + SoQL filters (statusdate / issue_date / applieddate windows)
+    probe: ok, no auth; ~250k rows per request page in 70-140 s (Socrata paging, $order=permit_number)
+    records: ~2.4M permits (EP 689k, PP 547k, BP 521k, MP 506k, DS 117k)
+    roofing: 65,387 descriptions mention ROOF; tcad_id on ~2.32M rows; lat/lon on ~2.02M rows
+    change_detection: ":updated_at is rewritten for every row on each daily reload (all values = load time), so deltas use per-record content hashes"
+    status: certified
+  - jurisdiction: Travis County (unincorporated)
+    vendor: unknown
+    status: needs-review
+  - jurisdiction: Pflugerville, Lakeway, Bee Cave, Manor, West Lake Hills, Rollingwood, Sunset Valley, Lago Vista, Jonestown, Leander/Cedar Park (Travis portions), others
+    vendor: unknown (per-city portals)
+    status: needs-review
+
+business:
+  - id: tx_comptroller_active_franchise_taxpayers
+    vendor: Socrata (data.texas.gov 9cir-efmm)
+    filter: taxpayer_county_code = '227'
+    records: 342,338 (2026-10-14)
+    probe: ok
+    status: certified
+  - id: overture_places
+    url: s3://overturemaps-us-west-2/release/<STAC latest>/theme=places/type=place/*
+    probe: ok (anonymous S3 via DuckDB httpfs); 126,093 places in the county bounding box for release 2026-09-23.1
+    licence_gate: rows sourced from OSM are excluded
+    status: certified
+
+contractor_reputation:
+  - id: bbb_roofing_contractors
+    url: https://www.bbb.org/us/tx/austin/category/roofing-contractors
+    probe: blocked (HTTP 403 from PL egress)
+    mode: us-egress harvest (bbb-harvest)
+    status: needs-review
+  - note: Texas has no statewide roofing-contractor licence; contractor identity comes from permits + Comptroller business records.
+
+geography:
+  - id: census_tiger_county
+    url: https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1
+    probe: ok
+    status: certified
+  - id: census_tiger_places
+    url: https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/{4,5}
+    probe: ok (36 incorporated places intersect the county bbox)
+    status: certified
+  - id: travis_county_gis_tcad_layer
+    url: https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/TCAD_public/FeatureServer/0
+    probe: timeout from PL egress
+    status: needs-review
+
+directory: https://publicrecords.netronline.com/state/TX/county/travis
