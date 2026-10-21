@@ -1,0 +1,16 @@
+{
+  "extends": "../../packages/tsconfig/base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist/types"
+  },
+  "include": ["src", "test", "scripts", "*.ts"],
+  "references": [
+    {
+      "path": "../../packages/contract"
+    },
+    {
+      "path": "../../packages/query"
+    }
+  ]
+}

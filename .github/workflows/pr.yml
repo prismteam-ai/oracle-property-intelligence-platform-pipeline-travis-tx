@@ -1,0 +1,53 @@
+name: PR checks
+
+# Verification only: no AWS credentials, no deploys, no secrets. Deploys are run by the operator (docs/runbook.md section 9).
+on:
+  pull_request:
+  # the PR comes from a fork whose upstream runs no workflows for it; pushes to the fork's branch run them there
+  push:
+    branches: [assignment]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: '1'
+      CDK_DISABLE_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: extractions/setup-just@v3
+      - run: just setup
+      - name: prettier --check
+        run: just format
+      - name: ESLint
+        run: just lint
+      - name: tsc -b
+        run: just type-check
+      - name: Build (Lambda bundles, explorer)
+        run: just build
+      # the query layer only LOADs fts (autoinstall is off, as in the Lambda image); test workspaces run in parallel
+      - name: DuckDB extensions for the fixture tests
+        working-directory: packages/query
+        run: >-
+          node --input-type=module -e "import { DuckDBInstance } from '@duckdb/node-api';
+          const c = await (await DuckDBInstance.create(':memory:')).connect();
+          await c.run('INSTALL fts'); await c.run('INSTALL httpfs');"
+      - name: Vitest (contract, query, CDK assertions)
+        run: just test
+      - name: Stage the fixture DuckDB file
+        run: just stage-db fixture
+      - name: cdk synth --strict (example config, fixture DB, no credentials)
+        run: just cdk_config="${{ github.workspace }}/apps/api/cdk/config.example.json" synth

@@ -1,0 +1,35 @@
+{
+  "id": "contractor-identity",
+  "description": "Who a listed contractor is (api-contract.md, agent paragraph): the registry candidate is named as a candidate, never an identity.",
+  "turns": [
+    {
+      "user": "Who is the listed contractor on permit 2026-131283 BP, and is it a registered business?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "get_permit",
+            "args": {
+              "permit_id": "2026-131283 BP"
+            }
+          },
+          {
+            "name": "get_contractor",
+            "args": {
+              "contractor_attribution_key": "9fb03f591701470f08d3e204c0d8f9aa"
+            }
+          }
+        ],
+        "ids": {
+          "kind": "business",
+          "tool": "get_contractor",
+          "values": ["ce827485553d90a8978d70c2e5d5f76c"],
+          "total": 1
+        },
+        "answer_must_not_match": ["\\bis (a )?verified\\b"]
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

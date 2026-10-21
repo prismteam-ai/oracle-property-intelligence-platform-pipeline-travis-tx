@@ -1,0 +1,60 @@
+{
+  "id": "city-pflugerville",
+  "description": "A second city, a different radius and age threshold.",
+  "turns": [
+    {
+      "user": "Show me properties within 3 miles of Pflugerville whose roofs are older than 20 years.",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "Pflugerville"
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.453165507119184,
+              "lon": -97.60683596548296,
+              "radius_miles": 3,
+              "roof_age_min": 20,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "272879",
+            "276174",
+            "549314",
+            "482580",
+            "276117",
+            "276177",
+            "276176",
+            "274687",
+            "276179",
+            "274676",
+            "274486",
+            "276118",
+            "716088",
+            "274672",
+            "278005",
+            "276115",
+            "276175",
+            "271624",
+            "276163",
+            "274517"
+          ],
+          "total": 14753,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

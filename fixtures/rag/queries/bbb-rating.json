@@ -1,0 +1,23 @@
+{
+  "id": "bbb-rating",
+  "description": "A BBB question: BBB access is blocked, so no rating, and the BBB limitation is added.",
+  "turns": [
+    {
+      "user": "What is the BBB rating of the contractor on permit 2026-131308 BP?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "get_permit",
+            "args": {
+              "permit_id": "2026-131308 BP"
+            }
+          }
+        ],
+        "answer_must_not_match": ["\\bA\\+", "rated [A-F]\\b"]
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

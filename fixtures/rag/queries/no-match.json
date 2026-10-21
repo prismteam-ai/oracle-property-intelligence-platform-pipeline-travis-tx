@@ -1,0 +1,39 @@
+{
+  "id": "no-match",
+  "description": "A valid question with no matching rows.",
+  "turns": [
+    {
+      "user": "Which properties within half a mile of ZIP 78701 have roofs older than 200 years?",
+      "expected": {
+        "outcomes": ["no_matches"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "78701"
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.27163737866561,
+              "lon": -97.74276473149366,
+              "radius_miles": 0.5,
+              "roof_age_min": 200,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [],
+          "total": 0,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

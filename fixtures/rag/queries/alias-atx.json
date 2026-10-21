@@ -1,0 +1,22 @@
+{
+  "id": "alias-atx",
+  "description": "An alias-only match (\"ATX\" is a reviewed alias of AUSTIN): the agent asks before searching.",
+  "turns": [
+    {
+      "user": "Roofs older than 30 years within a mile of ATX?",
+      "expected": {
+        "outcomes": ["needs_clarification"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "ATX"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

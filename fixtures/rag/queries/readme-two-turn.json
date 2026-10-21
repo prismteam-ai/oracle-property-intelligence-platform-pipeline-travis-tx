@@ -1,0 +1,105 @@
+{
+  "id": "readme-two-turn",
+  "description": "README.md's two agent prompts as one conversation, with Austin as the city. Expected ids from independent SQL.",
+  "turns": [
+    {
+      "user": "Which properties in Travis County within five miles of Austin have roofs older than 15 years?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "Austin"
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.29137819423398,
+              "lon": -97.7774057165747,
+              "radius_miles": 5,
+              "roof_age_min": 15,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "190930",
+            "116819",
+            "213186",
+            "192373",
+            "310908",
+            "217802",
+            "224901",
+            "312847",
+            "204473",
+            "574041",
+            "221167",
+            "211579",
+            "206007",
+            "221849",
+            "988428",
+            "306053",
+            "194712",
+            "224755",
+            "239166",
+            "214877"
+          ],
+          "total": 50258,
+          "computed_by": "independent SQL over the serving Parquet files"
+        }
+      }
+    },
+    {
+      "user": "Which properties near that area have open roofing permits that have been open for many years, and who is the listed contractor?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "Austin"
+            }
+          },
+          {
+            "name": "search_permits",
+            "args": {
+              "lat": 30.29137819423398,
+              "lon": -97.7774057165747,
+              "radius_miles": 5,
+              "min_open_years": {
+                "$in": [5, 10]
+              },
+              "roof_work_class": ["primary_roof_replacement", "repair_or_coating"]
+            }
+          }
+        ],
+        "ids": {
+          "kind": "permit",
+          "tool": "search_permits",
+          "values": [
+            "2018-062904 BP",
+            "2014-014431 BP",
+            "2013-064403 BP",
+            "2012-117164 BP",
+            "2013-033063 BP",
+            "2010-091969 BP",
+            "2016-156985 BP",
+            "2010-045803 BP",
+            "2018-062888 BP",
+            "2000-005317 BP",
+            "2009-097905 BP"
+          ],
+          "total": 11,
+          "computed_by": "independent SQL over the serving Parquet files"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

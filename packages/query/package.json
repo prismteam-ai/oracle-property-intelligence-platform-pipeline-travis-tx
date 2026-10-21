@@ -1,0 +1,23 @@
+{
+  "name": "@travis/query",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema.sql": "./schema.sql"
+  },
+  "scripts": {
+    "typecheck": "tsc -b",
+    "build": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run --root . --config ../../vitest.config.ts --passWithNoTests"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "1.5.6-r.1",
+    "@travis/contract": "*"
+  },
+  "devDependencies": {
+    "@travis/tsconfig": "*"
+  }
+}

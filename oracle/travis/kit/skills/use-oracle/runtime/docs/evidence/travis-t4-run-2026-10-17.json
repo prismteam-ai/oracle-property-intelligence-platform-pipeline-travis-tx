@@ -1,0 +1,1683 @@
+{
+ "schemaVersion": "travis.t4-run-record.v1",
+ "status": "T4 run of record (permit profile, permit pilot and feasibility); offline except the lexicon manifest and the Socrata cross-checks; nothing uploaded, pinned or registered",
+ "increment": "T4 (assignment decisions.md section 2 item 4)",
+ "check": "fixtures pass; link-method counts and the projection in the run record",
+ "kit_commit": "8455bb5",
+ "cli_commit": "44bb182 (@elephant-xyz/cli 1.58.1, project-local in the assignment repository)",
+ "lexicon_manifest_url": "https://lexicon.elephant.xyz/api/manifest",
+ "source": {
+  "dataset": "austin-issued-construction-permits/3syk-w9eu",
+  "url": "https://data.austintexas.gov/resource/3syk-w9eu.csv",
+  "watermark": "2026-10-17T12:24:23.000Z",
+  "fetched": {
+   "started_at": "2026-10-17T20:56:06.633Z",
+   "finished_at": "2026-10-17T21:01:25.227Z"
+  },
+  "artifact_hash": "05a9be10f3e0c7e2e28105f35c0151518e60bdcba679ebb1d14979ba12090a7a",
+  "artifact_hash_recipe": "SHA-256 over the sorted lines <partition file>:<sha256>, one per partition",
+  "partitions": 270,
+  "rows": 2380707,
+  "bytes": 1813784373,
+  "requests": 274,
+  "throttling_seen": "none (0 HTTP 429, 0 retries)",
+  "verification": "t4-permit-verify: OK; 270 partitions, 274 receipts, 2,380,707 CSV rows, 1813.8 MB; v1792239863 (rowsUpdatedAt 2026-10-17T12:24:23.000Z)",
+  "availability": "supported_partial",
+  "availability_note": "Austin's export only (the other 22 jurisdictions are blocked or custodian-only as classified); 17% of its rows do not link to a 2026 Travis account",
+  "evidence": "docs/evidence/travis-t4-harvest-v1792239863.json"
+ },
+ "link_proof": {
+  "evidence": "docs/evidence/travis-t4-link-proof-v1792239863.json",
+  "rows": 2380707,
+  "link_method": {
+   "exact": 1978992,
+   "normalized_digits": 0,
+   "tcad_permit_listing": 7531
+  },
+  "linked": 1986523,
+  "linked_share": 0.8344,
+  "linked_parcels": 237533,
+  "unlinked_reasons": {
+   "no_candidate": 251888,
+   "multiple_candidates": 38249,
+   "invalid_quarantined": 178,
+   "out_of_county": 103869
+  },
+  "no_candidate_detail": {
+   "blank_tcad_id": 63019,
+   "ten_digit_not_in_roll": 188869
+  },
+  "by_permittype_link": {
+   "BP": {
+    "exact": 435019,
+    "normalized_digits": 0,
+    "tcad_permit_listing": 6808,
+    "no_candidate": 50151,
+    "multiple_candidates": 9060,
+    "invalid_quarantined": 33,
+    "out_of_county": 20280
+   },
+   "DS": {
+    "exact": 100101,
+    "normalized_digits": 0,
+    "tcad_permit_listing": 1,
+    "no_candidate": 9986,
+    "multiple_candidates": 649,
+    "invalid_quarantined": 24,
+    "out_of_county": 5888
+   },
+   "EP": {
+    "exact": 570769,
+    "normalized_digits": 0,
+    "tcad_permit_listing": 523,
+    "no_candidate": 77892,
+    "multiple_candidates": 10869,
+    "invalid_quarantined": 37,
+    "out_of_county": 29062
+   },
+   "MP": {
+    "exact": 420694,
+    "normalized_digits": 0,
+    "tcad_permit_listing": 15,
+    "no_candidate": 54390,
+    "multiple_candidates": 9639,
+    "invalid_quarantined": 27,
+    "out_of_county": 21765
+   },
+   "PP": {
+    "exact": 452409,
+    "normalized_digits": 0,
+    "tcad_permit_listing": 184,
+    "no_candidate": 59469,
+    "multiple_candidates": 8032,
+    "invalid_quarantined": 57,
+    "out_of_county": 26874
+   }
+  },
+  "roll": {
+   "seed_rows": 441961,
+   "blank_geo_ids": 0,
+   "non_ten_digit_geo_ids": 0,
+   "distinct_geo_ids": 431536,
+   "shared_geo_ids": 1164,
+   "accounts_on_shared_geo_ids": 11589,
+   "seed_sha256": "8b79ca01f6bad5332b0fc82122d6d3783a582815e86fd7c9dd10e400620e17f8",
+   "digits_only_proof": {
+    "normalizationVersion": "travis-tcad-id-digits-v1",
+    "checkedCount": 441961,
+    "distinctGeoIds": 431536,
+    "distinctDigits": 431536,
+    "oneToOne": true,
+    "collisions": 0
+   },
+   "digits_fallback_enabled": true
+  },
+  "williamson_cad_tcad_id": {
+   "account_form_rows": 103848,
+   "marker_rows": 21,
+   "with_coordinates": 89564,
+   "north_of_30_40": 89550
+  },
+  "ten_digit_not_in_roll": {
+   "rows": 196400,
+   "distinct_geo_ids": 6260
+  },
+  "tcad_permit_listing": {
+   "listing_version": "travis-tcad-permit-listing-v1",
+   "source": {
+    "url": "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip",
+    "fetched_at": "2026-10-18T05:19:33.067Z",
+    "bytes": 3554021795,
+    "sha256": "6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346",
+    "receipts": "data/travis/t4-rulings/lineage/receipts.jsonl"
+   },
+   "listing": {
+    "dir": "data/travis/tcad-permit-listing/6f7a758568fd03fa",
+    "sha256": "7b2bf8e62af758aad4bd1ca53557a4d1fd1f3fc87731a6ecad4ee05f8a96a999",
+    "rows": 1121918,
+    "permit_numbers": 781459,
+    "accounts_listing_permits": 341900
+   },
+   "precedence": "exact geo_id, then normalized_digits; the listing only for a ten-digit tcad_id that no current account prints, and only when it names exactly one current account; anything else stays no_candidate",
+   "retired": {
+    "permits": 196400,
+    "linked": 7531,
+    "listed_on_several_current_accounts": 463,
+    "listed_on_other_accounts_only": 26,
+    "not_listed": 188380,
+    "linked_ref_property_roll": {
+     "printed": 4468,
+     "linked_account_geo_id": 294,
+     "blank": 253,
+     "other": 2516
+    },
+    "linked_issue_date_equal": 7121,
+    "linked_by_permittype": {
+     "BP": 6808,
+     "DS": 1,
+     "EP": 523,
+     "MP": 15,
+     "PP": 184
+    },
+    "linked_parcels": 5034,
+    "parcels_linked_only_through_listing": 4893
+   },
+   "overlap_with_exact": {
+    "listed_on_one_current_account": 222931,
+    "agree": 216904,
+    "agreement_share": 0.973,
+    "roofing": {
+     "listed_on_one_current_account": 64734,
+     "agree": 62918,
+     "agreement_share": 0.9719
+    }
+   },
+   "classification": "link (an explicit, separately labelled fallback), not a candidate",
+   "evidence": "docs/evidence/travis-t4-ruling-10-tcad-listing-2026-10-18.json"
+  },
+  "permit_number": {
+   "distinct": 2380707,
+   "blank_rows": 0,
+   "printed_more_than_once": 0,
+   "rows_under_repeated_numbers": 0,
+   "repeated_rows_identical_to_first": 0,
+   "printed_on_differing_rows": 0
+  }
+ },
+ "evidence_states": {
+  "completed_date": {
+   "confirmed_present": 2180217,
+   "unknown": 198488,
+   "invalid_quarantined": 2002
+  },
+  "status_current": {
+   "confirmed_present": 2380693,
+   "unknown": 14
+  },
+  "tcad_id": {
+   "confirmed_present": 2213641,
+   "unknown": 63019,
+   "invalid_quarantined": 104047
+  }
+ },
+ "unlinked_reasons": {
+  "no_candidate": 251888,
+  "multiple_candidates": 38249,
+  "invalid_quarantined": 178,
+  "out_of_county": 103869
+ },
+ "profile": {
+  "versions": {
+   "status_group": "travis-status-group-v1",
+   "lifecycle": "travis-lifecycle-v1",
+   "work_classifier": "travis-work-classifier-v2",
+   "date_evidence": "travis-date-evidence-v1",
+   "tcad_id_normalization": "travis-tcad-id-digits-v1",
+   "tcad_id_evidence": "travis-tcad-id-evidence-v2",
+   "parcel_link": "travis-parcel-link-v3",
+   "tcad_permit_listing": "travis-tcad-permit-listing-v1"
+  },
+  "status_group": {
+   "closed": 2237835,
+   "open": 28208,
+   "stalled": 114217,
+   "needs_review": 447
+  },
+  "lifecycle": {
+   "completed": 2010298,
+   "other": 341754,
+   "open": 28208,
+   "needs_review": 447
+  },
+  "status_vocabulary": {
+   "distinct": 25,
+   "new_unmapped_values": [],
+   "needs_review_rows": 447
+  },
+  "roof_work_class": {
+   "primary_roof_new_construction": 155327,
+   "other": 2168841,
+   "accessory_roof": 26193,
+   "primary_roof_replacement": 23290,
+   "repair_or_coating": 1321,
+   "needs_review": 5735
+  },
+  "roofing": {
+   "permits": 206131,
+   "linked": 170674,
+   "by_status_group": {
+    "closed": 195109,
+    "stalled": 6609,
+    "open": 4399,
+    "needs_review": 14
+   },
+   "by_status_group_linked": {
+    "closed": 161518,
+    "stalled": 5529,
+    "open": 3619,
+    "needs_review": 8
+   },
+   "by_class_linked": {
+    "primary_roof_new_construction": 125403,
+    "accessory_roof": 23328,
+    "primary_roof_replacement": 20786,
+    "repair_or_coating": 1157
+   },
+   "linked_by_method": {
+    "exact": 166650,
+    "normalized_digits": 0,
+    "tcad_permit_listing": 4024
+   },
+   "bp_rows": 521351
+  },
+  "date_reasons": {
+   "applieddate": {
+    "valid": 2380678,
+    "blank": 29
+   },
+   "issue_date": {
+    "valid": 2380707
+   },
+   "completed_date": {
+    "valid": 2180217,
+    "blank": 198488,
+    "before_applied_date": 2002
+   },
+   "expiresdate": {
+    "valid": 2379917,
+    "blank": 790
+   },
+   "statusdate_final": {
+    "valid": 2010296,
+    "before_applied_date": 2
+   }
+  },
+  "needs_review_distinct_descriptions": 4925
+ },
+ "pilot": {
+  "all": {
+   "run_dir": "data/travis/runs/20261018T092831Z-t4-pilot",
+   "attempts": [
+    {
+     "attempt": 1,
+     "started_at": "2026-10-18T09:28:31.305Z",
+     "finished_at": "2026-10-18T09:30:41.379Z",
+     "resumed": false,
+     "fault_drill": {
+      "permanent": [],
+      "retryable": []
+     }
+    }
+   ],
+   "seed": {
+    "path": "data/seeds/travis-pilot.csv",
+    "sha256": "0a75f9e99f029c6ca4dba57a4a6bba6d7333c8b88b459c20312d880385ce7f3d",
+    "rows": 25
+   },
+   "lexicon_manifest": {
+    "source": "live",
+    "sha256": "7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640",
+    "property_improvement_cid": "bafkreicyzywzwhmguojpi2otgrwsyi37le3u4lnavljbxu76cnrudxaxfu",
+    "seed_cid": "bafkreibhurphpjdq33ysit57jtzmdldgngepsdbsw4vm7esawth2ezgaxu"
+   },
+   "eligibility_policy": {
+    "variable": "PROPERTY_FIRST_PERMIT_ELIGIBLE_USAGE_TYPES_TRAVIS",
+    "value": "__ALL__",
+    "mode": "all",
+    "fingerprint": "315d4a131b0aa620dc4ab3535402ca2135f6e6050a8527cda4f68dec6c7dff62"
+   },
+   "appraisal": {
+    "reconciled": {
+     "seedRows": 25,
+     "success": 25,
+     "permanentFailure": 0,
+     "retryableFailure": 0
+    },
+    "geometry": 13,
+    "reconcile_export": {
+     "rows": 25,
+     "expected": 25
+    }
+   },
+   "eligibility": {
+    "eligible": 25,
+    "not_eligible": 0
+   },
+   "permit_states": {
+    "done_zero_permits": 19,
+    "done": 6
+   },
+   "permits": {
+    "linked": 155,
+    "published": 155,
+    "parcels_written": 6,
+    "conflicting": 0,
+    "identical_repeats": 0
+   },
+   "groups": {
+    "county": 25,
+    "property_improvement": 6
+   },
+   "county_group": {
+    "parcels": 25,
+    "validate": {
+     "processed": {
+      "processed": 25,
+      "succeeded": 25,
+      "failed": 0
+     },
+     "error_rows": 0,
+     "exit": 0
+    },
+    "car": {
+     "root": "baguqeerahe3ecgiyigcgdg6gmxqsmc5ylzlucf4kb3n5xcqi5tvtiebpv2ta",
+     "blocks": 471,
+     "bytes": 176848,
+     "sha256": "62456f387fd6b25466c63ba6f8b4bbf2020c2b1fa963f71a82b3541bf8a1ebc6"
+    },
+    "car_validation": {
+     "blocks": 471,
+     "properties": 25,
+     "data_groups_validated": 50,
+     "integrity_errors": 0,
+     "root_errors": 0,
+     "index_errors": 0,
+     "graph_errors": 0,
+     "lexicon_errors": 0,
+     "orphans_errors": 0,
+     "passed": true
+    },
+    "tables": {
+     "tables": 23,
+     "parts": 23,
+     "root": "baguqeeram5hefoyihxelublnx3hzdmbdxg5gavyukspzevkwnii7b5zexipq"
+    }
+   },
+   "property_improvement_group": {
+    "parcels": 6,
+    "validate": {
+     "processed": {
+      "processed": 6,
+      "succeeded": 6,
+      "failed": 0
+     },
+     "error_rows": 0,
+     "exit": 0
+    },
+    "car": {
+     "root": "baguqeeranegqm7efvvxckwfltf6ewzxsuwmmf7kuk2obi6r5svbgw7cqk22q",
+     "blocks": 348,
+     "bytes": 307874,
+     "sha256": "30132cbd10269fb51663d5fe62dd732adb04b542e778ea3121fa26866a96df7d"
+    },
+    "car_validation": {
+     "blocks": 348,
+     "properties": 6,
+     "data_groups_validated": 12,
+     "integrity_errors": 0,
+     "root_errors": 0,
+     "index_errors": 0,
+     "graph_errors": 0,
+     "lexicon_errors": 0,
+     "orphans_errors": 0,
+     "passed": true
+    },
+    "tables": {
+     "tables": 7,
+     "parts": 7,
+     "root": "baguqeeraxyla6jami62bqvc46xitp4tkyu2boive5b4esf2n5vuwfk2gmafa"
+    }
+   },
+   "property_cid_check": {
+    "county_properties": 25,
+    "permit_properties": 6,
+    "permit_properties_in_county_archive": 6,
+    "missing": [],
+    "same_property_cid": true
+   },
+   "socrata_cross_check": {
+    "requests": 27,
+    "dataset_version_now": "1792239863",
+    "capture_version": "1792239863",
+    "same_version": true,
+    "issued_through": "2026-10-16",
+    "rows_issued_after_now": 0,
+    "geo_ids": 25,
+    "equal": 25,
+    "differs": [],
+    "per_request_ms": {
+     "p50": 261,
+     "p95": 427,
+     "max": 706
+    },
+    "elapsed_ms": 3632
+   },
+   "timings_ms": {
+    "lexicon_manifest": 241.4,
+    "verify_capture": 10977.9,
+    "appraisal_transform": 142.8,
+    "appraisal_reconcile_export": 91.3,
+    "eligibility": 4.4,
+    "roll_index": 6637.5,
+    "permit_link_pass": 89091.2,
+    "permit_transform": 70.9,
+    "assemble_groups": 138.7,
+    "cli_county_validate": 10158.1,
+    "cli_county_hash": 1184.2,
+    "cli_county_car_validate": 1635.9,
+    "cli_county_export_tables": 584.3,
+    "cli_property_improvement_validate": 1690.1,
+    "cli_property_improvement_hash": 921.2,
+    "cli_property_improvement_car_validate": 1025.3,
+    "cli_property_improvement_export_tables": 569.4,
+    "socrata_cross_check": 3632
+   },
+   "total_ms": 130075.6
+  },
+  "appraisal_only": {
+   "run_dir": "data/travis/runs/20261018T093042Z-t4-pilot-none",
+   "attempts": [
+    {
+     "attempt": 1,
+     "started_at": "2026-10-18T09:30:42.324Z",
+     "finished_at": "2026-10-18T09:31:07.065Z",
+     "resumed": false,
+     "fault_drill": {
+      "permanent": [],
+      "retryable": []
+     }
+    }
+   ],
+   "seed": {
+    "path": "data/seeds/travis-pilot.csv",
+    "sha256": "0a75f9e99f029c6ca4dba57a4a6bba6d7333c8b88b459c20312d880385ce7f3d",
+    "rows": 25
+   },
+   "lexicon_manifest": {
+    "source": "live",
+    "sha256": "7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640",
+    "property_improvement_cid": "bafkreicyzywzwhmguojpi2otgrwsyi37le3u4lnavljbxu76cnrudxaxfu",
+    "seed_cid": "bafkreibhurphpjdq33ysit57jtzmdldgngepsdbsw4vm7esawth2ezgaxu"
+   },
+   "eligibility_policy": {
+    "variable": "PROPERTY_FIRST_PERMIT_ELIGIBLE_USAGE_TYPES_TRAVIS",
+    "value": "__NONE__",
+    "mode": "none",
+    "fingerprint": "05b20f8a3f5b95de63e9c49c267a2ff42c430a95951faeeb176378fb7d5640ed"
+   },
+   "appraisal": {
+    "reconciled": {
+     "seedRows": 25,
+     "success": 25,
+     "permanentFailure": 0,
+     "retryableFailure": 0
+    },
+    "geometry": 13,
+    "reconcile_export": {
+     "rows": 25,
+     "expected": 25
+    }
+   },
+   "eligibility": {
+    "eligible": 0,
+    "not_eligible": 25
+   },
+   "permit_states": {
+    "not_eligible": 25
+   },
+   "permits": {
+    "linked": 0,
+    "published": 0,
+    "parcels_written": 0,
+    "conflicting": 0,
+    "identical_repeats": 0
+   },
+   "groups": {
+    "county": 25,
+    "property_improvement": 0
+   },
+   "county_group": {
+    "parcels": 25,
+    "validate": {
+     "processed": {
+      "processed": 25,
+      "succeeded": 25,
+      "failed": 0
+     },
+     "error_rows": 0,
+     "exit": 0
+    },
+    "car": {
+     "root": "baguqeerahe3ecgiyigcgdg6gmxqsmc5ylzlucf4kb3n5xcqi5tvtiebpv2ta",
+     "blocks": 471,
+     "bytes": 176848,
+     "sha256": "62456f387fd6b25466c63ba6f8b4bbf2020c2b1fa963f71a82b3541bf8a1ebc6"
+    },
+    "car_validation": {
+     "blocks": 471,
+     "properties": 25,
+     "data_groups_validated": 50,
+     "integrity_errors": 0,
+     "root_errors": 0,
+     "index_errors": 0,
+     "graph_errors": 0,
+     "lexicon_errors": 0,
+     "orphans_errors": 0,
+     "passed": true
+    },
+    "tables": {
+     "tables": 23,
+     "parts": 23,
+     "root": "baguqeeram5hefoyihxelublnx3hzdmbdxg5gavyukspzevkwnii7b5zexipq"
+    }
+   },
+   "property_improvement_group": {
+    "skipped": "no parcel in this group"
+   },
+   "property_cid_check": null,
+   "socrata_cross_check": null,
+   "timings_ms": {
+    "lexicon_manifest": 214.8,
+    "verify_capture": 10962.7,
+    "appraisal_transform": 164.8,
+    "appraisal_reconcile_export": 83.4,
+    "eligibility": 5.3,
+    "roll_index": {
+     "skipped": "no eligible parcel"
+    },
+    "permit_link_pass": {
+     "skipped": "no eligible parcel"
+    },
+    "permit_transform": 3,
+    "assemble_groups": 71.4,
+    "cli_county_validate": 9876.4,
+    "cli_county_hash": 1135.1,
+    "cli_county_car_validate": 1627.2,
+    "cli_county_export_tables": 585.2
+   },
+   "total_ms": 24742
+  },
+  "fault_drill": {
+   "run_dir": "data/travis/runs/20261018T093107Z-t4-pilot-drill",
+   "attempts": [
+    {
+     "attempt": 1,
+     "started_at": "2026-10-18T09:31:07.913Z",
+     "finished_at": "2026-10-18T09:33:41.863Z",
+     "resumed": false,
+     "fault_drill": {
+      "permanent": [
+       "547839"
+      ],
+      "retryable": [
+       "830704"
+      ]
+     }
+    },
+    {
+     "attempt": 2,
+     "started_at": "2026-10-18T09:33:42.775Z",
+     "finished_at": "2026-10-18T09:35:55.974Z",
+     "resumed": true,
+     "fault_drill": {
+      "permanent": [],
+      "retryable": []
+     }
+    }
+   ],
+   "seed": {
+    "path": "data/travis/runs/20261018T093107Z-t4-pilot-drill/seed.csv",
+    "sha256": "0a75f9e99f029c6ca4dba57a4a6bba6d7333c8b88b459c20312d880385ce7f3d",
+    "rows": 25
+   },
+   "lexicon_manifest": {
+    "source": "resumed",
+    "sha256": "7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640",
+    "property_improvement_cid": "bafkreicyzywzwhmguojpi2otgrwsyi37le3u4lnavljbxu76cnrudxaxfu",
+    "seed_cid": "bafkreibhurphpjdq33ysit57jtzmdldgngepsdbsw4vm7esawth2ezgaxu"
+   },
+   "eligibility_policy": {
+    "variable": "PROPERTY_FIRST_PERMIT_ELIGIBLE_USAGE_TYPES_TRAVIS",
+    "value": "__ALL__",
+    "mode": "all",
+    "fingerprint": "315d4a131b0aa620dc4ab3535402ca2135f6e6050a8527cda4f68dec6c7dff62"
+   },
+   "appraisal": {
+    "reconciled": {
+     "seedRows": 25,
+     "success": 25,
+     "permanentFailure": 0,
+     "retryableFailure": 0
+    },
+    "geometry": 13,
+    "reconcile_export": {
+     "rows": 25,
+     "expected": 25
+    }
+   },
+   "eligibility": {
+    "eligible": 25,
+    "not_eligible": 0
+   },
+   "permit_states": {
+    "done_zero_permits": 19,
+    "failed_permanent": 1,
+    "done": 5
+   },
+   "permits": {
+    "linked": 28,
+    "published": 28,
+    "parcels_written": 5,
+    "conflicting": 0,
+    "identical_repeats": 0
+   },
+   "groups": {
+    "county": 25,
+    "property_improvement": 5
+   },
+   "county_group": {
+    "parcels": 25,
+    "validate": {
+     "processed": {
+      "processed": 25,
+      "succeeded": 25,
+      "failed": 0
+     },
+     "error_rows": 0,
+     "exit": 0
+    },
+    "car": {
+     "root": "baguqeerahe3ecgiyigcgdg6gmxqsmc5ylzlucf4kb3n5xcqi5tvtiebpv2ta",
+     "blocks": 471,
+     "bytes": 176848,
+     "sha256": "62456f387fd6b25466c63ba6f8b4bbf2020c2b1fa963f71a82b3541bf8a1ebc6"
+    },
+    "car_validation": {
+     "blocks": 471,
+     "properties": 25,
+     "data_groups_validated": 50,
+     "integrity_errors": 0,
+     "root_errors": 0,
+     "index_errors": 0,
+     "graph_errors": 0,
+     "lexicon_errors": 0,
+     "orphans_errors": 0,
+     "passed": true
+    },
+    "tables": {
+     "tables": 23,
+     "parts": 23,
+     "root": "baguqeeram5hefoyihxelublnx3hzdmbdxg5gavyukspzevkwnii7b5zexipq"
+    }
+   },
+   "property_improvement_group": {
+    "parcels": 5,
+    "validate": {
+     "processed": {
+      "processed": 5,
+      "succeeded": 5,
+      "failed": 0
+     },
+     "error_rows": 0,
+     "exit": 0
+    },
+    "car": {
+     "root": "baguqeera3y6yeqyuv26jgrrjohefklrpyanmubh7ar5orw3ayncapz5qlf6q",
+     "blocks": 88,
+     "bytes": 65105,
+     "sha256": "9fd4f7b32b7f9ead834c1a506169fab4e958f883e52036dc7e6bb35bbcee0587"
+    },
+    "car_validation": {
+     "blocks": 88,
+     "properties": 5,
+     "data_groups_validated": 10,
+     "integrity_errors": 0,
+     "root_errors": 0,
+     "index_errors": 0,
+     "graph_errors": 0,
+     "lexicon_errors": 0,
+     "orphans_errors": 0,
+     "passed": true
+    },
+    "tables": {
+     "tables": 7,
+     "parts": 7,
+     "root": "baguqeerasva2zvuzhn54zaaa7yntemzjnc7y2yepah4l7hbp324zrkwqa6aa"
+    }
+   },
+   "property_cid_check": {
+    "county_properties": 25,
+    "permit_properties": 5,
+    "permit_properties_in_county_archive": 5,
+    "missing": [],
+    "same_property_cid": true
+   },
+   "socrata_cross_check": null,
+   "timings_ms": {
+    "lexicon_manifest": 0.1,
+    "verify_capture": 11756.2,
+    "appraisal_transform": 135.2,
+    "appraisal_reconcile_export": 83.5,
+    "eligibility": 4.4,
+    "roll_index": 6529.8,
+    "permit_link_pass": 95767.5,
+    "permit_transform": 11,
+    "assemble_groups": 106.6,
+    "cli_county_validate": 10953,
+    "cli_county_hash": 1480.6,
+    "cli_county_car_validate": 1671.2,
+    "cli_county_export_tables": 612,
+    "cli_property_improvement_validate": 1579.2,
+    "cli_property_improvement_hash": 861.9,
+    "cli_property_improvement_car_validate": 1001.6,
+    "cli_property_improvement_export_tables": 616.8
+   },
+   "total_ms": 133187.8
+  }
+ },
+ "feasibility": {
+  "run_dir": "data/travis/runs/20261018T093624Z-t4-feasibility-1000",
+  "attempts": [
+   {
+    "attempt": 1,
+    "started_at": "2026-10-18T09:36:24.263Z",
+    "finished_at": "2026-10-18T09:48:23.249Z",
+    "resumed": false,
+    "fault_drill": {
+     "permanent": [],
+     "retryable": []
+    }
+   }
+  ],
+  "seed": {
+   "path": "data/seeds/travis-feasibility-1000.csv",
+   "sha256": "5fccc9c2deaca758c1f585a90621a56105f093ca445d72c1304748161ed9990c",
+   "rows": 1000
+  },
+  "lexicon_manifest": {
+   "source": "live",
+   "sha256": "7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640",
+   "property_improvement_cid": "bafkreicyzywzwhmguojpi2otgrwsyi37le3u4lnavljbxu76cnrudxaxfu",
+   "seed_cid": "bafkreibhurphpjdq33ysit57jtzmdldgngepsdbsw4vm7esawth2ezgaxu"
+  },
+  "eligibility_policy": {
+   "variable": "PROPERTY_FIRST_PERMIT_ELIGIBLE_USAGE_TYPES_TRAVIS",
+   "value": "__ALL__",
+   "mode": "all",
+   "fingerprint": "315d4a131b0aa620dc4ab3535402ca2135f6e6050a8527cda4f68dec6c7dff62"
+  },
+  "appraisal": {
+   "reconciled": {
+    "seedRows": 1000,
+    "success": 1000,
+    "permanentFailure": 0,
+    "retryableFailure": 0
+   },
+   "geometry": 842,
+   "reconcile_export": {
+    "rows": 1000,
+    "expected": 1000
+   }
+  },
+  "eligibility": {
+   "eligible": 1000,
+   "not_eligible": 0
+  },
+  "permit_states": {
+   "done": 542,
+   "done_zero_permits": 458
+  },
+  "permits": {
+   "linked": 4173,
+   "published": 4173,
+   "parcels_written": 542,
+   "conflicting": 0,
+   "identical_repeats": 0
+  },
+  "groups": {
+   "county": 1000,
+   "property_improvement": 542
+  },
+  "county_group": {
+   "parcels": 1000,
+   "validate": {
+    "processed": {
+     "processed": 1000,
+     "succeeded": 1000,
+     "failed": 0
+    },
+    "error_rows": 0,
+    "exit": 0
+   },
+   "car": {
+    "root": "baguqeerajznciv64kds7dilxfyy5mg33klp4ap2wxfe2frrag7cwhb6gau4a",
+    "blocks": 20138,
+    "bytes": 8078795,
+    "sha256": "343b1cc7f4a5f9ebe8fa6a50fe129deee3cdbbfddd23bae624f3f2b47e502bd6"
+   },
+   "car_validation": {
+    "blocks": 20138,
+    "properties": 1000,
+    "data_groups_validated": 2000,
+    "integrity_errors": 0,
+    "root_errors": 0,
+    "index_errors": 0,
+    "graph_errors": 0,
+    "lexicon_errors": 0,
+    "orphans_errors": 0,
+    "passed": true
+   },
+   "tables": {
+    "tables": 24,
+    "parts": 24,
+    "root": "baguqeerag4dmbm2gzcqhvlzetfng4je6v6oklp2ny45azubq4ewv45sizrba"
+   }
+  },
+  "property_improvement_group": {
+   "parcels": 542,
+   "validate": {
+    "processed": {
+     "processed": 542,
+     "succeeded": 542,
+     "failed": 0
+    },
+    "error_rows": 0,
+    "exit": 0
+   },
+   "car": {
+    "root": "baguqeerahbiu3sp5wrgqnnugp4dcgsrn3iifuljet5ruumkt4izy3vrg6qyq",
+    "blocks": 11600,
+    "bytes": 9154904,
+    "sha256": "f79f281937b653f9f46fbc21424e157c2e857e5864902c6dbd32838fd1679773"
+   },
+   "car_validation": {
+    "blocks": 11600,
+    "properties": 542,
+    "data_groups_validated": 1084,
+    "integrity_errors": 0,
+    "root_errors": 0,
+    "index_errors": 0,
+    "graph_errors": 0,
+    "lexicon_errors": 0,
+    "orphans_errors": 0,
+    "passed": true
+   },
+   "tables": {
+    "tables": 7,
+    "parts": 7,
+    "root": "baguqeerab4phy3thmss6fweimqiprjf72aruewhnvmfi33wokx3vutq6ybrq"
+   }
+  },
+  "property_cid_check": {
+   "county_properties": 1000,
+   "permit_properties": 542,
+   "permit_properties_in_county_archive": 542,
+   "missing": [],
+   "same_property_cid": true
+  },
+  "socrata_cross_check": {
+   "requests": 1000,
+   "dataset_version_now": "1792239863",
+   "capture_version": "1792239863",
+   "same_version": true,
+   "issued_through": "2026-10-16",
+   "rows_issued_after_now": 0,
+   "geo_ids": 998,
+   "equal": 998,
+   "differs": [],
+   "per_request_ms": {
+    "p50": 239,
+    "p95": 306,
+    "max": 1092
+   },
+   "elapsed_ms": 123717
+  },
+  "timings_ms": {
+   "lexicon_manifest": 223.1,
+   "verify_capture": 12814.2,
+   "appraisal_transform": 5500.1,
+   "appraisal_reconcile_export": 755.5,
+   "eligibility": 209.1,
+   "roll_index": 6711.5,
+   "permit_link_pass": 94015.5,
+   "permit_transform": 3805.2,
+   "assemble_groups": 6194.4,
+   "cli_county_validate": 360910.6,
+   "cli_county_hash": 15863,
+   "cli_county_car_validate": 9513,
+   "cli_county_export_tables": 1298,
+   "cli_property_improvement_validate": 64506.4,
+   "cli_property_improvement_hash": 7848,
+   "cli_property_improvement_car_validate": 2875.9,
+   "cli_property_improvement_export_tables": 1048.4,
+   "socrata_cross_check": 123717
+  },
+  "total_ms": 718990.9
+ },
+ "readme_impact": {
+  "definitions": {
+   "not_on_a_property": "loaded internally and counted under limitations, never published on a property (README.md 13, 105, 110)",
+   "anchor_eligible": "primary_roof_replacement or primary_roof_new_construction, lifecycle completed, completed_date confirmed_present"
+  },
+  "roofing": {
+   "permits": 206131,
+   "linked": 170674,
+   "not_on_a_property": 35457,
+   "not_on_a_property_retired_geo_id": 19226
+  },
+  "open_roofing": {
+   "permits": 4399,
+   "linked": 3619,
+   "not_on_a_property": 780,
+   "not_on_a_property_retired_geo_id": 679
+  },
+  "stalled_roofing": {
+   "permits": 6609,
+   "linked": 5529,
+   "not_on_a_property": 1080,
+   "not_on_a_property_retired_geo_id": 707
+  },
+  "retired_geo_id_roofing": {
+   "permits": 23250,
+   "linked": 4024,
+   "open": 700,
+   "open_linked": 21,
+   "stalled": 849,
+   "stalled_linked": 142,
+   "anchor_eligible": 19053,
+   "anchor_eligible_linked": 3658
+  },
+  "recovered_by_tcad_permit_listing": {
+   "permits": 7531,
+   "roofing": 4024,
+   "open_roofing": 21,
+   "stalled_roofing": 142,
+   "anchor_eligible": 3658
+  },
+  "roof_age_anchor": {
+   "seed_parcels": 441961,
+   "parcels_with_an_anchor_through_geo_id": 105663,
+   "parcels_with_an_anchor": 108733,
+   "parcels_whose_anchor_comes_only_through_the_listing": 3070,
+   "parcels_without_a_permit_anchor": 333228,
+   "anchor_eligible_permits_unlinked_on_retired_geo_ids": 15395,
+   "note": "a parcel without a permit anchor falls back to the built year (low confidence) or to no age; the anchor-eligible permits that stay unlinked sit on parcels no public source names, so at most that many more parcels fall back because of them"
+  },
+  "before_ruling_25_10": {
+   "roofing_not_on_a_property": 39481,
+   "roofing_not_on_a_property_retired_geo_id": 23250,
+   "open_roofing_not_on_a_property": 801,
+   "open_roofing_not_on_a_property_retired_geo_id": 700,
+   "stalled_roofing_not_on_a_property": 1222,
+   "stalled_roofing_not_on_a_property_retired_geo_id": 849,
+   "parcels_with_a_permit_anchor": 105663,
+   "parcels_without_a_permit_anchor": 336298,
+   "parcels_falling_back_to_built_year_although_tcad_lists_their_anchor_permit": 3070,
+   "anchor_eligible_permits_unlinked_on_retired_geo_ids": 19053
+  },
+  "evidence": "docs/evidence/travis-t4-ruling-10-tcad-listing-2026-10-18.json"
+ },
+ "projection_basis": "the feasibility run data/travis/runs/20261018T052540Z-t4-feasibility-1000, which the shard benchmarks and the size projection measured (decisions.md section 25.9), with the full-scale counts of the current link proof",
+ "projection": {
+  "projection_version": "travis-t4-projection.v1",
+  "gate_s": 172800,
+  "sample": {
+   "run_dir": "data/travis/runs/20261018T052540Z-t4-feasibility-1000",
+   "parcels": 1000,
+   "parcels_with_permits": 530,
+   "permits_published": 4151
+  },
+  "full_scale": {
+   "rows": 2380707,
+   "linked": 1986523,
+   "linked_parcels": 237533,
+   "seed_rows": 441961
+  },
+  "scales": {
+   "per_parcel": 441.961,
+   "permits": 478.565,
+   "parcels_with_permits": 448.175,
+   "permit_group_used": 478.565
+  },
+  "stages": [
+   {
+    "stage": "socrata_harvest",
+    "basis": "measured at full scale (the whole export)",
+    "measured_s": 318.6,
+    "scale": 1,
+    "projected_s": 318.6,
+    "rate": "448354 rows/min, 274 requests"
+   },
+   {
+    "stage": "verify_capture",
+    "basis": "measured at full scale (once per run)",
+    "measured_s": 10.1,
+    "scale": 1,
+    "projected_s": 10.1,
+    "rate": null
+   },
+   {
+    "stage": "roll_index",
+    "basis": "measured at full scale (once per run)",
+    "measured_s": 6.7,
+    "scale": 1,
+    "projected_s": 6.7,
+    "rate": "3976257 rows/min"
+   },
+   {
+    "stage": "permit_link_pass",
+    "basis": "measured at full scale (once per run)",
+    "measured_s": 89.4,
+    "scale": 1,
+    "projected_s": 89.4,
+    "rate": "1598405 rows/min"
+   },
+   {
+    "stage": "appraisal_transform",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 5.89,
+    "scale": 441.961,
+    "projected_s": 2605.3,
+    "rate": "10178 parcels/min"
+   },
+   {
+    "stage": "appraisal_reconcile_export",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 0.65,
+    "scale": 441.961,
+    "projected_s": 288.7,
+    "rate": "91841 parcels/min"
+   },
+   {
+    "stage": "eligibility",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 0.22,
+    "scale": 441.961,
+    "projected_s": 96.1,
+    "rate": "275989 parcels/min"
+   },
+   {
+    "stage": "assemble_groups",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 6.21,
+    "scale": 441.961,
+    "projected_s": 2744.1,
+    "rate": "9663 parcels/min"
+   },
+   {
+    "stage": "cli_county_validate",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 374.25,
+    "scale": 441.961,
+    "projected_s": 165403,
+    "rate": "160 parcels/min"
+   },
+   {
+    "stage": "cli_county_hash",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 17.69,
+    "scale": 441.961,
+    "projected_s": 7818,
+    "rate": "3392 parcels/min"
+   },
+   {
+    "stage": "cli_county_car_validate",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 10.76,
+    "scale": 441.961,
+    "projected_s": 4756.3,
+    "rate": "5575 parcels/min"
+   },
+   {
+    "stage": "cli_county_export_tables",
+    "basis": "measured on 1000 parcels, scaled by 441961 seed rows",
+    "measured_s": 1.63,
+    "scale": 441.961,
+    "projected_s": 720.7,
+    "rate": "36794 parcels/min"
+   },
+   {
+    "stage": "permit_transform",
+    "basis": "measured on 4151 permits of 530 parcels, scaled by the larger of 1986523 linked permits and 237533 parcels with permits",
+    "measured_s": 3.43,
+    "scale": 478.565,
+    "projected_s": 1642.1,
+    "rate": "72583 permits/min"
+   },
+   {
+    "stage": "cli_property_improvement_validate",
+    "basis": "measured on 4151 permits of 530 parcels, scaled by the larger of 1986523 linked permits and 237533 parcels with permits",
+    "measured_s": 66.3,
+    "scale": 478.565,
+    "projected_s": 31729.3,
+    "rate": "3757 permits/min"
+   },
+   {
+    "stage": "cli_property_improvement_hash",
+    "basis": "measured on 4151 permits of 530 parcels, scaled by the larger of 1986523 linked permits and 237533 parcels with permits",
+    "measured_s": 9.28,
+    "scale": 478.565,
+    "projected_s": 4439.3,
+    "rate": "26849 permits/min"
+   },
+   {
+    "stage": "cli_property_improvement_car_validate",
+    "basis": "measured on 4151 permits of 530 parcels, scaled by the larger of 1986523 linked permits and 237533 parcels with permits",
+    "measured_s": 3.4,
+    "scale": 478.565,
+    "projected_s": 1627.1,
+    "rate": "73255 permits/min"
+   },
+   {
+    "stage": "cli_property_improvement_export_tables",
+    "basis": "measured on 4151 permits of 530 parcels, scaled by the larger of 1986523 linked permits and 237533 parcels with permits",
+    "measured_s": 1.08,
+    "scale": 478.565,
+    "projected_s": 515.6,
+    "rate": "231189 permits/min"
+   }
+  ],
+  "source_acquisition": {
+   "projected_s": 318.6,
+   "projected_h": 0.089,
+   "within_gate": true,
+   "note": "the kit's 48-hour gate is per scraped source; the Austin export is the only acquisition T4 adds (TCAD and TNR were captured in T1)"
+  },
+  "full_run": {
+   "projected_s": 224810.4,
+   "projected_h": 62.45,
+   "within_gate": false,
+   "margin_h": -14.45,
+   "mode": "every stage sequential, elephant-cli as one process per group"
+  },
+  "full_run_sharded": {
+   "groups": {
+    "county": {
+     "shards": 8,
+     "sample_parcels": 1000,
+     "measured_wall_s": 94.84,
+     "scale": 441.961,
+     "projected_s": 41914.7,
+     "projected_h": 11.64
+    },
+    "property_improvement": {
+     "shards": 8,
+     "sample_parcels": 530,
+     "measured_wall_s": 39.15,
+     "scale": 478.565,
+     "projected_s": 18735.3,
+     "projected_h": 5.2
+    }
+   },
+   "projected_s": 68451.1,
+   "projected_h": 19.01,
+   "within_gate": true,
+   "margin_h": 28.99,
+   "note": "the elephant-cli stages of each benchmarked group replaced by its measured K-shard wall time, scaled like the sequential stage; every other stage as above"
+  },
+  "slowest_stages": [
+   {
+    "stage": "cli_county_validate",
+    "projected_h": 45.95
+   },
+   {
+    "stage": "cli_property_improvement_validate",
+    "projected_h": 8.81
+   },
+   {
+    "stage": "cli_county_hash",
+    "projected_h": 2.17
+   }
+  ],
+  "assumptions": [
+   "sequential stages on the operator's machine at the measured concurrency (one Socrata request pair in flight; elephant-cli at its own default concurrency)",
+   "per-parcel and per-permit costs scale linearly; CARs are cut into the kit's 5,000-property shards, so hash, CAR validate and export-tables run per shard at the sampled per-property rate",
+   "the full run's link pass streams its rows to per-parcel files instead of holding them in memory (the write cost is in the permit transform stage, which writes the sidecar per parcel)",
+   "no upload, pin or gateway time (T6), no Query DB load (T5's Loader)"
+  ]
+ },
+ "shard_bench": [
+  {
+   "group": "county",
+   "tag": null,
+   "started_at": null,
+   "parcels": 1000,
+   "shards": 8,
+   "wall_ms": 94838,
+   "wall_ms_per_parcel": 94.838,
+   "memory": {
+    "peak_total_rss_bytes": 7686373376,
+    "peak_processes": 8,
+    "samples": 89
+   },
+   "all_passed": true,
+   "shard_ms": [
+    93086,
+    93048,
+    94836,
+    93576,
+    94485,
+    94456,
+    93575,
+    94819
+   ]
+  },
+  {
+   "group": "property_improvement",
+   "tag": null,
+   "started_at": null,
+   "parcels": 530,
+   "shards": 8,
+   "wall_ms": 39149,
+   "wall_ms_per_parcel": 73.866,
+   "memory": {
+    "peak_total_rss_bytes": 4101439488,
+    "peak_processes": 8,
+    "samples": 36
+   },
+   "all_passed": true,
+   "shard_ms": [
+    39149,
+    38814,
+    38811,
+    38805,
+    38809,
+    37615,
+    39132,
+    38645
+   ]
+  },
+  {
+   "group": "county",
+   "tag": null,
+   "started_at": null,
+   "parcels": 1000,
+   "shards": 10,
+   "wall_ms": 133489,
+   "wall_ms_per_parcel": 133.489,
+   "memory": {
+    "peak_total_rss_bytes": 8877228032,
+    "peak_processes": 10,
+    "samples": 122
+   },
+   "all_passed": true,
+   "shard_ms": [
+    132397,
+    133488,
+    133480,
+    132701,
+    132837,
+    132653,
+    133218,
+    132816,
+    133066,
+    133039
+   ]
+  },
+  {
+   "group": "county",
+   "tag": null,
+   "started_at": null,
+   "parcels": 1000,
+   "shards": 12,
+   "wall_ms": 158675,
+   "wall_ms_per_parcel": 158.675,
+   "memory": {
+    "peak_total_rss_bytes": 9272492032,
+    "peak_processes": 12,
+    "samples": 139
+   },
+   "all_passed": true,
+   "shard_ms": [
+    158675,
+    158120,
+    158308,
+    158081,
+    157162,
+    157866,
+    157459,
+    157259,
+    157291,
+    157159,
+    157845,
+    157717
+   ]
+  },
+  {
+   "group": "property_improvement",
+   "tag": null,
+   "started_at": null,
+   "parcels": 530,
+   "shards": 10,
+   "wall_ms": 43526,
+   "wall_ms_per_parcel": 82.124,
+   "memory": {
+    "peak_total_rss_bytes": 4556652544,
+    "peak_processes": 10,
+    "samples": 39
+   },
+   "all_passed": true,
+   "shard_ms": [
+    43240,
+    42642,
+    43490,
+    42636,
+    42823,
+    43174,
+    43118,
+    42932,
+    43520,
+    43151
+   ]
+  },
+  {
+   "group": "property_improvement",
+   "tag": null,
+   "started_at": null,
+   "parcels": 530,
+   "shards": 12,
+   "wall_ms": 46082,
+   "wall_ms_per_parcel": 86.947,
+   "memory": {
+    "peak_total_rss_bytes": 5717196800,
+    "peak_processes": 12,
+    "samples": 41
+   },
+   "all_passed": true,
+   "shard_ms": [
+    46023,
+    45581,
+    45370,
+    45686,
+    45674,
+    45176,
+    46077,
+    45342,
+    45580,
+    45146,
+    45114,
+    45493
+   ]
+  },
+  {
+   "group": "county",
+   "tag": "r2",
+   "started_at": "2026-10-18T05:54:26.221Z",
+   "parcels": 1000,
+   "shards": 8,
+   "wall_ms": 204609,
+   "wall_ms_per_parcel": 204.609,
+   "memory": {
+    "peak_total_rss_bytes": 6131908608,
+    "peak_processes": 8,
+    "samples": 177
+   },
+   "all_passed": true,
+   "shard_ms": [
+    204266,
+    204575,
+    204022,
+    204246,
+    204116,
+    203672,
+    204412,
+    204604
+   ]
+  },
+  {
+   "group": "county",
+   "tag": "r2",
+   "started_at": "2026-10-18T05:51:22.506Z",
+   "parcels": 1000,
+   "shards": 10,
+   "wall_ms": 173685,
+   "wall_ms_per_parcel": 173.685,
+   "memory": {
+    "peak_total_rss_bytes": 7808090112,
+    "peak_processes": 10,
+    "samples": 152
+   },
+   "all_passed": true,
+   "shard_ms": [
+    171956,
+    173050,
+    172204,
+    171685,
+    172159,
+    171692,
+    173078,
+    172500,
+    171722,
+    173678
+   ]
+  },
+  {
+   "group": "county",
+   "tag": "r2",
+   "started_at": "2026-10-18T05:48:34.000Z",
+   "parcels": 1000,
+   "shards": 12,
+   "wall_ms": 157548,
+   "wall_ms_per_parcel": 157.548,
+   "memory": {
+    "peak_total_rss_bytes": 8750923776,
+    "peak_processes": 12,
+    "samples": 136
+   },
+   "all_passed": true,
+   "shard_ms": [
+    156791,
+    157339,
+    156827,
+    157546,
+    155850,
+    156100,
+    156157,
+    157421,
+    156224,
+    156635,
+    157019,
+    156503
+   ]
+  },
+  {
+   "group": "property_improvement",
+   "tag": "r2",
+   "started_at": "2026-10-18T05:59:56.301Z",
+   "parcels": 530,
+   "shards": 8,
+   "wall_ms": 45236,
+   "wall_ms_per_parcel": 85.35,
+   "memory": {
+    "peak_total_rss_bytes": 4009066496,
+    "peak_processes": 8,
+    "samples": 34
+   },
+   "all_passed": true,
+   "shard_ms": [
+    45235,
+    44710,
+    44891,
+    44846,
+    44932,
+    43905,
+    44980,
+    44419
+   ]
+  },
+  {
+   "group": "property_improvement",
+   "tag": "r2",
+   "started_at": "2026-10-18T05:58:57.953Z",
+   "parcels": 530,
+   "shards": 10,
+   "wall_ms": 46674,
+   "wall_ms_per_parcel": 88.065,
+   "memory": {
+    "peak_total_rss_bytes": 4883202048,
+    "peak_processes": 10,
+    "samples": 42
+   },
+   "all_passed": true,
+   "shard_ms": [
+    46184,
+    45558,
+    46671,
+    45573,
+    45769,
+    46319,
+    46345,
+    46205,
+    46667,
+    45929
+   ]
+  },
+  {
+   "group": "property_improvement",
+   "tag": "r2",
+   "started_at": "2026-10-18T05:57:57.913Z",
+   "parcels": 530,
+   "shards": 12,
+   "wall_ms": 53386,
+   "wall_ms_per_parcel": 100.729,
+   "memory": {
+    "peak_total_rss_bytes": 5939920896,
+    "peak_processes": 12,
+    "samples": 45
+   },
+   "all_passed": true,
+   "shard_ms": [
+    53386,
+    52974,
+    52553,
+    53146,
+    52607,
+    51927,
+    53297,
+    52206,
+    52763,
+    51611,
+    51866,
+    52791
+   ]
+  }
+ ],
+ "size_projection": {
+  "county": {
+   "sample_parcels": 1000,
+   "car_bytes": 8078795,
+   "blocks": 20138,
+   "parts": 24,
+   "parts_bytes": 2314865,
+   "tables_index_bytes": 3711,
+   "scale": 441.961,
+   "projected_car_gb": 3.57,
+   "projected_parts_gb": 1.02,
+   "projected_distinct_gb": 4.25,
+   "projected_filebase_counted_gb": 8.49
+  },
+  "property_improvement": {
+   "sample_parcels": 530,
+   "car_bytes": 9085449,
+   "blocks": 11484,
+   "parts": 7,
+   "parts_bytes": 824007,
+   "tables_index_bytes": 1270,
+   "scale": 476.751,
+   "projected_car_gb": 4.33,
+   "projected_parts_gb": 0.39,
+   "projected_distinct_gb": 4.51,
+   "projected_filebase_counted_gb": 9.02
+  },
+  "total": {
+   "projected_car_gb": 7.9,
+   "projected_parts_gb": 1.41,
+   "projected_distinct_gb": 8.76,
+   "projected_filebase_counted_gb": 17.51
+  }
+ },
+ "limitations": [
+  {
+   "source": "austin-issued-construction-permits/3syk-w9eu",
+   "availability": "supported_partial",
+   "source_access_status": "available",
+   "incomplete_reason": "out_of_county",
+   "detail": "103,869 Austin permits on Williamson County parcels (tcad_id printed as a Williamson CAD account): outside Travis, left out of the Travis permit totals (decisions.md section 25.6)",
+   "evidence": "docs/evidence/travis-t4-link-proof-v1792239863.json",
+   "records_request": null
+  },
+  {
+   "source": "austin-issued-construction-permits/3syk-w9eu",
+   "availability": "supported_partial",
+   "source_access_status": "available",
+   "incomplete_reason": "no_candidate",
+   "detail": "251,888 permits: 188,869 on geo_ids no 2026 account prints that TCAD's permit listing does not attribute to exactly one current account (463 listed on several, 26 only on accounts outside the roll, 188,380 not listed) and 63,019 with a blank tcad_id: loaded internally, not linked to a property. Among the retired-id permits 19,226 are roofing permits (679 open, 707 stalled) and 15,395 could anchor a roof age; their parcels are unknown, so at most that many parcels fall back to the built year because of them (decisions.md section 25.10)",
+   "evidence": "docs/evidence/travis-t4-ruling-10-tcad-listing-2026-10-18.json",
+   "records_request": null
+  },
+  {
+   "source": "austin-issued-construction-permits/3syk-w9eu",
+   "availability": "supported_partial",
+   "source_access_status": "available",
+   "incomplete_reason": "tcad_permit_listing_link",
+   "detail": "7,531 permits on retired geo_ids (4,024 roofing, 21 open) are linked through TCAD's own permit listing (match_method tcad_permit_listing, confidence official_listing), not through the geo_id they print, which stays the retired id as printed; on the 222,931 exactly linked permits TCAD lists on one account it names the same account 97.30% of the time; a roof-age anchor from such a permit carries the caveat anchor_link_tcad_permit_listing (decisions.md section 25.10)",
+   "evidence": "docs/evidence/travis-t4-ruling-10-tcad-listing-2026-10-18.json",
+   "records_request": null
+  },
+  {
+   "source": "austin-issued-construction-permits/3syk-w9eu",
+   "availability": "supported_partial",
+   "source_access_status": "available",
+   "incomplete_reason": "multiple_candidates",
+   "detail": "38,249 permits on 1,164 geo_ids shared by 11,589 accounts (mostly condominium regimes): not linked to one property",
+   "evidence": "docs/evidence/travis-t4-link-proof-v1792239863.json",
+   "records_request": null
+  },
+  {
+   "source": "austin-issued-construction-permits/3syk-w9eu",
+   "availability": "supported_partial",
+   "source_access_status": "available",
+   "incomplete_reason": "invalid_quarantined",
+   "detail": "178 permits with a malformed tcad_id",
+   "evidence": "docs/evidence/travis-t4-link-proof-v1792239863.json",
+   "records_request": null
+  },
+  {
+   "source": "austin-issued-construction-permits/3syk-w9eu",
+   "availability": "supported_partial",
+   "source_access_status": "available",
+   "incomplete_reason": "status_indexed_only",
+   "detail": "the status is the daily export's value with its capture time; open roofing permits are not refreshed from the permit's live page in v1",
+   "evidence": "docs/decisions.md section 5",
+   "records_request": null
+  },
+  {
+   "source": "travis-other-jurisdictions",
+   "availability": "unsupported",
+   "source_access_status": "blocked",
+   "incomplete_reason": "blocked_or_custodian_only",
+   "detail": "the 22 jurisdictions other than Austin stay blocked or custodian-only as classified (travis-sources.yaml)",
+   "evidence": "docs/travis-sources.yaml",
+   "records_request": "per jurisdiction in travis-sources.yaml"
+  }
+ ],
+ "readiness_report": {
+  "overall": "PASS",
+  "seed_allowed": true,
+  "gates": {
+   "catalog_metadata": "PASS",
+   "parcel": "PASS",
+   "permit": "PASS",
+   "destination": "NOT_APPLICABLE",
+   "enrichment": "PASS"
+  }
+ },
+ "tests": "npx vitest run tests/travis-* : 28 files, 201 tests passed (kit 8455bb5)",
+ "loader_watermarks": [],
+ "loader_watermarks_note": "no Query DB load in T4 (the permits track's Loader is T5); the capture's artifact hash above is the watermark T5 starts from",
+ "tombstones_consumed": {
+  "dead": 0,
+  "invalid": 0
+ },
+ "publication": "none: the County and Property Improvement CARs and tables are local files under the run directories (T6 publishes)"
+}

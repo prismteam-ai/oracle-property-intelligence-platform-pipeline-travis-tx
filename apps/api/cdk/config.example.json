@@ -1,0 +1,22 @@
+{
+  "projectName": "travis-property-intelligence",
+  "account": "123456789012",
+  "region": "us-east-2",
+  "bedrockModelId": "us.anthropic.claude-sonnet-4-6",
+  "bedrockRoutingRegions": ["us-east-1", "us-east-2", "us-west-2"],
+  "memoryMb": { "api": 3008, "chat": 3008 },
+  "duckdb": { "memoryLimit": "2GB", "threads": 4 },
+  "chatReservedConcurrency": 5,
+  "throttle": {
+    "stage": { "rate": 20, "burst": 40 },
+    "routes": {
+      "POST /v1/agent/chat": { "rate": 0.4, "burst": 5 },
+      "GET /v1/permits/text-search": { "rate": 5, "burst": 10 }
+    },
+    "mcp": { "search_permit_text": { "rate": 5, "burst": 10 } },
+    "chat": { "maxOutputTokens": 1500, "turnDeadlineSeconds": 25 }
+  },
+  "dailyChatRequestLimit": 200,
+  "alarmEmails": ["ops@example.com"],
+  "viteApiUrl": "https://abcdefghij.execute-api.us-east-2.amazonaws.com"
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "travis.t6-publication.v1",
+  "run_id": "20261020T200236Z-t5-full",
+  "previous_run": {
+    "run_id": "20261018T143520Z-t5-full",
+    "manifest_cid": "bafybeid6jqqzpo2ods6iehz5vgud2ust4fykfiozspzxb3xjmqiup36ud4"
+  },
+  "status": "published to IPFS as the README packet: the 156 new roots uploaded with readback, Filebase pins every CID, every new object checked on ipfs.filebase.io, the manifest pinned on Filebase and Pinata; the 198 carried roots keep run 1's CIDs and evidence; the remaining gateway.pinata.cloud checks run in the background; no Atlas PR (decisions.md 28.3, 33)",
+  "kit_commit": "54d1d14, c3cc36a, b6a51a8",
+  "cli": "elephant-cli 1.58.1",
+  "node": "v22.22.0",
+  "layout": "D: 177 shard archives (decisions.md 28.3); 89 County and 10 Property Improvement archives carried from run 1, 78 Property Improvement archives new",
+  "upload": {
+    "api": "https://rpc.filebase.io",
+    "concurrency": 4,
+    "new_roots": 156,
+    "uploaded": 156,
+    "retries": 9,
+    "failures": [],
+    "note": "attempt 1 stopped after 40 roots on 3 network errors for one tables upload; the same command resumed and finished"
+  },
+  "filebase_pins": {
+    "checked_at": "2026-10-21T02:31:48.628Z",
+    "all_pinned": true,
+    "cids": 3283,
+    "pinned": 3283
+  },
+  "gateway_checks": {
+    "manifest_rows_file": {
+      "path": "runs/20261020T200236Z-t5-full.gateway-checks.json",
+      "sha256": "de6459ccefe66f30eb4dabbfc5e263fb28163b0465fd207d0d5dc2da789dd051",
+      "bytes": 3431932
+    },
+    "per_gateway": {
+      "https://ipfs.filebase.io": {
+        "rows": 3285,
+        "raw": 356,
+        "file": 2929,
+        "file_bytes": 1426776320,
+        "match": 3285,
+        "mismatch": 0,
+        "unverified": 0,
+        "retried": 1577,
+        "max_attempts": 6
+      },
+      "https://gateway.pinata.cloud": {
+        "rows": 2836,
+        "raw": 356,
+        "file": 2480,
+        "file_bytes": 1148853210,
+        "match": 2836,
+        "mismatch": 0,
+        "unverified": 0,
+        "retried": 148,
+        "max_attempts": 4
+      }
+    },
+    "background": {
+      "gateway": "https://gateway.pinata.cloud",
+      "file": "runs/20261020T200236Z-t5-full.gateway-checks-pinata.json",
+      "status": "running after this manifest was pinned; paced to the gateway's quota (decisions.md 28.7, ruling 3); its rows are kept outside this immutable manifest"
+    }
+  },
+  "pins": {
+    "vendor": "pinata",
+    "roots": 354,
+    "pinned": 353,
+    "already_pinned": 198,
+    "pending": [
+      "baguqeera6ov5owr4cxus2v3yltlq7p2vkbh5ezf4znywmjtq5xr67ya3zrsa"
+    ]
+  },
+  "manifest": {
+    "path": "publish/20261020T200236Z-t5-full/manifest.json",
+    "cid": "bafybeicj4vw5hgntnmwl2cie5txpe7esn4y3ygsqoau3hzqk5ipsz6xhqy",
+    "size": 1466482,
+    "sha256": "8cf695be464aab7919128ee91f95214590124c6f669f9bb2d47dfd571e38d545",
+    "objects": 3285,
+    "cars": 354,
+    "filebase_add_cid_equal": true,
+    "pinata": "pinned",
+    "gateway_checks": [
+      {
+        "cid": "bafybeicj4vw5hgntnmwl2cie5txpe7esn4y3ygsqoau3hzqk5ipsz6xhqy",
+        "codec": "dag-pb",
+        "gateway": "https://ipfs.filebase.io",
+        "check": "file",
+        "status": 200,
+        "size": 1466482,
+        "sha256": "8cf695be464aab7919128ee91f95214590124c6f669f9bb2d47dfd571e38d545",
+        "multihash": null,
+        "bytes": "match",
+        "expected_size": 1466482,
+        "expected_sha256": "8cf695be464aab7919128ee91f95214590124c6f669f9bb2d47dfd571e38d545",
+        "attempts": 1,
+        "error": null,
+        "retry_after_s": null,
+        "checked_at": "2026-10-21T04:00:37.365Z"
+      },
+      {
+        "cid": "bafybeicj4vw5hgntnmwl2cie5txpe7esn4y3ygsqoau3hzqk5ipsz6xhqy",
+        "codec": "dag-pb",
+        "gateway": "https://gateway.pinata.cloud",
+        "check": "file",
+        "status": 200,
+        "size": 1466482,
+        "sha256": "8cf695be464aab7919128ee91f95214590124c6f669f9bb2d47dfd571e38d545",
+        "multihash": null,
+        "bytes": "match",
+        "expected_size": 1466482,
+        "expected_sha256": "8cf695be464aab7919128ee91f95214590124c6f669f9bb2d47dfd571e38d545",
+        "attempts": 1,
+        "error": null,
+        "retry_after_s": null,
+        "checked_at": "2026-10-21T04:00:41.417Z"
+      }
+    ]
+  },
+  "atlas": {
+    "pr": null,
+    "reason": "layout D, decisions.md 28.3"
+  },
+  "ipns": null,
+  "release": {
+    "tag": "run-20261020T200236Z-t5-full",
+    "status": "not created; a separate go at submission",
+    "assets": 156,
+    "carried_assets_in": "run-20261018T143520Z-t5-full"
+  }
+}

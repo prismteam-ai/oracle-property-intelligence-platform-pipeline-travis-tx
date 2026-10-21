@@ -1,0 +1,53 @@
+{
+  "id": "owner-tenure-countywide",
+  "description": "A county-wide owner question (no place): roof_age_min 0 so the roof clause does not narrow it.",
+  "turns": [
+    {
+      "user": "Which Travis County properties have had the same owner for more than 40 years and an absentee owner?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "search_properties",
+            "args": {
+              "owner_tenure_min": 40,
+              "absentee_owner": true,
+              "roof_age_min": 0,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "221167",
+            "196735",
+            "346131",
+            "327725",
+            "319249",
+            "305077",
+            "321579",
+            "189838",
+            "317042",
+            "197051",
+            "202029",
+            "203847",
+            "126460",
+            "250865",
+            "329964",
+            "135841",
+            "196998",
+            "236323",
+            "194947",
+            "504107"
+          ],
+          "total": 3813,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

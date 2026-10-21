@@ -1,0 +1,50 @@
+{
+  "id": "text-reroof-spaced",
+  "description": "Text search, vocabulary variant 3 (\"re roof\").",
+  "turns": [
+    {
+      "user": "Search permit descriptions for hail damage re roof work.",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "search_permit_text",
+            "args": {
+              "q": {
+                "$contains": ["hail"]
+              }
+            }
+          }
+        ],
+        "ids": {
+          "kind": "permit",
+          "tool": "search_permit_text",
+          "values": [
+            "1985-012684 BP",
+            "2007-121645 BP",
+            "2009-079864 BP",
+            "2023-163751 BP",
+            "2026-091094 BP"
+          ],
+          "total": 5
+        },
+        "relevant_permit_ids": [
+          "1985-012684 BP",
+          "2007-121645 BP",
+          "2008-085210 BP",
+          "2009-023122 BP",
+          "2009-079864 BP",
+          "2010-069377 BP",
+          "2021-107549 BP",
+          "2022-002111 BP",
+          "2023-163751 BP",
+          "2024-122007 BP",
+          "2026-033514 BP",
+          "2026-091094 BP"
+        ]
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "off-topic",
+  "description": "A question outside the dataset: out_of_scope and no tool call.",
+  "turns": [
+    {
+      "user": "Write me a short poem about the ocean.",
+      "expected": {
+        "outcomes": ["out_of_scope"],
+        "tools": []
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

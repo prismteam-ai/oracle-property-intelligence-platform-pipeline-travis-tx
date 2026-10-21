@@ -1,0 +1,673 @@
+county: Travis
+state: TX
+slug: travis
+fips: "48453"
+snapshot_time: "2026-10-16T17:55:00Z"
+egress_at_snapshot: "US (datacenter VPN exit) for the 2026-10-16 US egress window: TCAD exports, TNR counts, Comptroller counts, identifier spot check and portal re-probes; the earlier jurisdiction probes ran from RO"
+
+parcel:
+  canonical_source: TCAD 2026 Certified Appraisal Export (PACS Legacy 8.0.33 fixed-width layout, supplement 0, run 2026-07-18) - real-property accounts
+  canonical_source_url: https://traviscad.org/wp-content/largefiles/2026%20Certified%20Appraisal%20Export%20Supp%200_07182026.zip
+  canonical_source_access: free direct download from https://traviscad.org/publicinformation (HTTP 200, no login, no fee, no account); 557,228,168 bytes, sha256 62d0d1cd22b03f31db8d3986160eb181c5d00044df98a303fce9e17a44e9aa02, downloaded 2026-10-16 under US egress
+  layout_url: https://traviscad.org/wp-content/largefiles/Website_Legacy8.0.33-AppraisalExportLayout_06182026.zip
+  improvement_detail_source: IMP_DET.TXT inside the certified export (3,310,160 detail records, 400,963 properties); the separate March 2026 "Improvement Details Report 2026" CSV (https://traviscad.org/wp-content/largefiles/improvement_detail_2026.zip, free) is pre-certification and not used for the seed
+  tax_roll_year: 2026
+  tax_roll_status: certified (supplement 0); later supplemental roll exports exist (Supp 335 of 2026-10-08) and feed incremental runs
+  assessed_parcel_count: 441961
+  assessed_count_basis: distinct prop_id with prop_type_cd R in PROP.TXT (442,039 R records; 78 are additional partial-owner records of the same accounts). Not parcels and excluded from this denominator - 11,744 MH mobile-home accounts (their geo_id is the host parcel's), 39,536 P business-personal-property accounts, 5 MN mineral accounts. PROP.TXT holds 493,324 records, all 2026, all sup_num 0, record length 9922.
+  gis_source: Travis County TNR "TCAD Parcels" layer, Boundaries_and_Jurisdictions/TCAD_public MapServer layer 0 (assembled monthly by TNR from TCAD; fields OBJECTID, PROP_ID integer, geo_id, situs fields, hyperlink, CENTROID_X/Y; maxRecordCount 2000; the FeatureServer endpoint is not enabled - "Server object extension 'featureserver' not found")
+  gis_source_url: https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/TCAD_public/MapServer/0
+  gis_feature_count: 386682
+  gis_count_basis: returnCountOnly on MapServer layer 0 with where 1=1 (2026-10-16); 13,130 of the polygons carry no PROP_ID, so 373,552 polygons carry an account id
+  discrepancy_threshold_pct: 2.0
+  discrepancy_pct: 12.51
+  discrepancy_explanation: GIS is 55,279 below the assessed real-property accounts (12.51%). Condominium accounts have no polygon of their own - the regime's land polygon carries none of the unit accounts - 57,567 accounts are condos (state code A4 condos 54,675 plus F4 commercial condos 2,892), and 0 of 40 sampled condo PROP_IDs (20 A4, 20 F4) exist in the layer, while 20 of 20 sampled A1 single-family PROP_IDs do. Of the vacant lots (C1) 16 of 20 sampled exist, consistent with recent splits not yet in the monthly TNR assembly. The remaining non-condo gap (384,394 non-condo accounts against 373,552 polygons with an account id, about 2.8%) is measured exactly by the seed join (gisJoined, gisUnjoined, rowsWithGeometry in the seed manifest).
+  separately_assessed_without_geometry: acknowledged
+  identifier_proven: true
+  identifier_evidence: 5 PROP_IDs from the export (379828 A1, 583669 A4, 182212 C1, 506701 F1, 237985 B2) resolved on the TCAD property search https://travis.prodigycad.com/property-detail/<PROP_ID> on 2026-10-16 under US egress with the same Geographic ID, type R, state code and situs as the export rows (docs/evidence/travis-identifier-spot-check-2026-10-16.json); 4 of the 5 also exist in the TNR layer with the same geo_id (the condo does not)
+  identifier_name: Property ID (PROP_ID)
+  identifier_format: decimal integer as TCAD's property search, the TNR layer (esriFieldTypeInteger) and the layer's hyperlink print it (for example 379828). The export field is int(12) fixed width and zero-padded (000000379828); the padding is the integer field's encoding, not part of the identifier, and is removed when the field is decoded.
+  secondary_identifier_name: Geographic ID (geo_id)
+  secondary_identifier_format: char(50) printed as a 10-digit string with leading zeros (for example 0282360106) on every R and MH record; Austin permits print it as tcad_id. 1,164 geo_ids are shared by several real accounts (431,536 distinct geo_ids for 441,961 real accounts), so an exact geo_id permit link can have several candidates and stays unlinked as multiple_candidates.
+  join_rule: Treat PROP_ID and geo_id as text after decoding; PROP_ID is the seed parcel_id, the lexicon parcel_identifier and the kit request_identifier; permits link to parcels on geo_id exactly as printed; digits-only comparison only after the profile proves it one-to-one over the roll; a permit whose ten-digit tcad_id no current account prints links through TCAD's own permit listing only when that names exactly one current account (tcad_permit_listing, travis-parcel-link-v3, assignment decisions.md section 25.10)
+  appraisal_access_method: bulk
+  appraisal_safe_throughput: n/a (bulk files); TNR paging at concurrency 1 with a 0.5 s delay, 1,000 features per request (about 387 requests)
+  geometry_fallbacks:
+    - county GIS parcel shapefile download if the service blocks paging
+    - City of Austin parcel layer
+    - permit latitude/longitude for parcels with no geometry (secondary; reported as a coverage number; never geocoded)
+
+permits:
+  expected_jurisdiction_count: 23
+  assumes_unified_countywide_history: false
+  permit_authority_boundary: City of Austin (full purpose, limited purpose and ETJ rows in the Socrata export), 21 other incorporated cities and villages wholly or partly in Travis County, and unincorporated Travis County (development permits only; Texas counties have no building-permit authority)
+  delegated_jurisdictions: none; the small-city rows inside the Austin export are Austin-issued trade permits (EP/MP/PP from 1980, building permits ending around 2005), not those cities' ledgers
+  excluded_places:
+    - Bear Creek (village in Hays County; one row in the Austin export)
+  permit_contact_privacy_classification:
+    contractor_fields: [contractor_trade, contractor_company_name, contractor_full_name, contractor_phone, contractor_address1, contractor_address2, contractor_city, contractor_zip]
+    contractor_classification: business contact fields printed on a public building-permit record; kept as printed as source-name attribution; never identity; phone never feeds identity matching; reversible before hosting
+    applicant_fields: [applicant_full_name, applicant_org, applicant_phone, applicant_address1, applicant_address2, applicant_city, applicantzip]
+    applicant_classification: personal contact fields; not collected, not stored, stripped from fixtures
+    publication_note: whether printed contractor fields enter a published record or only the hosted API follows decisions.md section 5 (option ii, else iii); property_improvement has no property for them
+  socrata_export:
+    dataset: data.austintexas.gov/resource/3syk-w9eu
+    dataset_name: Issued Construction Permits (City of Austin)
+    license: Public Domain U.S. Government (USGOV_WORKS); attribution City of Austin, Texas - data.austintexas.gov
+    row_count_2026_10_16: 2380507
+    updated_at_semantics: ":updated_at equals the daily publish time on every row; not a per-row change signal; watermark on row content plus statusdate/applieddate windows"
+    tcad_id_lengths: {ten: 2213446, seven: 103843, blank: 63019, other: 199}
+    tcad_id_lengths_note: the seven-character values are not numbers but the Williamson CAD account form R + 6 digits (T4 capture, tcad_id_forms_2026_10_17)
+    license_number_column: none
+    roof_mentions_bp: 33343
+    roof_mentions_distinct_tcad_id: 22405
+    row_count_2026_10_17: 2380707
+    harvest_module: src/counties/travis/t4-permit-fetch.mjs (travis-t4-socrata-harvest.v1); offline check src/counties/travis/t4-permit-verify.mjs
+    harvest_method: one GET per (permittype, calendar_year_issued) partition planned from the dataset's own group-by counts (270 partitions on 2026-10-17, the largest 21,926 rows; page limit 50,000, a month split above it); no offset, so the request that captured a permit is the same in every run and is its source_http_request
+    harvest_columns: travis-austin-permit-columns.v1, 60 collected; never requested - the 7 applicant fields (personal contact fields, see permit_contact_privacy_classification) and issued_in_last_30_days (a flag the publisher recomputes every day, which would change a row hash with no change to the permit); a different column set stops the harvest before any data request
+    harvest_throttle: 2 requests in flight, Retry-After honoured, no app token; the host answers any country, so the egress country is recorded and does not gate
+    harvest_of_record: v1792239863 (rowsUpdatedAt 2026-10-17T12:24:23Z, unchanged at the end), 2026-10-17 20:56-21:01Z from RO egress; 2,380,707 rows = count(*) = plan total, 270 partitions, 1,813,784,373 bytes, 274 requests, no 429, no retry, 318.6 s (448,354 rows per minute); t4-permit-verify OK (docs/evidence/travis-t4-harvest-v1792239863.json)
+    tcad_id_forms_2026_10_17: {ten_digit: 2213641, blank: 63019, williamson_cad_account_r_6_digits: 103848, wcad_marker: 21, other_lengths: 176, other_text: 2}
+    williamson_cad_rows: 103,869 permits print a Williamson Central Appraisal District account (R + 6 digits) or WCAD instead of a TCAD Geographic ID; 89,550 of the 89,564 with coordinates lie north of latitude 30.40 (the Austin limits in Williamson County); another county's parcels; tcad_id evidence invalid_quarantined with reason williamson_cad_account_form (travis-tcad-id-evidence-v2), unlinked reason out_of_county (travis-parcel-link-v2, operator ruling of 2026-10-18, assignment decisions.md section 25.6), outside the Travis parcel population and the Travis permit totals
+    link_proof_2026_10_17: travis-parcel-link-v3 - linked 1,986,523 of 2,380,707 (83.44%) on 237,533 parcels - geo_id exact 1,978,992, normalized_digits 0 (the digits-only proof holds - 431,536 distinct geo_ids, no collision - but every roll geo_id and every usable tcad_id is already 10 digits), tcad_permit_listing 7,531; unlinked no_candidate 251,888 (63,019 blank, 188,869 on retired 10-digit geo_ids), multiple_candidates 38,249 (1,164 geo_ids shared by 11,589 accounts), out_of_county 103,869 (Williamson CAD), invalid_quarantined 178; no permit number repeats; docs/evidence/travis-t4-link-proof-v1792239863.json
+    retired_geo_ids: of the 196,400 permits on the 6,260 geo_ids no 2026 account prints, 7,531 link through TCAD's own permit listing (exactly one current account; tcad_permit_listing, confidence official_listing; operator ruling of 2026-10-18, assignment decisions.md section 25.10, option B; 97.30% agreement with exact links on the 222,931-permit overlap) and 188,869 stay no_candidate (463 listed on several current accounts, 26 on other accounts only, 188,380 not listed); street-line and point-in-polygon methods not used; account lineage (TCAD JSON links, land comments) ends in several split lots; docs/evidence/travis-t4-ruling-10-tcad-listing-2026-10-18.json, travis-t4-retired-geo-ids-2026-10-18.json
+    published_enums: travis-improvement-enums-v1 (operator ruling of 2026-10-18, assignment decisions.md section 25.7); improvement_type from permittype, improvement_status from status_current, improvement_action from the work_class of building permits, contractor_type from contractor_trade, exact printed values only, anything else null; docs/evidence/travis-t4-ruling-7-enum-check-2026-10-18.json
+  jurisdictions:
+    - jurisdiction: City of Austin (full purpose, limited purpose, ETJ rows)
+      key: austin
+      status: supported
+      vendor: AMANDA (Austin Build + Connect) published as a Socrata open-data export
+      portal_kind: daily-bulk-export
+      portal: https://data.austintexas.gov/resource/3syk-w9eu
+      detail_portal: https://abc.austintexas.gov/web/permit/public-search-other
+      historical_records: true
+      anonymous_access: true
+      adapter: socrata-bulk-export
+      implementation_status: harvester-built-t4 (t4-permit-fetch, t4-permit-verify, the t4-permit-links link pass and the permit transform; pilot and 1,000-parcel feasibility run in T4)
+      enumeration_status: certified-bulk-reported-count
+      reported_count: 2380707
+      reported_count_date: "2026-10-17"
+      history_start_date: "1921-09-20"
+      parcel_search: not needed; bulk rows carry tcad_id (geo_id)
+      probe_2026_10_16: export reachable from non-US egress (HTTP 200); AB+C public search page HTTP 200 with Incapsula markers; citizen portal home shows reCAPTCHA
+      known_exclusions: no license-number column; applicant fields and the rolling issued_in_last_30_days flag not collected; live detail status not refreshed in v1; 103,869 rows on Williamson CAD parcels are outside Travis
+      publication_rights: public domain City of Austin open data; publish privacy-limited normalized facts only
+      records_request:
+        recipient_office: City of Austin Development Services Department, public information requests
+        request_portal_url: https://www.austintexas.gov/department/public-information-request
+        system_scope: Complete AMANDA building, trade and driveway permit history with TCAD identifiers, statuses, lifecycle dates and contractor fields, beyond what the Socrata export carries
+        route: api-first
+    - jurisdiction: Unincorporated Travis County (TNR Development Services)
+      key: travis-unincorporated
+      status: blocked
+      vendor: MyGovernmentOnline ("My Permit Now") since January 2014; pre-2014 records on a county public-access portal
+      portal_kind: historical-search
+      portal: https://www.traviscountytx.gov/tnr/development-services
+      predecessor_portal: https://tcobweb.traviscountytx.gov/PublicAccess/TNR/index.html
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      probe_2026_10_16: county pages HTTP 200 (Cloudflare); predecessor public-access portal timed out from non-US egress (unresolved; re-probe under US egress)
+      roofing_availability: unsupported (Texas counties issue development, floodplain, OSSF and driveway permits, not building or roofing permits)
+      records_request:
+        recipient_office: Travis County Transportation and Natural Resources, Development Services (TNR Open Records)
+        request_portal_url: https://www.traviscountytx.gov/tnr/tnr-open-records
+        request_phone: "512-854-4215"
+        system_scope: Complete development-permit export from My Permit Now (2014 to date) and the pre-2014 public-access records, with PROP_ID or geo_id, status and lifecycle dates
+        route: records-first
+    - jurisdiction: City of Pflugerville (Travis County part)
+      key: pflugerville
+      status: blocked
+      vendor: unidentified IIS "PublicAccess" portal (ams.pflugervilletx.gov); login route with reCAPTCHA
+      portal_kind: application-intake
+      portal: https://ams.pflugervilletx.gov/PublicAccess/template/login.aspx
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-captcha-no-bypass
+      austin_feed_rows: 1117
+      probe_2026_10_16: HTTP 200 login page (title PublicAccess, reCAPTCHA marker); city site reachable
+      reprobe_us_egress_2026_10_16: unchanged under US egress - HTTP 200 login route with reCAPTCHA; classification stays blocked (login + CAPTCHA)
+      records_request:
+        recipient_office: City of Pflugerville City Secretary (public information requests) for the Building Inspections and Permits Department
+        request_portal_url: https://www.pflugervilletx.gov/building-inspections-permits
+        system_scope: Complete building-permit and inspection history for the Travis County portion of the city, with TCAD identifiers; request portal path confirmed under US egress
+        route: records-first
+    - jurisdiction: City of Round Rock (Travis County part)
+      key: round-rock
+      status: blocked
+      vendor: Round Rock Permit Portal (vendor unnamed; CAPTCHA before search) replacing CentralSquare eTRAKiT
+      portal_kind: historical-search
+      portal: https://permits.roundrocktexas.gov/
+      predecessor_portal: https://etrakit.roundrocktexas.gov/etrakit/
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: captcha-no-bypass
+      austin_feed_rows: 2664
+      probe_2026_10_16: new portal timed out from non-US egress (unresolved); eTRAKiT answers a redirect notice ("We have a new permitting system")
+      reprobe_us_egress_2026_10_16: reachable under US egress - https://permits.roundrocktexas.gov/portal answers HTTP 200 with an account login card ("Permit Portal"); vendor still unidentified; the city's help page says search needs a CAPTCHA step; classification stays blocked
+      records_request:
+        recipient_office: City of Round Rock City Clerk (public information requests)
+        request_portal_url: https://www.roundrocktexas.gov/city-departments/administration/permit-portal-help/
+        system_scope: Complete permit export (new portal plus eTRAKiT predecessor) for parcels in Travis County, with parcel identifiers, statuses and lifecycle dates
+        route: records-first
+    - jurisdiction: City of Cedar Park (Travis County part)
+      key: cedar-park
+      status: blocked
+      vendor: MyGovernmentOnline (MGO Connect)
+      portal_kind: historical-search
+      portal: https://www.mgoconnect.org/
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      austin_feed_rows: 18
+      probe_2026_10_16: city site HTTP 403 Cloudflare block page ("Attention Required"), not a challenge; geo-block versus IP reputation resolved under US egress
+      reprobe_us_egress_2026_10_16: same HTTP 403 Cloudflare "Attention Required" block page under US egress (datacenter VPN exit), so not a geo-block; a WAF/IP-reputation rule; nothing evaded; classification stays blocked
+      records_request:
+        recipient_office: City of Cedar Park City Secretary (public information requests) for Building Permits and Inspections
+        request_portal_url: https://www.cedarparktexas.gov/
+        request_phone: "512-401-5100"
+        system_scope: Complete MGO permit and inspection export for parcels in Travis County, with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Leander (Travis County part)
+      key: leander
+      status: blocked
+      vendor: Development Hub (vendor unverified)
+      portal_kind: historical-search
+      portal: https://www.leandertx.gov/permits
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: block-page-vendor-unverified
+      austin_feed_rows: 1
+      probe_2026_10_16: HTTP 403 Cloudflare block page ("Attention Required"), not a challenge
+      reprobe_us_egress_2026_10_16: same HTTP 403 Cloudflare "Attention Required" block page under US egress (datacenter VPN exit); not a geo-block; classification stays blocked
+      records_request:
+        recipient_office: City of Leander Permits and Building Inspection Division
+        request_portal_url: https://www.leandertx.gov/permits
+        request_phone: "512-528-2733"
+        system_scope: Complete Development Hub permit export for parcels in Travis County, with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Lakeway
+      key: lakeway
+      status: blocked
+      vendor: Tyler EnerGov Civic Self Service (since 2025-11-12; Civic Access predecessor)
+      portal_kind: historical-search
+      portal: https://lakewaytx-energovweb.tylerhost.net/apps/selfservice
+      city_page: https://www.lakeway-tx.gov/1165
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: tyler-civic-access-candidate-not-routed (the kit's tyler-civic-access adapter family; not routed in T4 - the operator's T4 scope of 2026-10-17 keeps every jurisdiction other than Austin as classified)
+      austin_feed_rows: 8384
+      probe_2026_10_16: HTTP 403 with cf-mitigated challenge ("Just a moment"), a bot challenge; guessed tylerhost hostname did not resolve
+      reprobe_us_egress_2026_10_16: city page HTTP 200 under US egress (no challenge) and links the portal https://lakewaytx-energovweb.tylerhost.net/apps/selfservice, which answers HTTP 200 "SelfService Public Site"; vendor verified Tyler EnerGov; stays blocked only until the kit adapter is routed and certified
+      records_request:
+        recipient_office: City of Lakeway Building and Development Services
+        request_portal_url: https://www.lakeway-tx.gov/
+        request_phone: "512-314-7540"
+        system_scope: Complete Civic Self Service and Civic Access permit export with parcel identifiers, statuses and lifecycle dates
+        route: records-first
+    - jurisdiction: City of Bee Cave
+      key: bee-cave
+      status: blocked
+      vendor: MyGovernmentOnline
+      portal_kind: historical-search
+      portal: https://www.beecavetexas.gov/government/departments/planning_development/building/index.php
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      austin_feed_rows: 8388
+      probe_2026_10_16: city MGO page HTTP 404 (moved); civiclive mirror HTTP 403; MGO itself reachable
+      records_request:
+        recipient_office: City of Bee Cave Planning and Development Department
+        request_portal_url: https://www.beecavetexas.gov/
+        request_phone: "512-767-6675"
+        system_scope: Complete MGO permit and inspection export with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Manor
+      key: manor
+      status: blocked
+      vendor: GovWell
+      portal_kind: historical-search
+      portal: https://app.govwell.com/manor
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: public-search-unverified-single-page-app
+      austin_feed_rows: 13
+      probe_2026_10_16: GovWell HTTP 200 (single-page app, search capability not verifiable without a browser); city site HTTP 403 Cloudflare challenge
+      records_request:
+        recipient_office: City of Manor Building Services Department
+        request_portal_url: https://www.manortx.gov/
+        request_phone: "512-272-5555 ext. 4"
+        system_scope: Complete GovWell permit export with parcel identifiers, statuses and lifecycle dates
+        route: records-first
+    - jurisdiction: City of Lago Vista
+      key: lago-vista
+      status: blocked
+      vendor: MyGovernmentOnline (MGO Project Permitting Portal)
+      portal_kind: historical-search
+      portal: https://tx-lagovista.civicplus.com/165/Permitting
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      austin_feed_rows: 23
+      probe_2026_10_16: city pages HTTP 200
+      records_request:
+        recipient_office: City of Lago Vista Development Services
+        request_portal_url: https://lagovistatexas.gov/
+        request_phone: "512-267-1155"
+        system_scope: Complete MGO permit export with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Jonestown
+      key: jonestown
+      status: blocked
+      vendor: MyGovernmentOnline
+      portal_kind: historical-search
+      portal: https://www.jonestowntx.gov/205/Development-Services
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      austin_feed_rows: 0
+      probe_2026_10_16: HTTP 403 with cf-mitigated challenge, a bot challenge
+      records_request:
+        recipient_office: City of Jonestown Development Services
+        request_email: permitting@jonestowntx.gov
+        request_portal_url: https://www.jonestowntx.gov/
+        system_scope: Complete MGO permit export with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Elgin (Travis County part)
+      key: elgin
+      status: blocked
+      vendor: MyGovernmentOnline
+      portal_kind: historical-search
+      portal: https://www.elgintexas.gov/908/Building-Division
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      austin_feed_rows: 0
+      probe_2026_10_16: HTTP 200
+      records_request:
+        recipient_office: City of Elgin Building Division
+        request_email: permits@elgintexas.gov
+        request_portal_url: https://www.elgintexas.gov/908/Building-Division
+        system_scope: Complete MGO permit export for parcels in Travis County, with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Rollingwood
+      key: rollingwood
+      status: blocked
+      vendor: MyGovernmentOnline
+      portal_kind: historical-search
+      portal: https://www.rollingwoodtx.gov/planning-development/page/permitting-process-residential-and-commercial-building
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: login-required-no-bypass
+      austin_feed_rows: 1996
+      probe_2026_10_16: city permitting page HTTP 404 (moved); city reachable
+      records_request:
+        recipient_office: City of Rollingwood Development Services
+        request_email: developmentservices@rollingwoodtx.gov
+        request_portal_url: https://www.rollingwoodtx.gov/
+        system_scope: Complete MGO permit export with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Sunset Valley
+      key: sunset-valley
+      status: blocked
+      vendor: GovBuilt (MyGovernmentOnline predecessor)
+      portal_kind: historical-search
+      portal: https://sunsetvalleytx.govbuilt.com/
+      historical_records: true
+      anonymous_access: false
+      adapter: none
+      implementation_status: block-page-no-bypass
+      austin_feed_rows: 1188
+      probe_2026_10_16: GovBuilt HTTP 403 Cloudflare block page; city site HTTP 403 Akamai Access Denied; both block pages, not challenges
+      reprobe_us_egress_2026_10_16: challenge under US egress - GovBuilt answers HTTP 403 with cf-mitigated challenge ("Just a moment"), recorded and not attempted; city site HTTP 403 Akamai Access Denied again; classification stays blocked
+      records_request:
+        recipient_office: City of Sunset Valley Planning and Development
+        request_email: permits@sunsetvalley.org
+        request_portal_url: https://www.sunsetvalley.gov/
+        system_scope: Complete GovBuilt and predecessor MGO permit export with parcel identifiers
+        route: records-first
+    - jurisdiction: City of West Lake Hills
+      key: west-lake-hills
+      status: custodian-only
+      vendor: no online permit search found; Building and Development page; NextRequest for records
+      portal_kind: records-information
+      portal: https://www.westlakehills.org/95/Building-Development
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 5981
+      probe_2026_10_16: HTTP 200
+      records_request:
+        recipient_office: City of West Lake Hills Building and Development Department
+        request_portal_url: https://cityofwestlakehillstx.nextrequest.com/
+        request_phone: "512-327-3628"
+        system_scope: Complete issued building-permit and inspection ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Creedmoor
+      key: creedmoor
+      status: custodian-only
+      vendor: paper permit packet
+      portal_kind: records-information
+      portal: https://www.cityofcreedmoortx.gov/
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 48
+      probe_2026_10_16: HTTP 403 with cf-mitigated challenge, a bot challenge
+      records_request:
+        recipient_office: City of Creedmoor City Hall (building permits)
+        request_portal_url: https://www.cityofcreedmoortx.gov/
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: City of Mustang Ridge (Travis County part)
+      key: mustang-ridge
+      status: custodian-only
+      vendor: paper forms and checklists
+      portal_kind: records-information
+      portal: https://www.mustangridgetx.gov/planning/page/forms
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 13
+      probe_2026_10_16: HTTP 200
+      records_request:
+        recipient_office: City of Mustang Ridge Planning and Permitting
+        request_email: evega@mustangridgetx.gov
+        request_portal_url: https://www.mustangridgetx.gov/planning/page/forms
+        request_phone: "512-243-1775"
+        system_scope: Complete issued building-permit ledger for parcels in Travis County, with parcel identifiers
+        route: records-first
+    - jurisdiction: Village of Webberville
+      key: webberville
+      status: custodian-only
+      vendor: village office; no website reachable
+      portal_kind: records-information
+      portal: https://webberville.org/
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 0
+      probe_2026_10_16: connection refused (unresolved)
+      records_request:
+        recipient_office: Village of Webberville Municipal Building (building and permitting), 19208 FM 969
+        request_portal_url: https://webberville.org/
+        request_phone: "512-276-1865"
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: Village of San Leanna
+      key: san-leanna
+      status: custodian-only
+      vendor: village office; permits listed in board packets
+      portal_kind: records-information
+      portal: https://sanleannatx.com/
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 5
+      probe_2026_10_16: HTTP 200
+      records_request:
+        recipient_office: Village of San Leanna Village Hall
+        request_portal_url: https://sanleannatx.com/
+        request_phone: "512-280-3898"
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: Village of Point Venture
+      key: point-venture
+      status: custodian-only
+      vendor: village office intake (Quick Permit form)
+      portal_kind: records-information
+      portal: https://vopv.org/building-and-permits
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 3
+      probe_2026_10_16: timed out from non-US egress (unresolved)
+      records_request:
+        recipient_office: Village of Point Venture Village Office (building official), 555 Venture Blvd S
+        request_portal_url: https://vopv.org/building-and-permits
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: Village of Briarcliff
+      key: briarcliff
+      status: custodian-only
+      vendor: village office
+      portal_kind: records-information
+      portal: https://www.briarclifftx.com/
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 3
+      probe_2026_10_16: HTTP 200 but the site answers "Service not Available"
+      records_request:
+        recipient_office: Village of Briarcliff Village Hall, 302 Sleat Dr
+        request_portal_url: https://www.briarclifftx.com/
+        request_phone: "512-264-2274"
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: Village of The Hills
+      key: the-hills
+      status: custodian-only
+      vendor: city administrator; online special-permit form only
+      portal_kind: records-information
+      portal: https://thehillstx.gov/
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 1253
+      probe_2026_10_16: HTTP 200
+      records_request:
+        recipient_office: Village of The Hills City Administrator
+        request_portal_url: https://thehillstx.gov/
+        request_phone: "512-261-6281"
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+    - jurisdiction: Village of Volente
+      key: volente
+      status: custodian-only
+      vendor: paper building permit application
+      portal_kind: records-information
+      portal: https://www.villageofvolente-tx.gov/
+      historical_records: false
+      anonymous_access: false
+      adapter: none
+      implementation_status: no-public-historical-search
+      austin_feed_rows: 3
+      probe_2026_10_16: HTTP 200
+      records_request:
+        recipient_office: Village of Volente Village Office
+        request_portal_url: https://www.villageofvolente-tx.gov/
+        system_scope: Complete issued building-permit ledger with parcel identifiers
+        route: records-first
+
+official_identity:
+  # Assignment decisions.md section 23 (approved by the operator on 2026-10-17). Loaded before any permit harvest
+  # (onboard-county stage 6). Rows are official records of their own subjects; a link from a permit contractor or a
+  # roll owner to a row is a review candidate (exact unique normalized name), never identity, and writes no company,
+  # person or license record and no identity edge.
+  corporate_registry:
+    profile_entry: official-registry-equivalent
+    approved_by: operator
+    approved_at: "2026-10-17"
+    approval_record: assignment repository docs/decisions.md section 23 (supersedes the corporate-registry approved exception of 2026-10-16, removed from approved_exceptions)
+    equivalent_source: Texas Comptroller of Public Accounts, Active Franchise Taxpayers (data.texas.gov 9cir-efmm), the official state record of each franchise-tax entity, carrying the Secretary of State registry key
+    equivalent_source_url: https://data.texas.gov/resource/9cir-efmm
+    authority_of_record: Texas Secretary of State; SOSDirect (paid subscriber access) stays an optional human payment decision, not required for v1
+    record_keys: taxpayer_number and secretary_of_state_sos_or_coa_file_number, both as printed (the trimmed values are the keys; the printed values are kept beside them)
+    registry_key_coverage_travis: SOS file number on 335,956 of 342,334 Travis rows of 2026-10-17 (98.14%), with sos_status_code, sos_charter_date, sos_status_date and right_to_transact_business_code; the 6,378 rows without one are record_type_code X
+    columns: 18 (taxpayer number, name, mailing address, city, state, ZIP, mailing county code, organizational type, record type, responsibility beginning date, SOS or COA file number, SOS charter date, SOS status date, SOS status code, right-to-transact code, current exempt reason code, exempt begin date, NAICS code printed under the field name _621111)
+    limits:
+      - no registered agent, officers or other filing roles
+      - no assumed names
+      - no entity outside franchise tax (sole proprietors and general partnerships of natural persons are not franchise taxpayers; the Comptroller's sales-tax permit file is loaded for those, see further_business_sources)
+      - active taxpayers only, so no ended accounts and no history
+      - taxpayer_county_code is the mailing-address county, not a business location; 31 taxpayers statewide print two rows (one in Travis, SOS status A of 2001 and R of 2003)
+    scope: Travis load = taxpayer_county_code 227, derived from the statewide capture (342,334 rows on 2026-10-17 = 342,333 taxpayers + 1 explained duplicate); the statewide file (3,487,662 rows, 3,487,631 taxpayers, rowsUpdatedAt 2026-10-17T10:35:29Z) is the private matching universe, and out-of-county rows enter business_records only as matched candidates of a Travis permit or roll owner, flagged by scope
+    travis_delta_2026_10_16_to_2026_10_17: 290 new, 1,418 changed, 340,625 unchanged, 294 tombstoned (232 now under another mailing county in the statewide file, 62 gone from it)
+    provenance: each row keeps its bulk capture (request as sent, fetched_at, page SHA-256, offset, row SHA-256); the bulk dataset page is never written as a company's source_http_request
+    detail_url: travis-comptroller-detail-url.v1 - https://comptroller.texas.gov/taxes/franchise/account-status/search/<taxpayer_number> for franchise rows with an 11-digit number (HTTP 200, no redirect, a page generated for that taxpayer under US egress on 2026-10-17); null for sales-tax and veteran-owned rows and for withheld numbers; the page renders the record in the browser from https://comptroller.texas.gov/data-search/franchise-tax/<taxpayer_number> (not requested), so the URL is a link, never provenance (docs/evidence/travis-t3-detail-url-2026-10-17.json)
+    publication: not eligible for IPFS in v1 - the live manifest has no corporate-registry data group and company holds only name, request_identifier, source_http_request and the Florida sunbiz_document_number under additionalProperties false; rows stay on the internal registry track and reach the hosted API only as the deploy-time source-shaped business_records table, labelled unpublished_source per row
+    status: travis-and-statewide-loaded-2026-10-17 (window run 20261017T160716Z, every receipt verified)
+    snapshot: runtime data/travis/registry/ (private Parquet tx-comptroller-franchise-tax-statewide and tx-comptroller-franchise-tax-travis, normalizer travis-t3-source-snapshot.v1, the 2026-10-16 snapshot kept under history/) and the registry-track watermark; evidence docs/evidence/travis-t3-franchise-load-2026-10-17.json
+  licensing:
+    approved_by: operator
+    approved_at: "2026-10-17"
+    approval_record: assignment repository docs/decisions.md section 23
+    roofing_license: none
+    roofing_license_note: Texas issues no state roofing license; RCAT's credential is voluntary and is enrichment at most
+    permit_license_numbers: none printed - the Austin export has 68 named columns (82 in the Socrata catalog with 4 location sub-fields and 10 computed regions), none license-related; license markers appear in free text on 14 of about 2.38 million rows and in no contractor field (docs/evidence/travis-t3-absence-proofs-2026-10-17.json)
+    historical_qualification: closed for v1 by the operator on 2026-10-17 - the README does not ask for it, Texas has no roofing license and no public file carries the dated license-holder-to-business relationship; no records requests are filed and the gap is listed under limitations
+    candidate_rule: a name match to a license row is a license_candidate (exact unique normalized name), never identity; no license record and no contractor_has_license edge (the live manifest has no license class and no company-to-license relationship; the gap is recorded and no other edge is substituted)
+    sources:
+      - key: tdlr-license-files
+        authority: Texas Department of Licensing and Regulation (electrical and air conditioning/refrigeration licenses)
+        source: TDLR daily license files (CSV), URLs resolved at run time from https://www.tdlr.texas.gov/LicenseSearch/licfile.asp
+        data_texas_gov_copy: 7358-krk7 (TDLR - All Licenses; data updated 2026-09-19; not used, the daily files are newer)
+        column_set: tdlr-licfile-columns.v1 (one 23-column header in all 16 files; any other header stops the load)
+        csv_dialect: unescaped-quotes (TDLR does not escape quotes inside quoted values; 4 rows in 3 files)
+        permit_roles: tdlr-permit-role.v1 - contractor licenses (Electrical Contractor, Electrical Sign Contractor, A/C Contractor, Appliance Installation Contractor; 35,981 statewide, 1,251 with a Travis business county) can back a permit's listed contractor; masters (20,487) qualify an electrical contractor; journeymen, apprentices, technicians, wiremen and installers (403,254) work under one; CE providers (271) hold no trade license
+        personal_contact_columns: mailing address lines and the licensee phone stay in the private snapshot and are never served
+        status: captured and loaded 2026-10-17 - 16 files, 887,715 rows, 459,993 licenses (docs/evidence/travis-t3-licensing-load-2026-10-17.json)
+      - key: tsbpe-responsible-master-plumber
+        authority: Texas State Board of Plumbing Examiners
+        source: free licensee lists, the Responsible Master Plumber CSV with the last known company, https://tsbpe.texas.gov/download-csv/RMP/ (link "Responsible Master Plumber List" on https://tsbpe.texas.gov/free-licensee-list/)
+        columns: 23 printed (LICENSE_NBR the key, FIRST/MIDDLE/LAST_NAME the licensee, PLUMB_COMPANY the company; INSURANCE_COMPANY is the insurer, not a company role); ADDR1-3, CITY, STATE, ZIP and PHONE are the licensee's own contact fields, kept private and never served
+        status: captured 2026-10-17 (window run 20261017T192341Z, after the first run saved the site menu's description page) and loaded - 9,378 licenses, 278 in Travis (kit 7b84696)
+      - key: austin-row-contractor-licenses
+        authority: City of Austin Transportation and Public Works
+        source: Active Right of Way Contractor License Holders (data.austintexas.gov 8d92-wsiw; 5 columns; 469 rows captured 2026-10-17, data updated 2026-10-17T07:05:35Z)
+        status: captured and loaded 2026-10-17 (docs/evidence/travis-t3-austin-row-2026-10-17.json)
+  further_business_sources:
+    - key: tx-comptroller-sales-tax
+      source: Texas Comptroller Active Sales Tax Permit Holders (data.texas.gov jrea-zgmq; outlet addresses, outlet county, NAICS, permit and first-sale dates, entity types outside franchise tax)
+      scope: Travis outlets, outlet_county_code 227 (read from the dataset's grouped codes at fetch time)
+      privacy: travis-t3-privacy.v2 - taxpayer_organization_type IS (INDIVIDUAL - SOLE OWNER) and S (SOLE PROPRIETORSHIP, 0 Travis rows), the two sole-owner types of both record layouts, are individual_owner; PI, PZ, ES and TR stay visible (entities with their own numbers, decisions.md section 24.4); its taxpayer number is withheld from every derived store (null in the snapshot, row hash over the row with that cell emptied) and never served; 9,471 of 49,025 outlets; no number in the capture has the SSN-based leading 2 and neither layout mentions SSNs, but every sole-owner number is withheld whatever its form; record ids (assignment decisions.md section 24.2) - business_record_id of a withheld row is the keyed travis-record-id.v1 digest (HMAC-SHA256 under the record-id key, fingerprint a85dc5bf94154a97, over taxpayer and outlet number), row_sha256 the hash of the row with the number emptied
+      status: loaded 2026-10-17 - 49,025 outlets of 42,216 taxpayers, rowsUpdatedAt 2026-10-17T10:31:10Z (docs/evidence/travis-t3-sales-tax-load-2026-10-17.json)
+    - key: tx-sos-veteran-owned-business
+      source: Texas Secretary of State Veteran Owned Business (data.texas.gov 2vfr-72e4)
+      scope: statewide file captured (27,205 rows, dataset of 2026-10-01); the Travis subset is the 2,343 rows joined to a Travis franchise row
+      join_key: travis-sos-file-number-join.v1 - the franchise file prints the SOS file number zero-padded to 10 digits, the veteran file 9 digits, so printed equality joins none; the key restores the padding (25,466 joined; the veteran file's taxid agrees with the joined taxpayer number on 24,868); ruled by the operator on 2026-10-17 as the exact SOS file number (assignment decisions.md section 24.1)
+      status: loaded and joined 2026-10-17 (docs/evidence/travis-t3-veteran-owned-load-2026-10-17.json)
+  record_layouts:
+    approved_by: operator
+    approved_at: "2026-10-17"
+    approval_record: assignment repository docs/decisions.md section 24.4
+    source: the record layouts attached to jrea-zgmq ("Active Sales Tax Permit Record Layout.pdf", asset c1cf06f3-4a69-4489-b1c7-84de30a269d8 in the metadata of 2026-10-17) and 9cir-efmm ("Franchise Layout.docx", asset 297f2282-33fe-4e7b-86de-10f6ae5f07e3), resolved at fetch time from each dataset's metadata (the captured metadata when that request fails), from https://data.texas.gov/api/views/<id>/files/<assetId>, the asset endpoint as fallback
+    purpose: confirm the organization codes and taxpayer number forms the privacy rule relies on
+    offline_check: node --max-old-space-size=16384 src/counties/travis/t3-load.mjs --only layouts (travis-t3-layout-check.v1; consistent, differs, partial, unreadable or awaiting_capture)
+    status: captured 2026-10-17 (window run 20261017T192341Z) and checked - consistent with travis-t3-privacy.v2 (79 codes, the same table in both; sole-owner codes IS and S; no SSN mentioned; no visible number with the leading 2); docs/evidence/travis-t3-record-layouts-2026-10-17.json
+    window_command: cd /Users/luti/dev/ateam/role1-prism/kit-travis/skills/use-oracle/runtime && node src/counties/travis/t3-vpn-fetch.mjs --only tsbpe-responsible-master-plumber,comptroller-record-layouts (resumable)
+  matcher:
+    version: travis-exact-unique-normalized-name.v1
+    indexes: runtime data/travis/matcher/ (travis-t3-name-index.v1); franchise universe statewide - 3,450,553 normalized names, 33,159 shared; Travis alone 628 shared; 336,439 Travis taxpayers hold a statewide-unique name, 5,891 a shared one (docs/evidence/travis-t3-name-index-2026-10-17.json)
+  window_fetch: node src/counties/travis/t3-vpn-fetch.mjs (runtime directory; checks egress before every request, stops on non-US; assignment docs/runbook.md section 5); run of record 20261017T160716Z (US at all 104 checks, 103 requests, 170 s)
+  offline_load: node src/counties/travis/t3-verify.mjs, then node --max-old-space-size=16384 src/counties/travis/t3-load.mjs (idempotent; a re-run reports every snapshot unchanged)
+
+source_inventory:
+  property_appraisal_bulk: https://traviscad.org/publicinformation
+  property_geometry: https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/TCAD_public/MapServer/0
+  property_search: https://travis.prodigycad.com/property-detail/<PROP_ID>
+  appraisal_exports:
+    certified_export: https://traviscad.org/wp-content/largefiles/2026%20Certified%20Appraisal%20Export%20Supp%200_07182026.zip
+    export_layout: https://traviscad.org/wp-content/largefiles/Website_Legacy8.0.33-AppraisalExportLayout_06182026.zip
+    improvement_details_report: https://traviscad.org/wp-content/largefiles/improvement_detail_2026.zip
+    supplemental_export: https://traviscad.org/wp-content/largefiles/travis_SUPP%20335_2026_WEBSITE%20EXPORT_Renamed.zip
+    certified_special_export_json: https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip (3,554,021,795 bytes, free, answers from RO; one JSON array of 493,246 accounts with links, events and TCAD's own permits per account; captured 2026-10-18 for the T4 lineage study; since ruling 25.10 the source of the tcad_permit_listing link method, read offline from that receipted capture into data/travis/tcad-permit-listing/<sha256 prefix>/ by src/counties/travis/t4-tcad-permit-listing.mjs)
+    land_comment_report: https://traviscad.org/wp-content/uploads/land_comments_2026.csv (206,939 appraiser comments; split and merge notes between account ids)
+    certified_totals_report: https://traviscad.org/wp-content/uploads/totals_2026_AsOfRollCorr_0_RunID_6885_20260718_171007.pdf
+    cost: free direct downloads (no login, no account, no fee) on 2026-10-16
+  permits_bulk: https://data.austintexas.gov/resource/3syk-w9eu
+  permits_detail: https://abc.austintexas.gov/web/permit/public-search-other
+  corporate_registry_official: Texas Secretary of State (SOSDirect, paid; authority of record)
+  corporate_registry_equivalent: https://data.texas.gov/resource/9cir-efmm (Comptroller Active Franchise Taxpayers; official_identity.corporate_registry)
+  business_sales_tax_permits: https://data.texas.gov/resource/jrea-zgmq (Comptroller Active Sales Tax Permit Holders)
+  business_veteran_owned: https://data.texas.gov/resource/2vfr-72e4 (SOS Veteran Owned Business)
+  licensing_electrical_hvac: https://www.tdlr.texas.gov/LicenseSearch/ (HTTP 200 under US egress, "TDLR Active License Search")
+  licensing_electrical_hvac_files: https://www.tdlr.texas.gov/LicenseSearch/licfile.asp (daily CSV files; data.texas.gov copy 7358-krk7)
+  licensing_plumbing: https://tsbpe.texas.gov/ (HTTP 200 under US egress)
+  licensing_plumbing_lists: https://tsbpe.texas.gov/free-licensee-list/ (free licensee lists, CSV)
+  licensing_austin_right_of_way: https://data.austintexas.gov/resource/8d92-wsiw (Active Right of Way Contractor License Holders)
+  corporate_registry_official_access: https://direct.sos.state.tx.us/acct/acct-login.asp (HTTP 200 subscriber login page; paid SOSDirect account)
+  comptroller_taxpayer_detail: https://comptroller.texas.gov/taxes/franchise/account-status/search (the former mycpa.cpa.state.tx.us/coa/ redirects here; HTTP 200 under US egress)
+  bbb: https://www.bbb.org/ (not contacted from this machine)
+  lexicon_manifest: https://lexicon.elephant.xyz/api/manifest
+
+destination:
+  writes_in_scope: false
+  proven: false
+  mode: v1 internal working store is the elephant-county reconcile-export output (Parquet and coverage JSON) under the gitignored runtime data/ directory; no DATABASE_URL, no Query DB writes until v2
+  private_artifact_boundary: runtime data/ and the operator's scratch directories; never an MCP or publication source
+
+publication:
+  status: pilot-upload-planned-no-atlas-pr
+  registry: atlas
+  county_page: counties/TX/travis.json
+  data_groups_v1:
+    - county
+  data_groups_later:
+    - property_improvement
+  public_artifacts:
+    - validated CAR per data group
+    - CLI-exported normalized tables per data group
+  upload_node: Filebase over Kubo RPC (rpc.filebase.io); the CLI reads FILEBASE_ACCESS_KEY, FILEBASE_SECRET_KEY and FILEBASE_BUCKET
+  credentials_note: the operator's git-ignored .env carries FILEBASE_ACCESS_TOKEN (mapped onto FILEBASE_ACCESS_KEY by the runbook) and FILEBASE_SECRET_KEY; FILEBASE_BUCKET is still to be set; values are never printed
+  atlas_pr: not in v1
+
+enrichment:
+  bbb:
+    status: blocked-access-request-drafted
+    source_access_status: blocked
+    source_access_complete: false
+    incomplete_reason: http_403_source_block
+    probe_policy: single bounded probe only from the approved AWS US-egress runtime (operator_machine false); nothing from this machine
+    access_request: docs/travis-bbb-access-request.md
+    observed_coverage: 0_percent
+
+lexicon_gaps:
+  - id: lexicon-gap-county-enum
+    detail: unnormalized_address.county_jurisdiction (required) and address.county_name enums lack Travis (lexicon#194, docs/travis-lexicon-county-enum-request.md). Not a validation blocker (assignment decisions.md section 22, 2026-10-17); the Seed root is address_has_parcel only, address.county_name is omitted and no unnormalized_address is written, so the archive validates against the live manifest; no field in it names the county (the Atlas page, the run record and the README manifest do)
+  - id: lexicon-gap-geo-id
+    detail: geo_id has no lexicon home; kept in source_payload on property and permit
+  - id: lexicon-gap-permit-product-fields
+    detail: description, printed status_current, expiresdate and contractor fields have no property_improvement home; kept in source_payload (decisions.md section 5 option ii, else iii)
+  - id: lexicon-gap-business-registration
+    detail: no corporate-registry data group among the live manifest's 16 groups; company holds only name, request_identifier, source_http_request and sunbiz_document_number (additionalProperties false); Business_Location is the places shape. Franchise, sales-tax and veteran-owned rows stay internal and reach the API as unpublished_source business_records (decisions.md section 23)
+  - id: lexicon-gap-license
+    detail: the live manifest (2026-10-17, 159 entries, sha256 7084b933...) has no license class and no company-to-license relationship (property_improvement_to_company and company_to_person exist); no license record or contractor_has_license edge is written and no other edge is substituted
+
+approved_exceptions:
+  # Only an entry whose gate is exactly a validator gate name (parcel, permit, ...) is read by the
+  # validator. Entries with any other gate value are inactive or awaiting the operator's approval.
+  - gate: parcel
+    status: approved-by-operator
+    proposed_at: "2026-10-16"
+    approval_action: The operator approves by changing this gate to parcel and this status to approved-by-operator (one command in docs/runbook.md of the assignment repository); until then the validator keeps the parcel gate BLOCKED and no seed is built.
+    reason: The assessed-roll denominator is canonical; the material GIS gap is expected for separately assessed condominium units without unique polygons, and the seed is built from the TCAD certified export, not from GIS.
+    cause: 57,567 condominium accounts (A4 54,675, F4 2,892) have no polygon of their own in the TNR layer (0 of 40 sampled found), plus recent splits not yet in the monthly TNR assembly (C1 16 of 20 sampled found); 13,130 polygons carry no PROP_ID.
+    canonical_denominator: 441,961 real-property accounts (distinct prop_id with prop_type_cd R) in the TCAD 2026 certified export, supplement 0
+    seed_decision: one seed row per real-property account from the TCAD export; the TNR layer supplies a polygon and centroid only where a polygon carries the account's PROP_ID; never seed from GIS
+    excluded_population: none among real-property accounts; MH (11,744), P (39,536) and MN (5) accounts are outside the parcel population because they are not land parcels
+    coverage_effect: accounts without their own polygon (at least the 57,567 condo units) carry no parcel coordinates; radius search reaches them only through a later condo-to-regime join or permit coordinates, reported as a coverage number and never geocoded
+  - gate: parcel-gis-only-contingency
+    status: not-active
+    activation: Move this entry to gate parcel only if the operator declines the TCAD export purchase; until then the parcel gate blocks on the pending counts.
+    reason: If the TCAD export is declined or geo-blocked for the whole window, the TNR parcel layer attributes become the parcel roll (cause - TCAD paywall or geo-block; canonical denominator - the assessed roll count read from TCAD if available, else the layer count with the discrepancy reported; seed decision - seed from the layer; excluded population - separately_assessed_without_geometry acknowledged, condominium units sharing polygons are kept as rows without unique geometry; coverage effect - year built and deed dates become documented gaps unless another official source provides them).

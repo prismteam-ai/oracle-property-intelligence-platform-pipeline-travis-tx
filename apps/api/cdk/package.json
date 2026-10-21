@@ -1,0 +1,22 @@
+{
+  "name": "@travis/api-cdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -b",
+    "build": "tsc -b",
+    "lint": "eslint .",
+    "synth": "cdk synth --strict",
+    "test": "vitest run --root . --config ../../../vitest.config.ts --passWithNoTests"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.273.0",
+    "constructs": "^10.4.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@travis/tsconfig": "*",
+    "aws-cdk": "^2.1146.0"
+  }
+}

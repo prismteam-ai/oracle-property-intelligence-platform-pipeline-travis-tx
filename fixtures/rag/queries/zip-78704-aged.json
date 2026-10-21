@@ -1,0 +1,60 @@
+{
+  "id": "zip-78704-aged",
+  "description": "A ZIP as the place.",
+  "turns": [
+    {
+      "user": "Which properties within 2 miles of ZIP 78704 have roofs older than 25 years?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "78704"
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.24538656028816,
+              "lon": -97.76500801461529,
+              "radius_miles": 2,
+              "roof_age_min": 25,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "190930",
+            "310908",
+            "312847",
+            "306053",
+            "282988",
+            "100700",
+            "103577",
+            "283722",
+            "102284",
+            "307880",
+            "101933",
+            "283029",
+            "283462",
+            "100912",
+            "316548",
+            "188659",
+            "103871",
+            "283027",
+            "101968",
+            "103578"
+          ],
+          "total": 6396,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

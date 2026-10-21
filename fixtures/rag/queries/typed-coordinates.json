@@ -1,0 +1,54 @@
+{
+  "id": "typed-coordinates",
+  "description": "Coordinates the user typed are allowed without resolve_search_center.",
+  "turns": [
+    {
+      "user": "Which properties within 1 mile of 30.2672, -97.7431 have roofs older than 50 years?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.2672,
+              "lon": -97.7431,
+              "radius_miles": 1,
+              "roof_age_min": 50,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "190930",
+            "198305",
+            "191000",
+            "194799",
+            "188659",
+            "101968",
+            "105428",
+            "194316",
+            "194527",
+            "106924",
+            "194661",
+            "192936",
+            "196667",
+            "196998",
+            "191781",
+            "190981",
+            "832646",
+            "908977",
+            "194539",
+            "191610"
+          ],
+          "total": 1077,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

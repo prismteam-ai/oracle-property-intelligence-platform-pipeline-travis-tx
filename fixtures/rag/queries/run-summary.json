@@ -1,0 +1,20 @@
+{
+  "id": "run-summary",
+  "description": "Provenance: the run and its manifest CID, which must come from get_run_summary in this turn.",
+  "turns": [
+    {
+      "user": "Which pipeline run is this data from, and what is its manifest CID?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "get_run_summary",
+            "args": {}
+          }
+        ]
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

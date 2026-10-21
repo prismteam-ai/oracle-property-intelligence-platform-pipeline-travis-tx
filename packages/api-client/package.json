@@ -1,0 +1,21 @@
+{
+  "name": "@travis/api-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -b",
+    "build": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run --root . --config ../../vitest.config.ts --passWithNoTests"
+  },
+  "dependencies": {
+    "@travis/contract": "*"
+  },
+  "devDependencies": {
+    "@travis/tsconfig": "*"
+  }
+}

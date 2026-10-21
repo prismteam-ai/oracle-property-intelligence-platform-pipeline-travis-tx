@@ -1,0 +1,54 @@
+{
+  "id": "needs-review-78704",
+  "description": "An area with needs_review permits (78704 has the most).",
+  "turns": [
+    {
+      "user": "Which permits of any kind, not only roofing, within 1 mile of 78704 have a status that needs review?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "78704"
+            }
+          },
+          {
+            "name": "search_permits",
+            "args": {
+              "lat": 30.24538656028816,
+              "lon": -97.76500801461529,
+              "radius_miles": 1,
+              "status_group": {
+                "$contains": ["needs_review"]
+              },
+              "roofing_only": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "permit",
+          "tool": "search_permits",
+          "values": [
+            "1983-015732 BP",
+            "2006-000501 PP",
+            "2006-029532 BP",
+            "2006-029532 EP",
+            "2006-029532 MP",
+            "2006-029532 PP",
+            "2007-159085 DS",
+            "2008-073533 DS",
+            "2009-084994 DS",
+            "2010-069874 DS",
+            "2014-055628 BP",
+            "2025-078943 DS"
+          ],
+          "total": 12,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

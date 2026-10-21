@@ -1,0 +1,16 @@
+node_modules
+dist
+cdk.out
+.turbo
+data
+docs
+README.md
+oracle
+publish
+runs
+package-lock.json
+packages/contract/openapi.json
+elephant-cli.log
+packages/query/fixtures
+packages/contract/mcp-tools.json
+packages/contract/src/openapi.generated.ts

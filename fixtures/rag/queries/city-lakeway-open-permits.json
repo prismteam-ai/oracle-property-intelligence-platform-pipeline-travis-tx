@@ -1,0 +1,38 @@
+{
+  "id": "city-lakeway-open-permits",
+  "description": "Open roofing permits around a third city. Lakeway is outside the Austin permit export, so there are none (no_matches): the answer says so instead of inventing rows.",
+  "turns": [
+    {
+      "user": "List open roofing permits within 2 miles of Lakeway.",
+      "expected": {
+        "outcomes": ["no_matches"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "Lakeway"
+            }
+          },
+          {
+            "name": "search_permits",
+            "args": {
+              "lat": 30.361708811952585,
+              "lon": -97.98169817685724,
+              "radius_miles": 2,
+              "roof_work_class": ["primary_roof_replacement", "repair_or_coating"]
+            }
+          }
+        ],
+        "ids": {
+          "kind": "permit",
+          "tool": "search_permits",
+          "values": [],
+          "total": 0,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

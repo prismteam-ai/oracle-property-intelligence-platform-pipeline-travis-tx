@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /v1/agent/chat",
+  "rawPath": "/v1/agent/chat",
+  "rawQueryString": "",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "requestContext": {
+    "accountId": "local",
+    "apiId": "local",
+    "domainName": "local",
+    "domainPrefix": "local",
+    "http": {
+      "method": "POST",
+      "path": "/v1/agent/chat",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "127.0.0.1",
+      "userAgent": "sam-local"
+    },
+    "requestId": "sam-local-2-readme-turn2",
+    "routeKey": "POST /v1/agent/chat",
+    "stage": "$default",
+    "time": "20/Oct/2026:00:00:00 +0000",
+    "timeEpoch": 0
+  },
+  "body": "{\"messages\": [{\"role\": \"user\", \"content\": \"Which properties in Travis County within five miles of Austin have roofs older than 15 years?\"}, {\"role\": \"assistant\", \"content\": \"There are **50,260 properties** within 5 miles of Austin with roofs older than 15 years. Here are three examples from the first page of results:\\n\\n- [[property:103857]] 802 Barton Blvd, Austin 78704 \\u2014 roof age 18 yrs (basis: new_construction, confidence: medium)\\n- [[property:114347]] 1504 Hardouin Ave, Austin 78703 \\u2014 roof age 92 yrs (basis: year_built, confidence: low)\\n- [[property:116819]] 2509 Spring Ln, Austin 78703 \\u2014 roof age 18 yrs (basis: completed_replacement, confidence: high)\\n\\nNote: many roof ages fall back to the year the structure was built (low confidence); high-confidence ages come\"}, {\"role\": \"user\", \"content\": \"Which properties near that area have open roofing permits that have been open for many years, and who is the listed contractor?\"}], \"session_id\": \"sam-local-2-readme-turn2\"}",
+  "isBase64Encoded": false,
+  "_expect": {
+    "outcomes": ["answered"],
+    "tools": ["resolve_search_center", "search_permits"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/contract" },
+    { "path": "packages/query" },
+    { "path": "packages/deploy-build" },
+    { "path": "packages/api-client" },
+    { "path": "apps/api" },
+    { "path": "apps/api/cdk" },
+    { "path": "apps/explorer" }
+  ]
+}

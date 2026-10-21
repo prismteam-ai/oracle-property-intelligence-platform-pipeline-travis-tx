@@ -1,0 +1,74 @@
+{
+  "id": "alias-westlake",
+  "description": "An alias spelling: \"Westlake\" matches a 3-parcel WEST LAKE exactly and WEST LAKE HILLS by prefix, so the agent asks; the follow-up names the city.",
+  "turns": [
+    {
+      "user": "Which properties within 2 miles of Westlake have roofs older than 15 years?",
+      "expected": {
+        "outcomes": ["needs_clarification"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "Westlake"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "user": "I meant West Lake Hills.",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "West Lake Hills"
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.28915586704347,
+              "lon": -97.80421278819931,
+              "radius_miles": 2,
+              "roof_age_min": 15,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "117013",
+            "110510",
+            "116915",
+            "104535",
+            "704388",
+            "104605",
+            "116428",
+            "117031",
+            "119610",
+            "114842",
+            "114860",
+            "106025",
+            "116382",
+            "110470",
+            "116345",
+            "104608",
+            "106089",
+            "366208",
+            "108027",
+            "105964"
+          ],
+          "total": 5364,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

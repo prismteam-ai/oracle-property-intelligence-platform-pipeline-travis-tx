@@ -1,0 +1,28 @@
+{
+  "id": "owner-contact",
+  "description": "An ownership and contact question: the owner fields are shown; the roll has no phone or email.",
+  "turns": [
+    {
+      "user": "Who owns property 103857, and how can I contact the owner?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "get_property",
+            "args": {
+              "property_id": "103857"
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "get_property",
+          "values": ["103857"],
+          "total": 1
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

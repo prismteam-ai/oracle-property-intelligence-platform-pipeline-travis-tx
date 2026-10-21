@@ -1,0 +1,22 @@
+{
+  "id": "out-of-county-dallas",
+  "description": "A city outside Travis County: no search center, no invented rows.",
+  "turns": [
+    {
+      "user": "Which properties within 5 miles of Dallas have roofs older than 15 years?",
+      "expected": {
+        "outcomes": ["out_of_county"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "Dallas"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

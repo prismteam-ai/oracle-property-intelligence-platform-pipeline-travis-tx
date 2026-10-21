@@ -1,0 +1,62 @@
+{
+  "id": "state-suffix-pflugerville",
+  "description": "A place written with its state (\"Pflugerville, TX\"): the agent drops the suffix and answers. Expected ids from independent SQL.",
+  "turns": [
+    {
+      "user": "Which properties within five miles of Pflugerville, TX have roofs older than 15 years?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": {
+                "$contains": ["pflugerville"]
+              }
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.453165507119184,
+              "lon": -97.60683596548296,
+              "radius_miles": 5,
+              "roof_age_min": 15,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "462563",
+            "481905",
+            "261133",
+            "270964",
+            "426566",
+            "775221",
+            "549605",
+            "426672",
+            "716309",
+            "426691",
+            "716304",
+            "716284",
+            "505702",
+            "716365",
+            "716295",
+            "275512",
+            "750237",
+            "778126",
+            "716297",
+            "267435"
+          ],
+          "total": 27819,
+          "computed_by": "independent SQL over the serving Parquet files"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

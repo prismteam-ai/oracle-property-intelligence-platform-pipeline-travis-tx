@@ -1,0 +1,42 @@
+{
+  "id": "zip-78745-stalled-many-years",
+  "description": "\"Many years\" with stalled permits around a ZIP.",
+  "turns": [
+    {
+      "user": "Which stalled roofing permits within 3 miles of 78745 have been open for many years?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": "78745"
+            }
+          },
+          {
+            "name": "search_permits",
+            "args": {
+              "lat": 30.207183850747537,
+              "lon": -97.79934458869468,
+              "radius_miles": 3,
+              "status_group": ["stalled"],
+              "min_open_years": {
+                "$in": [5, 10]
+              },
+              "roof_work_class": ["primary_roof_replacement", "repair_or_coating"]
+            }
+          }
+        ],
+        "ids": {
+          "kind": "permit",
+          "tool": "search_permits",
+          "values": ["2013-064403 BP"],
+          "total": 1,
+          "computed_by": "query layer"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

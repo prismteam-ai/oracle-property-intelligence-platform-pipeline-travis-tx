@@ -1,0 +1,62 @@
+{
+  "id": "state-suffix-austin",
+  "description": "\"Austin, TX\" matches a 1-parcel AUSTIN TX exactly in the contract lookup; the agent drops the suffix and uses AUSTIN. Expected ids from independent SQL.",
+  "turns": [
+    {
+      "user": "Within 5 miles of Austin, TX, which properties have roofs older than 15 years?",
+      "expected": {
+        "outcomes": ["answered"],
+        "tools": [
+          {
+            "name": "resolve_search_center",
+            "args": {
+              "q": {
+                "$contains": ["austin"]
+              }
+            }
+          },
+          {
+            "name": "search_properties",
+            "args": {
+              "lat": 30.29137819423398,
+              "lon": -97.7774057165747,
+              "radius_miles": 5,
+              "roof_age_min": 15,
+              "open_permits": false
+            }
+          }
+        ],
+        "ids": {
+          "kind": "property",
+          "tool": "search_properties",
+          "values": [
+            "190930",
+            "116819",
+            "213186",
+            "192373",
+            "310908",
+            "217802",
+            "224901",
+            "312847",
+            "204473",
+            "574041",
+            "221167",
+            "211579",
+            "206007",
+            "221849",
+            "988428",
+            "306053",
+            "194712",
+            "224755",
+            "239166",
+            "214877"
+          ],
+          "total": 50258,
+          "computed_by": "independent SQL over the serving Parquet files"
+        }
+      }
+    }
+  ],
+  "computed_on": "deploy 0b604818b489aff5",
+  "built_at": "2026-10-21"
+}

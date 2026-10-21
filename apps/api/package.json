@@ -1,0 +1,29 @@
+{
+  "name": "@travis/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bundle": "esbuild src/handlers/api.ts src/handlers/chat.ts --bundle --platform=node --target=node22 --format=esm --outdir=dist --out-extension:.js=.mjs --external:@duckdb/node-api --external:@duckdb/node-bindings --external:@aws-sdk/client-ssm --external:@aws-sdk/client-secrets-manager --banner:js=\"import {createRequire as __bannerCreateRequire} from 'module';const require=__bannerCreateRequire(import.meta.url);\" && node --check dist/api.mjs && node --check dist/chat.mjs",
+    "build": "tsc -b && npm run bundle",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run --root . --config ../../vitest.config.ts --passWithNoTests"
+  },
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "^5.0.120",
+    "@aws-lambda-powertools/logger": "^2.36.0",
+    "@aws-lambda-powertools/metrics": "^2.36.0",
+    "@aws-lambda-powertools/tracer": "^2.36.0",
+    "@travis/contract": "*",
+    "@travis/query": "*",
+    "ai": "^7.0.146",
+    "langsmith": "^0.11.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@travis/tsconfig": "*",
+    "@types/aws-lambda": "^8.10.164",
+    "esbuild": "^0.28.2"
+  }
+}
