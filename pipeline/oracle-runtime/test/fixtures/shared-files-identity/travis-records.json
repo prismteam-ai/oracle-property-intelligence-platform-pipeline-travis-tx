@@ -1,0 +1,2224 @@
+{
+  "about": "Real TCAD 2026 certified export records and one real stored Austin permit row for test/travis/shared-files-identity.test.ts. Values are unmodified; only keys are dropped (see projection).",
+  "source": {
+    "zip": "2026_20Certified_20JSON_20SUPP_200_2007182026.zip",
+    "zip_sha256": "6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346",
+    "entry": "Travis-protaxExport-20260719.json",
+    "url": "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip",
+    "captured_at": "2026-10-19T21:33:41.241Z"
+  },
+  "run": {
+    "job_id": "travis-a04-20261022052658",
+    "as_of": "2026-10-22",
+    "coordinates": "parcels.latitude / longitude / coordinate_source of this job in the local Query DB (0201_gis)"
+  },
+  "projection": "Each record keeps redact.ts TOP_KEEP keys with owners [] and sales / deeds / valuations reduced by SALE_KEEP / DEED_KEEP / slimValuations (the code's own redacted-record shape), so no owner, party, price, note or inspection reaches Git. record_sha256 is the SHA-256 of the original export text. The permit payload drops contractor_* and applicant* keys (people's names and phones); the Property Improvement shared files never read them.",
+  "records": [
+    {
+      "case": "a: confidential account (sales[].confidentialCode), owners redacted",
+      "pID": "100018",
+      "record_ordinal": 3,
+      "record_sha256": "c4b62ccd128028cce87b1c43c45f5360efe996db751b51d77162b42c316e26ce",
+      "confidential_basis": ["sales[].confidentialCode"],
+      "coordinate": {
+        "latitude": 30.2524829,
+        "longitude": -97.76285899999999,
+        "source": "gis_centroid",
+        "rule": "centroid"
+      },
+      "record": {
+        "pID": 100018,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[30.2524886892, -97.7628653570]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S08658",
+            "block": null,
+            "lot": "2-4",
+            "additionalLegal": null,
+            "legalAcreage": 2.3242,
+            "legalDescription": "LOT 2-4 * LESS 3738SF MAUFRAIS SUBD THE",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": 2.3242,
+            "pID": 100018
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0100030115",
+            "refID1": null,
+            "refID2": "01000301150000",
+            "mapID": "010208",
+            "mapsco": null,
+            "pID": 100018
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "02",
+            "cityTaxingUnitID": 1002,
+            "cityTaxingUnitName": "CITY OF AUSTIN",
+            "exemptions": "",
+            "fieldInspectionDt": null,
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 1999,
+            "imprvAge": 0,
+            "imprvClass": "C",
+            "imprvClasses": "C",
+            "imprvCondition": "A",
+            "imprvDeprec": 75,
+            "imprvDeprecGood": 10,
+            "imprvEconomicAdj": 100,
+            "imprvEffYearBuilt": 1999,
+            "imprvFactor": 100,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 184.29,
+            "imprvMAUnitPrice": 191.66,
+            "imprvMainArea": 3002,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "5",
+            "imprvStateCd": "F1",
+            "imprvStories": 1,
+            "imprvStyle": "",
+            "imprvTotalArea": 39937,
+            "imprvType": "48",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 2.3242,
+            "landSizeDepthLeft": 0,
+            "landSizeDepthRight": 0,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 101241,
+            "landSizeUseableAcres": 2.3242,
+            "landSizeUseableSqft": 101241,
+            "landSizeWidthBack": 0,
+            "landSizeWidthFront": 0,
+            "landStateCd": "F1",
+            "landTotalAcres": 2.3242,
+            "landTotalLots": 1,
+            "landTotalSqft": 101241,
+            "landTotalUseableAcres": 2.3242,
+            "landTotalUseableSqft": 101241,
+            "landType": "COMM",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 90,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "SPECIAL SF",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "SF",
+            "landMktModel": 59,
+            "landMktModelUnitPrice": 0,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 170,
+            "landMktUnitPriceSelection": "S",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "01",
+            "schoolTaxingUnitID": 1001,
+            "schoolTaxingUnitName": "AUSTIN ISD",
+            "stateCd": "F1",
+            "stateCodes": "F1",
+            "taxingUnits": "01,02,03,0A,2J,68",
+            "pID": 100018
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8928158,
+            "primarySitus": 1,
+            "streetNum": "1403",
+            "streetPrefix": "S",
+            "streetName": "LAMAR",
+            "streetSuffix": "BLVD",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78704",
+            "country": null,
+            "international": null,
+            "pID": 100018
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 78,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1998-05-29 00:00:00",
+            "book": null,
+            "page": "00468",
+            "instrumentNum": null,
+            "volume": "13199",
+            "deedRecordedDt": null,
+            "pID": 100018
+          },
+          {
+            "deedID": 79,
+            "deedType": null,
+            "fileDt": null,
+            "deedDt": null,
+            "book": null,
+            "page": "00000",
+            "instrumentNum": null,
+            "volume": "00000",
+            "deedRecordedDt": "1998-05-29 00:00:00",
+            "pID": 100018
+          },
+          {
+            "deedID": 1602285,
+            "deedType": "SW",
+            "fileDt": null,
+            "deedDt": "2005-09-06 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2005173685TR",
+            "volume": null,
+            "deedRecordedDt": "2005-09-19 00:00:00",
+            "pID": 100018
+          },
+          {
+            "deedID": 1637442,
+            "deedType": "CD",
+            "fileDt": null,
+            "deedDt": "2005-09-06 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2006056486TR",
+            "volume": null,
+            "deedRecordedDt": "2006-03-29 00:00:00",
+            "pID": 100018
+          },
+          {
+            "deedID": 1974334,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2014-03-25 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2014043470TR",
+            "volume": null,
+            "deedRecordedDt": "2014-03-28 00:00:00",
+            "pID": 100018
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7943596,
+                    "imprvType": "48",
+                    "sequence": null,
+                    "stateCd": "F1",
+                    "actualYearBuilt": 1999,
+                    "effYearBuilt": 1999,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 3002
+                      },
+                      {
+                        "imprvDetailType": "501",
+                        "sequence": null,
+                        "area": 4550
+                      },
+                      {
+                        "imprvDetailType": "482",
+                        "sequence": null,
+                        "area": 5
+                      },
+                      {
+                        "imprvDetailType": "551",
+                        "sequence": null,
+                        "area": 30000
+                      },
+                      {
+                        "imprvDetailType": "611",
+                        "sequence": null,
+                        "area": 152
+                      },
+                      {
+                        "imprvDetailType": "611",
+                        "sequence": null,
+                        "area": 288
+                      },
+                      {
+                        "imprvDetailType": "611",
+                        "sequence": null,
+                        "area": 828
+                      },
+                      {
+                        "imprvDetailType": "501",
+                        "sequence": null,
+                        "area": 652
+                      },
+                      {
+                        "imprvDetailType": "541",
+                        "sequence": null,
+                        "area": 300
+                      },
+                      {
+                        "imprvDetailType": "541",
+                        "sequence": null,
+                        "area": 110
+                      },
+                      {
+                        "imprvDetailType": "437",
+                        "sequence": null,
+                        "area": 50
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "sales": [
+          {
+            "saleID": 136639,
+            "deedID": 1974334,
+            "saleDt": "2014-03-25 00:00:00",
+            "saleType": "VU",
+            "confidentialSale": 0,
+            "confidentialCode": "Q",
+            "pID": 100018
+          }
+        ],
+        "owners": []
+      }
+    },
+    {
+      "case": "d: unmapped state code F5 with an improvement -> Building",
+      "pID": "100022",
+      "record_ordinal": 5,
+      "record_sha256": "c71704d3cf5812a53607824ee47a921bdb9972f548f79396e4acf1b8640d54de",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": 30.2552368,
+        "longitude": -97.7616439,
+        "source": "gis_centroid",
+        "rule": "centroid"
+      },
+      "record": {
+        "pID": 100022,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[30.2552313843, -97.7616360121]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S12658",
+            "block": "18",
+            "lot": "23-25",
+            "additionalLegal": null,
+            "legalAcreage": 0.2152,
+            "legalDescription": "LOT 23-25 BLK 18 SOUTH HEIGHTS",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": 0.2152,
+            "pID": 100022
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0100030203",
+            "refID1": null,
+            "refID2": "01000302030000",
+            "mapID": "010208",
+            "mapsco": null,
+            "pID": 100022
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "02",
+            "cityTaxingUnitID": 1002,
+            "cityTaxingUnitName": "CITY OF AUSTIN",
+            "exemptions": "",
+            "fieldInspectionDt": "2025-10-05 21:05:08",
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 1930,
+            "imprvAge": 0,
+            "imprvClass": "WV",
+            "imprvClasses": "WV",
+            "imprvCondition": "A",
+            "imprvDeprec": 75,
+            "imprvDeprecGood": 75,
+            "imprvEconomicAdj": 20,
+            "imprvEffYearBuilt": 1930,
+            "imprvFactor": 20,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 94.51,
+            "imprvMAUnitPrice": 97.35,
+            "imprvMainArea": 1268,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "4",
+            "imprvStateCd": "F5",
+            "imprvStories": 1,
+            "imprvStyle": "",
+            "imprvTotalArea": 9034,
+            "imprvType": "59",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 0.2152,
+            "landSizeDepthLeft": 0,
+            "landSizeDepthRight": 0,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 9375,
+            "landSizeUseableAcres": 0.2152,
+            "landSizeUseableSqft": 9375,
+            "landSizeWidthBack": 0,
+            "landSizeWidthFront": 0,
+            "landStateCd": "F5",
+            "landTotalAcres": 0.2152,
+            "landTotalLots": 1,
+            "landTotalSqft": 9375,
+            "landTotalUseableAcres": 0.2152,
+            "landTotalUseableSqft": 9375,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 100,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "SPECIAL SF",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "SF",
+            "landMktModel": 59,
+            "landMktModelUnitPrice": 0,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 180,
+            "landMktUnitPriceSelection": "S",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "01",
+            "schoolTaxingUnitID": 1001,
+            "schoolTaxingUnitName": "AUSTIN ISD",
+            "stateCd": "F5",
+            "stateCodes": "F5",
+            "taxingUnits": "01,02,03,0A,2J,68",
+            "pID": 100022
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8928160,
+            "primarySitus": 1,
+            "streetNum": "1105",
+            "streetPrefix": "S",
+            "streetName": "LAMAR",
+            "streetSuffix": "BLVD",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78704",
+            "country": null,
+            "international": null,
+            "pID": 100022
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 93,
+            "deedType": "MS",
+            "fileDt": null,
+            "deedDt": "1995-10-02 00:00:00",
+            "book": null,
+            "page": "01225",
+            "instrumentNum": null,
+            "volume": "12555",
+            "deedRecordedDt": null,
+            "pID": 100022
+          },
+          {
+            "deedID": 94,
+            "deedType": "PD",
+            "fileDt": null,
+            "deedDt": "1991-01-01 00:00:00",
+            "book": null,
+            "page": "00132",
+            "instrumentNum": null,
+            "volume": "11388",
+            "deedRecordedDt": "1995-10-02 00:00:00",
+            "pID": 100022
+          },
+          {
+            "deedID": 95,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1975-12-31 00:00:00",
+            "book": null,
+            "page": "00999",
+            "instrumentNum": null,
+            "volume": "05647",
+            "deedRecordedDt": "1991-01-01 00:00:00",
+            "pID": 100022
+          },
+          {
+            "deedID": 96,
+            "deedType": "PD",
+            "fileDt": null,
+            "deedDt": "1991-01-01 00:00:00",
+            "book": null,
+            "page": "00132",
+            "instrumentNum": null,
+            "volume": "11388",
+            "deedRecordedDt": "1991-01-01 00:00:00",
+            "pID": 100022
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7943598,
+                    "imprvType": "59",
+                    "sequence": null,
+                    "stateCd": "F5",
+                    "actualYearBuilt": 1930,
+                    "effYearBuilt": 1930,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 1268
+                      },
+                      {
+                        "imprvDetailType": "011C",
+                        "sequence": null,
+                        "area": 98
+                      },
+                      {
+                        "imprvDetailType": "095",
+                        "sequence": null,
+                        "area": 1268
+                      },
+                      {
+                        "imprvDetailType": "551",
+                        "sequence": null,
+                        "area": 6400
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "pYear": null,
+            "details": null
+          }
+        ],
+        "sales": [],
+        "owners": []
+      }
+    },
+    {
+      "case": "b: non-empty legal description; Run 1 pair (owns roofing permit 2003-012717 BP)",
+      "pID": "100027",
+      "record_ordinal": 10,
+      "record_sha256": "aaf85a3286033e4db61ff66b4da7f2c9ed23d645fcd4e6c72488190d32bfdc99",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": 30.255199899999997,
+        "longitude": -97.7611665,
+        "source": "gis_centroid",
+        "rule": "centroid"
+      },
+      "record": {
+        "pID": 100027,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[30.2551946979, -97.7611588311]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S12658",
+            "block": "18",
+            "lot": "8-9",
+            "additionalLegal": null,
+            "legalAcreage": 0.1435,
+            "legalDescription": "LOT 8-9 BLK 18 SOUTH HEIGHTS",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": 0,
+            "pID": 100027
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0100030208",
+            "refID1": null,
+            "refID2": "01000302080000",
+            "mapID": "010208",
+            "mapsco": null,
+            "pID": 100027
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "02",
+            "cityTaxingUnitID": 1002,
+            "cityTaxingUnitName": "CITY OF AUSTIN",
+            "exemptions": "HS",
+            "fieldInspectionDt": null,
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 1933,
+            "imprvAge": 0,
+            "imprvClass": "R6",
+            "imprvClasses": "R6",
+            "imprvCondition": "F",
+            "imprvDeprec": 60,
+            "imprvDeprecGood": 60,
+            "imprvEconomicAdj": 100,
+            "imprvEffYearBuilt": 1933,
+            "imprvFactor": 100,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 116.87,
+            "imprvMAUnitPrice": 116.87,
+            "imprvMainArea": 800,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "*",
+            "imprvStateCd": "A1",
+            "imprvStories": 1,
+            "imprvStyle": "",
+            "imprvTotalArea": 2342.7,
+            "imprvType": "01",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 0.1435,
+            "landSizeDepthLeft": 125,
+            "landSizeDepthRight": 125,
+            "landSizeEffectiveDepth": 125,
+            "landSizeEffectiveFront": 50,
+            "landSizeLot": 1,
+            "landSizeSqft": 6250.86,
+            "landSizeUseableAcres": 0.1435,
+            "landSizeUseableSqft": 6250.86,
+            "landSizeWidthBack": 50,
+            "landSizeWidthFront": 50,
+            "landStateCd": "A1",
+            "landTotalAcres": 0.1435,
+            "landTotalLots": 1,
+            "landTotalSqft": 6250.86,
+            "landTotalUseableAcres": 0.1435,
+            "landTotalUseableSqft": 6250.86,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 100,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "L2000",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "LOT",
+            "landMktModel": 1199,
+            "landMktModelUnitPrice": 608122.05,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 750000,
+            "landMktUnitPriceSelection": "T",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "01",
+            "schoolTaxingUnitID": 1001,
+            "schoolTaxingUnitName": "AUSTIN ISD",
+            "stateCd": "A1",
+            "stateCodes": "A1",
+            "taxingUnits": "01,02,03,0A,2J,68",
+            "pID": 100027
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8928165,
+            "primarySitus": 1,
+            "streetNum": "1008",
+            "streetPrefix": "S",
+            "streetName": "8",
+            "streetSuffix": "ST",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78704",
+            "country": null,
+            "international": null,
+            "pID": 100027
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 111,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1957-11-02 00:00:00",
+            "book": null,
+            "page": "00023",
+            "instrumentNum": null,
+            "volume": "01870",
+            "deedRecordedDt": null,
+            "pID": 100027
+          },
+          {
+            "deedID": 112,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1957-11-02 00:00:00",
+            "book": null,
+            "page": "00023",
+            "instrumentNum": null,
+            "volume": "01870",
+            "deedRecordedDt": "1957-11-02 00:00:00",
+            "pID": 100027
+          },
+          {
+            "deedID": 1893710,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2012-05-20 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2012094380TR",
+            "volume": null,
+            "deedRecordedDt": "2012-06-12 00:00:00",
+            "pID": 100027
+          },
+          {
+            "deedID": 1893712,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2012-05-20 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2012094380TR",
+            "volume": null,
+            "deedRecordedDt": "2012-06-12 00:00:00",
+            "pID": 100027
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7943602,
+                    "imprvType": "01",
+                    "sequence": null,
+                    "stateCd": "A1",
+                    "actualYearBuilt": 1933,
+                    "effYearBuilt": 1933,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 800
+                      },
+                      {
+                        "imprvDetailType": "011",
+                        "sequence": null,
+                        "area": 25
+                      },
+                      {
+                        "imprvDetailType": "041",
+                        "sequence": null,
+                        "area": 396
+                      },
+                      {
+                        "imprvDetailType": "041",
+                        "sequence": null,
+                        "area": 720
+                      },
+                      {
+                        "imprvDetailType": "122",
+                        "sequence": null,
+                        "area": 1
+                      },
+                      {
+                        "imprvDetailType": "251",
+                        "sequence": null,
+                        "area": 0.7
+                      },
+                      {
+                        "imprvDetailType": "581",
+                        "sequence": null,
+                        "area": 400
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "sales": [],
+        "owners": []
+      }
+    },
+    {
+      "case": "e: gis_centroid coordinate (rule export_point)",
+      "pID": "100123",
+      "record_ordinal": 92,
+      "record_sha256": "87409c6d0e97271b5a886dfbe0772c5f02fd64005a33ad13100ce0e9783a0776",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": 30.2542560867,
+        "longitude": -97.7586497822,
+        "source": "gis_centroid",
+        "rule": "export_point"
+      },
+      "record": {
+        "pID": 100123,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[30.2542560867, -97.7586497822]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S12658",
+            "block": "11",
+            "lot": "13-16",
+            "additionalLegal": null,
+            "legalAcreage": 0.2875,
+            "legalDescription": "LOT 13-16 BLK 11 SOUTH HEIGHTS",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": null,
+            "pID": 100123
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0100031311",
+            "refID1": null,
+            "refID2": "01000313110000",
+            "mapID": "010208",
+            "mapsco": null,
+            "pID": 100123
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "02",
+            "cityTaxingUnitID": 1002,
+            "cityTaxingUnitName": "CITY OF AUSTIN",
+            "exemptions": "HS,HT,OV65",
+            "fieldInspectionDt": "2024-10-02 14:37:15",
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 1935,
+            "imprvAge": 0,
+            "imprvClass": "R5",
+            "imprvClasses": "R5,R6",
+            "imprvCondition": "A",
+            "imprvDeprec": 70,
+            "imprvDeprecGood": 70,
+            "imprvEconomicAdj": 100,
+            "imprvEffYearBuilt": 1935,
+            "imprvFactor": 100,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 108.85,
+            "imprvMAUnitPrice": 108.85,
+            "imprvMainArea": 2421,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "*",
+            "imprvStateCd": "A1",
+            "imprvStories": 1,
+            "imprvStyle": "",
+            "imprvTotalArea": 4725,
+            "imprvType": "01",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 0.2875,
+            "landSizeDepthLeft": 128,
+            "landSizeDepthRight": 128,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 12522.43,
+            "landSizeUseableAcres": 0.2875,
+            "landSizeUseableSqft": 12522.43,
+            "landSizeWidthBack": 100,
+            "landSizeWidthFront": 100,
+            "landStateCd": "A1",
+            "landTotalAcres": 0.2875,
+            "landTotalLots": 1,
+            "landTotalSqft": 12522.43,
+            "landTotalUseableAcres": 0.2875,
+            "landTotalUseableSqft": 12522.43,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 100,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "K1000",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "LOT",
+            "landMktModel": 1192,
+            "landMktModelUnitPrice": 668759.93,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 725000,
+            "landMktUnitPriceSelection": "T",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "01",
+            "schoolTaxingUnitID": 1001,
+            "schoolTaxingUnitName": "AUSTIN ISD",
+            "stateCd": "A1",
+            "stateCodes": "A1",
+            "taxingUnits": "01,02,03,0A,2J,68",
+            "pID": 100123
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8928252,
+            "primarySitus": 1,
+            "streetNum": "1200",
+            "streetPrefix": "S",
+            "streetName": "5",
+            "streetSuffix": "ST",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78704",
+            "country": null,
+            "international": null,
+            "pID": 100123
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 1525164,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1976-05-14 00:00:00",
+            "book": null,
+            "page": "01666",
+            "instrumentNum": null,
+            "volume": "05429",
+            "deedRecordedDt": null,
+            "pID": 100123
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7943697,
+                    "imprvType": "01",
+                    "sequence": null,
+                    "stateCd": "A1",
+                    "actualYearBuilt": 1935,
+                    "effYearBuilt": 1935,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 1444
+                      },
+                      {
+                        "imprvDetailType": "1/2",
+                        "sequence": null,
+                        "area": 502
+                      },
+                      {
+                        "imprvDetailType": "031",
+                        "sequence": null,
+                        "area": 205
+                      },
+                      {
+                        "imprvDetailType": "251",
+                        "sequence": null,
+                        "area": 2
+                      },
+                      {
+                        "imprvDetailType": "095",
+                        "sequence": null,
+                        "area": 1946
+                      },
+                      {
+                        "imprvDetailType": "612",
+                        "sequence": null,
+                        "area": 98
+                      }
+                    ]
+                  },
+                  {
+                    "pImprovementID": 7943698,
+                    "imprvType": "01",
+                    "sequence": null,
+                    "stateCd": "A1",
+                    "actualYearBuilt": 1955,
+                    "effYearBuilt": 1955,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 475
+                      },
+                      {
+                        "imprvDetailType": "011",
+                        "sequence": null,
+                        "area": 52
+                      },
+                      {
+                        "imprvDetailType": "251",
+                        "sequence": null,
+                        "area": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "pYear": null,
+            "details": null
+          }
+        ],
+        "sales": [],
+        "owners": []
+      }
+    },
+    {
+      "case": "d: unmapped state code F5 with no improvement -> LandParcel",
+      "pID": "100247",
+      "record_ordinal": 207,
+      "record_sha256": "1222bd24f4d8269ab1be8d0cc0a114f495f7c5ea8e711de78f765bb8158ba698",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": 30.2485286,
+        "longitude": -97.7704136,
+        "source": "gis_centroid",
+        "rule": "centroid"
+      },
+      "record": {
+        "pID": 100247,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[30.2485874481, -97.7703848560]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S04824",
+            "block": null,
+            "lot": "1",
+            "additionalLegal": null,
+            "legalAcreage": 0.1258,
+            "legalDescription": "S TRI OF LOT 1 FREDERICKSBURG ROAD ACRES 2",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": 0.1258,
+            "pID": 100247
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0100050132",
+            "refID1": null,
+            "refID2": "01000501320000",
+            "mapID": "010208",
+            "mapsco": null,
+            "pID": 100247
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "02",
+            "cityTaxingUnitID": 1002,
+            "cityTaxingUnitName": "CITY OF AUSTIN",
+            "exemptions": "",
+            "fieldInspectionDt": null,
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 0,
+            "imprvAge": 0,
+            "imprvClass": "",
+            "imprvClasses": "",
+            "imprvCondition": "",
+            "imprvDeprec": 0,
+            "imprvDeprecGood": 0,
+            "imprvEconomicAdj": 0,
+            "imprvEffYearBuilt": 0,
+            "imprvFactor": 0,
+            "imprvFunctionalAdj": 0,
+            "imprvMABaseUnitPrice": 0,
+            "imprvMAUnitPrice": 0,
+            "imprvMainArea": 0,
+            "imprvOnly": 0,
+            "imprvPctComplete": 0,
+            "imprvPhysicalAdj": 0,
+            "imprvQuality": "",
+            "imprvStateCd": "",
+            "imprvStories": 0,
+            "imprvStyle": "",
+            "imprvTotalArea": 0,
+            "imprvType": "",
+            "imprvUnits": 0,
+            "landOnly": 1,
+            "landSizeAcres": 0.1258,
+            "landSizeDepthLeft": 0,
+            "landSizeDepthRight": 0,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 5482,
+            "landSizeUseableAcres": 0.1258,
+            "landSizeUseableSqft": 5482,
+            "landSizeWidthBack": 0,
+            "landSizeWidthFront": 0,
+            "landStateCd": "F5",
+            "landTotalAcres": 0.1258,
+            "landTotalLots": 1,
+            "landTotalSqft": 5482,
+            "landTotalUseableAcres": 0.1258,
+            "landTotalUseableSqft": 5482,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 85,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "SPECIAL SF",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "SF",
+            "landMktModel": 59,
+            "landMktModelUnitPrice": 0,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 150,
+            "landMktUnitPriceSelection": "S",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "01",
+            "schoolTaxingUnitID": 1001,
+            "schoolTaxingUnitName": "AUSTIN ISD",
+            "stateCd": "F5",
+            "stateCodes": "F5",
+            "taxingUnits": "01,02,03,0A,2J,68",
+            "pID": 100247
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8928368,
+            "primarySitus": 1,
+            "streetNum": "2107",
+            "streetPrefix": null,
+            "streetName": "KINNEY",
+            "streetSuffix": "AVE",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78704",
+            "country": null,
+            "international": null,
+            "pID": 100247
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 925,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1995-03-15 00:00:00",
+            "book": null,
+            "page": "01711",
+            "instrumentNum": null,
+            "volume": "12394",
+            "deedRecordedDt": null,
+            "pID": 100247
+          },
+          {
+            "deedID": 926,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": null,
+            "book": null,
+            "page": "00000",
+            "instrumentNum": null,
+            "volume": "00000",
+            "deedRecordedDt": "1995-03-15 00:00:00",
+            "pID": 100247
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": []
+              }
+            }
+          },
+          {
+            "pYear": null,
+            "details": null
+          }
+        ],
+        "sales": [
+          {
+            "saleID": 424835,
+            "deedID": 925,
+            "saleDt": "1995-03-15 00:00:00",
+            "saleType": "S",
+            "confidentialSale": 0,
+            "confidentialCode": null,
+            "pID": 100247
+          }
+        ],
+        "owners": []
+      }
+    },
+    {
+      "case": "e: none coordinate (geometry must be null)",
+      "pID": "115195",
+      "record_ordinal": 11835,
+      "record_sha256": "b6bc9fc2bdd500a4b8ebbd765e77fa10ea8b5dc06c0537cf9b187bd7825ba6e7",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": null,
+        "longitude": null,
+        "source": "none",
+        "rule": null
+      },
+      "record": {
+        "pID": 115195,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[null, null]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S11220",
+            "block": "A",
+            "lot": "6",
+            "additionalLegal": null,
+            "legalAcreage": 0.0835,
+            "legalDescription": "UNT 6 BLD A RED BUD OFFICE PARK PLUS 4.2372% INT IN COMMON AREA",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": 0.0835,
+            "pID": 115195
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0115210401",
+            "refID1": null,
+            "refID2": "01152104010000",
+            "mapID": "011027",
+            "mapsco": null,
+            "pID": 115195
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "09",
+            "cityTaxingUnitID": 1008,
+            "cityTaxingUnitName": "CITY OF WEST LAKE HILLS",
+            "exemptions": "",
+            "fieldInspectionDt": "2025-09-26 10:41:55",
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 1980,
+            "imprvAge": 0,
+            "imprvClass": "D",
+            "imprvClasses": "D",
+            "imprvCondition": "A",
+            "imprvDeprec": 75,
+            "imprvDeprecGood": 75,
+            "imprvEconomicAdj": 100,
+            "imprvEffYearBuilt": 1980,
+            "imprvFactor": 126,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 279.29,
+            "imprvMAUnitPrice": 251.36,
+            "imprvMainArea": 625,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "5",
+            "imprvStateCd": "F4",
+            "imprvStories": 1,
+            "imprvStyle": "",
+            "imprvTotalArea": 1259.5,
+            "imprvType": "23",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 0.0835,
+            "landSizeDepthLeft": 0,
+            "landSizeDepthRight": 0,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 3638,
+            "landSizeUseableAcres": 0.0835,
+            "landSizeUseableSqft": 3638,
+            "landSizeWidthBack": 0,
+            "landSizeWidthFront": 0,
+            "landStateCd": "F4",
+            "landTotalAcres": 0.0835,
+            "landTotalLots": 1,
+            "landTotalSqft": 3638,
+            "landTotalUseableAcres": 0.0835,
+            "landTotalUseableSqft": 3638,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 100,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "SPECIAL SF",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "SF",
+            "landMktModel": 59,
+            "landMktModelUnitPrice": 0,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 20,
+            "landMktUnitPriceSelection": "S",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "08",
+            "schoolTaxingUnitID": 1007,
+            "schoolTaxingUnitName": "EANES ISD",
+            "stateCd": "F4",
+            "stateCodes": "F4",
+            "taxingUnits": "03,08,09,0A,10,2J,39",
+            "pID": 115195
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8940385,
+            "primarySitus": 1,
+            "streetNum": "5450",
+            "streetPrefix": null,
+            "streetName": "BEE CAVE",
+            "streetSuffix": "RD",
+            "streetSecondary": "1",
+            "city": null,
+            "state": "TX",
+            "zip": "78746",
+            "country": null,
+            "international": null,
+            "pID": 115195
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 76426,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2000-05-31 00:00:00",
+            "book": null,
+            "page": "00000",
+            "instrumentNum": "2000084416TR",
+            "volume": "00000",
+            "deedRecordedDt": null,
+            "pID": 115195
+          },
+          {
+            "deedID": 76427,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1984-08-27 00:00:00",
+            "book": null,
+            "page": "00303",
+            "instrumentNum": null,
+            "volume": "08817",
+            "deedRecordedDt": "2000-05-31 00:00:00",
+            "pID": 115195
+          },
+          {
+            "deedID": 76428,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1981-10-09 00:00:00",
+            "book": null,
+            "page": "00240",
+            "instrumentNum": null,
+            "volume": "07601",
+            "deedRecordedDt": "1984-08-27 00:00:00",
+            "pID": 115195
+          },
+          {
+            "deedID": 76429,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1984-08-27 00:00:00",
+            "book": null,
+            "page": "00303",
+            "instrumentNum": null,
+            "volume": "08817",
+            "deedRecordedDt": "1984-08-27 00:00:00",
+            "pID": 115195
+          },
+          {
+            "deedID": 76430,
+            "deedType": null,
+            "fileDt": null,
+            "deedDt": null,
+            "book": null,
+            "page": "00000",
+            "instrumentNum": null,
+            "volume": "00000",
+            "deedRecordedDt": "1981-10-09 00:00:00",
+            "pID": 115195
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7957100,
+                    "imprvType": "23",
+                    "sequence": null,
+                    "stateCd": "F4",
+                    "actualYearBuilt": 1980,
+                    "effYearBuilt": 1980,
+                    "details": [
+                      {
+                        "imprvDetailType": "2ND",
+                        "sequence": null,
+                        "area": 625
+                      },
+                      {
+                        "imprvDetailType": "091",
+                        "sequence": null,
+                        "area": 2.5
+                      },
+                      {
+                        "imprvDetailType": "511",
+                        "sequence": null,
+                        "area": 104
+                      },
+                      {
+                        "imprvDetailType": "511",
+                        "sequence": null,
+                        "area": 32
+                      },
+                      {
+                        "imprvDetailType": "521",
+                        "sequence": null,
+                        "area": 1
+                      },
+                      {
+                        "imprvDetailType": "591",
+                        "sequence": null,
+                        "area": 495
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "pYear": null,
+            "details": null
+          }
+        ],
+        "sales": [
+          {
+            "saleID": 346844,
+            "deedID": 76426,
+            "saleDt": "2000-05-31 00:00:00",
+            "saleType": "S",
+            "confidentialSale": 0,
+            "confidentialCode": null,
+            "pID": 115195
+          }
+        ],
+        "owners": []
+      }
+    },
+    {
+      "case": "c: imprvActualYearBuilt missing/0, year from largest_main_improvement",
+      "pID": "124104",
+      "record_ordinal": 18893,
+      "record_sha256": "4fb0f13127c6aa4f54dbb85c44e5b5eb02b25f7654162b1c6f744faa0ea47c83",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": 30.329134,
+        "longitude": -97.9261006,
+        "source": "gis_centroid",
+        "rule": "centroid"
+      },
+      "record": {
+        "pID": 124104,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[30.3291281962, -97.9260930448]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "S07416",
+            "block": null,
+            "lot": "38",
+            "additionalLegal": null,
+            "legalAcreage": 0.1278,
+            "legalDescription": "LOT 38 LAKE AUSTIN VILLAGE",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": 0.1278,
+            "pID": 124104
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0127580602",
+            "refID1": "WR028502",
+            "refID2": "01275806020000",
+            "mapID": "012657",
+            "mapsco": null,
+            "pID": 124104
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "",
+            "cityTaxingUnitID": 0,
+            "cityTaxingUnitName": "",
+            "exemptions": "HS",
+            "fieldInspectionDt": null,
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 0,
+            "imprvAge": 0,
+            "imprvClass": "R3",
+            "imprvClasses": "*,R3",
+            "imprvCondition": "A",
+            "imprvDeprec": 96,
+            "imprvDeprecGood": 96,
+            "imprvEconomicAdj": 100,
+            "imprvEffYearBuilt": 2019,
+            "imprvFactor": 100,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 162.68,
+            "imprvMAUnitPrice": 162.68,
+            "imprvMainArea": 2612,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "*",
+            "imprvStateCd": "A1",
+            "imprvStories": 2,
+            "imprvStyle": "",
+            "imprvTotalArea": 7248.3,
+            "imprvType": "01",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 0.1278,
+            "landSizeDepthLeft": 0,
+            "landSizeDepthRight": 0,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 5565,
+            "landSizeUseableAcres": 0.1278,
+            "landSizeUseableSqft": 5565,
+            "landSizeWidthBack": 0,
+            "landSizeWidthFront": 0,
+            "landStateCd": "A1",
+            "landTotalAcres": 0.1278,
+            "landTotalLots": 1,
+            "landTotalSqft": 5565,
+            "landTotalUseableAcres": 0.1278,
+            "landTotalUseableSqft": 5565,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 100,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "U3270",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "LOT",
+            "landMktModel": 1463,
+            "landMktModelUnitPrice": 243599.25,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 300000,
+            "landMktUnitPriceSelection": "T",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "69",
+            "schoolTaxingUnitID": 1098,
+            "schoolTaxingUnitName": "LEANDER ISD",
+            "stateCd": "A1",
+            "stateCodes": "A1,A3",
+            "taxingUnits": "03,0A,2J,52,68,69",
+            "pID": 124104
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8947592,
+            "primarySitus": 1,
+            "streetNum": "12715",
+            "streetPrefix": null,
+            "streetName": "RIVER",
+            "streetSuffix": "BND",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78732",
+            "country": null,
+            "international": null,
+            "pID": 124104
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 128283,
+            "deedType": "SW",
+            "fileDt": null,
+            "deedDt": "2002-09-26 00:00:00",
+            "book": null,
+            "page": "00000",
+            "instrumentNum": "2002184020TR",
+            "volume": "00000",
+            "deedRecordedDt": null,
+            "pID": 124104
+          },
+          {
+            "deedID": 128284,
+            "deedType": "CN",
+            "fileDt": null,
+            "deedDt": "1997-01-07 00:00:00",
+            "book": null,
+            "page": "00140",
+            "instrumentNum": null,
+            "volume": "12853",
+            "deedRecordedDt": "2002-09-26 00:00:00",
+            "pID": 124104
+          },
+          {
+            "deedID": 128285,
+            "deedType": "SW",
+            "fileDt": null,
+            "deedDt": "1993-11-10 00:00:00",
+            "book": null,
+            "page": "00492",
+            "instrumentNum": null,
+            "volume": "12771",
+            "deedRecordedDt": "1997-01-07 00:00:00",
+            "pID": 124104
+          },
+          {
+            "deedID": 128286,
+            "deedType": null,
+            "fileDt": null,
+            "deedDt": null,
+            "book": null,
+            "page": "00000",
+            "instrumentNum": null,
+            "volume": "00000",
+            "deedRecordedDt": "1993-11-10 00:00:00",
+            "pID": 124104
+          },
+          {
+            "deedID": 1560282,
+            "deedType": "QD",
+            "fileDt": null,
+            "deedDt": "2004-04-05 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2004232474TR",
+            "volume": null,
+            "deedRecordedDt": "2004-12-16 00:00:00",
+            "pID": 124104
+          },
+          {
+            "deedID": 2171459,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2018-08-31 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2018140193",
+            "volume": null,
+            "deedRecordedDt": "2018-09-04 00:00:00",
+            "pID": 124104
+          },
+          {
+            "deedID": 2296953,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2020-12-24 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2020253122",
+            "volume": null,
+            "deedRecordedDt": "2020-12-29 00:00:00",
+            "pID": 124104
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7965045,
+                    "imprvType": "01",
+                    "sequence": null,
+                    "stateCd": "A1",
+                    "actualYearBuilt": null,
+                    "effYearBuilt": 2019,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 1250
+                      },
+                      {
+                        "imprvDetailType": "2ND",
+                        "sequence": null,
+                        "area": 1362
+                      },
+                      {
+                        "imprvDetailType": "041",
+                        "sequence": null,
+                        "area": 900
+                      },
+                      {
+                        "imprvDetailType": "095",
+                        "sequence": null,
+                        "area": 2612
+                      },
+                      {
+                        "imprvDetailType": "011",
+                        "sequence": null,
+                        "area": 318
+                      },
+                      {
+                        "imprvDetailType": "612",
+                        "sequence": null,
+                        "area": 364
+                      },
+                      {
+                        "imprvDetailType": "613",
+                        "sequence": null,
+                        "area": 437
+                      }
+                    ]
+                  },
+                  {
+                    "pImprovementID": 7965046,
+                    "imprvType": "00",
+                    "sequence": null,
+                    "stateCd": "A3",
+                    "actualYearBuilt": 2021,
+                    "effYearBuilt": 2021,
+                    "details": [
+                      {
+                        "imprvDetailType": "411",
+                        "sequence": null,
+                        "area": 5.3
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "sales": [],
+        "owners": []
+      }
+    },
+    {
+      "case": "e: permit_point coordinate (geometry must be null)",
+      "pID": "128168",
+      "record_ordinal": 22321,
+      "record_sha256": "399b476477c357f69d7d398ef4e15e268b6e6b8f6456e45a0490672f53dbea13",
+      "confidential_basis": [],
+      "coordinate": {
+        "latitude": 30.338217,
+        "longitude": -97.766286,
+        "source": "permit_point",
+        "rule": "permit_point"
+      },
+      "record": {
+        "pID": 128168,
+        "pRollCorr": 0,
+        "pVersion": 0,
+        "pYear": 2026,
+        "propType": "R",
+        "geometry": "[null, null]",
+        "inactive": 0,
+        "propertyLegalDescription": [
+          {
+            "asCode": "C00526",
+            "block": "8",
+            "lot": "8C-2",
+            "additionalLegal": null,
+            "legalAcreage": null,
+            "legalDescription": "UNT 8C-2 BLD 8 OAKWOOD HOLLOW CONDOMINIUMS AMENDED PLUS 2.1739 % INT IN COM AREA",
+            "mhSpaceNum": null,
+            "tract": null,
+            "effectiveSizeAcres": null,
+            "pID": 128168
+          }
+        ],
+        "propertyIdentification": [
+          {
+            "geoID": "0132050910",
+            "refID1": null,
+            "refID2": "01320509100015",
+            "mapID": "012608",
+            "mapsco": null,
+            "pID": 128168
+          }
+        ],
+        "propertyProfile": [
+          {
+            "bppStateCd": "",
+            "centralAirHeat": 0,
+            "cityTaxingUnitCode": "02",
+            "cityTaxingUnitID": 1002,
+            "cityTaxingUnitName": "CITY OF AUSTIN",
+            "exemptions": "HS",
+            "fieldInspectionDt": null,
+            "fieldInspectionSource": "P",
+            "imprvActualYearBuilt": 2000,
+            "imprvAge": 0,
+            "imprvClass": "R4",
+            "imprvClasses": "R4",
+            "imprvCondition": "A",
+            "imprvDeprec": 74,
+            "imprvDeprecGood": 74,
+            "imprvEconomicAdj": 100,
+            "imprvEffYearBuilt": 2000,
+            "imprvFactor": 100,
+            "imprvFunctionalAdj": 100,
+            "imprvMABaseUnitPrice": 104.22,
+            "imprvMAUnitPrice": 104.22,
+            "imprvMainArea": 2399,
+            "imprvOnly": 0,
+            "imprvPctComplete": 100,
+            "imprvPhysicalAdj": 100,
+            "imprvQuality": "*",
+            "imprvStateCd": "A4",
+            "imprvStories": 1,
+            "imprvStyle": "",
+            "imprvTotalArea": 5627.5,
+            "imprvType": "16",
+            "imprvUnits": 0,
+            "landOnly": 0,
+            "landSizeAcres": 0.3194,
+            "landSizeDepthLeft": 0,
+            "landSizeDepthRight": 0,
+            "landSizeEffectiveDepth": 0,
+            "landSizeEffectiveFront": 0,
+            "landSizeLot": 1,
+            "landSizeSqft": 13912.59,
+            "landSizeUseableAcres": 0.3194,
+            "landSizeUseableSqft": 13912.59,
+            "landSizeWidthBack": 0,
+            "landSizeWidthFront": 0,
+            "landStateCd": "A4",
+            "landTotalAcres": 0.3194,
+            "landTotalLots": 1,
+            "landTotalSqft": 13912.59,
+            "landTotalUseableAcres": 0.3194,
+            "landTotalUseableSqft": 13912.59,
+            "landType": "LAND",
+            "landClass": "",
+            "landClasses": "",
+            "landFactor": 69,
+            "landHomesitePct": 0,
+            "landInfluence": "",
+            "landMktClass": "SPECIAL SF",
+            "landMktEconomicAdj": 100,
+            "landMktFunctionalAdj": 100,
+            "landMktMethod": "SF",
+            "landMktModel": 59,
+            "landMktModelUnitPrice": 0,
+            "landMktPhysicalAdj": 100,
+            "landMktSpecialUnitPrice": 8,
+            "landMktUnitPriceSelection": "S",
+            "mineralStateCd": "",
+            "mobileHomeNumbers": null,
+            "activeFieldInspection": 0,
+            "activePermit": 0,
+            "schoolTaxingUnitCode": "01",
+            "schoolTaxingUnitID": 1001,
+            "schoolTaxingUnitName": "AUSTIN ISD",
+            "stateCd": "A4",
+            "stateCodes": "A4",
+            "taxingUnits": "01,02,03,0A,2J,68",
+            "pID": 128168
+          }
+        ],
+        "situses": [
+          {
+            "situsAddressID": 8951064,
+            "primarySitus": 1,
+            "streetNum": "5513",
+            "streetPrefix": null,
+            "streetName": "OAKWOOD",
+            "streetSuffix": "CV",
+            "streetSecondary": null,
+            "city": null,
+            "state": "TX",
+            "zip": "78731",
+            "country": null,
+            "international": null,
+            "pID": 128168
+          }
+        ],
+        "deeds": [
+          {
+            "deedID": 150478,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2001-04-26 00:00:00",
+            "book": null,
+            "page": "00000",
+            "instrumentNum": "2001065433TR",
+            "volume": "00000",
+            "deedRecordedDt": null,
+            "pID": 128168
+          },
+          {
+            "deedID": 150479,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1999-04-29 00:00:00",
+            "book": null,
+            "page": "00000",
+            "instrumentNum": "1999028244TR",
+            "volume": "00000",
+            "deedRecordedDt": "2001-04-26 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150480,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1999-03-11 00:00:00",
+            "book": null,
+            "page": "02510",
+            "instrumentNum": null,
+            "volume": "13398",
+            "deedRecordedDt": "1999-04-29 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150481,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1997-12-16 00:00:00",
+            "book": null,
+            "page": "01308",
+            "instrumentNum": null,
+            "volume": "13084",
+            "deedRecordedDt": "1999-03-11 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150482,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1996-08-23 00:00:00",
+            "book": null,
+            "page": "01028",
+            "instrumentNum": null,
+            "volume": "12761",
+            "deedRecordedDt": "1997-12-16 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150483,
+            "deedType": "SW",
+            "fileDt": null,
+            "deedDt": "1991-09-08 00:00:00",
+            "book": null,
+            "page": "00960",
+            "instrumentNum": null,
+            "volume": "11528",
+            "deedRecordedDt": "1996-08-23 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150484,
+            "deedType": "MS",
+            "fileDt": null,
+            "deedDt": null,
+            "book": null,
+            "page": "00000",
+            "instrumentNum": null,
+            "volume": "00000",
+            "deedRecordedDt": "1991-09-08 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150485,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "1986-03-19 00:00:00",
+            "book": null,
+            "page": "00795",
+            "instrumentNum": null,
+            "volume": "09640",
+            "deedRecordedDt": "1988-01-05 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 150486,
+            "deedType": null,
+            "fileDt": null,
+            "deedDt": "1985-01-01 00:00:00",
+            "book": null,
+            "page": "00000",
+            "instrumentNum": null,
+            "volume": "00000",
+            "deedRecordedDt": "1986-03-19 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 1573454,
+            "deedType": "WD",
+            "fileDt": null,
+            "deedDt": "2005-03-29 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2005054228TR",
+            "volume": null,
+            "deedRecordedDt": "2005-03-30 00:00:00",
+            "pID": 128168
+          },
+          {
+            "deedID": 2399075,
+            "deedType": "ED",
+            "fileDt": "2022-12-13",
+            "deedDt": "2022-12-08 00:00:00",
+            "book": null,
+            "page": null,
+            "instrumentNum": "2022191091",
+            "volume": null,
+            "deedRecordedDt": "2022-12-13 00:00:00",
+            "pID": 128168
+          }
+        ],
+        "valuations": [
+          {
+            "pYear": null,
+            "details": {
+              "cost-local": {
+                "improvements": [
+                  {
+                    "pImprovementID": 7968700,
+                    "imprvType": "16",
+                    "sequence": null,
+                    "stateCd": "A4",
+                    "actualYearBuilt": 2000,
+                    "effYearBuilt": 2000,
+                    "details": [
+                      {
+                        "imprvDetailType": "1ST",
+                        "sequence": null,
+                        "area": 1422
+                      },
+                      {
+                        "imprvDetailType": "RSBLW",
+                        "sequence": null,
+                        "area": 977
+                      },
+                      {
+                        "imprvDetailType": "011",
+                        "sequence": null,
+                        "area": 57
+                      },
+                      {
+                        "imprvDetailType": "011",
+                        "sequence": null,
+                        "area": 112
+                      },
+                      {
+                        "imprvDetailType": "011",
+                        "sequence": null,
+                        "area": 112
+                      },
+                      {
+                        "imprvDetailType": "041",
+                        "sequence": null,
+                        "area": 544
+                      },
+                      {
+                        "imprvDetailType": "095",
+                        "sequence": null,
+                        "area": 2399
+                      },
+                      {
+                        "imprvDetailType": "251",
+                        "sequence": null,
+                        "area": 3.5
+                      },
+                      {
+                        "imprvDetailType": "522",
+                        "sequence": null,
+                        "area": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "pYear": null,
+            "details": null
+          }
+        ],
+        "sales": [
+          {
+            "saleID": 333273,
+            "deedID": 150478,
+            "saleDt": "2001-04-26 00:00:00",
+            "saleType": "S",
+            "confidentialSale": 0,
+            "confidentialCode": null,
+            "pID": 128168
+          }
+        ],
+        "owners": []
+      }
+    }
+  ],
+  "permit": {
+    "permit_number": "2003-012717 BP",
+    "request_identifier": "100027",
+    "source": "austin-3syk-w9eu",
+    "row_id": "row-a9r6.b44n.i5xg",
+    "content_sha256": "b8facaa6d53c70784d9f40282faa68969d566e2045294e584761673fb1b44c0d",
+    "captured_at": "2026-10-21T22:21:42.078Z",
+    "payload": {
+      ":id": "row-a9r6.b44n.i5xg",
+      "link": {
+        "url": "https://abc.austintexas.gov/web/permit/public-search-other?t_detail=1&t_selected_folderrsn=694427"
+      },
+      "tcad_id": "0100030208",
+      "latitude": "30.2551807",
+      "location": {
+        "latitude": "30.2551807",
+        "longitude": "-97.76116611",
+        "human_address": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      },
+      "longitude": "-97.76116611",
+      "day_issued": "FRIDAY",
+      "issue_date": "2003-03-28T00:00:00.000",
+      "permittype": "BP",
+      "project_id": "694427",
+      "statusdate": "2007-03-02T00:00:00.000",
+      "work_class": "Remodel",
+      ":created_at": "2026-10-21T11:39:16.349Z",
+      ":updated_at": "2026-10-21T13:58:59.874Z",
+      "applieddate": "2002-09-23T00:00:00.000",
+      "condominium": "No",
+      "description": "Remodel Existing Residence- To Reroof- Siding- Upgrade Electrical-Replace Windows-Foundation Repair-Upgrade Plmb-Install New Hvac.",
+      "expiresdate": "2007-01-18T00:00:00.000",
+      "issue_method": "Permit Center",
+      "jurisdiction": "AUSTIN FULL PURPOSE",
+      "original_zip": "78704",
+      "permit_class": "R- 435 Renovations/Remodel",
+      "original_city": "AUSTIN",
+      "permit_number": "2003-012717 BP",
+      "completed_date": "2007-01-18T00:00:00.000",
+      "original_state": "TX",
+      "status_current": "Final",
+      "masterpermitnum": "218587",
+      "permit_location": "1008 S 8th St",
+      "council_district": "9",
+      "permit_type_desc": "Building Permit",
+      "legal_description": "LOT 8-9 BLK 18 SOUTH HEIGHTS",
+      "original_address1": "1008 S 8TH ST",
+      "fiscal_year_issued": "2003",
+      "permit_class_mapped": "Residential",
+      "total_job_valuation": "25000",
+      "calendar_year_issued": "2003",
+      "issued_in_last_30_days": "No",
+      "certificate_of_occupancy": "Yes"
+    }
+  }
+}

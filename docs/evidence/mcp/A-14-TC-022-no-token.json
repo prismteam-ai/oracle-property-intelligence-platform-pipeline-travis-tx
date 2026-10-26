@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "tools/call",
+    "params": {
+      "name": "get_schema",
+      "arguments": {}
+    }
+  },
+  "status": 401,
+  "ms": 1532,
+  "body": {
+    "error": "unauthorized"
+  }
+}

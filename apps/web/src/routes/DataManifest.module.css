@@ -1,0 +1,463 @@
+/* Data · Manifest and Data · Verify (A-13 T023): Atlas § 7 data table inside its own scroll
+   container (the page never scrolls sideways at 390), mono CIDs and digests, 48 px action links.
+   Atlas tokens only. */
+
+/* A-16 PO note 2026-10-26: the page uses the whole content width (no max-width that left the
+   panels stuck to the left at 1440). */
+.page {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.scroll {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* The artifact list scrolls inside a bounded panel with a sticky header (board: one screen).
+   position: relative keeps the visually hidden name prefixes inside the panel: without it they
+   were placed against the page and stretched the document to ~19,000 px at 1440. */
+.artifactScroll {
+  position: relative;
+  max-height: 70vh;
+  overflow-y: auto;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+}
+
+/* The header of every data table in the app (Runs, Log, Permits): title-small on the band. */
+.table th {
+  padding: var(--space-4) var(--space-3);
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: var(--space-1) var(--space-3);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  vertical-align: middle;
+}
+
+.mono {
+  font-family: var(--md-ref-typeface-mono);
+  overflow-wrap: anywhere;
+}
+
+/* Artifact names read as body text (board), not as code. */
+.name {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* Data · Verify file card: one detail line under the name (board DataVerify1440). */
+.targetLine {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+}
+
+.targetCard {
+  gap: 0;
+}
+
+/* Board footer strip under the table card. */
+.tableFoot {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.digest {
+  min-width: calc(var(--space-10) * 2);
+  font-family: var(--md-ref-typeface-mono);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.actionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.actionLink:hover {
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-primary) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}
+
+.actionLink:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* A-16 style pass (PO 2026-10-26, boards DataManifest1440 / RunChain / Data390): page title
+   "Data" on the left, the outlined Run dropdown and the outlined manifest.json button right. */
+.pageTitle {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-6);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  white-space: nowrap;
+}
+
+.download:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Outlined cards of the board: the Run chain card and the artifact table card. */
+.cardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+}
+
+.tableCard {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+}
+
+/* Summary strip under the run cards (board RunChain). */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  min-width: 0;
+  padding: 0 var(--space-3);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* Run chain cards (board RunChain): newest first, the current run filled; below 1024 px they
+   stack with a down arrow between them (at 768 a row clipped the fourth card), from 1024 px they
+   sit in one row with right arrows (a longer chain scrolls inside the card, never the page). */
+.chainCards {
+  display: grid;
+  gap: var(--space-7);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chainCard {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  min-width: 0;
+  padding: var(--space-3) var(--space-3) 0;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  overflow-wrap: anywhere;
+}
+
+.chainCard + .chainCard::before {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: var(--space-7);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  line-height: var(--space-7);
+  text-align: center;
+  content: "↓";
+  translate: -50% 0;
+}
+
+.chainCurrent {
+  border-color: transparent;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.chainLabel {
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+}
+
+.chainThis {
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+
+.chainRunId {
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.chainCid {
+  font-size: var(--md-sys-typescale-body-medium-size);
+}
+
+@media (min-width: 1024px) {
+  .chainCards {
+    grid-auto-columns: minmax(calc(var(--space-10) * 2.5), 1fr);
+    grid-auto-flow: column;
+    padding-bottom: var(--space-1);
+    overflow-x: auto;
+  }
+
+  .chainCard + .chainCard::before {
+    top: var(--space-6);
+    right: 100%;
+    bottom: auto;
+    left: auto;
+    content: "→";
+    translate: 0 0;
+  }
+}
+
+.lanes {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+@media (min-width: 840px) {
+  .lanes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* The single fallback lane (Filebase) spans both columns. */
+  .lanesFull > * {
+    grid-column: 1 / -1;
+  }
+}
+
+/* The manifest.json link wears the outlined chip of Runs, without a link underline. */
+.page a[download] {
+  text-decoration: none;
+}
+
+.artifactScroll thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--md-sys-color-surface-container-high);
+}
+
+.artifactScroll td:first-child {
+  min-width: calc(var(--space-10) * 4);
+}
+
+/* The shared folder stays in each name for screen readers and text reads, hidden on screen. */
+.artifactScroll td:first-child > span > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The Details column only serves the phone cards. */
+.artifactScroll th:last-child,
+.artifactScroll td:last-child {
+  display: none;
+}
+
+/* B-4: below 1024 px every column is reachable without a sideways scroll: each artifact is a
+   compact block of label/value pairs, two per line (name first, full width). */
+@media (max-width: 1023.98px) {
+  .artifactScroll thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .artifactScroll table,
+  .artifactScroll tbody {
+    display: block;
+  }
+
+  .artifactScroll tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 0 var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .artifactScroll td {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+    gap: var(--space-2);
+    min-width: 0;
+    padding: 0;
+    border-bottom: 0;
+    text-align: start;
+  }
+
+  .artifactScroll td::before {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  /* The column names, from CSS so the rows carry no extra markup (bundle budget). */
+  .artifactScroll td:nth-child(2)::before {
+    content: "CID";
+  }
+
+  .artifactScroll td:nth-child(3)::before {
+    content: "Codec";
+  }
+
+  .artifactScroll td:nth-child(4)::before {
+    content: "Size";
+  }
+
+  .artifactScroll td:nth-child(5)::before {
+    content: "SHA-256";
+  }
+
+  .artifactScroll td:nth-child(6)::before {
+    content: "CAR";
+  }
+
+  .artifactScroll td:nth-child(7)::before {
+    content: "Verify";
+  }
+
+  .artifactScroll td:first-child {
+    display: block;
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding-bottom: var(--space-1);
+    font-weight: var(--md-sys-typescale-title-small-weight);
+  }
+}
+
+/* B-3: below 600 px a card shows name, size, check and a Details disclosure; CID, codec,
+   SHA-256 and CAR open with it (every row stays in the DOM). */
+@media (max-width: 599.98px) {
+  .artifactScroll td:last-child {
+    display: block;
+  }
+
+  .artifactScroll
+    tr:not(:has(details[open]))
+    td:is(:nth-child(2), :nth-child(3), :nth-child(5), :nth-child(6)) {
+    display: none;
+  }
+
+  .artifactScroll
+    tr:has(details[open])
+    td:is(:nth-child(2), :nth-child(3), :nth-child(5), :nth-child(6)) {
+    grid-column: 1 / -1;
+  }
+
+  .artifactScroll td:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .artifactScroll summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--space-9);
+    min-height: var(--space-9);
+    color: var(--md-sys-color-primary);
+    font-family: var(--md-sys-typescale-label-large-font);
+    font-size: var(--md-sys-typescale-label-large-size);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    cursor: pointer;
+  }
+
+  .artifactScroll summary:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
+  }
+}

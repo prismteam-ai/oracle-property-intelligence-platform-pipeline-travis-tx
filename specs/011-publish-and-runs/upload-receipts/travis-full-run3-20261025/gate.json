@@ -1,0 +1,29 @@
+{
+  "step": "gate",
+  "manifestCid": "bafkreifndsdibdllvgpzwmif6getzwvc6rupk5tgeak4eypccaw3t7vlfm",
+  "remoteOnly": false,
+  "result": "PASS",
+  "summary": {
+    "manifest": "/Users/hebagaber/Github/run3-integration/runs/travis-full-run3-20261025/manifest.json",
+    "v_roofing_permit": 15025,
+    "meta_permit": 15025,
+    "permits_emitted": 15025,
+    "permit_side_properties": 10792,
+    "unmatched_properties": 0,
+    "pids_checked": 0,
+    "pids_unmatched": 0,
+    "result": "PASS",
+    "failures": [],
+    "previous": {
+      "previous_properties": 441961,
+      "previous_permits": 15025,
+      "missing_properties": 0,
+      "missing_permits": 0,
+      "changed_identifier": 0,
+      "remapped": 0,
+      "cid_map": [],
+      "lost": []
+    }
+  },
+  "recordedAt": "2026-10-25T12:50:38.628Z"
+}

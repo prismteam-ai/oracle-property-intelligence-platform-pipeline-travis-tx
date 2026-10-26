@@ -1,0 +1,78 @@
+# A-11 Run 3, one-off (PO 2026-10-25): publish steps 3 (car-files) and 7 (release) from a GitHub
+# runner instead of the laptop's home uplink, file by file as step 5 fills the CID copy. The CAR files are read from the public CID copy
+# (CloudFront serves S3 key ipfs/<carCid> at https://<host>/<carCid>; written by step 5); Kubo add refuses any file whose CID differs
+# from the manifest's carCid, and the release step re-hashes each CAR, so a bad download fails.
+# Runs only on a push to this branch; this branch is never merged. No AWS credentials are used.
+# Filebase keys come from repository secrets and are never printed; GITHUB_TOKEN is the job's own.
+name: run3-cloud-publish
+
+on:
+  push:
+    branches: [run3-cloud-publish]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: run3-cloud-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      RUN_ID: travis-full-run3-20261025
+      MANIFEST: runs/travis-full-run3-20261025/manifest.json
+      CID_COPY_HOST: ${{ vars.CID_COPY_HOST }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Step 3 car-files, file by file as the CID copy fills (every 5 min, up to 5 h)
+        env:
+          FILEBASE_ACCESS_KEY: ${{ secrets.FILEBASE_ACCESS_KEY }}
+          FILEBASE_SECRET_KEY: ${{ secrets.FILEBASE_SECRET_KEY }}
+          FILEBASE_BUCKET: ${{ secrets.FILEBASE_BUCKET }}
+          PUBLISH_DEFER_PINATA: "1"
+          PUBLISH_CARFILES_NO_PROBE: "1"
+          PUBLISH_CARFILES_PRESENT_ONLY: "1"
+        run: |
+          export NODE_OPTIONS="--import $(node -e "console.log(require('path').dirname(require.resolve('tsx'))+'/loader.mjs')") --import $PWD/pipeline/publish/scripts/fetch-retry.ts"
+          R=specs/011-publish-and-runs/upload-receipts/$RUN_ID/carfiles
+          for round in $(seq 1 60); do
+            echo "round $round $(date -u +%FT%TZ)"
+            node .github/run3/fetch-available.mjs
+            npx tsx pipeline/publish/scripts/publish-run.ts --manifest "$MANIFEST" --run-id "$RUN_ID" \
+              --release-target feature/oracle-pipeline --repo "$GITHUB_REPOSITORY" --step car-files \
+              || echo "car-files round $round failed; the next round retries (finished files keep their receipts)"
+            done_n=$(ls "$R" 2>/dev/null | grep -c '\.json$' || true)
+            echo "car-files receipts: $done_n/30"
+            [ "$done_n" -ge 30 ] && exit 0
+            sleep 300
+          done
+          echo "not all CAR files arrived in 5 h"; exit 1
+
+      - name: Step 7 GitHub release (CARs)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          npx tsx pipeline/publish/scripts/publish-run.ts --manifest "$MANIFEST" --run-id "$RUN_ID" \
+            --release-target feature/oracle-pipeline --repo "$GITHUB_REPOSITORY" --step release
+
+      - name: Keep the receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run3-receipts
+          path: specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/
+          if-no-files-found: warn

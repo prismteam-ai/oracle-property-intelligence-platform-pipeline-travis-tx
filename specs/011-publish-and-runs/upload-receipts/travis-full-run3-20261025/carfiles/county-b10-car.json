@@ -1,0 +1,14 @@
+{
+  "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3/county-batched/cars/travis-county-b10.car",
+  "carCid": "bafybeiayndo23krt33jp3ww2qc32rhky5lgry43qv6xxfkn6zsbaqjdqkm",
+  "size": 336229196,
+  "adopted": false,
+  "gateways": [
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "recordedAt": "2026-10-25T21:54:39.441Z"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07",
+  "carCid": "bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4",
+  "size": 3066,
+  "adopted": true,
+  "gateways": [
+    {
+      "gateway": "https://gateway.pinata.cloud",
+      "ok": true,
+      "status": 206
+    },
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 206
+    }
+  ],
+  "recordedAt": "2026-10-24T17:29:00.669Z"
+}

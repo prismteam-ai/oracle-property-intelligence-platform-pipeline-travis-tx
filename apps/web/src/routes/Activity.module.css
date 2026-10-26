@@ -1,0 +1,223 @@
+/* Activity (A-16 T044; boards Activity1440/768/390): page header with Download CSV on the right,
+   the summary card and the per-day card side by side from 1200 px (the board's two panels),
+   filled borderless stat tiles (two columns at 390, as many 152 px tiles as fit from 600: one row
+   of five at 1440), a query disclosure and the ActivityStates empty state. Cards, meters and the section title come from Runs.module.css. Tokens only. */
+.head {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-6);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  white-space: nowrap;
+}
+
+.download:hover {
+  background: var(--md-sys-color-surface-container);
+}
+
+.download:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.panels {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+  min-width: 0;
+}
+
+.cardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-2);
+}
+
+.metrics {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The board's stat tile: surface-container-high, no outline (overrides Runs .tile). */
+.metrics > li {
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: 0;
+  background: var(--md-sys-color-surface-container-high);
+}
+
+.metrics > li > b,
+.metrics > li > a {
+  font-family: var(--md-sys-typescale-headline-small-font);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+}
+
+/* The board's big number, kept as the link to its Logs Insights query: primary, no underline until
+   hover, and a 48 x 48 px minimum target even for a one-digit "0". */
+.metricLink {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+}
+
+.metricLink:hover {
+  text-decoration: underline;
+}
+
+.metricLink:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.query summary {
+  min-height: var(--space-9);
+  display: flex;
+  align-items: center;
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+}
+
+.pre {
+  margin: 0;
+  padding: var(--space-3);
+  overflow-x: auto;
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ActivityStates "Empty": an icon, a title-large heading, the reason, and a tonal Start a search. */
+.empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.emptyIcon {
+  color: var(--md-sys-color-primary);
+}
+
+.emptyTitle {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-large-font);
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+}
+
+.tonal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-6) 0 var(--space-4);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.tonal:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* From 1024 px the title and the provenance line share a row, as on the 1440 board. */
+@media (min-width: 1024px) {
+  .titleRow {
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 600px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: start;
+  }
+
+  /* As many 152 px tiles as fit: five in one row at 1440 (the board's single tile row), three
+     at 768. */
+  .metrics {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc(var(--space-10) * 2 + var(--space-6)), 1fr)
+    );
+  }
+
+  .metrics > li {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .metrics > li > b,
+  .metrics > li > a {
+    font-family: var(--md-sys-typescale-headline-medium-font);
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    line-height: var(--md-sys-typescale-headline-medium-line-height);
+  }
+}
+
+/* A value and its unit stay on one line ("28,995 ms"). */
+.metrics > li > b,
+.metrics > li > a {
+  white-space: nowrap;
+}
+
+@media (min-width: 1200px) {
+  .panels {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  /* Five tiles share the summary card's row: headline-small keeps "28,995 ms" inside its tile. */
+  .metrics > li > b,
+  .metrics > li > a {
+    font-family: var(--md-sys-typescale-headline-small-font);
+    font-size: var(--md-sys-typescale-headline-small-size);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
+  }
+}

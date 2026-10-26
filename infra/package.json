@@ -1,0 +1,30 @@
+{
+  "name": "@countylens/infra",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CDK app for the five CountyLens stacks (CountyLensData, CountyLensApi, CountyLensWeb, CountyLensOps, CountyLensCert; AD-23, D-02). Region from CDK_DEFAULT_REGION only (constitution III); cdk-nag AwsSolutions; nothing that bills while idle (A7).",
+  "scripts": {
+    "synth": "cdk synth --quiet",
+    "diff": "cdk diff",
+    "cdk": "cdk",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.273.0",
+    "cdk-nag": "3.0.2",
+    "constructs": "10.8.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "aws-cdk": "2.1146.0",
+    "esbuild": "0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5",
+    "yaml": "2.9.1"
+  }
+}

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Activity, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1160px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--info" title="Signed in as an admin"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span>Admin</span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 1096px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="RunsAdmin1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="Activity1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">query_stats</span></span>Activity</a>
+<a class="atlas-nav-item" href="RunsAdmin1440.dc.html" aria-label="Signed in as an admin" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">verified_user</span></span>Signed in</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 1096px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Activity</h2>
+<span class="atlas-prov" style="font-size: 13px"><span class="material-symbols-rounded" aria-hidden="true">shield_lock</span>Admins only · server-side events from CloudWatch Logs (/countylens/query-log): AI questions, MCP calls, Try a tool and search · kept 30 days · no personal data. Browser queries (Filters, SQL, Builder) run on the visitor’s device and are not logged.</span>
+<button class="atlas-btn atlas-btn--outlined" onClick="{{__say.k2}}"><span class="material-symbols-rounded" aria-hidden="true">download</span>Download CSV</button>
+</div>
+
+<div style="display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 16px">
+<section aria-labelledby="wk-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: baseline; gap: 8px"><h3 id="wk-h" class="atlas-card__title">Last week</h3><span style="font-size: 13px; color: var(--md-sys-color-on-surface-variant)">2026-10-10 to 2026-10-16 · Sample</span></div>
+<div class="tg tg-2" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container)"><div style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Server events</div><div class="num" style="font-family: var(--font-brand); font-size: 32px; line-height: 40px">214</div></div>
+<div style="padding: 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container)"><div style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Median response</div><div class="num" style="font-family: var(--font-brand); font-size: 32px; line-height: 40px">182 ms</div></div>
+<div style="padding: 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container)"><div style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">p95 response</div><div class="num" style="font-family: var(--font-brand); font-size: 32px; line-height: 40px">1,240 ms</div></div>
+<div style="padding: 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container)"><div style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Failure rate</div><div class="num" style="font-family: var(--font-brand); font-size: 32px; line-height: 40px">3.3%</div><div class="num" style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">7 of 214</div></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; font-size: 13px; line-height: 18px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Top areas</b>
+<div><div class="atlas-kv"><span style="color: inherit">Pflugerville</span><span class="num">61</span></div><div style="height: 6px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-high)"><div style="width: 100%; height: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-primary)"></div></div></div>
+<div><div class="atlas-kv"><span style="color: inherit">78753</span><span class="num">38</span></div><div style="height: 6px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-high)"><div style="width: 62%; height: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-primary)"></div></div></div>
+<div><div class="atlas-kv"><span style="color: inherit">Manor</span><span class="num">17</span></div><div style="height: 6px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-high)"><div style="width: 28%; height: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-primary)"></div></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Top questions and tools</b>
+<div><div class="atlas-kv"><span style="color: inherit">AI: old roofs near a place</span><span class="num">92</span></div><div style="height: 6px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-high)"><div style="width: 100%; height: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-primary)"></div></div></div>
+<div><div class="atlas-kv"><span style="color: inherit">MCP: search_properties</span><span class="num">71</span></div><div style="height: 6px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-high)"><div style="width: 77%; height: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-primary)"></div></div></div>
+<div><div class="atlas-kv"><span style="color: inherit">Try a tool: get_coverage</span><span class="num">24</span></div><div style="height: 6px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-high)"><div style="width: 26%; height: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-primary)"></div></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Top failure reasons</b>
+<div class="atlas-kv"><span style="color: inherit">Rate limit (gateway or MCP)</span><span class="num">4</span></div>
+<div class="atlas-kv"><span style="color: inherit">MCP: unknown argument</span><span class="num">1</span></div>
+<div class="atlas-kv"><span style="color: inherit">AI search: no matching data</span><span class="num">2</span></div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="ms-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 18px">
+<h3 id="ms-h" class="atlas-card__title">Most searched this week</h3>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<li style="display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><span class="num" style="width: 16px; color: var(--md-sys-color-on-surface-variant)">1</span><span style="flex: 1">Roof age ≥ 15 yrs near Pflugerville</span><span class="num">41</span><a class="atlas-icon-btn" aria-label="Run this search" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Explore1440.dc.html"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">replay</span></a></li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><span class="num" style="width: 16px; color: var(--md-sys-color-on-surface-variant)">2</span><span style="flex: 1">Open roofing permits &gt; 5 yrs</span><span class="num">28</span><a class="atlas-icon-btn" aria-label="Run this search" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Explore1440.dc.html"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">replay</span></a></li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><span class="num" style="width: 16px; color: var(--md-sys-color-on-surface-variant)">3</span><span style="flex: 1">101 Sample Ln</span><span class="num">12</span><a class="atlas-icon-btn" aria-label="Run this search" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Explore1440.dc.html"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">replay</span></a></li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><span class="num" style="width: 16px; color: var(--md-sys-color-on-surface-variant)">4</span><span style="flex: 1">Out-of-area owners in 78753</span><span class="num">9</span><a class="atlas-icon-btn" aria-label="Run this search" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Explore1440.dc.html"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">replay</span></a></li>
+<li style="display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><span class="num" style="width: 16px; color: var(--md-sys-color-on-surface-variant)">5</span><span style="flex: 1">Permit 2020-047812 BP</span><span class="num">7</span><a class="atlas-icon-btn" aria-label="Run this search" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Explore1440.dc.html"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">replay</span></a></li>
+</ol>
+<span class="atlas-prov" style="font-size: 12px"><span class="material-symbols-rounded" aria-hidden="true">info</span>These also appear as chips on Search</span>
+</section>
+</div>
+
+<section aria-labelledby="log-h" style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px">
+<div role="toolbar" aria-label="Filter the query log" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+<h3 id="log-h" style="margin: 0 8px 0 0; font-size: 16px; line-height: 24px; font-weight: 500">Query log</h3>
+<button class="atlas-chip" aria-pressed="{{allOn}}" onClick="{{pickAll}}"><span class="material-symbols-rounded" aria-hidden="true">{{allIcon}}</span>All types</button>
+<sc-for list="{{typeChips}}" as="t" hint-placeholder-count="5"><button class="atlas-chip" aria-pressed="{{t.on}}" onClick="{{t.pick}}"><span class="material-symbols-rounded" aria-hidden="true">{{t.icon}}</span>{{t.label}} <span class="num" style="opacity: .8">· {{t.n}}</span></button></sc-for>
+<span style="width: 1px; height: 24px; background: var(--md-sys-color-outline-variant)"></span>
+<button class="atlas-chip" aria-pressed="{{failOn}}" onClick="{{toggleFail}}"><span class="material-symbols-rounded" aria-hidden="true">error</span>Failed only · <span class="num">{{nFail}}</span></button>
+<sc-if value="{{anyFilter}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--text" onClick="{{clearFilters}}"><span class="material-symbols-rounded" aria-hidden="true">filter_alt_off</span>Clear filters</button></sc-if>
+<span style="flex: 1"></span>
+<button class="atlas-chip" aria-haspopup="dialog" onClick="{{__say.k15}}"><span class="material-symbols-rounded" aria-hidden="true">date_range</span>Last 7 days<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+</div>
+<div class="atlas-table-wrap" style="flex: 1; min-height: 0; overflow: hidden; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<table class="atlas-table atlas-table--dense stack" style="width: 100%">
+<thead><tr><th aria-sort="descending"><button class="atlas-th-sort" onClick="{{__say.k16}}">Time (UTC)<span class="material-symbols-rounded" aria-hidden="true">arrow_downward</span></button></th><th>Type</th><th>Query</th><th class="num">Results</th><th class="num">Response</th><th>Status</th><th>Run</th><th><span class="atlas-sr">Action</span></th></tr></thead>
+<tbody>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8"><tr style="{{r.rowStyle}}"><td class="num" data-label="Time (UTC)">{{r.t}}</td><td data-label="Type">{{r.type}}</td><td data-label="Query">{{r.q}}</td><td class="num" data-label="Results">{{r.res}}</td><td class="num" data-label="Response">{{r.ms}}</td><td data-label="Status"><span class="{{r.pillCls}}"><span class="material-symbols-rounded" aria-hidden="true">{{r.icon}}</span>{{r.status}}</span></td><td data-label="Run">{{r.run}}</td><td data-label=""><a class="atlas-btn atlas-btn--text" style="{{r.linkStyle}}" href="{{r.href}}">Run again</a></td></tr></sc-for>
+</tbody>
+</table>
+<sc-if value="{{noRows}}" hint-placeholder-val="{{ false }}"><div style="padding: 24px 16px; display: flex; align-items: center; gap: 12px; font-size: 14px"><span style="flex: 1; color: var(--md-sys-color-on-surface-variant)">No queries match these filters.</span><button class="atlas-btn atlas-btn--tonal" onClick="{{clearFilters}}"><span class="material-symbols-rounded" aria-hidden="true">filter_alt_off</span>Clear filters</button></div></sc-if>
+</div>
+<div class="atlas-table-footer" style="display: flex; align-items: center; gap: 8px"><span class="atlas-prov" style="flex: 1; font-size: 12px">Sample entries · Run again opens the query in Explore on the current run</span><dc-import name="Pager" pages="{{pages}}" page="{{page}}" text="{{pageText}}" label="Query log pages" on-page="{{setPage}}" hint-size="380px,40px"></dc-import></div>
+</section>
+</main>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Activity · 1440 (nice to have)" desktop="Activity1440.dc.html" tablet="Activity768.dc.html" mobile="Activity390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1160}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k2": "Downloaded query_log.csv (Sample).", "k15": "“Last 7 days” is drawn but not wired in this prototype.", "k16": "“Time (UTC)” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { types: {}, fail: false, page: 1 };
+    // Sample log: 214 queries last week, 8 failed. First rows are the hand-written examples; the rest repeat common queries.
+    const T = [['AI', 'auto_awesome', 'ExploreQ-ai.dc.html'], ['MCP', 'hub', 'HelpMcp1440.dc.html'], ['Try a tool', 'science', 'HelpMcp1440.dc.html'], ['Search', 'search', 'Explore1440.dc.html']];
+    this.T = T;
+    const head = [
+      ['10-16 18:42', 'AI', 'Old roofs near Pflugerville', '1,302', '640 ms', null, 3],
+      ['10-16 18:31', 'MCP', 'search_properties { roof_min: 15, radius_mi: 5 }', '128', '212 ms', null, 3],
+      ['10-16 17:05', 'AI', 'Which permits near Pflugerville have been open longest?', '14', '2,180 ms', null, 3],
+      ['10-16 16:58', 'Try a tool', 'get_coverage {}', '7', '96 ms', null, 3],
+      ['10-16 14:20', 'AI', 'Old roofs near Wells Branch', '0', '4,012 ms', 'Failed: gateway rate limit after 3 tries', 3],
+      ['10-16 11:47', 'Search', '101 Sample Ln', '1', '94 ms', null, 3],
+      ['10-15 09:12', 'AI', 'Cheap old roofs near Manor', '0', '520 ms', 'Failed: no price data for “cheap”', 2],
+      ['10-14 20:03', 'MCP', 'list_permits { status: "open", min_open_yrs: 5 }', '50', '188 ms', 'Failed: rate limit, retried', 2]
+    ];
+    const Q = { AI: ['Old roofs near Manor', 'Long-open permits and their contractors', 'Out-of-area owners with old roofs'], MCP: ['search_properties { roof_min: 15 }', 'get_property { id: "p_101" }', 'list_runs {}'], 'Try a tool': ['search_properties { radius_mi: 5 }', 'get_coverage {}', 'resolve_place { q: "Manor" }'], Search: ['58 Example Rd', 'Pflugerville', 'Permit 2020-047812 BP'] };
+    const fails = { 23: ['AI', null, 'Contractors with BBB rating near 78753', 'Answered · BBB missing-data note'], 61: ['Search', 'Failed: gateway rate limit after 3 tries', 'Permit 2021-118204 BP'], 118: ['MCP', 'Failed: unknown argument “roof_age”', 'search_properties { roof_age: 15 }'], 170: ['Search', 'Failed: gateway rate limit after 3 tries', 'Permit 2019-033104 BP'], 199: ['AI', 'Failed: no matching data', 'Roofs replaced after hail in 2021'] };
+    const rows = head.slice();
+    for (let i = rows.length; i < 214; i++) {
+      const f = fails[i], type = f ? f[0] : T[(i * 7) % 4][0], q = f ? f[2] : Q[type][(i * 3) % 3];
+      const mins = 16 * 1440 + 18 * 60 - Math.round(i * 46.5), d = Math.floor(mins / 1440), h = Math.floor((mins % 1440) / 60), m = mins % 60;
+      const failed = f && f[1]; rows.push(['10-' + String(d).padStart(2, '0') + ' ' + String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0'), type, q, failed ? '0' : String(20 + (i * 37) % 900), (60 + (i * 53) % 900) + ' ms', failed ? f[1] : null, d >= 17 ? 3 : 2, f && f[3] ? f[3] : null]);
+    }
+    this.rows = rows;
+  }
+  __rv() {
+    const s = this.state, T = this.T, size = 8;
+    const sel = Object.keys(s.types).filter((k) => s.types[k]);
+    const fit = this.rows.filter((r) => (!sel.length || sel.indexOf(r[1]) >= 0) && (!s.fail || r[5]));
+    const pages = Math.max(1, Math.ceil(fit.length / size)), page = Math.min(pages, s.page), start = (page - 1) * size;
+    const href = (t) => (T.find((x) => x[0] === t) || T[0])[2];
+    const rows = fit.slice(start, start + size).map((r) => ({ t: r[0], type: r[1], q: r[2], res: r[3], ms: r[4], run: String(r[6]), href: href(r[1]),
+      status: r[5] || r[7] || 'Succeeded', icon: r[5] ? 'error' : 'check', pillCls: r[5] ? 'atlas-pill atlas-pill--danger' : 'atlas-pill atlas-pill--success',
+      rowStyle: r[5] ? 'background: var(--md-sys-color-error-container); color: var(--md-sys-color-on-error-container)' : '', linkStyle: r[5] ? 'text-decoration: none; color: inherit' : 'text-decoration: none' }));
+    const cnt = (t) => this.rows.filter((r) => r[1] === t && (!s.fail || r[5])).length;
+    return {
+      allOn: String(!sel.length), allIcon: !sel.length ? 'check' : 'select_all', pickAll: () => this.setState({ types: {}, page: 1 }),
+      typeChips: T.map((t) => ({ label: t[0], icon: s.types[t[0]] ? 'check' : t[1], n: String(cnt(t[0])), on: String(!!s.types[t[0]]), pick: () => this.setState({ types: { ...s.types, [t[0]]: !s.types[t[0]] }, page: 1 }) })),
+      failOn: String(s.fail), toggleFail: () => this.setState({ fail: !s.fail, page: 1 }), nFail: String(this.rows.filter((r) => r[5]).length),
+      anyFilter: sel.length > 0 || s.fail, clearFilters: () => this.setState({ types: {}, fail: false, page: 1 }),
+      rows: rows, noRows: fit.length === 0,
+      pages: pages, page: page, pageText: fit.length ? (start + 1) + '–' + (start + rows.length) + ' of ' + fit.length : '0 of 0', setPage: (n) => this.setState({ page: n })
+    };
+  }
+}
+</script>
+</body>
+</html>

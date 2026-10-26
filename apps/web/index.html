@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- A-03: light theme only (plan § Atlas element map → Shell → Theme); dark is A-13. -->
+    <meta name="color-scheme" content="light" />
+    <title>CountyLens</title>
+    <!-- ERR-44 (TC-081): start the run index request with the HTML, in parallel with the JS, on the
+         routes that read published data; the app fetches the same URL with default init, so the
+         preloaded response is reused. Static pages (Legal, Help, Coming soon) make no data request
+         (TC-056), so they get no preload. -->
+    <script>
+      (function () {
+        var p = location.pathname;
+        if (p === "/" || /^\/(runs|data|tx|permits)(\/|$)/.test(p)) {
+          var l = document.createElement("link");
+          l.rel = "preload";
+          l.as = "fetch";
+          l.href = "/runs/index.json";
+          l.crossOrigin = "anonymous";
+          document.head.appendChild(l);
+        }
+      })();
+    </script>
+    <!-- ERR-44: warm DNS+TCP+TLS to the CID copy host before the manifest fetch. vite.config.ts
+         drops this tag when VITE_CID_COPY_HOST is unset at build time. -->
+    <link rel="preconnect" href="https://%VITE_CID_COPY_HOST%" crossorigin />
+    <!-- ERR-46: fonts are self-hosted (src/styles/fonts.css, public/fonts). Preload the two files
+         every page needs: Roboto (body text) and the Material Symbols subset (icons). Roboto Mono
+         loads on demand. Font preloads need crossorigin even when same-origin. -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/roboto-latin.woff2" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/fonts/material-symbols-rounded-subset-003dde63.woff2"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

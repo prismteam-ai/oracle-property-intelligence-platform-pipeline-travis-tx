@@ -1,0 +1,13 @@
+{
+  "case": "A-13-TC-040",
+  "provisional": true,
+  "runId": "travis-202609-permits-20261021t103516z",
+  "limitMs": 8000,
+  "timingsMs": [
+    11351,
+    13258,
+    12788,
+    19272,
+    25719
+  ]
+}

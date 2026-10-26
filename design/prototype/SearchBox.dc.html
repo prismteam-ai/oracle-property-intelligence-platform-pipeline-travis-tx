@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Search box with in-place suggestions</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.sb-row{display:flex;align-items:center;gap:12px;min-height:48px;padding:4px 12px;border-radius:var(--md-sys-shape-corner-small);text-decoration:none;color:var(--md-sys-color-on-surface);font-size:14px;line-height:20px}
+.sb-row:hover,.sb-row.is-active{background:var(--md-sys-color-surface-container-high)}
+.sb-row .sb-main{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-row .sb-meta{font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant);white-space:nowrap}
+.sb-kind{padding:10px 12px 2px;font:500 11px/16px var(--font-plain);letter-spacing:.5px;text-transform:uppercase;color:var(--md-sys-color-on-surface-variant)}
+.sb-chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:var(--md-sys-shape-corner-small);border:1px solid var(--md-sys-color-outline-variant);text-decoration:none;color:var(--md-sys-color-on-surface-variant);font:500 14px/20px var(--font-plain);white-space:nowrap}
+.sb-chip:hover{background:var(--md-sys-color-surface-container-high)}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<sc-if value="{{iconOnly}}" hint-placeholder-val="{{ false }}">
+<button class="atlas-icon-btn" aria-label="Search" aria-expanded="false" onClick="{{openIt}}"><span class="material-symbols-rounded" aria-hidden="true">search</span></button>
+</sc-if>
+<sc-if value="{{showField}}" hint-placeholder-val="{{ true }}">
+<label class="atlas-search {{fieldClass}}" style="height: {{fieldH}}px; width: {{fieldW}}; box-sizing: border-box; border-radius: var(--md-sys-shape-corner-extra-large); background: var(--md-sys-color-surface-container-high)">
+<span class="material-symbols-rounded" aria-hidden="true">search</span>
+<input type="text" enterkeyhint="search" role="combobox" aria-expanded="{{openStr}}" aria-controls="sb-panel" aria-autocomplete="list" aria-label="Search addresses, places, ZIP codes and permit numbers, or ask a question" placeholder="Search an address, place, ZIP or permit, or ask a question" value="{{q}}" onInput="{{onInput}}" onFocus="{{openIt}}" onClick="{{openIt}}" onKeyDown="{{onKey}}">
+<sc-if value="{{hasText}}" hint-placeholder-val="{{ true }}"><button class="atlas-icon-btn" aria-label="Clear search" onClick="{{clear}}"><span class="material-symbols-rounded" aria-hidden="true">close</span></button></sc-if>
+</label>
+</sc-if>
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div id="sb-panel" role="dialog" aria-label="Search suggestions" style="position: absolute; top: {{panelTop}}px; {{panelSide}}: 0; z-index: 60; width: {{panelW}}; max-height: {{panelMaxH}}px; overflow: hidden; box-sizing: border-box; padding: 8px; border-radius: var(--md-sys-shape-corner-large); background: var(--md-sys-color-surface-container-lowest); box-shadow: var(--md-sys-elevation-level3); display: flex; flex-direction: column; gap: 4px">
+
+<div class="sb-body" style="flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 4px">
+<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}">
+<div role="listbox" aria-label="Matches for {{q}}">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="3">
+<div class="sb-kind">{{g.kind}}</div>
+<sc-for list="{{g.items}}" as="it" hint-placeholder-count="2">
+<sc-if value="{{it.isLink}}" hint-placeholder-val="{{ true }}"><a class="sb-row {{it.cls}}" role="option" aria-selected="{{it.sel}}" href="{{it.href}}"><span class="material-symbols-rounded" aria-hidden="true">{{it.icon}}</span><span class="sb-main">{{it.pre}}<b style="font-weight: 700">{{it.hit}}</b>{{it.post}}</span><span class="sb-meta">{{it.meta}}</span></a></sc-if><sc-if value="{{it.isBtn}}" hint-placeholder-val="{{ false }}"><button class="sb-row {{it.cls}}" role="option" aria-selected="{{it.sel}}" onClick="{{it.pick}}" style="width: 100%; border: 0; background: none; font: inherit; text-align: left; cursor: pointer"><span class="material-symbols-rounded" aria-hidden="true">{{it.icon}}</span><span class="sb-main">{{it.pre}}<b style="font-weight: 700">{{it.hit}}</b>{{it.post}}</span><span class="sb-meta">Set as Area</span></button></sc-if>
+</sc-for>
+<sc-if value="{{g.none}}" hint-placeholder-val="{{ false }}"><div style="padding: 6px 12px 8px; font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">{{g.noneText}}</div></sc-if>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 4px; padding: 8px 12px 4px; border-top: 1px solid var(--md-sys-color-outline-variant)">
+<a class="atlas-btn atlas-btn--tonal" href="{{askHref}}" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Ask AI about “{{q}}”</a>
+
+<sc-if value="{{sqlOn}}" hint-placeholder-val="{{ true }}"><a class="atlas-btn atlas-btn--text" href="{{sqlHref}}" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">terminal</span>SQL</a></sc-if>
+<span style="flex: 1"></span>
+<span style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">↑ ↓ to move · Esc to close</span>
+</div>
+</sc-if>
+
+<sc-if value="{{idle}}" hint-placeholder-val="{{ true }}">
+<div style="margin: 4px 8px 0; padding: 10px 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 18px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true" style="color: var(--md-sys-color-primary)">lightbulb</span><span>Type an <b style="font-weight: 500">address</b>, a <b style="font-weight: 500">place or ZIP</b> (sets the Area), or a <b style="font-weight: 500">permit number</b> like 2020-047812 BP, or ask a <b style="font-weight: 500">question</b>. Or pick a mode or a search below.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 8px 8px 4px">
+<span class="sb-kind" style="padding: 0 4px">Start a new query with</span>
+<div role="group" aria-label="Query modes" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{modes}}" as="md" hint-placeholder-count="4"><a class="sb-chip" href="{{md.href}}"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">{{md.icon}}</span>{{md.label}}</a></sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; padding: 8px 4px 0 12px; border-top: 1px solid var(--md-sys-color-outline-variant); margin-top: 4px"><span class="sb-kind" style="flex: 1; padding: 0">Suggested, recent and saved</span><span style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Opens Explore in that mode</span></div>
+<div role="list" aria-label="Suggested, recent and saved searches" style="display: grid; grid-template-columns: {{listCols}}; column-gap: 8px">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="6">
+<div role="listitem" style="display: flex; align-items: center">
+<a class="sb-row" href="{{it.href}}" style="flex: 1; min-width: 0" aria-label="{{it.label}}, opens {{it.modeLabel}}">
+<span aria-hidden="true" style="flex: none; width: 36px; height: 36px; border-radius: var(--md-sys-shape-corner-full); display: grid; place-items: center; background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container)"><span class="material-symbols-rounded atlas-icon-20">{{it.icon}}</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span class="sb-main">{{it.label}}</span><span style="display: flex; flex-wrap: wrap; gap: 4px"><sc-for list="{{it.tags}}" as="tg" hint-placeholder-count="1"><span class="atlas-pill {{tg.cls}}" style="height: 20px">{{tg.t}}</span></sc-for></span></span>
+<span class="sb-meta" style="font-weight: 500">{{it.modeLabel}}</span>
+</a>
+<sc-if value="{{it.removable}}" hint-placeholder-val="{{ false }}"><button class="atlas-icon-btn" aria-label="Remove {{it.label}} from recent and saved" onClick="{{it.remove}}"><span class="material-symbols-rounded" aria-hidden="true">close</span></button></sc-if>
+</div>
+</sc-for>
+<sc-if value="{{noItems}}" hint-placeholder-val="{{ false }}"><div style="padding: 8px 12px; font-size: 13px; color: var(--md-sys-color-on-surface-variant)">Nothing here yet. Searches you run and save appear in this list.</div></sc-if>
+</div>
+<sc-if value="{{moreOn}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--text" onClick="{{showMore}}" style="align-self: flex-start; height: 36px; margin-left: 4px">{{moreLabel}}</button></sc-if>
+<div class="atlas-prov" style="margin: 4px 12px; font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Recent and saved stay in this browser · “Suggested” becomes “Most searched (7 days)” after 5 real searches · Sample</div>
+</sc-if>
+</div>
+<div style="flex: none; display: flex; justify-content: flex-end; padding: 4px 4px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><button class="atlas-btn atlas-btn--text" onClick="{{closeIt}}" style="height: 36px">Close</button></div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"value":{"editor":"text","default":"Pflugerville, TX"},"crm":{"editor":"enum","options":["auto","on","off"],"default":"auto"},"onPlace":{"editor":null},"variant":{"editor":"enum","options":["header","floating","icon"],"default":"header"},"device":{"editor":"enum","options":["desktop","mobile"],"default":"desktop"},"panelAlign":{"editor":"enum","options":["left","right"],"default":"left"},"startOpen":{"editor":"boolean","default":true},"startText":{"editor":"text","default":""},"$preview":{"width":720,"height":696}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch: on = Roofing CRM preview (search modes Map, Filters, AI). Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  constructor(props) {
+    super(props);
+    const typed = props.startText || '';
+    this.state = { open: !!props.startOpen, q: typed || (props.value ?? ''), touched: !!typed, active: 0, recentGone: false, savedGone: {} };
+  }
+  renderVals() {
+    const m = (this.props.device ?? 'desktop') === 'mobile';
+    const H = (d, mo) => (m ? mo : d) + '.dc.html';
+    const variant = this.props.variant ?? 'header';
+    const q = this.state.q, qn = q.trim().toLowerCase();
+    const typing = this.state.touched && qn.length > 0;
+    const D = [
+      { kind: 'Place', icon: 'location_city', items: [['Pflugerville, TX', 'City · 2,840 properties', H('Explore1440', 'Explore390'), 'pf'], ['78660 · Pflugerville ZIP', 'ZIP', H('Explore1440', 'Explore390'), 'z78660'], ['Austin, TX', 'City', H('Explore1440', 'Explore390'), 'austin'], ['78753 · Austin ZIP', 'ZIP', H('Explore1440', 'Explore390'), 'z78753'], ['78754 · Austin ZIP', 'ZIP', H('Explore1440', 'Explore390'), 'z78754'], ['Wells Branch, TX', 'Neighbourhood', H('Explore1440', 'Explore390'), 'wells'], ['Manor, TX', 'City', H('Explore1440', 'Explore390'), 'manor'], ['78653 · Manor ZIP', 'ZIP', H('Explore1440', 'Explore390'), 'z78653']] },
+      { kind: 'Address', icon: 'home', items: [['101 Sample Ln, Austin 78753', 'Roof 23 yrs', H('Property1440', 'Property390')], ['1200 Sample Pflugerville Pkwy', 'Roof 18 yrs', H('Property1440', 'Property390')], ['220 Example Dr, Pflugerville 78660', 'Roof 21 yrs', H('Property1440', 'Property390')], ['412 Example Ave, Pflugerville 78660', 'Roof 19 yrs', H('Property1440', 'Property390')]] },
+      { kind: 'Permit', icon: 'description', items: [['2020-047812 BP', 'Open 6.4 yrs · stalled', H('Property1440', 'Property390')], ['2020-061190 BP', 'Open 6.2 yrs · stalled', H('Property1440', 'Property390')], ['2003-018266 BP', 'Reroof · finaled 2003', H('Property1440', 'Property390')]] }
+    ];
+    let n = 0;
+    const groups = D.map((g) => {
+      const items = g.items.filter((it) => it[0].toLowerCase().indexOf(qn) >= 0).slice(0, 3).map((it) => {
+        const i = it[0].toLowerCase().indexOf(qn), idx = n++;
+        const pk = it[3], canSet = !!(pk && this.props.onPlace);
+        return { isLink: !canSet, isBtn: canSet, pick: () => { if (canSet) { this.props.onPlace(pk); this.setState({ open: false, q: '', touched: false }); } }, icon: g.icon, pre: it[0].slice(0, i), hit: it[0].slice(i, i + qn.length), post: it[0].slice(i + qn.length), meta: it[1] + ' · Sample', href: it[2], sel: String(idx === this.state.active), cls: idx === this.state.active ? 'is-active' : '' };
+      });
+      const hint = { Permit: 'Permit numbers look like 2020-047812 BP.', Address: 'Try a street number and name.', Owner: 'Owner names come from TCAD.', Contractor: 'Contractor names come from permit records.', Place: 'Try a city or a ZIP.' }[g.kind];
+      return { kind: g.kind, items: items, none: items.length === 0, noneText: 'No ' + g.kind.toLowerCase() + ' matches “' + q.trim() + '”. ' + hint };
+    });
+    const total = n;
+    const Q = (id) => (m ? 'ExploreQ390-' : 'ExploreQ-') + id + '.dc.html';
+    const cp = this.props.crm, crm = cp === true || cp === 'true' || cp === 'on' ? true : (cp === false || cp === 'false' || cp === 'off') ? false : Component.mapOn();
+    const MODE = { map: ['map', 'Map'], filters: ['tune', 'Filters'], builder: ['account_tree', 'Builder'], sql: ['terminal', 'SQL'], ai: ['auto_awesome', 'AI'], record: ['home', 'Record'] };
+    const T = (t, kind) => ({ t: t, cls: kind === 'saved' ? 'atlas-pill--info' : kind === 'recent' ? 'atlas-pill--unavailable' : 'atlas-pill--new' });
+    // One list: suggested, recent and saved merged, each search listed once (Sample).
+    const all = [
+      { id: 'roof15', label: 'Roofs ≥ 15 yrs within 5 mi of Pflugerville', mode: 'filters', tags: [T('Suggested'), T('Recent · 2 h · 128', 'recent')], href: Q('roof15'), removable: false },
+      { id: 'stalled78753', label: 'Stalled reroof permits in 78753', mode: 'filters', tags: [T('Suggested'), T('Saved · +3 in Run 3', 'saved')], href: Q('stalled78753'), removable: true },
+      { id: 'permits5', label: 'Roofing permits open 5+ yrs near Pflugerville', mode: 'filters', tags: [T('Suggested')], href: Q('permits5'), removable: false },
+      { id: 'ooa78753', label: 'Out-of-area owners in 78753', mode: 'filters', tags: [T('Suggested')], href: Q('ooa78753'), removable: false },
+      { id: 'sqlperm', label: 'Contractors with most open permits', mode: 'sql', tags: [T('Suggested')], href: Q('sqlperm'), removable: false },
+      { id: 'aiooa', label: 'Out-of-area owners with roofs over 20 yrs', mode: 'ai', tags: [T('Saved · no change', 'saved')], href: Q('aiooa'), removable: true },
+      { id: 'aicontractor', label: 'Long-open permits and their contractors', mode: 'ai', tags: [T('Recent · 3 d', 'recent')], href: Q('aicontractor'), removable: true },
+      { id: 'rec-permit', label: '2020-047812 BP', mode: 'record', tags: [T('Recent · 1 d', 'recent')], href: H('Property1440', 'Property390'), removable: true }
+    ];
+    const items = all.filter((x) => !this.state.savedGone[x.id] && !(crm && (x.mode === 'sql' || x.mode === 'builder'))).map((x) => ({ ...x, icon: MODE[x.mode][0], modeLabel: MODE[x.mode][1],
+      remove: () => this.setState({ savedGone: { ...this.state.savedGone, [x.id]: true } }) }));
+    const modes = (crm ? [['map', 'ExploreQ-crmmap', 'Explore390'], ['filters', 'Explore1440', 'Explore390'], ['ai', 'ExploreQ-ai', 'ExploreQ390-ai']] : [['filters', 'Explore1440', 'Explore390'], ['sql', 'ExploreQ-sql', 'ExploreQ390-sql'], ['ai', 'ExploreQ-ai', 'ExploreQ390-ai']])
+      .map(([k, d, mo]) => ({ icon: MODE[k][0], label: MODE[k][1], href: (m ? mo : d) + '.dc.html' }));
+    const iconOnly = variant === 'icon' && !this.state.open;
+    const panelW = m ? '100%' : (variant === 'icon' ? '640px' : 'max(100%, 680px)');
+    return {
+      iconOnly: iconOnly, showField: !iconOnly, open: this.state.open, openStr: String(this.state.open),
+      fieldClass: variant === 'floating' ? 'atlas-search--floating' : '', fieldH: variant === 'floating' ? 56 : 48,
+      fieldW: variant === 'icon' ? '420px' : '100%',
+      q: q, hasText: q.length > 0, typing: typing, idle: !typing, groups: groups,
+      panelTop: variant === 'floating' ? 64 : 56, panelSide: (this.props.panelAlign ?? 'left') === 'right' || variant === 'icon' ? 'right' : 'left',
+      panelW: panelW, panelMaxH: m ? 624 : 640, cols: m ? '1fr' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      startTitle: 'Suggested starting points', startNote: 'Becomes “Most searched (7 days)” after 5 real searches',
+      items: m && !this.state.allItems ? items.slice(0, 4) : items, noItems: items.length === 0, modes: modes, sqlOn: !crm, crm: crm, listCols: m ? '1fr' : 'repeat(2, minmax(0, 1fr))', moreOn: m && items.length > 4, moreLabel: this.state.allItems ? 'Show fewer' : 'Show ' + (items.length - 4) + ' more', showMore: () => this.setState({ allItems: !this.state.allItems }),
+      askHref: H('ExploreQ-ai', 'ExploreQ390-ai'), builderHref: H('ExploreQ-builder', 'ExploreQ390-builder'), sqlHref: H('ExploreQ-sql', 'ExploreQ390-sql'),
+      openIt: () => { if (!this.state.open) this.setState({ open: true }); },
+      closeIt: () => this.setState({ open: false }),
+      clear: () => this.setState({ q: '', touched: true, open: true, active: 0 }),
+      clearRecent: () => this.setState({ recentGone: true }),
+      onInput: (e) => this.setState({ q: e && e.target ? e.target.value : '', touched: true, open: true, active: 0 }),
+      onKey: (e) => {
+        const k = e && e.key;
+        if (k === 'Escape') { this.setState({ open: false }); return; }
+        if (!total) return;
+        if (k === 'ArrowDown') { e.preventDefault(); this.setState({ active: (this.state.active + 1) % total }); }
+        if (k === 'ArrowUp') { e.preventDefault(); this.setState({ active: (this.state.active - 1 + total) % total }); }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

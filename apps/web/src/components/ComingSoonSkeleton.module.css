@@ -1,0 +1,71 @@
+/* Coming soon skeleton (A-13 T042; Atlas § 9, static): grey blocks only, nothing moves,
+   fixed heights, surface-container-highest fill. Tokens only. */
+.skeleton {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.block {
+  display: block;
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.line {
+  height: var(--space-6);
+}
+
+.lineShort {
+  width: 60%;
+  height: var(--space-4);
+}
+
+.field {
+  height: var(--space-9);
+}
+
+.button {
+  width: calc(var(--space-10) * 2);
+  height: var(--space-9);
+  border-radius: var(--md-sys-shape-corner-full);
+}
+
+.map {
+  height: calc(var(--space-10) * 4);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  height: calc(var(--space-10) * 3);
+}
+
+.bar {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.bar1 {
+  height: 40%;
+}
+
+.bar2 {
+  height: 70%;
+}
+
+.bar3 {
+  height: 55%;
+}
+
+.bar4 {
+  height: 90%;
+}
+
+.bar5 {
+  height: 65%;
+}

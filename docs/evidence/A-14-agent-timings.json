@@ -1,0 +1,56 @@
+{
+  "measuredAt": "2026-10-25T20:39:26.403Z",
+  "runtime": "https://countylens.aldarraj.com",
+  "asks": [
+    {
+      "tc": "001",
+      "prompt": "Which properties in Travis County within five miles of Pflugerville have roofs older than 15 years?",
+      "state": "timed_out",
+      "ms": 24609,
+      "httpStatus": 200,
+      "outcome": "timed_out",
+      "steps": 0,
+      "matches": 0
+    },
+    {
+      "tc": "002",
+      "prompt": "Which properties near that area have open roofing permits that have been open for many years, and who is the listed contractor?",
+      "state": "timed_out",
+      "ms": 23606,
+      "httpStatus": 200,
+      "outcome": "timed_out",
+      "steps": 0,
+      "matches": 0
+    },
+    {
+      "tc": "004",
+      "prompt": "How many properties have roofs older than 40 years in ZIP 99999?",
+      "state": "no_results",
+      "ms": 5822,
+      "httpStatus": 200,
+      "outcome": "answered",
+      "steps": 2,
+      "matches": 0
+    },
+    {
+      "tc": "006",
+      "prompt": "Which homes near Lakeway haven't changed owners in 10+ years and have owners outside the area?",
+      "state": "timed_out",
+      "ms": 23451,
+      "httpStatus": 200,
+      "outcome": "timed_out",
+      "steps": 0,
+      "matches": 0
+    },
+    {
+      "tc": "007",
+      "prompt": "What's the BBB rating of the contractor on permit 1982-012866 BP?",
+      "state": "timed_out",
+      "ms": 23874,
+      "httpStatus": 200,
+      "outcome": "timed_out",
+      "steps": 0,
+      "matches": 0
+    }
+  ]
+}

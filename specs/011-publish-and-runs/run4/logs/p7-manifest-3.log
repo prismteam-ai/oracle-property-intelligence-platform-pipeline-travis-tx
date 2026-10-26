@@ -1,0 +1,7 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/build-run-manifest.ts --config specs/011-publish-and-runs/run4/config.json
+written runs/travis-full-run4-20261026/manifest.json
+manifest CID: bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha
+artifacts: 285 (15 car, 15 directory, 255 table), 4999990605 bytes
+previousManifestCid: bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai; coverage.permits_emitted: {"count":15025,"derivation":"published_rows","note":"b01 2764 + b02 2488 + b03 2730 + b04 3484 + b05 3559, roofing-classified decided-status permits only (PO 2026-10-23)"}
+next: publish-run.ts --manifest /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/runs/travis-full-run4-20261026/manifest.json --run-id travis-full-run4-20261026 --dry-run

@@ -1,0 +1,16 @@
+{
+  "schema": "pinata-copy-receipt.v1",
+  "run_id": "travis-full-run3-1-20261025",
+  "kind": "manifest",
+  "name": "runs/travis-full-run2-20261024/manifest.json",
+  "cid": "bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute",
+  "size": 87672,
+  "sha256": "a4dd55b1184e1eebe9d09ab925b3d57aab470748e13c4f26a671449483bc5499",
+  "status": "pinned",
+  "pinata_cid": "bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute",
+  "match": true,
+  "pinned_at": "2026-10-26T05:33:13.970Z",
+  "pin_size": 87672,
+  "is_duplicate": null,
+  "recorded_at": "2026-10-26T05:33:14.216Z"
+}

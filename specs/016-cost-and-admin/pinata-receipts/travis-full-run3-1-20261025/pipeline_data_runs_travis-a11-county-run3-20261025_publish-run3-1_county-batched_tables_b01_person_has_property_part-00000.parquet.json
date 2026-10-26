@@ -1,0 +1,16 @@
+{
+  "schema": "pinata-copy-receipt.v1",
+  "run_id": "travis-full-run3-1-20261025",
+  "kind": "table",
+  "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b01/person_has_property/part-00000.parquet",
+  "cid": "bafybeiddy2jvwal6x3girlynm4v34w3sp76zltddfqsnxtjoewjtlznnby",
+  "size": 4637674,
+  "sha256": "13c76d183e8a514507866614e52cd05d873949028ac3ab2f3d79d660a3f9d943",
+  "status": "pinned",
+  "pinata_cid": "bafybeiddy2jvwal6x3girlynm4v34w3sp76zltddfqsnxtjoewjtlznnby",
+  "match": true,
+  "pinned_at": "2026-10-26T05:34:51.431Z",
+  "pin_size": 4638583,
+  "is_duplicate": null,
+  "recorded_at": "2026-10-26T05:34:51.677Z"
+}

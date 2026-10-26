@@ -1,0 +1,43 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/backfill-payload-redacted.ts
+[backfill] job=travis-a04-20261022052658 scope=all workers=6 writers=4 batch=1000 dry_run=false
+[backfill] checkpoint=/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/backfill-checkpoint-all.json
+[backfill] records/s=355 seen=13965 written=12993 skipped_already_correct=7 checkpoint=12999
+[backfill] records/s=568 seen=28067 written=26992 skipped_already_correct=8 checkpoint=26999
+[backfill] records/s=744 seen=44209 written=42992 skipped_already_correct=8 checkpoint=42999
+[backfill] records/s=815 seen=56559 written=55992 skipped_already_correct=8 checkpoint=55999
+[backfill] records/s=897 seen=71216 written=69992 skipped_already_correct=8 checkpoint=69999
+[backfill] records/s=993 seen=88790 written=87723 skipped_already_correct=277 checkpoint=87999
+[backfill] records/s=1059 seen=105230 written=103721 skipped_already_correct=279 checkpoint=103999
+[backfill] records/s=1111 seen=121496 written=120720 skipped_already_correct=280 checkpoint=120999
+[backfill] records/s=1153 seen=137623 written=136720 skipped_already_correct=280 checkpoint=136999
+[backfill] records/s=1194 seen=154475 written=153720 skipped_already_correct=280 checkpoint=153999
+[backfill] records/s=1217 seen=169612 written=168720 skipped_already_correct=280 checkpoint=168999
+[backfill] records/s=1223 seen=182641 written=181720 skipped_already_correct=280 checkpoint=181999
+[backfill] records/s=1196 seen=190680 written=189720 skipped_already_correct=280 checkpoint=189999
+[backfill] records/s=1222 seen=206950 written=205720 skipped_already_correct=280 checkpoint=205999
+[backfill] records/s=1256 seen=225321 written=223720 skipped_already_correct=280 checkpoint=223999
+[backfill] records/s=1249 seen=236472 written=235720 skipped_already_correct=280 checkpoint=235999
+[backfill] records/s=1270 seen=253235 written=251720 skipped_already_correct=280 checkpoint=251999
+[backfill] records/s=1292 seen=270533 written=269720 skipped_already_correct=280 checkpoint=269999
+[backfill] records/s=1295 seen=284200 written=282720 skipped_already_correct=280 checkpoint=282999
+[backfill] records/s=1298 seen=297846 written=296720 skipped_already_correct=280 checkpoint=296999
+[backfill] records/s=1281 seen=306749 written=305719 skipped_already_correct=281 checkpoint=305999
+[backfill] records/s=1273 seen=317421 written=315718 skipped_already_correct=282 checkpoint=315999
+[backfill] records/s=1261 seen=327065 written=325718 skipped_already_correct=282 checkpoint=325999
+[backfill] records/s=1265 seen=340785 written=339718 skipped_already_correct=282 checkpoint=339999
+[backfill] records/s=1274 seen=355950 written=353718 skipped_already_correct=282 checkpoint=353999
+[backfill] records/s=1290 seen=373315 written=372716 skipped_already_correct=284 checkpoint=372999
+[backfill] records/s=1298 seen=388737 written=387716 skipped_already_correct=284 checkpoint=387999
+[backfill] records/s=1317 seen=407627 written=406716 skipped_already_correct=284 checkpoint=406999
+[backfill] records/s=1334 seen=426090 written=424715 skipped_already_correct=285 checkpoint=424999
+[backfill] records/s=1347 seen=443577 written=442714 skipped_already_correct=286 checkpoint=442999
+[backfill] records/s=1366 seen=463458 written=461714 skipped_already_correct=286 checkpoint=461999
+[backfill] records/s=1409 seen=492272 written=490713 skipped_already_correct=287 checkpoint=490999
+[backfill] done job=travis-a04-20261022052658 scope=all seconds=390
+  records_seen=493246 skipped_below_checkpoint=0 dispatched=493246
+  not_loaded=0 out_of_scope=0 in_scope_rows=493246 batches=494
+  written=492959 skipped_already_correct=287
+  rows_covered=493246 db_rows_in_scope=493246 checkpoint_low_water=493245
+  computed_with_propertyLegalDescription=493246 db_rows_with_propertyLegalDescription=493246
+  fingerprint_equal=yes (493246:377691122ef977efd4cbedd2154f66c8 → 493246:377691122ef977efd4cbedd2154f66c8)

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coverage, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.cv-h{margin:0;font-size:16px;line-height:24px;font-weight:500}
+.cv-sub{font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant)}
+.cv-kpi{display:flex;flex-direction:column;gap:8px;padding:16px 20px}
+.cv-big{font-family:var(--font-brand);font-size:28px;line-height:36px;font-weight:400}
+.cv-seg{height:10px;border-radius:var(--md-sys-shape-corner-extra-small)}.cv-seg:first-child{border-radius:var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small)}.cv-seg:last-child{border-radius:var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small)}
+.cv-sw{display:inline-block;width:12px;height:10px;border-radius:var(--md-sys-shape-corner-extra-small)}
+.cv-hatch{background-color:var(--md-sys-color-surface-container-high);background-image:repeating-linear-gradient(45deg,var(--md-sys-color-outline-variant) 0 2px,transparent 2px 6px)}
+.cv-on{background:var(--viz-seq-5)}
+.cv-seg{display:flex;height:10px;border-radius:var(--md-sys-shape-corner-full);overflow:hidden;background:var(--md-sys-color-surface-container-highest);gap:2px}.cv-seg i{display:block;height:100%;min-width:0}.cv-leg{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:2px 12px;font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant)}.cv-leg li{display:inline-flex;align-items:center;gap:4px}
+.cv-grid{display:grid;grid-template-columns:28px 210px minmax(0,1fr) 110px 130px 200px;column-gap:16px;align-items:center}
+.cv-head{padding:8px 0;border-bottom:1px solid var(--md-sys-color-outline-variant);font-size:12px;font-weight:500;color:var(--md-sys-color-on-surface-variant)}
+.cv-row{min-height:64px;padding:8px 0;border-bottom:1px solid var(--md-sys-color-outline-variant)}
+.cv-row.is-gap{background:linear-gradient(90deg,var(--status-warning-container) 0 4px,transparent 4px)}
+.cv-bar{display:flex;gap:2px;height:10px}
+.cv-bar>i{display:block;height:100%;background:var(--md-sys-color-primary);border-radius:var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small)}
+.cv-bar>b{display:block;height:100%;border-radius:var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small)}
+.cv-bar>i[style*="width: 0.0%"]{display:none}.cv-bar>b[style*="width: 0.0%"]{display:none}
+.rc-grid{display:grid;grid-template-columns:120px 100px 90px 100px minmax(160px,1fr) minmax(0,1.6fr);gap:12px;align-items:center}
+.cv-cell{display:grid;place-items:center;height:34px;border:0;border-radius:var(--md-sys-shape-corner-extra-small);font:500 12px/1 var(--font-plain);cursor:default;padding:0}
+.cv-cell:hover,.cv-cell:focus-visible{outline:2px solid var(--md-sys-color-on-surface);outline-offset:1px}
+
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 3220px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{sayCounty}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="{{topPillCls}}"><span class="material-symbols-rounded" aria-hidden="true">{{topPillIcon}}</span>{{topPillText}}</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 3156px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 3156px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Coverage</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">How much of each source is loaded, measured against that source’s own total, and where in the county it reaches. Every count has its date and run.</p>
+</div>
+<a class="atlas-chip" aria-haspopup="menu" style="text-decoration: none" href="Runs1440.dc.html">Run 3 · current<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></a>
+<button class="atlas-btn atlas-btn--outlined" onClick="{{download}}" disabled="{{noData}}"><span class="material-symbols-rounded" aria-hidden="true">download</span>Download CSV</button>
+</div>
+
+<div role="group" aria-label="Preview a state" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--md-sys-shape-corner-medium); border: 1px dashed var(--md-sys-color-outline); background: var(--md-sys-color-surface)">
+<span class="cv-sub" style="display: inline-flex; align-items: center; gap: 4px; margin-right: 4px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">science</span>Prototype · preview a state</span>
+<sc-for list="{{stateOpts}}" as="o" hint-placeholder-count="6"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 32px"><span class="material-symbols-rounded" aria-hidden="true" style="color: {{o.c}}">{{o.icon}}</span>{{o.label}}</button></sc-for>
+</div>
+
+<sc-if value="{{banner}}" hint-placeholder-val="{{ false }}"><div class="{{bannerCls}}" role="{{bannerRole}}"><span class="material-symbols-rounded" aria-hidden="true">{{bannerIcon}}</span><div class="atlas-banner__body" style="font-size: 14px; line-height: 20px"><b style="font-weight: 500">{{bannerTitle}}</b> {{bannerText}}</div><sc-if value="{{bannerBtn}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--text" onClick="{{bannerAct}}">{{bannerBtnLabel}}</button></sc-if></div></sc-if>
+
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+<section class="atlas-card atlas-card--outlined" style="display: flex; align-items: center; gap: 32px; padding: 40px 48px">
+<div aria-hidden="true" style="display: flex; flex-direction: column; gap: 10px; width: 220px"><span style="height: 14px; width: 100%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-highest)"></span><span style="height: 14px; width: 70%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-highest)"></span><span style="height: 14px; width: 85%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-highest)"></span><span style="height: 14px; width: 40%; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container-highest)"></span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 560px"><b style="font-family: var(--font-brand); font-size: 22px; line-height: 28px; font-weight: 400">No coverage yet</b><span style="font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Coverage is counted from a published run. Once the first run loads its sources, each record kind shows how much of its source is loaded and which parts of the county it reaches.</span><div style="display: flex; gap: 8px; margin-top: 4px"><a class="atlas-btn atlas-btn--filled" href="Runs1440.dc.html" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">history</span>Open Runs</a></div></div>
+</section>
+</sc-if>
+
+<sc-if value="{{isError}}" hint-placeholder-val="{{ false }}">
+<section class="atlas-card atlas-card--outlined" role="alert" style="display: flex; align-items: center; gap: 24px; padding: 32px 40px">
+<span class="material-symbols-rounded" aria-hidden="true" style="font-size: 40px; color: var(--status-danger)">cloud_off</span>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 6px"><b style="font-family: var(--font-brand); font-size: 22px; line-height: 28px; font-weight: 400">Coverage counts could not load</b><span style="font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">The Run 3 manifest did not load in your browser. Nothing is wrong with the data; the limitations, cost and source notes below do not depend on it.</span></div>
+<button class="atlas-btn atlas-btn--filled" onClick="{{retry}}"><span class="material-symbols-rounded" aria-hidden="true">refresh</span>Try again</button>
+</section>
+</sc-if>
+
+<sc-if value="{{hasData}}" hint-placeholder-val="{{ true }}">
+<!-- KPI tiles -->
+<div class="tg tg-2" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<section class="atlas-card atlas-card--outlined cv-kpi" aria-labelledby="k1">
+<span id="k1" class="cv-sub">Record kinds complete (7 rows)</span>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div class="atlas-skeleton" style="height: 32px; width: 60%"></div><div class="atlas-skeleton" style="height: 10px"></div></sc-if>
+<sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+<b class="cv-big num">{{k1Big}}</b>
+<div role="img" aria-label="{{k1Aria}}" style="display: flex; gap: 2px"><sc-for list="{{k1Segs}}" as="g" hint-placeholder-count="3"><span class="cv-seg" style="flex: {{g.n}} 1 0; background: {{g.c}}"></span></sc-for></div>
+<div style="display: flex; gap: 12px; font-size: 12px"><sc-for list="{{k1Segs}}" as="g" hint-placeholder-count="3"><span style="display: inline-flex; align-items: center; gap: 4px"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="color: {{g.c}}">{{g.icon}}</span>{{g.n}} {{g.label}}</span></sc-for></div>
+</sc-if>
+</section>
+<section class="atlas-card atlas-card--outlined cv-kpi" aria-labelledby="k2">
+<span id="k2" class="cv-sub">Records loaded</span>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div class="atlas-skeleton" style="height: 32px; width: 70%"></div><div class="atlas-skeleton" style="height: 10px"></div></sc-if>
+<sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+<b class="cv-big num">3,685,340</b>
+<div class="atlas-progress" role="img" aria-label="98.9 percent of the sources' own totals" style="height: 8px"><i style="width: 98.9%"></i></div>
+<span class="cv-sub num">of 3,724,754 in the sources’ own totals · 98.9%</span>
+</sc-if>
+</section>
+<section class="atlas-card atlas-card--outlined cv-kpi" aria-labelledby="k3">
+<span id="k3" class="cv-sub">Areas with permit data</span>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div class="atlas-skeleton" style="height: 32px; width: 40%"></div><div class="atlas-skeleton" style="height: 10px"></div></sc-if>
+<sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+<b class="cv-big num">1 of 4</b>
+<div style="display: flex; gap: 4px"><sc-for list="{{areaChips}}" as="a" hint-placeholder-count="4"><span class="{{a.cls}}" style="flex: 1; height: 24px; border-radius: var(--md-sys-shape-corner-extra-small); display: grid; place-items: center; font-size: 11px; color: {{a.fc}}">{{a.label}}</span></sc-for></div>
+<span class="cv-sub">Austin publishes permits for the city only</span>
+</sc-if>
+</section>
+<section class="atlas-card atlas-card--outlined cv-kpi" aria-labelledby="k4">
+<span id="k4" class="cv-sub">Counted from</span>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div class="atlas-skeleton" style="height: 32px; width: 50%"></div><div class="atlas-skeleton" style="height: 10px"></div></sc-if>
+<sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+<b class="cv-big">Run 3 · Oct 17</b>
+<span style="display: flex; align-items: center; gap: 6px"><span class="{{k4PillCls}}"><span class="material-symbols-rounded" aria-hidden="true">{{k4Icon}}</span>{{k4Pill}}</span><span class="cv-sub num">{{k4Sub}}</span></span>
+<a href="Runs1440.dc.html" style="font-size: 13px">Open the run</a>
+</sc-if>
+</section>
+</div>
+
+<!-- Loaded vs own total -->
+<section aria-labelledby="src-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 6px; padding: 16px 24px">
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; display: flex; flex-direction: column"><h3 id="src-h" class="cv-h">Loaded vs each source’s own total</h3><span class="cv-sub">{{srcSub}}</span></div>
+<div aria-hidden="true" style="display: flex; gap: 14px; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"><span style="display: inline-flex; align-items: center; gap: 6px"><span class="cv-sw" style="background: var(--md-sys-color-primary)"></span>Loaded</span><span style="display: inline-flex; align-items: center; gap: 6px"><span class="cv-sw cv-hatch"></span>Missing</span><span style="display: inline-flex; align-items: center; gap: 6px"><svg width="22" height="10"><path d="M1 8 L11 5 L21 2" fill="none" stroke="currentColor" stroke-width="2"></path></svg>Runs 1 to 3</span></div>
+<button class="atlas-btn atlas-btn--text" aria-pressed="{{tableOn}}" onClick="{{toggleTable}}"><span class="material-symbols-rounded" aria-hidden="true">table</span>{{tableLabel}}</button>
+</div>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div style="display: flex; align-items: center; gap: 10px; font-size: 13px"><div class="atlas-progress" role="progressbar" aria-label="Reading counts" aria-valuemin="0" aria-valuemax="{{nRows}}" aria-valuenow="{{loadN}}" style="flex: 1"><i style="width: {{loadPct}}%"></i></div><span class="num">Reading counts from the Run 3 manifest · {{loadN}} of {{nRows}}</span></div></sc-if>
+<div class="cv-grid cv-head"><span></span><span>Data</span><span>Loaded</span><span style="text-align: right">Trend</span><span>Collected</span><span>Provenance</span></div>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+<sc-if value="{{r.skel}}" hint-placeholder-val="{{ false }}"><div class="cv-grid cv-row"><span class="atlas-skeleton" style="width: 20px; height: 20px; border-radius: var(--md-sys-shape-corner-full)"></span><span class="atlas-skeleton" style="width: 70%"></span><span class="atlas-skeleton" style="height: 10px"></span><span class="atlas-skeleton" style="width: 60px; justify-self: end"></span><span class="atlas-skeleton" style="width: 80%"></span><span class="atlas-skeleton" style="width: 70%"></span></div></sc-if>
+<sc-if value="{{r.show}}" hint-placeholder-val="{{ true }}">
+<div class="{{r.cls}}">
+<span class="material-symbols-rounded atlas-icon-20" role="img" aria-label="{{r.statusLabel}}" style="color: {{r.c}}">{{r.icon}}</span>
+<div style="display: flex; flex-direction: column; min-width: 0; padding-left: {{r.indent}}"><b style="font-weight: 500; font-size: 14px">{{r.name}}</b><span class="cv-sub">{{r.src}}</span><span class="cv-sub">Out of: {{r.den}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<div style="display: flex; gap: 8px; font-size: 13px"><span class="num" style="flex: 1" title="Denominator: {{r.den}}">{{r.count}}</span><b class="num" style="font-weight: 500">{{r.pctLabel}}</b><span class="{{r.pillCls}}" style="font-size: 11px; height: 20px"><span class="material-symbols-rounded" aria-hidden="true">{{r.icon}}</span>{{r.statusLabel}}</span></div>
+<sc-if value="{{r.plain}}" hint-placeholder-val="{{ true }}"><div class="cv-bar" role="img" aria-label="{{r.barAria}}"><i style="width: {{r.pct}}%"></i><b class="cv-hatch" style="width: {{r.miss}}%"></b></div></sc-if><sc-if value="{{r.segOn}}" hint-placeholder-val="{{ false }}"><div class="cv-seg" role="img" aria-label="{{r.segAria}}"><sc-for list="{{r.segs}}" as="g" hint-placeholder-count="5"><i style="width: {{g.w}}%; background: {{g.c}}"></i></sc-for></div><ul class="cv-leg" aria-label="Contractor identity states"><sc-for list="{{r.segs}}" as="g" hint-placeholder-count="5"><li><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="color: {{g.c}}">{{g.icon}}</span>{{g.label}} <b class="num" style="font-weight: 500">{{g.n}}</b></li></sc-for></ul></sc-if>
+<span class="cv-sub">{{r.note}}</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px"><svg width="96" height="26" viewBox="0 0 96 26" role="img" aria-label="{{r.trendAria}}"><polyline points="{{r.pts}}" fill="none" stroke="{{r.lc}}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="{{r.dash}}"></polyline><circle cx="{{r.ex}}" cy="{{r.ey}}" r="4" fill="{{r.lc}}" stroke="var(--md-sys-color-surface)" stroke-width="2"></circle></svg><span class="cv-sub num">{{r.delta}}</span></div>
+<div style="display: flex; flex-direction: column"><span class="num" style="font-size: 13px">{{r.when}}</span><sc-if value="{{r.cached}}" hint-placeholder-val="{{ false }}"><span class="atlas-pill atlas-pill--info" style="align-self: flex-start; font-size: 11px; height: 20px; margin-top: 2px">Cached 11:43</span></sc-if></div>
+<div style="display: flex; flex-direction: column; min-width: 0"><a href="{{r.href}}" style="font-size: 13px">{{r.prov}}</a><span class="cv-sub">Count: Run manifest · coverage section</span></div>
+</div>
+</sc-if>
+</sc-for>
+<sc-if value="{{gapsFold}}" hint-placeholder-val="{{ false }}"><button class="atlas-list-item atlas-list-item--action" onClick="{{showAll}}" style="width: 100%; border: 0; background: var(--md-sys-color-surface-container); border-radius: var(--md-sys-shape-corner-medium); font: inherit; color: inherit; padding: 10px 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true" style="color: var(--status-success)">check_circle</span><span style="flex: 1; font-size: 13px">3 complete rows hidden: Property, Permit, Business</span><span style="font-size: 13px; color: var(--md-sys-color-primary); font-weight: 500">Show all</span></button></sc-if>
+<sc-if value="{{tableView}}" hint-placeholder-val="{{ false }}"><table class="atlas-table atlas-table--dense stack" style="width: 100%; font-size: 12px; margin-top: 6px"><thead><tr><th>Data</th><th class="num">Loaded</th><th class="num">Source total</th><th class="num">%</th><th class="num">Run 1</th><th class="num">Run 2</th><th class="num">Run 3</th><th>Status</th></tr></thead><tbody><sc-for list="{{tableRows}}" as="t" hint-placeholder-count="8"><tr><td data-label="Data">{{t.name}}</td><td data-label="Loaded" class="num">{{t.l}}</td><td data-label="Source total" class="num">{{t.t}}</td><td data-label="%" class="num">{{t.p}}</td><td data-label="Run 1" class="num">{{t.r1}}</td><td data-label="Run 2" class="num">{{t.r2}}</td><td data-label="Run 3" class="num">{{t.r3}}</td><td data-label="Status">{{t.s}}</td></tr></sc-for></tbody></table></sc-if>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px; margin-top: 4px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Times are UTC · counts are Sample except Austin permits · Complete = all of the source’s own total; Partial = some missing, reason under the bar; Blocked = source refuses automated access · a dashed trend means a run carried records over</div>
+</section>
+
+<!-- Area matrix + limitations -->
+<div style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px">
+<section aria-labelledby="ar-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; padding: 16px 24px">
+<div style="display: flex; flex-direction: column"><h3 id="ar-h" class="cv-h">Coverage by area</h3><span class="cv-sub">Share of each area’s parcels or records that have the data. Hover or focus a cell.</span></div>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div class="atlas-skeleton" style="height: 260px"></div></sc-if>
+<sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+<div role="table" aria-label="Coverage by data type and area" style="display: grid; grid-template-columns: 120px repeat(4, minmax(0, 1fr)); gap: 3px; font-size: 12px">
+<span role="columnheader"></span><sc-for list="{{areaHead}}" as="h" hint-placeholder-count="4"><span role="columnheader" style="text-align: center; font-weight: 500; padding-bottom: 4px">{{h}}</span></sc-for>
+<sc-for list="{{matrix}}" as="m" hint-placeholder-count="8">
+<span role="rowheader" style="display: flex; align-items: center; color: var(--md-sys-color-on-surface-variant)">{{m.name}}</span>
+<sc-for list="{{m.cells}}" as="c" hint-placeholder-count="4"><span role="cell" tabindex="0" class="{{c.cls}}" aria-label="{{c.aria}}" onMouseEnter="{{c.hover}}" onFocus="{{c.hover}}" style="background-color: {{c.bg}}; color: {{c.fc}}; opacity: {{c.op}}">{{c.label}}</span></sc-for>
+</sc-for>
+</div>
+<div aria-live="polite" style="min-height: 36px; padding: 8px 12px; border-radius: var(--md-sys-shape-corner-small); background: var(--md-sys-color-surface-container); font-size: 13px; line-height: 18px">{{cellInfo}}</div>
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--md-sys-color-on-surface-variant)"><span style="margin-right: 4px">Share covered</span><sc-for list="{{ramp}}" as="g" hint-placeholder-count="5"><span style="display: inline-flex; flex-direction: column; align-items: center; gap: 2px"><span style="width: 44px; height: 10px; border-radius: var(--md-sys-shape-corner-extra-small); background: {{g.c}}"></span>{{g.l}}</span></sc-for><span style="display: inline-flex; flex-direction: column; align-items: center; gap: 2px; margin-left: 12px"><span class="cv-hatch" style="width: 44px; height: 10px; border-radius: var(--md-sys-shape-corner-extra-small)"></span>No source</span></div>
+</sc-if>
+</section>
+<section aria-labelledby="lim-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 20px">
+<h3 id="lim-h" class="atlas-card__title">Known limitations</h3>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px">
+<li><b style="font-weight: 500">BBB:</b> Blocked · bbb.org refused the check (403) on 2026-10-17. No ratings loaded in Run 3; ratings show, with their date, where a later run can collect them.</li>
+<li><b style="font-weight: 500">Permits:</b> Austin’s data covers the City of Austin only. Pflugerville, Manor and unincorporated areas have no permit source yet.</li>
+<li><b style="font-weight: 500">Owners:</b> some owner records are withheld as confidential and show as “withheld”, not blank.</li>
+<li><b style="font-weight: 500">Contractors:</b> Austin permits carry names only, so most names stay Candidate or Unresolved. Resolved needs an official TX Comptroller taxpayer number.</li>
+<li><b style="font-weight: 500">Roof age:</b> an estimate: reroof permit first, then new-build date, then year built, with a confidence badge.</li>
+</ul>
+</section>
+</div>
+<!-- Reconciliation (review #3) -->
+<section aria-labelledby="rc-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; padding: 16px 24px">
+<div style="display: flex; align-items: center; gap: 12px"><div style="flex: 1; display: flex; flex-direction: column"><h3 id="rc-h" class="cv-h">Reconciliation · duplicates merged in Run 3</h3><span class="cv-sub">Records from different sources that describe the same thing are merged into one, and each merged record keeps its source IDs.</span></div><a class="atlas-btn atlas-btn--tonal" href="Property1440.dc.html" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">merge</span>Owner example: 2 accounts → 1</a></div>
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}"><div class="atlas-skeleton" style="height: 150px"></div></sc-if>
+<sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+<div role="table" aria-label="Duplicates merged by entity" style="display: flex; flex-direction: column; font-size: 13px; line-height: 18px">
+<div role="row" class="rc-grid" style="color: var(--md-sys-color-on-surface-variant); font-size: 12px; padding-bottom: 6px"><span role="columnheader">Entity</span><span role="columnheader" style="text-align: right">Records in</span><span role="columnheader" style="text-align: right">Merged</span><span role="columnheader" style="text-align: right">Entities out</span><span role="columnheader">Share merged (scale 0–20%)</span><span role="columnheader">Method</span></div>
+<sc-for list="{{recon}}" as="m" hint-placeholder-count="4"><div role="row" class="rc-grid" style="padding: 8px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><b role="rowheader" style="font-weight: 500">{{m.name}}</b><span role="cell" class="num" style="text-align: right">{{m.inN}}</span><span role="cell" class="num" style="text-align: right">{{m.merged}}</span><span role="cell" class="num" style="text-align: right">{{m.out}}</span><span role="cell" style="display: flex; align-items: center; gap: 8px"><span class="cv-bar" role="img" aria-label="{{m.pct}} percent merged" style="flex: 1"><i style="width: {{m.w}}%"></i></span><span class="num" style="width: 44px; text-align: right">{{m.pct}}%</span></span><span role="cell" style="color: var(--md-sys-color-on-surface-variant)">{{m.method}}</span></div></sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; padding: 8px 12px; border-radius: var(--md-sys-shape-corner-small); background: var(--md-sys-color-surface-container); font-size: 13px; line-height: 18px"><b style="font-weight: 500">Contractor example:</b><span>SAMPLE ROOFING CO, Sample Roofing Company LLC, Sample Rfg Co</span><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">arrow_forward</span><b style="font-weight: 500">1 likely Comptroller company</b><span class="atlas-pill atlas-pill--info" title="Name matches stay Candidate. Only an official ID resolves a contractor."><span class="material-symbols-rounded" aria-hidden="true">help</span>Candidate</span><span style="color: var(--md-sys-color-on-surface-variant)">· 3 spellings · Candidate, not proof · 11 permits · not merged · No Texas roofing licence register exists</span></div>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Counts are Sample · every count on this page, the Ownership row and the MCP get_coverage tool comes from one place: the Run manifest · coverage section (numbers only, no rows: row counts in the published tables, source totals measured at capture, aggregate match counts). Worked examples are read at query time from the published elephant-cli tables.</div>
+</sc-if>
+</section>
+</sc-if>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start">
+<sc-if value="{{notEmpty}}" hint-placeholder-val="{{ true }}"><section aria-labelledby="speed-h" style="display: flex; flex-direction: column; gap: 8px">
+<h3 id="speed-h" style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500">Source speed and constraints</h3>
+<div class="atlas-table-wrap" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface)">
+<table class="atlas-table atlas-table--dense stack" style="width: 100%">
+<thead><tr><th>Source</th><th>Access</th><th class="num">Throughput</th><th>Rate limit</th><th class="num">Full load, Run 3</th><th>Constraints</th></tr></thead>
+<tbody>
+<tr><td data-label="Source">Austin permits</td><td data-label="Access">Open data API, paged</td><td data-label="Throughput" class="num">~50,000 rows/min</td><td data-label="Rate limit">[As published; app token]</td><td data-label="Full load, Run 3" class="num">48 min</td><td data-label="Constraints">2 retries in Run 3</td></tr>
+<tr><td data-label="Source">TCAD</td><td data-label="Access">Bulk export file</td><td data-label="Throughput" class="num">1 download</td><td data-label="Rate limit">None seen</td><td data-label="Full load, Run 3" class="num">24 min</td><td data-label="Constraints"><span class="atlas-pill atlas-pill--warning">Slow site at peak hours</span></td></tr>
+<tr><td data-label="Source">TX Comptroller franchise-tax (9cir-efmm)</td><td data-label="Access">Open data API, paged</td><td data-label="Throughput" class="num">~20,000 rows/min</td><td data-label="Rate limit">[As published; app token]</td><td data-label="Full load, Run 3" class="num">4 min</td><td data-label="Constraints">Missed Run 2 refresh</td></tr>
+<tr><td data-label="Source">Overture places</td><td data-label="Access">GeoParquet release, one download</td><td data-label="Throughput" class="num">1 download</td><td data-label="Rate limit">None</td><td data-label="Full load, Run 3" class="num">3 min</td><td data-label="Constraints">Monthly releases</td></tr>
+<tr><td data-label="Source">BBB</td><td data-label="Access">Website</td><td data-label="Throughput" class="num">0</td><td data-label="Rate limit">403 on 2026-10-17</td><td data-label="Full load, Run 3" class="num">Not loaded</td><td data-label="Constraints"><span class="atlas-pill atlas-pill--danger">Blocked</span></td></tr>
+<tr><td data-label="Source">Public IPFS gateways</td><td data-label="Access">HTTP, two independent gateways</td><td data-label="Throughput" class="num">Varies</td><td data-label="Rate limit">Rate-limited, retried with countdown</td><td data-label="Full load, Run 3" class="num">8 min to verify</td><td data-label="Constraints">Not operated by CountyLens</td></tr>
+</tbody>
+</table>
+</div>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Throughput and times are Sample measurements from the run log</div>
+</section></sc-if>
+<section aria-labelledby="cost-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 8px"><h3 id="cost-h" class="atlas-card__title" style="flex: 1">Cost</h3><span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">savings</span>$0.00 fixed per month</span></div>
+<div role="table" aria-label="Deployed resources and idle cost" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; font-size: 13px; line-height: 18px">
+<div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 8px; font-size: 12px; color: var(--md-sys-color-on-surface-variant); padding-bottom: 4px"><span role="columnheader">Deployed resource</span><span role="columnheader" style="text-align: right">Fixed · usage</span></div><div role="row" aria-hidden="true" style="display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 8px; font-size: 12px; color: var(--md-sys-color-on-surface-variant); padding-bottom: 4px"><span>Deployed resource</span><span style="text-align: right">Fixed · usage</span></div>
+<sc-for list="{{costRows}}" as="c" hint-placeholder-count="6"><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 8px; padding: 7px 0; border-top: 1px solid var(--md-sys-color-outline-variant)"><span role="cell" style="display: flex; flex-direction: column; min-width: 0"><span>{{c.name}}</span><span class="cv-sub">{{c.how}}</span></span><span role="cell" class="num" style="text-align: right">{{c.idle}}</span></div></sc-for>
+</div>
+<div class="tg" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container)"><span class="cv-sub">Last bill · September 2026</span><b class="num" style="font-family: var(--font-brand); font-size: 22px; line-height: 28px; font-weight: 400">$0.07</b><span class="cv-sub">$0.00 fixed + 7¢ usage while testing (model calls, Lambda requests, S3 copy) · Cost Explorer, captured 10-01 · Sample</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container)"><span class="cv-sub">Budget alert</span><b class="num" style="font-family: var(--font-brand); font-size: 22px; line-height: 28px; font-weight: 400">$5 / month</b><span class="cv-sub">Emails at 80% and 100% · not triggered</span></div>
+</div>
+<a href="Runs1440.dc.html" style="display: inline-flex; align-items: center; gap: 4px; font-size: 14px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">receipt_long</span>Cost evidence: cost.json, built at deploy time and attached to the release (not an IPFS artifact), and the bill capture</a>
+<span class="cv-sub">Built at deploy time from cost.json, which lists every deployed resource. Pinning (Filebase, free tier) and the public gateways (free, not ours) are separate rows. There is no fixed cost: DNS stays at Namecheap, secrets are in SSM Parameter Store, and every other resource is paid per use, in cents. Street View is not used (coming soon).</span>
+</section>
+</div>
+</main>
+
+<sc-if value="{{toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{toast}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Coverage · 1440 (D-3) · states" desktop="Coverage1440.dc.html" tablet="Coverage768.dc.html" mobile="Coverage390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["loaded","loading","gaps","ratelimited","error","empty"],"default":"loaded"},"$preview":{"width":1440,"height":3220}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { st: props.state || 'loaded', loadN: 7, table: false, showAll: false, cell: null, toast: '', retry: 4 };
+    const R = (k, name, src, l, t, unit, status, when, prov, href, trend, note, carried, den, sub, segs) => ({ k, name, src, l, t, unit, status, when, prov, href, trend, note, carried, den, sub, segs });
+    this.ROWS = [
+      R('property', 'Property', 'TCAD appraisal roll', 412860, 412860, 'parcels', 'complete', '10-17 10:48', 'properties table · CID …7m2c', 'DataManifest1440.dc.html', [100, 100, 100], 'Every parcel on the roll', false, 'TCAD roll count'),
+      R('permit', 'Permit', 'Austin permits (3syk-w9eu)', 2380507, 2380507, 'rows', 'complete', '10-17 10:24', 'property_improvement table · CID …q4xa', 'DataCatalog1440.dc.html', [100, 100, 100], '22,083 classified as reroof · City of Austin only. Sample: 21,640 of 22,083 reroof permits matched to a property · 443 unmatched (kept and counted)', false, 'dataset row count, 3syk-w9eu'),
+      R('owner', 'Ownership', 'TCAD owners and sales', 398114, 412860, 'parcels', 'partial', '10-17 10:48', 'person + sales_history tables · CID …o2wn, …s4lh', 'DataManifest1440.dc.html', [96.2, 96.3, 96.4], '14,746 owners withheld as confidential, shown as “withheld”', false, 'TCAD roll count'),
+      R('contractor', 'Contractor', 'Names on Austin permits', 0, 22210, 'Resolved (Sample)', 'partial', '10-17 11:05', 'company table · CID …w3nd', 'DataManifest1440.dc.html', [0, 0, 0], 'Real counts come from Run 3 in A-02. Resolved needs an official ID; Austin permits carry names only.', false, 'distinct names on reroof permits', false, [['Resolved', 0, 'var(--status-success)', 'verified'], ['Candidate', 14880, 'var(--status-info)', 'help'], ['Ambiguous', 2140, 'var(--status-warning)', 'call_split'], ['Conflicting', 390, 'var(--status-danger)', 'sync_problem'], ['Unresolved', 4800, 'var(--status-unavailable)', 'link_off']]),
+      R('bbb', 'Contractor · BBB', 'BBB · sub-count of Contractor', 0, 22210, 'names', 'blocked', 'Not fetched', 'Blocked · 403 on 10-17 · evidence', 'RunsLog1440.dc.html', [0, 0, 0], 'Blocked · bbb.org refused the check (403) on 2026-10-17', false, 'distinct names on reroof permits', true),
+      R('business', 'Business', 'TX Comptroller franchise-tax (9cir-efmm) · places from Overture', 61305, 61305, 'records', 'complete', '10-17 11:02', 'company + business_location tables · CID …w3nd, …p1cs', 'DataCatalog1440.dc.html', [100, 100, 100], 'Travis County franchise-tax filers; 52,870 located with Overture places', true, 'dataset row count, 9cir-efmm, Travis'),
+      R('coords', 'Coordinates', 'TCAD parcel geometry', 410402, 412860, 'parcels', 'partial', '10-17 10:52', 'geometry table · CID …g30m', 'DataManifest1440.dc.html', [99.1, 99.3, 99.4], '2,458 parcels have no geometry yet', false, 'TCAD roll count')
+    ];
+    this.AREAS = ['Austin', 'Pflugerville', 'Manor', 'Unincorp.'];
+    const NS = null, BL = -1;
+    this.MX = { property: [100, 100, 100, 100], permit: [100, NS, NS, NS], owner: [96.9, 95.8, 95.1, 94.6], contractor: [100, NS, NS, NS], bbb: [BL, BL, BL, BL], business: [100, 100, 100, 100], coords: [99.7, 99.3, 98.9, 98.2] };
+    this.STS = { complete: ['check_circle', 'var(--status-success)', 'Complete', 'atlas-pill atlas-pill--success'], partial: ['warning', 'var(--status-warning)', 'Partial', 'atlas-pill atlas-pill--warning'], blocked: ['block', 'var(--status-danger)', 'Blocked', 'atlas-pill atlas-pill--danger'] };
+  }
+  componentDidMount() { if (this.state.st === 'loading') this.startLoad(); }
+  componentWillUnmount() { clearInterval(this.lt); clearInterval(this.cd); clearTimeout(this.tt); }
+  say(t) { this.setState({ toast: t }); clearTimeout(this.tt); this.tt = setTimeout(() => this.setState({ toast: '' }), 2800); }
+  startLoad() { clearInterval(this.lt); this.setState({ st: 'loading', loadN: 0 }); this.lt = setInterval(() => { const n = this.state.loadN + 1; if (n >= this.ROWS.length) { clearInterval(this.lt); this.setState({ st: 'loaded', loadN: this.ROWS.length }); } else this.setState({ loadN: n }); }, 450); }
+  setSt(st) {
+    clearInterval(this.lt); clearInterval(this.cd);
+    if (st === 'loading') { this.startLoad(); return; }
+    const o = { st: st, loadN: this.ROWS.length, showAll: false, cell: null };
+    if (st === 'ratelimited') { o.retry = 4; this.cd = setInterval(() => this.setState((p) => ({ retry: p.retry <= 1 ? 4 : p.retry - 1 })), 1000); }
+    this.setState(o);
+  }
+  binC(v) { return v >= 100 ? ['var(--viz-seq-5)', 'var(--md-sys-color-on-primary)'] : v >= 98 ? ['var(--viz-seq-4)', 'var(--md-sys-color-on-primary)'] : v >= 90 ? ['var(--viz-seq-3)', 'var(--md-sys-color-on-surface)'] : v >= 50 ? ['var(--viz-seq-2)', 'var(--md-sys-color-on-surface)'] : ['var(--viz-seq-1)', 'var(--md-sys-color-on-surface)']; }
+  renderVals() {
+    const s = this.state, st = s.st, f = (v) => v.toLocaleString('en-US'), STS = this.STS;
+    const loading = st === 'loading', gaps = st === 'gaps' && !s.showAll, cached = st === 'ratelimited';
+    let rows = this.ROWS.map((r, i) => ({ r: r, i: i }));
+    if (gaps) rows = rows.filter((x) => x.r.status !== 'complete');
+    const out = rows.map(({ r, i }) => {
+      const m = STS[r.status], pct = r.t ? r.l / r.t * 100 : 0, tr = r.trend;
+      const lo = Math.min.apply(null, tr), hi = Math.max.apply(null, tr), span = Math.max(1, hi - lo);
+      const pts = tr.map((v, j) => [6 + j * 42, Math.round(20 - (v - lo) / span * 14)]);
+      const d = tr[2] - tr[0];
+      return { skel: loading && i >= s.loadN, show: !(loading && i >= s.loadN), cls: 'cv-grid cv-row' + (st === 'gaps' && r.status !== 'complete' ? ' is-gap' : ''),
+        name: r.name, src: r.src, indent: r.sub ? '16px' : '0', den: r.den, icon: m[0], c: m[1], statusLabel: m[2], pillCls: m[3],
+        count: r.segs ? f(r.t) + ' names · 5 identity states (Sample)' : f(r.l) + ' of ' + f(r.t) + ' ' + r.unit, pct: pct.toFixed(1), miss: (100 - pct).toFixed(1), pctLabel: r.segs ? '' : (pct === 100 || pct === 0 ? String(pct) : pct.toFixed(1)) + '%',
+        barAria: r.name + ': ' + pct.toFixed(1) + ' percent loaded, ' + (100 - pct).toFixed(1) + ' percent missing', note: r.note,
+        pts: pts.map((p) => p.join(',')).join(' '), ex: pts[2][0], ey: pts[2][1], lc: r.status === 'blocked' ? 'var(--status-danger)' : 'var(--md-sys-color-primary)', dash: r.carried ? '3 3' : 'none',
+        delta: r.status === 'blocked' ? '0 in every run' : d === 0 ? 'No change' : '+' + d.toFixed(1) + ' pts', trendAria: r.name + ' by run: ' + tr.join('%, ') + '%',
+        when: r.when, cached: cached && r.status !== 'blocked', prov: r.prov, href: r.href,
+        // #90 / AD-05: the Contractor row counts five identity states instead of one loaded share
+        plain: !r.segs, segOn: !!r.segs, segs: (r.segs || []).map((g) => ({ label: g[0], n: f(g[1]), w: (g[1] / r.t * 100).toFixed(2), c: g[2], icon: g[3] })),
+        segAria: r.segs ? r.name + ' identity, Sample: ' + r.segs.map((g) => g[0] + ' ' + f(g[1])).join(', ') : '' };
+    });
+    const tableRows = this.ROWS.map((r) => ({ name: r.segs ? r.name + ' · Resolved (5 states, Sample)' : r.name, l: f(r.l), t: f(r.t), p: (r.t ? r.l / r.t * 100 : 0).toFixed(1), r1: r.trend[0], r2: r.trend[1], r3: r.trend[2], s: STS[r.status][2] }));
+    // Matrix
+    const cnt = { complete: 0, partial: 0, blocked: 0 }; this.ROWS.forEach((r) => cnt[r.status]++);
+    const matrix = this.ROWS.map((r) => ({ name: r.name, cells: this.MX[r.k].map((v, j) => {
+      const area = this.AREAS[j], ns = v === null, bl = v === -1;
+      const [bg, fc] = ns || bl ? ['transparent', 'var(--md-sys-color-on-surface-variant)'] : this.binC(v);
+      const label = ns ? 'No source' : bl ? 'Blocked' : (v >= 100 ? '100' : v.toFixed(1)) + '%';
+      const info = r.name + ' · ' + area + ': ' + (ns ? 'no public source for this area yet.' : bl ? 'blocked: the source refuses automated access.' : label + ' covered' + (v < 100 ? ', ' + (100 - v).toFixed(1) + '% missing.' : '.'));
+      const dim = st === 'gaps' && !ns && !bl && v >= 100;
+      return { cls: 'cv-cell' + (ns || bl ? ' cv-hatch' : ''), bg: bg, fc: fc, label: label, aria: info, op: dim ? 0.35 : 1, hover: () => this.setState({ cell: info }) }; }) }));
+    const BN = {
+      gaps: ['atlas-banner atlas-banner--warning', 'status', 'warning', '4 of 7 rows have gaps.', 'Only the gaps are listed; complete data types are folded below and dimmed on the area grid.', '', null],
+      ratelimited: ['atlas-banner atlas-banner--info', 'status', 'hourglass_top', 'Manifest gateway is rate-limited.', 'Retrying in ' + s.retry + ' s (attempt 2 of 3). The counts shown are cached from 11:43 UTC and marked “Cached”.', 'Retry now', () => { this.setSt('loaded'); this.say('Counts refreshed from the gateway (prototype).'); }],
+    }[st];
+    const opts = [['loaded', 'Loaded', 'check_circle', 'var(--status-success)'], ['loading', 'Loading', 'progress_activity', 'var(--status-info)'], ['gaps', 'Gaps only', 'warning', 'var(--status-warning)'], ['ratelimited', 'Rate-limited', 'hourglass_top', 'var(--status-info)'], ['error', 'Error', 'error', 'var(--status-danger)'], ['empty', 'Empty', 'cloud_off', 'var(--status-unavailable)']];
+    const top = { loaded: ['atlas-pill atlas-pill--success', 'cloud_done', 'Run 3 · Oct 17'], loading: ['atlas-pill atlas-pill--success', 'cloud_done', 'Run 3 · Oct 17'], gaps: ['atlas-pill atlas-pill--success', 'cloud_done', 'Run 3 · Oct 17'], ratelimited: ['atlas-pill atlas-pill--info', 'hourglass_top', 'Cached counts · retrying'], error: ['atlas-pill atlas-pill--danger', 'error', 'Counts unavailable'], empty: ['atlas-pill atlas-pill--unavailable', 'cloud_off', 'No data yet'] }[st];
+    return {
+      sayCounty: () => this.say('Travis County, TX is the only live county. Others show as Coming soon.'),
+      download: () => this.say('Downloaded coverage_run3.csv (Sample).'), noData: st === 'empty' || st === 'error',
+      topPillCls: top[0], topPillIcon: top[1], topPillText: top[2],
+      stateOpts: opts.map((o) => ({ label: o[1], icon: o[2], c: o[3], on: String(st === o[0]), pick: () => this.setSt(o[0]) })),
+      banner: !!BN, bannerCls: BN ? BN[0] : '', bannerRole: BN ? BN[1] : 'status', bannerIcon: BN ? BN[2] : '', bannerTitle: BN ? BN[3] : '', bannerText: BN ? BN[4] : '', bannerBtn: !!(BN && BN[5]), bannerBtnLabel: BN ? BN[5] : '', bannerAct: BN && BN[6] ? BN[6] : () => {},
+      isEmpty: st === 'empty', isError: st === 'error', hasData: st !== 'empty' && st !== 'error', notEmpty: st !== 'empty',
+      retry: () => this.startLoad(),
+      loading: loading, ready: !loading, loadN: String(s.loadN), loadPct: String(Math.round(s.loadN / this.ROWS.length * 100)), nRows: String(this.ROWS.length),
+      k1Big: cnt.complete + ' of ' + this.ROWS.length, k1Aria: cnt.complete + ' complete, ' + cnt.partial + ' partial, ' + cnt.blocked + ' blocked',
+      k1Segs: [['complete', 'complete', 'check_circle', 'var(--status-success)'], ['partial', 'partial', 'warning', 'var(--status-warning)'], ['blocked', 'blocked', 'block', 'var(--status-danger)']].map((g) => ({ n: String(cnt[g[0]]), label: g[1], icon: g[2], c: g[3] })),
+      areaChips: this.AREAS.map((a, j) => ({ label: a, cls: j === 0 ? '' : 'cv-hatch', fc: j === 0 ? 'var(--md-sys-color-on-primary)' : 'var(--md-sys-color-on-surface-variant)' })).map((a, j) => Object.assign(a, { cls: j === 0 ? 'cv-on' : 'cv-hatch' })),
+      k4PillCls: cached ? 'atlas-pill atlas-pill--info' : 'atlas-pill atlas-pill--success', k4Icon: cached ? 'hourglass_top' : 'cloud_done', k4Pill: cached ? 'Cached' : 'Fresh', k4Sub: cached ? '11:43 UTC copy' : 'Published 11:05 UTC',
+      srcSub: gaps ? 'Showing the 4 rows with gaps' : 'The six record kinds in Run 3 (BBB sits under Contractor) · each bar is measured against the denominator named in its row',
+      rows: out, gapsFold: gaps, showAll: () => this.setState({ showAll: true }),
+      tableOn: String(s.table), tableLabel: s.table ? 'Hide table' : 'Show as table', toggleTable: () => this.setState({ table: !s.table }), tableView: s.table && !loading, tableRows: tableRows,
+      areaHead: this.AREAS, matrix: matrix, cellInfo: s.cell || 'Permits and contractors reach the City of Austin only; BBB: Blocked · bbb.org refused the check (403) on 2026-10-17.',
+      ramp: [['var(--viz-seq-1)', '<50%'], ['var(--viz-seq-2)', '50–90'], ['var(--viz-seq-3)', '90–98'], ['var(--viz-seq-4)', '98–99.9'], ['var(--viz-seq-5)', '100%']].map((g) => ({ c: g[0], l: g[1] })),
+      recon: [['Property', 418204, 412860, 'TCAD prop ID + geo ID'], ['Owner', 404980, 398114, 'Normalised name + mailing address'], ['Contractor', 22210, 22210, 'Merged only on an official registry identifier. Name, phone, address, BBB and places matches stay Candidates.'], ['Business', 66118, 61305, 'Comptroller taxpayer no.; Overture place within 50 m']].map((m) => { const mg = m[1] - m[2], pc = mg / m[1] * 100; return { name: m[0], inN: f(m[1]), merged: f(mg), out: f(m[2]), pct: pc.toFixed(1), w: Math.min(100, pc / 20 * 100).toFixed(1), method: m[3] }; }),
+      costRows: [['Web app (AWS Amplify Hosting)', 'Static build; pay per request and GB served', '$0.00 · <1¢'], ['S3 copy of published files', 'Byte-for-byte copy of the elephant-cli files under each CID, through CloudFront; Verify never uses it', '$0.00 · 2¢'], ['API Gateway + Lambda', 'tRPC (agent) and the MCP endpoint; per request', '$0.00 · <1¢'], ['Model API calls', 'Per AI question; $3 daily cap, alarm at 80%', '$0.00 · 3¢'], ['DynamoDB spend counter', 'One on-demand item per UTC day', '$0.00 · <1¢'], ['SSM Parameter Store', 'MCP token and app config; standard SecureString parameters', '$0.00'], ['Cognito user pool', 'Email-code sign-in for admins; free tier', '$0.00'], ['SES', 'Sign-in codes; per email sent', '$0.00 · <1¢'], ['SQS run-command queue', 'Start / Stop / Retry; per message', '$0.00 · <1¢'], ['CloudWatch Logs', 'Query log 30 days, other logs 14 days; per GB written', '$0.00 · <1¢'], ['ACM certificate', 'Free; DNS stays at Namecheap (no Route 53 hosted zone)', '$0.00'], ['Filebase pinning', 'Pins every run; free tier up to 5 GB', '$0.00'], ['GitHub Releases', 'CAR copy of each run', '$0.00'], ['Public gateways (ipfs.io, dweb.link)', 'Read the files Filebase pins; run by Interplanetary Shipyard, not by CountyLens', '$0.00'], ['Scheduled refresh (EventBridge Scheduler, off) + Fargate task definition', 'Defined, not running; costs only if switched on', '$0.00'], ['Pipeline (local Restate stack)', 'Runs on the operator’s machine when started', '$0.00']].map((c) => ({ name: c[0], how: c[1], idle: c[2] })),
+      toastOn: !!s.toast, toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

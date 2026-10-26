@@ -1,0 +1,8 @@
+{
+  "name": "countylens-spike-cdk",
+  "private": true,
+  "type": "module",
+  "scripts": { "synth": "cdk synth", "deploy": "cdk deploy", "destroy": "cdk destroy" },
+  "dependencies": { "aws-cdk-lib": "2.230.0", "constructs": "10.4.2" },
+  "devDependencies": { "aws-cdk": "2.1146.0", "tsx": "4.20.6", "typescript": "5.9.3", "@types/node": "22.18.0" }
+}

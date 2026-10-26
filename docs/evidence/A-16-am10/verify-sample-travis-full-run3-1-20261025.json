@@ -1,0 +1,158 @@
+{
+  "schema": "verify-manifest-evidence.v1",
+  "generated_at": "2026-10-26T06:02:19.988Z",
+  "manifest_path": "/private/tmp/claude-501/-Users-hebagaber-Github-oracle-property-intelligence-platform-pipeline-travis-tx-p/201b1ae7-280f-4e9b-b131-4a25c6359feb/scratchpad/manifests/runs/travis-full-run3-1-20261025/manifest.json",
+  "manifest_cid": "bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai",
+  "mode": "sample",
+  "independent_gateways": ["https://gateway.pinata.cloud", "https://ipfs.orbitor.dev"],
+  "fallback_gateways": ["https://ipfs.filebase.io"],
+  "artifacts": [
+    {
+      "name": "manifest",
+      "kind": "manifest",
+      "cid": "bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai",
+      "field": "manifest",
+      "size": 103835,
+      "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+      "gateways": {
+        "https://gateway.pinata.cloud": {
+          "role": "counted",
+          "holds_our_copy": true,
+          "label": "public gateway · also holds our second copy",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 103835,
+          "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+          "ms": 4722
+        },
+        "https://ipfs.orbitor.dev": {
+          "role": "counted",
+          "holds_our_copy": false,
+          "label": "public gateway · holds no copy of ours",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 103835,
+          "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+          "ms": 523
+        },
+        "https://ipfs.filebase.io": {
+          "role": "fallback",
+          "holds_our_copy": true,
+          "label": "our main storage host · fallback, not counted",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 103835,
+          "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+          "ms": 452
+        }
+      },
+      "independent_ok": true,
+      "fallback_ok": true,
+      "independent_check": true,
+      "counted_gateways": ["https://gateway.pinata.cloud", "https://ipfs.orbitor.dev"],
+      "ok": true
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/company/part-00000.parquet",
+      "kind": "table",
+      "cid": "bafkreidnwnruc6g2jx4nbpwcqyb5jhyujglsnedgsoadt3naigkonqb5qq",
+      "field": "cid",
+      "size": 43905,
+      "sha256": "6db3634178da4df8d0bec28603d49f144997269066938039eda04194e6c03d84",
+      "gateways": {
+        "https://gateway.pinata.cloud": {
+          "role": "counted",
+          "holds_our_copy": true,
+          "label": "public gateway · also holds our second copy",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 43905,
+          "sha256": "6db3634178da4df8d0bec28603d49f144997269066938039eda04194e6c03d84",
+          "ms": 4911
+        },
+        "https://ipfs.orbitor.dev": {
+          "role": "counted",
+          "holds_our_copy": false,
+          "label": "public gateway · holds no copy of ours",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 43905,
+          "sha256": "6db3634178da4df8d0bec28603d49f144997269066938039eda04194e6c03d84",
+          "ms": 363
+        },
+        "https://ipfs.filebase.io": {
+          "role": "fallback",
+          "holds_our_copy": true,
+          "label": "our main storage host · fallback, not counted",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 43905,
+          "sha256": "6db3634178da4df8d0bec28603d49f144997269066938039eda04194e6c03d84",
+          "ms": 302
+        }
+      },
+      "independent_ok": true,
+      "fallback_ok": true,
+      "independent_check": true,
+      "counted_gateways": ["https://gateway.pinata.cloud", "https://ipfs.orbitor.dev"],
+      "ok": true
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/cars/travis-permits-b02.car",
+      "kind": "car",
+      "cid": "bafybeichvdbhf2pm7jqaaxk2djfdhvyalh5btf4aedvcr22cwbvfvtf3q4",
+      "field": "carCid",
+      "size": 6061999,
+      "sha256": "1c04a4942e21d6a6296094af628b4b51effdfd27e7df0f25c982f2bf5d850673",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "role": "counted",
+          "holds_our_copy": false,
+          "label": "public gateway · holds no copy of ours",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 6061999,
+          "sha256": "1c04a4942e21d6a6296094af628b4b51effdfd27e7df0f25c982f2bf5d850673",
+          "ms": 2598
+        },
+        "https://ipfs.filebase.io": {
+          "role": "fallback",
+          "holds_our_copy": true,
+          "label": "our main storage host · fallback, not counted",
+          "resumed": false,
+          "status": 200,
+          "ok": true,
+          "bytes": 6061999,
+          "sha256": "1c04a4942e21d6a6296094af628b4b51effdfd27e7df0f25c982f2bf5d850673",
+          "ms": 1574
+        }
+      },
+      "independent_ok": true,
+      "fallback_ok": true,
+      "independent_check": false,
+      "counted_gateways": ["https://ipfs.orbitor.dev"],
+      "ok": true
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "exit_code": 0,
+    "verdict": "SAMPLE VERIFIED 2 of 285 artifacts (the CAR on orbitor and Filebase only)",
+    "artifacts_listed": 285,
+    "artifacts_checked": 2,
+    "independent_ok": 3,
+    "independent_failed": 0,
+    "one_counted_gateway": 1,
+    "warnings": [],
+    "fallback_checks": 3,
+    "fallback_ok": 3,
+    "resumed": 0
+  }
+}

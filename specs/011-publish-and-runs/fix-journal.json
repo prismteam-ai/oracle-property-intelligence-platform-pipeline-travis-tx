@@ -1,0 +1,53 @@
+{
+  "purpose": "Resume journal for the permits identity fix and Run 2 (correction) publish. A step is done only when its marker is set after its work is committed.",
+  "decisions": {
+    "publish": "Correction run today (Recommended)",
+    "dbRepair": "Targeted backfill (Recommended)"
+  },
+  "steps": {
+    "P0-preflight": {
+      "status": "done",
+      "at": "2026-10-24"
+    },
+    "P1a-code-fix": {
+      "status": "done",
+      "commit": "see git log A-11: build permits shared files"
+    },
+    "P1b-identity-test": {
+      "status": "done"
+    },
+    "P1c-backfill-script": {
+      "status": "done"
+    },
+    "P1d-reexport-driver": {
+      "status": "done"
+    },
+    "P1e-run2-manifest-and-publish-driver": {
+      "status": "done"
+    },
+    "P2-backfill-run": {
+      "status": "done",
+      "rows": 493246,
+      "written": 492959,
+      "skipped_already_correct": 287,
+      "fingerprint_equal": true
+    },
+    "P3-reexport-and-identity-gate": {
+      "status": "pending"
+    },
+    "P4-publish-run2": {
+      "status": "pending"
+    },
+    "P5-prove-live": {
+      "status": "pending"
+    },
+    "P6-close": {
+      "status": "pending"
+    },
+    "pilot": {
+      "status": "in_progress",
+      "gate": "PASS (307/307, 0 unmatched)",
+      "manifestCid": "bafkreiguu727vfvivhe2xiyecmqztu7kliqd56quiaanq2nhzkukzri5v4"
+    }
+  }
+}

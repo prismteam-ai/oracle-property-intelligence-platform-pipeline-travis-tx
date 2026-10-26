@@ -1,0 +1,20 @@
+{
+  "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/cars/travis-county-b09.car",
+  "carCid": "bafybeicupvzoesiwn3o4nwu3fznpl4qcrl5jzzicvwyu7t4ki3sxrxovse",
+  "size": 358056745,
+  "adopted": true,
+  "adoptedFrom": {
+    "runId": "travis-full-run3-20261025",
+    "receipt": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3/county-batched/cars/travis-county-b09.car",
+    "recordedAt": "2026-10-25T22:00:07.149Z",
+    "gateways": [
+      {
+        "gateway": "https://ipfs.filebase.io",
+        "ok": true,
+        "status": 200
+      }
+    ]
+  },
+  "readback": "Run 3.1 readback 2026-10-26 ~04:00Z: CloudFront serves this carCid at the manifest size (docs/evidence/A-11.md, Run 3.1 publication status); the Filebase upload of this CAR is Run 3's (same CID).",
+  "recordedAt": "2026-10-26T04:56:35.125Z"
+}

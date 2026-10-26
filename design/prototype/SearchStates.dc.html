@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Search states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 720px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Search states</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Populated: the four Search boards. Plain search, the builder and the table keep working in every state.</p>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; flex: 1; min-height: 0">
+
+<section aria-label="Loading" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Loading</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column">
+<div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Loading suggestions"><i></i></div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; color: var(--md-sys-color-on-surface-variant)">Finding matches for “pflu”…</span><div class="atlas-skeleton" style="height: 16px; width: 80%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 16px; width: 65%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 16px; width: 72%; border-radius: var(--md-sys-shape-corner-extra-small)"></div></div>
+</div>
+</section>
+
+<section aria-label="Empty" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Empty</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<b style="font-family: var(--font-brand); font-size: 18px; line-height: 24px; font-weight: 400">No exact match for “Wels Brnch”</b>
+<span style="color: var(--md-sys-color-on-surface-variant)">Did you mean one of these?</span>
+<button class="atlas-chip" style="align-self: flex-start" onClick="{{__say.k1}}">Wells Branch (place)</button>
+<button class="atlas-chip" style="align-self: flex-start" onClick="{{__say.k2}}">Wells Branch Pkwy (street)</button>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none; align-self: flex-start" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask the helper instead</a>
+</div>
+</section>
+
+<section aria-label="Partial" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Partial (AI search)</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<span>“cheap old roofs near Manor”</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><button class="atlas-chip atlas-chip--input" onClick="{{__say.k3}}">Near Manor, 5 mi<span class="material-symbols-rounded" aria-hidden="true">edit</span></button><button class="atlas-chip atlas-chip--input" onClick="{{__say.k4}}">Roof ≥ 15 yrs<span class="material-symbols-rounded" aria-hidden="true">edit</span></button></div>
+<div class="atlas-missing" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div>I skipped “cheap”: CountyLens has no price data. The rest became filters.</div></div>
+</div>
+</section>
+
+<section aria-label="Rate-limited" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Rate-limited</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><div class="atlas-banner__body">Live count paused, retrying in 4 s (attempt 2 of 3).</div></div>
+<span><b class="num" style="font-weight: 500">128</b> matches <span style="color: var(--md-sys-color-on-surface-variant)">· last count, before your latest change</span></span>
+</div>
+</section>
+
+<section aria-label="Error" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Error</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body">AI search is unavailable right now.</div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k5}}">Retry</button></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Typed suggestions and the query builder still work.</span>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none; align-self: flex-start" href="Explore1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">tune</span>Open the builder</a>
+</div>
+</section>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Search · states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Wells Branch (place)” is drawn but not wired in this prototype.", "k2": "“Wells Branch Pkwy (street)” is drawn but not wired in this prototype.", "k3": "“Near Manor, 5 mi” is drawn but not wired in this prototype.", "k4": "“Roof ≥ 15 yrs” is drawn but not wired in this prototype.", "k5": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

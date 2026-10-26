@@ -1,0 +1,1056 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' scripts/verify-manifest.ts runs/travis-full-run1-20261023/manifest.json --verbose --resume-from specs/011-publish-and-runs/verify-manifest-run1-parallel.log
+--resume-from specs/011-publish-and-runs/verify-manifest-run1-parallel.log: skipping 235 already-ok checks
+GET https://gateway.pinata.cloud/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu
+ok   https://gateway.pinata.cloud manifest cid=bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu size=78234 match sha256 match
+GET https://ipfs.filebase.io/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu
+ok   https://ipfs.filebase.io manifest cid=bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu size=78234 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01 carCid=bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01 carCid=bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/address/part-00000.parquet cid=bafybeicfyesy527ylqbv775pocfvxak7z7rgxleh5s5jaw277w5mxd4y2m resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/address/part-00000.parquet cid=bafybeicfyesy527ylqbv775pocfvxak7z7rgxleh5s5jaw277w5mxd4y2m resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/address_has_parcel/part-00000.parquet cid=bafybeifgunreoeaet47lsir4hggxojc4nn2ams3cxw6zsktktq2yirbzju resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/address_has_parcel/part-00000.parquet cid=bafybeifgunreoeaet47lsir4hggxojc4nn2ams3cxw6zsktktq2yirbzju resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/company/part-00000.parquet cid=bafybeibdlv4pb5mty6k24qtuz2nouitnjxjjzmlesxnjovyt5fk2q4edhe resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/company/part-00000.parquet cid=bafybeibdlv4pb5mty6k24qtuz2nouitnjxjjzmlesxnjovyt5fk2q4edhe resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/company_has_mailing_address/part-00000.parquet cid=bafybeifytsoyhl6u6gqj6kfu3tdo5bf377hcslmvfxfjircb7yznzlskiy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/company_has_mailing_address/part-00000.parquet cid=bafybeifytsoyhl6u6gqj6kfu3tdo5bf377hcslmvfxfjircb7yznzlskiy resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/geometry/part-00000.parquet cid=bafybeiblnbh6uj6vi44qopctwgxb4afbtweumsjmhtxegzeye3oivpvnmm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/geometry/part-00000.parquet cid=bafybeiblnbh6uj6vi44qopctwgxb4afbtweumsjmhtxegzeye3oivpvnmm resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/parcel/part-00000.parquet cid=bafybeibmoxflcdvtdshr7lb2uezyhl5vzvs76mbgeqavm23dyqofqkze2q resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/parcel/part-00000.parquet cid=bafybeibmoxflcdvtdshr7lb2uezyhl5vzvs76mbgeqavm23dyqofqkze2q resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/parcel_has_geometry/part-00000.parquet cid=bafybeidok332bdzkp546svv6mdtbhkb5kyjbnxsbzcr4x4xojfzmcwjrru resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/parcel_has_geometry/part-00000.parquet cid=bafybeidok332bdzkp546svv6mdtbhkb5kyjbnxsbzcr4x4xojfzmcwjrru resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/person/part-00000.parquet cid=bafkreihv6jm3pfbsluxj5u2srzcktbjfddxprhtobevdtw2cqofdffihza resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/person/part-00000.parquet cid=bafkreihv6jm3pfbsluxj5u2srzcktbjfddxprhtobevdtw2cqofdffihza resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/person_has_mailing_address/part-00000.parquet cid=bafkreid4cdhsfr4kgk2ozzpcky37pickxdef3zmscz2hnq67th2dtpxqje resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/person_has_mailing_address/part-00000.parquet cid=bafkreid4cdhsfr4kgk2ozzpcky37pickxdef3zmscz2hnq67th2dtpxqje resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/properties/part-00000.parquet cid=bafybeifhsaivfzzm43lvskjevfeqt67jlirad4penbf2z2edf3rdrgjgwy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/properties/part-00000.parquet cid=bafybeifhsaivfzzm43lvskjevfeqt67jlirad4penbf2z2edf3rdrgjgwy resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property/part-00000.parquet cid=bafybeihy3mgwqwdidlunzluxulzffvzparfmsmqjhcyopr5x5yhc4xqswe resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property/part-00000.parquet cid=bafybeihy3mgwqwdidlunzluxulzffvzparfmsmqjhcyopr5x5yhc4xqswe resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_address/part-00000.parquet cid=bafybeie3avbj3ntijykmbgtdoftwunra2a6xnp53mkenzciamtmjgqmkve resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_address/part-00000.parquet cid=bafybeie3avbj3ntijykmbgtdoftwunra2a6xnp53mkenzciamtmjgqmkve resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_parcel/part-00000.parquet cid=bafybeidsq2l3cgim4qhu2haj7ig7ye2ghaygfz6fkg6opheuanhj6d2qku resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_parcel/part-00000.parquet cid=bafybeidsq2l3cgim4qhu2haj7ig7ye2ghaygfz6fkg6opheuanhj6d2qku resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_sales_history/part-00000.parquet cid=bafybeie2ztpnyf4cg27qodrc3pxgnybov2kmgnmv2gmcmkldvs7hixicze resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_sales_history/part-00000.parquet cid=bafybeie2ztpnyf4cg27qodrc3pxgnybov2kmgnmv2gmcmkldvs7hixicze resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_structure/part-00000.parquet cid=bafybeifrr6kixhgii2ckkczln5wvcw2phuow7h4f3cmqtlqs4xtpv6p75i resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_structure/part-00000.parquet cid=bafybeifrr6kixhgii2ckkczln5wvcw2phuow7h4f3cmqtlqs4xtpv6p75i resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history/part-00000.parquet cid=bafybeiaj4oua2gdvcki3uokbpik2qmch7jhacbeepsdkx2ogxzmse7zng4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history/part-00000.parquet cid=bafybeiaj4oua2gdvcki3uokbpik2qmch7jhacbeepsdkx2ogxzmse7zng4 resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history_has_company/part-00000.parquet cid=bafybeiej5tvwnrsa4aul52pzpng474nkfvhtwnegl7ejzklruaj3agsjyi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history_has_company/part-00000.parquet cid=bafybeiej5tvwnrsa4aul52pzpng474nkfvhtwnegl7ejzklruaj3agsjyi resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history_has_person/part-00000.parquet cid=bafkreifha2ymiwyv7lv5vvtnvuh57ph3ml3bg7sltwcbeoaoq3nj2wsy7i resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history_has_person/part-00000.parquet cid=bafkreifha2ymiwyv7lv5vvtnvuh57ph3ml3bg7sltwcbeoaoq3nj2wsy7i resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/structure/part-00000.parquet cid=bafybeih7zbb5qnwo5nfihgdirjhq3vimwtxvrex2dadvvwg3wjqvfqrlya resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/structure/part-00000.parquet cid=bafybeih7zbb5qnwo5nfihgdirjhq3vimwtxvrex2dadvvwg3wjqvfqrlya resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02 carCid=bafkreiholjuwuz5htszd5l4qnvjx3lwnh4fnq7pucyl3wvkcx2nhjy3x3i resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02 carCid=bafkreiholjuwuz5htszd5l4qnvjx3lwnh4fnq7pucyl3wvkcx2nhjy3x3i resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/address/part-00000.parquet cid=bafybeigobqdobhimqqpjq6rqounotpmoughfqmkcm2l2dibhbpp3wnws34 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/address/part-00000.parquet cid=bafybeigobqdobhimqqpjq6rqounotpmoughfqmkcm2l2dibhbpp3wnws34 resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/address_has_parcel/part-00000.parquet cid=bafybeif2m5hiwioseduby5hkshv37hvnajxbhopkulm77cwfgqtiftejpa resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/address_has_parcel/part-00000.parquet cid=bafybeif2m5hiwioseduby5hkshv37hvnajxbhopkulm77cwfgqtiftejpa resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/company/part-00000.parquet cid=bafkreigzlq3cxsekr4e74pe4cxzy7bjriwlzynsihduodvja62qrnctsvq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/company/part-00000.parquet cid=bafkreigzlq3cxsekr4e74pe4cxzy7bjriwlzynsihduodvja62qrnctsvq resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/company_has_mailing_address/part-00000.parquet cid=bafybeigyjzzwbuascfbgfiwgc5tiqawjc6yw4g4c7ee3tcrvoz4hkpsdwq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/company_has_mailing_address/part-00000.parquet cid=bafybeigyjzzwbuascfbgfiwgc5tiqawjc6yw4g4c7ee3tcrvoz4hkpsdwq resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/geometry/part-00000.parquet cid=bafybeihcrgqkvi5na6px3hcz5t6es2pzfd454fzthdyn4uwcsi4ezhnfqe resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/geometry/part-00000.parquet cid=bafybeihcrgqkvi5na6px3hcz5t6es2pzfd454fzthdyn4uwcsi4ezhnfqe resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/parcel/part-00000.parquet cid=bafybeich5kljiclpz65o7dyxjctv4mqucdthcjnlc54lrwe3rwh5qpdoii resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/parcel/part-00000.parquet cid=bafybeich5kljiclpz65o7dyxjctv4mqucdthcjnlc54lrwe3rwh5qpdoii resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/parcel_has_geometry/part-00000.parquet cid=bafybeibx6qurpkyxbdtz5wcfozmppkeyoa3fume3yskkgatsylpwumizj4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/parcel_has_geometry/part-00000.parquet cid=bafybeibx6qurpkyxbdtz5wcfozmppkeyoa3fume3yskkgatsylpwumizj4 resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/person/part-00000.parquet cid=bafkreidfk5yud55djo7hemgsevcogiuezot4kg5i7yx25k76n74il4eibm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/person/part-00000.parquet cid=bafkreidfk5yud55djo7hemgsevcogiuezot4kg5i7yx25k76n74il4eibm resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/person_has_mailing_address/part-00000.parquet cid=bafkreidoy55s7ok63ybnkf6mspxmccnht33jixlsizykgyxwz56xtrnzpe resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/person_has_mailing_address/part-00000.parquet cid=bafkreidoy55s7ok63ybnkf6mspxmccnht33jixlsizykgyxwz56xtrnzpe resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/properties/part-00000.parquet cid=bafybeiegwiogxvt7xaica52q4rphikfl4juobxajm6wkfhweixrfplm7xe resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/properties/part-00000.parquet cid=bafybeiegwiogxvt7xaica52q4rphikfl4juobxajm6wkfhweixrfplm7xe resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property/part-00000.parquet cid=bafybeibz4shyeuw62nibp7u35epdkkhacjog7ojk6k7zrnwcfvbvuy3l7q resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property/part-00000.parquet cid=bafybeibz4shyeuw62nibp7u35epdkkhacjog7ojk6k7zrnwcfvbvuy3l7q resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_address/part-00000.parquet cid=bafybeidvhxpvxfbtbkhrai2kaxgn7usqm4f3fjrjidjjo3vpqcizv2b47u resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_address/part-00000.parquet cid=bafybeidvhxpvxfbtbkhrai2kaxgn7usqm4f3fjrjidjjo3vpqcizv2b47u resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_parcel/part-00000.parquet cid=bafybeifxblkftpuwzk4xvcmkgiegiyckim5ytm76w4uweb7l5y6asoud2y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_parcel/part-00000.parquet cid=bafybeifxblkftpuwzk4xvcmkgiegiyckim5ytm76w4uweb7l5y6asoud2y resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_sales_history/part-00000.parquet cid=bafybeie57gen4v6xiwak25ulbjl66rpkg2sje47opi77jfcnijouwe7kzq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_sales_history/part-00000.parquet cid=bafybeie57gen4v6xiwak25ulbjl66rpkg2sje47opi77jfcnijouwe7kzq resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_structure/part-00000.parquet cid=bafybeia4twzxmsgxqfxmy7hyq35tb562ngj33pkyveizkbvsaerlbikiie resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_structure/part-00000.parquet cid=bafybeia4twzxmsgxqfxmy7hyq35tb562ngj33pkyveizkbvsaerlbikiie resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history/part-00000.parquet cid=bafybeidcmwj7uwo4khicoyjr5zbq5ml7igpqvmbcf2sksxgblt54flq6vy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history/part-00000.parquet cid=bafybeidcmwj7uwo4khicoyjr5zbq5ml7igpqvmbcf2sksxgblt54flq6vy resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history_has_company/part-00000.parquet cid=bafybeie26p47v3qm46bdn6ivnmsxatwyjm2od3imlga7iptwtn7av2dmpy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history_has_company/part-00000.parquet cid=bafybeie26p47v3qm46bdn6ivnmsxatwyjm2od3imlga7iptwtn7av2dmpy resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history_has_person/part-00000.parquet cid=bafkreifcdnffzlbg3wfizdxbnvqpztxqibmm32n6bsiaggnp7un4r6uaie resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history_has_person/part-00000.parquet cid=bafkreifcdnffzlbg3wfizdxbnvqpztxqibmm32n6bsiaggnp7un4r6uaie resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/structure/part-00000.parquet cid=bafybeibyzbz4bxam4cs6uffds6rkrucu5ykjeodcqtbvrtvr3o2mpdp7l4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/structure/part-00000.parquet cid=bafybeibyzbz4bxam4cs6uffds6rkrucu5ykjeodcqtbvrtvr3o2mpdp7l4 resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03 carCid=bafkreihunekrqpxthr5jnwg34v72k6bykovjohkds7vhlt5fbua6qj3ixy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03 carCid=bafkreihunekrqpxthr5jnwg34v72k6bykovjohkds7vhlt5fbua6qj3ixy resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/address/part-00000.parquet cid=bafybeibrft4iivrvyj2zi2elpl4kxmm6w7b23tnk5gpt5tyjlqjua2vjka resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/address/part-00000.parquet cid=bafybeibrft4iivrvyj2zi2elpl4kxmm6w7b23tnk5gpt5tyjlqjua2vjka resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/address_has_parcel/part-00000.parquet cid=bafybeibxyu4sa4e35tkskd2ffzykz6agu4733zyacvadnusiejgm4qleqa resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/address_has_parcel/part-00000.parquet cid=bafybeibxyu4sa4e35tkskd2ffzykz6agu4733zyacvadnusiejgm4qleqa resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/company/part-00000.parquet cid=bafybeiaon66nag6tbmdby4zu7xxcairwsxo7zquc27rhaz3nkezyk3kt4e resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/company/part-00000.parquet cid=bafybeiaon66nag6tbmdby4zu7xxcairwsxo7zquc27rhaz3nkezyk3kt4e resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/company_has_mailing_address/part-00000.parquet cid=bafybeig6qr5yqnsqlbcgrrucgg6ofrbdzhbaakv2uxhmz72oev6c52gl64 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/company_has_mailing_address/part-00000.parquet cid=bafybeig6qr5yqnsqlbcgrrucgg6ofrbdzhbaakv2uxhmz72oev6c52gl64 resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/geometry/part-00000.parquet cid=bafybeiat5zbhnogzmn7qoehgqavixaoohonr64db4neqhsmg4ninzikzhy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/geometry/part-00000.parquet cid=bafybeiat5zbhnogzmn7qoehgqavixaoohonr64db4neqhsmg4ninzikzhy resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/parcel/part-00000.parquet cid=bafybeibkabaaufbiibcmafwpoxiiecr7s4rmwo6xcbx2zbusscaycsxsri resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/parcel/part-00000.parquet cid=bafybeibkabaaufbiibcmafwpoxiiecr7s4rmwo6xcbx2zbusscaycsxsri resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/parcel_has_geometry/part-00000.parquet cid=bafybeih6vzstfp4qlvfejp4fbqzss77iiv2fxni4arg3mxqenomd7do2ye resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/parcel_has_geometry/part-00000.parquet cid=bafybeih6vzstfp4qlvfejp4fbqzss77iiv2fxni4arg3mxqenomd7do2ye resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/person/part-00000.parquet cid=bafkreid3xchupdgam477vnhahors644xprunnjyz5a33shbbgclgjiccci resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/person/part-00000.parquet cid=bafkreid3xchupdgam477vnhahors644xprunnjyz5a33shbbgclgjiccci resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/person_has_mailing_address/part-00000.parquet cid=bafkreigphn7y66z26v46wztb4gi4inyhl2l5h4kz2vtmzjxvdsabz24hsa resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/person_has_mailing_address/part-00000.parquet cid=bafkreigphn7y66z26v46wztb4gi4inyhl2l5h4kz2vtmzjxvdsabz24hsa resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/properties/part-00000.parquet cid=bafybeicizl3tp7jbjl7lvb5qdkwxzg575podaeb3xw42zveynf7evsldha resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/properties/part-00000.parquet cid=bafybeicizl3tp7jbjl7lvb5qdkwxzg575podaeb3xw42zveynf7evsldha resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property/part-00000.parquet cid=bafybeiaroqh3wskq3ti4dspw7qxfud2qglkxnj62zukcmdwvooqz7vgguq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property/part-00000.parquet cid=bafybeiaroqh3wskq3ti4dspw7qxfud2qglkxnj62zukcmdwvooqz7vgguq resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_address/part-00000.parquet cid=bafybeiaqj46ugjkquaovlyqrtphpomv2pfuibnmnungau5hgrrudknla7e resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_address/part-00000.parquet cid=bafybeiaqj46ugjkquaovlyqrtphpomv2pfuibnmnungau5hgrrudknla7e resumed from a prior run, not re-fetched
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_parcel/part-00000.parquet cid=bafybeigxeprvpf5bojfbcnfemovhqnnlfa6va23du4yfbpcixgr7mzvg74 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_parcel/part-00000.parquet cid=bafybeigxeprvpf5bojfbcnfemovhqnnlfa6va23du4yfbpcixgr7mzvg74 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_sales_history/part-00000.parquet cid=bafybeieoaj44dq44stvoznntvcwl24zy3fgjmzcraswy4345zubdtonz4e resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_structure/part-00000.parquet cid=bafybeidqyoutwy4qb4d2hybpccebjtrixducglmptc3urhmszlbb7ewyxu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history/part-00000.parquet cid=bafybeig4ygvhlxe7kxk6zoeabpmgk7j6pxrdnffh4e4xmwxsqh7oi224pq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history_has_company/part-00000.parquet cid=bafybeibulzr3sxkt4gjkcsr5e6sofaldmcbejpjh3huao4hibhh4hsiniy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history_has_person/part-00000.parquet cid=bafkreibqmfzrj5ou4i7vfudw3ea3rea7xhlmjx7fq6trnocyukriahgf3y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/structure/part-00000.parquet cid=bafybeiazss6uvr3rhararl2s67eoypqcp4lr3vq6sz6ok5covunmsvzece resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04 carCid=bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/address/part-00000.parquet cid=bafybeia5um7bmnexb6xsp2hra3xd2h4b5ltvgujqjsqhahbzfpyebschda resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/address_has_parcel/part-00000.parquet cid=bafybeidagsffddfme6hjmoezwwevy2m2xmmrcgdgpoejcavltykzntji4q resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/company/part-00000.parquet cid=bafybeigrn2lsheedjjvjd4osnjwctx4ux6jexie4rxwyywz6tbx3r7bo7u resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/company_has_mailing_address/part-00000.parquet cid=bafybeib34fzl6dpbmtdu7yz4j7pkltgalvdnwg33bqjb4c4kj5e34sj64y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/geometry/part-00000.parquet cid=bafybeiczym77slsmrpwtwq5zptpobjampw6z6bapxpt4aancyl75osbk2m resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/parcel/part-00000.parquet cid=bafybeiasr4d4tvsne5v6peag37ypvjb6i2wr3ndcdffgknz7wuvh5wcvzm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/parcel_has_geometry/part-00000.parquet cid=bafybeifdo2nsxaja6htz4hmtvdwnvkjixtw57xultetouk7vaa4bf7gamm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/person/part-00000.parquet cid=bafkreieyvwsehldkz5occbim3eq24gjrpcujs4cxsgdljyf3mpzevb7nta resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/person_has_mailing_address/part-00000.parquet cid=bafkreieanrrlkpxjkhf32zeuu3ixr7p362noekxk522ekwf6kg5i2u3u4a resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/properties/part-00000.parquet cid=bafybeih6xwdrxmguu2dxdbqqmzs6stzmndgozttlhfnzccrqcmgh6fkzzm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property/part-00000.parquet cid=bafybeidbx3wondsvmabtlfv55ee33dpfqgr7ilztxkumrzlkjmcda46yfm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_address/part-00000.parquet cid=bafybeiftng55av2gvafchy5b2q6bodcium633rd3456kexzm5pd2vshyye resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_parcel/part-00000.parquet cid=bafybeiayaqtku3l5uwxg5kvyrtsy4opxzep5ueqsihfhcpdjth4qpukvwa resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_sales_history/part-00000.parquet cid=bafybeign76y5nclfkrcq3aso6jjgyj4luj5wfpc4d4mnzioa54w7g4ls3u resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_structure/part-00000.parquet cid=bafybeicrlu6aq2tmergbssdb3zv3fpqtms4hmb3dhbvit44v7ejwushztm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history/part-00000.parquet cid=bafybeiglhxtb3i7o3y34467dgjotjca3leulfs4wl6ceacfweid344j4hm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history_has_company/part-00000.parquet cid=bafybeigdskzkhcazbya54el4ffqonb3qzvxnzrto4zeariubgf5mq5vgsa resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history_has_person/part-00000.parquet cid=bafkreifmxbo7gdik2en73cck5etj63spazost6xea7zhfwlrrooriik3nm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/structure/part-00000.parquet cid=bafybeid6mcenmyhlo2whuuvigpn3wkgfoi6u2s63uijfduwzwbxvovzmm4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05 carCid=bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/address/part-00000.parquet cid=bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/address_has_parcel/part-00000.parquet cid=bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/company/part-00000.parquet cid=bafkreiawbvuhcrgwncyh6nln2chkoh26fvc3p76s6xe6qzwz353hwlovri resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/company_has_mailing_address/part-00000.parquet cid=bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/geometry/part-00000.parquet cid=bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/parcel/part-00000.parquet cid=bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/parcel_has_geometry/part-00000.parquet cid=bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/person/part-00000.parquet cid=bafkreibbdptsnfnktfgwf77t2ce6oef5432hpapksoy3l4yqhobbthnf7y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/person_has_mailing_address/part-00000.parquet cid=bafkreiamqqta5neox4pz7dl5lwcmprtdfwfqkfc2eizw4u7trmdd243dje resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/properties/part-00000.parquet cid=bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property/part-00000.parquet cid=bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_address/part-00000.parquet cid=bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_parcel/part-00000.parquet cid=bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_sales_history/part-00000.parquet cid=bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_structure/part-00000.parquet cid=bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history/part-00000.parquet cid=bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history_has_company/part-00000.parquet cid=bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history_has_person/part-00000.parquet cid=bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/structure/part-00000.parquet cid=bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06 carCid=bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/address/part-00000.parquet cid=bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/address_has_parcel/part-00000.parquet cid=bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/company/part-00000.parquet cid=bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/company_has_mailing_address/part-00000.parquet cid=bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/geometry/part-00000.parquet cid=bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/parcel/part-00000.parquet cid=bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/parcel_has_geometry/part-00000.parquet cid=bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/person/part-00000.parquet cid=bafkreigijgpztuety5bkviordjyie3hkef56kdtz47bnwdse45pvsoopkq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/person_has_mailing_address/part-00000.parquet cid=bafkreigkkyuvrag6sskmvqj6mi256wtfbhbtbpwmbojasmgvrj2v7u657i resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/properties/part-00000.parquet cid=bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property/part-00000.parquet cid=bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_address/part-00000.parquet cid=bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_parcel/part-00000.parquet cid=bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_sales_history/part-00000.parquet cid=bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_structure/part-00000.parquet cid=bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history/part-00000.parquet cid=bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history_has_company/part-00000.parquet cid=bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history_has_person/part-00000.parquet cid=bafkreidjbgqkblt4awheenarkblvowshpq7qneaebgqz5igjp6dfalumuy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/structure/part-00000.parquet cid=bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07 carCid=bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/address/part-00000.parquet cid=bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/address_has_parcel/part-00000.parquet cid=bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/company/part-00000.parquet cid=bafkreiexhvwkwbmluzmdtjhc3tdo7fufnjilgcotha7c66f6jpdw3nzu2m resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/company_has_mailing_address/part-00000.parquet cid=bafkreia7o2alpqzaweirobrsaitivljmul5kiab4alkpmdnmnvmmizxv2u resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/geometry/part-00000.parquet cid=bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/parcel/part-00000.parquet cid=bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/parcel_has_geometry/part-00000.parquet cid=bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/person/part-00000.parquet cid=bafkreie2tsrguwbibnjxft6edyn557xu24h35nfncb37o73ow2tqdtr7cu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/person_has_mailing_address/part-00000.parquet cid=bafkreihevyk2vx36gemol43lcaqhdvcgj5wjwiyaijshxxg3iwg4co4mue resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/properties/part-00000.parquet cid=bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property/part-00000.parquet cid=bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_address/part-00000.parquet cid=bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_parcel/part-00000.parquet cid=bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_sales_history/part-00000.parquet cid=bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_structure/part-00000.parquet cid=bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history/part-00000.parquet cid=bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history_has_company/part-00000.parquet cid=bafkreib23aoxlpmhf47fhzlpzd3vnwer4wiqnp3zxrhpdwcfu6a2ewy7ni resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history_has_person/part-00000.parquet cid=bafkreihxptyzdurg66sr5zxe2pmpquawzwhl7qsgwc2u32wwdtd3bjxku4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/structure/part-00000.parquet cid=bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08 carCid=bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/address/part-00000.parquet cid=bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/address_has_parcel/part-00000.parquet cid=bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/company/part-00000.parquet cid=bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/company_has_mailing_address/part-00000.parquet cid=bafkreiahrdupibmuyzfkjh55rugekungafrp3he2vfidmfe2nkaxy57ix4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/geometry/part-00000.parquet cid=bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/parcel/part-00000.parquet cid=bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/parcel_has_geometry/part-00000.parquet cid=bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/person/part-00000.parquet cid=bafkreic6jvddpxan6ltvp2v6nvhrpbm4yfczbz6cs3u4mtguil4dxqs4we resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/person_has_mailing_address/part-00000.parquet cid=bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/properties/part-00000.parquet cid=bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property/part-00000.parquet cid=bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_address/part-00000.parquet cid=bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_parcel/part-00000.parquet cid=bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_sales_history/part-00000.parquet cid=bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_structure/part-00000.parquet cid=bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history/part-00000.parquet cid=bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history_has_company/part-00000.parquet cid=bafkreifcdko2irzvytfoscufe63lp6xmsjcklqwh3eiqpqctovozs67ev4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history_has_person/part-00000.parquet cid=bafkreib6qjku2ztogvkmdhn2fokecnwzrvm4ey5wdbze5d5zpntjk2xubi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/structure/part-00000.parquet cid=bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09 carCid=bafkreid4rnbukorste3xmi24iys2vfgfc53fzyh3hcrwsxmsdwbvq63ice resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/address/part-00000.parquet cid=bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/address_has_parcel/part-00000.parquet cid=bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/company/part-00000.parquet cid=bafkreiaqb7ccxi45rqo4a7pmjqncgsikr4enhirtcau5tot67d5wwdalmu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/company_has_mailing_address/part-00000.parquet cid=bafkreige2w7hzrg46jgfoxxfg55dc2ds744zt2miq2xooflksg4yulebgq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/geometry/part-00000.parquet cid=bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/parcel/part-00000.parquet cid=bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/parcel_has_geometry/part-00000.parquet cid=bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/person/part-00000.parquet cid=bafkreifz7o56pd5hvelupfdvqod74gjhqcc3ntyvzwohr7qnhtfjdg2isq resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/person_has_mailing_address/part-00000.parquet cid=bafkreicdfmctz4n2sifbwm55obugqqtl3owvgrnazk3dnmet4qcd27j5e4 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/properties/part-00000.parquet cid=bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property/part-00000.parquet cid=bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_address/part-00000.parquet cid=bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64 resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_parcel/part-00000.parquet cid=bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_sales_history/part-00000.parquet cid=bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_structure/part-00000.parquet cid=bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history/part-00000.parquet cid=bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history_has_company/part-00000.parquet cid=bafkreib7m5mh5vo6vuj6pfm2ifpxvo3m7gnjc7w3sirddcijab4nvq4b4e resumed from a prior run, not re-fetched
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history_has_person/part-00000.parquet cid=bafkreictwchxnohwkazrca22yqbiag2qgf54fwncz6zac4lccwmwqlypke resumed from a prior run, not re-fetched
+GET https://ipfs.filebase.io/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4
+GET https://ipfs.filebase.io/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4
+GET https://ipfs.filebase.io/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa
+GET https://ipfs.filebase.io/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm
+GET https://ipfs.filebase.io/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm
+GET https://ipfs.filebase.io/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place
+GET https://ipfs.filebase.io/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq
+GET https://ipfs.filebase.io/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq
+GET https://ipfs.filebase.io/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy
+GET https://ipfs.filebase.io/ipfs/bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4
+ok   https://ipfs.filebase.io pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/structure/part-00000.parquet cid=bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4 size=3050252 match sha256 match
+GET https://ipfs.filebase.io/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu
+GET https://gateway.pinata.cloud/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4
+GET https://gateway.pinata.cloud/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4
+GET https://gateway.pinata.cloud/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa
+GET https://gateway.pinata.cloud/ipfs/bafybeieoaj44dq44stvoznntvcwl24zy3fgjmzcraswy4345zubdtonz4e
+GET https://gateway.pinata.cloud/ipfs/bafybeidqyoutwy4qb4d2hybpccebjtrixducglmptc3urhmszlbb7ewyxu
+GET https://gateway.pinata.cloud/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeieoaj44dq44stvoznntvcwl24zy3fgjmzcraswy4345zubdtonz4e (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidqyoutwy4qb4d2hybpccebjtrixducglmptc3urhmszlbb7ewyxu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_sales_history/part-00000.parquet cid=bafybeieoaj44dq44stvoznntvcwl24zy3fgjmzcraswy4345zubdtonz4e size=4168637 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeig4ygvhlxe7kxk6zoeabpmgk7j6pxrdnffh4e4xmwxsqh7oi224pq
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_structure/part-00000.parquet cid=bafybeidqyoutwy4qb4d2hybpccebjtrixducglmptc3urhmszlbb7ewyxu size=5953428 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeibulzr3sxkt4gjkcsr5e6sofaldmcbejpjh3huao4hibhh4hsiniy
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history/part-00000.parquet cid=bafybeig4ygvhlxe7kxk6zoeabpmgk7j6pxrdnffh4e4xmwxsqh7oi224pq size=2253658 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreibqmfzrj5ou4i7vfudw3ea3rea7xhlmjx7fq6trnocyukriahgf3y
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history_has_company/part-00000.parquet cid=bafybeibulzr3sxkt4gjkcsr5e6sofaldmcbejpjh3huao4hibhh4hsiniy size=484137 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiazss6uvr3rhararl2s67eoypqcp4lr3vq6sz6ok5covunmsvzece
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history_has_person/part-00000.parquet cid=bafkreibqmfzrj5ou4i7vfudw3ea3rea7xhlmjx7fq6trnocyukriahgf3y size=13667 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/structure/part-00000.parquet cid=bafybeiazss6uvr3rhararl2s67eoypqcp4lr3vq6sz6ok5covunmsvzece size=3043469 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04 carCid=bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e size=3066 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeia5um7bmnexb6xsp2hra3xd2h4b5ltvgujqjsqhahbzfpyebschda
+GET https://gateway.pinata.cloud/ipfs/bafybeia5um7bmnexb6xsp2hra3xd2h4b5ltvgujqjsqhahbzfpyebschda (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/address/part-00000.parquet cid=bafybeia5um7bmnexb6xsp2hra3xd2h4b5ltvgujqjsqhahbzfpyebschda size=3159433 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeidagsffddfme6hjmoezwwevy2m2xmmrcgdgpoejcavltykzntji4q
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/address_has_parcel/part-00000.parquet cid=bafybeidagsffddfme6hjmoezwwevy2m2xmmrcgdgpoejcavltykzntji4q size=5954531 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeigrn2lsheedjjvjd4osnjwctx4ux6jexie4rxwyywz6tbx3r7bo7u
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/company/part-00000.parquet cid=bafybeigrn2lsheedjjvjd4osnjwctx4ux6jexie4rxwyywz6tbx3r7bo7u size=275894 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeib34fzl6dpbmtdu7yz4j7pkltgalvdnwg33bqjb4c4kj5e34sj64y
+GET https://gateway.pinata.cloud/ipfs/bafybeib34fzl6dpbmtdu7yz4j7pkltgalvdnwg33bqjb4c4kj5e34sj64y (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/company_has_mailing_address/part-00000.parquet cid=bafybeib34fzl6dpbmtdu7yz4j7pkltgalvdnwg33bqjb4c4kj5e34sj64y size=465593 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiczym77slsmrpwtwq5zptpobjampw6z6bapxpt4aancyl75osbk2m
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/geometry/part-00000.parquet cid=bafybeiczym77slsmrpwtwq5zptpobjampw6z6bapxpt4aancyl75osbk2m size=3604118 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiasr4d4tvsne5v6peag37ypvjb6i2wr3ndcdffgknz7wuvh5wcvzm
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/parcel/part-00000.parquet cid=bafybeiasr4d4tvsne5v6peag37ypvjb6i2wr3ndcdffgknz7wuvh5wcvzm size=3068757 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeifdo2nsxaja6htz4hmtvdwnvkjixtw57xultetouk7vaa4bf7gamm
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/parcel_has_geometry/part-00000.parquet cid=bafybeifdo2nsxaja6htz4hmtvdwnvkjixtw57xultetouk7vaa4bf7gamm size=5954317 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreieyvwsehldkz5occbim3eq24gjrpcujs4cxsgdljyf3mpzevb7nta
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/person/part-00000.parquet cid=bafkreieyvwsehldkz5occbim3eq24gjrpcujs4cxsgdljyf3mpzevb7nta size=12891 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreieanrrlkpxjkhf32zeuu3ixr7p362noekxk522ekwf6kg5i2u3u4a
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/person_has_mailing_address/part-00000.parquet cid=bafkreieanrrlkpxjkhf32zeuu3ixr7p362noekxk522ekwf6kg5i2u3u4a size=14734 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeih6xwdrxmguu2dxdbqqmzs6stzmndgozttlhfnzccrqcmgh6fkzzm
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/properties/part-00000.parquet cid=bafybeih6xwdrxmguu2dxdbqqmzs6stzmndgozttlhfnzccrqcmgh6fkzzm size=4465444 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeidbx3wondsvmabtlfv55ee33dpfqgr7ilztxkumrzlkjmcda46yfm
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property/part-00000.parquet cid=bafybeidbx3wondsvmabtlfv55ee33dpfqgr7ilztxkumrzlkjmcda46yfm size=3357153 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiftng55av2gvafchy5b2q6bodcium633rd3456kexzm5pd2vshyye
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_address/part-00000.parquet cid=bafybeiftng55av2gvafchy5b2q6bodcium633rd3456kexzm5pd2vshyye size=5954072 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiayaqtku3l5uwxg5kvyrtsy4opxzep5ueqsihfhcpdjth4qpukvwa
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_parcel/part-00000.parquet cid=bafybeiayaqtku3l5uwxg5kvyrtsy4opxzep5ueqsihfhcpdjth4qpukvwa size=5954568 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeign76y5nclfkrcq3aso6jjgyj4luj5wfpc4d4mnzioa54w7g4ls3u
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_sales_history/part-00000.parquet cid=bafybeign76y5nclfkrcq3aso6jjgyj4luj5wfpc4d4mnzioa54w7g4ls3u size=4347261 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeicrlu6aq2tmergbssdb3zv3fpqtms4hmb3dhbvit44v7ejwushztm
+GET https://ipfs.filebase.io/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_structure/part-00000.parquet cid=bafybeicrlu6aq2tmergbssdb3zv3fpqtms4hmb3dhbvit44v7ejwushztm size=5954347 match sha256 match
+GET https://ipfs.filebase.io/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiglhxtb3i7o3y34467dgjotjca3leulfs4wl6ceacfweid344j4hm
+GET https://gateway.pinata.cloud/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 5)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history/part-00000.parquet cid=bafybeiglhxtb3i7o3y34467dgjotjca3leulfs4wl6ceacfweid344j4hm size=2340379 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeigdskzkhcazbya54el4ffqonb3qzvxnzrto4zeariubgf5mq5vgsa
+GET https://gateway.pinata.cloud/ipfs/bafybeigdskzkhcazbya54el4ffqonb3qzvxnzrto4zeariubgf5mq5vgsa (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history_has_company/part-00000.parquet cid=bafybeigdskzkhcazbya54el4ffqonb3qzvxnzrto4zeariubgf5mq5vgsa size=465596 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreifmxbo7gdik2en73cck5etj63spazost6xea7zhfwlrrooriik3nm
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history_has_person/part-00000.parquet cid=bafkreifmxbo7gdik2en73cck5etj63spazost6xea7zhfwlrrooriik3nm size=14739 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mcenmyhlo2whuuvigpn3wkgfoi6u2s63uijfduwzwbxvovzmm4
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mcenmyhlo2whuuvigpn3wkgfoi6u2s63uijfduwzwbxvovzmm4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mcenmyhlo2whuuvigpn3wkgfoi6u2s63uijfduwzwbxvovzmm4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/structure/part-00000.parquet cid=bafybeid6mcenmyhlo2whuuvigpn3wkgfoi6u2s63uijfduwzwbxvovzmm4 size=3052380 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm
+GET https://ipfs.filebase.io/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car carCid=bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b03.car carCid=bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car carCid=bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 TimeoutError: The operation was aborted due to timeout after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji
+GET https://gateway.pinata.cloud/ipfs/bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm
+GET https://gateway.pinata.cloud/ipfs/bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni
+GET https://gateway.pinata.cloud/ipfs/bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05 carCid=bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji size=3072 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiawbvuhcrgwncyh6nln2chkoh26fvc3p76s6xe6qzwz353hwlovri
+GET https://gateway.pinata.cloud/ipfs/bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/address_has_parcel/part-00000.parquet cid=bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4
+GET https://gateway.pinata.cloud/ipfs/bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4 (attempt 2)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/address/part-00000.parquet cid=bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4 (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/company/part-00000.parquet cid=bafkreiawbvuhcrgwncyh6nln2chkoh26fvc3p76s6xe6qzwz353hwlovri size=238027 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/company_has_mailing_address/part-00000.parquet cid=bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi
+GET https://gateway.pinata.cloud/ipfs/bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi
+GET https://gateway.pinata.cloud/ipfs/bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/geometry/part-00000.parquet cid=bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreibbdptsnfnktfgwf77t2ce6oef5432hpapksoy3l4yqhobbthnf7y
+GET https://gateway.pinata.cloud/ipfs/bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/parcel_has_geometry/part-00000.parquet cid=bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/parcel/part-00000.parquet cid=bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/person/part-00000.parquet cid=bafkreibbdptsnfnktfgwf77t2ce6oef5432hpapksoy3l4yqhobbthnf7y size=17820 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiamqqta5neox4pz7dl5lwcmprtdfwfqkfc2eizw4u7trmdd243dje
+GET https://gateway.pinata.cloud/ipfs/bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq
+GET https://gateway.pinata.cloud/ipfs/bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm
+GET https://gateway.pinata.cloud/ipfs/bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b04.car carCid=bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/person_has_mailing_address/part-00000.parquet cid=bafkreiamqqta5neox4pz7dl5lwcmprtdfwfqkfc2eizw4u7trmdd243dje size=21014 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4
+GET https://gateway.pinata.cloud/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/properties/part-00000.parquet cid=bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_address/part-00000.parquet cid=bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu
+GET https://gateway.pinata.cloud/ipfs/bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu (attempt 2)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property/part-00000.parquet cid=bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_parcel/part-00000.parquet cid=bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b05.car carCid=bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby
+GET https://gateway.pinata.cloud/ipfs/bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu
+GET https://gateway.pinata.cloud/ipfs/bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq
+GET https://gateway.pinata.cloud/ipfs/bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq (attempt 2)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_structure/part-00000.parquet cid=bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu
+GET https://gateway.pinata.cloud/ipfs/bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq
+GET https://gateway.pinata.cloud/ipfs/bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq (attempt 3)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history_has_person/part-00000.parquet cid=bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history_has_company/part-00000.parquet cid=bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_sales_history/part-00000.parquet cid=bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24
+GET https://gateway.pinata.cloud/ipfs/bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place
+GET https://gateway.pinata.cloud/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma
+GET https://gateway.pinata.cloud/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06 carCid=bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae
+GET https://gateway.pinata.cloud/ipfs/bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae (attempt 4)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/structure/part-00000.parquet cid=bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/address/part-00000.parquet cid=bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b06.car carCid=bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history/part-00000.parquet cid=bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua
+GET https://gateway.pinata.cloud/ipfs/bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq
+GET https://gateway.pinata.cloud/ipfs/bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia
+GET https://gateway.pinata.cloud/ipfs/bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/company/part-00000.parquet cid=bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4
+GET https://gateway.pinata.cloud/ipfs/bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/company_has_mailing_address/part-00000.parquet cid=bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4 (attempt 4)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/parcel/part-00000.parquet cid=bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/address_has_parcel/part-00000.parquet cid=bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/geometry/part-00000.parquet cid=bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4
+GET https://gateway.pinata.cloud/ipfs/bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/parcel_has_geometry/part-00000.parquet cid=bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafkreigijgpztuety5bkviordjyie3hkef56kdtz47bnwdse45pvsoopkq
+GET https://gateway.pinata.cloud/ipfs/bafkreigkkyuvrag6sskmvqj6mi256wtfbhbtbpwmbojasmgvrj2v7u657i
+GET https://gateway.pinata.cloud/ipfs/bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4
+GET https://gateway.pinata.cloud/ipfs/bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta
+GET https://gateway.pinata.cloud/ipfs/bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi
+GET https://gateway.pinata.cloud/ipfs/bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/person/part-00000.parquet cid=bafkreigijgpztuety5bkviordjyie3hkef56kdtz47bnwdse45pvsoopkq size=16279 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/properties/part-00000.parquet cid=bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta (attempt 5)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/person_has_mailing_address/part-00000.parquet cid=bafkreigkkyuvrag6sskmvqj6mi256wtfbhbtbpwmbojasmgvrj2v7u657i size=20307 match sha256 match
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property/part-00000.parquet cid=bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm
+GET https://gateway.pinata.cloud/ipfs/bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am
+GET https://gateway.pinata.cloud/ipfs/bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am (attempt 2)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_address/part-00000.parquet cid=bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_sales_history/part-00000.parquet cid=bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm
+GET https://gateway.pinata.cloud/ipfs/bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4
+GET https://gateway.pinata.cloud/ipfs/bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm (attempt 4)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history/part-00000.parquet cid=bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_parcel/part-00000.parquet cid=bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_structure/part-00000.parquet cid=bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q
+GET https://gateway.pinata.cloud/ipfs/bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreidjbgqkblt4awheenarkblvowshpq7qneaebgqz5igjp6dfalumuy
+GET https://gateway.pinata.cloud/ipfs/bafkreidjbgqkblt4awheenarkblvowshpq7qneaebgqz5igjp6dfalumuy (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq
+GET https://gateway.pinata.cloud/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq
+GET https://gateway.pinata.cloud/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4
+GET https://gateway.pinata.cloud/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07 carCid=bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b07.car carCid=bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history_has_person/part-00000.parquet cid=bafkreidjbgqkblt4awheenarkblvowshpq7qneaebgqz5igjp6dfalumuy size=20313 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/structure/part-00000.parquet cid=bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history_has_company/part-00000.parquet cid=bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu
+GET https://gateway.pinata.cloud/ipfs/bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiexhvwkwbmluzmdtjhc3tdo7fufnjilgcotha7c66f6jpdw3nzu2m
+GET https://gateway.pinata.cloud/ipfs/bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/address/part-00000.parquet cid=bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/address_has_parcel/part-00000.parquet cid=bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafkreiexhvwkwbmluzmdtjhc3tdo7fufnjilgcotha7c66f6jpdw3nzu2m (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreia7o2alpqzaweirobrsaitivljmul5kiab4alkpmdnmnvmmizxv2u
+GET https://gateway.pinata.cloud/ipfs/bafkreiexhvwkwbmluzmdtjhc3tdo7fufnjilgcotha7c66f6jpdw3nzu2m (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4
+GET https://gateway.pinata.cloud/ipfs/bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy
+GET https://gateway.pinata.cloud/ipfs/bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem
+GET https://gateway.pinata.cloud/ipfs/bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/company_has_mailing_address/part-00000.parquet cid=bafkreia7o2alpqzaweirobrsaitivljmul5kiab4alkpmdnmnvmmizxv2u size=249180 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem (attempt 4)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/company/part-00000.parquet cid=bafkreiexhvwkwbmluzmdtjhc3tdo7fufnjilgcotha7c66f6jpdw3nzu2m size=150717 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/geometry/part-00000.parquet cid=bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4 HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/parcel_has_geometry/part-00000.parquet cid=bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreie2tsrguwbibnjxft6edyn557xu24h35nfncb37o73ow2tqdtr7cu
+GET https://gateway.pinata.cloud/ipfs/bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafkreihevyk2vx36gemol43lcaqhdvcgj5wjwiyaijshxxg3iwg4co4mue
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/parcel/part-00000.parquet cid=bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i
+GET https://gateway.pinata.cloud/ipfs/bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi
+GET https://gateway.pinata.cloud/ipfs/bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i (attempt 3)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property/part-00000.parquet cid=bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/properties/part-00000.parquet cid=bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/person_has_mailing_address/part-00000.parquet cid=bafkreihevyk2vx36gemol43lcaqhdvcgj5wjwiyaijshxxg3iwg4co4mue size=13952 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q
+GET https://gateway.pinata.cloud/ipfs/bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y
+GET https://gateway.pinata.cloud/ipfs/bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_address/part-00000.parquet cid=bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/person/part-00000.parquet cid=bafkreie2tsrguwbibnjxft6edyn557xu24h35nfncb37o73ow2tqdtr7cu size=12401 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_sales_history/part-00000.parquet cid=bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq
+GET https://gateway.pinata.cloud/ipfs/bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_structure/part-00000.parquet cid=bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y
+GET https://gateway.pinata.cloud/ipfs/bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreib23aoxlpmhf47fhzlpzd3vnwer4wiqnp3zxrhpdwcfu6a2ewy7ni
+GET https://gateway.pinata.cloud/ipfs/bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history/part-00000.parquet cid=bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafkreib23aoxlpmhf47fhzlpzd3vnwer4wiqnp3zxrhpdwcfu6a2ewy7ni (attempt 2)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_parcel/part-00000.parquet cid=bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafkreib23aoxlpmhf47fhzlpzd3vnwer4wiqnp3zxrhpdwcfu6a2ewy7ni (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreihxptyzdurg66sr5zxe2pmpquawzwhl7qsgwc2u32wwdtd3bjxku4
+GET https://gateway.pinata.cloud/ipfs/bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi
+GET https://gateway.pinata.cloud/ipfs/bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq
+GET https://gateway.pinata.cloud/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre
+GET https://gateway.pinata.cloud/ipfs/bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi (attempt 4)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history_has_person/part-00000.parquet cid=bafkreihxptyzdurg66sr5zxe2pmpquawzwhl7qsgwc2u32wwdtd3bjxku4 size=13945 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history_has_company/part-00000.parquet cid=bafkreib23aoxlpmhf47fhzlpzd3vnwer4wiqnp3zxrhpdwcfu6a2ewy7ni size=249328 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08 carCid=bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre size=3051 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4
+GET https://gateway.pinata.cloud/ipfs/bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi
+GET https://gateway.pinata.cloud/ipfs/bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b08.car carCid=bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/structure/part-00000.parquet cid=bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm
+GET https://gateway.pinata.cloud/ipfs/bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/company/part-00000.parquet cid=bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/address/part-00000.parquet cid=bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4 HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/address_has_parcel/part-00000.parquet cid=bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafkreiahrdupibmuyzfkjh55rugekungafrp3he2vfidmfe2nkaxy57ix4
+GET https://gateway.pinata.cloud/ipfs/bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi
+GET https://gateway.pinata.cloud/ipfs/bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee
+GET https://gateway.pinata.cloud/ipfs/bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y
+GET https://gateway.pinata.cloud/ipfs/bafkreic6jvddpxan6ltvp2v6nvhrpbm4yfczbz6cs3u4mtguil4dxqs4we
+GET https://gateway.pinata.cloud/ipfs/bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreic6jvddpxan6ltvp2v6nvhrpbm4yfczbz6cs3u4mtguil4dxqs4we (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreic6jvddpxan6ltvp2v6nvhrpbm4yfczbz6cs3u4mtguil4dxqs4we (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/parcel_has_geometry/part-00000.parquet cid=bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/company_has_mailing_address/part-00000.parquet cid=bafkreiahrdupibmuyzfkjh55rugekungafrp3he2vfidmfe2nkaxy57ix4 size=106932 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/geometry/part-00000.parquet cid=bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/person/part-00000.parquet cid=bafkreic6jvddpxan6ltvp2v6nvhrpbm4yfczbz6cs3u4mtguil4dxqs4we size=8889 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54
+GET https://gateway.pinata.cloud/ipfs/bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re
+GET https://gateway.pinata.cloud/ipfs/bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/parcel/part-00000.parquet cid=bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4
+GET https://gateway.pinata.cloud/ipfs/bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re (attempt 4)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/person_has_mailing_address/part-00000.parquet cid=bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/properties/part-00000.parquet cid=bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra
+GET https://gateway.pinata.cloud/ipfs/bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm
+GET https://gateway.pinata.cloud/ipfs/bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_parcel/part-00000.parquet cid=bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea
+GET https://gateway.pinata.cloud/ipfs/bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea (attempt 2)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_address/part-00000.parquet cid=bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property/part-00000.parquet cid=bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq
+GET https://gateway.pinata.cloud/ipfs/bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_sales_history/part-00000.parquet cid=bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_structure/part-00000.parquet cid=bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq
+GET https://gateway.pinata.cloud/ipfs/bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreifcdko2irzvytfoscufe63lp6xmsjcklqwh3eiqpqctovozs67ev4
+GET https://gateway.pinata.cloud/ipfs/bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreib6qjku2ztogvkmdhn2fokecnwzrvm4ey5wdbze5d5zpntjk2xubi
+GET https://gateway.pinata.cloud/ipfs/bafkreib6qjku2ztogvkmdhn2fokecnwzrvm4ey5wdbze5d5zpntjk2xubi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreib6qjku2ztogvkmdhn2fokecnwzrvm4ey5wdbze5d5zpntjk2xubi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu
+GET https://gateway.pinata.cloud/ipfs/bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy
+GET https://gateway.pinata.cloud/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq (attempt 4)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/structure/part-00000.parquet cid=bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history_has_company/part-00000.parquet cid=bafkreifcdko2irzvytfoscufe63lp6xmsjcklqwh3eiqpqctovozs67ev4 size=107097 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b09.car carCid=bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history_has_person/part-00000.parquet cid=bafkreib6qjku2ztogvkmdhn2fokecnwzrvm4ey5wdbze5d5zpntjk2xubi size=8241 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreid4rnbukorste3xmi24iys2vfgfc53fzyh3hcrwsxmsdwbvq63ice
+GET https://gateway.pinata.cloud/ipfs/bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i
+GET https://gateway.pinata.cloud/ipfs/bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54
+GET https://gateway.pinata.cloud/ipfs/bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/address/part-00000.parquet cid=bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i HTTP 429 after 5 attempts
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history/part-00000.parquet cid=bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreiaqb7ccxi45rqo4a7pmjqncgsikr4enhirtcau5tot67d5wwdalmu
+GET https://gateway.pinata.cloud/ipfs/bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreiaqb7ccxi45rqo4a7pmjqncgsikr4enhirtcau5tot67d5wwdalmu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreiaqb7ccxi45rqo4a7pmjqncgsikr4enhirtcau5tot67d5wwdalmu (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09 carCid=bafkreid4rnbukorste3xmi24iys2vfgfc53fzyh3hcrwsxmsdwbvq63ice size=3048 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreige2w7hzrg46jgfoxxfg55dc2ds744zt2miq2xooflksg4yulebgq
+GET https://gateway.pinata.cloud/ipfs/bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu
+GET https://gateway.pinata.cloud/ipfs/bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/geometry/part-00000.parquet cid=bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje
+GET https://gateway.pinata.cloud/ipfs/bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/address_has_parcel/part-00000.parquet cid=bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54 HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/company/part-00000.parquet cid=bafkreiaqb7ccxi45rqo4a7pmjqncgsikr4enhirtcau5tot67d5wwdalmu size=35024 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje (attempt 5)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/company_has_mailing_address/part-00000.parquet cid=bafkreige2w7hzrg46jgfoxxfg55dc2ds744zt2miq2xooflksg4yulebgq size=54124 match sha256 match
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/parcel/part-00000.parquet cid=bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4
+GET https://gateway.pinata.cloud/ipfs/bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreifz7o56pd5hvelupfdvqod74gjhqcc3ntyvzwohr7qnhtfjdg2isq
+GET https://gateway.pinata.cloud/ipfs/bafkreicdfmctz4n2sifbwm55obugqqtl3owvgrnazk3dnmet4qcd27j5e4
+GET https://gateway.pinata.cloud/ipfs/bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy
+GET https://gateway.pinata.cloud/ipfs/bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi
+GET https://gateway.pinata.cloud/ipfs/bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/parcel_has_geometry/part-00000.parquet cid=bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4 HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/person_has_mailing_address/part-00000.parquet cid=bafkreicdfmctz4n2sifbwm55obugqqtl3owvgrnazk3dnmet4qcd27j5e4 size=7257 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy (attempt 5)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/person/part-00000.parquet cid=bafkreifz7o56pd5hvelupfdvqod74gjhqcc3ntyvzwohr7qnhtfjdg2isq size=8304 match sha256 match
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/properties/part-00000.parquet cid=bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property/part-00000.parquet cid=bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64
+GET https://gateway.pinata.cloud/ipfs/bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm
+GET https://gateway.pinata.cloud/ipfs/bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma
+GET https://gateway.pinata.cloud/ipfs/bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai
+GET https://gateway.pinata.cloud/ipfs/bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_parcel/part-00000.parquet cid=bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_sales_history/part-00000.parquet cid=bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history/part-00000.parquet cid=bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreib7m5mh5vo6vuj6pfm2ifpxvo3m7gnjc7w3sirddcijab4nvq4b4e
+GET https://gateway.pinata.cloud/ipfs/bafkreictwchxnohwkazrca22yqbiag2qgf54fwncz6zac4lccwmwqlypke
+GET https://gateway.pinata.cloud/ipfs/bafkreictwchxnohwkazrca22yqbiag2qgf54fwncz6zac4lccwmwqlypke (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_structure/part-00000.parquet cid=bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4
+GET https://gateway.pinata.cloud/ipfs/bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64 (attempt 5)
+GET https://gateway.pinata.cloud/ipfs/bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4 (attempt 3)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_address/part-00000.parquet cid=bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4 (attempt 4)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history_has_person/part-00000.parquet cid=bafkreictwchxnohwkazrca22yqbiag2qgf54fwncz6zac4lccwmwqlypke size=7256 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/structure/part-00000.parquet cid=bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu
+GET https://gateway.pinata.cloud/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b10.car carCid=bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history_has_company/part-00000.parquet cid=bafkreib7m5mh5vo6vuj6pfm2ifpxvo3m7gnjc7w3sirddcijab4nvq4b4e size=54124 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreig7ypndfbzku7a5vpzlyvazd7ztdhthm7qc7cmp4ngg334acppf7a
+GET https://gateway.pinata.cloud/ipfs/bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4
+GET https://gateway.pinata.cloud/ipfs/bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq
+GET https://gateway.pinata.cloud/ipfs/bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/address/part-00000.parquet cid=bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafkreihbm6mvsr47wu66lov5uzrhr5f6dl47clun2lsxyns46ep73mz434
+GET https://gateway.pinata.cloud/ipfs/bafkreihbm6mvsr47wu66lov5uzrhr5f6dl47clun2lsxyns46ep73mz434 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreidujsmfgpr2fg4ism6jgimit6tewwnttfjd42doalrcl2u7b7w6u4
+GET https://gateway.pinata.cloud/ipfs/bafkreihbm6mvsr47wu66lov5uzrhr5f6dl47clun2lsxyns46ep73mz434 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreidujsmfgpr2fg4ism6jgimit6tewwnttfjd42doalrcl2u7b7w6u4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreidujsmfgpr2fg4ism6jgimit6tewwnttfjd42doalrcl2u7b7w6u4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10 carCid=bafkreig7ypndfbzku7a5vpzlyvazd7ztdhthm7qc7cmp4ngg334acppf7a size=3048 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4 (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/company/part-00000.parquet cid=bafkreihbm6mvsr47wu66lov5uzrhr5f6dl47clun2lsxyns46ep73mz434 size=49861 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/company_has_mailing_address/part-00000.parquet cid=bafkreidujsmfgpr2fg4ism6jgimit6tewwnttfjd42doalrcl2u7b7w6u4 size=81205 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4 (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4 (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/address_has_parcel/part-00000.parquet cid=bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty
+GET https://gateway.pinata.cloud/ipfs/bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/parcel/part-00000.parquet cid=bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a
+GET https://gateway.pinata.cloud/ipfs/bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreidsbpzmmgotvk5jbsgdqzr5ave6x75itkviwnk2juq3nl5rczivhm
+GET https://gateway.pinata.cloud/ipfs/bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafkreidkoojgvg43ai6d6oqrfauic7qk5fzywqzexhqt4wmq33ban5jzmu
+GET https://gateway.pinata.cloud/ipfs/bafkreidkoojgvg43ai6d6oqrfauic7qk5fzywqzexhqt4wmq33ban5jzmu (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafkreidkoojgvg43ai6d6oqrfauic7qk5fzywqzexhqt4wmq33ban5jzmu (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafkreidkoojgvg43ai6d6oqrfauic7qk5fzywqzexhqt4wmq33ban5jzmu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4 (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/geometry/part-00000.parquet cid=bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4 HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru
+GET https://gateway.pinata.cloud/ipfs/bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/parcel_has_geometry/part-00000.parquet cid=bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/person/part-00000.parquet cid=bafkreidsbpzmmgotvk5jbsgdqzr5ave6x75itkviwnk2juq3nl5rczivhm size=9673 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/properties/part-00000.parquet cid=bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeihyxdm73psyosl4dan7ls2nywztasfsjj5rvgwxvsdeedtzlqhzre
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/person_has_mailing_address/part-00000.parquet cid=bafkreidkoojgvg43ai6d6oqrfauic7qk5fzywqzexhqt4wmq33ban5jzmu size=9496 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeihtew3uboydxvfa6tvde5r44b3uryoncz427staau6dwaosy6jhe4
+GET https://gateway.pinata.cloud/ipfs/bafybeignefqxqjzho5dqdbwokfztwtmbzeanbwquosuic7tgh63mlrhf3q
+GET https://gateway.pinata.cloud/ipfs/bafybeignefqxqjzho5dqdbwokfztwtmbzeanbwquosuic7tgh63mlrhf3q (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeihyxdm73psyosl4dan7ls2nywztasfsjj5rvgwxvsdeedtzlqhzre (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeihtew3uboydxvfa6tvde5r44b3uryoncz427staau6dwaosy6jhe4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeihyxdm73psyosl4dan7ls2nywztasfsjj5rvgwxvsdeedtzlqhzre (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicpqpledrwp6hjewlzrfnzlfb7idh2iipoccmqii6ejcrfboy3lom
+GET https://gateway.pinata.cloud/ipfs/bafybeic53jus3jfecijtybpgtldiyrj3art34wieyxvkknnttz5bniuira
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_sales_history/part-00000.parquet cid=bafybeicpqpledrwp6hjewlzrfnzlfb7idh2iipoccmqii6ejcrfboy3lom size=449480 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreibz5vacvygx2scsml332lkjnjpcwimry4er3hvmrj3sse6b5pqsgq
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property/part-00000.parquet cid=bafybeihyxdm73psyosl4dan7ls2nywztasfsjj5rvgwxvsdeedtzlqhzre size=3317167 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreigovwjc36equxjnd3jwga7eqwduwtmdkds2lv5jb2ms654jkskjje
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/sales_history/part-00000.parquet cid=bafkreibz5vacvygx2scsml332lkjnjpcwimry4er3hvmrj3sse6b5pqsgq size=241331 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_parcel/part-00000.parquet cid=bafybeignefqxqjzho5dqdbwokfztwtmbzeanbwquosuic7tgh63mlrhf3q size=5953572 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_structure/part-00000.parquet cid=bafybeic53jus3jfecijtybpgtldiyrj3art34wieyxvkknnttz5bniuira size=5953610 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_address/part-00000.parquet cid=bafybeihtew3uboydxvfa6tvde5r44b3uryoncz427staau6dwaosy6jhe4 size=5953802 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreid2o3xyknahcpq3yrs2xaqkzampefrai3r6bxzkfcce2xodbyxaxm
+GET https://gateway.pinata.cloud/ipfs/bafybeicqttfgyh3k6m6fzixpcjsyk2x5yx2fhtqwwsq6qgg64baulo3qg4
+GET https://gateway.pinata.cloud/ipfs/bafybeiha3l6bixvfzcoq6vdil7sehdoax2fzbf5dat7oousp32dogc5usu
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/sales_history_has_company/part-00000.parquet cid=bafkreigovwjc36equxjnd3jwga7eqwduwtmdkds2lv5jb2ms654jkskjje size=81217 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafkreierznvzcao72my3rl2sjifsdzoofytgpdrdxrfkt75qeczemve6le
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01 carCid=bafkreierznvzcao72my3rl2sjifsdzoofytgpdrdxrfkt75qeczemve6le size=1284 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeidh5vkpaavqe3n5ziqs6qz7wjtunedgj6rvbq4e6zuzpalsb2ylsy
+GET https://gateway.pinata.cloud/ipfs/bafybeidh5vkpaavqe3n5ziqs6qz7wjtunedgj6rvbq4e6zuzpalsb2ylsy (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/sales_history_has_person/part-00000.parquet cid=bafkreid2o3xyknahcpq3yrs2xaqkzampefrai3r6bxzkfcce2xodbyxaxm size=9484 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi
+GET https://gateway.pinata.cloud/ipfs/bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeig7o4mb3vvtj3i2ie7ycireqowuqne2nl72wedqlwr44tmmeobazq
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/structure/part-00000.parquet cid=bafybeicqttfgyh3k6m6fzixpcjsyk2x5yx2fhtqwwsq6qgg64baulo3qg4 size=3049290 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeig7o4mb3vvtj3i2ie7ycireqowuqne2nl72wedqlwr44tmmeobazq (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/address/part-00000.parquet cid=bafybeidh5vkpaavqe3n5ziqs6qz7wjtunedgj6rvbq4e6zuzpalsb2ylsy size=381866 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeiek62fos2wk3jnveoctgzhnham3qmu23xnujotgf5vw7xl24kvbo4
+GET https://gateway.pinata.cloud/ipfs/bafybeiek62fos2wk3jnveoctgzhnham3qmu23xnujotgf5vw7xl24kvbo4 (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeialsbxrmpby7ybv5l2kmzzd6aegj6a5j535ddwusacclgshdn2rku
+GET https://gateway.pinata.cloud/ipfs/bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/address_has_parcel/part-00000.parquet cid=bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi HTTP 429 after 5 attempts
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/parcel/part-00000.parquet cid=bafybeig7o4mb3vvtj3i2ie7ycireqowuqne2nl72wedqlwr44tmmeobazq size=397361 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeic2au4dwe4w52donksnq3rxdsxxkxkekppowx2jjlgqcjngzbhsh4
+GET https://gateway.pinata.cloud/ipfs/bafybeib22falah2evakqdqos5rpfu6deyxxbssxdzbxght7usxi3qpkbd4
+GET https://gateway.pinata.cloud/ipfs/bafybeib22falah2evakqdqos5rpfu6deyxxbssxdzbxght7usxi3qpkbd4 (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/properties/part-00000.parquet cid=bafybeiek62fos2wk3jnveoctgzhnham3qmu23xnujotgf5vw7xl24kvbo4 size=549604 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeib22falah2evakqdqos5rpfu6deyxxbssxdzbxght7usxi3qpkbd4 (attempt 3)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/property/part-00000.parquet cid=bafybeialsbxrmpby7ybv5l2kmzzd6aegj6a5j535ddwusacclgshdn2rku size=406895 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeickmnuwcynhxmx3barllkr64bn5pywagzq5pp2u4hse4a52hrmqey
+GET https://gateway.pinata.cloud/ipfs/bafkreibprhpfih5l6xugrhigebpupmayjs7nw43nlawweq2errzrvl55oi
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/property_has_property_improvement/part-00000.parquet cid=bafybeic2au4dwe4w52donksnq3rxdsxxkxkekppowx2jjlgqcjngzbhsh4 size=900039 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/property_improvement/part-00000.parquet cid=bafybeib22falah2evakqdqos5rpfu6deyxxbssxdzbxght7usxi3qpkbd4 size=619670 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeiabqkpfvzqsx6uibyzw6hnq62dzoqnvkx5c65rcmfqcllz6abundm
+GET https://gateway.pinata.cloud/ipfs/bafybeic43wyhg6n77ejnaw6tyqni7aqe6prmmaswwb4e3yaz4hrdv7biuq
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02 carCid=bafkreibprhpfih5l6xugrhigebpupmayjs7nw43nlawweq2errzrvl55oi size=1285 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/address/part-00000.parquet cid=bafybeiabqkpfvzqsx6uibyzw6hnq62dzoqnvkx5c65rcmfqcllz6abundm size=382240 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy
+GET https://gateway.pinata.cloud/ipfs/bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy (attempt 2)
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/address_has_parcel/part-00000.parquet cid=bafybeic43wyhg6n77ejnaw6tyqni7aqe6prmmaswwb4e3yaz4hrdv7biuq size=732574 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq
+GET https://gateway.pinata.cloud/ipfs/bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/cars/travis-permits-b02.car carCid=bafybeickmnuwcynhxmx3barllkr64bn5pywagzq5pp2u4hse4a52hrmqey size=16564157 match sha256 match
+ok   https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/cars/travis-permits-b01.car carCid=bafybeiha3l6bixvfzcoq6vdil7sehdoax2fzbf5dat7oousp32dogc5usu size=15325739 match sha256 match
+GET https://gateway.pinata.cloud/ipfs/bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy
+GET https://gateway.pinata.cloud/ipfs/bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm
+GET https://ipfs.filebase.io/ipfs/bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4 (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/parcel/part-00000.parquet cid=bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy (attempt 2)
+GET https://gateway.pinata.cloud/ipfs/bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/properties/part-00000.parquet cid=bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy (attempt 3)
+GET https://gateway.pinata.cloud/ipfs/bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/property_improvement/part-00000.parquet cid=bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe (attempt 4)
+GET https://gateway.pinata.cloud/ipfs/bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/property/part-00000.parquet cid=bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe HTTP 429 after 5 attempts
+GET https://gateway.pinata.cloud/ipfs/bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy (attempt 5)
+FAIL https://gateway.pinata.cloud pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/property_has_property_improvement/part-00000.parquet cid=bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy HTTP 429 after 5 attempts

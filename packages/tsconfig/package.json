@@ -1,0 +1,11 @@
+{
+  "name": "@countylens/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared TypeScript configs: base (strict ESM), node (Lambda, CLI, packages), react (Vite SPA).",
+  "files": [
+    "base.json",
+    "node.json",
+    "react.json"
+  ]
+}

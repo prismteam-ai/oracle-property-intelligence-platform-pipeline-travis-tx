@@ -1,0 +1,49 @@
+{
+  "schema": "pinata-copy-summary.v1",
+  "run_id": "travis-full-run4-20261026",
+  "manifest_path": "runs/travis-full-run4-20261026/manifest.json",
+  "manifest_cid": "bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha",
+  "dry_run": false,
+  "first_only": true,
+  "kinds": [
+    "manifest",
+    "table"
+  ],
+  "budget": {
+    "bytes": 2505487,
+    "files": 294,
+    "source": "quota minus usage"
+  },
+  "usage_before": {
+    "pinCount": 206,
+    "pinSizeTotal": 947494513
+  },
+  "usage_after": {
+    "pinCount": 206,
+    "pinSizeTotal": 947494513
+  },
+  "counts": {
+    "pinned": 1,
+    "already_pinned": 0,
+    "mismatch_unpinned": 0,
+    "mismatch_unpin_failed": 0,
+    "mismatch_preexisting": 0,
+    "error": 0,
+    "skipped_local": 0,
+    "left_budget": 0,
+    "left_stopped": 0,
+    "planned": 0
+  },
+  "bytes": {
+    "uploaded": 104190,
+    "pin_size_uploaded": 104190,
+    "left": 0
+  },
+  "mismatches": [],
+  "skipped": [],
+  "left": [],
+  "errors": [],
+  "stopped": null,
+  "ok": true,
+  "finished_at": "2026-10-26T12:39:00.144Z"
+}

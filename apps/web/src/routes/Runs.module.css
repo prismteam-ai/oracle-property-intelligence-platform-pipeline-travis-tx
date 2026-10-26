@@ -1,0 +1,1268 @@
+/* Runs page (A-03 T042/T060; plan § "Atlas element map" → Runs page). Atlas § 7 Card
+   (corner-medium, surface-container-lowest on surface-container-low, padding 16, outlined),
+   § 7 List item (two lines), § 8 Provenance line (body-small, on-surface-variant, leading
+   icon), CIDs through the shared CidDisplay. Every colour, font, spacing and
+   radius is a tokens.css custom property (Atlas § 13 rule 4; stylelint declaration-strict-value). */
+
+/* The page fills the main column at every width (A-16 PO note: fluid layout, no fixed max). */
+.page {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+/* Cards side by side from 1024 px, stacked below (A-16 PO note); `.wide` spans both columns. */
+.cardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cardGrid > .wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Card header: the run ID (title-medium, mono) and the fallback chip when the gateway served it. */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+  overflow-wrap: anywhere;
+}
+
+/* § 8 provenance line and the Server check line: body-small, on-surface-variant, leading icon. */
+.provenance,
+.serverCheck {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  overflow-wrap: anywhere;
+}
+
+/* A 16 px glyph inside body-small lines (the global class sets the 24 px control size). */
+.icon {
+  flex: none;
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: inherit;
+}
+
+/* Started · Finished: body-medium with tabular numerals. */
+.times {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.state {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sectionTitle {
+  margin: var(--space-2) 0 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+.list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* § 7 List item, two lines, outline-variant dividers. */
+.item {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.itemTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+  overflow-wrap: anywhere;
+}
+
+.itemBody,
+.helper {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  overflow-wrap: anywhere;
+}
+
+.mono {
+  font-family: var(--md-ref-typeface-mono);
+  font-size: inherit;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  overflow-wrap: anywhere;
+}
+
+/* Coverage row: label title-small · count body-medium tabular-nums · helper body-small below. */
+.coverageRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.coverageLabel {
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+.count {
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.helper {
+  grid-column: 1 / -1;
+}
+
+/* Medium and up (Atlas § 4): the coverage row reads as one line, helper beside the label. */
+@media (min-width: 600px) {
+  .coverageRow {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  .helper {
+    grid-column: auto;
+  }
+}
+
+/* A-13: a source's limitations, under its delta line (body-small, bulleted). */
+.limitations {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+/* A-13: an Atlas outlined button (Re-check, Run, Verify): 48 px target, label-large. */
+.action {
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
+
+.action:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-primary) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* ---- A-16 parity (boards Runs / Coverage / Compare / Log): shared pieces, tokens only ---- */
+
+.pageHead {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.pageTitle {
+  margin: 0;
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+  color: var(--md-sys-color-on-surface);
+}
+
+.intro,
+.helperText {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+.helperText {
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.cardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+/* The run picker (board "rsel"): one outlined card with the done glyph, the run dropdown (its own
+   border dropped) over the finish time and run ID, and the publication pill. */
+.runPick {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 var(--space-3);
+  justify-self: start;
+  width: min(100%, calc(var(--space-10) * 7));
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface);
+}
+
+.runPick:focus-within {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.runPick > [data-icon] {
+  color: var(--status-success);
+}
+
+.runPick > span:nth-child(2) {
+  display: grid;
+  min-width: 0;
+}
+
+.runPick select {
+  padding-left: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.runPick select:hover {
+  background: transparent;
+}
+
+.runPick select:focus-visible {
+  outline: none;
+}
+
+.runPick > span:nth-child(2) > span + span {
+  overflow: hidden;
+  padding-bottom: var(--space-1);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Key / value rows (Atlas kv): label on the left, value on the right from 600 px. */
+.kv {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.kvRow {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.kvRow dt {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.kvRow dd {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.adminSlot {
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* Steps 2–5 (board "step card"): done glyph and number on top, name, one fact, a Done bar. */
+.step {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface);
+}
+
+.stepNumber {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--space-7);
+  height: var(--space-7);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+}
+
+/* One change row per source: name, count, stacked bar (one scale for the run), + / ~ / − numbers. */
+.changeRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.stack {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-1);
+}
+
+/* A share bar: the native progress element, so widths need no inline style. */
+.progress {
+  appearance: none;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: var(--space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  overflow: hidden;
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-primary);
+}
+
+.progress::-webkit-progress-bar {
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.progress::-webkit-progress-value {
+  background: currentColor;
+}
+
+.progress::-moz-progress-bar {
+  background: currentColor;
+}
+
+.bar_added {
+  color: var(--status-success);
+}
+
+.bar_changed {
+  color: var(--status-info);
+}
+
+.bar_removed {
+  color: var(--status-danger);
+}
+
+/* KPI tiles (Coverage board): four cards, two columns from 600 px, four from 1200. */
+.tiles {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tile {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+}
+
+.tileLabel {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.tileBig {
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* Data table (Atlas dense table); wraps and scrolls inside its card on compact widths. */
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.table th {
+  padding: var(--space-2) var(--space-3);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  text-align: start;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
+/* D-7 (board RunsCompare390): below 600 px the change table stacks each source as a labelled
+   block (`data-label` on each cell), as CoverageCostLimits does; table roles stay. */
+@media (max-width: 599px) {
+  [data-change-table] .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  [data-change-table] .table,
+  [data-change-table] .table tbody,
+  [data-change-table] .table tr {
+    display: block;
+  }
+
+  [data-change-table] .table tr {
+    padding: var(--space-2) 0;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  [data-change-table] .table td {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-1) 0;
+    border-top: 0;
+    text-align: end;
+    overflow-wrap: break-word;
+  }
+
+  [data-change-table] .table td::before {
+    content: attr(data-label);
+    flex: none;
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: var(--md-sys-typescale-body-small-font);
+    font-size: var(--md-sys-typescale-body-small-size);
+    text-align: start;
+  }
+}
+
+/* Filter chips and pager (Log board). */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.chip[aria-pressed="true"] {
+  border-color: transparent;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+.select {
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+}
+
+.selectLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+@media (min-width: 600px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kvRow {
+    grid-template-columns: calc(var(--space-10) * 3) minmax(0, 1fr);
+    align-items: baseline;
+  }
+
+  .changeRow {
+    grid-template-columns: minmax(0, 2fr) auto minmax(0, 3fr) auto;
+  }
+
+  .stack {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---- A-16 F3 (boards Runs1440/768/390, PO 2026-10-26): the Runs page uses the full width.
+   Leaves are styled by position under a few classes so the CSS-module map (shipped in JS) stays
+   small (bundle budget). ---- */
+
+/* Title, Run menu and intro on the left; Sync status on the right from 1024 px. */
+[data-route="runs"] > div:first-child,
+[data-shown-run] > div,
+[data-what-changed] > div + div,
+[aria-labelledby="run-title"] > div + div,
+div:has(> [data-compare-run]),
+div:has(> [data-immutability]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+[data-route="runs"] > div:first-child > div {
+  gap: var(--space-3);
+}
+
+[data-shown-run] > div,
+div:has(> [data-compare-run]),
+div:has(> [data-immutability]) {
+  align-items: stretch;
+}
+
+/* Stretched cards keep their content at the top (no rows spread over the extra height). */
+[data-shown-run] > div > *,
+div:has(> [data-compare-run]) > *,
+div:has(> [data-immutability]) > * {
+  align-content: start;
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+}
+
+/* Pipeline: Fetch sources panel, then steps 2–5; stacked at 390, 2 × 2 at 768, one row at 1200. */
+[data-pipeline-steps] > ol,
+[data-pipeline-steps] ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+[data-pipeline-steps] ul {
+  gap: var(--space-1);
+}
+
+/* Each step's head: number (Fetch) or done glyph + number (steps 2–5) on one line. */
+[data-pipeline-steps] > ol > li > span:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+[data-pipeline-steps] b {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+}
+
+[data-pipeline-steps] [data-icon="check_circle"] {
+  color: var(--status-success);
+}
+
+/* One fetched source: done glyph, name, records; the green rule under it is the board's bar. */
+[data-pipeline-steps] ul > li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 3px solid var(--status-success);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+[data-pipeline-steps] ul > li > span:last-child {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Steps 2–5: the Done line under a green rule (the manifest has no step times to show). */
+[data-pipeline-steps] > ol > li + li > span:last-child {
+  padding-top: var(--space-1);
+  border-top: 3px solid var(--status-success);
+  color: var(--status-success);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+
+/* Latest events: a leading glyph and two lines per event. */
+[data-latest-events] li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+[data-latest-events] li > span:last-child {
+  display: grid;
+  min-width: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* What Run N changed: totals and CID boxes on the left, the per-source rows on the right. */
+[data-what-changed] > div + div {
+  gap: var(--space-4) var(--space-6);
+}
+
+[data-what-changed] > div + div > div,
+[aria-labelledby="run-title"] > div + div > div {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+[data-cid-boxes] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--space-10) * 3)), 1fr));
+  gap: var(--space-3);
+}
+
+[data-cid-boxes] > div {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container);
+}
+
+[data-cid-boxes] > div > span:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  overflow-wrap: anywhere;
+}
+
+/* The column header of the per-source rows (visual only; each row names its own values). */
+p.changeRow {
+  display: none;
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+/* Run card: the facts wrap in one band, then sources + coverage beside the limitations. */
+[aria-labelledby="run-title"] > header + div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-4);
+}
+
+[aria-labelledby="run-title"] > div + div {
+  gap: var(--space-3) var(--space-6);
+}
+
+[aria-labelledby="run-title"] > div + div > div {
+  gap: var(--space-2);
+}
+
+/* Data groups as a compact grid of two-line items instead of 15 full-width rows. */
+[aria-labelledby="groups-heading"] {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, calc(var(--space-10) * 2 + var(--space-5))), 1fr)
+  );
+  gap: 0 var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Runs · Compare (boards RunsCompare1440/768/390) ---- */
+
+/* Back arrow + "Run b vs Run a" on the left, the two run pickers on the right. */
+.compareTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.compareTitle,
+.compareTop > span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Previous, current and CAR cards: stacked to 1023 px (boards 390/768), one row from 1024. */
+[data-compare-run] {
+  box-sizing: border-box;
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* The current run (second card) is outlined in primary, as on the board. */
+[data-compare-run] + [data-compare-run] {
+  border-color: var(--md-sys-color-primary);
+}
+
+[data-compare-run] > header + span,
+[data-change-table] code {
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-compare-run] > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--space-1);
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* Run limitations past the first three: "Show all N limitations", a 48 px text-button target. */
+.limitationsMore > summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  cursor: pointer;
+}
+
+.limitationsMore > summary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* A shortened digest in a note: the full value is its title. */
+.itemBody abbr[data-hex] {
+  font-family: var(--md-ref-typeface-mono);
+  text-decoration: none;
+}
+
+/* A run's per-source lines, collapsed behind a 48 px disclosure (the table below lists them). */
+[data-compare-run] details {
+  width: 100%;
+}
+
+[data-compare-run] summary {
+  min-height: var(--space-9);
+  line-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+[data-compare-run] summary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Board change table: label over the source ID, numbers on one line. */
+[data-change-table] .table td:first-child > span {
+  display: grid;
+  min-width: 0;
+}
+
+[data-change-table] .table td.num {
+  white-space: nowrap;
+}
+
+/* Board RunsCompare390: one compact block per source, the name over one wrapped line of
+   "Run a n · Run b n · +a · ~c · −r" (overrides the generic stacked rows above). */
+@media (max-width: 599px) {
+  [data-change-table] .table tr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-3);
+  }
+
+  [data-change-table] .table td {
+    display: inline-flex;
+    gap: var(--space-1);
+    padding: 0;
+  }
+
+  [data-change-table] .table td:first-child {
+    flex-basis: 100%;
+    padding-bottom: var(--space-1);
+    text-align: start;
+  }
+
+  [data-change-table] .table td:first-child::before {
+    content: none;
+  }
+}
+
+@media (min-width: 600px) {
+  [data-pipeline-steps] > ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-pipeline-steps] > ol > li:first-child {
+    grid-column: 1 / -1;
+  }
+
+  p.changeRow {
+    display: grid;
+  }
+
+  /* Sync status reads like the board: label left, value right-aligned. */
+  [data-sync-status] dd {
+    text-align: end;
+  }
+
+  /* Fixed column shares so the header and every source row line up. */
+  [data-what-changed] .changeRow {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr) minmax(0, 2.4fr) minmax(0, 1.4fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-route="runs"] > div:first-child,
+  [data-shown-run] > div,
+  div:has(> [data-immutability]) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  [data-what-changed] > div + div {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+
+  [aria-labelledby="run-title"] > div + div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  div:has(> [data-compare-run]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  [data-pipeline-steps] > ol {
+    grid-template-columns: minmax(0, 2fr) repeat(4, minmax(0, 1fr));
+    align-items: center;
+  }
+
+  [data-pipeline-steps] > ol > li:first-child {
+    grid-column: auto;
+  }
+}
+
+/* ---- A-16 G2 board round (PO 2026-10-26 05:45): Runs boards matched board by board. ---- */
+
+/* Board "What Run N changed": one bar split into added / changed / removed (blue, cyan, orange
+   as on the board), on one scale for the run; an SVG so widths need no inline style. */
+.changeBar {
+  display: block;
+  width: 100%;
+  height: var(--space-3);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.fill_added {
+  fill: var(--viz-cat-1);
+}
+
+.fill_changed {
+  fill: var(--viz-cat-6);
+}
+
+.fill_removed {
+  fill: var(--viz-cat-2);
+}
+
+/* The legend under the run's total bar: a colour square, the label and the count. */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-variant-numeric: tabular-nums;
+}
+
+.legend > li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.legend svg {
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
+/* Board selected-source strip under the pipeline, adapted: the fetch step as a whole (the
+   manifest has a capture time per source, no per-step start and end). */
+.fetchStrip {
+  display: grid;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.fetchStrip > [data-icon] {
+  color: var(--status-success);
+}
+
+.fetchStrip dl {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+}
+
+.fetchStrip dd {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  font-variant-numeric: tabular-nums;
+}
+
+.fetchStrip dt {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.fetchStrip b {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+/* The Log link sits top right; the times and records take their own line until 1200 px. */
+.fetchStrip > a {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.fetchStrip {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+@media (min-width: 1200px) {
+  .fetchStrip {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+  }
+
+  .fetchStrip dl {
+    grid-column: auto;
+  }
+
+  .fetchStrip > a {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
+/* Per-source change rows: the bar takes its own line below 600 px, a column from 600 px. */
+.changeRow > .changeBar {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 600px) {
+  .changeRow > .changeBar {
+    grid-column: auto;
+  }
+}
+
+/* Board 1440: an arrow between the pipeline steps when they sit in one row. */
+@media (min-width: 1200px) {
+  [data-pipeline-steps] > ol {
+    column-gap: var(--space-6);
+  }
+
+  [data-pipeline-steps] > ol > li + li {
+    position: relative;
+  }
+
+  [data-pipeline-steps] > ol > li + li::before {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: var(--space-6);
+    color: var(--md-sys-color-on-surface-variant);
+    content: "→" / "";
+    text-align: center;
+    transform: translateY(-50%);
+  }
+}
+
+/* Sync status (board): compact key / value rows without dividers. */
+[data-sync-status] .kvRow {
+  padding: var(--space-1) 0;
+  border-top: 0;
+}
+
+/* A-03-TC-NF-03: the run card is first in the DOM (its manifest CID is the page's first
+   provenance line). Below 600 px it shows right after the title and Run picker, before Sync
+   status and the pipeline, so that line is inside the first phone screen; from 600 px it shows
+   last, as on the boards. */
+@media (max-width: 599px) {
+  [data-route="runs"] > div:first-child,
+  [data-route="runs"] > [data-shown-run] {
+    display: contents;
+  }
+
+  [data-route="runs"] > div:first-child > div:first-child {
+    order: -2;
+  }
+
+  [data-route="runs"] > [data-run-not-found],
+  [data-shown-run] > article {
+    order: -1;
+  }
+}
+
+@media (min-width: 600px) {
+  [data-shown-run] > article {
+    order: 1;
+  }
+}

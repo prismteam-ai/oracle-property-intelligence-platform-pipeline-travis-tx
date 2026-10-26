@@ -1,0 +1,60 @@
+/* CountyLens accessibility extensions to Atlas. Tokens only; logged on the Extensions board (A-1 to A-8). */
+
+/* A-1 Touch targets (build rule: 48 px, Atlas §14.1): every control drawn smaller than 48 px gets a 48 px hit area (--space-9). Visual size unchanged. */
+.atlas-btn, .atlas-chip, .atlas-icon-btn, .atlas-th-sort, .atlas-cid button, .atlas-cite, .atlas-map-chip a, .atlas-prov a, .atlas-table td a, .atlas-legend a, .sig, .pg-n { position: relative; }
+.atlas-btn::after, .atlas-chip::after, .atlas-icon-btn::after, .sig::after, .pg-n::after, .atlas-th-sort::after, .atlas-cid button::after,
+.atlas-map-chip a::after, .atlas-prov a::after, .atlas-table td a::after, .atlas-legend a::after {
+  content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: max(100%, var(--space-9)); height: max(100%, var(--space-9)); }
+/* Wrapped chip rows: 32 px chip + 16 px row gap keeps neighbouring targets 48 px apart. */
+:is(div, section, p):has(> .atlas-chip) { row-gap: var(--space-4) !important; }
+
+/* A-2 Citations: a 24 px numbered badge that matches the map pins; 48 px hit area outside running text. */
+.atlas-cite { display: inline-grid; place-items: center; min-width: var(--space-6); height: var(--space-6); padding: 0 var(--space-1); box-sizing: border-box;
+  margin: 0 1px; border-radius: var(--md-sys-shape-corner-full); vertical-align: baseline;
+  background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); font: 500 12px/16px var(--font-plain); }
+.atlas-cite:hover { text-decoration: none; background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
+:not(p) > .atlas-cite::after, td .atlas-cite::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: var(--space-9); height: var(--space-9); }
+
+/* A-3 Focus rings that are not clipped: inset ring inside clipping containers (map controls, lists, tables, scroll rows). */
+.atlas-map-controls .atlas-icon-btn:focus-visible, .atlas-list-item--action:focus-visible, .atlas-menu-item:focus-visible,
+.atlas-table :is(a, button):focus-visible, .atlas-tab:focus-visible, .atlas-chip:focus-visible, .atlas-bottom-sheet__handle:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary); outline-offset: -2px; }
+.atlas-cite:focus-visible { outline: 2px solid var(--md-sys-color-primary); outline-offset: 1px; }
+/* Fields that remove the native outline show focus on their box instead. */
+.atlas-field__box:has(select:focus-visible), .atlas-code:has(textarea:focus-visible) { outline: 2px solid var(--md-sys-color-primary); outline-offset: 2px; }
+
+/* A-4 Map is a keyboard stop: inset 3 px ring, plus a key hint shown only while it has focus. */
+.atlas-map[tabindex]:focus-visible { outline: 3px solid var(--md-sys-color-primary); outline-offset: -3px; }
+.atlas-map-kbd { display: none !important; }
+.atlas-map:focus-visible ~ .atlas-map-kbd, .atlas-map-kbd.is-shown { display: inline-flex !important; }
+.atlas-skip { position: absolute; left: var(--space-4); top: var(--space-4); z-index: 10; transform: translateY(-200%);
+  padding: var(--space-2) var(--space-4); border-radius: var(--md-sys-shape-corner-full); background: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface); font: 500 14px/20px var(--font-plain); }
+.atlas-skip:focus, .atlas-skip.is-shown { transform: none; }
+
+/* A-5 Markers: outlined so each one reaches 3:1 against the map in light and dark (roof-age 10–24 and permit < 1 yr fills alone are 1.8–2.8:1). */
+.atlas-map .marker { stroke: var(--md-sys-color-on-surface-variant); stroke-width: 1.5; }
+
+/* A-6 Radius ring: eases to a new size; reduced motion jumps straight to it. */
+.atlas-map .radius { transition: r var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard); }
+.atlas-map .handle { transition: cx var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard); }
+
+/* A-7 Hexagons: fade and settle in on zoom; reduced motion swaps them in place. */
+@keyframes atlas-hex-in { from { opacity: 0; transform: scale(.6); } }
+.atlas-map .hexes polygon { transform-box: fill-box; transform-origin: center;
+  animation: atlas-hex-in var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-emphasized) both; }
+
+/* A-8 One switch for reduced motion: the OS setting, or .motion-reduced on a board to preview it. */
+@media (prefers-reduced-motion: reduce) {
+  .atlas-map .radius, .atlas-map .handle { transition: none; }
+  .atlas-map .hexes polygon { animation: none; }
+  .atlas-progress--indeterminate > i { animation: none; width: 100%; opacity: var(--md-sys-state-disabled-opacity); }
+  .atlas-skeleton { animation: none; }
+}
+.motion-reduced .atlas-map .radius, .motion-reduced .atlas-map .handle { transition: none; }
+.motion-reduced .atlas-map .hexes polygon, .motion-reduced .atlas-skeleton { animation: none; }
+.motion-reduced .atlas-progress--indeterminate > i { animation: none; width: 100%; opacity: var(--md-sys-state-disabled-opacity); }
+
+/* A-9 Scoped theme: data-theme on any element, so a board can show light and dark side by side. Values copied from tokens.css. */
+[data-theme="dark"]{--md-sys-color-primary:#A8C7FA;--md-sys-color-on-primary:#062E6F;--md-sys-color-primary-container:#0842A0;--md-sys-color-on-primary-container:#D3E3FD;--md-sys-color-secondary:#7FCFFF;--md-sys-color-on-secondary:#003355;--md-sys-color-secondary-container:#004A77;--md-sys-color-on-secondary-container:#C2E7FF;--md-sys-color-tertiary:#6DD58C;--md-sys-color-on-tertiary:#0A3818;--md-sys-color-tertiary-container:#0F5223;--md-sys-color-on-tertiary-container:#C4EED0;--md-sys-color-error:#F2B8B5;--md-sys-color-on-error:#601410;--md-sys-color-error-container:#8C1D18;--md-sys-color-on-error-container:#F9DEDC;--md-sys-color-surface:#131314;--md-sys-color-surface-dim:#131314;--md-sys-color-surface-container-lowest:#0E0E0E;--md-sys-color-surface-container-low:#1B1B1C;--md-sys-color-surface-container:#1E1F20;--md-sys-color-surface-container-high:#282A2C;--md-sys-color-surface-container-highest:#333537;--md-sys-color-on-surface:#E3E3E3;--md-sys-color-on-surface-variant:#C4C7C5;--md-sys-color-outline:#8E918F;--md-sys-color-outline-variant:#444746;--md-sys-color-inverse-surface:#E3E3E3;--md-sys-color-inverse-on-surface:#303030;--md-sys-color-inverse-primary:#0B57D0;--status-success:#C4EED0;--status-success-container:#0F5223;--status-warning:#FFE8B0;--status-warning-container:#5C3B00;--status-danger:#F9DEDC;--status-danger-container:#8C1D18;--status-info:#C2E7FF;--status-info-container:#004A77;--status-unavailable:#C4C7C5;--status-unavailable-container:#333537;;color-scheme:dark}
+[data-theme="light"]{--md-sys-color-primary:#0B57D0;--md-sys-color-on-primary:#FFFFFF;--md-sys-color-primary-container:#D3E3FD;--md-sys-color-on-primary-container:#041E49;--md-sys-color-secondary:#00639B;--md-sys-color-on-secondary:#FFFFFF;--md-sys-color-secondary-container:#C2E7FF;--md-sys-color-on-secondary-container:#001D35;--md-sys-color-tertiary:#146C2E;--md-sys-color-on-tertiary:#FFFFFF;--md-sys-color-tertiary-container:#C4EED0;--md-sys-color-on-tertiary-container:#072711;--md-sys-color-error:#B3261E;--md-sys-color-on-error:#FFFFFF;--md-sys-color-error-container:#F9DEDC;--md-sys-color-on-error-container:#410E0B;--md-sys-color-surface:#FFFFFF;--md-sys-color-surface-dim:#DDE3EA;--md-sys-color-surface-container-lowest:#FFFFFF;--md-sys-color-surface-container-low:#F8FAFD;--md-sys-color-surface-container:#F0F4F9;--md-sys-color-surface-container-high:#E9EEF6;--md-sys-color-surface-container-highest:#DDE3EA;--md-sys-color-on-surface:#1F1F1F;--md-sys-color-on-surface-variant:#444746;--md-sys-color-outline:#747775;--md-sys-color-outline-variant:#C4C7C5;--md-sys-color-inverse-surface:#303030;--md-sys-color-inverse-on-surface:#F2F2F2;--md-sys-color-inverse-primary:#A8C7FA;--status-success:#146C2E;--status-success-container:#C4EED0;--status-warning:#7A4F01;--status-warning-container:#FFE8B0;--status-danger:#B3261E;--status-danger-container:#F9DEDC;--status-info:#00639B;--status-info-container:#C2E7FF;--status-unavailable:#444746;--status-unavailable-container:#E9EEF6;color-scheme:light}

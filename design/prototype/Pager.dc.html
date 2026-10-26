@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pager</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.pg-n{min-width:36px;height:36px;padding:0 6px;border:0;border-radius:var(--md-sys-shape-corner-full);background:none;color:var(--md-sys-color-on-surface-variant);font:500 13px/1 var(--font-plain);cursor:pointer;font-variant-numeric:tabular-nums}
+.pg-n:hover{background:var(--md-sys-color-surface-container-high)}
+.pg-n:focus-visible{outline:2px solid var(--md-sys-color-primary);outline-offset:2px}
+.pg-n[aria-current="page"]{background:var(--md-sys-color-secondary-container);color:var(--md-sys-color-on-secondary-container)}
+.pg-gap{min-width:20px;text-align:center;color:var(--md-sys-color-on-surface-variant);font-size:13px}
+</style>
+</helmet>
+<nav aria-label="{{label}}" style="display: flex; align-items: center; gap: 2px; font-family: var(--font-plain); color: var(--md-sys-color-on-surface-variant)">
+<sc-if value="{{hasText}}" hint-placeholder-val="{{ true }}"><span aria-live="polite" class="num" style="font-size: 12px; margin-right: 8px; white-space: nowrap">{{text}}</span></sc-if>
+<button class="atlas-icon-btn" aria-label="Previous page" onClick="{{prev}}" disabled="{{noPrev}}" style="width: 36px; height: 36px"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">chevron_left</span></button>
+<sc-for list="{{items}}" as="it" hint-placeholder-count="5"><sc-if value="{{it.isGap}}" hint-placeholder-val="{{ false }}"><span class="pg-gap" aria-hidden="true">…</span></sc-if><sc-if value="{{it.isNum}}" hint-placeholder-val="{{ true }}"><button class="pg-n" aria-current="{{it.cur}}" aria-label="Page {{it.n}}" onClick="{{it.go}}">{{it.n}}</button></sc-if></sc-for>
+<button class="atlas-icon-btn" aria-label="Next page" onClick="{{next}}" disabled="{{noNext}}" style="width: 36px; height: 36px"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">chevron_right</span></button>
+</nav>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"pages":{"editor":"int","min":1,"max":999,"default":5},"page":{"editor":"int","min":1,"max":999,"default":1},"text":{"editor":"text","default":"1–8 of 40"},"label":{"editor":"text","default":"Pages"},"compact":{"editor":"boolean","default":false},"onPage":{"editor":null},"$preview":{"width":420,"height":48}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { p: null }; }
+  renderVals() {
+    // Controlled when the parent passes onPage; otherwise keeps its own page so the board still clicks through.
+    const P = Math.max(1, parseInt(this.props.pages ?? 5, 10) || 1);
+    const ctl = typeof this.props.onPage === 'function';
+    const cur = Math.min(P, Math.max(1, ctl ? (parseInt(this.props.page ?? 1, 10) || 1) : (this.state.p || parseInt(this.props.page ?? 1, 10) || 1)));
+    const go = (n) => () => { const t = Math.min(P, Math.max(1, n)); if (ctl) this.props.onPage(t); else this.setState({ p: t }); };
+    // Window: first, last, current ±1 (±0 when compact), gaps as …
+    const w = this.props.compact ? 0 : 1, set = new Set([1, P, cur]);
+    for (let i = cur - w; i <= cur + w; i++) if (i >= 1 && i <= P) set.add(i);
+    const nums = [...set].sort((a, b) => a - b), items = [];
+    nums.forEach((n, i) => { if (i && n - nums[i - 1] > 1) items.push({ isGap: true, isNum: false, n: '', cur: 'false', go: () => {} }); items.push({ isGap: false, isNum: true, n: String(n), cur: n === cur ? 'page' : 'false', go: go(n) }); });
+    return { items: items, prev: go(cur - 1), next: go(cur + 1), noPrev: cur <= 1, noNext: cur >= P, text: this.props.text ?? '', hasText: !!(this.props.text ?? ''), label: this.props.label ?? 'Pages' };
+  }
+}
+</script>
+</body>
+</html>

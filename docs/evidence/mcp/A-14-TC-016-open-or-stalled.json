@@ -1,0 +1,1944 @@
+{
+  "request": {
+    "method": "tools/call",
+    "params": {
+      "name": "list_permits",
+      "arguments": {
+        "area": {
+          "place": "Austin"
+        },
+        "radius_mi": 25,
+        "status_class": "open_or_stalled",
+        "limit": 1000,
+        "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i"
+      }
+    }
+  },
+  "status": 200,
+  "ms": 816,
+  "body": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"rows\":[{\"permit_cid\":\"baguqeerantzc5bkxzupvioy7uklxctoad5e7khcnskkpivzam5wr5f3qvuxq\",\"property_cid\":\"baguqeeraikr46dhhva6tta2oz6lkxtoyvsn4j7gphg4uyloyhq5mtrskgeiq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-116568 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-04\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":47,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerantzc5bkxzupvioy7uklxctoad5e7khcnskkpivzam5wr5f3qvuxq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-116568%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6392.066163109061,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.13,\"dist_mi\":3.972},{\"permit_cid\":\"baguqeeratmwth3yn2xxsjfsrddubd4e4vxeshsciz3abkmzhy53ojevx7mwa\",\"property_cid\":\"baguqeeravi3xjnwf4wm3wazrq3uryzww472mvkmcb7dmwhj5zveb33esstmq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-115882 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-04\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":47,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeratmwth3yn2xxsjfsrddubd4e4vxeshsciz3abkmzhy53ojevx7mwa\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-115882%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":3839.1846172098158,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.13,\"dist_mi\":2.386},{\"permit_cid\":\"baguqeera2v3jwlktek5naunvvy6m2mfgv75gk7twqzgfh5xtgqcifofquqeq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121332 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeera2v3jwlktek5naunvvy6m2mfgv75gk7twqzgfh5xtgqcifofquqeq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121332%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeera6xw5ijcxl3ipq3ateycnjbdjxab7uma7frorgfak6k6ql6zkzaeq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121078 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeera6xw5ijcxl3ipq3ateycnjbdjxab7uma7frorgfak6k6ql6zkzaeq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121078%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeerabuqs3enoflqegc3lcjdymsnwicav5wpu5rrm53gekaimsixiffsa\",\"property_cid\":\"baguqeerati6hyfu64qdkvmf5l3p3duoekzec5lsectgsvkbp4s6v57bcaxna\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-113191 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerabuqs3enoflqegc3lcjdymsnwicav5wpu5rrm53gekaimsixiffsa\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-113191%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":14825.817642716864,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":9.212},{\"permit_cid\":\"baguqeerag3elq2fyfrktcydtz66ze4ckkigvsarldozhbxh2lbuyyqhgaela\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121110 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerag3elq2fyfrktcydtz66ze4ckkigvsarldozhbxh2lbuyyqhgaela\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121110%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeragfkdy6eave5rmreajqawtdl6af4phqspckoe34pvcmj7cd4jugba\",\"property_cid\":\"baguqeerati6hyfu64qdkvmf5l3p3duoekzec5lsectgsvkbp4s6v57bcaxna\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-113183 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeragfkdy6eave5rmreajqawtdl6af4phqspckoe34pvcmj7cd4jugba\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-113183%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":14825.817642716864,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":9.212},{\"permit_cid\":\"baguqeerahl6dwzamivdwtuogv3i67onaqworr6tlagedszo5kymqw75kxcoq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121407 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerahl6dwzamivdwtuogv3i67onaqworr6tlagedszo5kymqw75kxcoq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121407%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeerahyog72rlbjv23h2en4j7ai3eftu6cyw5gpweib2ki7vgxhrjxuwq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121094 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerahyog72rlbjv23h2en4j7ai3eftu6cyw5gpweib2ki7vgxhrjxuwq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121094%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeerakt4ximscpgbw4vompp7azwbexfszjss6gekxy24ohggfb6iqybza\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121002 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerakt4ximscpgbw4vompp7azwbexfszjss6gekxy24ohggfb6iqybza\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121002%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeralg5x6te546esk3de35iwfdvp6z35qhq3cpjy33ul2synbndm7akq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121450 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeralg5x6te546esk3de35iwfdvp6z35qhq3cpjy33ul2synbndm7akq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121450%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeramyig3dc2yveu4nz67nz77gkvwxrvyzhh2szqn4ypbanistony24q\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121122 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeramyig3dc2yveu4nz67nz77gkvwxrvyzhh2szqn4ypbanistony24q\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121122%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeraneib3k34hgemtid6jxwlaqhrxbbggm42kcsu25czhh6n2q7un6tq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121183 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeraneib3k34hgemtid6jxwlaqhrxbbggm42kcsu25czhh6n2q7un6tq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121183%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeerariswwsk3jgzj32avt25lfxvo7itp62davhny5ow7j4m3ecri7oxq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121272 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerariswwsk3jgzj32avt25lfxvo7itp62davhny5ow7j4m3ecri7oxq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121272%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeratr25pyjrjzzk5hp6k66cugtch4ch4x5ce3wxtm43j6xoffldkk7q\",\"property_cid\":\"baguqeeraqxod4kdmjfpzqdu36b5jyvb5fe4mdlmvxolgukqvugex7hkwgdtq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-120248 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeratr25pyjrjzzk5hp6k66cugtch4ch4x5ce3wxtm43j6xoffldkk7q\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-120248%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":18522.180044086403,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":11.509},{\"permit_cid\":\"baguqeerau6zlazgl2tkahlsy2kzgzdeepdlxxasu43n2u63yzkiqzkksbhqq\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121366 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerau6zlazgl2tkahlsy2kzgzdeepdlxxasu43n2u63yzkiqzkksbhqq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121366%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeerauye546ib3pt3fkianql65jwf2qxcryfozn5iumr2uv47t3t7youa\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121305 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerauye546ib3pt3fkianql65jwf2qxcryfozn5iumr2uv47t3t7youa\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121305%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeravwokusghnuvtdbjrfcky77fpbxqch6b37etlspglh2bbgpojplla\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121160 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeravwokusghnuvtdbjrfcky77fpbxqch6b37etlspglh2bbgpojplla\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121160%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeraziarblkpntkrcgtay7lh66qctpgxk7ahqmwit3yaah5vudqudq7a\",\"property_cid\":\"baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-121634 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-17\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":34,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeraziarblkpntkrcgtay7lh66qctpgxk7ahqmwit3yaah5vudqudq7a\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121634%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":6812.898131232673,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.09,\"dist_mi\":4.233},{\"permit_cid\":\"baguqeeradnn64oaugkqvej7266ompcszakc3zblr67w2qlgj6ghgeim4qwoq\",\"property_cid\":\"baguqeera6sd3t5tdfy7xzfaycmcggimk6nzqv7prlcwvbqebohurx37cnpha\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-119890 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-23\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":28,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeeradnn64oaugkqvej7266ompcszakc3zblr67w2qlgj6ghgeim4qwoq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-119890%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":13376.95064072507,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.08,\"dist_mi\":8.312},{\"permit_cid\":\"baguqeerajjeq7pl2pvgcz2qp3dwhtvdeusvzlgzedrbwhhcbc2qhqminlauq\",\"property_cid\":\"baguqeeraowktgtrrqrvysxggav2z6sxl5jzy4y5ql43c4ye5mivxphj7p3na\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-128365 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-29\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":22,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerajjeq7pl2pvgcz2qp3dwhtvdeusvzlgzedrbwhhcbc2qhqminlauq\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-128365%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":15285.972458698034,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.06,\"dist_mi\":9.498},{\"permit_cid\":\"baguqeerarb2j53gxh7ffywgafjl433hrcfoufqn23kevqnvq55srxs5l6qma\",\"property_cid\":\"baguqeeraq5wrdiyppbln3t3femwve6symj7hhe4xf2bb7ow5judzpy45lniq\",\"jurisdiction\":\"austin\",\"permit_number\":\"2026-127253 BP\",\"improvement_type\":\"Roofing\",\"improvement_action\":\"Replacement\",\"improvement_status\":\"Permitted\",\"status_class\":\"open\",\"is_open\":true,\"issue_date\":\"2026-09-29\",\"final_date\":null,\"permit_close_date\":null,\"final_inspection_date\":null,\"open_days\":22,\"contractor_resolution\":\"unresolved\",\"contractor_company_cid\":null,\"bbb_status\":\"not_checked\",\"bbb_status_reason\":\"contractor_unresolved\",\"profile_version\":\"travis-austin@1.0.0\",\"profile_sha256\":\"c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6\",\"cid\":\"baguqeerarb2j53gxh7ffywgafjl433hrcfoufqn23kevqnvq55srxs5l6qma\",\"source_url\":\"https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-127253%20BP\",\"captured_at\":\"2026-10-21T10:35:59.798Z\",\"table\":\"property_improvement\",\"table_cid\":\"bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu\",\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\",\"missing\":[{\"field\":\"status_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"expiry_date\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"final_date\",\"reason\":\"not_closed\"},{\"field\":\"permit_close_date\",\"reason\":\"source_missing\"},{\"field\":\"final_inspection_date\",\"reason\":\"source_missing\"},{\"field\":\"contractor_company_cid\",\"reason\":\"contractor_unresolved\"},{\"field\":\"contractor_name_raw\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_rating\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"bbb_url\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"description\",\"reason\":\"no_lexicon_carrier\"},{\"field\":\"work_class_raw\",\"reason\":\"no_lexicon_carrier\"}],\"dist_m\":9522.613901933404,\"status_raw\":null,\"contractor\":{\"name_as_printed\":null,\"resolution\":\"unresolved\",\"company_cid\":null},\"open_years\":0.06,\"dist_mi\":5.917}],\"returned\":22,\"total\":22,\"truncated\":false,\"empty_reason\":null,\"unknown_excluded\":{},\"area\":{\"label\":\"Austin city · Census 2024 Gazetteer · 30.298622, -97.754134\",\"point\":{\"lat\":30.298622,\"lon\":-97.754134},\"kind\":\"place\",\"id\":\"4805000\",\"partial_in_travis\":true,\"source\":{\"url\":\"https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip\",\"file_date\":\"2024-08-30T18:40:42.000Z\",\"sha256\":\"cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06\"},\"gazetteer\":{\"version\":\"travis-places@1.0.0\",\"sha256\":\"0f4c08a8bda573737adecc7d62e84d629aadc5005b987f2f787e4fd31ab5d17f\"}},\"run\":{\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\"},\"applied\":{\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"area\":{\"place\":\"Austin\"},\"radius_mi\":25,\"status_class\":\"open_or_stalled\",\"sort\":\"open_desc\",\"limit\":1000}}"
+        }
+      ],
+      "structuredContent": {
+        "rows": [
+          {
+            "permit_cid": "baguqeerantzc5bkxzupvioy7uklxctoad5e7khcnskkpivzam5wr5f3qvuxq",
+            "property_cid": "baguqeeraikr46dhhva6tta2oz6lkxtoyvsn4j7gphg4uyloyhq5mtrskgeiq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-116568 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-04",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 47,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerantzc5bkxzupvioy7uklxctoad5e7khcnskkpivzam5wr5f3qvuxq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-116568%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6392.066163109061,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.13,
+            "dist_mi": 3.972
+          },
+          {
+            "permit_cid": "baguqeeratmwth3yn2xxsjfsrddubd4e4vxeshsciz3abkmzhy53ojevx7mwa",
+            "property_cid": "baguqeeravi3xjnwf4wm3wazrq3uryzww472mvkmcb7dmwhj5zveb33esstmq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-115882 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-04",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 47,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeratmwth3yn2xxsjfsrddubd4e4vxeshsciz3abkmzhy53ojevx7mwa",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-115882%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 3839.1846172098158,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.13,
+            "dist_mi": 2.386
+          },
+          {
+            "permit_cid": "baguqeera2v3jwlktek5naunvvy6m2mfgv75gk7twqzgfh5xtgqcifofquqeq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121332 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeera2v3jwlktek5naunvvy6m2mfgv75gk7twqzgfh5xtgqcifofquqeq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121332%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeera6xw5ijcxl3ipq3ateycnjbdjxab7uma7frorgfak6k6ql6zkzaeq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121078 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeera6xw5ijcxl3ipq3ateycnjbdjxab7uma7frorgfak6k6ql6zkzaeq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121078%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeerabuqs3enoflqegc3lcjdymsnwicav5wpu5rrm53gekaimsixiffsa",
+            "property_cid": "baguqeerati6hyfu64qdkvmf5l3p3duoekzec5lsectgsvkbp4s6v57bcaxna",
+            "jurisdiction": "austin",
+            "permit_number": "2026-113191 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerabuqs3enoflqegc3lcjdymsnwicav5wpu5rrm53gekaimsixiffsa",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-113191%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 14825.817642716864,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 9.212
+          },
+          {
+            "permit_cid": "baguqeerag3elq2fyfrktcydtz66ze4ckkigvsarldozhbxh2lbuyyqhgaela",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121110 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerag3elq2fyfrktcydtz66ze4ckkigvsarldozhbxh2lbuyyqhgaela",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121110%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeragfkdy6eave5rmreajqawtdl6af4phqspckoe34pvcmj7cd4jugba",
+            "property_cid": "baguqeerati6hyfu64qdkvmf5l3p3duoekzec5lsectgsvkbp4s6v57bcaxna",
+            "jurisdiction": "austin",
+            "permit_number": "2026-113183 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeragfkdy6eave5rmreajqawtdl6af4phqspckoe34pvcmj7cd4jugba",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-113183%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 14825.817642716864,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 9.212
+          },
+          {
+            "permit_cid": "baguqeerahl6dwzamivdwtuogv3i67onaqworr6tlagedszo5kymqw75kxcoq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121407 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerahl6dwzamivdwtuogv3i67onaqworr6tlagedszo5kymqw75kxcoq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121407%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeerahyog72rlbjv23h2en4j7ai3eftu6cyw5gpweib2ki7vgxhrjxuwq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121094 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerahyog72rlbjv23h2en4j7ai3eftu6cyw5gpweib2ki7vgxhrjxuwq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121094%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeerakt4ximscpgbw4vompp7azwbexfszjss6gekxy24ohggfb6iqybza",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121002 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerakt4ximscpgbw4vompp7azwbexfszjss6gekxy24ohggfb6iqybza",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121002%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeralg5x6te546esk3de35iwfdvp6z35qhq3cpjy33ul2synbndm7akq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121450 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeralg5x6te546esk3de35iwfdvp6z35qhq3cpjy33ul2synbndm7akq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121450%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeramyig3dc2yveu4nz67nz77gkvwxrvyzhh2szqn4ypbanistony24q",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121122 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeramyig3dc2yveu4nz67nz77gkvwxrvyzhh2szqn4ypbanistony24q",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121122%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeraneib3k34hgemtid6jxwlaqhrxbbggm42kcsu25czhh6n2q7un6tq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121183 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeraneib3k34hgemtid6jxwlaqhrxbbggm42kcsu25czhh6n2q7un6tq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121183%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeerariswwsk3jgzj32avt25lfxvo7itp62davhny5ow7j4m3ecri7oxq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121272 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerariswwsk3jgzj32avt25lfxvo7itp62davhny5ow7j4m3ecri7oxq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121272%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeratr25pyjrjzzk5hp6k66cugtch4ch4x5ce3wxtm43j6xoffldkk7q",
+            "property_cid": "baguqeeraqxod4kdmjfpzqdu36b5jyvb5fe4mdlmvxolgukqvugex7hkwgdtq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-120248 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeratr25pyjrjzzk5hp6k66cugtch4ch4x5ce3wxtm43j6xoffldkk7q",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-120248%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 18522.180044086403,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 11.509
+          },
+          {
+            "permit_cid": "baguqeerau6zlazgl2tkahlsy2kzgzdeepdlxxasu43n2u63yzkiqzkksbhqq",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121366 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerau6zlazgl2tkahlsy2kzgzdeepdlxxasu43n2u63yzkiqzkksbhqq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121366%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeerauye546ib3pt3fkianql65jwf2qxcryfozn5iumr2uv47t3t7youa",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121305 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerauye546ib3pt3fkianql65jwf2qxcryfozn5iumr2uv47t3t7youa",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121305%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeravwokusghnuvtdbjrfcky77fpbxqch6b37etlspglh2bbgpojplla",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121160 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeravwokusghnuvtdbjrfcky77fpbxqch6b37etlspglh2bbgpojplla",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121160%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeraziarblkpntkrcgtay7lh66qctpgxk7ahqmwit3yaah5vudqudq7a",
+            "property_cid": "baguqeerakmixkpatzw4wbiqtxcqbewecmgrzcw3j4vcm3skbe7zofycy5daq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-121634 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-17",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 34,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeraziarblkpntkrcgtay7lh66qctpgxk7ahqmwit3yaah5vudqudq7a",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-121634%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 6812.898131232673,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.09,
+            "dist_mi": 4.233
+          },
+          {
+            "permit_cid": "baguqeeradnn64oaugkqvej7266ompcszakc3zblr67w2qlgj6ghgeim4qwoq",
+            "property_cid": "baguqeera6sd3t5tdfy7xzfaycmcggimk6nzqv7prlcwvbqebohurx37cnpha",
+            "jurisdiction": "austin",
+            "permit_number": "2026-119890 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-23",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 28,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeeradnn64oaugkqvej7266ompcszakc3zblr67w2qlgj6ghgeim4qwoq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-119890%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 13376.95064072507,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.08,
+            "dist_mi": 8.312
+          },
+          {
+            "permit_cid": "baguqeerajjeq7pl2pvgcz2qp3dwhtvdeusvzlgzedrbwhhcbc2qhqminlauq",
+            "property_cid": "baguqeeraowktgtrrqrvysxggav2z6sxl5jzy4y5ql43c4ye5mivxphj7p3na",
+            "jurisdiction": "austin",
+            "permit_number": "2026-128365 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-29",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 22,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerajjeq7pl2pvgcz2qp3dwhtvdeusvzlgzedrbwhhcbc2qhqminlauq",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-128365%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 15285.972458698034,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.06,
+            "dist_mi": 9.498
+          },
+          {
+            "permit_cid": "baguqeerarb2j53gxh7ffywgafjl433hrcfoufqn23kevqnvq55srxs5l6qma",
+            "property_cid": "baguqeeraq5wrdiyppbln3t3femwve6symj7hhe4xf2bb7ow5judzpy45lniq",
+            "jurisdiction": "austin",
+            "permit_number": "2026-127253 BP",
+            "improvement_type": "Roofing",
+            "improvement_action": "Replacement",
+            "improvement_status": "Permitted",
+            "status_class": "open",
+            "is_open": true,
+            "issue_date": "2026-09-29",
+            "final_date": null,
+            "permit_close_date": null,
+            "final_inspection_date": null,
+            "open_days": 22,
+            "contractor_resolution": "unresolved",
+            "contractor_company_cid": null,
+            "bbb_status": "not_checked",
+            "bbb_status_reason": "contractor_unresolved",
+            "profile_version": "travis-austin@1.0.0",
+            "profile_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+            "cid": "baguqeerarb2j53gxh7ffywgafjl433hrcfoufqn23kevqnvq55srxs5l6qma",
+            "source_url": "https://data.austintexas.gov/resource/3syk-w9eu.json?permit_number=2026-127253%20BP",
+            "captured_at": "2026-10-21T10:35:59.798Z",
+            "table": "property_improvement",
+            "table_cid": "bafkreiezsqxcd2h63fio6qrcl2rqd3thnc4wacr7qiuriwttbnwxpm62qu",
+            "run_id": "travis-202609-permits-20261021t103516z",
+            "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+            "as_of": "2026-10-21T10:40:04.543Z",
+            "missing": [
+              {
+                "field": "status_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "expiry_date",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "final_date",
+                "reason": "not_closed"
+              },
+              {
+                "field": "permit_close_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "final_inspection_date",
+                "reason": "source_missing"
+              },
+              {
+                "field": "contractor_company_cid",
+                "reason": "contractor_unresolved"
+              },
+              {
+                "field": "contractor_name_raw",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_rating",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "bbb_url",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "description",
+                "reason": "no_lexicon_carrier"
+              },
+              {
+                "field": "work_class_raw",
+                "reason": "no_lexicon_carrier"
+              }
+            ],
+            "dist_m": 9522.613901933404,
+            "status_raw": null,
+            "contractor": {
+              "name_as_printed": null,
+              "resolution": "unresolved",
+              "company_cid": null
+            },
+            "open_years": 0.06,
+            "dist_mi": 5.917
+          }
+        ],
+        "returned": 22,
+        "total": 22,
+        "truncated": false,
+        "empty_reason": null,
+        "unknown_excluded": {},
+        "area": {
+          "label": "Austin city · Census 2024 Gazetteer · 30.298622, -97.754134",
+          "point": {
+            "lat": 30.298622,
+            "lon": -97.754134
+          },
+          "kind": "place",
+          "id": "4805000",
+          "partial_in_travis": true,
+          "source": {
+            "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip",
+            "file_date": "2024-08-30T18:40:42.000Z",
+            "sha256": "cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06"
+          },
+          "gazetteer": {
+            "version": "travis-places@1.0.0",
+            "sha256": "0f4c08a8bda573737adecc7d62e84d629aadc5005b987f2f787e4fd31ab5d17f"
+          }
+        },
+        "run": {
+          "run_id": "travis-202609-permits-20261021t103516z",
+          "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+          "as_of": "2026-10-21T10:40:04.543Z"
+        },
+        "applied": {
+          "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+          "area": {
+            "place": "Austin"
+          },
+          "radius_mi": 25,
+          "status_class": "open_or_stalled",
+          "sort": "open_desc",
+          "limit": 1000
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 8
+  }
+}

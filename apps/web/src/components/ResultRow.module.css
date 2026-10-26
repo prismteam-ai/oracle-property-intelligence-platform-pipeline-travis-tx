@@ -1,0 +1,299 @@
+/* Explore result card and the Property drawer's fields (A-13 T025): Atlas § 7 outlined card
+   (corner-medium, surface-container-lowest), label-small field labels over body-medium values,
+   as many 160 px columns as the box takes; 48 px icon targets; selected = secondary container.
+   Atlas tokens only. */
+
+.row {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+  padding: var(--space-2) var(--space-2) var(--space-3) var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+}
+
+.row:hover {
+  background-color: var(--md-sys-color-surface-container-low);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.selected {
+  border-color: var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-secondary-container);
+}
+
+/* Compact card (Explore390 board): title and distance with two 48 px icon buttons on one line,
+   the roof/permit chips under it, the short provenance last. */
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+.mono {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  white-space: nowrap;
+}
+
+.meta {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  white-space: nowrap;
+}
+
+.chips .meta {
+  white-space: normal;
+}
+
+.iconButton {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--space-9);
+  min-width: var(--space-9);
+  height: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding-right: var(--space-3);
+}
+
+/* Task B B-03 row: the id on one line with why there is no address (wraps on a phone), the
+   distance in label-medium, the roof and confidence pills (Atlas § 7 badge, § 2.4 colours). */
+.titleStack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-2);
+}
+
+.titleMain {
+  color: var(--md-sys-color-on-surface);
+  white-space: nowrap;
+}
+
+.titleSub {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+}
+
+.distance {
+  flex: none;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  white-space: nowrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  min-height: var(--space-6);
+  padding: 0 var(--space-2) 0 var(--space-1);
+  border-radius: var(--md-sys-shape-corner-full);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  white-space: nowrap;
+}
+
+.pillInfo {
+  color: var(--status-info);
+  background-color: var(--status-info-container);
+}
+
+.pillHigh {
+  padding-left: var(--space-2);
+  color: var(--status-success);
+  background-color: var(--status-success-container);
+}
+
+.pillWarn {
+  padding-left: var(--space-2);
+  color: var(--status-warning);
+  background-color: var(--status-warning-container);
+}
+
+.cidLine {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+.more {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3) 0 0;
+}
+
+.more[hidden] {
+  display: none;
+}
+
+/* The short provenance (PO 2026-10-26): host · date, table CID, run, each on one line. */
+.prov {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--space-2);
+  min-width: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+/* inline-block, not flex: the host link stays an inline link in its line of text (WCAG 2.5.8
+   inline exception, as the § 8 line's link). */
+.provLine {
+  display: inline-block;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.provLine > [data-icon] {
+  vertical-align: middle;
+}
+
+.prov a {
+  color: var(--md-sys-color-primary);
+}
+
+/* As many 160 px columns as the box takes: one at 390, two to four in the drawer and cards. */
+.fields {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, calc(var(--space-10) * 2 + var(--space-7))), 1fr)
+  );
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+}
+
+.cell {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.label {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-small-font);
+  font-size: var(--md-sys-typescale-label-small-size);
+  font-weight: var(--md-sys-typescale-label-small-weight);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  letter-spacing: var(--md-sys-typescale-label-small-tracking);
+}
+
+.value {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.missing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.missingGroup {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.fieldNames {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-body-small-size);
+  overflow-wrap: anywhere;
+}
+
+.iconButton[aria-expanded="true"] > span {
+  transform: rotate(180deg);
+}
+
+/* Task B PropertyDetail rows (drawer): the label on the left, the value on the right; wraps on a
+   phone. */
+.fields.rows {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+.rows .cell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.rows .label {
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+}
+
+.rows .value {
+  text-align: right;
+}

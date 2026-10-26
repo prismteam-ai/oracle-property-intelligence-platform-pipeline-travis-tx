@@ -1,0 +1,26 @@
+{
+  "name": "@countylens/publish",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1154.0",
+    "@aws-sdk/client-ssm": "^3.1154.0",
+    "@countylens/contract": "workspace:*",
+    "@countylens/query-core": "workspace:*",
+    "@duckdb/node-api": "1.5.6-r.2",
+    "@ipld/car": "^5.4.7",
+    "@ipld/dag-json": "^11.0.1",
+    "ipfs-unixfs-importer": "^17.1.1",
+    "multiformats": "^14.0.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "undici": "6.28.1"
+  }
+}

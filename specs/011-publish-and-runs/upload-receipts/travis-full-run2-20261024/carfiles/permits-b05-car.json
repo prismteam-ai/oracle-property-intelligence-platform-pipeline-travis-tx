@@ -1,0 +1,21 @@
+{
+  "name": "pipeline/data/runs/travis-a11-permits-fix-20261024/publish/permits-batched/cars/travis-permits-b05.car",
+  "carCid": "bafybeicaivt6gcoinefyanw4bcmim6ng7llca7cmcvycemmpntaczfm5tq",
+  "size": 6488442,
+  "adopted": false,
+  "gateways": [
+    {
+      "gateway": "https://gateway.pinata.cloud",
+      "ok": false,
+      "inconclusive": true,
+      "status": 429,
+      "reason": "HTTP 429"
+    },
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "recordedAt": "2026-10-24T18:58:15.793Z"
+}

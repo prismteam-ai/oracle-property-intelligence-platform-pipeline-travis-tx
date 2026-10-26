@@ -1,0 +1,805 @@
+{
+  "schema": "a16-am10-spot-check.v1",
+  "checked_at": "2026-10-26T06:07:10.958Z",
+  "gateways": {
+    "pinata": "https://gateway.pinata.cloud",
+    "orbitor": "https://ipfs.orbitor.dev"
+  },
+  "method": "plain GET /ipfs/<cid>, full body SHA-256 and size compared with the manifest (manifests: with their committed bytes and runs/index.json CID)",
+  "summary": {
+    "manifest": {
+      "checked": 5,
+      "both_ok": 5
+    },
+    "table_on_pinata": {
+      "checked": 20,
+      "both_ok": 20
+    },
+    "table_not_on_pinata": {
+      "checked": 5,
+      "both_ok": 5
+    }
+  },
+  "results": [
+    {
+      "group": "manifest",
+      "name": "runs/travis-202609-permits-20261021t103516z/manifest.json",
+      "cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+      "size": 11641,
+      "sha256": "12c09928ea035de0229b781684e6bdbb4dd8e3e7e6977a7548887bd677c24aea",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 11641,
+          "sha256": "12c09928ea035de0229b781684e6bdbb4dd8e3e7e6977a7548887bd677c24aea",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5208
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 11641,
+          "sha256": "12c09928ea035de0229b781684e6bdbb4dd8e3e7e6977a7548887bd677c24aea",
+          "ok": true,
+          "attempt": 1,
+          "ms": 388
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "manifest",
+      "name": "runs/travis-full-run1-20261023/manifest.json",
+      "cid": "bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu",
+      "size": 78234,
+      "sha256": "63217f296030f33967b007f806f748170a01605c4c8347956fd6c1c7f570fe35",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 78234,
+          "sha256": "63217f296030f33967b007f806f748170a01605c4c8347956fd6c1c7f570fe35",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3641
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 78234,
+          "sha256": "63217f296030f33967b007f806f748170a01605c4c8347956fd6c1c7f570fe35",
+          "ok": true,
+          "attempt": 1,
+          "ms": 527
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "manifest",
+      "name": "runs/travis-full-run2-20261024/manifest.json",
+      "cid": "bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute",
+      "size": 87672,
+      "sha256": "a4dd55b1184e1eebe9d09ab925b3d57aab470748e13c4f26a671449483bc5499",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 87672,
+          "sha256": "a4dd55b1184e1eebe9d09ab925b3d57aab470748e13c4f26a671449483bc5499",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5078
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 87672,
+          "sha256": "a4dd55b1184e1eebe9d09ab925b3d57aab470748e13c4f26a671449483bc5499",
+          "ok": true,
+          "attempt": 1,
+          "ms": 713
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "manifest",
+      "name": "runs/travis-full-run3-20261025/manifest.json",
+      "cid": "bafkreifndsdibdllvgpzwmif6getzwvc6rupk5tgeak4eypccaw3t7vlfm",
+      "size": 101197,
+      "sha256": "ad1c86808d6ba99f9b3105f1893cdaa2f468f576662015c261e2102db9feab2b",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 101197,
+          "sha256": "ad1c86808d6ba99f9b3105f1893cdaa2f468f576662015c261e2102db9feab2b",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3605
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 101197,
+          "sha256": "ad1c86808d6ba99f9b3105f1893cdaa2f468f576662015c261e2102db9feab2b",
+          "ok": true,
+          "attempt": 1,
+          "ms": 746
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "manifest",
+      "name": "runs/travis-full-run3-1-20261025/manifest.json",
+      "cid": "bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai",
+      "size": 103835,
+      "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 103835,
+          "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3872
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 103835,
+          "sha256": "6184815dc641bc31d2df6b47f74928b33ebbc6e7b9b6f97b005db6ca3e4d8102",
+          "ok": true,
+          "attempt": 1,
+          "ms": 250
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b09/property_has_structure/part-00000.parquet",
+      "cid": "bafybeictp4l3u6c3rijp2ah4hfm75jrcuzuurlw6vsciamubrw52uw5yfm",
+      "size": 5955171,
+      "sha256": "9d3c2cfc6adcd838f726323c09340ee85ab5bbf2b2ed9d6f97731f1423f8474c",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5955171,
+          "sha256": "9d3c2cfc6adcd838f726323c09340ee85ab5bbf2b2ed9d6f97731f1423f8474c",
+          "ok": true,
+          "attempt": 1,
+          "ms": 7117
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5955171,
+          "sha256": "9d3c2cfc6adcd838f726323c09340ee85ab5bbf2b2ed9d6f97731f1423f8474c",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2424
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b05/property_has_structure/part-00000.parquet",
+      "cid": "bafybeia7zy77iqriyqn2m6xocoikc7xzseasth2vkyotqqsxft22hjrupi",
+      "size": 5971109,
+      "sha256": "e29dc8b5e3b9d2a050bb91ceef4d3bc14862b3c2c4acebbca87814fe25170f83",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5971109,
+          "sha256": "e29dc8b5e3b9d2a050bb91ceef4d3bc14862b3c2c4acebbca87814fe25170f83",
+          "ok": true,
+          "attempt": 1,
+          "ms": 4716
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5971109,
+          "sha256": "e29dc8b5e3b9d2a050bb91ceef4d3bc14862b3c2c4acebbca87814fe25170f83",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3068
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b09/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeiezabgvablx2v53utssvcrbc5tpwfyosfvcx6g2d2pnocjbftknxe",
+      "size": 771877,
+      "sha256": "e63afbc6043036979e831f0fff39f43e1ac91b279d4911fd92b22832042ee513",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 771877,
+          "sha256": "e63afbc6043036979e831f0fff39f43e1ac91b279d4911fd92b22832042ee513",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6538
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 771877,
+          "sha256": "e63afbc6043036979e831f0fff39f43e1ac91b279d4911fd92b22832042ee513",
+          "ok": true,
+          "attempt": 1,
+          "ms": 879
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b09/person_has_property/part-00000.parquet",
+      "cid": "bafybeibqabuowymxb7pxbpramlml6abm4phrx7ixqxyfaimdjdkjhs3dvq",
+      "size": 5930081,
+      "sha256": "3f6f11096dab2b3bc8850c422afc754fdb7b8e953e6e64981416b3c304c7ae92",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5930081,
+          "sha256": "3f6f11096dab2b3bc8850c422afc754fdb7b8e953e6e64981416b3c304c7ae92",
+          "ok": true,
+          "attempt": 1,
+          "ms": 8318
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5930081,
+          "sha256": "3f6f11096dab2b3bc8850c422afc754fdb7b8e953e6e64981416b3c304c7ae92",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2654
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b09/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeiel7l6u3robkfqixq6d46x3qa7n65yami3jsquwwovmoaphkekabm",
+      "size": 5929031,
+      "sha256": "902d7db97dd44e36c216da54e19956b4557d0a34b92761ea30a3d6d5d0d9d81c",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5929031,
+          "sha256": "902d7db97dd44e36c216da54e19956b4557d0a34b92761ea30a3d6d5d0d9d81c",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5831
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5929031,
+          "sha256": "902d7db97dd44e36c216da54e19956b4557d0a34b92761ea30a3d6d5d0d9d81c",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2544
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b07/property/part-00000.parquet",
+      "cid": "bafybeigpuijssvajlhjqnopfok6ve5m72heey3ssjem3xmoqb52i7wtbom",
+      "size": 3321425,
+      "sha256": "233046fcc7d69b75f56898d01cbbb1a8cf43899b0cab204e42e24d6a323ff7d9",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 3321425,
+          "sha256": "233046fcc7d69b75f56898d01cbbb1a8cf43899b0cab204e42e24d6a323ff7d9",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6208
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 3321425,
+          "sha256": "233046fcc7d69b75f56898d01cbbb1a8cf43899b0cab204e42e24d6a323ff7d9",
+          "ok": true,
+          "attempt": 1,
+          "ms": 1670
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b04/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeicpl5xtrhylxm7e2jw47vqssvgnlzmtk2rayrrwikj2soevyxzcgy",
+      "size": 5971393,
+      "sha256": "277e8cfd0db223ed4802fd60dfe913fc238d3fa7bc8c190deeeb183e74bf8eb3",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5971393,
+          "sha256": "277e8cfd0db223ed4802fd60dfe913fc238d3fa7bc8c190deeeb183e74bf8eb3",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5658
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5971393,
+          "sha256": "277e8cfd0db223ed4802fd60dfe913fc238d3fa7bc8c190deeeb183e74bf8eb3",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2575
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b07/company_has_property/part-00000.parquet",
+      "cid": "bafybeibuuy5s6q5bxdlsmsgy5fmyqtptvjfpbevuornst6ixr5odu5roby",
+      "size": 951763,
+      "sha256": "2e058697269ce2077503ed3a995e2d71d093f24ba876afa43351d1cc040ad3a3",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 951763,
+          "sha256": "2e058697269ce2077503ed3a995e2d71d093f24ba876afa43351d1cc040ad3a3",
+          "ok": true,
+          "attempt": 1,
+          "ms": 4762
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 951763,
+          "sha256": "2e058697269ce2077503ed3a995e2d71d093f24ba876afa43351d1cc040ad3a3",
+          "ok": true,
+          "attempt": 1,
+          "ms": 933
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b03/structure/part-00000.parquet",
+      "cid": "bafybeibwrlojoutyzc7nixtc3tbjh6c4j5v3wpaunsxc4cyllvm2dwg2sa",
+      "size": 3113300,
+      "sha256": "4858da89d39b030e535b4aab0f9e21cb14f02e06e8071e89f0d7e670d428cff6",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 3113300,
+          "sha256": "4858da89d39b030e535b4aab0f9e21cb14f02e06e8071e89f0d7e670d428cff6",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6737
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 3113300,
+          "sha256": "4858da89d39b030e535b4aab0f9e21cb14f02e06e8071e89f0d7e670d428cff6",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3072
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b04/property_has_structure/part-00000.parquet",
+      "cid": "bafybeianfhku6ziliytyu43zxjnomwsxkuxb3422phhgjre5na6jzfxdpi",
+      "size": 5971524,
+      "sha256": "c575ac2f3ec7c283fd5f8144c949820a1173010513a01d2c61672f4e9ed34086",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5971524,
+          "sha256": "c575ac2f3ec7c283fd5f8144c949820a1173010513a01d2c61672f4e9ed34086",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5767
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5971524,
+          "sha256": "c575ac2f3ec7c283fd5f8144c949820a1173010513a01d2c61672f4e9ed34086",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2514
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b09/structure/part-00000.parquet",
+      "cid": "bafybeia5dr2q4zsyqkchkq4fc6ekdwgneqzd6mehyxyz6s2r4bpbhohppm",
+      "size": 3091269,
+      "sha256": "edc54b9db7965ffb373357d0aba287a16608407e5ad07f53ea570c4311776d30",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 3091269,
+          "sha256": "edc54b9db7965ffb373357d0aba287a16608407e5ad07f53ea570c4311776d30",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6401
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 3091269,
+          "sha256": "edc54b9db7965ffb373357d0aba287a16608407e5ad07f53ea570c4311776d30",
+          "ok": true,
+          "attempt": 1,
+          "ms": 1796
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b02/sales_history_has_person/part-00000.parquet",
+      "cid": "bafybeihidx3qejxlb66uvyyvxqwbyagqijd46t2vh5a3gel34guyiy2pwm",
+      "size": 5226509,
+      "sha256": "b57ec8f94092e275363060124d0c1ada13d06e4e800446849d39bd18f15cdd6d",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5226509,
+          "sha256": "b57ec8f94092e275363060124d0c1ada13d06e4e800446849d39bd18f15cdd6d",
+          "ok": true,
+          "attempt": 1,
+          "ms": 7346
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5226509,
+          "sha256": "b57ec8f94092e275363060124d0c1ada13d06e4e800446849d39bd18f15cdd6d",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3277
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/person/part-00000.parquet",
+      "cid": "bafybeiffqjku6qydjdohpoavwxbsq73qvh63kzilyjjvp657bxdcuv7aim",
+      "size": 2786961,
+      "sha256": "629702c62d3d872993f0c0da391824aca3b25f17b010441f2cf97502a58999fe",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 2786961,
+          "sha256": "629702c62d3d872993f0c0da391824aca3b25f17b010441f2cf97502a58999fe",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6423
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 2786961,
+          "sha256": "629702c62d3d872993f0c0da391824aca3b25f17b010441f2cf97502a58999fe",
+          "ok": true,
+          "attempt": 1,
+          "ms": 1742
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b04/geometry/part-00000.parquet",
+      "cid": "bafybeid2wgd4mmcluzdwrz54jalm4iftd67dpdxtywvd4vehgx7ucv5sxq",
+      "size": 3619186,
+      "sha256": "3fc49d920ee5bdac54aa3ed82cc233474837e987237b65ca2c83883c4cff6fd6",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 3619186,
+          "sha256": "3fc49d920ee5bdac54aa3ed82cc233474837e987237b65ca2c83883c4cff6fd6",
+          "ok": true,
+          "attempt": 1,
+          "ms": 4482
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 3619186,
+          "sha256": "3fc49d920ee5bdac54aa3ed82cc233474837e987237b65ca2c83883c4cff6fd6",
+          "ok": true,
+          "attempt": 1,
+          "ms": 1779
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b09/address/part-00000.parquet",
+      "cid": "bafybeibb322kjige2esnubzv5hm4sgshizcxf5orulgwqhzb5cjhuyib74",
+      "size": 5497798,
+      "sha256": "f7c71f038019a4b89198e9e75c8e062d5a650b83f15a1e5ee59f8db6c01749bb",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5497798,
+          "sha256": "f7c71f038019a4b89198e9e75c8e062d5a650b83f15a1e5ee59f8db6c01749bb",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6921
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5497798,
+          "sha256": "f7c71f038019a4b89198e9e75c8e062d5a650b83f15a1e5ee59f8db6c01749bb",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2374
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b08/structure/part-00000.parquet",
+      "cid": "bafybeievzvgzrnxqtnoy35illuypdosy5w6gofiuwxj5ldziiw2pa6qqvi",
+      "size": 3111338,
+      "sha256": "43511d8743f4ebdcefaa54d51f59eba257ddaecfd09b9d68673ffc945ae12258",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 3111338,
+          "sha256": "43511d8743f4ebdcefaa54d51f59eba257ddaecfd09b9d68673ffc945ae12258",
+          "ok": true,
+          "attempt": 1,
+          "ms": 7234
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 3111338,
+          "sha256": "43511d8743f4ebdcefaa54d51f59eba257ddaecfd09b9d68673ffc945ae12258",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2660
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b07/structure/part-00000.parquet",
+      "cid": "bafybeigc2ybmb7yhjsn4ycgl3djag4ts4ni4e7kkmx6ejbvgnnrnegxujm",
+      "size": 3087347,
+      "sha256": "428e3fa3058c90e8a65ba3693cab3fdc32b8962ede3fd6fe6c67b81bbcc0b90c",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 3087347,
+          "sha256": "428e3fa3058c90e8a65ba3693cab3fdc32b8962ede3fd6fe6c67b81bbcc0b90c",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6070
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 3087347,
+          "sha256": "428e3fa3058c90e8a65ba3693cab3fdc32b8962ede3fd6fe6c67b81bbcc0b90c",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2234
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b06/company/part-00000.parquet",
+      "cid": "bafybeibkx232mezc2yq2i2kylqkkhcaiwffwohvjvjpfx44c6kf23axlba",
+      "size": 571140,
+      "sha256": "286f80b42eda1568d8332eb3b22d34f1ed8dccd907b057da64a16909f21394b5",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 571140,
+          "sha256": "286f80b42eda1568d8332eb3b22d34f1ed8dccd907b057da64a16909f21394b5",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3946
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 571140,
+          "sha256": "286f80b42eda1568d8332eb3b22d34f1ed8dccd907b057da64a16909f21394b5",
+          "ok": true,
+          "attempt": 1,
+          "ms": 772
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b04/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeifkeemc2miibwp3bmzaseahzanrukckdxze6oevct3b7z7dcmxa74",
+      "size": 5971710,
+      "sha256": "e7f804108d9a30d89ded3c97d8e340b5bd297e8ef51760a88687752f0e975dc1",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 5971710,
+          "sha256": "e7f804108d9a30d89ded3c97d8e340b5bd297e8ef51760a88687752f0e975dc1",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5835
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 5971710,
+          "sha256": "e7f804108d9a30d89ded3c97d8e340b5bd297e8ef51760a88687752f0e975dc1",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3135
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b05/sales_history/part-00000.parquet",
+      "cid": "bafybeiepxsh5c2wu24ae2w27p4gtlqh7ysxewucshr6mkk3a55yokwmw3y",
+      "size": 9721608,
+      "sha256": "444854dbc7c52df5bf8953c93434b0a098be01e01acc3ed1c4a3d4903b588d77",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 9721608,
+          "sha256": "444854dbc7c52df5bf8953c93434b0a098be01e01acc3ed1c4a3d4903b588d77",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6001
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 9721608,
+          "sha256": "444854dbc7c52df5bf8953c93434b0a098be01e01acc3ed1c4a3d4903b588d77",
+          "ok": true,
+          "attempt": 1,
+          "ms": 2815
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_not_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/property/part-00000.parquet",
+      "cid": "bafkreicns6a6t4nlsbmvbgimgt7dbbaav2kk3i44vsyq3lvfdfayxefmzy",
+      "size": 190636,
+      "sha256": "4d9781e9f1ab905950990c34fe308400ae94ada39cacb10daea519418b90acce",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 190636,
+          "sha256": "4d9781e9f1ab905950990c34fe308400ae94ada39cacb10daea519418b90acce",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5640
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 190636,
+          "sha256": "4d9781e9f1ab905950990c34fe308400ae94ada39cacb10daea519418b90acce",
+          "ok": true,
+          "attempt": 1,
+          "ms": 466
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_not_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/properties/part-00000.parquet",
+      "cid": "bafkreifg5yqdldgkfzyhe2nakejigyw2rfgxbxr7fmx6ebixriqnravcma",
+      "size": 225848,
+      "sha256": "a6ee20358cca2e707269a051128362da894d70de3f2b2fe205178a20d882a260",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 225848,
+          "sha256": "a6ee20358cca2e707269a051128362da894d70de3f2b2fe205178a20d882a260",
+          "ok": true,
+          "attempt": 1,
+          "ms": 5165
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 225848,
+          "sha256": "a6ee20358cca2e707269a051128362da894d70de3f2b2fe205178a20d882a260",
+          "ok": true,
+          "attempt": 1,
+          "ms": 494
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_not_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/property_improvement/part-00000.parquet",
+      "cid": "bafybeieiaxhozdcitwcyn32ds4klkiej47j6urw3kd6cnrk2t2kkgjfla4",
+      "size": 271130,
+      "sha256": "d9a603c22fc22cbe61301da1dee619b86792dd490b2fee04b378bf6cede27666",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 271130,
+          "sha256": "d9a603c22fc22cbe61301da1dee619b86792dd490b2fee04b378bf6cede27666",
+          "ok": true,
+          "attempt": 1,
+          "ms": 6060
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 271130,
+          "sha256": "d9a603c22fc22cbe61301da1dee619b86792dd490b2fee04b378bf6cede27666",
+          "ok": true,
+          "attempt": 1,
+          "ms": 658
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_not_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/address/part-00000.parquet",
+      "cid": "bafkreicpub7weom7hpvvj25bjacg72wqbupwaiyqoaxhfhyziqvka4lixq",
+      "size": 203474,
+      "sha256": "4fa07f62399f3beb54eba148046fead00d1f602310702e729f19442aa07168bc",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 203474,
+          "sha256": "4fa07f62399f3beb54eba148046fead00d1f602310702e729f19442aa07168bc",
+          "ok": true,
+          "attempt": 1,
+          "ms": 7332
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 203474,
+          "sha256": "4fa07f62399f3beb54eba148046fead00d1f602310702e729f19442aa07168bc",
+          "ok": true,
+          "attempt": 1,
+          "ms": 456
+        }
+      },
+      "both_ok": true
+    },
+    {
+      "group": "table_not_on_pinata",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/property_improvement/part-00000.parquet",
+      "cid": "bafkreif7wsidsql6xh3rpo7vn4udldw3uto52mnbporqxehwe7622tul3m",
+      "size": 232115,
+      "sha256": "bfb49039417eb9f717bbf56f28358edba4dddd31a17ba30b90f627fdad4e8bdb",
+      "gateways": {
+        "pinata": {
+          "status": 200,
+          "bytes": 232115,
+          "sha256": "bfb49039417eb9f717bbf56f28358edba4dddd31a17ba30b90f627fdad4e8bdb",
+          "ok": true,
+          "attempt": 1,
+          "ms": 3784
+        },
+        "orbitor": {
+          "status": 200,
+          "bytes": 232115,
+          "sha256": "bfb49039417eb9f717bbf56f28358edba4dddd31a17ba30b90f627fdad4e8bdb",
+          "ok": true,
+          "attempt": 1,
+          "ms": 561
+        }
+      },
+      "both_ok": true
+    }
+  ]
+}

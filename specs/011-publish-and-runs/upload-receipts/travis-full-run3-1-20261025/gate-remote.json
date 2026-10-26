@@ -1,0 +1,29 @@
+{
+  "step": "gate-remote",
+  "manifestCid": "bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai",
+  "remoteOnly": true,
+  "result": "PASS",
+  "summary": {
+    "manifest": "/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/runs/travis-full-run3-1-20261025/manifest.json",
+    "v_roofing_permit": 15025,
+    "meta_permit": 15025,
+    "permits_emitted": 15025,
+    "permit_side_properties": 10792,
+    "unmatched_properties": 0,
+    "pids_checked": 0,
+    "pids_unmatched": 0,
+    "result": "PASS",
+    "failures": [],
+    "previous": {
+      "previous_properties": 441961,
+      "previous_permits": 15025,
+      "missing_properties": 0,
+      "missing_permits": 0,
+      "changed_identifier": 0,
+      "remapped": 0,
+      "cid_map": [],
+      "lost": []
+    }
+  },
+  "recordedAt": "2026-10-26T00:03:29.361Z"
+}

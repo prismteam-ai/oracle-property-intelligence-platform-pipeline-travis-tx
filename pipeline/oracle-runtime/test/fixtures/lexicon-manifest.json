@@ -1,0 +1,54 @@
+{
+  "property": {
+    "ipfsCid": "bafkreidmp2ndoc2efglfjezsr3jhzuk25ihunuagwqcpt6dtf2sf36cjau",
+    "type": "class"
+  },
+  "address": {
+    "ipfsCid": "bafkreiebzvyy6prnwf3dcippii7yysrjesnbxpvcpyqmbs2b67hm2taf2a",
+    "type": "class"
+  },
+  "parcel": {
+    "ipfsCid": "bafkreih3cczzb2m4bkh5kody6wscmwjwlmpea3q6y5hvsokuqb5vg7qt3a",
+    "type": "class"
+  },
+  "structure": {
+    "ipfsCid": "bafkreidmellpslg6wc4xchnmtobt6g3xjs3sdx2m6crcfzsomsaakrwtim",
+    "type": "class"
+  },
+  "sales_history": {
+    "ipfsCid": "bafkreifxchneb27o64d2bokhpkqiompw3lyoctqeooe5vq5m6dsyvyxgku",
+    "type": "class"
+  },
+  "person": {
+    "ipfsCid": "bafkreig5vowakcuc6ropc4wfs5mgq5n3zbplegqqnsznwlogdjlat5z3nq",
+    "type": "class"
+  },
+  "company": {
+    "ipfsCid": "bafkreifpgr7nbrcmdrjocuys34yjgdtttynt3pwrkpv47mlheklykmopjy",
+    "type": "class"
+  },
+  "geometry": {
+    "ipfsCid": "bafkreibwkj4mvtrrsbrunzx37p3vwumnx2pu3ugh5b664wbz6puyushw2y",
+    "type": "class"
+  },
+  "property_improvement": {
+    "ipfsCid": "bafkreid5jnt3qgp4qmb4iea6klbdpprd6evpgrpc3gofseol4s3kdljeam",
+    "type": "class"
+  },
+  "Seed": {
+    "ipfsCid": "bafkreibhurphpjdq33ysit57jtzmdldgngepsdbsw4vm7esawth2ezgaxu",
+    "type": "dataGroup"
+  },
+  "County": {
+    "ipfsCid": "bafkreia6tjziby3upxmidymud5iusd32urrztslgrudkwysc7ydmxoekuq",
+    "type": "dataGroup"
+  },
+  "Property_Improvement": {
+    "ipfsCid": "bafkreicyzywzwhmguojpi2otgrwsyi37le3u4lnavljbxu76cnrudxaxfu",
+    "type": "dataGroup"
+  },
+  "Tax": {
+    "ipfsCid": "bafkreiee4xb2wrreu5ey2horazkym3wrudbf2ungvutknkjycjrz46hjjy",
+    "type": "dataGroup"
+  }
+}

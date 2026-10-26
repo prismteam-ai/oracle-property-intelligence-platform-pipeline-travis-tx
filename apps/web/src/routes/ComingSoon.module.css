@@ -1,0 +1,105 @@
+/* Coming soon page (A-13 T042): label, title, one sentence, then the static skeleton. */
+.page {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--md-sys-typescale-headline-small-font);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+}
+
+.label {
+  justify-self: start;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+}
+
+.sentence {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+/* Shell390ComingSoon board: the other-county card centred in the page like a basic dialog
+   (surface-container-high, extra-large corner, level 3), its button at the end; it keeps a
+   dialog's reading width on wide screens. */
+.countyPage {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+}
+
+.countyCard {
+  box-sizing: border-box;
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: calc(var(--space-10) * 9);
+  padding: var(--space-6);
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: var(--md-sys-elevation-level3);
+}
+
+.body {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.countyCard .sentence {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+}
+
+.clock {
+  color: var(--md-sys-color-primary);
+}
+
+.filled {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-6);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+.filled:focus-visible,
+.link:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}

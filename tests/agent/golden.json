@@ -1,0 +1,211 @@
+{
+  "_comment": "T020 (A-14). Prompts (`turns[].prompt`) are G1-G6 from ../../../assessment-guide/reference/checks.md § 7.1, word for word. `oracle` is the exact query-core function call (agent-design.md § 6.2) the grader re-runs locally to compute the correctness/recall baseline, using the real functions built in wave 1 (searchProperties, listPermits, geocodePlace from @countylens/query-core). `expect` fields are from agent-design.md § 6.2/§ 6.3: must_mention (regex, case-insensitive, checked against answer+how), must_flag_missing (field names expected in missing[]), empty_reason, and the AD-27/agent-design.md § budget ceilings. G5's permit_number and G4's default radius are placeholders the grader must replace from the bound run at test start (see golden.test.ts), never hard-coded per § 6.2 note.",
+  "cases": [
+    {
+      "id": "G1",
+      "turns": [
+        {
+          "prompt": "Which properties in Travis County within five miles of Pflugerville have roofs older than 15 years?"
+        }
+      ],
+      "expect": {
+        "area_id": "Pflugerville",
+        "radius_mi": 5,
+        "applied": {
+          "radius_mi": 5,
+          "roof_age_years_min": 15
+        },
+        "oracle": {
+          "fn": "searchProperties",
+          "input": {
+            "area": {
+              "place": "Pflugerville"
+            },
+            "radius_mi": 5,
+            "roof_age_years_min": 15,
+            "limit": 1000
+          }
+        },
+        "must_mention": ["Census 2024 Gazetteer", "\\b5\\b", "\\b15\\b"],
+        "must_flag_missing": [],
+        "empty_reason": null,
+        "max_steps": 6,
+        "max_model_calls": 3,
+        "max_output_tokens": 1500
+      }
+    },
+    {
+      "id": "G2",
+      "turns": [
+        {
+          "prompt": "Which properties in Travis County within five miles of Pflugerville have roofs older than 15 years?"
+        },
+        {
+          "prompt": "Which properties near that area have open roofing permits that have been open for many years, and who is the listed contractor?"
+        }
+      ],
+      "expect": {
+        "area_id": "Pflugerville",
+        "radius_mi": 5,
+        "applied": {
+          "radius_mi": 5,
+          "status_class": "open_or_stalled",
+          "open_years_min": 5
+        },
+        "oracle": {
+          "fn": "listPermits",
+          "input": {
+            "area": {
+              "place": "Pflugerville"
+            },
+            "radius_mi": 5,
+            "status_class": "open_or_stalled",
+            "open_years_min": 5,
+            "limit": 1000
+          }
+        },
+        "must_mention": [
+          "Pflugerville",
+          "≥\\s*5|at least 5|five",
+          "contractor not printed|no_lexicon_carrier",
+          "BBB.*not available|not available.*BBB"
+        ],
+        "must_flag_missing": ["contractor.name_as_printed", "bbb_status"],
+        "empty_reason": null,
+        "max_steps": 6,
+        "max_model_calls": 3,
+        "max_output_tokens": 1500
+      }
+    },
+    {
+      "id": "G3",
+      "turns": [
+        {
+          "prompt": "Show me open roofing permits older than five years within five miles of Manor"
+        }
+      ],
+      "expect": {
+        "area_id": "Manor",
+        "radius_mi": 5,
+        "applied": {
+          "radius_mi": 5,
+          "status_class": "open_or_stalled",
+          "open_years_min": 5,
+          "sort": "open_desc"
+        },
+        "oracle": {
+          "fn": "listPermits",
+          "input": {
+            "area": {
+              "place": "Manor"
+            },
+            "radius_mi": 5,
+            "status_class": "open_or_stalled",
+            "open_years_min": 5,
+            "sort": "open_desc",
+            "limit": 1000
+          }
+        },
+        "must_mention": ["Manor", "\\b5\\b"],
+        "must_flag_missing": [],
+        "empty_reason": null,
+        "sort_field": "open_days",
+        "sort_order": "desc",
+        "max_steps": 6,
+        "max_model_calls": 3,
+        "max_output_tokens": 1500
+      }
+    },
+    {
+      "id": "G4",
+      "turns": [
+        {
+          "prompt": "Which homes near Lakeway haven't changed owners in 10+ years and have owners outside the area?"
+        }
+      ],
+      "expect": {
+        "area_id": "Lakeway",
+        "radius_mi": 5,
+        "radius_mi_assumption": true,
+        "applied": {
+          "radius_mi": 5,
+          "tenure_years_min": 10,
+          "owner_is_out_of_area": true
+        },
+        "oracle": {
+          "fn": "searchProperties",
+          "input": {
+            "area": {
+              "place": "Lakeway"
+            },
+            "radius_mi": 5,
+            "tenure_years_min": 10,
+            "owner_is_out_of_area": true,
+            "limit": 1000
+          }
+        },
+        "must_mention": ["outside the area", "not_in_export|not in the published export"],
+        "must_flag_missing": ["owner_is_out_of_area"],
+        "empty_reason": "field_not_published",
+        "max_steps": 6,
+        "max_model_calls": 3,
+        "max_output_tokens": 1500
+      }
+    },
+    {
+      "id": "G5",
+      "turns": [
+        {
+          "prompt": "What's the BBB rating of the contractor on permit {real permit number}?"
+        }
+      ],
+      "expect": {
+        "permit_number": "{real permit number}",
+        "permit_number_from_bound_run": true,
+        "applied": {
+          "permit_number": "{real permit number}"
+        },
+        "oracle": {
+          "fn": "listPermits",
+          "input": {
+            "permit_number": "{real permit number}",
+            "limit": 1
+          }
+        },
+        "must_mention": [
+          "{real permit number}",
+          "BBB.*not available|rating.*not available|missing"
+        ],
+        "must_flag_missing": ["bbb_status"],
+        "empty_reason_when_not_found": "not_found",
+        "max_steps": 6,
+        "max_model_calls": 3,
+        "max_output_tokens": 1500
+      }
+    },
+    {
+      "id": "G6",
+      "turns": [
+        {
+          "prompt": "How many properties have roofs older than 40 years in ZIP 99999?"
+        }
+      ],
+      "expect": {
+        "applied": {},
+        "oracle": {
+          "fn": "geocodePlace",
+          "input": {
+            "query": "ZIP 99999"
+          }
+        },
+        "must_mention": ["not.*Travis|out of scope|outside Travis County"],
+        "must_not_contain_cid": true,
+        "matches_length": 0,
+        "empty_reason": "out_of_scope",
+        "max_steps": 6,
+        "max_model_calls": 3,
+        "max_output_tokens": 1500
+      }
+    }
+  ]
+}

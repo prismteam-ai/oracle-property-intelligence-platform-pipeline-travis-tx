@@ -1,0 +1,477 @@
+/* Explore (A-13 T025/T029, FR-018; A-16 PO notes): mobile-first. 390: one column (filters as a
+   sheet above the results, the drawer a bottom sheet). 840: filters 1/3 beside the results; with
+   a property open, results 3/5 and the sticky drawer 2/5 under the folded filters. 1240: filters
+   1/4. Atlas § 7 tabs, text field, data table and buttons; 48 px targets; tokens only. */
+
+.page {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  font: inherit;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.drawer:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.filters,
+.results {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+/* The left drawer (Explore1440 / ExploreQ-ai boards): one flat surface holding the head and the
+   mode's query controls. */
+.filters {
+  padding: var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface);
+}
+
+.area,
+.engine,
+.empty,
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.area,
+.engine {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.header {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+}
+
+.empty {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.outside {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+
+/* Property drawer. Compact (< 840 px, Property390 board): a bottom sheet with a grabber, above
+   the bottom navigation (< 600 px) like the More sheet; from 840 px a column beside the results. */
+.drawer {
+  position: fixed;
+  z-index: 3;
+  inset: auto 0 calc(var(--space-10) + var(--space-4)) 0;
+  box-sizing: border-box;
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  min-width: 0;
+  max-height: 75dvh;
+  overflow-y: auto;
+  padding: var(--space-2) var(--space-5) var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.grabber {
+  justify-self: center;
+  width: var(--space-7);
+  height: var(--space-1);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-outline-variant);
+}
+
+.drawerHead {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.drawerHead > :first-child {
+  flex: 1 1 auto;
+}
+
+.iconButton {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--space-9);
+  min-width: var(--space-9);
+  height: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.iconButton:focus-visible,
+.mapsLink:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* "Open the area in Google Maps": a 48 px tall link row (board: text link with open_in_new). */
+.mapsLink {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: var(--space-1);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+}
+
+/* Task B PropertyDetail: headline-small title on the surface colour. */
+.drawerTitle {
+  margin: 0;
+  font-family: var(--md-sys-typescale-headline-small-font);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* Property drawer (Property1440/390 boards): title block, chip row, Street View box, actions,
+   sections with title-small headings, the evidence chain as a wrapped arrow list. */
+.drawerTitleBlock {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.streetView {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px dashed var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-medium);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.streetView p {
+  margin: 0;
+}
+
+.streetTitle {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.drawerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.tonalButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+.tonalButton {
+  border: 0;
+  color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+}
+.tonalButton:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+.drawerSection {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+}
+
+.chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+.chain li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Matches / Close (Explore1440 board): Atlas § 7 segmented tonal tabs with their counts. */
+.resultTabs {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.resultTab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background: var(--md-sys-color-surface);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.resultTabOn {
+  border-color: transparent;
+  color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+}
+
+.resultTab:focus-visible,
+.pageButton:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.tabCount {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The pager under the results (board): "Showing a–b of n", previous, page, next. */
+/* Task B pager footer (B-03 ResultsList): "Showing …" on the left, the page buttons side by side
+   on the right; it wraps under the line on a phone. Not sticky: a sticky bar covered the card
+   icon buttons under it, which axe reports as too-small targets (TC-083, WCAG 2.5.8). */
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  background: var(--md-sys-color-surface);
+}
+
+.pager > :first-child {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 600px) {
+  .pager {
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .pager > :first-child {
+    flex-basis: auto;
+  }
+}
+
+.pageButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+.pageButton:disabled {
+  opacity: var(--md-sys-state-disabled-opacity);
+  cursor: default;
+}
+
+@media (min-width: 600px) {
+  .drawer {
+    inset: auto 0 0;
+  }
+}
+
+/* From 840 px: filters beside the results. With a property open (Property1440 board) the filters
+   fold into their "Filters" button above, and the results and the drawer share the width. */
+@media (min-width: 840px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .layout.withDrawer {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .withDrawer > .filters {
+    grid-column: 1 / -1;
+  }
+
+  .drawer {
+    position: sticky;
+    z-index: auto;
+    top: var(--space-4);
+    max-height: calc(100dvh - var(--space-10) * 2);
+    padding-top: var(--space-4);
+    border-radius: var(--md-sys-shape-corner-large);
+  }
+
+  .grabber {
+    display: none;
+  }
+}
+
+@media (min-width: 1240px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  }
+}
+
+/* Collapsed drawer (from 840 px): a narrow strip of the head's icons; the results take the rest. */
+@media (min-width: 840px) {
+  .layout.collapsed,
+  .layout.collapsed.withDrawer {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .layout.collapsed.withDrawer {
+    grid-template-columns: auto minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .layout.collapsed.withDrawer > .filters {
+    grid-column: auto;
+  }
+
+  .layout:not(.collapsed) > .filters {
+    position: sticky;
+    top: var(--space-4);
+    max-height: calc(100dvh - var(--space-10) * 2);
+    overflow-y: auto;
+  }
+
+  .collapsed > .filters {
+    align-self: start;
+    padding: var(--space-2);
+  }
+}
+
+/* The page search box (Explore390/768 boards); from 1024 px the app bar holds it. */
+@media (min-width: 1024px) {
+  .page > .pageSearch {
+    display: none;
+  }
+}
+
+/* Task B pager: numbered page buttons with gaps; the current page on secondary-container. */
+.pageButton.pageOn {
+  color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+}
+
+.gap {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* The AI tab's results list under its answer (PO 2026-10-26): the same column, ruled off. */
+.embeddedResults {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}

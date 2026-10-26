@@ -1,0 +1,69 @@
+/* RunSelect (PO 2026-10-26): an Atlas outlined field, 48 px, label above (or for assistive tech
+   only), the native select without its own arrow and a decorative chevron in its place. Tokens
+   only. */
+.field {
+  display: inline-grid;
+  gap: var(--space-1);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.label {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.box {
+  position: relative;
+  display: grid;
+  min-width: 0;
+}
+
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--space-9);
+  padding: 0 calc(var(--space-3) + var(--space-6)) 0 var(--space-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  appearance: none;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  text-overflow: ellipsis;
+}
+
+.select:hover {
+  background: var(--md-sys-color-surface-container);
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* The chevron sits over the select's right padding; clicks pass through to the select. */
+.box > [data-icon] {
+  position: absolute;
+  top: 50%;
+  right: var(--space-3);
+  color: var(--md-sys-color-on-surface-variant);
+  pointer-events: none;
+  transform: translateY(-50%);
+}

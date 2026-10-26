@@ -1,0 +1,506 @@
+[
+  {
+    "zcta": "76574",
+    "lat": 30.579326,
+    "lon": -97.388618,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78610",
+    "lat": 30.079459,
+    "lon": -97.841011,
+    "counties": ["48453", "48055", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78612",
+    "lat": 30.094071,
+    "lon": -97.495094,
+    "counties": ["48453", "48021"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78613",
+    "lat": 30.507079,
+    "lon": -97.819464,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78615",
+    "lat": 30.463118,
+    "lon": -97.392857,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78616",
+    "lat": 29.926602,
+    "lon": -97.553539,
+    "counties": ["48453", "48021", "48055"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78617",
+    "lat": 30.147803,
+    "lon": -97.603558,
+    "counties": ["48453", "48021"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78620",
+    "lat": 30.225607,
+    "lon": -98.136297,
+    "counties": ["48453", "48031", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78621",
+    "lat": 30.337023,
+    "lon": -97.36042,
+    "counties": ["48453", "48021", "48287", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78634",
+    "lat": 30.55985,
+    "lon": -97.544081,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78640",
+    "lat": 29.994866,
+    "lon": -97.821239,
+    "counties": ["48453", "48055", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78641",
+    "lat": 30.557918,
+    "lon": -97.913672,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78645",
+    "lat": 30.450041,
+    "lon": -97.971978,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78652",
+    "lat": 30.134626,
+    "lon": -97.860639,
+    "counties": ["48453", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78653",
+    "lat": 30.338229,
+    "lon": -97.52073,
+    "counties": ["48453", "48021"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78654",
+    "lat": 30.571849,
+    "lon": -98.210498,
+    "counties": ["48453", "48053"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78660",
+    "lat": 30.43963,
+    "lon": -97.594687,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78663",
+    "lat": 30.415519,
+    "lon": -98.311699,
+    "counties": ["48453", "48031", "48053", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78664",
+    "lat": 30.505414,
+    "lon": -97.647284,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78669",
+    "lat": 30.442478,
+    "lon": -98.123381,
+    "counties": ["48453", "48031", "48053"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78701",
+    "lat": 30.270569,
+    "lon": -97.742589,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78702",
+    "lat": 30.263378,
+    "lon": -97.714483,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78703",
+    "lat": 30.293268,
+    "lon": -97.76605,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78704",
+    "lat": 30.243032,
+    "lon": -97.765081,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78705",
+    "lat": 30.294713,
+    "lon": -97.738978,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78712",
+    "lat": 30.283916,
+    "lon": -97.732937,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78719",
+    "lat": 30.139718,
+    "lon": -97.672615,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78721",
+    "lat": 30.271276,
+    "lon": -97.683455,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78722",
+    "lat": 30.290085,
+    "lon": -97.714582,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78723",
+    "lat": 30.304238,
+    "lon": -97.68575,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78724",
+    "lat": 30.292709,
+    "lon": -97.617945,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78725",
+    "lat": 30.230011,
+    "lon": -97.608576,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78726",
+    "lat": 30.4308,
+    "lon": -97.840085,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78727",
+    "lat": 30.428984,
+    "lon": -97.717708,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78728",
+    "lat": 30.453764,
+    "lon": -97.686695,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78729",
+    "lat": 30.457246,
+    "lon": -97.756419,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78730",
+    "lat": 30.363577,
+    "lon": -97.839838,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78731",
+    "lat": 30.348244,
+    "lon": -97.768139,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78732",
+    "lat": 30.380104,
+    "lon": -97.891857,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78733",
+    "lat": 30.321401,
+    "lon": -97.884739,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78734",
+    "lat": 30.380059,
+    "lon": -97.94781,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78735",
+    "lat": 30.269121,
+    "lon": -97.868816,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78736",
+    "lat": 30.24836,
+    "lon": -97.949745,
+    "counties": ["48453", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78737",
+    "lat": 30.177042,
+    "lon": -97.956662,
+    "counties": ["48453", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78738",
+    "lat": 30.307015,
+    "lon": -97.988911,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78739",
+    "lat": 30.175967,
+    "lon": -97.890894,
+    "counties": ["48453", "48209"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78741",
+    "lat": 30.229681,
+    "lon": -97.713687,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78742",
+    "lat": 30.242354,
+    "lon": -97.6592,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78744",
+    "lat": 30.177791,
+    "lon": -97.725147,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78745",
+    "lat": 30.207424,
+    "lon": -97.798244,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78746",
+    "lat": 30.29686,
+    "lon": -97.809566,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78747",
+    "lat": 30.124749,
+    "lon": -97.741214,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78748",
+    "lat": 30.160024,
+    "lon": -97.823302,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78749",
+    "lat": 30.216175,
+    "lon": -97.85583,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78750",
+    "lat": 30.441084,
+    "lon": -97.786667,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78751",
+    "lat": 30.310756,
+    "lon": -97.722767,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78752",
+    "lat": 30.331428,
+    "lon": -97.703643,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78753",
+    "lat": 30.383591,
+    "lon": -97.673349,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78754",
+    "lat": 30.356711,
+    "lon": -97.639281,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78756",
+    "lat": 30.322255,
+    "lon": -97.740163,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78757",
+    "lat": 30.35167,
+    "lon": -97.732666,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78758",
+    "lat": 30.387697,
+    "lon": -97.706655,
+    "counties": ["48453"],
+    "partial_in_travis": false,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  },
+  {
+    "zcta": "78759",
+    "lat": 30.402705,
+    "lon": -97.760938,
+    "counties": ["48453", "48491"],
+    "partial_in_travis": true,
+    "source_file": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_zcta_national.zip"
+  }
+]

@@ -1,0 +1,12 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/reexport-permits.ts --pids ../../specs/011-publish-and-runs/pilot-pids.txt --chunk 50 --concurrency 2
+{"ts":"2026-10-24T17:05:11.001Z","level":"info","event":"source.capture","url":"https://lexicon.elephant.xyz/api/manifest","method":"GET","status":200,"bytes":18499,"sha256":"7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640","captured_at":"2026-10-24T17:05:09.344Z","user_agent":"oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)","attempts":1,"outcome":"ok","geo_signal":"none","app_token_used":false,"timeout_ms":null,"blocked_reason":null,"rate_limits_observed":null}
+[reexport] job=travis-a11-permits-fix-20261024 pids=287 chunk=50 concurrency=2
+[reexport] group dir /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a11-permits-fix-20261024/groups/property_improvement
+[reexport] chunk 1/6 pids=50 written=50 reused=0 redone=0 empty=0
+[reexport] chunk 2/6 pids=50 written=50 reused=0 redone=0 empty=0
+[reexport] chunk 3/6 pids=50 written=50 reused=0 redone=0 empty=0
+[reexport] chunk 4/6 pids=50 written=50 reused=0 redone=0 empty=0
+[reexport] chunk 5/6 pids=50 written=50 reused=0 redone=0 empty=0
+[reexport] chunk 6/6 pids=37 written=37 reused=0 redone=0 empty=0
+[reexport] summary total=287 done=287 reused=0 redone=0 empty=0 folders_written=287 property_improvement_files=377

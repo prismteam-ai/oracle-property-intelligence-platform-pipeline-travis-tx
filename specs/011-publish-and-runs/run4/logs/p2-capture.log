@@ -1,0 +1,5 @@
+npm notice run oracle-travis-runtime@0.1.0 backbone
+npm notice run tsx travis/backbone/cli.ts permits --mode incremental
+permits incremental: status=complete pages=48 rows=2381895 written=44 tombstones=0 watermark=2026-10-25T12:55:16.178Z watermark_check=pass
+job_id=travis-a04-permits-incremental-20261026105138
+exit=0

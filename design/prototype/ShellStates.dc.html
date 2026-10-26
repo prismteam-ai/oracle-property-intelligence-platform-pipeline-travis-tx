@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shell header states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 880px; height: 760px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 12px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Header states: sync badge and location</h2>
+<p style="margin: 0 0 8px; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">The sync badge always says what is known about freshness. Tapping it opens Runs in every state.</p>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Loading</b>
+<div style="display: flex; flex-direction: column; gap: 8px"><span class="atlas-pill atlas-pill--info" style="align-self: flex-start"><span class="material-symbols-rounded" aria-hidden="true">sync</span>Checking sync…</span><div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Loading run status" style="width: 320px"><i></i></div></div>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Linear progress under the top app bar; location chip stays usable.</span>
+</div>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Populated</b>
+<span class="atlas-pill atlas-pill--success" style="justify-self: start"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Default. Time and run number always shown together.</span>
+</div>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Partial data</b>
+<span class="atlas-pill atlas-pill--warning" style="justify-self: start"><span class="material-symbols-rounded" aria-hidden="true">warning</span>Run 3 · 3 of 4 sources</span>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">A source failed or is blocked; tooltip names it (“BBB: Blocked · bbb.org refused the check (403) on 2026-10-17”).</span>
+</div>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Stale</b>
+<span class="atlas-pill atlas-pill--warning" style="justify-self: start"><span class="material-symbols-rounded" aria-hidden="true">history_toggle_off</span>Stale · synced 3 days ago · Run 3</span>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Past the expected refresh window. Sample threshold, set at build.</span>
+</div>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Rate-limited</b>
+<span class="atlas-pill atlas-pill--info" style="justify-self: start"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>Status check rate-limited, retrying in 4 s</span>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Countdown, not an error. Last known run stays visible on Runs.</span>
+</div>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Error</b>
+<span class="atlas-pill atlas-pill--danger" style="justify-self: start"><span class="material-symbols-rounded" aria-hidden="true">error</span>Sync status unavailable · Retry</span>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Manifest could not be read. The rest of the app keeps working.</span>
+</div>
+
+<div style="display: grid; grid-template-columns: 140px 340px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<b style="font-size: 14px">Empty</b>
+<span class="atlas-pill atlas-pill--unavailable" style="justify-self: start"><span class="material-symbols-rounded" aria-hidden="true">do_not_disturb_on</span>No runs yet for this county</span>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Never shown for a “Coming soon” county: those cannot be selected.</span>
+</div>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Shell · header states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":880,"height":760}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

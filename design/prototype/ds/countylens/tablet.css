@@ -1,0 +1,43 @@
+/* CountyLens · 768 tablet rule (review #9): nav rail + one column.
+   Applied by the *768 wrapper boards around a 1440 page; the build implements the same rule with container queries. */
+.t768{width:768px!important;height:auto!important;overflow:visible!important}
+.t768>.sc-host>div{display:flow-root!important;width:768px!important;height:auto!important;min-height:1024px;overflow:visible!important}
+.t768>.sc-host>div>header{width:768px!important;padding:0 8px 0 16px!important;gap:4px!important}
+.t768>.sc-host>div>header>.atlas-pill,.t768>.sc-host>div>header>sc-if>.atlas-pill{display:none!important}
+.t768>.sc-host>div>header .atlas-top-app-bar__title{font-size:20px!important}
+.t768>.sc-host>div>nav.atlas-nav-rail{height:auto!important;bottom:0!important}
+.t768>.sc-host>div>main{position:relative!important;left:auto!important;top:auto!important;margin:64px 0 0 80px!important;width:688px!important;height:auto!important;padding:20px 24px 96px!important;overflow:visible!important;gap:16px!important}
+.t768 main [style*="grid-template-columns"]:not([role="table"]):not([role="row"]):not(.atlas-kv):not(.tg){grid-template-columns:minmax(0,1fr)!important}
+.t768 main [style*="flex: 0 0"],.t768 main [style*="flex:0 0"]{flex:1 1 100%!important;max-width:100%!important}
+.t768 main>div[style*="display: flex"]{flex-wrap:wrap!important}
+.t768 main table{min-width:0!important;width:100%!important}
+.t768 main .atlas-table-wrap{overflow:hidden!important}
+.t768 main td,.t768 main th{white-space:normal!important}
+.t768 main [style*="padding: 40px 160px"]{padding:24px!important}
+/* Coverage rows */
+.t768 .cv-grid{grid-template-columns:28px 150px minmax(0,1fr) 96px!important;row-gap:4px!important}
+.t768 .cv-grid>:nth-child(5){grid-column:2/3}
+.t768 .cv-grid>:nth-child(6){grid-column:3/5}
+.t768 .cv-head>:nth-child(5),.t768 .cv-head>:nth-child(6){display:none}
+.t768 .rc-grid{grid-template-columns:90px 80px 70px 90px minmax(0,1fr)!important;row-gap:4px!important}
+.t768 .rc-grid>:nth-child(6){grid-column:1/-1}
+/* Runs */
+.t768 .rn-flow{flex-wrap:wrap!important;gap:8px!important}
+.t768 .rn-flow>[role="group"]{flex:1 1 100%!important}
+.t768 .rn-flow .rn-arrow{display:none!important}
+.t768 .rn-stage{flex:1 1 calc(50% - 8px)!important;margin-left:0!important}
+.t768 .rn-chg{grid-template-columns:120px 76px minmax(0,1fr) 118px!important}
+.t768 main table .atlas-cid,.t768 main table code{white-space:normal!important;word-break:break-all}
+.t768 main table td,.t768 main table th{padding-left:8px!important;padding-right:8px!important}
+/* Legal pages: one column, footer after content */
+.t768>.sc-host>div>footer{position:relative!important;left:auto!important;top:auto!important;margin-left:80px!important;width:688px!important;height:auto!important;min-height:40px;flex-wrap:wrap;padding:8px 24px!important}
+.t768 main:has(>nav[aria-label="On this page"]){flex-direction:column!important;gap:16px!important;padding:24px 24px 96px!important}
+.t768 main>nav[aria-label="On this page"]{flex:none!important;flex-direction:row!important;flex-wrap:wrap;gap:4px 16px!important}
+.t768 main>nav[aria-label="On this page"]>span{width:100%;margin:0!important}
+.t768 main>article{flex:none!important;width:100%!important}
+.t768 .tg-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.t768 main td{word-break:break-word}
+.t768 main table .atlas-pill{white-space:normal!important;height:auto!important;min-height:24px;padding-top:2px;padding-bottom:2px}
+/* Welcome at 768: the dialog keeps its layout, centred with 24px gutters */
+.w768>.sc-host>div{width:768px!important;height:1024px!important}
+.w768 [role="dialog"]{left:24px!important;width:720px!important;top:96px!important}

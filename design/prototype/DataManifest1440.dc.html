@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data manifest, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1000px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 936px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 936px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Data</h2>
+<a class="atlas-chip" aria-haspopup="menu" style="text-decoration: none" href="Runs1440.dc.html">Run 3 · current<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></a>
+<button class="atlas-btn atlas-btn--outlined" onClick="{{__say.k3}}"><span class="material-symbols-rounded" aria-hidden="true">download</span>manifest.json</button>
+</div>
+<div class="atlas-tabs" role="tablist" aria-label="Data views">
+<a class="atlas-tab" role="tab" aria-selected="true" href="DataManifest1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Manifest</a>
+<a class="atlas-tab" role="tab" aria-selected="false" href="DataVerify1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Verify</a>
+<a class="atlas-tab" role="tab" aria-selected="false" href="DataCatalog1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Catalog</a>
+</div>
+
+<dc-import name="RunChain" device="{{chainDevice}}" verify-href="DataVerify1440.dc.html" hint-size="100%,232px"></dc-import>
+
+<div class="atlas-table-wrap" style="flex: 1; min-height: 0; overflow: hidden; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Name</th><th>CID</th><th>Codec</th><th class="num">Size</th><th>SHA-256</th><th>Verify</th></tr></thead>
+<tbody>
+<sc-if value="{{p1}}" hint-placeholder-val="{{ true }}">
+<tr><td>manifest.json<div class="atlas-prov" style="font-size: 12px">Run manifest: artifacts, sources and the coverage section</div></td><td><span class="atlas-cid">bafybeih…q7n3<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">18 KB</td><td><span class="atlas-cid">9f2c…a41e</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>properties.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli export-tables · one row per TCAD account</div></td><td><span class="atlas-cid">bafybei…7m2c<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">118 MB</td><td><span class="atlas-cid">31b8…5e72</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Verify via CAR</a></td></tr>
+<tr><td>property_improvement.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · permits, classified by the Travis profile</div></td><td><span class="atlas-cid">bafybei…q4xa<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">412 MB</td><td><span class="atlas-cid">4e0b…d71a</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Verify via CAR</a></td></tr>
+<tr aria-selected="true"><td>structure.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · roof date and roof age</div></td><td><span class="atlas-cid">bafybeigr7…r8fp<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">38.2 MB</td><td><span class="atlas-cid">7d1e…c09a</span></td><td><a class="atlas-btn atlas-btn--tonal" href="DataVerify1440.dc.html" style="display: inline-flex; text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>sales_history.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · sales and transfer dates</div></td><td><span class="atlas-cid">bafybei…s4lh<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">27 MB</td><td><span class="atlas-cid">b2d9…40fe</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>company.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · TX Comptroller companies (resolved contractors only)</div></td><td><span class="atlas-cid">bafybei…w3nd<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">14 MB</td><td><span class="atlas-cid">58d0…b2e4</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>person.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · owners; confidential owners kept as “withheld”</div></td><td><span class="atlas-cid">bafybei…o2wn<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">31 MB</td><td><span class="atlas-cid">8b0e…41c7</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><tr><td>tiles/<div class="atlas-prov" style="font-size: 12px">Map hexagon and marker tiles · CRM preview only (Map view)</div></td><td><span class="atlas-cid">bafybei…t1ls<button aria-label="Copy CID" onClick="{{__say.k19}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>Directory</td><td class="num">640 MB</td><td><span class="atlas-cid">CAR 4b9e…d813</span></td><td style="white-space: nowrap"><a href="DataVerify1440.dc.html" style="display: inline-flex; align-items: center; gap: 4px; margin-right: 8px"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">download</span>CAR</a><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr></sc-if>
+</sc-if>
+<sc-if value="{{p2}}" hint-placeholder-val="{{ false }}">
+<tr><td>address.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · situs and mailing addresses</div></td><td><span class="atlas-cid">bafybei…a9dr<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">44 MB</td><td><span class="atlas-cid">c18e…6a02</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>geometry.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · parcel centroids and polygons</div></td><td><span class="atlas-cid">bafybei…g30m<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">46 MB</td><td><span class="atlas-cid">5a9c…e2d1</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>business_location.parquet<div class="atlas-prov" style="font-size: 12px">elephant-cli · Overture places</div></td><td><span class="atlas-cid">bafybei…p1cs<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">0.9 MB</td><td><span class="atlas-cid">d07f…3b58</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>relationships/<div class="atlas-prov" style="font-size: 12px">elephant-cli · 11 relationship tables (property_has_property_improvement, property_improvement_has_contractor, …)</div></td><td><span class="atlas-cid">bafybei…r1ls<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>Directory</td><td class="num">96 MB</td><td><span class="atlas-cid">—</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Verify via CAR</a></td></tr>
+<tr><td>tables-export.json<div class="atlas-prov" style="font-size: 12px">elephant-cli column list for every table</div></td><td><span class="atlas-cid">bafkrei…tx4e<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">9 KB</td><td><span class="atlas-cid">11ab…9f0e</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+<tr><td>gazetteer.parquet<div class="atlas-prov" style="font-size: 12px">Census places and ZIP centroids for Area search</div></td><td><span class="atlas-cid">bafybei…gz7p<button aria-label="Copy CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></td><td>File</td><td class="num">2.1 MB</td><td><span class="atlas-cid">e94d…07a3</span></td><td><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></td></tr>
+</sc-if>
+</tbody>
+</table>
+</div>
+<div class="atlas-table-footer" style="display: flex; align-items: center; gap: 8px"><span class="atlas-prov" style="flex: 1; font-size: 12px">Only elephant-cli export-tables output, the run manifest and the gazetteer are published · Sample CIDs, sizes and digests · directories and files over 50 MB verify through their CAR</span><dc-import name="Pager" pages="{{ 2 }}" page="{{page}}" text="{{pageText}}" label="Artifact pages" on-page="{{setPage}}" hint-size="260px,40px"></dc-import></div>
+</main>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Data · run chain and manifest (D-5)" desktop="DataManifest1440.dc.html" tablet="DataManifest768.dc.html" mobile="Data390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k3": "Download starts here (Sample file).", "k4": "Copied to the clipboard (Sample).", "k5": "Copied to the clipboard (Sample).", "k6": "Copied to the clipboard (Sample).", "k7": "Copied to the clipboard (Sample).", "k8": "Copied to the clipboard (Sample).", "k9": "Copied to the clipboard (Sample).", "k11": "Copied to the clipboard (Sample).", "k13": "Copied to the clipboard (Sample).", "k15": "Copied to the clipboard (Sample).", "k17": "Copied to the clipboard (Sample).", "k19": "Copied to the clipboard (Sample).", "k21": "More rows load here (Sample)."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  constructor(props) { super(props); this.state = { page: 1 }; }
+__rv() {
+const pg = this.state.page;
+return { chainDevice: 'desktop', p1: pg === 1, p2: pg === 2, page: pg, mapOn: Component.mapOn(), mapOff: !Component.mapOn(), pageText: Component.mapOn() ? (pg === 1 ? '1–8 of 14' : '9–14 of 14') : (pg === 1 ? '1–7 of 13' : '8–13 of 13'), setPage: (n) => this.setState({ page: n }), copied: () => { this.__k = this.__k || { t: {}, msg: '' }; this.__k.msg = 'Copied to the clipboard (Sample).'; this.forceUpdate(); clearTimeout(this.__k.h); this.__k.h = setTimeout(() => { this.__k.msg = ''; this.forceUpdate(); }, 2800); } };
+}
+}
+</script>
+</body>
+</html>

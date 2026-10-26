@@ -1,0 +1,115 @@
+/* Search box (A-16, Task B B-03 port; Shell1440 / Explore390 boards): a pill text field with a
+   suggestion list under it. The list sits above the page, the overlays and the drawer (z-index
+   over the drawer's 3), never wider than the viewport, and long text wraps. Atlas tokens only;
+   48 px targets. */
+
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.root:focus-within {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.input {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+  text-overflow: ellipsis;
+}
+
+.input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.input:focus {
+  outline: none;
+}
+
+/* Task B 76f94c9: clamped to the box and the viewport; long labels wrap instead of widening it. */
+.popup {
+  position: absolute;
+  z-index: 4;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: min(calc(var(--space-10) * 5), calc(100vw - var(--space-7)));
+  max-width: calc(100vw - var(--space-7));
+  max-height: 70dvh;
+  overflow-y: auto;
+  padding: var(--space-2) 0;
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface-container);
+  box-shadow: var(--md-sys-elevation-level2);
+  color: var(--md-sys-color-on-surface);
+}
+
+.popup[hidden] {
+  display: none;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: var(--space-1) var(--space-4);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+}
+
+.option[aria-selected="true"] {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.option[aria-disabled="true"] {
+  cursor: default;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.label,
+.detail {
+  overflow-wrap: anywhere;
+}
+
+.detail {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+.note {
+  margin: 0;
+  padding: var(--space-1) var(--space-4);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+}

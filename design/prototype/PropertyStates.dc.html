@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Property detail states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 760px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Property detail states</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Populated: “Property · 1440” and “Property · 390”. Each state keeps the address, the close button and “Show in the list” usable.</p>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; flex: 1; min-height: 0">
+
+<section aria-label="Loading" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Loading</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); display: flex; flex-direction: column">
+<div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Loading property"><i></i></div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 14px">
+<b style="font-size: 18px; line-height: 24px; font-weight: 400; font-family: var(--font-brand)">101 Sample Ln</b>
+<div class="atlas-skeleton" style="height: 140px; border-radius: var(--md-sys-shape-corner-medium)"></div>
+<div class="atlas-skeleton" style="height: 16px; width: 70%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 28px; width: 90%; border-radius: var(--md-sys-shape-corner-small)"></div><div class="atlas-skeleton" style="height: 16px; width: 55%; border-radius: var(--md-sys-shape-corner-extra-small)"></div>
+</div>
+</div>
+</section>
+
+<section aria-label="Partial data" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Partial data</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div class="atlas-banner__body">2 fields are missing; the rest is complete.</div></div>
+<div class="atlas-kv"><span>BBB</span><span class="atlas-pill atlas-pill--unavailable">Blocked · bbb.org refused (403)</span></div>
+<div class="atlas-kv"><span>Tenure</span><span class="atlas-pill atlas-pill--unavailable">Unknown: no dated sale</span></div>
+<div role="group" aria-label="Contractor: Unresolved" style="display: flex; flex-direction: column; gap: 4px"><span>Contractor <b style="font-weight: 500">“J EXAMPLE”</b> <span style="color: var(--md-sys-color-on-surface-variant)">as printed on permit</span></span><span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px"><span class="atlas-pill atlas-pill--unavailable"><span class="material-symbols-rounded" aria-hidden="true">link_off</span>Unresolved</span><span>No Comptroller match. No Texas roofing licence register exists</span></span></div>
+<div class="atlas-kv"><span>Roof age</span><span>23 yrs · High</span></div>
+</div>
+</section>
+
+<section aria-label="Rate-limited" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Rate-limited</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 18px">
+<div style="height: 120px; box-sizing: border-box; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; border: 1px dashed var(--md-sys-color-outline); border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container-low)"><span class="material-symbols-rounded" aria-hidden="true" style="color: var(--md-sys-color-on-surface-variant)">no_photography</span><b style="font-weight: 500">Street View: coming soon</b><span style="color: var(--md-sys-color-on-surface-variant)">No street photo yet. The property data below is unaffected.</span></div>
+<div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><div class="atlas-banner__body">Permits rate-limited, retrying in 4 s (attempt 2 of 3).</div></div>
+</div>
+</section>
+
+<section aria-label="Error" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Error</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 18px">
+<b style="font-size: 18px; line-height: 24px; font-weight: 400; font-family: var(--font-brand)">101 Sample Ln</b>
+<div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body">This record could not load.</div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k1}}">Retry</button></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Filters, SQL and the list still work. You can also find this parcel in the SQL panel.</span>
+</div>
+</section>
+
+<section aria-label="Merged-from details not published" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Merged-from details not published</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 18px">
+<b style="font-size: 16px; line-height: 24px; font-weight: 500">Owner merged from 2 records</b>
+<div class="atlas-missing" role="note" style="font-size: 13px; line-height: 18px"><span class="material-symbols-rounded" aria-hidden="true">info</span><div><b style="font-weight: 500">Merge details: coming soon.</b> Run 3 merged 6,866 owner records in the county (Run manifest · coverage section).</div></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Used if A-02 finds no published field that names the source accounts. No lineage file is published (AD-01).</span>
+</div>
+</section>
+
+<section aria-label="Empty" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Empty</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><rect x="10" y="22" width="52" height="40" rx="6" fill="none" stroke="var(--brand-blue)" stroke-width="4"></rect><path d="M6 26 L36 6 L66 26" fill="none" stroke="var(--brand-red)" stroke-width="4"></path><circle cx="52" cy="54" r="10" fill="var(--brand-yellow)"></circle></svg>
+<b style="font-size: 18px; line-height: 24px; font-weight: 400; font-family: var(--font-brand)">Not in Run 3</b>
+<span style="color: var(--md-sys-color-on-surface-variant)">This parcel was merged or removed after Run 2, so the current run has no record for it.</span>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none; align-self: flex-start" href="Runs1440.dc.html">View it in Run 2</a>
+</div>
+</section>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Property · states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

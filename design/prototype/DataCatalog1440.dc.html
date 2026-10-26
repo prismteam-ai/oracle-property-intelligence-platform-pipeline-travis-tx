@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data catalog, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.atlas-table td:last-child,.atlas-table th:last-child{white-space:nowrap}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1100px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 1036px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 1036px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Data</h2>
+<a class="atlas-chip" aria-haspopup="menu" style="text-decoration: none" href="Runs1440.dc.html">Run 3 · current<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></a>
+</div>
+<div class="atlas-tabs" role="tablist" aria-label="Data views">
+<a class="atlas-tab" role="tab" aria-selected="false" href="DataManifest1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Manifest</a>
+<a class="atlas-tab" role="tab" aria-selected="false" href="DataVerify1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Verify</a>
+<a class="atlas-tab" role="tab" aria-selected="true" href="DataCatalog1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Catalog</a>
+</div>
+
+<div style="display: flex; gap: 16px; flex: 1; min-height: 0">
+<nav aria-label="Tables" style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 8px">
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" value="Find a table or field" variant="header" device="desktop" start-open="{{ false }}" hint-size="100%,48px"></dc-import></div>
+<span style="padding: 4px 4px 0; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)">elephant-cli tables · Run 3 · one per class</span>
+<ul class="atlas-list" aria-label="elephant-cli tables" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">home_work</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">properties</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">412,860</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" aria-selected="true" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">construction</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">property_improvement</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">2,380,507</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">roofing</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">structure</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">412,860</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">sell</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">sales_history</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">611,092</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">person</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">person</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">286,410</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">apartment</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">company</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">61,305</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">signpost</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">address</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">419,377</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">polyline</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">geometry</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">412,860</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">storefront</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">business_location</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">38,902</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">account_tree</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">relationships/</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">11 tables</span></div></li>
+</ul>
+<span style="padding: 4px 4px 0; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)">Also published</span>
+<ul class="atlas-list" aria-label="Also published" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">receipt_long</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">manifest.json</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">run manifest</span></div></li>
+<li class="atlas-list-item atlas-list-item--action" style="min-height: 40px; padding-top: 4px; padding-bottom: 4px; align-items: center"><span class="material-symbols-rounded" aria-hidden="true">travel_explore</span><div style="flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">gazetteer.parquet</b><span class="atlas-prov" style="font-size: 12px; margin-left: auto">5,214 places</span></div></li>
+</ul>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Names and columns come from tables-export.json. Row counts are Sample except property_improvement</div>
+<div class="atlas-card atlas-card--outlined" style="padding: 12px; display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 16px"><b style="font-weight: 500; font-size: 13px">In SQL and MCP, use the views</b><span class="atlas-cid">v_property · v_roofing_permit</span><span class="atlas-cid">v_contractor · v_run</span><span style="color: var(--md-sys-color-on-surface-variant)">views.sql defines them over these tables only. No other copy of the data is published.</span></div>
+</nav>
+
+<section aria-labelledby="tbl-h" style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 8px"><h3 id="tbl-h" style="flex: 1; margin: 0; font-family: var(--font-mono); font-size: 20px; line-height: 28px; font-weight: 500">property_improvement</h3><a class="atlas-btn atlas-btn--text" href="ExploreQ-sql.dc.html"><span class="material-symbols-rounded" aria-hidden="true">terminal</span>Query in SQL</a><button class="atlas-btn atlas-btn--text" onClick="{{__say.k3}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span>Copy schema</button></div>
+<p style="margin: 0; font-size: 14px; line-height: 20px">One row per City of Austin building permit, exported by elephant-cli from the lexicon class property_improvement. The Travis source profile classifies roofing work and status when the record is made, not in SQL.</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; font-size: 13px; line-height: 18px">
+<div><div style="color: var(--md-sys-color-on-surface-variant)">Rows</div><b class="num" style="font-weight: 500">2,380,507</b></div>
+<div><div style="color: var(--md-sys-color-on-surface-variant)">Last updated</div><b style="font-weight: 500">2026-10-17 10:24 UTC · Run 3</b></div>
+<div><div style="color: var(--md-sys-color-on-surface-variant)">Source</div><a href="https://data.austintexas.gov/d/3syk-w9eu" target="_blank" rel="noopener">Austin permits (3syk-w9eu)<span class="atlas-sr"> (opens in a new tab)</span></a></div>
+<div><div style="color: var(--md-sys-color-on-surface-variant)">Licence · CID</div><span>[Licence as published] · <span class="atlas-cid">…q4xa</span></span></div>
+</div>
+</div>
+
+<div class="atlas-table-wrap" style="flex: 1; min-height: 0; overflow: auto; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Field</th><th>Type</th><th>Meaning</th><th>Source</th><th>Licence</th></tr></thead>
+<tbody>
+<tr><td><span class="atlas-cid">cid</span></td><td>string</td><td>CID of this record</td><td>elephant-cli</td><td>[Derived]</td></tr>
+<tr><td><span class="atlas-cid">property_cid</span></td><td>string</td><td>Property the permit belongs to (through property_has_property_improvement)</td><td>elephant-cli</td><td>[Derived]</td></tr>
+<tr><td><span class="atlas-cid">data_group_cid</span></td><td>string</td><td>Data group the record was published in</td><td>elephant-cli</td><td>[Derived]</td></tr>
+<tr><td><span class="atlas-cid">request_identifier</span></td><td>string</td><td>Permit number plus the source row key, for example 2020-047812 BP</td><td>Austin permits</td><td>[As published]</td></tr>
+<tr><td><span class="atlas-cid">improvement_type</span></td><td>enum</td><td>Roofing or another type, set by the Travis source profile</td><td>Derived: source profile</td><td>[Derived]</td></tr>
+<tr><td><span class="atlas-cid">improvement_action</span></td><td>enum</td><td>For example replace or re-cover</td><td>Derived: source profile</td><td>[Derived]</td></tr>
+<tr><td><span class="atlas-cid">improvement_status</span></td><td>enum</td><td>Lexicon status. The lexicon has no Expired, so expired permits are never relabelled Completed or Cancelled</td><td>Derived: source profile</td><td>[Derived]</td></tr>
+<tr><td><span class="atlas-cid">permit_issue_date</span></td><td>date</td><td>Date the permit was issued</td><td>Austin permits</td><td>[As published]</td></tr>
+<tr><td><span class="atlas-cid">completion_date</span></td><td>date, nullable</td><td>Date it was finaled; null means never finaled</td><td>Austin permits</td><td>[As published]</td></tr>
+<tr><td><span class="atlas-cid">source_http_request</span></td><td>object</td><td>The source request. Keeps the raw status word and the expiry date</td><td>Austin permits</td><td>[As published]</td></tr>
+</tbody>
+</table>
+</div>
+<div class="atlas-card atlas-card--outlined" style="padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px"><b style="font-weight: 500">v_roofing_permit reads this table and adds</b><span class="atlas-cid" style="background: none; padding: 0; white-space: normal">status_raw · status_class (open, stalled, closed, exclude) · expiry_date · open_days · contractor_company_cid · contractor_name_raw · contractor_resolution · bbb_status (rated, not_found, blocked, not_checked) · bbb_rating</span><span style="color: var(--md-sys-color-on-surface-variant)">contractor_company_cid is set only for a Resolved contractor (an official registry identifier, the TX Comptroller taxpayer number, matched; a name match stays Candidate). contractor_name_raw is the name as printed on the permit. Column names are frozen against tables-export.json in A-02.</span></div>
+</section>
+</div>
+</main>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Data · catalog" desktop="DataCatalog1440.dc.html" tablet="DataCatalog768.dc.html" mobile="Data390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k3": "Copied to the clipboard (Sample)."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

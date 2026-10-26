@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    // aws-cdk-lib's jsii typings declare optional props as `T | undefined` and its own classes
+    // (Bucket → IBucket) stop type-checking under exactOptionalPropertyTypes; CDK's own template
+    // leaves it off. Every other strict option of packages/tsconfig/base.json stays on.
+    "exactOptionalPropertyTypes": false
+  },
+  "include": ["bin/**/*.ts", "src/**/*.ts", "test/**/*.ts"],
+  "exclude": ["node_modules", "cdk.out"]
+}

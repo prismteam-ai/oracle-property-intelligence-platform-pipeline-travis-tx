@@ -1,0 +1,326 @@
+{
+  "cost": {
+    "asOf": "2026-10-24",
+    "source": "AWS Cost Explorer GetCostAndUsage, UnblendedCost, DAILY, grouped by SERVICE and by RECORD_TYPE; every row is flagged \"Estimated\" by AWS",
+    "fixedPerMonth": "$0.00",
+    "gross": {
+      "usd": 9.2469,
+      "window": "7 full days to 2026-10-24",
+      "missingReason": null
+    },
+    "credits": {
+      "usd": -9.2469,
+      "window": "7 full days to 2026-10-24",
+      "missingReason": null
+    },
+    "partialDay": {
+      "day": "2026-10-25",
+      "grossUsd": 1.5649,
+      "creditUsd": -1.5649
+    },
+    "budget": {
+      "text": "$10 / month · alerts at 85% and 100% actual and 100% forecast",
+      "limitUsd": 10,
+      "missingReason": null
+    },
+    "rows": [
+      {
+        "component": "Amplify static hosting, app countylens-web + custom domain (CountyLensWeb, CountyLensCert)",
+        "idle": "$0.00 fixed. Storage $0.023 per GB-month (billed $0.0017 in the window)",
+        "perUse": "Data transfer out $0.15 per GB; build minutes $0.01 each",
+        "whoPays": "Visitors and CI pay through usage; the project pays the bill (credits)",
+        "seenInBill": "Yes, the largest line: 42.3 GB out ($6.3472) and 348 build minutes ($3.4833) over 2026-10-20 to 10-25 for the two Amplify apps. CloudWatch BytesDownloaded for countylens-web was about 39 GB of that, so the demo site and its Playwright runs drive it.",
+        "missingReason": null
+      },
+      {
+        "component": "Lambda: query API, agent, MCP (CountyLensApi, 3 functions) and budget provider (CountyLensOps)",
+        "idle": "$0.00 (no provisioned concurrency)",
+        "perUse": "Requests and GB-seconds (arm64 for the API functions)",
+        "whoPays": "Caller traffic; the project pays",
+        "seenInBill": "Usage lines exist (for example 10-24: 15,757 ARM requests, 1,353 ARM GB-s) but the monthly free tier absorbs them: $0.00 billed, not zero usage.",
+        "missingReason": null
+      },
+      {
+        "component": "API Gateway HTTP APIs (3 APIs, CountyLensApi)",
+        "idle": "$0.00",
+        "perUse": "$1.00 per million requests",
+        "whoPays": "Caller traffic",
+        "seenInBill": "$0.0296 for 27,899 requests",
+        "missingReason": null
+      },
+      {
+        "component": "S3 + CloudFront CID copy (CountyLensData)",
+        "idle": "Storage only: 2.88 GB measured on 10-25, about $0.07 per month (pricing model)",
+        "perUse": "S3 requests, CloudFront transfer (first 1 TB per month free)",
+        "whoPays": "Reader traffic",
+        "seenInBill": "S3 $0.0277 (requests $0.027, storage $0.0007). No CloudFront line billed.",
+        "missingReason": null
+      },
+      {
+        "component": "DynamoDB on-demand, table CountyLensAiSpend (CountyLensApi)",
+        "idle": "$0.00 (PAY_PER_REQUEST, 51 bytes stored)",
+        "perUse": "$1.25 per million write units, $0.25 per million read units",
+        "whoPays": "Agent traffic",
+        "seenInBill": "$0.0348 (47,239 write units, 23,205 read units). The account also has three crm-* tables from another project.",
+        "missingReason": null
+      },
+      {
+        "component": "SSM parameters (several, standard tier)",
+        "idle": "$0.00",
+        "perUse": "$0.00",
+        "whoPays": "n/a",
+        "seenInBill": "No SSM line.",
+        "missingReason": null
+      },
+      {
+        "component": "CloudWatch Logs and alarms (CountyLensApi, CountyLensOps, CountyLensScheduler)",
+        "idle": "$0.00 within free ingestion and storage; retention 14 days, access logs 30",
+        "perUse": "$0.50 per GB ingested; $0.10 per alarm per month after the first 10",
+        "whoPays": "Traffic",
+        "seenInBill": "$0.0001 (metrics). Alarms stay inside the free 10.",
+        "missingReason": null
+      },
+      {
+        "component": "Scheduler countylens-incremental-run (CountyLensScheduler)",
+        "idle": "$0.00. State: DISABLED (read from EventBridge Scheduler)",
+        "perUse": "One ECS task per run when enabled, never by default",
+        "whoPays": "The project, only when the PO enables it",
+        "seenInBill": "Not billed. The stack also holds a VPC with an internet gateway and no NAT gateway (none exists in the region), an ECS cluster, an SQS dead-letter queue countylens-scheduler-run-task-dlq and SNS topics countylens-alerts, countylens-scheduler-alerts: all $0 idle.",
+        "missingReason": null
+      },
+      {
+        "component": "Step Functions",
+        "idle": "$0.00",
+        "perUse": "Per transition",
+        "whoPays": "Run traffic",
+        "seenInBill": "$0.0002 (cross-region out-bytes)",
+        "missingReason": null
+      },
+      {
+        "component": "Bedrock, Claude Sonnet 4.6 via eu. profile (agent)",
+        "idle": "$0.00",
+        "perUse": "Per token: input, output, cache write, cache read",
+        "whoPays": "Evaluators and tests asking the agent",
+        "seenInBill": "$0.8264 gross over 10-24 and 10-25 (output $0.3055, cache write $0.3505, input $0.1655, cache read $0.0049). The budget guard pauses the agent at $3 per day.",
+        "missingReason": null
+      },
+      {
+        "component": "Cognito user pool, Lite plan (deployed 2026-10-26, CountyLensApi)",
+        "idle": "$0.00 (pricing model: free tier of 10,000 monthly active users; first billed day pending)",
+        "perUse": "Per monthly active user above the free tier",
+        "whoPays": "Operator sign-ins",
+        "seenInBill": "Not yet billed",
+        "missingReason": null
+      },
+      {
+        "component": "SQS command queue + DLQ (deployed 2026-10-26, CountyLensApi)",
+        "idle": "$0.00 (pricing model: per request, first million per month free; first billed day pending)",
+        "perUse": "$0.40 per million requests after the free tier",
+        "whoPays": "Operator commands",
+        "seenInBill": "Not yet billed (the existing scheduler DLQ has no billed line either)",
+        "missingReason": null
+      },
+      {
+        "component": "SNS alert topic countylens-alerts (CountyLensOps; admin alarms added 2026-10-26)",
+        "idle": "$0.00 (pricing model: first million publishes free, email deliveries free; first billed day pending)",
+        "perUse": "Per publish and delivery above the free tier",
+        "whoPays": "Alarm events",
+        "seenInBill": "Not yet billed",
+        "missingReason": null
+      },
+      {
+        "component": "Filebase (pinning vendor)",
+        "idle": null,
+        "perUse": "the free plan is 5 GB; one full county publication is about 2.95 GB (upper bound 3.73 GB), so a second pinned run would not fit (5.90 GB).",
+        "whoPays": "the PO's Filebase account",
+        "seenInBill": null,
+        "missingReason": "Filebase publishes usage and billing only in its dashboard; its S3-compatible API reports no billing or plan usage, and summing object sizes would need a full listing against a service that rate-limits (HTTP 429 seen)."
+      }
+    ]
+  },
+  "limits": {
+    "asOf": "2026-10-26",
+    "rows": [
+      {
+        "source": "TCAD 2026 certified JSON export (tcad_certified)",
+        "throughput": "Download 328.2 MB/min. Streaming scan about 10 min. Load into the Query DB 260 to 382 records/s (2,000-record chunks, 3 in flight, 1 s pause)",
+        "pageSize": "One zip file, 3,554,021,795 B (29.86 GB unzipped), 493,246 records, key pID, SHA-256 6f7a7585...2346",
+        "fullCapture": "Download 10.8 min (649.8 s, one range resume after a first attempt ended at 1,287,539,237 B). Full load 21.7 min",
+        "rateLimit": "One identified request per file; no new download without a stop; a 403 or a SHA-256 mismatch ends in WAITING_HUMAN; never a retry with another identity",
+        "antiBot": "None seen (HTTP 200, 3 requests)",
+        "optimisation": "Download once, keep on disk; resume by range; chunked load with a health gate",
+        "status": "measured",
+        "blockedDates": [],
+        "missingReason": null
+      },
+      {
+        "source": "TCAD supplemental exports (tcad_supplemental, /publicinformation)",
+        "throughput": "Not measured: listed, not downloaded in",
+        "pageSize": "Zip files listed on the public-information page",
+        "fullCapture": "Not measured (reason: the incremental path reads Austin, not the supplement)",
+        "rateLimit": "One identified request",
+        "antiBot": "HTTP 403 on publicinformation was reported on 2026-10-17 and 2026-10-19, but no response was saved, so it is unconfirmed; the listing itself is reachable. The runs do not need these exports (the Austin incremental path reads Austin permits)",
+        "optimisation": "Not used as a feed",
+        "status": "blocked",
+        "blockedDates": ["2026-10-17", "2026-10-19"],
+        "missingReason": null
+      },
+      {
+        "source": "Travis County GIS layer 6 (tcad_gis)",
+        "throughput": "4,578 features/s (US runner)",
+        "pageSize": "ArcGIS MapServer query, 2,000 features per request, ids sent as a POST form body (a 2,000-id GET URL fails)",
+        "fullCapture": "81.6 s for 187 pages, 373,683 features, concurrency 2 (GitHub-hosted US runner, run 39684063596, 2026-10-22)",
+        "rateLimit": "Concurrency at most 2; only OBJECTID, PROP_ID, geo_id requested",
+        "antiBot": "Blocked from the operator machine: TCP connect to gis.traviscountytx.gov:443 never completes from egress EG (2026-10-17 to 2026-10-20: docs/evidence/blocked/tcad_gis-20261019T210845Z.md, ...212423Z.md, ...20261020T053344Z.md, ...072223Z.md, last one current); answers from a US runner, no challenge",
+        "optimisation": "Capture from a GitHub Actions US runner (DEC--gis-runner); POST bodies; 60 s timeout, then page retry",
+        "status": "measured",
+        "blockedDates": [],
+        "missingReason": null
+      },
+      {
+        "source": "Austin Socrata permits 3syk-w9eu",
+        "throughput": "Discovery measurement: 120,043 rows/min (median of 3 pages). Full backfill: 1,313.84 rows/s (about 78,800/min)",
+        "pageSize": "Keyset pages $order=:id, 50,000 rows per page (about 88 MB), no app token",
+        "fullCapture": "Backfill: 48 pages, 2,381,226 rows, 1,812 s (about 31 min), 2026-10-21. Incremental Run 3 (2026-10-25): 48 pages, 2,381,886 rows read, about 36 min, 10,582 rows written, relink about 6 min",
+        "rateLimit": "At most 1 request/s, project User-Agent, page timeout 5 min, up to 5 attempts with backoff (1 s base, 60 s cap, full jitter)",
+        "antiBot": "None seen. A 403 or challenge: stop, no retry. Austin re-stamped every :updated_at on 2026-10-19 12:22 to 12:43Z (source-wide re-stamp)",
+        "optimisation": "Keyset paging (date_trunc_ymdh does not exist; use date_trunc_ymd and date_extract_hh on to_floating_timestamp(:updated_at,'UTC')); re-stamp detector writes only rows whose content digest changed; watermark maxUpdatedAt; one page timed out and passed on attempt 2",
+        "status": "measured",
+        "blockedDates": [],
+        "missingReason": null
+      },
+      {
+        "source": "Austin address-point layer",
+        "throughput": "Not measured per request (Run 3 made 2 metadata requests and reused a cache)",
+        "pageSize": "ArcGIS layer, 466,149 records",
+        "fullCapture": "Not measured at full scale (reason: cached from an earlier agent run; layer last edit 2026-10-24T04:31:08Z)",
+        "rateLimit": "Metadata requests only unless the last edit changes",
+        "antiBot": "None seen",
+        "optimisation": "Cache keyed by SHA-256 4683eec6...b28b03c; reload only when the layer edit date moves",
+        "status": "not_measured",
+        "blockedDates": [],
+        "missingReason": "Run 3 made 2 metadata requests and reused a cache"
+      },
+      {
+        "source": "Texas Comptroller franchise-tax holders 9cir-efmm",
+        "throughput": "327,439 rows/min (median of 3 pages)",
+        "pageSize": "Socrata, 50,000 rows per page, no app token",
+        "fullCapture": "Projected 0.017 h for 342,334 Travis-coded rows; registry load of 342,333 rows ran as job travis-a07-identity-registry-20261022184652 (duration not recorded here)",
+        "rateLimit": "Same Socrata etiquette; incremental by :updated_at",
+        "antiBot": "None seen (5 requests)",
+        "optimisation": "Travis-only lookup set (342,333 of 3,487,662 statewide rows), recorded as a manifest limitation",
+        "status": "measured",
+        "blockedDates": [],
+        "missingReason": null
+      },
+      {
+        "source": "BBB (bbb-harvest)",
+        "throughput": "Not measured",
+        "pageSize": "Category listing page",
+        "fullCapture": "Blocked: HTTP 403 Cloudflare challenge (cf-mitigated: challenge) on 2026-10-17 and 2026-10-19 21:08:55Z; again 2026-10-20 (docs/evidence/blocked/bbb-20261019T210855Z.md, bbb-20261020T072323Z.md)",
+        "rateLimit": "At most 1 request per 3 s, concurrency 1 (architecture constitution); stop on the first 403",
+        "antiBot": "Cloudflare challenge; never solved, no identity change, no retry; 0 requests since",
+        "optimisation": "None possible; the official API application is not filed (PO decision 2026-10-20)",
+        "status": "blocked",
+        "blockedDates": ["2026-10-17", "2026-10-19", "2026-10-20"],
+        "missingReason": null
+      },
+      {
+        "source": "Overture places",
+        "throughput": "Not measured (reason: optional source with no licence decision yet)",
+        "pageSize": "Bulk files",
+        "fullCapture": "Not measured",
+        "rateLimit": "n/a",
+        "antiBot": "None seen (1 request)",
+        "optimisation": "Bulk download only",
+        "status": "not_measured",
+        "blockedDates": [],
+        "missingReason": "optional source with no licence decision yet"
+      },
+      {
+        "source": "Contractor licensing (TDLR)",
+        "throughput": "Not measured (no statewide roofing licence register to count)",
+        "pageSize": "Web pages",
+        "fullCapture": "n/a",
+        "rateLimit": "n/a",
+        "antiBot": "None seen (2 requests)",
+        "optimisation": "Runtime retrieval only",
+        "status": "not_measured",
+        "blockedDates": [],
+        "missingReason": "no statewide roofing licence register to count"
+      }
+    ],
+    "readPath": [
+      {
+        "step": "elephant-cli 44bb182, validate of loose files",
+        "measured": "0.50 s per property (about 61 h for the county)",
+        "limit": "Never run on loose files at scale"
+      },
+      {
+        "step": "validate of a CAR",
+        "measured": "about 13 ms per property (about 9 to 10 min per 44,000)",
+        "limit": "Used for the county"
+      },
+      {
+        "step": "hash",
+        "measured": "about 13 ms per property in a CAR; Run 1 batches 2,065 to 2,500 s each",
+        "limit": "10 county batches plus 2 permit batches"
+      },
+      {
+        "step": "export-tables",
+        "measured": "about 25 s per 44,000 properties; Run 1 batches 27 to 166 s",
+        "limit": "Part size 48 MiB (PART_SIZE_BYTES 50,331,648)"
+      },
+      {
+        "step": "Run 1 dry run, whole county",
+        "measured": "3 h 19 min (estimate was 46 min; waves ran 5-wide and competed)",
+        "limit": "Batched, not one pass"
+      },
+      {
+        "step": "County group write (Run 3)",
+        "measured": "about 25 min",
+        "limit": "One pass; sharding was not used"
+      },
+      {
+        "step": "Filebase",
+        "measured": "Free plan 5 GB; one county run about 2.95 GB (upper bound 3.73 GB), two runs would not fit; 504 and 429 seen under volume; quota stopped an upload on 2026-10-24",
+        "limit": "One pinned run at a time"
+      },
+      {
+        "step": "Pinata gateway (independent half of the check)",
+        "measured": "Served new county CARs at about 59 KB/s; Retry-After up to 2,806 s on 2026-10-24; pinByHash returns 403 PAID_FEATURE_ONLY",
+        "limit": "Whole-file readback beyond the 300 s limit; Run 3 used Filebase-only readback (PUBLISH_DEFER_PINATA=1); Retry-After honoured only up to a cap"
+      },
+      {
+        "step": "ipfs.io and dweb.link",
+        "measured": "Retired 2026-09-21; answer 429 or a service-worker page",
+        "limit": "Not used"
+      },
+      {
+        "step": "Hosted Permits page, full county",
+        "measured": "Run 2: first load 24 to 28 s from a home connection, about 45 s from GitHub runners (about 95 MB); count 0.26 s; list 0.56 s",
+        "limit": "Limit revised to 60 s; list paged at 200 rows"
+      },
+      {
+        "step": "Hosted SQL panel, first query",
+        "measured": "about 97 s on the full county",
+        "limit": "Later queries are fast"
+      },
+      {
+        "step": "API Lambda, Explore search on the full county",
+        "measured": "Out of memory at 1 GB, then HTTP 500 at the 29 s limit (2 GB DuckDB cap)",
+        "limit": "gap carried to"
+      },
+      {
+        "step": "Agent model (Bedrock Claude Sonnet 4.6)",
+        "measured": "10 requests per minute (story context, 2026-10-17); budget guard pauses at $5 per day (raised from $3 on 2026-10-26)",
+        "limit": "Quota raised, confirmed 2026-10-17"
+      },
+      {
+        "step": "Account Lambda concurrency",
+        "measured": "10, shared by API, agent and MCP",
+        "limit": "Bursts above 5 requests/s on /mcp mostly answer 503 (ERR-64)"
+      }
+    ]
+  }
+}

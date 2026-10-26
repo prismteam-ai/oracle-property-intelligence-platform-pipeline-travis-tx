@@ -1,0 +1,6 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/build-run-manifest.ts --config specs/011-publish-and-runs/run4/config.json
+working tree is dirty; commit before publishing:
+M pipeline/publish/src/run-manifest.ts
+ M pipeline/publish/test/austin-incremental.test.ts
+exit=1

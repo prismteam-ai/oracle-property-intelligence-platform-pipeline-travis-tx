@@ -1,0 +1,16 @@
+{
+  "schema": "pinata-copy-receipt.v1",
+  "run_id": "travis-full-run3-1-20261025",
+  "kind": "table",
+  "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b02/company/part-00000.parquet",
+  "cid": "bafybeidutotgaye742t3md56sa64z6dqthilna5epkpkkoctr6xkpfakqa",
+  "size": 698291,
+  "sha256": "609ae1039003b32d4eab784b36159c044acae179d27ec341e2ed5e0ce8f9f86f",
+  "status": "pinned",
+  "pinata_cid": "bafybeidutotgaye742t3md56sa64z6dqthilna5epkpkkoctr6xkpfakqa",
+  "match": true,
+  "pinned_at": "2026-10-26T05:36:42.868Z",
+  "pin_size": 698449,
+  "is_duplicate": null,
+  "recorded_at": "2026-10-26T05:36:43.051Z"
+}

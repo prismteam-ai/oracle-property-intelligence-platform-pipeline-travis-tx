@@ -1,0 +1,428 @@
+/* Permits list (A-03 T056): Atlas § 7 Data table from 600 px (header 56 px surface-container-high
+   title-small; rows 52 px with outline-variant dividers; tabular-nums) and § 7 Cards below it
+   (corner-medium, surface-container-lowest, padding 16). Every colour, font, spacing and radius
+   is a tokens.css custom property (Atlas § 13 rule 4). */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+/* The page title of every board page (headline-medium, as Runs and Data). */
+.title {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+}
+
+.value {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: 100%;
+}
+
+.mono {
+  font-family: var(--md-ref-typeface-mono);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pager (Atlas text buttons, 48 px touch targets) */
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Phones (< 600 px): the pager stays in the flow above the cards (hosted review 2026-10-26 B-7: a
+   sticky bottom bar wrapped to two lines and covered about 130 px of a card). The range takes its
+   own line and the two buttons share the next, so the first card's provenance line still sits
+   inside the 390 x 844 viewport (A-03-TC-NF-03). The rule sits at the end of the file, after
+   `.range`. */
+
+.range {
+  flex: 1 1 auto;
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.pagerButton {
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
+
+.pagerButton:hover:not(:disabled) {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-primary) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}
+
+/* Atlas disabled state: the whole control at the disabled-opacity token, no mixed colours. */
+.pagerButton:disabled {
+  cursor: default;
+  opacity: var(--md-sys-state-disabled-opacity);
+}
+
+/* Cards (< 600 px) */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface-container-lowest);
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+/* ERR-47: the three short fields (status, class, date) share one grid row, label over value, and the
+   spacing is one token step tighter, so the first provenance line stays inside the 390 x 844
+   viewport (A-03-TC-NF-03) with the 48 px copy button and link untouched. The last two rows
+   (Contractor and Missing data hold several wide pills) span the full card width. */
+.cardRows {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) minmax(0, 2fr);
+  column-gap: var(--space-3);
+  row-gap: var(--space-1);
+  margin: 0;
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.cardRow:nth-last-child(-n + 2) {
+  grid-column: 1 / -1;
+}
+
+.cardLabel {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+}
+
+.cardValue {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  overflow-wrap: anywhere;
+}
+
+/* Data table (≥ 600 px) */
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background-color: var(--md-sys-color-surface-container-lowest);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+}
+
+.table th {
+  box-sizing: border-box;
+  height: calc(var(--space-9) + var(--space-2));
+  padding: 0 var(--space-4);
+  background-color: var(--md-sys-color-surface-container-high);
+  text-align: left;
+  white-space: nowrap;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+.table td {
+  box-sizing: border-box;
+  height: calc(var(--space-9) + var(--space-1));
+  padding: var(--space-2) var(--space-4);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  vertical-align: top;
+}
+
+.provenanceCell {
+  min-width: calc(var(--space-10) * 3 + var(--space-7));
+}
+
+/* A-16 B-2: the table fits its card. Pills show one short line each (StatusPill `short`), long
+   source URLs break anywhere, the permit number and date stay on one line. */
+.table td {
+  overflow-wrap: anywhere;
+}
+
+.table td:first-child,
+.table td:nth-child(4) {
+  white-space: nowrap;
+}
+
+/* From 1200 px the seven columns share the card width (no sideways scroll); Missing data is
+   the widest so its pills sit two to a line instead of one per line. */
+@media (min-width: 1200px) {
+  .table {
+    table-layout: fixed;
+  }
+
+  .table th {
+    white-space: normal;
+  }
+
+  .table th:nth-child(1) {
+    width: 11%;
+  }
+
+  .table th:nth-child(2) {
+    width: 8%;
+  }
+
+  .table th:nth-child(3) {
+    width: 6%;
+  }
+
+  .table th:nth-child(4) {
+    width: 8%;
+  }
+
+  .table th:nth-child(5) {
+    width: 15%;
+  }
+
+  .table th:nth-child(6) {
+    width: 33%;
+  }
+}
+
+/* A-16 B-2: below 1200 px each permit row stacks as a compact block inside the card: the four
+   short fields on one line (label over value), then Contractor, Missing data and Provenance full
+   width. The element stays a table with one row per permit (the hosted checks count rows). */
+@media (max-width: 1199.98px) {
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .table,
+  .table tbody {
+    display: block;
+  }
+
+  .table tr {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-1) var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .table td {
+    display: block;
+    height: auto;
+    min-width: 0;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .table td:nth-child(n + 5) {
+    grid-column: 1 / -1;
+  }
+
+  .table td::before {
+    display: block;
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: var(--md-sys-typescale-label-medium-font);
+    font-size: var(--md-sys-typescale-label-medium-size);
+    line-height: var(--md-sys-typescale-label-medium-line-height);
+  }
+
+  .table td:nth-child(1)::before {
+    content: "Permit number";
+  }
+
+  .table td:nth-child(2)::before {
+    content: "Improvement status";
+  }
+
+  .table td:nth-child(3)::before {
+    content: "Status class";
+  }
+
+  .table td:nth-child(4)::before {
+    content: "Issue date";
+  }
+
+  .table td:nth-child(5)::before {
+    content: "Contractor";
+  }
+
+  .table td:nth-child(6)::before {
+    content: "Missing data";
+  }
+
+  .table td:nth-child(7)::before {
+    content: "Provenance";
+  }
+}
+
+/* A-16 B-3: on a phone card the missing-data pills fold behind a native disclosure. */
+/* The contractor reason pills open with it; the resolution pill stays. */
+.card:not(:has(details[open])) .cardRow:nth-last-child(2) [data-field] {
+  display: none;
+}
+
+/* Short pills may wrap inside the fixed table columns. */
+.table [data-short] {
+  white-space: normal;
+}
+
+.more {
+  min-width: 0;
+}
+
+.moreSummary {
+  display: flex;
+  align-items: center;
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  cursor: pointer;
+}
+
+.moreSummary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+@media (min-width: 600px) {
+  .page {
+    gap: var(--space-6);
+  }
+}
+
+/* A-16 style pass (PO 2026-10-26 06:25, board family): the contractor cell stacks the
+   resolution pill with the printed name, the BBB search link (a 48 px target) and the row's
+   reasons; the date cell shows the issue date with the final/closed dates and days open under it
+   in body-small. */
+.contractor,
+.dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.printed {
+  min-width: 0;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+.note,
+.dateLine {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.dateLine {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.bbbLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+.bbbLink:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Phones: the pager range on its own line, the two buttons on the next (see the pager note). */
+@media (max-width: 599.98px) {
+  .range {
+    flex-basis: 100%;
+  }
+}

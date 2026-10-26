@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "packages/*/src/**/*.ts",
+    "packages/*/test/**/*.ts",
+    "packages/*/scripts/**/*.ts",
+    "packages/*/gazetteer/**/*.ts",
+    "profiles/*/*.ts",
+    "profiles/*/scripts/**/*.ts",
+    "profiles/*/test/**/*.ts",
+    "pipeline/publish/src/**/*.ts",
+    "pipeline/publish/test/**/*.ts",
+    "pipeline/bridge/src/**/*.ts",
+    "pipeline/bridge/test/**/*.ts",
+    "*.config.ts"
+  ],
+  "exclude": ["**/node_modules", "pipeline/oracle-runtime", "pipeline/data"]
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Apps hub</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.hb-sub{font-size:13px;line-height:18px;color:var(--md-sys-color-on-surface-variant)}
+.hb-app{display:flex;flex-direction:column;gap:14px;padding:24px;border-radius:var(--md-sys-shape-corner-extra-large);background:var(--md-sys-color-surface);border:1px solid var(--md-sys-color-outline-variant)}
+.hb-ico{display:grid;place-items:center;width:56px;height:56px;border-radius:var(--md-sys-shape-corner-large);flex:none}
+.hb-link{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 16px;border-radius:var(--md-sys-shape-corner-medium);text-decoration:none;color:var(--md-sys-color-on-surface);background:var(--md-sys-color-surface)}
+.hb-link:hover{background:var(--md-sys-color-surface-container-high);color:var(--md-sys-color-on-surface)}
+</style>
+</helmet>
+<div style="position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: {{W}}px; box-sizing: border-box; padding: 0 {{pad}}px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<span class="material-symbols-rounded" aria-hidden="true" style="color: var(--md-sys-color-primary)">apps</span>
+<h1 class="atlas-top-app-bar__title" style="margin: 0; flex: 1">Apps</h1>
+<a class="atlas-btn atlas-btn--text" href="{{mcpHref}}" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">integration_instructions</span>{{mcpLabel}}</a>
+</header>
+
+<main style="position: absolute; left: 0; top: 64px; width: {{W}}px; box-sizing: border-box; padding: {{mainPad}}; display: flex; flex-direction: column; gap: {{gap}}px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: {{h2}}px; line-height: 1.25; font-weight: 400">Open property data tools</h2>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--md-sys-color-on-surface-variant)">Two apps built on the same published runs. Every number traces back to a public source and a content ID you can check yourself.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<sc-if value="{{stLoaded}}" hint-placeholder-val="{{ true }}"><a class="atlas-chip" href="{{runsHref}}" aria-label="Latest run: Run 3, manifest bafybeih…q7n3, refreshed 2026-10-17 11:43 UTC. Open Runs" style="text-decoration: none; height: auto; min-height: 40px; flex-wrap: wrap"><span class="material-symbols-rounded" aria-hidden="true" style="color: var(--status-success)">cloud_done</span>Run 3 · <span class="atlas-cid" style="background: none; padding: 0">bafybeih…q7n3</span> · refreshed 2026-10-17 11:43 UTC</a></sc-if>
+<sc-if value="{{stLoading}}" hint-placeholder-val="{{ false }}"><span class="atlas-chip" role="status" aria-label="Checking the latest run" style="height: 40px"><span class="material-symbols-rounded" aria-hidden="true">progress_activity</span><span class="atlas-skeleton" style="width: 220px; height: 12px"></span></span></sc-if>
+<sc-if value="{{stUnavailable}}" hint-placeholder-val="{{ false }}"><span class="atlas-chip" role="status" style="height: 40px"><span class="material-symbols-rounded" aria-hidden="true" style="color: var(--status-unavailable)">cloud_off</span>Run status unavailable</span><button class="atlas-btn atlas-btn--text" onClick="{{retry}}"><span class="material-symbols-rounded" aria-hidden="true">refresh</span>Try again</button></sc-if>
+<button class="atlas-btn atlas-btn--tonal" onClick="{{watch}}"><span class="material-symbols-rounded" aria-hidden="true">play_circle</span>Watch demo</button>
+<button class="atlas-btn atlas-btn--text" onClick="{{pr}}"><span class="material-symbols-rounded" aria-hidden="true">merge</span>Pull requests</button>
+</div>
+
+<div style="display: grid; grid-template-columns: {{cols}}; gap: 16px">
+<sc-for list="{{apps}}" as="a" hint-placeholder-count="2">
+<section class="hb-app" aria-labelledby="{{a.hid}}">
+<div style="display: flex; align-items: center; gap: 16px"><span class="hb-ico" aria-hidden="true" style="background: {{a.bg}}; color: {{a.fg}}"><span class="material-symbols-rounded" style="font-size: 32px">{{a.icon}}</span></span><div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><h3 id="{{a.hid}}" style="margin: 0; font-family: var(--font-brand); font-size: 22px; line-height: 28px; font-weight: 400">{{a.name}}</h3><span class="hb-sub">{{a.tag}}</span></div><span class="{{a.pillCls}}"><span class="material-symbols-rounded" aria-hidden="true">{{a.pillIcon}}</span>{{a.pill}}</span></div>
+<p style="margin: 0; font-size: 14px; line-height: 20px">{{a.desc}}</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 20px"><sc-for list="{{a.points}}" as="p" hint-placeholder-count="3"><li style="display: flex; gap: 8px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true" style="color: var(--status-success)">check</span>{{p}}</li></sc-for></ul>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto"><sc-if value="{{a.live}}" hint-placeholder-val="{{ true }}"><a class="atlas-btn atlas-btn--filled" href="{{a.href}}" target="{{a.target}}" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">{{a.ctaIcon}}</span>{{a.cta}}</a></sc-if><sc-if value="{{a.notLive}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--filled" disabled="{{ true }}"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>Not deployed yet</button></sc-if><sc-if value="{{a.hasAlt}}" hint-placeholder-val="{{ true }}"><a class="atlas-btn atlas-btn--text" href="{{a.altHref}}" style="text-decoration: none">{{a.alt}}</a></sc-if></div>
+</section>
+</sc-for>
+</div>
+
+<section aria-labelledby="sh-h" style="display: flex; flex-direction: column; gap: 10px">
+<h3 id="sh-h" style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500">Shared by both apps</h3>
+<div style="display: grid; grid-template-columns: {{linkCols}}; gap: 8px">
+<sc-for list="{{links}}" as="l" hint-placeholder-count="4"><a class="hb-link" href="{{l.href}}"><span class="material-symbols-rounded" aria-hidden="true" style="color: var(--md-sys-color-primary)">{{l.icon}}</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 14px; line-height: 20px">{{l.t}}</span><span class="hb-sub" style="font-size: 12px; line-height: 16px">{{l.s}}</span></span><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">chevron_right</span></a></sc-for>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)"><span>Counties: Travis County, TX live · Williamson County, TX coming soon</span><span style="flex: 1"></span><a href="LegalTerms1440.dc.html">Terms</a><a href="LegalPrivacy1440.dc.html">Privacy</a><a href="{{dataHref}}">Data licences</a></div>
+</main>
+<sc-if value="{{toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{toast}}</div></sc-if>
+<div role="group" aria-label="Preview a state" style="position: absolute; right: 16px; bottom: 16px; z-index: 70; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px; max-width: {{barW}}px; padding: 8px; border-radius: var(--md-sys-shape-corner-medium); border: 1px dashed var(--md-sys-color-outline); background: var(--md-sys-color-surface)"><span style="font-size: 11px; color: var(--md-sys-color-on-surface-variant)">Prototype · run status:</span><sc-for list="{{stOpts}}" as="o" hint-placeholder-count="3"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 28px; font-size: 12px">{{o.label}}</button></sc-for><span style="font-size: 11px; color: var(--md-sys-color-on-surface-variant)">CRM:</span><sc-for list="{{crmOpts}}" as="o" hint-placeholder-count="2"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 28px; font-size: 12px">{{o.label}}</button></sc-for></div>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Apps hub (suite landing page)" desktop="Hub1440.dc.html" tablet="Hub768.dc.html" mobile="Hub390.dc.html" current="{{cur}}" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"device":{"editor":"enum","options":["desktop","tablet","mobile"],"default":"desktop"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  constructor(props) { super(props); this.state = { st: 'loaded', crm: 'soon', toast: '' }; }
+  componentWillUnmount() { clearTimeout(this.tt); clearTimeout(this.lt); try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  say(t) { this.setState({ toast: t }); clearTimeout(this.tt); this.tt = setTimeout(() => this.setState({ toast: '' }), 2800); }
+  renderVals() {
+    const dv = this.props.device ?? 'desktop', mob = dv === 'mobile', tab = dv === 'tablet', s = this.state, crmLive = s.crm === 'live';
+    const apps = [
+      { hid: 'app-cl', target: '_self', name: 'CountyLens', tag: 'Property data explorer', icon: 'map', bg: 'var(--md-sys-color-primary-container)', fg: 'var(--md-sys-color-on-primary-container)', pill: 'Live · Travis County', pillCls: 'atlas-pill atlas-pill--success', pillIcon: 'cloud_done',
+        desc: 'Find properties by area, roof age, permits and owner location. Ask in plain English or SQL, and check where each value came from.',
+        points: [Component.mapOn() ? 'Map and list with lat/lon and a source link per row' : 'List with lat/lon and a source link per row', 'Runs, coverage and verifiable CIDs', 'MCP tools for Claude and other clients'],
+        live: true, notLive: false, href: mob ? 'Explore390.dc.html' : 'Explore1440.dc.html', cta: 'Open CountyLens', ctaIcon: 'arrow_forward', hasAlt: true, alt: 'What can I ask?', altHref: mob ? 'Welcome390.dc.html' : tab ? 'Welcome768.dc.html' : 'Welcome1440.dc.html' },
+      { hid: 'app-crm', target: '_blank', name: 'Roofing CRM', tag: 'Leads and follow-up', icon: 'contact_page', bg: 'var(--md-sys-color-tertiary-container)', fg: 'var(--md-sys-color-on-tertiary-container)', pill: crmLive ? 'Separate app' : 'Coming soon', pillCls: crmLive ? 'atlas-pill atlas-pill--info' : 'atlas-pill atlas-pill--unavailable', pillIcon: crmLive ? 'open_in_new' : 'schedule', live: crmLive, notLive: !crmLive,
+        desc: 'First release: Explore and Search on the map, with three search modes: Map, Filters and AI. Leads, visits and notes come later. Built and hosted in its own repository.',
+        points: ['Explore with Map view, Filters and AI', 'Search box with the same three modes', 'Lead tools (visits, notes): coming soon'],
+        href: 'https://crm.example', cta: 'Open the CRM', ctaIcon: 'open_in_new', hasAlt: Component.mapOn(), alt: 'Preview Explore with the map · prototype only', altHref: 'ExploreQ-crmmap.dc.html' } // prototype-only link: shown only with the CRM-preview switch on; do not ship
+    ];
+    const links = [['history', 'Runs and CIDs', 'Every published run and its manifest CID', mob ? 'Runs390.dc.html' : 'Runs1440.dc.html'], ['donut_small', 'Coverage', 'Loaded vs each source’s total', mob ? 'Coverage390.dc.html' : 'Coverage1440.dc.html'], ['integration_instructions', 'MCP and API', 'Tools, schema, try a call', mob ? 'HelpMcp390.dc.html' : 'HelpMcp1440.dc.html'], ['license', 'Data use and licences', 'Sources and how to cite', mob ? 'LegalData390.dc.html' : 'LegalData1440.dc.html']].map((l) => ({ icon: l[0], t: l[1], s: l[2], href: l[3] }));
+    return { W: mob ? 390 : tab ? 768 : 1440, H: mob ? 1420 : tab ? 1200 : 900, pad: mob ? 16 : 24, mainPad: mob ? '24px 16px 80px' : tab ? '32px 32px 80px' : '40px 160px', gap: mob ? 20 : 28, h2: mob ? 28 : 36, cols: mob || tab ? '1fr' : 'repeat(2, minmax(0, 1fr))', linkCols: mob ? '1fr' : tab ? 'repeat(2, minmax(0, 1fr))' : 'repeat(4, minmax(0, 1fr))',
+      stLoaded: s.st === 'loaded', stLoading: s.st === 'loading', stUnavailable: s.st === 'unavailable', runsHref: mob ? 'Runs390.dc.html' : tab ? 'Runs768.dc.html' : 'Runs1440.dc.html',
+      retry: () => { this.setState({ st: 'loading' }); clearTimeout(this.lt); this.lt = setTimeout(() => this.setState({ st: 'loaded' }), 1200); },
+      watch: () => this.say('Opens the demo video (link added at submission).'), pr: () => this.say('Opens the pull requests for both apps (links added at submission).'),
+      stOpts: [['loaded', 'Loaded'], ['loading', 'Loading'], ['unavailable', 'Unavailable']].map((o) => ({ label: o[1], on: String(s.st === o[0]), pick: () => this.setState({ st: o[0] }) })),
+      crmOpts: [['soon', 'Not deployed'], ['live', 'Live']].map((o) => ({ label: o[1], on: String(s.crm === o[0]), pick: () => this.setState({ crm: o[0] }) })),
+      toastOn: !!s.toast, toast: s.toast, barW: mob ? 300 : 700,
+      apps: apps, links: links, cur: dv, mcpHref: mob ? 'HelpMcp390.dc.html' : 'HelpMcp1440.dc.html', mcpLabel: mob ? 'MCP' : 'MCP and API docs', dataHref: mob ? 'LegalData390.dc.html' : 'LegalData1440.dc.html' };
+  }
+}
+</script>
+</body>
+</html>

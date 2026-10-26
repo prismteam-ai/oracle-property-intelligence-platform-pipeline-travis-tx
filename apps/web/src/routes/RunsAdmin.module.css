@@ -1,0 +1,136 @@
+/* Admin controls of the Runs page and the buttons / banners shared by Activity (A-16 T043).
+   Atlas § 7 Buttons (filled / outlined / text, 40 px minimum 48 px target), Banner (status
+   containers § 2.4). Tokens only. */
+
+.admin {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.signedIn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.who {
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filled,
+.outlined,
+.text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.filled {
+  border: 0;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.outlined {
+  border: 1px solid var(--md-sys-color-outline);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+}
+
+.text {
+  border: 0;
+  background: transparent;
+  color: var(--md-sys-color-primary);
+}
+
+.filled:focus-visible,
+.outlined:focus-visible,
+.text:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.filled:disabled,
+.outlined:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.helper {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+.bannerText {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+.toneInfo {
+  background: var(--status-info-container);
+  color: var(--status-info);
+}
+
+.toneSuccess {
+  background: var(--status-success-container);
+  color: var(--status-success);
+}
+
+.toneWarning {
+  background: var(--status-warning-container);
+  color: var(--status-warning);
+}
+
+.toneError {
+  background: var(--status-danger-container);
+  color: var(--status-danger);
+}

@@ -1,0 +1,44 @@
+node_modules/
+dist/
+build/
+cdk.out/
+.turbo/
+coverage/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+.DS_Store
+.claude/settings.local.json
+# raw source downloads and local pipeline state (never commit). A-04: no trailing slash, so
+# the worktree symlinks pipeline/data and pipeline/local-stack/data match too.
+pipeline/data
+pipeline/local-stack/data
+pipeline/oracle-runtime/test/.out/
+*.car
+
+# elephant-cli debug log (written into the working folder)
+elephant-cli.log
+
+# A-11: local-only scratch logs from dry-run batch orchestration (superseded direct-validate
+# attempt logs plus the live batch-runner echo logs); never meaningful provenance, never uploaded.
+specs/011-publish-and-runs/dry-run-*.log
+specs/011-publish-and-runs/dry-run/
+
+# A-02 workspace: census downloads, Parquet outputs (only the published contract sample is tracked, ARD D-07)
+pipeline/data/raw/census/
+**/*.parquet
+!contract/v1/sample.parquet
+
+# A-03: local run captures (raw Austin pages, receipts, Parquet parts). Only runs/ manifests
+# and the run index are committed. cdk.out/, dist/, test-results/ and playwright-report/ are
+# listed above.
+pipeline/data/runs/
+apps/web/public/build.json
+apps/web/public/runs/
+
+# A-11 Run 3: logs and pid files (never commit)
+specs/011-publish-and-runs/run3/logs/
+specs/011-publish-and-runs/run3/*.pid
+elephant-cli*.log

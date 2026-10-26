@@ -1,0 +1,16 @@
+HTTP/2 200 
+date: Mon, 26 Oct 2026 10:48:07 GMT
+content-type: application/zip
+content-length: 3554021795
+server: cloudflare
+last-modified: Wed, 22 Jul 2026 12:08:52 GMT
+etag: "6a60b2d4-d3d611a3"
+age: 53878
+cache-control: public, max-age=31536000
+vary: Accept-Encoding
+access-control-allow-origin: *
+accept-ranges: bytes
+cf-cache-status: HIT
+cf-ray: a508e308cc2e8aa0-MRS
+alt-svc: h3=":443"; ma=86400
+

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Property detail, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: var(--md-sys-color-surface); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<div style="flex: 0 1 560px; margin-left: 24px; position: relative; z-index: 30"><dc-import name="SearchBox" value="Pflugerville, TX" variant="header" device="desktop" start-open="{{ false }}" hint-size="100%,48px"></dc-import></div>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 836px; box-sizing: border-box; padding-top: 16px">
+<a class="atlas-nav-item" href="Explore1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<div role="toolbar" aria-label="Filters" style="position: absolute; left: 80px; top: 64px; width: 800px; height: 56px; box-sizing: border-box; padding: 0 24px; display: flex; align-items: center; gap: 8px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<button class="atlas-chip" aria-pressed="{{__p.k3}}" onClick="{{__tg.k3}}"><span class="material-symbols-rounded" aria-hidden="true">check</span>Roof age ≥ 15 yrs</button>
+<button class="atlas-chip" aria-pressed="{{__p.k4}}" onClick="{{__tg.k4}}"><span class="material-symbols-rounded" aria-hidden="true">check</span>Permit: open, stalled</button>
+<a class="atlas-chip" style="text-decoration: none" href="Explore1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">filter_list</span>More filters</a>
+<span style="flex: 1"></span>
+<a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="Explore1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>128 results</a>
+</div>
+
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-map" tabindex="0" role="region" aria-roledescription="map" aria-label="Map. Arrow keys pan, plus and minus zoom. Every marker is also in the results list." style="position: absolute; left: 80px; top: 120px; width: 800px; height: 740px">
+<svg viewBox="100 0 800 740" role="img" aria-label="Map with the selected property highlighted inside a 5 mile ring">
+<path class="street" d="M -10 200 L 970 160"></path><path class="street" d="M -10 470 L 970 500"></path><path class="street" d="M -10 650 L 970 620"></path><path class="street" d="M 300 -10 L 340 750"></path><path class="street" d="M 640 -10 L 600 750"></path>
+<circle class="radius" cx="500" cy="400" r="140"></circle>
+<circle class="marker" cx="490" cy="300" r="7" style="fill: var(--viz-roof-age-15-19)"></circle>
+<circle class="marker" cx="520" cy="350" r="7" style="fill: var(--viz-roof-age-15-19)"></circle>
+<circle class="marker" cx="470" cy="360" r="7" style="fill: var(--viz-roof-age-20-24)"></circle>
+<circle class="marker" cx="560" cy="420" r="7" style="fill: var(--viz-roof-age-20-24)"></circle>
+<circle class="marker" cx="450" cy="450" r="7" style="fill: var(--viz-roof-age-15-19)"></circle>
+<circle class="marker" cx="380" cy="460" r="7" style="fill: var(--viz-roof-age-20-24)"></circle>
+<circle class="marker" cx="530" cy="470" r="7" style="fill: var(--viz-roof-age-25-plus)"></circle>
+<circle class="selected-ring" cx="440" cy="500" r="14"></circle>
+<circle class="marker" cx="440" cy="500" r="9" style="fill: var(--viz-roof-age-20-24)"></circle>
+<path class="pin" d="M500 400C496 392 486 384 486 374a14 14 0 1 1 28 0c0 10-10 18-14 26z"></path>
+</svg>
+</div>
+<span class="atlas-map-chip" style="position: absolute; left: 380px; top: 640px; padding: 4px 10px; border-radius: var(--md-sys-shape-corner-small); background: var(--md-sys-color-surface-container-lowest); box-shadow: var(--md-sys-elevation-level1); font-size: 13px; line-height: 20px; font-weight: 500">101 Sample Ln · roof 23 yrs</span></sc-if><sc-if value="{{mapOff}}" hint-placeholder-val="{{ true }}"><div role="region" aria-label="Results list behind the details drawer" style="position: absolute; left: 80px; top: 120px; width: 800px; height: 740px; box-sizing: border-box; padding: 12px 16px 16px; background: var(--md-sys-color-surface-container-low)"><div style="height: 100%; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column">
+<div style="min-height: 48px; display: flex; align-items: center; padding: 0 16px; border-bottom: 1px solid var(--md-sys-color-outline-variant); font-size: 14px"><b class="num" style="font-weight: 500">128</b>&nbsp;within 5 mi of Pflugerville city hall · roof ≥ 15 yrs</div>
+<div role="table" aria-label="Matches" style="flex: 1; min-height: 0"><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 40px; padding: 0 16px; font-size: 12px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)"><span role="columnheader">Address</span><span role="columnheader">Roof</span><span role="columnheader">Conf.</span><span role="columnheader">Distance</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">58 Example Rd</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Pflugerville 78660</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-25-plus)"></span>31 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--danger">Low</span></span><span role="cell" class="num" style="white-space: nowrap">2.8 mi NW</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">3 Placeholder Pl</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Austin 78753</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-20-24)"></span>24 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--success">High</span></span><span role="cell" class="num" style="white-space: nowrap">3.6 mi S</span></div><div role="row" aria-current="true" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px; background: var(--md-sys-color-secondary-container); box-shadow: inset 3px 0 0 var(--md-sys-color-primary)"><span role="cell" style="min-width: 0"><span style="display: block">101 Sample Ln</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Austin 78753</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-20-24)"></span>23 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--success">High</span></span><span role="cell" class="num" style="white-space: nowrap">4.6 mi SW</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">220 Example Dr</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Pflugerville 78660</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-20-24)"></span>21 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--warning">Medium</span></span><span role="cell" class="num" style="white-space: nowrap">1.1 mi NE</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">18 Example Bnd</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Pflugerville 78660</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-20-24)"></span>20 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--success">High</span></span><span role="cell" class="num" style="white-space: nowrap">4.8 mi E</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">310 Sample Rd</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Austin 78754</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-20-24)"></span>20 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--success">High</span></span><span role="cell" class="num" style="white-space: nowrap">3.0 mi W</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">412 Example Ave</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Pflugerville 78660</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-15-19)"></span>19 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--success">High</span></span><span role="cell" class="num" style="white-space: nowrap">4.9 mi SE</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">41 Sample Way</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Austin 78753</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-15-19)"></span>19 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--success">High</span></span><span role="cell" class="num" style="white-space: nowrap">4.4 mi NE</span></div><div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 84px 92px 92px; gap: 8px; align-items: center; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; line-height: 18px"><span role="cell" style="min-width: 0"><span style="display: block">37 Placeholder Ct</span><span style="display: block; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Austin 78754</span></span><span role="cell" class="num" style="white-space: nowrap"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; border: 1px solid var(--md-sys-color-on-surface-variant); background: var(--viz-roof-age-15-19)"></span>17 yrs</span><span role="cell"><span class="atlas-pill atlas-pill--danger">Low</span></span><span role="cell" class="num" style="white-space: nowrap">3.2 mi W</span></div></div>
+<div style="min-height: 48px; display: flex; align-items: center; padding: 0 16px; border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 13px; color: var(--md-sys-color-on-surface-variant)">Showing 1–9 of 9 sample rows · Oldest roof · 101 Sample Ln is open in the details drawer</div>
+</div></div></sc-if>
+
+<aside aria-label="Property details" style="position: absolute; left: 880px; top: 64px; width: 560px; height: 796px; overflow-y: auto; border-left: 1px solid var(--md-sys-color-outline-variant); background: var(--md-sys-color-surface); box-shadow: var(--md-sys-elevation-level1)">
+<dc-import name="PropertyDetail" imagery="{{yes}}" hint-size="560px,3160px"></dc-import>
+</aside>
+
+<footer style="position: absolute; left: 80px; top: 860px; width: 1360px; height: 40px; box-sizing: border-box; padding: 0 24px; display: flex; align-items: center; gap: 24px; background: var(--md-sys-color-surface); border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">
+<a href="LegalTerms1440.dc.html">Terms</a><a href="LegalPrivacy1440.dc.html">Privacy</a><a href="LegalData1440.dc.html">Data licences</a>
+<span style="flex: 1"></span>
+<span>Street View: coming soon<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"> · Map © OpenStreetMap contributors (CRM preview)</sc-if></span>
+</footer>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Property · 1440 · drawer over Explore" desktop="Property1440.dc.html" tablet="Property768.dc.html" mobile="Property390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {"k3": true, "k4": true};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k2": "Cleared. (Sample: the board keeps its example values.)"};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { mapOn: Component.mapOn(), mapOff: !Component.mapOn(), __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  __rv() { return { yes: true }; }
+}
+</script>
+</body>
+</html>

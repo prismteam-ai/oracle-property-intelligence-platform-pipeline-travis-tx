@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Property detail</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.kvc{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border:1px solid var(--md-sys-color-outline-variant);border-radius:var(--md-sys-shape-corner-medium);font-size:14px;line-height:20px}
+</style>
+</helmet>
+<article aria-labelledby="pd-title" style="width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 0; background: var(--md-sys-color-surface); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<div style="position: relative; padding: 12px 12px 12px 24px; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; padding-top: 6px">
+<h2 id="pd-title" style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">101 Sample Ln</h2>
+<div style="font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Austin, TX 78753 · TCAD 0273450112 · Sample</div>
+</div>
+<button class="atlas-icon-btn" aria-label="Copy link to this property" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">link</span></button>
+<a class="atlas-icon-btn" aria-label="Close" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Explore1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">close</span></a>
+</div>
+
+<div style="padding: 16px 24px 0; display: flex; flex-wrap: wrap; gap: 8px">
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">roofing</span>Roof 23 yrs · High</span>
+<span class="atlas-pill atlas-pill--warning"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>Stalled 6.4 yrs · source says Expired</span>
+<span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">flight</span>Out-of-area owner</span>
+</div>
+
+<div style="padding: 16px 24px 0; display: flex; flex-direction: column; gap: 8px">
+<div role="img" aria-label="Street View: coming soon" style="height: 120px; box-sizing: border-box; padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; border: 1px dashed var(--md-sys-color-outline); border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container-low)">
+<span class="material-symbols-rounded" aria-hidden="true" style="color: var(--md-sys-color-on-surface-variant)">no_photography</span>
+<b style="font-size: 14px; line-height: 20px; font-weight: 500">Street View: coming soon</b>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">No street photo yet. The property data below is unaffected.</span>
+</div>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=30.40310,-97.66080" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; font-size: 14px; line-height: 20px">Open the area in Google Maps<span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">open_in_new</span></a>
+</div>
+
+<div style="margin-top: 16px; padding: 16px 24px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--md-sys-color-outline-variant); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="{{listHref}}"><span class="material-symbols-rounded" aria-hidden="true">{{showIcon}}</span>{{showLabel}}</a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="{{askHref}}"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask about this property</a>
+<button class="atlas-btn atlas-btn--outlined" onClick="{{__say.k4}}"><span class="material-symbols-rounded" aria-hidden="true">open_in_new</span>Open in CRM</button>
+</div>
+
+<section aria-labelledby="s-roof" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h3 id="s-roof" style="margin: 0; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Roof</h3>
+<div class="atlas-kv" style="align-items: center"><span>Roof age</span><span style="display: flex; align-items: center; gap: 8px"><span class="num" style="font-size: 16px; font-weight: 500">23 yrs</span><span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Confidence: high</span></span></div>
+<div class="atlas-kv"><span>Basis</span><span>Reroof permit, finaled 2003-05-02</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; line-height: 16px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)">Evidence chain</span>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<button class="atlas-chip atlas-chip--signal" onClick="{{__say.k5}}">Reroof permit 2003</button><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="color: var(--md-sys-color-on-surface-variant)">arrow_forward</span>
+<button class="atlas-chip atlas-chip--signal" onClick="{{__say.k6}}">Austin permits (3syk-w9eu)</button><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="color: var(--md-sys-color-on-surface-variant)">arrow_forward</span>
+<button class="atlas-chip atlas-chip--signal" onClick="{{__say.k7}}">Captured 2026-10-15</button><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="color: var(--md-sys-color-on-surface-variant)">arrow_forward</span>
+<span class="atlas-chip atlas-chip--signal"><span class="atlas-cid">CID bafybei…q4xa<button aria-label="Copy CID" onClick="{{__say.k8}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span>
+</div>
+</div>
+<div class="atlas-missing" role="note" style="font-size: 13px; line-height: 18px"><span class="material-symbols-rounded" aria-hidden="true">info</span><div>The 2020 reroof permit is not counted: it was never finaled.</div></div>
+</section>
+
+<section aria-labelledby="s-permits" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<div style="display: flex; align-items: center; gap: 8px"><h3 id="s-permits" style="flex: 1; margin: 0; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Permits · 2 roofing</h3><button class="atlas-btn atlas-btn--text" onClick="{{__say.k9}}">Show 1 other</button></div>
+<ul aria-label="Roofing permits" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{permits}}" as="pm" hint-placeholder-count="2"><li class="kvc"><div style="display: flex; align-items: center; gap: 8px"><b style="flex: 1; font-weight: 500">{{pm.id}}</b><span class="{{pm.stCls}}">{{pm.st}}</span></div><sc-for list="{{pm.kv}}" as="f" hint-placeholder-count="5"><div class="atlas-kv"><span>{{f.k}}</span><span class="{{f.c}}">{{f.v}}</span></div></sc-for><div class="atlas-kv" role="group" aria-label="Contractor identity: {{pm.cbLabel}}" style="align-items: flex-start"><span>Identity</span><span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0"><span class="atlas-pill {{pm.cbCls}}" title="{{pm.cbTip}}"><span class="material-symbols-rounded" aria-hidden="true">{{pm.cbIcon}}</span>{{pm.cbLabel}}</span><span style="font-size: 13px; line-height: 18px">{{pm.cbReason}}</span></span></div><div class="atlas-kv"><span>BBB</span><span>{{pm.bbb}}</span></div></li></sc-for>
+</ul>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">description</span>Austin permits (3syk-w9eu) · captured 2026-10-15 · Run 3 · class from the Travis profile, next to the source’s own status word (status_raw). Stalled = source says Expired, or open past its expiry date. Contractor identity from the TX Comptroller registry only</div>
+</section>
+
+<section aria-labelledby="s-merge" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h3 id="s-merge" style="margin: 0; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Owner merged from 2 records</h3>
+<span style="font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)">Two TCAD owner accounts describe the same owner. Run 3 merged them into one owner. Matched on normalised name + mailing address.</span>
+<sc-if value="{{mergeOn}}" hint-placeholder-val="{{ true }}"><ul aria-label="Source records" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{merged}}" as="r" hint-placeholder-count="3"><li class="kvc"><div style="display: flex; align-items: center; gap: 8px"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true" style="color: var(--md-sys-color-primary)">{{r.icon}}</span><b style="flex: 1; font-weight: 500">{{r.src}}</b><span class="atlas-pill {{r.roleCls}}">{{r.role}}</span></div><div class="atlas-kv"><span>Record ID</span><span style="font-family: var(--font-mono); font-size: 13px">{{r.id}}</span></div><div class="atlas-kv"><span>Contributed</span><span>{{r.gave}}</span></div><div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">description</span>From the published owner record (person table) · TCAD account {{r.acct}}</div></li></sc-for>
+</ul>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">merge</span>person table · Run 3 · CID …o2wn · Sample IDs · <a href="Coverage1440.dc.html">All merge counts on Coverage</a></div></sc-if>
+<sc-if value="{{mergeOff}}" hint-placeholder-val="{{ false }}"><div class="atlas-missing" role="note" style="font-size: 13px; line-height: 18px"><span class="material-symbols-rounded" aria-hidden="true">info</span><div><b style="font-weight: 500">Merge details: coming soon.</b> Run 3 merged 6,866 owner records in the county (Run manifest · coverage section).</div></div></sc-if>
+</section>
+
+<section aria-labelledby="s-owner" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h3 id="s-owner" style="margin: 0; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Owner</h3>
+<div class="atlas-kv"><span>Name</span><span>Sample Owner</span></div>
+<div class="atlas-kv" style="align-items: center"><span>Mailing location</span><span style="display: flex; align-items: center; gap: 8px">Houston, TX 77002 <span class="atlas-pill atlas-pill--info">Out of area</span></span></div>
+<div class="atlas-kv"><span>Last sale</span><span class="num">2011-07-18</span></div>
+<div class="atlas-kv"><span>Tenure</span><span class="num">15.2 yrs</span></div>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">description</span>TCAD · captured 2026-10-14 · Run 3 · CID <span class="atlas-cid">bafybei…7m2c<button aria-label="Copy CID" onClick="{{__say.k10}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></div>
+</section>
+
+<section aria-labelledby="s-loc" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h3 id="s-loc" style="margin: 0; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Location</h3>
+<div class="atlas-kv"><span>Coordinates</span><span class="num" style="font-family: var(--font-mono); font-size: 13px">30.40310, −97.66080</span></div>
+<div class="atlas-kv"><span>Coordinate source</span><span>TCAD parcel centroid</span></div>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>TCAD parcels · captured 2026-10-14 · Run 3 · Sample coordinates</div>
+</section>
+
+<section aria-labelledby="s-meta" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h3 id="s-meta" style="margin: 0; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Metadata</h3>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Each field: source, then captured date and run, CID and licence</span>
+<ul aria-label="Field provenance" style="margin: 0; padding: 0; list-style: none; border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<sc-for list="{{meta}}" as="m" hint-placeholder-count="7"><li style="display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; border-top: {{m.bt}}; font-size: 13px; line-height: 18px"><span style="display: flex; gap: 8px; align-items: baseline"><b style="font-weight: 500; font-family: var(--font-mono); font-size: 13px">{{m.field}}</b><span style="flex: 1; min-width: 0; text-align: right">{{m.src}}</span></span><span style="display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; color: var(--md-sys-color-on-surface-variant); font-size: 12px"><span class="num">{{m.when}}</span><span class="{{m.cidCls}}">{{m.cid}}</span><span>{{m.lic}}</span></span></li></sc-for>
+</ul>
+<a class="atlas-btn atlas-btn--text" style="text-decoration: none; align-self: flex-start" href="DataCatalog1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">table_view</span>Open field meanings in the catalog</a>
+</section>
+
+<section aria-labelledby="s-sim" style="padding: 20px 0 20px 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 id="s-sim" style="margin: 0; padding-right: 24px; font-family: var(--font-plain); font-size: 16px; line-height: 24px; font-weight: 500">Similar properties</h3>
+<ul class="atlas-list" aria-labelledby="s-sim" style="margin: 0; width: calc(100% - 24px); box-sizing: border-box; padding: 0; border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface)">
+<sc-for list="{{similar}}" as="it" hint-placeholder-count="3">
+<li class="atlas-list-item" style="align-items: flex-start; padding-top: 8px; padding-bottom: 8px; border-top: {{it.bt}}">
+<span class="atlas-list-item__lead"><span class="material-symbols-rounded" aria-hidden="true">roofing</span></span>
+<div class="atlas-list-item__body" style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<div style="display: flex; align-items: center; gap: 4px"><span class="atlas-list-item__title" style="flex: 1">{{it.title}}</span><span class="num" style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">{{it.dist}}</span><a class="atlas-icon-btn" aria-label="Open {{it.title}}" href="{{propHref}}" style="width: 40px; height: 40px; display: grid; place-items: center; color: var(--md-sys-color-on-surface); text-decoration: none"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">info</span></a></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; line-height: 18px; color: var(--md-sys-color-on-surface-variant)"><span>Roof {{it.roof}} yrs</span><span class="{{it.confCls}}">{{it.conf}}</span><span>{{it.permit}}</span></div>
+<span class="atlas-prov" style="font-size: 12px; line-height: 16px">{{it.why}}</span>
+</div>
+</li>
+</sc-for>
+</ul>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px; padding-right: 24px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Sample · picked by street, year built and roof-age band<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+</div>
+</section>
+</article>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"imagery":{"editor":"boolean","default":false},"mergeDetails":{"editor":"enum","options":["published","none"],"default":"published"},"device":{"editor":"enum","options":["desktop","mobile"],"default":"desktop"},"$preview":{"width":560,"height":3200}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch: "Show on map" only in the CRM preview; CountyLens shows the property in the list. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Copied to the clipboard (Sample).", "k4": "Sends this property to the roofing CRM (outside CountyLens).", "k5": "“Reroof permit 2003” is drawn but not wired in this prototype.", "k6": "“Austin permits (3syk-w9eu)” is drawn but not wired in this prototype.", "k7": "“Captured 2026-10-15” is drawn but not wired in this prototype.", "k8": "Copied to the clipboard (Sample).", "k9": "More rows load here (Sample).", "k10": "Copied to the clipboard (Sample)."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  __rv() {
+    const imagery = this.props.imagery ?? true;
+    const mob = (this.props.device ?? 'desktop') === 'mobile';
+    const S = (title, dist, roof, conf, permit, why) => ({ title, dist, roof, conf, permit, why, confCls: 'atlas-pill ' + ({ High: 'atlas-pill--success', Medium: 'atlas-pill--warning', Low: 'atlas-pill--danger' })[conf] });
+    const similar = [S('118 Sample Ln · Austin 78753', '0.1 mi', 22, 'High', 'No open permit', 'Same street, built 1998'), S('7 Example Ct · Austin 78753', '0.4 mi', 24, 'Medium', 'Permit open 1.2 yrs', 'Same roof-age band'), S('64 Placeholder Dr · Austin 78754', '0.9 mi', 21, 'High', 'Permit stalled 5.1 yrs', 'Also a stalled reroof')].map((x, i) => ({ ...x, bt: i ? '1px solid var(--md-sys-color-outline-variant)' : '0' }));
+    const KV = (k, v, c) => ({ k, v, c: c || '' });
+    // AD-05 / AD-06 / AD-08: class + source status word; contractor as printed with its identity badge (same variants as ContractorBadge); no licence line.
+    const permits = [{ id: '2020-047812 BP', st: 'Stalled · source says Expired', stCls: 'atlas-pill atlas-pill--warning', kv: [KV('Work', 'Reroof, re-cover'), KV('Issued · expired · final', '2020-05-28 · 2021-05-28 · not finaled', 'num'), KV('Open', '2,333 days', 'num'), KV('Contractor, as printed on permit', 'SAMPLE ROOFING CO')], cbCls: 'atlas-pill--info', cbIcon: 'help', cbLabel: 'Candidate', cbReason: 'Likely match on name and address, not proof', cbTip: 'Name matches stay Candidate. Only an official ID resolves a contractor.', bbb: 'Blocked · bbb.org refused the check (403), 2026-10-17' },
+      { id: '2003-018266 BP', st: 'Closed · source says Final', stCls: 'atlas-pill atlas-pill--success', kv: [KV('Work', 'Reroof'), KV('Issued · final', '2003-03-14 · 2003-05-02', 'num'), KV('Open', '49 days', 'num'), KV('Contractor, as printed on permit', 'EXAMPLE EXTERIORS LLC')], cbCls: 'atlas-pill--success', cbIcon: 'verified', cbLabel: 'Resolved', cbReason: 'Comptroller taxpayer no. 32041178552 matched · Example Exteriors, LLC', cbTip: '', bbb: 'Blocked · bbb.org refused the check (403), 2026-10-17' }];
+    const M = (field, src, when, cid, lic, blocked) => ({ field, src, when, cid, lic, cidCls: blocked ? 'atlas-pill atlas-pill--unavailable' : 'atlas-cid' });
+    const meta0 = [M('roof_age_years', 'Derived: permits + TCAD', '2026-10-15 · Run 3', 'bafybei…r8sd', '[Derived licence]'), M('permits', 'Austin permits (3syk-w9eu)', '2026-10-15 · Run 3', 'bafybei…q4xa', '[Licence as published]'), M('contractor', 'Austin permits (3syk-w9eu)', '2026-10-15 · Run 3', 'bafybei…q4xa', '[Licence as published]'), M('bbb_status', 'BBB', 'Not fetched · Run 3', 'Blocked (403) on 2026-10-17', '[Terms]', true), M('owner, sale', 'TCAD', '2026-10-14 · Run 3', 'bafybei…7m2c', '[Terms as published]'), M('lat, lon', 'TCAD parcels', '2026-10-14 · Run 3', 'bafybei…7m2c', '[Terms as published]'), M('businesses', 'TX Comptroller franchise-tax (9cir-efmm)', '2026-10-13 · Run 3', 'bafybei…w3nd', 'Public open data')];
+    const meta = meta0.map((x, i) => ({ ...x, bt: i ? '1px solid var(--md-sys-color-outline-variant)' : '0' }));
+    const merged = [{ src: 'TCAD owner account', id: 'owner 1184207 · “SAMPLE, JORDAN A”', acct: '1184207', gave: 'Mailing address, last sale 2011-07-18', role: 'Kept', roleCls: 'atlas-pill--info', icon: 'person' }, { src: 'TCAD owner account', id: 'owner 1530918 · “JORDAN A SAMPLE”', acct: '1530918', gave: 'Same normalised name and mailing address; newer account', role: 'Merged', roleCls: 'atlas-pill--unavailable', icon: 'person' }];
+    const crm = Component.mapOn();
+    // #92 / AD-01: merge details only if the published owner record names its source accounts (A-02); otherwise the fallback.
+    const mergeOn = (this.props.mergeDetails ?? 'published') !== 'none';
+    return { mergeOn: mergeOn, mergeOff: !mergeOn, showLabel: crm ? 'Show on map' : 'Show in the list', showIcon: crm ? 'map' : 'view_list', listHref: mob ? 'Explore390.dc.html' : 'Explore1440.dc.html', permits: permits, meta: meta, merged: merged, similar: similar, askHref: mob ? 'ExploreQ390-ai.dc.html' : 'ExploreQ-ai.dc.html', propHref: mob ? 'Property390.dc.html' : 'Property1440.dc.html' };
+  }
+}
+</script>
+</body>
+</html>

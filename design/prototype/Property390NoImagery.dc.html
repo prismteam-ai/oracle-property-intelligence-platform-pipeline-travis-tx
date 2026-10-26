@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Property detail, no street imagery</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--md-sys-color-surface-dim); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<section role="dialog" aria-label="Property details" style="position: absolute; left: 0; top: 12px; width: 390px; height: 752px; display: flex; flex-direction: column; border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0; overflow: hidden; background: var(--md-sys-color-surface); box-shadow: var(--md-sys-elevation-level3)">
+<a class="atlas-bottom-sheet__handle" aria-label="Collapse property sheet" style="text-decoration: none; flex: none" href="Explore390.dc.html"></a>
+<div style="flex: 1; min-height: 0; overflow-y: auto">
+<dc-import name="PropertyDetail" device="mobile" imagery="{{no}}" hint-size="390px,3670px"></dc-import>
+</div>
+</section>
+<nav class="atlas-bottom-nav" aria-label="Main" style="position: absolute; left: 0; top: 764px; width: 390px">
+<a class="atlas-nav-item" href="Explore390.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Data390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="Shell390More.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">more_horiz</span></span>More</a>
+</nav>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 92px; z-index: 80"><dc-import name="ProtoBar" here="Property · 390 · no street imagery" desktop="Property1440.dc.html" tablet="" mobile="Property390NoImagery.dc.html" current="mobile" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  __rv() { return { no: false }; }
+}
+</script>
+</body>
+</html>

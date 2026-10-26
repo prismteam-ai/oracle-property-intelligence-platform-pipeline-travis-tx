@@ -1,0 +1,16 @@
+{
+  "name": "@countylens/profile-travis-austin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./index.ts",
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests",
+    "measure": "tsx scripts/measure.ts",
+    "sample": "tsx scripts/sample.ts"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

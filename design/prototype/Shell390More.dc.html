@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>More and footer, 390</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--md-sys-color-surface); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 390px; box-sizing: border-box; padding: 0 4px 0 16px; background: var(--md-sys-color-surface)">
+<h1 class="atlas-top-app-bar__title" style="flex: 1; margin: 0">CountyLens</h1>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="mobile" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell390More.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-icon-btn" aria-label="Apps" aria-haspopup="menu" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Main.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-map" aria-hidden="true" style="position: absolute; left: 0; top: 64px; width: 390px; height: 700px"></div></sc-if><sc-if value="{{mapOff}}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" style="position: absolute; left: 0; top: 64px; width: 390px; height: 700px; background: var(--md-sys-color-surface-container-low)"></div></sc-if>
+<div class="atlas-scrim" style="bottom: 80px"></div>
+
+<section class="atlas-bottom-sheet" role="dialog" aria-label="More" style="position: absolute; left: 0; top: 212px; width: 390px; height: 552px; border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0; background: var(--md-sys-color-surface-container-low); display: flex; flex-direction: column; gap: 4px; overflow: hidden">
+<button class="atlas-bottom-sheet__handle" aria-label="Drag to resize" onClick="{{__say.k1}}"></button>
+<ul class="atlas-menu" style="min-width: 0; padding: 0; background: transparent">
+<li><a class="atlas-menu-item" href="Coverage390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span>Coverage</a></li>
+<li><a class="atlas-menu-item" href="ExploreQ390-sql.dc.html"><span class="material-symbols-rounded" aria-hidden="true">terminal</span>SQL</a></li>
+<li class="atlas-menu-divider" role="separator"></li>
+<li><a class="atlas-menu-item" href="Welcome390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">lightbulb</span>What can I ask?</a></li>
+<li><a class="atlas-menu-item" href="#"><span class="material-symbols-rounded" aria-hidden="true">menu_book</span>Glossary</a></li>
+<li><a class="atlas-menu-item" href="HelpMcp390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">integration_instructions</span>MCP and API docs</a></li>
+<li><a class="atlas-menu-item" href="Hub390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span>Apps</a></li>
+<li><a class="atlas-menu-item" href="AdminSignIn390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span>Admin sign-in</a></li>
+<li><a class="atlas-menu-item" href="#"><span class="material-symbols-rounded" aria-hidden="true">settings</span>Settings</a></li>
+</ul>
+<footer style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--md-sys-color-outline-variant); display: flex; flex-direction: column; gap: 8px; font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">
+<nav aria-label="Legal" style="display: flex; flex-wrap: wrap; gap: 4px 16px"><a href="LegalTerms1440.dc.html">Terms</a><a href="LegalPrivacy1440.dc.html">Privacy</a><a href="LegalData390.dc.html">Data licences</a></nav>
+<p style="margin: 0">Street View: coming soon.<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"> Map © OpenStreetMap contributors (CRM preview).</sc-if></p>
+</footer>
+</section>
+
+<nav class="atlas-bottom-nav" aria-label="Main" style="position: absolute; left: 0; top: 764px; width: 390px">
+<a class="atlas-nav-item" href="Explore390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Data390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="Shell390More.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">more_horiz</span></span>More</a>
+</nav>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 92px; z-index: 80"><dc-import name="ProtoBar" here="Shell · 390 · More and footer" desktop="Shell1440.dc.html" tablet="Explore768.dc.html" mobile="Shell390More.dc.html" current="mobile" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Drag to resize” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { mapOn: Component.mapOn(), mapOff: !Component.mapOn(), __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

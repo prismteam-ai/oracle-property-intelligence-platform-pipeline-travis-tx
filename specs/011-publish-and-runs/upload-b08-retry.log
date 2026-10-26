@@ -1,0 +1,16 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/upload-car-files.ts runs/travis-full-run1-20261023/manifest.json --only=travis-county-b08.car
+manifest: runs/travis-full-run1-20261023/manifest.json
+carCid artifacts to upload: 24
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car
+ok    kubo add: Hash bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 matches manifest carCid, size=232735494, pinned on Filebase
+FAIL  https://gateway.pinata.cloud/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 HTTP 429
+ok    https://ipfs.filebase.io/ipfs/bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4 size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/tables.car
+ok    kubo add: Hash bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u matches manifest carCid, size=3072, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u size match
+ok    https://ipfs.filebase.io/ipfs/bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car

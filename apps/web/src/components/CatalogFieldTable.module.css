@@ -1,0 +1,126 @@
+/* Data · Catalog field table and derived-columns card (DataCatalog1440 board); Atlas tokens only. */
+.wrap {
+  min-width: 0;
+  overflow-x: auto;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  text-align: left;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table th {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.mono {
+  font-family: var(--md-ref-typeface-mono);
+}
+
+.missing {
+  color: var(--md-sys-color-on-surface-variant);
+  font-style: italic;
+}
+
+.licence,
+.type {
+  white-space: nowrap;
+}
+
+/* Phone and tablet (390 and 768 boards, where the detail sits under the list): each field is a
+   stacked row (name and type, meaning, source and licence), so nothing breaks mid-word and the
+   page never scrolls sideways. The header row stays for screen readers only. */
+@media (max-width: 1023px) {
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-1) var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .table tbody td {
+    padding: 0;
+    border: 0;
+  }
+
+  .table td:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .type,
+  .source,
+  .licence {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+}
+
+/* 1440 board: a field name stays on one line beside its meaning. */
+@media (min-width: 1024px) {
+  .mono,
+  .source {
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+}
+
+.card {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.cardTitle {
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.derivedList {
+  font-family: var(--md-ref-typeface-mono);
+  overflow-wrap: anywhere;
+}
+
+.cardNote {
+  color: var(--md-sys-color-on-surface-variant);
+}

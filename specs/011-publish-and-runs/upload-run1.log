@@ -1,0 +1,490 @@
+[2026-10-23T17:02:30Z] uploading county-b01-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeradxb3jlta4am3t6wtnuyf3223fc7kje5cvpdrl25clwaf2vsdziba
+  blocks: 611078
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeradxb3jlta4am3t6wtnuyf3223fc7kje5cvpdrl25clwaf2vsdziba
+  uploadedAt: 2026-10-23T17:09:09.343Z
+
+[2026-10-23T17:09:09Z] done county-b01-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b01-car.json
+[2026-10-23T17:09:09Z] uploading county-b01-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T17:17:02Z] skip county-b01-car, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b01-car.json)
+[2026-10-23T17:17:02Z] uploading county-b01-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeramqgfppfibeizne4hz63c4sgzi3jyercbc6ao2jif75jjq5xbp7pa
+  countyRoot: baguqeeradxb3jlta4am3t6wtnuyf3223fc7kje5cvpdrl25clwaf2vsdziba
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeramqgfppfibeizne4hz63c4sgzi3jyercbc6ao2jif75jjq5xbp7pa
+  uploadedAt: 2026-10-23T17:19:51.158Z
+
+[2026-10-23T17:19:52Z] done county-b01-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b01-tables.json
+[2026-10-23T17:19:52Z] uploading county-b02-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerawhwkcxymsi4gzfdgzb5g5fokrtaeanfkcowkyetgqdien2jzmtca
+  blocks: 607596
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerawhwkcxymsi4gzfdgzb5g5fokrtaeanfkcowkyetgqdien2jzmtca
+  uploadedAt: 2026-10-23T17:26:40.550Z
+
+[2026-10-23T17:26:41Z] done county-b02-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b02-car.json
+[2026-10-23T17:26:41Z] uploading county-b02-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T17:33:36Z] county-b02-tables failed (attempt 1/4), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T17:39:32Z] county-b02-tables failed (attempt 2/4), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeraujt3r57nm4nkwyn5c7tchid7xyuext5g7fax6zj22us4c6sqi4iq
+  countyRoot: baguqeerawhwkcxymsi4gzfdgzb5g5fokrtaeanfkcowkyetgqdien2jzmtca
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeraujt3r57nm4nkwyn5c7tchid7xyuext5g7fax6zj22us4c6sqi4iq
+  uploadedAt: 2026-10-23T17:43:01.739Z
+
+[2026-10-23T17:43:03Z] done county-b02-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b02-tables.json
+[2026-10-23T17:43:03Z] uploading county-b03-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b03.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeraevjarnn4wemqbpedsy3t6fmnhcwjyfdixmcgqfqouzrs6nsg5tga
+  blocks: 618094
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeraevjarnn4wemqbpedsy3t6fmnhcwjyfdixmcgqfqouzrs6nsg5tga
+  uploadedAt: 2026-10-23T17:49:37.322Z
+
+[2026-10-23T17:49:37Z] done county-b03-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b03-car.json
+[2026-10-23T17:49:37Z] uploading county-b03-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T17:56:34Z] county-b03-tables failed (attempt 1/4), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerak4ghi2yamlbjthmpxocevpons5gd5t2w75ncyxderb5pggb7vv6a
+  countyRoot: baguqeeraevjarnn4wemqbpedsy3t6fmnhcwjyfdixmcgqfqouzrs6nsg5tga
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerak4ghi2yamlbjthmpxocevpons5gd5t2w75ncyxderb5pggb7vv6a
+  uploadedAt: 2026-10-23T17:59:44.774Z
+
+[2026-10-23T17:59:45Z] done county-b03-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b03-tables.json
+[2026-10-23T17:59:45Z] uploading county-b04-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b04.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerazqin3l7ea5ckr27x3rw533h3sabvmpevhyowij6x4jzomewwfhfa
+  blocks: 623100
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerazqin3l7ea5ckr27x3rw533h3sabvmpevhyowij6x4jzomewwfhfa
+  uploadedAt: 2026-10-23T18:07:09.084Z
+
+[2026-10-23T18:07:09Z] done county-b04-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b04-car.json
+[2026-10-23T18:07:09Z] uploading county-b04-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T18:14:35Z] county-b04-tables failed (attempt 1/4), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T18:22:35Z] county-b04-tables failed (attempt 2/4), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T18:31:45Z] county-b04-tables failed (attempt 3/4), retrying in 30s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T18:39:38Z] FAILED county-b04-tables after 4 attempts, giving up
+[2026-10-23T19:09:06Z] skip county-b01-car, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b01-car.json)
+[2026-10-23T19:09:06Z] skip county-b01-tables, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b01-tables.json)
+[2026-10-23T19:09:06Z] skip county-b02-car, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b02-car.json)
+[2026-10-23T19:09:06Z] skip county-b02-tables, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b02-tables.json)
+[2026-10-23T19:09:06Z] skip county-b03-car, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b03-car.json)
+[2026-10-23T19:09:06Z] skip county-b03-tables, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b03-tables.json)
+[2026-10-23T19:09:06Z] skip county-b04-car, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b04-car.json)
+[2026-10-23T19:09:06Z] skip county-b04-tables, already uploaded (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b04-tables.json)
+[2026-10-23T19:09:06Z] uploading county-b05-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b05.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerayoh44bszi7m3ybgbsh3e7ivuv454wlfwkzkz6g2gqmm4mkgz74na
+  blocks: 630206
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerayoh44bszi7m3ybgbsh3e7ivuv454wlfwkzkz6g2gqmm4mkgz74na
+  uploadedAt: 2026-10-23T19:15:58.843Z
+
+[2026-10-23T19:15:59Z] done county-b05-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b05-car.json
+[2026-10-23T19:15:59Z] uploading county-b05-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T19:22:58Z] county-b05-tables failed (attempt 1/4), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T19:31:25Z] county-b05-tables failed (attempt 2/4), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeraudr7xmckaerncecqoji3yqfekhx6lh7wiuphoch5fih2a4rknzcq
+  countyRoot: baguqeerayoh44bszi7m3ybgbsh3e7ivuv454wlfwkzkz6g2gqmm4mkgz74na
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeraudr7xmckaerncecqoji3yqfekhx6lh7wiuphoch5fih2a4rknzcq
+  uploadedAt: 2026-10-23T19:36:06.855Z
+
+[2026-10-23T19:36:08Z] done county-b05-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b05-tables.json
+[2026-10-23T19:36:08Z] uploading county-b06-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b06.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeragp3jmy64674sgwufa32b5uchz3sts23t5hc5vb4t6m4wqhym33nq
+  blocks: 619440
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeragp3jmy64674sgwufa32b5uchz3sts23t5hc5vb4t6m4wqhym33nq
+  uploadedAt: 2026-10-23T19:44:34.562Z
+
+[2026-10-23T19:44:35Z] done county-b06-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b06-car.json
+[2026-10-23T19:44:35Z] uploading county-b06-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T19:52:24Z] county-b06-tables failed (attempt 1/4), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T20:00:34Z] county-b06-tables failed (attempt 2/4), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T20:08:42Z] county-b06-tables failed (attempt 3/4), retrying in 30s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: add failed for /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_structure/part-00000.parquet: 502 Bad Gateway: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+
+[2026-10-23T20:11:11Z] FAILED county-b06-tables after 4 attempts, giving up
+[2026-10-23T20:25:57Z] skip county-b06-car, already uploaded
+[2026-10-23T20:25:57Z] skip county-b06-tables, already uploaded
+[2026-10-23T20:25:57Z] uploading permits-b01-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/cars/travis-permits-b01.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeera52wmaorirm2jvh7rgr7em6lfnzdrklmraxdsmy46hfv5qhj6stsa
+  blocks: 48275
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeera52wmaorirm2jvh7rgr7em6lfnzdrklmraxdsmy46hfv5qhj6stsa
+  uploadedAt: 2026-10-23T20:27:15.200Z
+
+[2026-10-23T20:27:15Z] done permits-b01-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/permits-b01-car.json
+[2026-10-23T20:27:15Z] uploading permits-b01-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T20:32:40Z] permits-b01-tables failed (attempt 1/8), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T20:38:03Z] permits-b01-tables failed (attempt 2/8), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T20:43:38Z] permits-b01-tables failed (attempt 3/8), retrying in 30s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerapbdnywiv5vjebrrd5gvnr4atcpt6o4isvjanm4lw4kcxwq7ceuda
+  countyRoot: baguqeera52wmaorirm2jvh7rgr7em6lfnzdrklmraxdsmy46hfv5qhj6stsa
+  parts: 7
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerapbdnywiv5vjebrrd5gvnr4atcpt6o4isvjanm4lw4kcxwq7ceuda
+  uploadedAt: 2026-10-23T20:46:04.659Z
+
+[2026-10-23T20:46:05Z] done permits-b01-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/permits-b01-tables.json
+[2026-10-23T20:46:05Z] uploading permits-b02-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/cars/travis-permits-b02.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerakhi6fxurmml6cfy55zfxa2t72jyqa3cxudfguue2qnugyi7jerja
+  blocks: 51707
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerakhi6fxurmml6cfy55zfxa2t72jyqa3cxudfguue2qnugyi7jerja
+  uploadedAt: 2026-10-23T20:46:39.295Z
+
+[2026-10-23T20:46:39Z] done permits-b02-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/permits-b02-car.json
+[2026-10-23T20:46:39Z] uploading permits-b02-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeera5wkdln7xxscbyydrhhcqwlrxsh5qcfubdqeh4izcxybxxophpe4q
+  countyRoot: baguqeerakhi6fxurmml6cfy55zfxa2t72jyqa3cxudfguue2qnugyi7jerja
+  parts: 7
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeera5wkdln7xxscbyydrhhcqwlrxsh5qcfubdqeh4izcxybxxophpe4q
+  uploadedAt: 2026-10-23T20:46:55.755Z
+
+[2026-10-23T20:46:56Z] done permits-b02-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/permits-b02-tables.json
+[2026-10-23T20:46:56Z] uploading county-b07-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b07.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeradlivqbczyhlxb7aqzvgiawxzg7rwjzi2aks3qpdpfrxm2eo4zivq
+  blocks: 563988
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeradlivqbczyhlxb7aqzvgiawxzg7rwjzi2aks3qpdpfrxm2eo4zivq
+  uploadedAt: 2026-10-23T20:53:10.534Z
+
+[2026-10-23T20:53:11Z] done county-b07-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b07-car.json
+[2026-10-23T20:53:11Z] uploading county-b07-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T21:00:12Z] county-b07-tables failed (attempt 1/8), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T21:07:14Z] county-b07-tables failed (attempt 2/8), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T21:14:30Z] county-b07-tables failed (attempt 3/8), retrying in 30s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeragms3vqa7wpq23xtukq7tyjfsx6khqx2voizc5stzlm2sjyiwo3oa
+  countyRoot: baguqeeradlivqbczyhlxb7aqzvgiawxzg7rwjzi2aks3qpdpfrxm2eo4zivq
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeragms3vqa7wpq23xtukq7tyjfsx6khqx2voizc5stzlm2sjyiwo3oa
+  uploadedAt: 2026-10-23T21:17:29.642Z
+
+[2026-10-23T21:17:30Z] done county-b07-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b07-tables.json
+[2026-10-23T21:17:30Z] uploading county-b08-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b08.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerac6sk6eyfxayqglxejnwqcy26gxpflj3zpxsfvea7w5wsyexhfjbq
+  blocks: 527344
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerac6sk6eyfxayqglxejnwqcy26gxpflj3zpxsfvea7w5wsyexhfjbq
+  uploadedAt: 2026-10-23T21:23:41.895Z
+
+[2026-10-23T21:23:42Z] done county-b08-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b08-car.json
+[2026-10-23T21:23:42Z] uploading county-b08-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: add failed for /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_sales_history/part-00000.parquet: 502 Bad Gateway: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+
+[2026-10-23T21:25:24Z] county-b08-tables failed (attempt 1/8), retrying in 10s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T21:32:20Z] county-b08-tables failed (attempt 2/8), retrying in 20s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T21:39:20Z] county-b08-tables failed (attempt 3/8), retrying in 30s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+
+[2026-10-23T21:46:31Z] county-b08-tables failed (attempt 4/8), retrying in 40s
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeraojmkvbcdcyjrozkjis6cl35qn4j6eqnnbdcqjr3ztgip2rifaria
+  countyRoot: baguqeerac6sk6eyfxayqglxejnwqcy26gxpflj3zpxsfvea7w5wsyexhfjbq
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeraojmkvbcdcyjrozkjis6cl35qn4j6eqnnbdcqjr3ztgip2rifaria
+  uploadedAt: 2026-10-23T21:49:49.421Z
+
+[2026-10-23T21:49:50Z] done county-b08-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b08-tables.json
+[2026-10-23T21:49:50Z] uploading county-b09-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b09.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeerak5weshki3v4dso775fgz2k23lzxkv5o5sool3hcpkdy6dolk5iva
+  blocks: 510500
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeerak5weshki3v4dso775fgz2k23lzxkv5o5sool3hcpkdy6dolk5iva
+  uploadedAt: 2026-10-23T21:55:20.804Z
+
+[2026-10-23T21:55:21Z] done county-b09-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b09-car.json
+[2026-10-23T21:55:21Z] uploading county-b09-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeralq3pvvu4qygchfvdlyckaen2f6piqrjm6f3igized2u3uymip2ja
+  countyRoot: baguqeerak5weshki3v4dso775fgz2k23lzxkv5o5sool3hcpkdy6dolk5iva
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeralq3pvvu4qygchfvdlyckaen2f6piqrjm6f3igized2u3uymip2ja
+  uploadedAt: 2026-10-23T21:57:39.731Z
+
+[2026-10-23T21:57:40Z] done county-b09-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b09-tables.json
+[2026-10-23T21:57:40Z] uploading county-b10-car (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b10.car)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeravsvqhmfjrwb7j3kzhye5srotsad6ym3hxoxkb6ri5hma55wptwmq
+  blocks: 515334
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeravsvqhmfjrwb7j3kzhye5srotsad6ym3hxoxkb6ri5hma55wptwmq
+  uploadedAt: 2026-10-23T22:03:49.438Z
+
+[2026-10-23T22:03:50Z] done county-b10-car -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b10-car.json
+[2026-10-23T22:03:50Z] uploading county-b10-tables (/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10)
+🐘 Elephant Network CLI - Upload to IPFS
+
+
+✅ Upload completed successfully
+
+Upload Summary:
+  api: https://rpc.filebase.io
+  root: baguqeeradg7mmzlowjk774t3h4guetjrmzb6kxeyu6pnvmbovluzf7ermc7q
+  countyRoot: baguqeeravsvqhmfjrwb7j3kzhye5srotsad6ym3hxoxkb6ri5hma55wptwmq
+  parts: 19
+  gatewayUrl: https://ipfs.filebase.io/ipfs/baguqeeradg7mmzlowjk774t3h4guetjrmzb6kxeyu6pnvmbovluzf7ermc7q
+  uploadedAt: 2026-10-23T22:06:28.521Z
+
+[2026-10-23T22:06:29Z] done county-b10-tables -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/upload-receipts/county-b10-tables.json
+[2026-10-23T22:06:29Z] ALL REMAINING UPLOADS COMPLETE

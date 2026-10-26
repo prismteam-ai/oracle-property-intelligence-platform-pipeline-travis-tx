@@ -1,0 +1,16 @@
+{
+  "schema": "pinata-copy-receipt.v1",
+  "run_id": "travis-full-run3-1-20261025",
+  "kind": "table",
+  "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b05/property_has_sales_history/part-00000.parquet",
+  "cid": "bafybeieewjam4r2ocifd6zou4dcof4pbrwpxrqoyyta3igowduwigzupbq",
+  "size": 17894123,
+  "sha256": "4624e2e39ebc1f4bb5b770c06742ce63edde9f3e52f10b31e38665553ac1010d",
+  "status": "pinned",
+  "pinata_cid": "bafybeieewjam4r2ocifd6zou4dcof4pbrwpxrqoyyta3igowduwigzupbq",
+  "match": true,
+  "pinned_at": "2026-10-26T05:48:41.525Z",
+  "pin_size": 17897583,
+  "is_duplicate": null,
+  "recorded_at": "2026-10-26T05:48:41.962Z"
+}

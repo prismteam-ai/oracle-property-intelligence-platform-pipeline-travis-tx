@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Accessibility check</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}
+.au h2{margin:0;font:400 24px/32px var(--font-brand)}
+.au h3{margin:0;font:500 16px/24px var(--font-plain)}
+.au .lead{margin:0;color:var(--md-sys-color-on-surface-variant);font-size:14px;line-height:20px}
+.grid{display:grid;gap:1px;border-radius:var(--md-sys-shape-corner-medium);overflow:hidden;background:var(--md-sys-color-outline-variant);font-size:13px;line-height:18px}
+.grid>div{background:var(--md-sys-color-surface);padding:10px 12px;display:flex;align-items:center;gap:8px}
+.grid>.h{background:var(--md-sys-color-surface-container-high);font-weight:500}
+.pane{display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:var(--md-sys-shape-corner-large);background:var(--md-sys-color-surface-container-low);color:var(--md-sys-color-on-surface)}
+.focus-on{outline:2px solid var(--md-sys-color-primary);outline-offset:2px}
+.focus-in{outline:2px solid var(--md-sys-color-primary);outline-offset:-2px}
+.hit{position:relative}
+.hit::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max(100%,48px);height:max(100%,48px);border:1px dashed var(--md-sys-color-tertiary);box-sizing:border-box;border-radius:var(--md-sys-shape-corner-extra-small);pointer-events:none}
+.cap{font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant)}
+</style>
+</helmet>
+<div class="au" style="width: 1440px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 32px; background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); font-family: var(--font-plain)">
+
+<header style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="font-size: 32px; line-height: 40px">Accessibility check · 390, 768, 1440 · light and dark</h2>
+<p class="lead">All 66 screen boards checked against the tokens and markup. Most fixes live in one extension stylesheet, <span class="atlas-cid">ds/countylens/a11y.css</span>, linked on every board and logged as A-1 to A-9. The rest are edits to the boards named in the fix log.</p>
+</header>
+
+<sc-if value="{{mapOff}}" hint-placeholder-val="{{ true }}"><div role="note" style="padding: 8px 12px; border: 1.5px dashed var(--md-sys-color-tertiary); border-radius: var(--md-sys-shape-corner-small); font-size: 13px; line-height: 18px">Map checks (map shapes, map keyboard A-4, marker outline A-5, ring and hexagon motion A-6, A-7) are hidden: Map view is a Roofing CRM preview behind the prototype toggle, not part of CountyLens.</div></sc-if>
+<section aria-labelledby="sum-h" style="display: flex; flex-direction: column; gap: 12px">
+<h3 id="sum-h">Results</h3>
+<div class="grid" role="table" style="grid-template-columns: 220px 120px 120px 1fr">
+<div class="h" role="columnheader">Check</div><div class="h" role="columnheader">Light</div><div class="h" role="columnheader">Dark</div><div class="h" role="columnheader">What was found</div>
+<div role="cell">Text contrast ≥ 4.5:1</div><div role="cell"><span class="atlas-pill atlas-pill--success">Pass</span></div><div role="cell"><span class="atlas-pill atlas-pill--success">Pass</span></div><div role="cell">37 text pairs per theme. Lowest: 4.92:1 (link on the assumptions block, light) and 4.98:1 (inverse link, dark).</div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">Map shapes ≥ 3:1</div><div role="cell"><span class="atlas-pill atlas-pill--warning">Fixed</span></div><div role="cell"><span class="atlas-pill atlas-pill--success">Pass</span></div><div role="cell">Light map: roof-age 10–24 and permit &lt; 1 yr markers were 1.8–2.8:1. Markers now have an outline at 8.5:1 (A-5).</div></sc-if>
+<div role="cell">Touch targets ≥ 48 px (build rule)</div><div role="cell" style="grid-column: span 2"><span class="atlas-pill atlas-pill--warning">Fixed</span></div><div role="cell">Chips 32 px, icon buttons 36–40 px, pager 36 px, signal chips, CID copy 24 px, citations 16 px, sheet handle 24 px. All now have a 48 px hit area, and wrapped chip rows sit 48 px apart (A-1, A-2). smeargle checks 48 px on every screen.</div>
+<div role="cell">Visible keyboard focus</div><div role="cell" style="grid-column: span 2"><span class="atlas-pill atlas-pill--warning">Fixed</span></div><div role="cell">Rings were cut off inside map controls, lists, tables and chip rows that scroll sideways. Builder selects and the SQL editor had no ring. Now inset or on the field box (A-3).</div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">Map by keyboard</div><div role="cell" style="grid-column: span 2"><span class="atlas-pill atlas-pill--warning">Fixed</span></div><div role="cell">The map was not a tab stop. It is now: arrow keys pan, + and − zoom, Home recentres, and a skip link goes to the results. The radius slider is the keyboard way to change the radius (A-4).</div></sc-if>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">Reduced motion</div><div role="cell" style="grid-column: span 2"><span class="atlas-pill atlas-pill--warning">Fixed</span></div><div role="cell">The ring and hexagons had no reduced version. The gateway race jumped straight to a result, which hid the real wait. All three now have one (A-6 to A-8).</div></sc-if><sc-if value="{{mapOff}}" hint-placeholder-val="{{ true }}"><div role="cell">Reduced motion</div><div role="cell" style="grid-column: span 2"><span class="atlas-pill atlas-pill--warning">Fixed</span></div><div role="cell">The gateway race jumped straight to a result, which hid the real wait. It now has a reduced version (A-8). Map motion (A-6, A-7) belongs to the CRM preview.</div></sc-if>
+<div role="cell">768 px</div><div role="cell" style="grid-column: span 2"><span class="atlas-pill atlas-pill--info">Rule</span></div><div role="cell">Shell and Explore have 768 boards. Other screens follow the 768 rule below; nothing new failed under it.</div>
+</div>
+</section>
+
+<section aria-labelledby="sp-h" style="display: flex; flex-direction: column; gap: 12px">
+<h3 id="sp-h">Specimens · focus and 48 px hit areas (dashed)</h3>
+<div style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+<div class="pane" data-theme="light" aria-label="Light theme specimens">
+<span class="atlas-pill atlas-pill--unavailable" style="align-self: flex-start">Light</span>
+<div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap">
+<a class="atlas-btn atlas-btn--filled focus-on hit" style="text-decoration: none" href="DataVerify1440.dc.html">Verify</a>
+<button class="atlas-chip focus-in hit" aria-pressed="{{__p.k2}}" onClick="{{__tg.k2}}"><span class="material-symbols-rounded" aria-hidden="true">check</span>Roof age</button>
+<span class="atlas-cid">bafybei…q4xa<button class="hit" aria-label="Copy CID" onClick="{{__say.k3}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span>
+<span style="font-size: 15px">claim <a class="atlas-cite focus-on" href="#">4</a></span>
+</div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div style="display: flex; gap: 16px; align-items: flex-start">
+<div class="atlas-map-controls" role="group" aria-label="Map controls"><button class="atlas-icon-btn focus-in" aria-label="Zoom in" onClick="{{__say.k4}}"><span class="material-symbols-rounded" aria-hidden="true">add</span></button><button class="atlas-icon-btn" aria-label="Zoom out" onClick="{{__say.k5}}"><span class="material-symbols-rounded" aria-hidden="true">remove</span></button></div>
+<div class="atlas-map focus-in" style="flex: 1; height: 112px; border-radius: var(--md-sys-shape-corner-medium); outline-width: 3px; outline-offset: -3px">
+<svg viewBox="0 0 400 112" aria-hidden="true"><path class="street" d="M -10 60 L 410 40"></path><circle class="radius" cx="200" cy="56" r="44"></circle><circle class="marker" cx="170" cy="40" r="7" style="fill: var(--viz-roof-age-15-19)"></circle><circle class="marker" cx="230" cy="70" r="7" style="fill: var(--viz-roof-age-10-14)"></circle></svg>
+<span class="atlas-map-chip" style="position: absolute; left: 12px; bottom: 10px; height: auto; padding: 4px 10px; font-size: 12px"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">keyboard</span>Arrows pan · + − zoom</span>
+</div>
+</div>
+<span class="cap">Outlined markers: 4.85:1 against the 15–19 fill, 8.5:1 against the map.</span></sc-if>
+</div>
+<div class="pane" data-theme="dark" aria-label="Dark theme specimens">
+<span class="atlas-pill atlas-pill--unavailable" style="align-self: flex-start">Dark</span>
+<div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap">
+<a class="atlas-btn atlas-btn--filled focus-on hit" style="text-decoration: none" href="DataVerify1440.dc.html">Verify</a>
+<button class="atlas-chip focus-in hit" aria-pressed="{{__p.k7}}" onClick="{{__tg.k7}}"><span class="material-symbols-rounded" aria-hidden="true">check</span>Roof age</button>
+<span class="atlas-cid">bafybei…q4xa<button class="hit" aria-label="Copy CID" onClick="{{__say.k8}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span>
+<span style="font-size: 15px">claim <a class="atlas-cite focus-on" href="#">4</a></span>
+</div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div style="display: flex; gap: 16px; align-items: flex-start">
+<div class="atlas-map-controls" role="group" aria-label="Map controls"><button class="atlas-icon-btn focus-in" aria-label="Zoom in" onClick="{{__say.k9}}"><span class="material-symbols-rounded" aria-hidden="true">add</span></button><button class="atlas-icon-btn" aria-label="Zoom out" onClick="{{__say.k10}}"><span class="material-symbols-rounded" aria-hidden="true">remove</span></button></div>
+<div class="atlas-map focus-in" style="flex: 1; height: 112px; border-radius: var(--md-sys-shape-corner-medium); outline-width: 3px; outline-offset: -3px">
+<svg viewBox="0 0 400 112" aria-hidden="true"><path class="street" d="M -10 60 L 410 40"></path><circle class="radius" cx="200" cy="56" r="44"></circle><circle class="marker" cx="170" cy="40" r="7" style="fill: var(--viz-roof-age-15-19)"></circle><circle class="marker" cx="230" cy="70" r="7" style="fill: var(--viz-roof-age-10-14)"></circle></svg>
+<span class="atlas-map-chip" style="position: absolute; left: 12px; bottom: 10px; height: auto; padding: 4px 10px; font-size: 12px"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">keyboard</span>Arrows pan · + − zoom</span>
+</div>
+</div>
+<span class="cap">Focus ring #A8C7FA: 9.6:1 on the dark map. Radius ring 3.66:1.</span></sc-if>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="rm-h" style="display: flex; flex-direction: column; gap: 12px">
+<h3 id="rm-h">Reduced motion · follows the OS setting; each board has a "motion" switch to preview it</h3>
+<div class="grid" role="table" style="grid-template-columns: 200px 1fr 1fr 200px">
+<div class="h" role="columnheader">Motion</div><div class="h" role="columnheader">Default</div><div class="h" role="columnheader">Reduced</div><div class="h" role="columnheader">Try it on</div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">Radius ring</div><div role="cell">Ring and handle ease to the new radius over 200 ms.</div><div role="cell">Ring jumps to the new radius. The count updates in place and is still announced.</div><div role="cell">Explore1440 · motion</div></sc-if>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">Hexagons</div><div role="cell">Hexes fade and settle in over 300 ms when the zoom changes.</div><div role="cell">Hexes swap in place, with no fade or scale.</div><div role="cell">Explore768 · motion</div></sc-if>
+<div role="cell">Gateway race</div><div role="cell">Progress bars fill as bytes arrive, every 250 ms.</div><div role="cell">No bars. A "Received n%" figure updates once a second. Timing and the final banner are unchanged, so the result is not shown before the check ends.</div><div role="cell">DataVerify1440 · motion</div>
+<div role="cell">Loading bars, skeletons</div><div role="cell">Indeterminate bar slides; skeletons pulse.</div><div role="cell">Bar shows full at low emphasis; skeletons stay still. The text label carries the state.</div><div role="cell">All states boards</div>
+<div role="cell">Ask button cue</div><div role="cell">Icon nudges twice on first visit.</div><div role="cell">No nudge (already in place).</div><div role="cell">Shell boards</div>
+</div>
+</section>
+
+<section aria-labelledby="t-h" style="display: flex; flex-direction: column; gap: 12px">
+<h3 id="t-h">768 rule for screens without their own 768 board</h3>
+<div class="grid" role="table" style="grid-template-columns: 200px 1fr">
+<div class="h" role="columnheader">Screen</div><div class="h" role="columnheader">At 768</div>
+<div role="cell">Property, Helper</div><div role="cell">Side sheet 400 px over the results with a scrim; Close and Esc return focus to where it opened.</div>
+<div role="cell">Search, Runs, Activity</div><div role="cell">Rail plus one column; tables scroll sideways inside their wrap with the first column pinned.</div>
+<div role="cell">Coverage, Data, SQL</div><div role="cell">Rail plus one column; cards stack; the SQL editor and results stack.</div>
+<div role="cell">Legal pages</div><div role="cell">Rail plus one column, 640 px measure; contents list above the text.</div>
+</div>
+</section>
+
+<section aria-labelledby="f-h" style="display: flex; flex-direction: column; gap: 12px">
+<h3 id="f-h">Fix log</h3>
+<div class="grid" role="table" style="grid-template-columns: 64px 1fr 320px">
+<div class="h" role="columnheader">ID</div><div class="h" role="columnheader">Fix</div><div class="h" role="columnheader">Where</div>
+<div role="cell">A-1</div><div role="cell">48 px hit areas on buttons, chips, sort headers, CID copy and links in chips, provenance lines and tables. Chip rows wrap with a 12 px row gap.</div><div role="cell">a11y.css · all boards</div>
+<div role="cell">A-2</div><div role="cell">Citations are now 24 px numbered badges that match the numbered rows in Matches (map pins in the CRM preview). The 390 preview card has 48 px previous and next arrows.</div><div role="cell">a11y.css · AI mode (Helper390, since removed)</div>
+<div role="cell">A-3</div><div role="cell">Inset focus rings where containers clip. Rings on the builder field box and the SQL editor.</div><div role="cell">a11y.css</div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">A-4</div><div role="cell">Map is a tab stop with a label, an inset ring and a key hint. Explore pans and zooms by keyboard, zoom buttons work, and there is a skip link to the results. Map-control groups are labelled. Empty background maps are hidden from screen readers.</div><div role="cell">Explore1440/768/390, Shell, Helper, Property1440, Empty390</div></sc-if>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">A-5</div><div role="cell">Map markers are outlined with on-surface-variant.</div><div role="cell">a11y.css</div></sc-if>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div role="cell">A-6–8</div><div role="cell">Ring and hexagon motion with reduced versions; reduced gateway race; still loading bars and skeletons.</div><div role="cell">a11y.css · Explore1440, Explore768, DataVerify1440</div></sc-if><sc-if value="{{mapOff}}" hint-placeholder-val="{{ true }}"><div role="cell">A-8</div><div role="cell">Reduced gateway race; still loading bars and skeletons. (A-6 and A-7, ring and hexagon motion, belong to the CRM map preview.)</div><div role="cell">a11y.css · DataVerify1440</div></sc-if>
+<div role="cell">A-9</div><div role="cell">Light and dark can be set on any element, so boards can show both.</div><div role="cell">a11y.css · this board</div>
+<div role="cell">—</div><div role="cell">Bottom-sheet handle back to 48 px. Flow arrowheads use the outline token, so they follow dark mode. Hexagons drawn at full opacity.</div><div role="cell">Property390 ×3, Main, Flows, Explore768</div>
+</div>
+</section>
+
+<div class="atlas-missing" role="note"><span class="material-symbols-rounded" aria-hidden="true">info</span><div><b style="font-weight: 500">Still open.</b> Citation badges inside a sentence sit closer than 48 px apart. This uses the WCAG exception for links in running text; the numbered rows and the arrows give a full-size route. Neighbouring hexagon colours are below 3:1 against each other. The legend gives the ranges, and Show list gives every value as text. This check reviewed the code and computed contrast from the tokens. It does not replace testing with a screen reader on a device.</div></div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Accessibility check · results, specimens, reduced motion, fix log" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2190}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {"k2": true, "k7": true};
+    const __S = {"k3": "Copied to the clipboard (Sample).", "k4": "“Zoom in” is drawn but not wired in this prototype.", "k5": "“Zoom out” is drawn but not wired in this prototype.", "k8": "Copied to the clipboard (Sample).", "k9": "“Zoom in” is drawn but not wired in this prototype.", "k10": "“Zoom out” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { mapOn: Component.mapOn(), mapOff: !Component.mapOn(), __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/reexport-permits.ts --pids ../../specs/011-publish-and-runs/run1-permit-pids.txt --compare-run ../../pipeline/data/runs/travis-a11-permits-full-20261023114303/groups/property_improvement
+{"ts":"2026-10-24T17:40:22.224Z","level":"info","event":"source.capture","url":"https://lexicon.elephant.xyz/api/manifest","method":"GET","status":200,"bytes":18499,"sha256":"7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640","captured_at":"2026-10-24T17:40:20.466Z","user_agent":"oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)","attempts":1,"outcome":"ok","geo_signal":"none","app_token_used":false,"timeout_ms":null,"blocked_reason":null,"rate_limits_observed":null}
+[compare] pIDs with folders in both=10792 of 10867
+[compare] permits here=15025 Run 1=17387 identical=15025 DIFFERENT=0 not in Run 1=0
+[compare] Run 1 permits not republished=2362 by type: Electrical=940 MechanicalHVAC=615 Plumbing=807; Roofing lost=0
+[compare] pIDs dropped (in Run 1, none now)=75 with a Roofing permit=0; pIDs new vs Run 1=0; unreadable=0
+[compare] shared files: identical=32516 differ=21444 (expected to differ)
+[compare] PASS

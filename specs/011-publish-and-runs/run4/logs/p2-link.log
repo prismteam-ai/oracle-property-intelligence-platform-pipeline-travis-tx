@@ -1,0 +1,12 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/incremental-facts.ts pre-link --job travis-a04-permits-incremental-20261026105138 --out ../../specs/011-publish-and-runs/run4
+[facts] pre-link: 31 pIDs touched by travis-a04-permits-incremental-20261026105138
+npm notice run oracle-travis-runtime@0.1.0 backbone
+npm notice run tsx travis/backbone/cli.ts permits --link
+permits link: status=complete pages=0 rows=0 written=2381895 tombstones=0 watermark_check=not_applicable
+job_id=travis-a04-permits-link-20261026113546
+link exit=0
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/incremental-facts.ts final --job travis-a04-permits-incremental-20261026105138 --out ../../specs/011-publish-and-runs/run4 --base-manifest ../../runs/travis-full-run3-1-20261025/manifest.json
+[facts] travis-a04-permits-incremental-20261026105138: read 2381895, added 9, changed 35, removed 0, unchanged 2381851; watermark 2026-10-24T14:51:37.805Z -> 2026-10-25T12:55:16.178Z; 39 affected pIDs (pre-link 31, post-link 39)
+final exit=0

@@ -1,0 +1,51 @@
+/* CountyLens · 390 compact rule (review #8): one column, bottom nav, charts become tables, tables stack below 600px (#10).
+   Applied by the *390 wrapper boards around a 1440 page; the build implements the same rule with container queries. */
+.m390{width:390px!important}
+.m390>.sc-host>div{display:flow-root!important;width:390px!important;height:auto!important;overflow:visible!important}
+.m390>.sc-host>div>header,.m390>.sc-host>div>nav.atlas-nav-rail{display:none!important}
+.m390>.sc-host>div>main{position:relative!important;left:auto!important;top:auto!important;margin:0!important;width:390px!important;height:auto!important;padding:16px 16px 24px!important;overflow:visible!important;gap:12px!important}
+.m390>.sc-host>div>div[style*="left: 12px; bottom: 12px"]{display:none!important}
+.m390 main [style*="grid-template-columns"]:not([role="table"]):not([role="row"]):not(.atlas-kv):not(.tg){grid-template-columns:minmax(0,1fr)!important}
+.m390 main [style*="flex: 0 0"]{flex:1 1 100%!important;max-width:100%!important}
+.m390 main>div[style*="display: flex"],.m390 main section>div[style*="display: flex"]{flex-wrap:wrap!important}
+.m390 main h2{font-size:24px!important;line-height:32px!important}
+.m390 main [role="group"][aria-label="Preview a state"]{flex-wrap:wrap!important}
+.m390 .tg-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.m390 .atlas-card{padding:14px!important}
+/* stacked tables */
+.m390 table.stack,.m390 table.stack tbody,.m390 table.stack tr,.m390 table.stack td{display:block!important;width:auto!important}
+.m390 table.stack thead{display:none!important}
+.m390 table.stack tr{padding:10px 12px;border-top:1px solid var(--md-sys-color-outline-variant)}
+.m390 table.stack td{display:flex!important;justify-content:space-between;gap:12px;padding:2px 0!important;border:0!important;text-align:right!important;white-space:normal!important}
+.m390 table.stack td::before{content:attr(data-label);color:var(--md-sys-color-on-surface-variant);text-align:left;flex:none;max-width:45%}
+.m390 table.stack td:first-child{font-weight:500;text-align:left!important}
+.m390 table.stack td:first-child::before{display:none}
+.m390 .atlas-table-wrap{overflow:hidden!important}
+.m390 main table:not(.stack){min-width:0!important;width:100%!important}
+.m390 main td,.m390 main th{white-space:normal!important;word-break:break-word}
+/* Coverage */
+.m390 .cv-head{display:none!important}
+.m390 .cv-grid{grid-template-columns:24px minmax(0,1fr)!important;row-gap:6px!important;padding:10px 0!important}
+.m390 .cv-grid>:nth-child(3){grid-column:1/-1}
+.m390 .cv-grid>:nth-child(4){display:none!important}
+.m390 .cv-grid>:nth-child(5){grid-column:1/-1;flex-direction:row!important;gap:8px}
+.m390 .cv-grid>:nth-child(6){grid-column:1/-1}
+.m390 [role="table"][aria-label="Coverage by data type and area"]{grid-template-columns:76px repeat(4,minmax(0,1fr))!important;font-size:11px!important}
+.m390 .rc-grid{grid-template-columns:minmax(0,1fr) 64px 64px!important;row-gap:4px!important}
+.m390 .rc-grid>:nth-child(2){display:none}
+.m390 .rc-grid>:nth-child(5),.m390 .rc-grid>:nth-child(6){grid-column:1/-1}
+/* Runs */
+.m390 .rn-flow{flex-direction:column!important;gap:8px!important}
+.m390 .rn-flow .rn-arrow{display:none!important}
+.m390 .rn-stage{flex:1 1 auto!important;margin-left:0!important}
+.m390 .rn-stage>button{width:100%}
+.m390 .rn-chg{grid-template-columns:minmax(0,1fr) auto!important}
+.m390 .rn-chg>:nth-child(2),.m390 .rn-chg>:nth-child(3){display:none!important}
+.m390 main [aria-hidden="true"][style*="gap: 14px"]{flex-wrap:wrap!important;gap:4px 12px!important}
+.m390 main section>div[style*="display: flex"]>div[style*="flex: 1"]{flex-basis:100%!important}
+.m390 table.stack{font-size:13px!important}
+.m390 table.stack.gl tr{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:10px;row-gap:2px}
+.m390 table.stack.gl td:nth-child(1){grid-column:1/3}
+.m390 table.stack.gl td:nth-child(2){grid-column:3;justify-content:flex-end}
+.m390 table.stack.gl td:nth-child(2)::before{display:none}
+.m390 table.stack.gl td:nth-child(n+3){font-size:12px;justify-content:flex-start;gap:4px}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coverage states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 720px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Coverage states</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Every state here is live on <a href="Coverage1440.dc.html">Coverage · 1440</a>: pick it from the dashed “Prototype · preview a state” bar. “Gaps only” lists just the partial and blocked data types and dims complete cells on the area grid.</p>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; flex: 1; min-height: 0">
+
+<section aria-label="Loading" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Loading</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column">
+<div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Loading coverage"><i></i></div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: var(--md-sys-color-on-surface-variant)">Reading counts from the Run 3 manifest…</span><div class="atlas-skeleton" style="height: 14px; width: 70%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 8px; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 14px; width: 60%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 8px; border-radius: var(--md-sys-shape-corner-extra-small)"></div></div>
+</div>
+</section>
+
+<section aria-label="Partial" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Partial</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div class="atlas-banner__body">4 of 8 data types complete; 4 have gaps. See Known limitations.</div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div style="display: flex; justify-content: space-between"><span>Contractor · 22,210 names (Sample)</span><span>5 identity states</span></div><div role="img" aria-label="Contractor identity, Sample: Resolved 0, Candidate 14,880, Ambiguous 2,140, Conflicting 390, Unresolved 4,800" style="display: flex; gap: 2px; height: 10px; border-radius: var(--md-sys-shape-corner-full); overflow: hidden; background: var(--md-sys-color-surface-container-highest)"><i style="width: 67%; background: var(--status-info)"></i><i style="width: 9.6%; background: var(--status-warning)"></i><i style="width: 1.8%; background: var(--status-danger)"></i><i style="width: 21.6%; background: var(--status-unavailable)"></i></div><span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Resolved 0 · Candidate 14,880 · Ambiguous 2,140 · Conflicting 390 · Unresolved 4,800. Resolved needs an official ID; Austin permits carry names only.</span></div>
+</div>
+</section>
+
+<section aria-label="Rate-limited" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Rate-limited</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><div class="atlas-banner__body">Manifest gateway rate-limited, retrying in 4 s (attempt 2 of 3).</div></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Cached counts from 11:43 UTC stay on screen, marked “cached”.</span>
+</div>
+</section>
+
+<section aria-label="Error" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Error</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body">Coverage counts could not load.</div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k1}}">Retry</button></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Known limitations and the cost panel still show; they do not depend on the run.</span>
+</div>
+</section>
+
+<section aria-label="Empty" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Empty</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><rect x="8" y="14" width="56" height="8" rx="4" fill="var(--brand-blue)"></rect><rect x="8" y="32" width="36" height="8" rx="4" fill="var(--brand-green)"></rect><rect x="8" y="50" width="18" height="8" rx="4" fill="var(--brand-yellow)"></rect></svg>
+<b style="font-family: var(--font-brand); font-size: 18px; line-height: 24px; font-weight: 400">No coverage yet</b>
+<span style="color: var(--md-sys-color-on-surface-variant)">Counts appear after the first run loads its sources.</span>
+<a href="Runs1440.dc.html">Open Runs</a>
+</div>
+</section>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Coverage · states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

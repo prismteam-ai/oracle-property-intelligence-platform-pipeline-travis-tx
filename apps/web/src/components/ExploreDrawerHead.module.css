@@ -1,0 +1,85 @@
+/* Explore drawer head (Explore1440 / ExploreQ-ai boards): mode tabs on the left, the collapse
+   button on the right, ruled off from the controls. Collapsed (from 840 px) the head stacks into a
+   narrow icon strip. Atlas tokens; 48 px targets. */
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.modes {
+  display: flex;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.mode,
+.collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+}
+
+.modeOn {
+  color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+}
+
+.collapse {
+  display: none;
+  padding: 0;
+}
+
+.mode:focus-visible,
+.collapse:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+@media (min-width: 840px) {
+  .collapse {
+    display: inline-flex;
+  }
+
+  .collapsed {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .collapsed .modes {
+    flex-direction: column;
+  }
+
+  .collapsed .mode {
+    padding: 0;
+  }
+
+  .collapsed .modeLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

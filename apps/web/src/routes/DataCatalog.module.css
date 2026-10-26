@@ -1,0 +1,503 @@
+/* Data · Catalog (A-16 boards DataCatalog1440/768, Data390): a table list beside the selected
+   table's header card and field table from 1024 px, stacked below (list first; collapsible at
+   390). Atlas tokens only; every control is at least 48 px high. */
+.page {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+}
+
+.notice {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+  min-width: 0;
+}
+
+.side {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+/* Search: Atlas search bar (surface-container-high, full corner), leading icon and a clear button. */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  min-height: var(--space-10);
+  padding: 0 var(--space-1) 0 var(--space-4);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.searchBox:focus-within {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.searchIcon {
+  flex: none;
+  width: var(--space-5);
+  height: var(--space-5);
+  fill: currentColor;
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+}
+
+.search::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.clear {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--space-9);
+  height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font: inherit;
+  cursor: pointer;
+}
+
+.captionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-1) 0;
+}
+
+.caption {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+}
+
+.toggle {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--space-9);
+  height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font: inherit;
+  cursor: pointer;
+}
+
+.chevronUp,
+.chevronDown {
+  display: inline-flex;
+}
+
+.chevronUp {
+  transform: rotate(-90deg);
+}
+
+.chevronDown {
+  transform: rotate(90deg);
+}
+
+.lists {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.lists[data-open="false"] {
+  display: none;
+}
+
+.group {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.groupName {
+  padding: 0 var(--space-1);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-label-medium-size);
+}
+
+.subhead {
+  padding: var(--space-1) var(--space-1) 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+
+/* Atlas list: rows on surface with outline-variant dividers, medium corners. */
+.list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  list-style: none;
+}
+
+.list > li + li {
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--space-9);
+  padding: var(--space-1) var(--space-4);
+  border: 0;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  text-align: left;
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  cursor: pointer;
+}
+
+.row:hover {
+  background: var(--md-sys-color-surface-container);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px;
+}
+
+.selected,
+.selected:hover {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.rowName {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--md-ref-typeface-mono);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  overflow-wrap: anywhere;
+}
+
+.rowCount {
+  flex: none;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-variant-numeric: tabular-nums;
+}
+
+.selected .rowCount {
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.relations {
+  overflow: hidden;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+}
+
+.relations > summary {
+  list-style: none;
+}
+
+.relations > summary::-webkit-details-marker {
+  display: none;
+}
+
+.relations[open] > summary {
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.relations .list {
+  border-radius: var(--md-sys-shape-corner-none);
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.views {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.viewsTitle {
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.mono {
+  font-family: var(--md-ref-typeface-mono);
+}
+
+.viewsNote {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Detail: header card, field table, derived-columns card. */
+.detail {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.card {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+.cardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.name {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* Atlas text button. */
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  cursor: pointer;
+}
+
+.action:hover {
+  background: var(--md-sys-color-surface-container);
+}
+
+.action:focus-visible,
+.clear:focus-visible,
+.toggle:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.copied:empty {
+  display: none;
+}
+
+.copied {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+.description {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-variant-numeric: tabular-nums;
+}
+
+.fact {
+  min-width: 0;
+}
+
+.fact dt {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.fact dd {
+  margin: 0;
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  overflow-wrap: anywhere;
+}
+
+.fact a {
+  color: var(--md-sys-color-primary);
+}
+
+.cid {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-9);
+  font-family: var(--md-ref-typeface-mono);
+}
+
+.parts {
+  display: inline;
+}
+
+.partsSummary {
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+}
+
+.partList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.size {
+  display: block;
+  color: var(--md-sys-color-on-surface-variant);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+}
+
+/* Same reserved height pending, failed and filled: no shift when a footer lands. */
+.columnsSlot {
+  min-width: 0;
+  min-height: var(--space-9);
+}
+
+.pending {
+  display: flex;
+  align-items: center;
+  min-height: var(--space-9);
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* 768 board: the list is always open, so there is nothing to fold. */
+  .toggle {
+    display: none;
+  }
+
+  .lists[data-open="false"] {
+    display: grid;
+  }
+}
+
+/* 1440 board: a fixed-width list column beside the detail. */
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: calc(var(--space-10) * 5 - var(--space-5)) minmax(0, 1fr);
+  }
+
+  .facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,7 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/reexport-permits.ts --pids ../../specs/011-publish-and-runs/pilot-pids.txt --compare-run ../../pipeline/data/runs/travis-a11-permits-full-20261023114303/groups/property_improvement
+{"ts":"2026-10-24T17:05:56.307Z","level":"info","event":"source.capture","url":"https://lexicon.elephant.xyz/api/manifest","method":"GET","status":200,"bytes":18499,"sha256":"7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640","captured_at":"2026-10-24T17:05:55.952Z","user_agent":"oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)","attempts":1,"outcome":"ok","geo_signal":"none","app_token_used":false,"timeout_ms":null,"blocked_reason":null,"rate_limits_observed":null}
+[compare] pIDs with folders in both=287 of 287
+[compare] permit-only files: identical=1041 DIFFERENT=0
+[compare] shared files: identical=865 differ=570 (expected to differ)
+[compare] PASS (folder-set diffs=0)

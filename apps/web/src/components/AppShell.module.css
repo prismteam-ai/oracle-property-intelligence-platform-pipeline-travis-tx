@@ -1,0 +1,587 @@
+/* App shell (A-03 T007): Atlas § 7 Top app bar, Bottom navigation (compact, < 600 px) and
+   Navigation rail (≥ 600 px); § 4 margins 16 compact / 24 medium+; § 5 elevation 2 on scroll.
+   Every colour, font, spacing and radius is a tokens.css custom property (Atlas § 13 rule 4;
+   stylelint declaration-strict-value). Component dimensions the system fixes in pixels (64 px
+   bar, 80 px navigation, 56 × 32 px pill) are derived from the spacing scale. */
+
+.shell {
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "bar"
+    "main"
+    "nav";
+  background: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Top app bar: 64 px, surface, title-large; elevation 2 while the main region is scrolled. */
+.bar {
+  grid-area: bar;
+  z-index: 1;
+  box-sizing: border-box;
+  height: var(--space-10);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  /* The 1 px edge under the bar (Shell1440 / Task B CrmShell390). */
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  transition: box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+/* Shell boards: title, location chip, search, then the actions (sync badge, help, Ask, Apps) at
+   the end, on one 64 px row at every width (the chip is a pin icon below 600 px, Welcome390). */
+.bar {
+  gap: var(--space-3);
+}
+
+.location {
+  flex: none;
+}
+
+/* Compact (Welcome390): the title takes the free space, so the pin sits with the actions. */
+.title {
+  flex: 1 1 auto;
+}
+
+.actions {
+  display: flex;
+  flex: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.sync {
+  display: none;
+}
+
+/* Ask: icon button on compact; a tonal pill with its label from 600 px (Shell1440 board). */
+.ask {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.ask > :first-child,
+.actions :global(.material-symbols-rounded) {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.askText {
+  display: none;
+}
+
+/* Apps (the grid icon): from 600 px; below it the More sheet lists the same rows (Task B). */
+.apps {
+  display: none;
+}
+
+/* Signed in as an admin (RunsAdmin1440 board): a tonal chip linking to Activity. */
+.adminChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-tertiary-container);
+  background: var(--md-sys-color-tertiary-container);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+/* Bottom navigation at 390 shows four destinations (Shell390More board): Coverage moves into
+   More on compact widths and is back on the rail from 600 px. */
+.nav .compactHidden {
+  display: none;
+}
+
+.nav .itemNested {
+  display: none;
+}
+
+.compactOnly {
+  display: block;
+}
+
+.barScrolled {
+  box-shadow: var(--md-sys-elevation-level2);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--md-sys-typescale-title-large-font);
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking);
+}
+
+/* The scroll container; 16 px margins on compact. */
+.main {
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow-y: auto;
+  padding: var(--space-4);
+}
+
+.content {
+  flex: 1 0 auto;
+  min-width: 0;
+  min-height: 100%;
+}
+
+/* A13-7: the focus ring of the scroll container is drawn inside it (an inset 2 px primary ring),
+   so the viewport edge never clips it; the global outline is replaced, not offset negatively. */
+.main:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--md-sys-color-primary);
+}
+
+/* Bottom navigation on compact: 80 px tall, surface-container, destinations spread evenly. */
+.nav {
+  grid-area: nav;
+  box-sizing: border-box;
+  height: calc(var(--space-10) + var(--space-4));
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--md-sys-color-surface-container);
+}
+
+/* The title links to the Hub; it keeps the bar's colour and type. */
+.titleLink {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  color: inherit;
+  text-decoration: none;
+}
+
+/* One destination: pill indicator above a label-medium label; 48 px touch target (§ 14.1).
+   `.more` is the More button: the same look, plus the token font a button does not inherit
+   (ERR-12) and no UA border or background. */
+.item,
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: var(--space-1) var(--space-2);
+  text-decoration: none;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--space-9) + var(--space-2));
+  height: var(--space-7);
+  border-radius: var(--md-sys-shape-corner-full);
+  transition: background-color var(--md-sys-motion-duration-short)
+    var(--md-sys-motion-easing-standard);
+}
+
+.more {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+}
+
+.item:hover .pill,
+.more:hover .pill {
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}
+
+.item:active .pill,
+.more:active .pill {
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) calc(var(--md-sys-state-pressed-opacity) * 100%),
+    transparent
+  );
+}
+
+.itemActive,
+.more[aria-expanded="true"] {
+  color: var(--md-sys-color-on-surface);
+}
+
+.itemActive .pill,
+.more[aria-expanded="true"] .pill {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.label {
+  text-align: center;
+}
+
+/* More sheet (Atlas § 7 bottom sheet): above the bottom navigation on compact, a side sheet next
+   to the rail from 600 px. surface-container-low, corner extra-large on the open edge, level 1. */
+.sheet {
+  position: fixed;
+  z-index: 3;
+  inset: auto 0 calc(var(--space-10) + var(--space-4)) 0;
+  box-sizing: border-box;
+  max-height: 70dvh;
+  overflow-y: auto;
+  padding: var(--space-4);
+  background: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface);
+  border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+/* Modal scrim behind the More sheet (Atlas scrim token at the disabled-state opacity). */
+.scrim {
+  position: fixed;
+  z-index: 2;
+  inset: 0;
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-scrim) calc(var(--md-sys-state-disabled-opacity) * 100%),
+    transparent
+  );
+}
+
+.sheet:focus-visible {
+  outline: none;
+}
+
+/* Task B's sheet group heading: title-small, on-surface-variant, a divider above. */
+.sheetTitle {
+  margin: 0;
+  padding: var(--space-3) 0 var(--space-2);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+.sheetList {
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+/* One row: 48 px target, body-medium, the "Coming soon" label at the end. */
+.sheetItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+a.sheetItem:hover {
+  background: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}
+
+/* Task B RoadmapItem: the tonal "unavailable" pill at the row's end. */
+.soon {
+  flex: none;
+  white-space: nowrap;
+  padding: 0 var(--space-2);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--status-unavailable-container);
+  color: var(--status-unavailable);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+}
+
+/* Shell390More board: the pages in one outlined surface card, the help row after a divider. */
+.sheetCard {
+  margin: var(--space-2) 0 var(--space-3);
+  padding: var(--space-1) 0;
+  list-style: none;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-surface);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+/* The app-switcher rows (HelpMenu's AppRows) laid out like the other sheet rows. */
+.appRow {
+  border-radius: var(--md-sys-shape-corner-full);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+}
+
+/* Medium and up (Atlas § 4): navigation rail, 80 px wide, left of the main region; 24 px margins. */
+@media (min-width: 600px) {
+  .shell {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas:
+      "bar bar"
+      "nav main";
+  }
+
+  .nav {
+    height: auto;
+    width: calc(var(--space-10) + var(--space-4));
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0 0;
+  }
+
+  .main {
+    padding: var(--space-6);
+  }
+
+  /* The title sits 24 px from the window edge, in line with the page content (Task B). */
+  .bar {
+    padding: 0 var(--space-6);
+  }
+
+  .apps {
+    display: inline-flex;
+  }
+
+  .title {
+    flex: none;
+  }
+
+  .actions {
+    flex: 1 1 auto;
+  }
+
+  /* Explore's modes nested under Explore in the rail (Shell1440; Task B CrmShell1440): a smaller
+     pill and a label-small label. */
+  .nav .itemNested {
+    display: flex;
+    min-height: var(--space-8);
+    gap: 0;
+  }
+
+  .itemNested .pill {
+    width: var(--space-9);
+    height: var(--space-6);
+  }
+
+  .itemNested .label {
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-size: var(--md-sys-typescale-label-small-size);
+    line-height: var(--md-sys-typescale-label-small-line-height);
+  }
+
+  .sync {
+    display: inline-flex;
+  }
+
+  .ask {
+    padding: 0 var(--space-4);
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+  }
+
+  .askText {
+    display: inline;
+  }
+
+  .nav .compactHidden {
+    display: flex;
+  }
+
+  .compactOnly {
+    display: none;
+  }
+
+  /* With the compact pages hidden, "Planned" opens the sheet: no rule above it. */
+  .sheetCard.compactOnly + .sheetTitle {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .sheet {
+    inset: var(--space-10) auto 0 calc(var(--space-10) + var(--space-4));
+    width: calc(var(--space-10) * 5);
+    max-height: none;
+    border-radius: 0 var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0;
+  }
+}
+
+/* Shell1440 board: the search box between the location chip and the actions, from 1024 px. */
+.search {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .search {
+    display: flex;
+    flex: 0 1 calc(var(--space-10) * 8);
+    align-items: center;
+    gap: var(--space-2);
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: var(--space-9);
+    padding: 0 var(--space-4);
+    border-radius: var(--md-sys-shape-corner-full);
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .search:focus-within {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+}
+
+.searchInput:focus-visible {
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Shell390More board: a grabber on the compact bottom sheet, an icon on every row (drawn over the
+   link's start padding, so the whole row stays one 48 px link) and the legal links as a footer. */
+.sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+}
+
+.grabber {
+  justify-self: center;
+  width: var(--space-7);
+  height: var(--space-1);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-outline-variant);
+}
+
+.sheetRow {
+  position: relative;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.sheetRow > :global(.material-symbols-rounded) {
+  position: absolute;
+  top: calc(50% - var(--space-3));
+  left: var(--space-3);
+  pointer-events: none;
+}
+
+.sheetRow > .sheetItem {
+  padding-left: var(--space-9);
+}
+
+/* PO 2026-10-26: the legal links at the foot of every page (they left the More sheet). */
+.footer {
+  flex: none;
+  margin-top: var(--space-6);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-4);
+}
+
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+@media (min-width: 600px) {
+  .grabber {
+    display: none;
+  }
+}
+
+/* A bare glyph name is text until the symbols font arrives: a fixed, clipped 1em box keeps
+   "more_horiz" (111 px wide as fallback text) from widening the bar and shifting the layout. */
+.glyph {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}

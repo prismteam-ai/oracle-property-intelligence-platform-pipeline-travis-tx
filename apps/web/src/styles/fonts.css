@@ -1,0 +1,35 @@
+/* ERR-46: self-hosted web fonts (Atlas § 3). No request leaves for Google; the files live in
+   public/fonts (stable URLs, preloaded in index.html, licences in LICENSE-fonts.txt). Family names
+   match tokens.css (--md-ref-typeface-*). Roboto and Roboto Mono are variable files, so one file
+   serves the weight range. The symbols font blocks briefly (the glyph name is clipped by the 1em
+   box, ERR-42) so no ligature text ever shows; its subset is listed in public/fonts/icons.json. */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("/fonts/roboto-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/fonts/roboto-mono-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/fonts/material-symbols-rounded-subset-003dde63.woff2") format("woff2");
+}

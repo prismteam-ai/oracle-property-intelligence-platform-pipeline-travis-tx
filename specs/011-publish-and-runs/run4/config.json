@@ -1,0 +1,43 @@
+{
+  "runId": "travis-full-run4-20261026",
+  "startedAt": "2026-10-26T10:47:00.000Z",
+  "finishedAt": "2026-10-26T11:47:00.000Z",
+  "previousManifestCid": "bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai",
+  "baseManifest": "runs/travis-full-run3-1-20261025/manifest.json",
+  "countyDir": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched",
+  "permitsDir": "pipeline/data/runs/travis-a11-permits-run4-20261026/publish-run4/permits-batched",
+  "austinFacts": "specs/011-publish-and-runs/run4/austin-facts.json",
+  "austinReceipt": "specs/011-publish-and-runs/run4/austin-receipt.json",
+  "addressPointsReceipt": "specs/011-publish-and-runs/run3/address-points-receipt.json",
+  "carryAddressPoints": true,
+  "registryNote": "Comptroller registry loaded 2026-10-22 (342333 rows, data.texas.gov 9cir-efmm, watermark 2026-10-17T10:35:22.788Z, snapshot sha256 53c5974aca826273a03b97a352c4e65609bd71ebce8126b912638e103e8a1cef); each published contractor name was matched by normalised legal name (normalize-name-v1) on 2026-10-25; the result is a run-level count only, never a per-permit identity",
+  "coverageOverrides": {
+    "contractor_resolved": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "0 of 15025 published permits: resolved needs an identifier crosswalk to a registry record and none exists (D-10); a name match is never resolved"
+    },
+    "contractor_candidate": {
+      "count": 130,
+      "derivation": "aggregate_match",
+      "note": "published name matches exactly one active registry legal name; not published per permit, the company stays as printed"
+    },
+    "contractor_ambiguous": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "published name matches two or more active registry legal names"
+    },
+    "contractor_conflicting": {
+      "count": 112,
+      "derivation": "aggregate_match",
+      "note": "published name matches a registry legal name whose status is not active"
+    },
+    "contractor_unresolved": {
+      "count": 14783,
+      "derivation": "aggregate_match",
+      "note": "10473 permits print no contractor (contractor_not_printed); 4310 published names match no registry legal name"
+    }
+  },
+  "contractorCoverage": "specs/011-publish-and-runs/run4/contractor-coverage.json",
+  "correctionNote": "Incremental refresh of the Austin permits source (watermark 2026-10-24T14:51:37.805Z to 2026-10-25T12:55:16.178Z): added 9, changed 35, removed 0 permits by content digest (2381895 rows read, 2381851 unchanged). These 44 changed source rows produced no change in the published roofing permits: the Property Improvement group was rebuilt from the Query DB and all 15025 permit records, all 103906 files and all 5 CARs are byte-identical to Run 3.1 (travis-full-run3-1-20261025); the County group is Run 3.1's (TCAD certified file unchanged, address points not re-captured). Every artifact keeps Run 3.1's CID; only the Austin source facts are new."
+}

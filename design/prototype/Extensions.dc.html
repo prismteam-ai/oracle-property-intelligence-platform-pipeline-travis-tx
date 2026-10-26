@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Extensions log</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 3840px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 12px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Extensions log</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Tokens only, no new values. Shell and accessibility 2026-10-17; Explore, data screens and charts (E-1 to E-13) and design review changes (E-14 to E-33) 2026-10-18.</p>
+<div class="atlas-table-wrap" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Component</th><th>Change</th><th>Why</th><th>Screens</th></tr></thead>
+<tbody>
+<tr><td>TopAppBar</td><td>Keeps the app switcher; no avatar; adds location chip, sync badge, Help, Ask</td><td>CountyLens has no sign-in</td><td>Shell, all widths</td></tr>
+<tr><td>Button (tonal) → Ask</td><td>Icon cue: scale and tilt, duration-extra-long, easing-emphasized, twice on first view and when the screen context changes; off with reduced motion</td><td>Draws the eye to the helper without a filled button</td><td>Shell, all widths</td></tr>
+<tr><td>Tooltip (rich) → coach mark</td><td>Step count, Back, Next, Skip; spotlight is the focus ring over a scrim</td><td>No coach-mark component</td><td>Removed with the tour (review #47)</td></tr>
+<tr><td>MapOverlay → stalled permit</td><td>Open-permit diamond plus a dashed on-surface outline</td><td>Stalled must read without colour alone</td><td>Explore map · <b style="font-weight: 500">CRM preview · not Task A</b></td></tr>
+<tr><td>MapOverlay → coverage gap</td><td>Hatch of surface-container-highest and outline, dashed edge, labelled chip</td><td>Shows where a source has no data</td><td>Explore map · <b style="font-weight: 500">CRM preview · not Task A</b></td></tr>
+<tr><td>MapLegend → counts</td><td>Each step shows its count beside the range</td><td>Legend shows numbers, not only colours</td><td>Explore map · <b style="font-weight: 500">CRM preview · not Task A</b></td></tr>
+<tr><td>SideSheet → property drawer</td><td>560 px instead of 400; replaces the results pane while open</td><td>Permit and metadata tables need the width</td><td>Property 1440</td></tr>
+<tr><td>Signal chips → evidence chain</td><td>Chips joined by arrow_forward icons, ending in the CID with copy</td><td>Shows the full lineage of one value</td><td>Property</td></tr>
+<tr><td>Photo box (gap)</td><td>Bordered figure with its own caption strip for the Google logo and image date</td><td>Third-party imagery kept visually apart</td><td>Property</td></tr>
+<tr><td>TextField → select picker</td><td>Native select inside the outlined field box, same label and focus</td><td>Atlas has no select or dropdown field</td><td>Query builder</td></tr>
+<tr><td>Menu → grouped suggestions</td><td>Kind headers in label style above menu items; a labelled “no match” row per empty kind</td><td>Typed suggestions grouped by kind</td><td>Search</td></tr>
+<tr><td>Card → promise card</td><td>Outlined card with a brand-color icon, title and one line</td><td>Shows the three promises</td><td>Removed with the welcome screen (review #47)</td></tr>
+<tr><td>FilterChip → location switcher</td><td>Trailing arrow_drop_down; opens a sheet at 390, a menu at 768+</td><td>Closest selectable control</td><td>Shell, all widths</td></tr>
+<tr><td>StatusPill → sync badge</td><td>Pill inside a 48 px transparent button that opens Runs</td><td>Pills are 24 px; touch target must be 48</td><td>Shell, header states</td></tr>
+<tr><td>ListItem → coming-soon row</td><td>A button with on-surface-variant text and a “Coming soon” pill, not 38% opacity</td><td>Disabled opacity fails 4.5:1 contrast</td><td>Location picker</td></tr>
+<tr><td>SearchBar → docked</td><td>Not floating; 48 px high on surface-container-high inside the bar</td><td>At 1440 search belongs in the header</td><td>Shell 1440</td></tr>
+<tr><td>Footer (gap)</td><td>Built from body-small, on-surface-variant and an outline-variant rule</td><td>Atlas has no footer; propose after delivery</td><td>768, 1440, More sheet</td></tr>
+<tr><td>A-1 Button, Chip, CID copy → 48 px hit area</td><td>Invisible ::after of max(100%, --space-9); chip rows wrap with --space-3 row gap</td><td>Atlas draws chips at 32 px, buttons at 40 px, copy at 24 px</td><td>All boards</td></tr>
+<tr><td>A-2 Citation → numbered badge</td><td>24 px primary-container badge, 48 px hit area outside running text</td><td>11 px superscript was too small to tap and did not match map pins</td><td>Helper, Search AI</td></tr>
+<tr><td>A-3 Focus ring → inset in clipping containers</td><td>outline-offset −2 px on map controls, list items, tabs, chips, table links</td><td>The outer ring was cut off by overflow</td><td>All boards</td></tr>
+<tr><td>A-4 Map → keyboard region</td><td>tabindex, role region, 3 px inset ring, key-hint map chip, skip link</td><td>The map was not reachable by keyboard</td><td>Explore, Shell, Helper · <b style="font-weight: 500">CRM preview · not Task A</b></td></tr>
+<tr><td>A-5 Map marker → outlined</td><td>Stroke on-surface-variant instead of white</td><td>Light-map fills were 1.8–2.8:1</td><td>All maps · <b style="font-weight: 500">CRM preview · not Task A</b></td></tr>
+<tr><td>A-6–8 Motion → reduced versions</td><td>Ring transition, hexagon entrance, gateway race without moving bars, both under prefers-reduced-motion or .motion-reduced</td><td>Atlas only shortens durations; these needed their own reduced form</td><td>Explore, Data · Verify · A-6, A-7 (ring, hexagons): <b style="font-weight: 500">CRM preview · not Task A</b>; A-8 ships</td></tr>
+<tr><td>A-9 Theme → scoped</td><td>data-theme on any element carries the token values</td><td>Atlas themes only :root</td><td>Accessibility board</td></tr>
+<tr><td>E-1 NavigationRail → nested query modes</td><td>Explore item carries a grouped sub-list (Filters, Builder, SQL, AI) on surface-container; selected mode uses secondary-container</td><td>Modes are part of Explore, not separate destinations</td><td>Explore 768, 1440</td></tr>
+<tr><td>E-2 Segmented control (gap)</td><td>Pill group on surface-container-high; selected segment secondary-container; buttons size to their labels</td><td>Atlas has tabs but no segmented button; used for view switch, results tabs, AND/OR, mobile modes</td><td>Explore, all widths</td></tr>
+<tr><td>E-3 SideSheet → collapsible panels</td><td>Query panel collapses to a 256 px summary (Edit query, Save, Clear); results panel minimises to a 56 px strip with count</td><td>More room for the map without losing context</td><td>Explore 1440</td></tr>
+<tr><td>E-4 Menu → searchable Area picker</td><td>Search field at the top of the menu; items filter with the match in bold; Enter picks the first; no-match row</td><td>Area centre must be searchable, not only pickable</td><td>Explore, all widths</td></tr>
+<tr><td>E-5 MapOverlay → radius card and Layers popover</td><td>Slider card bottom-right of the map; Layers chip opens a small popover; both shared by all four modes</td><td>Area, radius and layers belong to the map, not one mode</td><td>Explore, all widths · <b style="font-weight: 500">CRM preview · not Task A</b>. CountyLens: the Area + radius block in the query panel (E-34)</td></tr>
+<tr><td>E-6 List → paged results panel</td><td>Matches / Close tabs; page size computed from panel height; Why view replaces the list in place</td><td>Panels never scroll at 390, 768 or 1440</td><td>Explore, all widths</td></tr>
+<tr><td>E-7 Pagination (gap)</td><td>Range text, previous, numbered pages with … gaps, next; current page secondary-container; 36 px targets in a 48 px row</td><td>Atlas has no pager</td><td>Explore, Activity, Runs log, Data manifest</td></tr>
+<tr><td>E-8 Code editor → SQL help</td><td>Error panel on status-danger-container: line, plain message, one-click fix, a working example with Use this example</td><td>Wrong SQL must point to a fix</td><td>Explore · SQL</td></tr>
+<tr><td>E-9 Chip → single-line suggestion</td><td>Full-width chip, lightbulb icon, text ellipsised with the full text in the label</td><td>Suggestions below the editor must not grow the panel</td><td>Explore · SQL, AI</td></tr>
+<tr><td>E-10 Data viz → pipeline and timeline</td><td>Step nodes with status icon + label, Gantt bars on status colours, now-line, hover tooltip, table view</td><td>Runs needed to read as a process, not a table</td><td>Runs 1440</td></tr>
+<tr><td>E-11 Data viz → coverage</td><td>Loaded vs missing bar (missing hatched), 3-run sparkline, area matrix on viz-seq-1…5 with hatched “no source”</td><td>Coverage needed to show gaps by source and by area</td><td>Coverage 1440</td></tr>
+<tr><td>E-12 Data viz → change mix</td><td>Added / changed / removed on viz-cat-1, 6, 2 (light) and viz-cat-3, 1, 4 (dark), each segment and legend swatch marked +, ~ or −; validated for colour-blind readers in both themes (review #11)</td><td>Categorical colours had to stay apart for colour-blind readers</td><td>Runs 1440</td></tr>
+<tr><td>E-13 Prototype state bar and ProtoBar</td><td>Dashed bar of state chips on Runs and Coverage; ProtoBar (site map, device switcher) with the prototype-only “Map view (CRM preview) · prototype only, not in CountyLens” switch, off by default; when on, Explore shows a dashed “CRM preview: not part of CountyLens” note</td><td>Prototype only, to preview states and the Roofing CRM map; do not ship the bar, the switch or a feature flag</td><td>Runs, Coverage, every board</td></tr>
+<tr><td>E-14 Assumption chip → editable chip</td><td>Tap opens a small menu of values (radius, roof age, years open, place); ✕ drops it; edited chips say “you set”</td><td>Brief A and D-11: the “many years” assumption must be changeable (review #4)</td><td>Explore · AI</td></tr>
+<tr><td>E-15 Agent answer panel</td><td>Answer tab: question, then Working… with an elapsed timer and Cancel, then the whole answer at once: all tool steps (collapsed to one line on 768/390), summary, numbered citations matching the numbered rows in Matches (numbered map pins in the CRM preview), missing-data note, earlier turns and New conversation</td><td>D-10, D-11: reasoning, evidence and a follow-up that reuses the area (review #24)</td><td>Explore · AI</td></tr>
+<tr><td>E-16 Radius ring handle</td><td>20 px handle on the ring edge with a 48 px hit area, role slider, arrow keys; synced with the slider card and the AI radius chip</td><td>Signature moment #1 (review #5)</td><td>Explore map · <b style="font-weight: 500">CRM preview · not Task A</b></td></tr>
+<tr><td>E-17 Signal chips on cards</td><td>Roof + confidence and permit status as tappable chips that open the Why view</td><td>Lineage from every card (review #6)</td><td>Explore cards</td></tr>
+<tr><td>E-18 Coming-soon item</td><td>“Soon” pill on a menu row, segment or tab (not on the Builder rail item, PO round 5). Builder stays clickable as a labelled prototype; hexagons, layers and Street View are disabled and point to a working alternative</td><td>Builder, hexagons, map layers, Street View (reviews #17, #21, #22)</td><td>Explore, Property</td></tr>
+<tr><td>E-19 Reconciliation table</td><td>Records in / merged / entities out with a share bar and method per entity; “Merged from n records” list in Property detail</td><td>Duplicates merged as runtime proof (review #3)</td><td>Coverage, Property</td></tr>
+<tr><td>E-20 Cost section</td><td>Deployed resources with idle cost, last bill, budget alert and a link to cost evidence</td><td>Zero idle cost proof (review #7)</td><td>Coverage</td></tr>
+<tr><td>E-21 Key–value card stack</td><td>Below 600 px each table row becomes a card of label–value pairs; charts fall back to their tables at 390</td><td>No sideways scrolling in narrow drawers and sheets (reviews #8, #10)</td><td>Property, Runs, Coverage</td></tr>
+<tr><td>E-22 Tablet and compact rules</td><td>One stylesheet each for 768 (rail plus one column) and 390 (one column, bottom nav), applied around the 1440 page</td><td>Every screen at every size (reviews #8, #9)</td><td>All screens</td></tr>
+<tr><td>E-23 Try-a-tool panel</td><td>Tool picker, JSON arguments, Run, response with timing, read-only and rate-limited</td><td>D-12 must work without the private token (review #2)</td><td>Help · MCP</td></tr>
+<tr><td>E-24 Admin flag and gated actions</td><td>Admin pill in the top bar; Start / Stop / Retry and Activity only when signed in; public view shows a sign-in link</td><td>Operator actions must not be public (review #19)</td><td>Runs, Activity, Help menu</td></tr>
+<tr><td>E-25 Resolve-check pill</td><td>Prior CID pill in three states: Checking, Resolves on ipfs.io and dweb.link, Failed on {gateway}</td><td>D-7 (review #25)</td><td>Runs · Compare</td></tr>
+<tr><td>E-26 Engine line and run-it-yourself</td><td>One wrapping line under the SQL result (engine, CID, gateway, MB fetched) and a toggle that shows a copyable DuckDB command built from the query that ran</td><td>Prove there is no hosted database (review #27)</td><td>Explore · SQL</td></tr>
+<tr><td>E-27 Command status banner</td><td>Queued → Acknowledged, or Host offline after a timeout, with Cancel; info / success / warning banners</td><td>Admin commands go through a queue to a host that may be off (review #42)</td><td>Runs (admin)</td></tr>
+<tr><td>E-28 “What can I ask?” card</td><td>Dismissible elevated card over Explore with three questions that run in AI mode; reopened from Help</td><td>Replaces the welcome screen and the 5-step tour (review #47)</td><td>Explore</td></tr>
+<tr><td>E-29 Run status chip</td><td>Latest run, manifest CID and refresh time as a chip; loading skeleton and unavailable state with Try again</td><td>Hub status from Brief C (review #45)</td><td>Apps hub</td></tr>
+<tr><td>E-30 Badge “Soon” on a segment</td><td>9 px pill on the corner of a segmented-control button</td><td>Builder must show Soon in the narrow mobile switcher (review #46)</td><td>Explore 390</td></tr>
+<tr><td>E-31 Session quota counter and limit banner</td><td>“n of 10 AI questions left this session” beside Find and “n of 10 left” in the results tab bar, visible all session (sessionStorage; failed, paused or throttled questions and chip edits do not count); at the limit Find is disabled and an info banner offers “Open this question in Filters”, with plain text “More AI questions with sign-in: coming soon.”; a paused variant when the daily budget is used</td><td>Public AI mode needs a spend cap (reviews #58, #66, #79)</td><td>Explore · AI</td></tr>
+<tr><td>E-32 Sign-in role variant</td><td>One email-code sign-in screen with admin and AI-user copy (title, note, done action); the AI-user variant is coming soon</td><td>Admins now; AI users later (reviews #58, #66)</td><td>Sign-in</td></tr>
+<tr><td>E-33 “Open ≥ N yrs” chip menu</td><td>A filter chip with a menu (any time, 1, 3, 5, 10 yrs) in the permit row</td><td>Match the agent’s “many years” chip in Filters without adding a row (review #59)</td><td>Explore · Filters</td></tr>
+<tr><td>E-34 Area and radius outside the query panel</td><td>Same place in both views: Area picker (the searchable menu, E-4) in the results bar; radius slider 0.5–10 mi plus a number field (arrow keys step 0.5) at the bottom right of the results: the map radius card in map view, the table footer beside the pager in list view, the sticky header at 390 with the map off; synced with the ring handle when Map view is on</td><td>The radius control lived on the map (review #75); PO, round 5: keep them where the map has them, not in the query panel</td><td>Explore, all widths</td></tr>
+<tr><td>E-35 Live results header</td><td>“128 within 5 mi of Pflugerville city hall · roof ≥ 15 yrs”, updated 150 ms after the last change; Mi column with bearing (“2.4 mi NE”), Sort = Nearest, Close matches (“0.2 mi outside”), Open in OpenStreetMap per row</td><td>Proof of the radius without a map (review #75)</td><td>Explore, all widths</td></tr>
+<tr><td>E-36 List-first layouts</td><td>1440: query 320 (256 collapsed) + paged table; AI: Answer 480 beside a numbered Matches table. 768: query as a 320 overlay, full-width 5-column table with lat, lon as a second line. 390: paged cards as the page, sticky header (count, “within r mi of {Area}”, filter chips), “Edit query” extended FAB opening a modal bottom sheet (half → full) with the mode switcher in its title row</td><td>Explore ships List view only (reviews #74, #77)</td><td>Explore, all widths</td></tr>
+<tr><td>E-37 Roof-age colour on the Roof cell</td><td>10 px swatch in the roof-age scale before the number, always with the number</td><td>Replaces the roof-age heat of the map (review #74)</td><td>Explore list and cards</td></tr>
+<tr><td>E-38 <s>Disabled “Map · Soon” segment</s> · removed</td><td>PO, round 5: CountyLens has no view switcher (List view only); view=map URLs fall back to List. The List / Map switch exists only in the CRM preview</td><td>The map is Task B (review #74)</td><td>Explore, all widths</td></tr>
+<tr><td>E-48 Runs compare at 390</td><td>RunsCompare390: run cards stacked (previous, then current with a primary outline), a card with the new manifest CID, an arrow labelled previousManifestCid down to the old one, the resolve pill and the CAR link (48 px row), then per-source changes as a list; a dashed prototype-only state switcher for populated, loading, empty, error, partial and rate-limited</td><td>Round 8 #107: Compare had no 390 board</td><td>Runs · Compare 390</td></tr>
+<tr><td>E-47 Merge details fallback</td><td>Missing-data note inside “Owner merged from 2 records”: “Merge details: coming soon. Run 3 merged 6,866 owner records in the county (Run manifest · coverage section).” Each merged source row cites “From the published owner record (person table) · TCAD account {id}”; no lineage file</td><td>Round 8 #92, AD-01: only elephant-cli tables, the manifest and the gazetteer are published</td><td>Property detail, Property states</td></tr>
+<tr><td>E-46 Try a tool reply states</td><td>Error banner “Couldn’t run: the CountyLens API answered 401 Unauthorized…” with Try again; warning banner “429 · throttled. Too many calls, try again in n s.” with the Run button disabled and counting down; a dashed prototype-only “reply as” chip row (Live · Error 401 · Throttled 429) that does not ship</td><td>Round 8 #104, AD-10</td><td>Help · MCP, all widths</td></tr>
+<tr><td>E-45 Contractor identity bar</td><td>Coverage Contractor row: a stacked bar of the five identity states (status tokens: success, info, warning, danger, unavailable; 2 px gaps) with a legend of icon + label + count, so colour is never alone; counts are labelled Sample; the note says real counts come from Run 3 in A-02. Reconciliation counts only Resolved merges</td><td>Round 8 #89, #90, AD-05</td><td>Coverage 1440 / 768 / 390, Coverage states</td></tr>
+<tr><td>E-44 MCP access: Bearer token</td><td>Help → MCP Access card: info pills “Bearer token” on tools/list and tools/call, “Bearer token required, shared privately with reviewers”, 401 / 429 line; the three client snippets carry <code>Authorization: Bearer &lt;token&gt;</code>; Try a tool says it runs through the CountyLens API, which adds the token</td><td>AD-10: /mcp needs a bearer token kept in SSM; it never reaches the browser</td><td>Help · MCP, all widths</td></tr>
+<tr><td>E-43 AI Working… and Took too long</td><td>Answer tab while the single response is pending: spinner icon (still under reduced motion), “Working…”, elapsed seconds (role timer, not announced each second), indeterminate progress, one line on the 6-step and 25 s limits, Cancel (nothing counted). At 25 s a warning banner “Took too long” with Try again (filled) and Use Filters instead (outlined); Cancel gives an info banner and Ask again. A question counts against the quota only when the answer arrives</td><td>AD-09: one response through API Gateway, no streaming; hard stop at 25 s</td><td>Explore · AI, all widths; Helper states</td></tr>
+<tr><td>E-42 Contractor badge</td><td>ContractorBadge component: the name “as printed on permit”, then an Atlas pill with icon and a one-line reason, then the BBB state. Resolved (success, verified) = “Comptroller taxpayer no. {id} matched”, an official identifier, never a name · Candidate pills carry the tooltip “Name matches stay Candidate. Only an official ID resolves a contractor.” · Candidate (info, help) · Ambiguous (warning, call_split) · Conflicting (danger, sync_problem) · Unresolved (unavailable, link_off; reason names that no Texas roofing licence register exists). No licence line. Same variants inline in Explore cards, the details drawer and Property detail. Also “No contractor printed on permit” (no badge) and a 390 key–value card example (#96)</td><td>AD-05, AD-06: identity is official or nothing; BBB and places are never proof</td><td>Explore, Property detail, all widths</td></tr>
+<tr><td>E-41 Run chain</td><td>RunChain component on Data → Manifest: runs newest first as tappable outlined tiles (aria-pressed; selected = secondary container) linked by arrows (down on 390), each with its manifest CID, date, Verify and Copy CID; a details line for the selected run (manifest, previous manifest, size, gateways); a note that the run list is runs/index.json in git</td><td>AD-03: no IPNS; each manifest links to the previous one (previousManifestCid)</td><td>Data · Manifest, 1440 / 768 / 390</td></tr>
+<tr><td>E-40 Run picker</td><td>Outlined dropdown under the Runs title, first control on the page: run number, date, start–end time in UTC, duration and status pill; menu lists every run newest first with its manifest CID, a search field (number or date), Enter picks, Esc closes; the list scrolls</td><td>The dated line and slider did not scale to many runs (PO, round 5)</td><td>Runs, all widths</td></tr>
+<tr><td>E-39 Citation ↔ row</td><td>Citation [n] matches row n in Matches; tapping it highlights the row and opens its Why view; the row number opens the same Why view</td><td>Pins no longer exist in CountyLens (review #76)</td><td>Explore · AI</td></tr>
+</tbody>
+</table>
+</div>
+<h3 style="margin: 8px 0 0; font: 500 18px/24px var(--font-plain)">Deviations when mapView is OFF</h3>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">CountyLens ships with the map off. Each deviation from the Atlas guide is listed with its replacement; the full version is available with mapView ON (CRM).</p>
+<div class="atlas-table-wrap" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Atlas rule</th><th>Atlas expects</th><th>CountyLens with the map off</th><th>Full version</th></tr></thead>
+<tbody>
+<tr><td>§14.1 rule 3</td><td>Full-bleed map with a bottom sheet at 390</td><td>List-first: paged cards are the page, a sticky header shows the count, “within r mi of {Area}” and filter chips, and an “Edit query” FAB opens the query as a bottom sheet (E-36)</td><td>Full version available with mapView ON (CRM)</td></tr>
+<tr><td>§14.2 #1</td><td>Live radius ring</td><td>Radius slider and number field at the bottom right of the results, with a results header that updates live (E-34, E-35)</td><td>Full version available with mapView ON (CRM)</td></tr>
+<tr><td>§14.2 #2</td><td>Roof-age heat</td><td>Roof-age colour on the Roof cell, always with the number (E-37)</td><td>Full version available with mapView ON (CRM)</td></tr>
+<tr><td>§14.2 #5</td><td>Agent → map pins</td><td>Citations ↔ numbered rows: [n] highlights row n and opens its Why view (E-39)</td><td>Full version available with mapView ON (CRM)</td></tr>
+</tbody>
+</table>
+</div>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Extensions log" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3840}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

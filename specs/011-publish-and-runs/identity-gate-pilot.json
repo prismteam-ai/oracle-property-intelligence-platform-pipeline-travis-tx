@@ -1,0 +1,14 @@
+npm notice run @countylens/publish@0.0.0 npx
+npm notice run 'tsx' scripts/identity-gate.ts --manifest ../../specs/011-publish-and-runs/pilot/manifest.json --copy-host d2xsqoqv09bd0q.cloudfront.net --root ../.. --pids ../../specs/011-publish-and-runs/pilot-pids.txt --expect-permits 307
+{
+  "manifest": "../../specs/011-publish-and-runs/pilot/manifest.json",
+  "v_roofing_permit": 307,
+  "meta_permit": 307,
+  "permits_emitted": 307,
+  "permit_side_properties": 283,
+  "unmatched_properties": 0,
+  "pids_checked": 287,
+  "pids_unmatched": 0,
+  "result": "PASS",
+  "failures": []
+}

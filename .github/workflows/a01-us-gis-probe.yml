@@ -1,0 +1,51 @@
+# A-01 AC-6 / ARD § 8: one identified request to the Travis County GIS parcel layer from a
+# US GitHub-hosted runner, because the operator machine's evidence suggests a geo block
+# (docs/evidence/blocked/tcad_gis-20261020T072223Z.md; PO approval 2026-10-20).
+# Same URL and project User-Agent as the discovery probe; exactly one attempt, no retry,
+# no identity change. Runs only when this file changes on the story branch (a
+# workflow_dispatch trigger would need the file on main). The result is an artifact,
+# recorded by hand as A-01 evidence; nothing is committed and no secrets are used.
+name: a01-us-gis-probe
+
+on:
+  push:
+    branches: ["001-discover-sources"]
+    paths: [".github/workflows/a01-us-gis-probe.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    # Disabled for good (OR-m3, DEC-A-01-source-access D-2): the one approved request was
+    # made in run 39387019700. The lasting record is docs/evidence/A-01-us-gis-runner.md
+    # (the run's artifact expires after 30 days). record-gis-runner still reads env below.
+    if: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      URL: "https://gis.traviscountytx.gov/server1/rest/services/CIPStoryMap/Main_Location_Map2/MapServer/6/query?where=1%3D1&returnCountOnly=true&f=json"
+      UA: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+    steps:
+      # Egress country only; the runner IP is not logged.
+      - name: Runner egress location
+        run: |
+          mkdir -p out
+          curl -s -m 10 https://www.cloudflare.com/cdn-cgi/trace | grep -E '^(loc|colo)=' | tee out/egress.txt
+
+      - name: One identified GIS count request
+        run: |
+          date -u +%Y-%m-%dT%H:%M:%SZ | tee out/captured_at.txt
+          set +e
+          curl -sS -m 60 -A "$UA" -D out/headers.txt -o out/body.json \
+            -w 'http=%{http_code} time=%{time_total}s\n' "$URL" > out/result.txt 2> out/error.txt
+          echo "curl_exit=$?" >> out/result.txt
+          set -e
+          cat out/result.txt out/error.txt
+          [ -f out/body.json ] && { sha256sum out/body.json; head -c 500 out/body.json; echo; } || echo "no body"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a01-us-gis-probe
+          path: out/
+          retention-days: 30

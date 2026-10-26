@@ -1,0 +1,22 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/backfill-payload-redacted.ts --pids ../../specs/011-publish-and-runs/pilot-pids.txt --batch 50
+[backfill] job=travis-a04-20261022052658 scope=pids-1b591addc4d2 (287 pIDs) workers=6 writers=4 batch=50 dry_run=false
+[backfill] checkpoint=/Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx-p/specs/011-publish-and-runs/backfill-checkpoint-pids-1b591addc4d2.json
+[backfill] records/s=420 seen=14637 written=0 skipped_already_correct=0 checkpoint=-1
+[backfill] records/s=632 seen=28323 written=0 skipped_already_correct=0 checkpoint=-1
+[backfill] records/s=825 seen=45240 written=0 skipped_already_correct=0 checkpoint=-1
+[backfill] records/s=997 seen=64623 written=0 skipped_already_correct=0 checkpoint=-1
+[backfill] records/s=1113 seen=83312 written=184 skipped_already_correct=0 checkpoint=81999
+[backfill] records/s=1189 seen=100918 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1253 seen=118876 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1308 seen=137178 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1334 seen=153254 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1364 seen=170267 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1396 seen=188259 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1425 seen=206453 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1467 seen=227145 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1491 seen=245744 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1509 seen=263767 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1533 seen=283425 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] records/s=1553 seen=302566 written=254 skipped_already_correct=0 checkpoint=85199
+[backfill] FAILED (interrupted): interrupted (signal)

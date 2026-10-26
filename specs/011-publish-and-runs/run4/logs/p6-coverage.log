@@ -1,0 +1,4 @@
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/contractor-coverage.ts --group /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/pipeline/data/runs/travis-a11-permits-run4-20261026/groups/property_improvement --out /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/specs/011-publish-and-runs/run4/contractor-coverage.json
+[contractor-coverage] permits=15025 named=4552 resolved=0 candidate=130 ambiguous=0 conflicting=112 unresolved=14783 unresolved_by={"no_match":4310,"contractor_not_printed":10473} registry_rows=342333
+exit=0

@@ -1,0 +1,25 @@
+{
+  "schema": "countylens-prototype-placeholders.v1",
+  "description": "A-13 research R8 and test plan § 2: strings and selectors from the Claude Design prototype (design/prototype/**) that must never appear on a hosted page. The prototype's CID-shaped tokens are added at test time by tests/e2e/lib/a13.ts (prototypeCidTokens). Matching is whole-phrase and case-insensitive.",
+  "strings": [
+    { "text": "SAMPLE, JORDAN A", "reason": "prototype owner name" },
+    { "text": "128 within 5 mi", "reason": "prototype area count" },
+    {
+      "text": "Run 4",
+      "reason": "prototype run label; real only once runs/index.json lists four runs",
+      "allowWhenRunCountAtLeast": 4
+    },
+    { "text": "38.2 MB", "reason": "prototype file size" },
+    { "text": "not wired", "reason": "prototype stub wording" },
+    { "text": "city hall", "reason": "prototype place placeholder (test plan § 2)" }
+  ],
+  "selectors": [
+    "[name=\"ProtoBar\"]",
+    "dc-import",
+    ".pb-dev",
+    ".pb-track",
+    ".pb-thumb",
+    ".pb-sw",
+    ".pb-on"
+  ]
+}

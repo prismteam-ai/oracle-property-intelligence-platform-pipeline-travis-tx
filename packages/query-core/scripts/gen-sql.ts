@@ -1,0 +1,128 @@
+// T012 (A-03, metagross "Findings from the code"): query-core used to read views.sql with node:fs
+// and hash the profile and gazetteer with node:crypto when its modules loaded, so it could not be
+// bundled for the browser. This Node-only generator writes those values as constants:
+//   generated/travis-austin@1.0.0.status-map.sql  ← toSqlStatusMap() (profile rules.json)
+//   src/sql.generated.ts                           ← views.sql, the status map, GAZETTEER_SHA256
+//   profiles/travis-austin@1.0.0/index.ts          ← its one marked `RULES_SHA256` line
+// It refuses to run when a recomputed digest differs from the committed DIGEST (a rule or list
+// changed without the version bump AD-26 requires). test/browser-safe.test.ts proves the committed
+// output equals the files and the recomputed digests. Run: pnpm --filter @countylens/query-core gen
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import {
+  PROFILE,
+  canonicalize as canonicalRules,
+  toSqlStatusMap,
+} from "@countylens/profile-travis-austin";
+import {
+  GAZETTEER_VERSION,
+  OwnerAreaFile,
+  PlaceRow,
+  SourcesFile,
+  ZctaRow,
+  canonicalize,
+  decodeZctaBitmap,
+} from "../gazetteer/travis-places@1.0.0/schema.js";
+
+const PKG = fileURLToPath(new URL("../", import.meta.url));
+const ROOT = fileURLToPath(new URL("../../../", import.meta.url));
+const GAZ = `${PKG}gazetteer/travis-places@1.0.0/`;
+const PROFILE_DIR = `${ROOT}profiles/travis-austin@1.0.0/`;
+
+const sha256 = (s: string): string => createHash("sha256").update(s, "utf8").digest("hex");
+const readJson = (file: string): unknown => JSON.parse(readFileSync(file, "utf8"));
+const committed = (dir: string): string => readFileSync(`${dir}DIGEST`, "utf8").trim();
+
+/** Writes only when the bytes differ; reports either way. */
+function write(file: string, content: string): void {
+  const before = existsSync(file) ? readFileSync(file, "utf8") : null;
+  if (before === content) {
+    console.log(`unchanged ${file.replace(ROOT, "")}`);
+    return;
+  }
+  writeFileSync(file, content);
+  console.log(`wrote     ${file.replace(ROOT, "")} (${content.length} chars)`);
+}
+
+/** A TypeScript template literal holding `s` byte for byte. */
+const templateLiteral = (s: string): string =>
+  "`" + s.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${") + "`";
+
+function gazetteerDigest(): string {
+  const ownerArea = OwnerAreaFile.parse(readJson(`${GAZ}owner-area.json`));
+  // The all-US ZCTA bitmap's own count + sha256 were checked at module load before A-03; the
+  // browser has no sync SHA-256, so the check lives here and in test/browser-safe.test.ts.
+  const list = decodeZctaBitmap(ownerArea.all_us_zctas.bitmap_base64);
+  if (
+    list.length !== ownerArea.all_us_zctas.count ||
+    sha256(list.join("\n")) !== ownerArea.all_us_zctas.sha256
+  )
+    throw new Error("gazetteer: all-US ZCTA list does not match its count and sha256");
+  const digest = sha256(
+    canonicalize({
+      version: GAZETTEER_VERSION,
+      places: PlaceRow.array().parse(readJson(`${GAZ}places.json`)),
+      zctas: ZctaRow.array().parse(readJson(`${GAZ}zctas.json`)),
+      "owner-area": ownerArea,
+      sources: SourcesFile.parse(readJson(`${GAZ}sources.json`)),
+    }),
+  );
+  const expected = committed(GAZ);
+  if (digest !== expected)
+    throw new Error(
+      `gazetteer digest ${digest} differs from the committed DIGEST ${expected}: a list changed without a version bump (AD-26)`,
+    );
+  return digest;
+}
+
+function profileDigest(): string {
+  const digest = sha256(canonicalRules(readJson(`${PROFILE_DIR}rules.json`)));
+  const expected = committed(PROFILE_DIR);
+  if (digest !== expected)
+    throw new Error(
+      `profile digest ${digest} differs from the committed DIGEST ${expected}: rules changed without a version bump and CHANGELOG entry (AD-26)`,
+    );
+  return digest;
+}
+
+function main(): void {
+  // The profile line first: toSqlStatusMap() embeds PROFILE.sha256, which is that constant.
+  const profile = profileDigest();
+  const indexFile = `${PROFILE_DIR}index.ts`;
+  const source = readFileSync(indexFile, "utf8");
+  const line = /^export const RULES_SHA256 = "[0-9a-f]{64}";$/m;
+  if (!line.test(source)) throw new Error(`${indexFile} has no generated RULES_SHA256 line`);
+  write(indexFile, source.replace(line, `export const RULES_SHA256 = "${profile}";`));
+  if (PROFILE.sha256 !== profile)
+    throw new Error(
+      `RULES_SHA256 in profiles/travis-austin@1.0.0/index.ts was stale (${PROFILE.sha256}) and is now ${profile}: run gen again`,
+    );
+
+  const statusMap = toSqlStatusMap();
+  write(`${PKG}generated/travis-austin@1.0.0.status-map.sql`, statusMap);
+
+  const views = readFileSync(`${PKG}views.sql`, "utf8");
+  const gazetteer = gazetteerDigest();
+  write(
+    `${PKG}src/sql.generated.ts`,
+    [
+      "// GENERATED by scripts/gen-sql.ts (pnpm --filter @countylens/query-core gen). Do not edit by hand.",
+      "// Browser-safe constants (A-03 T012): the SQL query-core binds and the gazetteer digest, so no",
+      "// module reachable from src/index.ts reads a file or hashes with node:fs / node:crypto at load.",
+      "// test/browser-safe.test.ts checks these against views.sql, the status-map file and the DIGESTs.",
+      "",
+      "/** The four contract/v1 views (views.sql), byte for byte. */",
+      `export const VIEWS_SQL: string = ${templateLiteral(views)};`,
+      "",
+      "/** travis_austin_status_map, generated from the profile (generated/travis-austin@1.0.0.status-map.sql). */",
+      `export const STATUS_MAP_SQL: string = ${templateLiteral(statusMap)};`,
+      "",
+      "/** SHA-256 of JCS({version, places, zctas, owner-area, sources}) of travis-places@1.0.0 (= its DIGEST). */",
+      `export const GAZETTEER_SHA256 = "${gazetteer}";`,
+      "",
+    ].join("\n"),
+  );
+}
+
+main();

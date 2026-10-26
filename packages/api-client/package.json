@@ -1,0 +1,38 @@
+{
+  "name": "@countylens/api-client",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The only tRPC client of the workspace (A-03 plan, agent-design metagross § 8): AppRouter imported type-only from @countylens/api, splitLink (agent/mcpProxy never batched) over httpBatchLink to /api/trpc, plus the React Query integration.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./react": {
+      "types": "./src/react.tsx",
+      "default": "./src/react.tsx"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.104.5",
+    "@trpc/client": "11.19.0",
+    "@trpc/server": "11.19.0",
+    "@trpc/tanstack-react-query": "11.19.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@countylens/api": "workspace:*",
+    "@types/react": "19.3.0",
+    "react": "19.3.1",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

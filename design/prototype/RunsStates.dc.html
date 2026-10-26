@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Runs states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 720px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Runs states</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Every state here is live on <a href="Runs1440.dc.html">Runs · 1440</a>: pick it from the dashed “Prototype · preview a state” bar to see the pipeline, timeline, events and sync card change together. The stale state also changes the header sync badge on every screen.</p>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; flex: 1; min-height: 0">
+
+<section aria-label="Stale" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Stale data</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">history_toggle_off</span><div class="atlas-banner__body">Data is 9 days old. Run 3 is past the 8-day freshness window.</div></div>
+<span class="atlas-pill atlas-pill--warning" style="align-self: flex-start">Stale · synced 9 days ago</span>
+<span style="color: var(--md-sys-color-on-surface-variant)">Values still show; each count keeps its own date.</span>
+</div>
+</section>
+
+<section aria-label="Run in progress" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Loading · run in progress</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column">
+<div class="atlas-progress" role="progressbar" aria-label="Run 4 progress" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"><i style="width: 43%"></i></div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 18px">
+<b style="font-weight: 500">Run 4 · 3 of 8 sources</b>
+<span><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="vertical-align: -3px">check</span> Austin permits</span>
+<span><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="vertical-align: -3px">check</span> TCAD properties</span>
+<span><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="vertical-align: -3px">sync</span> TCAD owners…</span>
+<span style="color: var(--md-sys-color-on-surface-variant)">Run 3 stays current until Run 4 publishes.</span>
+</div>
+</div>
+</section>
+
+<section aria-label="Partial" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Partial run</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div class="atlas-banner__body">Run 4 published 7 of 8 sources. Comptroller businesses failed.</div></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Comptroller businesses keep their Run 3 records and CID, labelled “carried over”.</span>
+</div>
+</section>
+
+<section aria-label="Rate-limited" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Rate-limited</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><div class="atlas-banner__body">Gateway check for the previous CID rate-limited, retrying in 4 s.</div></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Shown as pending, never as failed.</span>
+</div>
+</section>
+
+<section aria-label="Error" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Error</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body">Run history could not be read from the manifest.</div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k1}}">Retry</button></div>
+<span style="color: var(--md-sys-color-on-surface-variant)">Explore and Search keep using Run 3.</span>
+</div>
+</section>
+
+<section aria-label="Empty" style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Empty</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><circle cx="16" cy="36" r="8" fill="var(--brand-blue)"></circle><circle cx="36" cy="36" r="8" fill="none" stroke="var(--brand-green)" stroke-width="4"></circle><circle cx="56" cy="36" r="8" fill="none" stroke="var(--brand-yellow)" stroke-width="4"></circle><path d="M24 36 H28 M44 36 H48" stroke="var(--brand-red)" stroke-width="4"></path></svg>
+<b style="font-family: var(--font-brand); font-size: 18px; line-height: 24px; font-weight: 400">No runs yet</b>
+<span style="color: var(--md-sys-color-on-surface-variant)">The first run will appear here with its sources, counts and CID.</span>
+<a href="#">How runs work</a>
+</div>
+</section>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Runs · states, incl. stale data" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+npm notice run @countylens/publish@0.0.0 npx
+npm notice run 'tsx' /private/tmp/claude-501/-Users-hebagaber-Github-oracle-property-intelligence-platform-pipeline-travis-tx/6be6541c-1f1b-4893-9122-6946b7c5360d/scratchpad/run4-preview/preview.mts
+{
+  "previewCid": "bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha",
+  "artifacts": 285,
+  "byKind": {
+    "car": 15,
+    "directory": 15,
+    "table": 255
+  },
+  "reused": 285,
+  "new": 0,
+  "prevArtifacts": 285,
+  "droppedFromPrev": 0,
+  "sources": [
+    {
+      "name": "austin-3syk-w9eu",
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json",
+      "watermark": "2026-10-25T12:55:16.178Z",
+      "captured_at": "2026-10-26T11:32:51.992Z",
+      "records": 2381895,
+      "added": 9,
+      "changed": 35,
+      "removed": 0,
+      "limitations": [
+        "Comptroller registry loaded 2026-10-22 (342333 rows, data.texas.gov 9cir-efmm, watermark 2026-10-17T10:35:22.788Z, snapshot sha256 53c5974aca826273a03b97a352c4e65609bd71ebce8126b912638e103e8a1cef); each published contractor name was matched by normalised legal name (normalize-name-v1) on 2026-10-25; the result is a run-level count only, never a per-permit identity",
+        "Incremental run: whole dataset paged by :id (bulk re-stamp: every :updated_at moved); 2381895 rows read; watermark used 2026-10-24T14:51:37.805Z, new watermark 2026-10-25T12:55:16.178Z; delta by content digest: added 9, changed 35, removed 0, unchanged 2381851",
+        "source bulk re-stamp; delta by content digest"
+      ]
+    },
+    {
+      "name": "tcad-2026-certified-json",
+      "url": "https://traviscad.org/publicinformation",
+      "watermark": "entry@sha256:6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346",
+      "captured_at": "2026-10-22T05:48:41.000Z",
+      "records": 493246,
+      "added": 0,
+      "changed": 0,
+      "removed": 0,
+      "limitations": [
+        "Confidential owner records redacted (Texas Tax Code §25.025): 15410",
+        "source unchanged, watermark entry@sha256:6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346"
+      ]
+    },
+    {
+      "name": "austin-address-points",
+      "url": "https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/LOCATION_address_points/FeatureServer/0",
+      "watermark": "2026-10-24T04:31:08.027Z",
+      "captured_at": "2026-10-25T08:28:56.202Z",
+      "records": 466149,
+      "added": 0,
+      "changed": 0,
+      "removed": 0,
+      "limitations": [
+        "Layer snapshot sha256 4683eec602e1788ab3f2ce501fa9adf176ebdf6970d9b69a10602a20ea28b03c; 466149 records; layer last edited 2026-10-24T04:31:08.027Z",
+        "Public coordinates for accounts without a GIS point come from the City of Austin address-point layer only when the situs matches exactly one point on house number and street and the point lies inside the Travis County box (ADR 0004); no geocoder, nearest or fuzzy match is used, and a GIS centroid is never replaced. The layer carries no ZIP or city, so an address shared by two cities stays unmatched.",
+        "Not re-captured in this run: carried from travis-full-run3-1-20261025 (watermark 2026-10-24T04:31:08.027Z)"
+      ]
+    }
+  ],
+  "limitations": [
+    "county published_rows is R-only (441961 of the 493246-parcel roll); P/MH/MN out of scope, unchanged since A-04",
+    "export-tables re-run with --part-size 48m (ADR-0001 D-4) after the original dry run used elephant-cli's 1 GiB default; table splitting itsel",
+    "Run 3.1 corrects Run 3 (travis-full-run3-20261025) with no new source capture. County group: every CAR is Run 3's, byte for byte (same CIDs)",
+    "Incremental refresh of the Austin permits source (watermark 2026-10-24T14:51:37.805Z to 2026-10-25T12:55:16.178Z): added 9, changed 35, remo"
+  ],
+  "coverageContractor": {
+    "contractor_ambiguous": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "published name matches two or more active registry legal names"
+    },
+    "contractor_candidate": {
+      "count": 130,
+      "derivation": "aggregate_match",
+      "note": "published name matches exactly one active registry legal name; not published per permit, the company stays as printed"
+    },
+    "contractor_conflicting": {
+      "count": 112,
+      "derivation": "aggregate_match",
+      "note": "published name matches a registry legal name whose status is not active"
+    },
+    "contractor_resolved": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "0 of 15025 published permits: resolved needs an identifier crosswalk to a registry record and none exists (D-10); a name match is never resolved"
+    },
+    "contractor_unresolved": {
+      "count": 14783,
+      "derivation": "aggregate_match",
+      "note": "10473 permits print no contractor (contractor_not_printed); 4310 published names match no registry legal name"
+    },
+    "permits_address_unmatched": {
+      "count": 29480,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='address_unmatched'"
+    },
+    "permits_ambiguous_address": {
+      "count": 89,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='ambiguous_address'"
+    },
+    "permits_ambiguous_geoid": {
+      "count": 36568,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='ambiguous_geoid'"
+    },
+    "permits_emitted": {
+      "count": 15025,
+      "derivation": "published_rows",
+      "note": "b01 2764 + b02 2488 + b03 2730 + b04 3484 + b05 3559, roofing-classified decided-status permits only (PO 2026-10-23)"
+    },
+    "permits_no_tcad_geoid": {
+      "count": 275830,
+      "derivation": "aggregate_match",
+      "note": "Query DB property_improvements.unmatched_reason='no_tcad_geoid', request_identifier IS NULL, all captured Austin permits"
+    },
+    "permits_no_tcad_id": {
+      "count": 31824,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='no_tcad_id'"
+    },
+    "permits_trade_sub_permit": {
+      "count": 2362,
+      "derivation": "aggregate_match",
+      "note": "D-4b trade sub-permits (non-BP EP/PP/MP: Electrical 940, Plumbing 807, MechanicalHVAC 615) of linked properties with a decided status: published in the previous run by mistake, excluded here (PO 2026-10-24, roofing only); counted by reexport-permits --compare-run"
+    }
+  }
+}
+GATE {"manifest":"(manifest bytes)","v_roofing_permit":15025,"meta_permit":15025,"permits_emitted":15025,"permit_side_properties":10792,"unmatched_properties":0,"pids_checked":0,"pids_unmatched":0,"result":"PASS","failures":[],"previous":{"previous_properties":441961,"previous_permits":15025,"missing_properties":0,"missing_permits":0,"changed_identifier":0,"remapped":0,"cid_map":[],"lost":[]}}

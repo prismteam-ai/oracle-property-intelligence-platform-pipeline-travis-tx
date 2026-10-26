@@ -1,0 +1,15 @@
+# reason: Public client-side Azure Application Insights instrumentation key served in rollingwoodtx.gov's
+# public HTML, kept verbatim in the A-01 blocked-evidence excerpt (saved response). Not a project
+# credential and grants no access. Suppressed by exact fingerprint only (A-01 T053; the 2026-10-20 re-probe saved the same page).
+docs/evidence/blocked/jurisdiction-rollingwood-20261019T210933Z.md:generic-api-key:62
+docs/evidence/blocked/jurisdiction-rollingwood-20261020T085309Z.md:generic-api-key:62
+# reason: A-02: sorted_keys_sha256 is the SHA-256 of the public sorted permit-number list (AC-3 sample), not a secret
+docs/evidence/A-02-classifier-review.md:generic-api-key:9
+# reason: A-04: a test passes the job id `travis-a04-coords-…` as the Restate workflow `key:` of a faked ingress call; it is a run label, not a credential. Suppressed by exact fingerprint only.
+84672cede0bf1348b42ca82dd44a900e6bc6ed75:pipeline/oracle-runtime/test/travis/a04/gis-artifact.test.ts:generic-api-key:463
+# reason: A-04: a defect report quotes a SQL query with the run label (`target_service_key = 'travis-a04-…'`, a job id), not a credential. Suppressed by exact fingerprint only.
+33120123b5660452ba1c99e4882028faade1588c:docs/defects/ERR-23.md:generic-api-key:44
+# reason: A-04: a unit test names its fake Restate workflow key (`const KEY = "austin-3syk-w9eu-pilot-…"`, a run label), not a credential. Suppressed by exact fingerprint only.
+4472a22175d7b10398ad018af5a8fe89f25337f7:pipeline/local-stack/test/austin-permits-binding.test.ts:generic-api-key:31
+# reason: A-07: COMPTROLLER_SOURCE_KEY is a fixed dataset-identifier string ("tx-comptroller-9cir-efmm", the Socrata resource id), not a credential. Suppressed by exact fingerprint only.
+fda3f0a3b9f4458302272debf48bd903a396a1d2:pipeline/local-stack/services/tracks/comptroller.ts:generic-api-key:13

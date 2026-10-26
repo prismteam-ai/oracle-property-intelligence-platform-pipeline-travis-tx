@@ -1,0 +1,24 @@
+{
+  "permits": 15025,
+  "named": 4552,
+  "byState": {
+    "resolved": 0,
+    "candidate": 130,
+    "ambiguous": 0,
+    "conflicting": 112,
+    "unresolved": 14783
+  },
+  "unresolvedBy": {
+    "no_match": 4310,
+    "contractor_not_printed": 10473
+  },
+  "registryRows": 342333,
+  "registrySnapshotDigest": "53c5974aca826273a03b97a352c4e65609bd71ebce8126b912638e103e8a1cef",
+  "effectiveOn": "2026-10-25T21:26:37.735Z",
+  "registryLoad": {
+    "job_id": "travis-a07-identity-registry-20261022184652",
+    "loaded_at": "2026-10-22T18:46:53.171Z",
+    "source_url": "https://data.texas.gov/resource/9cir-efmm.json",
+    "watermark": "2026-10-17T10:35:22.788Z"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "name": "travis-austin",
+  "version": "1.0.0",
+  "dataset": {
+    "id": "3syk-w9eu",
+    "url": "https://data.austintexas.gov/resource/3syk-w9eu.json",
+    "key": "permit_number"
+  },
+  "jurisdictions": {
+    "austin": {
+      "name": "City of Austin",
+      "hosts": ["data.austintexas.gov", "abc.austintexas.gov"]
+    }
+  },
+  "roofing": {
+    "include": {
+      "field": "description",
+      "match": "substring_case_insensitive",
+      "terms": ["REROOF", "RE-ROOF", "ROOF REPLACE"]
+    },
+    "exclude": [
+      {
+        "id": "aux_power",
+        "field": "work_class",
+        "match": "equals",
+        "value": "Auxiliary Power",
+        "note": "Electrical auxiliary-power (solar/battery) sub-work, even when the text mentions a reroof."
+      },
+      {
+        "id": "solar_pv",
+        "field": "description",
+        "match": "regex",
+        "pattern": "\\bSOLAR\\b|\\bPV\\b|PHOTOVOLTAIC",
+        "note": "Token-aware: PVC membrane is not PV."
+      },
+      {
+        "id": "rtu",
+        "field": "description",
+        "match": "regex",
+        "pattern": "\\bRTUS?\\b",
+        "note": "Token-aware: OPPORTUNITY is not RTU."
+      },
+      {
+        "id": "roof_mounted",
+        "field": "description",
+        "match": "regex",
+        "pattern": "\\bROOF[- ]?MOUNTED\\b",
+        "note": "Roof-mounted equipment; 'reroof mounted' has no word boundary before ROOF."
+      },
+      {
+        "id": "roof_deck",
+        "field": "description",
+        "match": "regex",
+        "pattern": "\\bROOF ?TOP DECKS?\\b|\\b(?:ADD|ADDS|ADDING|ADDITION OF|BUILD|CONSTRUCT)\\b[^.;]{0,20}\\bROOF DECKS?\\b",
+        "note": "Only a rooftop (walkable) deck. ROOF DECKING and the structural deck under a reroof are not excluded."
+      }
+    ],
+    "flags": "i",
+    "trade_permit": {
+      "field": "permittype",
+      "roofing_permittypes": ["BP"],
+      "note": "PO decision D-4b: EP/MP/PP/DS sub-permits are never Roofing."
+    },
+    "needs_review": [
+      {
+        "id": "roof_work_class_no_include",
+        "field": "work_class",
+        "equals": "Roof",
+        "note": "Work class says Roof but no include term."
+      }
+    ],
+    "precedence": ["exclude", "trade_permit", "include", "needs_review"],
+    "published": {
+      "improvement_type": "Roofing",
+      "improvement_action": "Replacement"
+    }
+  },
+  "status_map": {
+    "open": [
+      "Active",
+      "Pending",
+      "Pending Permit",
+      "On Hold",
+      "Suspended",
+      "Inactive Pending Revision",
+      "Re Review"
+    ],
+    "stalled": ["Expired", "Expired - License"],
+    "closed": ["Final", "Closed"],
+    "exclude": ["VOID", "Withdrawn", "Aborted", "Denied but Closed", "Revoked", "Rejected"],
+    "exclude_prefixes": ["Cancelled"],
+    "unmapped": "needs_review"
+  },
+  "published_encoding": {
+    "by_word": {
+      "Active": "Permitted",
+      "Pending": "Planned",
+      "Pending Permit": "Planned",
+      "Re Review": "Planned",
+      "On Hold": "OnHold",
+      "Suspended": "OnHold",
+      "Inactive Pending Revision": "OnHold",
+      "Expired": null,
+      "Expired - License": null,
+      "Final": "Completed",
+      "Closed": "Completed"
+    },
+    "stalled_rule": "improvement_status IS NULL AND permit_issue_date IS NOT NULL",
+    "not_emitted": ["exclude", "needs_review"]
+  },
+  "sample_population": {
+    "fields": ["description", "work_class"],
+    "match": "substring_case_insensitive",
+    "term": "ROOF"
+  }
+}

@@ -1,0 +1,479 @@
+{
+  "schema": "pinata-copy-summary.v1",
+  "run_id": "travis-full-run3-1-20261025",
+  "manifest_path": "/private/tmp/claude-501/-Users-hebagaber-Github-oracle-property-intelligence-platform-pipeline-travis-tx-p/201b1ae7-280f-4e9b-b131-4a25c6359feb/scratchpad/manifests/runs/travis-full-run3-1-20261025/manifest.json",
+  "manifest_cid": "bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai",
+  "dry_run": false,
+  "first_only": false,
+  "kinds": ["manifest", "table"],
+  "budget": {
+    "bytes": 946819239,
+    "files": 498,
+    "source": "quota minus usage"
+  },
+  "usage_before": {
+    "pinCount": 2,
+    "pinSizeTotal": 3180761
+  },
+  "usage_after": {
+    "pinCount": 206,
+    "pinSizeTotal": 947494513
+  },
+  "counts": {
+    "pinned": 204,
+    "already_pinned": 2,
+    "mismatch_unpinned": 0,
+    "mismatch_unpin_failed": 0,
+    "mismatch_preexisting": 0,
+    "error": 0,
+    "skipped_local": 0,
+    "left_budget": 54,
+    "left_stopped": 0,
+    "planned": 0
+  },
+  "bytes": {
+    "uploaded": 944127397,
+    "pin_size_uploaded": 944313752,
+    "left": 49819603
+  },
+  "mismatches": [],
+  "skipped": [],
+  "left": [
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet",
+      "cid": "bafybeig5t4e7x75bv3zmjp4w65y54vlhhww7kbartrto2uv43zzs4qg3fu",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 3325311
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property_has_address/part-00000.parquet",
+      "cid": "bafybeigywyfuz3mxo5o3dhuh4w4kt6da57sbutffmrjbxi7cryfbzqlzfy",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 5954269
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeibnuytirvtxhvmzfwj2f4rt6u2upsctk2sbnpra5jukab2dc5swfq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 5953882
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeiawlkh6czprw5fgcrvxs6dpu3m7wvtbxaf6zryhrpdwly65ufihue",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 6827284
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property_has_structure/part-00000.parquet",
+      "cid": "bafybeidka7onsrce6oz3djsh3vxxn2c2srl5dttnh3sdlhguhb775cj7mm",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 5954113
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/sales_history/part-00000.parquet",
+      "cid": "bafybeiabyewnfr7wwhflobioihrwzdcsgxvjczd2mdpkbnzllqtqzvtfym",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 3589604
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeig5v3i2p4ykgpyxe2e7eddlefdokb24w6e65sslloksknlcbzwxwe",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 1294265
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/sales_history_has_person/part-00000.parquet",
+      "cid": "bafybeief2t65zxysangqmpbh6tc4l63nbwdvwf4ojkqbeohdti25wvwjmm",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 4539204
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/structure/part-00000.parquet",
+      "cid": "bafybeifndoxnsziuyv7qopnu5uwg2w52jkqd3khmt47ntihnqr3mrnruky",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 3080174
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/address/part-00000.parquet",
+      "cid": "bafkreibvjtuozblowuygrxxoybpno42nyk5svu5ymb4rzibqmnoos6unoe",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 205058
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeihgq3u2lzqxoaah6zyegoaftkl67uub6go4vyepqoz2qg44bmcouq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 301078
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/company/part-00000.parquet",
+      "cid": "bafkreibot73s2hdclvo6mtzbdzzyitcydz5newq3f34oygiy7cyqtdnj3i",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 47030
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/parcel/part-00000.parquet",
+      "cid": "bafkreihxib25wff5rf3r5j7zn2g4vwlcrgzdn6hi7trcam6odb4yffbfnm",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 163000
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/properties/part-00000.parquet",
+      "cid": "bafkreidmlxqba37v5iscmihqp7gp4ccino4nhwac57jspj74mubfgr4ozy",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 225862
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/property/part-00000.parquet",
+      "cid": "bafkreicns6a6t4nlsbmvbgimgt7dbbaav2kk3i44vsyq3lvfdfayxefmzy",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 190636
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeia4bg5rq7m2es4pddhgu2qqgmh5tijarwrst3qcajw6cwoqgubcx4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 344510
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/property_improvement/part-00000.parquet",
+      "cid": "bafkreif7wsidsql6xh3rpo7vn4udldw3uto52mnbporqxehwe7622tul3m",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 232115
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b01/property_improvement_has_contractor/part-00000.parquet",
+      "cid": "bafkreihp2rtym2rtfch5fxus7367khfeydz3jrb5zu5m4uerrs2sls7xaq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 80660
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/address/part-00000.parquet",
+      "cid": "bafkreicpub7weom7hpvvj25bjacg72wqbupwaiyqoaxhfhyziqvka4lixq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 203474
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeihwqb6qggllgtwldgwlggb6uvjcq32ntu2lyjvx66djeliimvzed4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 301121
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/company/part-00000.parquet",
+      "cid": "bafkreicakxmfkfpgpmbdweakejk5a46p2yuz2m65ykglsny3ke4qevmpsa",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 47352
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/parcel/part-00000.parquet",
+      "cid": "bafkreia6bkhtber5qdoxq7vod4rjt33y2pqy74oqqu2nxwvl3krb3tvlli",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 162585
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/properties/part-00000.parquet",
+      "cid": "bafkreib3tmcrve6dpz3hfjg72sfghfnresgz2zosvrpwffn7p2aylje5wa",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 225984
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/property/part-00000.parquet",
+      "cid": "bafkreigj5ovd2u5gb45lh7ipogreconpryler2it4l5hcungt3mca6ati4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 192973
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeiczti5lb7ibrj27xn7ipbzgggsr4umg5p4uovnbymhpau2qyws464",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 325647
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/property_improvement/part-00000.parquet",
+      "cid": "bafkreibd3u67md3kgtt6zcaofo3enpzr4s5ronsyj6e3nkx3othlqyqxra",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 222140
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b02/property_improvement_has_contractor/part-00000.parquet",
+      "cid": "bafkreiexdildlrhrqnsahipbglhsojyqyan7qusoveom4i73yrdum3oj2e",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 74401
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/address/part-00000.parquet",
+      "cid": "bafkreih2eooq5hzn6uf2tqa4iai54q6zrnrzrr2uxvdvr5n23uk4mpvv5m",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 204450
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeigu7mkurlodbr3yobv3wxwcowewsnu4pvvu3xqq3om3zpo7fi5ch4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 300985
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/company/part-00000.parquet",
+      "cid": "bafkreidnwnruc6g2jx4nbpwcqyb5jhyujglsnedgsoadt3naigkonqb5qq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 43905
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/parcel/part-00000.parquet",
+      "cid": "bafkreifb5b7ty2m4ef6vfgzvl7yiuxesxg222exkreafdqfzw2jffgi6fe",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 162736
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/properties/part-00000.parquet",
+      "cid": "bafkreifg5yqdldgkfzyhe2nakejigyw2rfgxbxr7fmx6ebixriqnravcma",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 225848
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/property/part-00000.parquet",
+      "cid": "bafkreiapfeifumy7ebdh7vrqrimrzgqitjuufzacxuepdy7lo62ayoolru",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 187190
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeihrxm6e4j66jkwx6svwzpu3bhrlcia2uoa22gdhg3qfcumpxi3asy",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 342083
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/property_improvement/part-00000.parquet",
+      "cid": "bafkreiejnxwqvh5nxfsy57tpmvchu6vqbiqxbfkdznp7aq73sh2mcaqh7a",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 231038
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b03/property_improvement_has_contractor/part-00000.parquet",
+      "cid": "bafkreih4hngtpyibso56rb7jfntj6p2s7kd26mtrrescnbvr5uk543djne",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 76528
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/address/part-00000.parquet",
+      "cid": "bafkreibo7xgv3vgd6jd34dbmhjv4trjjjvtywyjuj45wnfx2biap4h2ryq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 205956
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeihap5jaydccvgtuzv7m2rmynq3wjm6lsecfpffvxbhpmtibfgthdi",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 300950
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/company/part-00000.parquet",
+      "cid": "bafkreihn3tu5ajlesptbtudxzikn3uqd3t4yyprhelampvhiflxmqntd2m",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 62403
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/parcel/part-00000.parquet",
+      "cid": "bafkreihmr2hesu5xsk2fqfie2whsdiivo6obnukxm6u756rk5v4p2xqtla",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 162823
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/properties/part-00000.parquet",
+      "cid": "bafkreicpf7m44j4b5v52ok3ngykxwuayfznobwdoiwlrmhotdpk64535ze",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 225824
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/property/part-00000.parquet",
+      "cid": "bafkreigjpzzc7ar3tjxsppyrpthd2zlrmmlknyczbxoh7bcxy4baqq2jfy",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 188036
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeifkrg6rh32ccmokhv76m3p2nkkaclerfy2xbffzyd444gevmsio7e",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 395511
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/property_improvement/part-00000.parquet",
+      "cid": "bafybeig5hro56jdcm6yqapfljk7hblp6ks6oraxtnx3bjlwycs23q32jb4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 267494
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b04/property_improvement_has_contractor/part-00000.parquet",
+      "cid": "bafkreict7p3cq22ylxxyu7qfcepxczyhh57otv6zhjtsdh3xizfq73fguu",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 116432
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/address/part-00000.parquet",
+      "cid": "bafkreifb6nmdesvvaxnntltlv3gqs55drr36fqgypknionu4vfhq7qgxjm",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 208656
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeie4p2hyqot4valax5ukrlevap2dnfwrenynrogcickgqrtdqd7gj4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 301047
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/company/part-00000.parquet",
+      "cid": "bafkreiac7qgfyfi6fnlxlibydjvfeaoig3go2tbsglxo5awwi2dqn62ug4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 100048
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/parcel/part-00000.parquet",
+      "cid": "bafkreifj2nhmotnco75hn3ntnefo2kwacriu4ntkipsurpuqtufrukfekq",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 164001
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/properties/part-00000.parquet",
+      "cid": "bafkreicfwc4grfno3ehgifbfh6pyy7oeevrevpbhexmsy5ynibz7nvbc74",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 225812
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/property/part-00000.parquet",
+      "cid": "bafkreih2x35kv5fs23ostkwa2mbtwibrcidbj43rhqooftdcwiatbnatge",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 192244
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeigo2jrr3nrlddyujrr33dbgp6cdajuu4vtg3ydeao7aeoryf2mmti",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 400675
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/property_improvement/part-00000.parquet",
+      "cid": "bafybeieiaxhozdcitwcyn32ds4klkiej47j6urw3kd6cnrk2t2kkgjfla4",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 271130
+    },
+    {
+      "kind": "table",
+      "name": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched/tables/b05/property_improvement_has_contractor/part-00000.parquet",
+      "cid": "bafkreieg3qyv3bidqoysatflobvctumv5wowqkzpedasupjni2hhznosbm",
+      "status": "left_budget",
+      "reason": "budget: pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b10/property/part-00000.parquet needs 3325311 bytes, 2691842 bytes and 294 files left",
+      "size": 192066
+    }
+  ],
+  "errors": [],
+  "stopped": "budget",
+  "ok": true,
+  "finished_at": "2026-10-26T06:01:25.867Z"
+}

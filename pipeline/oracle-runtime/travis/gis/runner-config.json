@@ -1,0 +1,12 @@
+{
+  "mode": "full",
+  "attempt": 3,
+  "enabled": false,
+  "layerUrl": "https://gis.traviscountytx.gov/server1/rest/services/CIPStoryMap/Main_Location_Map2/MapServer/6",
+  "outFields": ["OBJECTID", "PROP_ID", "geo_id"],
+  "pidField": "PROP_ID",
+  "geoidField": "geo_id",
+  "bulkPageSize": 2000,
+  "bulkConcurrency": 2,
+  "userAgent": "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+}

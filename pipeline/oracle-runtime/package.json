@@ -1,0 +1,59 @@
+{
+  "name": "oracle-travis-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vendored kit runtime plus Travis County discovery code (AD-23).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "test:acceptance": "vitest run --config vitest.acceptance.config.ts",
+    "typecheck": "node node_modules/typescript-7/bin/tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "discover": "tsx travis/discovery/discover.ts",
+    "check-catalog": "tsx travis/discovery/check-catalog.ts",
+    "validate": "tsx travis/discovery/run-validator.ts",
+    "rescan-tcad": "tsx travis/discovery/rescan-tcad.ts",
+    "reconcile-parcel-gap": "tsx travis/discovery/reconcile-parcel-gap.ts",
+    "resolve": "tsx travis/discovery/resolve.ts",
+    "render-sources": "tsx travis/discovery/render-sources-md.ts",
+    "refresh-tcad-landing": "tsx travis/discovery/refresh-tcad-landing.ts",
+    "record-gis-runner": "tsx travis/discovery/record-gis-runner.ts",
+    "reprobe-jurisdictions": "tsx travis/discovery/reprobe-jurisdictions.ts",
+    "explain-blocked": "tsx travis/discovery/explain-blocked.ts",
+    "approve-exception": "tsx travis/discovery/approve-exception.ts",
+    "render-coverage": "tsx travis/discovery/render-coverage.ts",
+    "backfill-amendments": "tsx travis/discovery/backfill-amendments.ts",
+    "backbone": "tsx travis/backbone/cli.ts",
+    "fetch-address-layer": "tsx travis/gis/fetch-address-layer.ts",
+    "address-point-evidence": "tsx travis/gis/address-point-evidence.ts"
+  },
+  "dependencies": {
+    "@dsnp/parquetjs": "^1.8.8",
+    "p-limit": "^7.3.3",
+    "stream-json": "^3.7.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "peerDependencies": {
+    "@restatedev/restate-sdk": "^1.17.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@restatedev/restate-sdk": "^1.17.3",
+    "@types/node": "^26.6.5",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "typescript-7": "npm:typescript@^7.0.2",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  }
+}

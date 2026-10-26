@@ -1,0 +1,65 @@
+# Amplify Hosting build spec for apps/web (A-03 T044; agent-design metagross § 3, § 7).
+# Amplify reads this file from the repository root; the Web stack (infra/src/web-stack.ts) sets
+# no inline build spec. Monorepo form: `appRoot` must equal the app's
+# AMPLIFY_MONOREPO_APP_ROOT environment variable (apps/web). Every command runs with apps/web as
+# the working directory; repo-root paths are written as ../../.
+#
+# What a build does, in order:
+#   1. Node 22 and the pnpm version pinned in package.json#packageManager (corepack).
+#   2. Install @countylens/web and its workspace dependencies (--filter …). Workspace packages
+#      export TypeScript source, so nothing else needs building. Measured 2026-10-21: pnpm
+#      still installs the root project's devDependencies on a filtered install, so the
+#      elephant-cli tarball is fetched and prepared exactly as in CI's workspace job; adding
+#      --ignore-scripts would skip that build (an orchestrator decision, not taken here).
+#   3. Copy the committed run index into public/ when it exists (served same-origin as
+#      /runs/index.json; the Runs page reads it, AD-02). Before the first publish there is none:
+#      the build still succeeds and writes nothing, /runs/index.json answers 404 (the SPA
+#      fallback excludes .json) and the Runs page shows RUN_INDEX_TEXTS.unreadable, never
+#      placeholder data (infra/test/amplify-build.test.ts). Then write public/build.json
+#      {sha, branch} from Amplify's own AWS_COMMIT_ID / AWS_BRANCH, which CI and the hosted
+#      tests poll (TC-052 step 0). Then write public/site-links.json {crmUrl, demoVideoUrl, prUrl}
+#      (A-13 contracts/site-links.md) from the Amplify variables CRM_URL, DEMO_VIDEO_URL and
+#      PR_URL that the Web stack sets from CDK context, "" when unset (the Hub hides the link and
+#      validates https itself). A link switch is a Web-stack deploy plus a rebuild, no code change.
+#   4. vite build (VITE_CID_COPY_HOST and VITE_{FILEBASE,PINATA,ORBITOR}_GATEWAY_HOST come from the app's
+#      environment, never from this file), then gzip duckdb-eh.wasm in dist/ to .wasm.gz and
+#      delete the raw .wasm (apps/web/scripts/compress-wasm.ts, T057); the engine fetches the .gz
+#      and gunzips it in the browser (no Content-Encoding header: Amplify rejects it as read-only,
+#      plan R2). Both are called directly rather than through `pnpm run build`
+#      (which chains them too), so the compressor runs exactly once here. tsx resolves from
+#      apps/web because the root project's devDependencies are installed (see 2).
+#
+# No cache block on purpose: Amplify's node_modules cache needs pnpm's hoisted linker (an
+# .npmrc that would change every local install); an uncached install is a few minutes inside
+# the free build allowance. No secret is read or written here.
+version: 1
+applications:
+  - appRoot: apps/web
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - nvm install 22
+            - nvm use 22
+            - node --version
+            - corepack enable
+            - COREPACK_ENABLE_DOWNLOAD_PROMPT=0 pnpm --version
+            - pnpm install --frozen-lockfile --filter @countylens/web...
+            - mkdir -p public/runs
+            - |
+              if [ -f ../../runs/index.json ]; then cp ../../runs/index.json public/runs/index.json; else echo "runs/index.json not published yet: no index served; the Runs page shows its unreadable state"; fi
+            - |
+              node -e 'require("node:fs").writeFileSync("public/build.json", JSON.stringify({ sha: process.env.AWS_COMMIT_ID, branch: process.env.AWS_BRANCH }) + "\n")'
+            - cat public/build.json
+            - |
+              node -e 'const e = (k) => (process.env[k] ?? "").trim(); require("node:fs").writeFileSync("public/site-links.json", JSON.stringify({ crmUrl: e("CRM_URL"), demoVideoUrl: e("DEMO_VIDEO_URL"), prUrl: e("PR_URL") }) + "\n")'
+            - cat public/site-links.json
+        build:
+          commands:
+            - nvm use 22
+            - pnpm exec vite build
+            - pnpm exec tsx scripts/compress-wasm.ts
+      artifacts:
+        baseDirectory: dist
+        files:
+          - "**/*"

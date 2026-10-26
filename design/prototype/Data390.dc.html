@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data, 390</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1500px; display: flex; flex-direction: column; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<header class="atlas-top-app-bar" style="flex: none; box-sizing: border-box; padding: 0 4px 0 16px; background: var(--md-sys-color-surface)">
+<h1 class="atlas-top-app-bar__title" style="flex: 1; margin: 0">Data · Run 3</h1>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="mobile" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell390More.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<div class="atlas-tabs" role="tablist" aria-label="Data views" style="flex: none; background: var(--md-sys-color-surface)">
+<button class="atlas-tab" role="tab" aria-selected="true" style="flex: 1" onClick="{{__say.k1}}">Manifest</button>
+<a class="atlas-tab" role="tab" aria-selected="false" style="text-decoration: none; flex: 1" href="DataVerify1440.dc.html">Verify</a>
+<button class="atlas-tab" role="tab" aria-selected="false" style="flex: 1" onClick="{{__say.k3}}">Catalog</button>
+</div>
+<main style="flex: 1; min-height: 0; padding: 16px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; font-size: 13px; line-height: 18px">
+<dc-import name="RunChain" device="mobile" verify-href="DataVerify1440.dc.html" hint-size="100%,520px"></dc-import>
+
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 4px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">structure.parquet</b><span>File · 38.2 MB</span></div><span class="atlas-cid">bafybeigr7…r8fp<button aria-label="Copy CID" onClick="{{__say.k4}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span><span style="color: var(--md-sys-color-on-surface-variant)">SHA-256 <span class="atlas-cid">7d1e…c09a</span></span><a class="atlas-btn atlas-btn--tonal" style="text-decoration: none; align-self: flex-start" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify</a></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 4px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">properties.parquet</b><span>File · 118 MB</span></div><span class="atlas-cid">bafybei…7m2c<button aria-label="Copy CID" onClick="{{__say.k6}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span><span style="color: var(--md-sys-color-on-surface-variant)">SHA-256 <span class="atlas-cid">31b8…5e72</span></span><a class="atlas-btn atlas-btn--text" style="text-decoration: none; align-self: flex-start" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Verify via CAR (over 50 MB)</a></div>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 4px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">tiles/</b><span>Directory · 640 MB · CRM preview</span></div><span class="atlas-cid">bafybei…t1ls<button aria-label="Copy CID" onClick="{{__say.k8}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span><div style="display: flex; gap: 8px"><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Verify via CAR</a></div></div></sc-if>
+<button class="atlas-btn atlas-btn--text" style="align-self: center" onClick="{{__say.k10}}">Show all 13 artifacts</button>
+
+<section aria-labelledby="v390" style="display: flex; flex-direction: column; gap: 10px; padding-top: 8px; border-top: 1px solid var(--md-sys-color-outline-variant)">
+<h2 id="v390" style="margin: 0; font-size: 16px; line-height: 24px; font-weight: 500">Verifying structure.parquet</h2>
+<div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">sync</span><div class="atlas-banner__body">Checking on 2 public gateways…</div></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">ipfs.io<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">downloading</span>Checking</span></div><div class="atlas-progress" role="progressbar" aria-label="ipfs.io bytes" aria-valuenow="50"><i style="width: 50%"></i></div><div class="atlas-kv"><span class="num">19.1 of 38.2 MB</span><span class="num">3.0 s</span></div></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">dweb.link<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>Rate-limited</span></div><div class="atlas-progress" role="progressbar" aria-label="dweb.link bytes" aria-valuenow="0"><i style="width: 0%"></i></div><span>Retrying in 2 s (attempt 2 of 3). Not an error.</span></div>
+</section>
+</main>
+<nav class="atlas-bottom-nav" aria-label="Main" style="flex: none">
+<a class="atlas-nav-item" href="Explore390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Data390.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="Shell390More.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">more_horiz</span></span>More</a>
+</nav>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 92px; z-index: 80"><dc-import name="ProtoBar" here="Data · 390" desktop="DataManifest1440.dc.html" tablet="" mobile="Data390.dc.html" current="mobile" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1500}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Manifest” is drawn but not wired in this prototype.", "k3": "“Catalog” is drawn but not wired in this prototype.", "k4": "Copied to the clipboard (Sample).", "k6": "Copied to the clipboard (Sample).", "k8": "Copied to the clipboard (Sample).", "k10": "More rows load here (Sample)."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { mapOn: Component.mapOn(), mapOff: !Component.mapOn(), __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

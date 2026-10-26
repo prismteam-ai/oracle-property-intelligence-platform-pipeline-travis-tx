@@ -1,0 +1,18 @@
+{
+  "name": "@countylens/agent-tests",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "T020 (A-14): golden set + grader for agent.ask (checks.md § 7.1, agent-design.md § 6). Runs against AGENT_URL (hosted agent.ask), never localhost; skips with a clear report when AGENT_URL is unset, since agent.ask is not deployed yet this wave (TDD red state, not a bug).",
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@countylens/query-core": "workspace:*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}

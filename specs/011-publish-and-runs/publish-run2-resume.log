@@ -1,0 +1,127 @@
+gate PASS: v_roofing_permit 15025, 10792 permit-side properties all county properties
+uploading permits-b03-tables (attempt 1/8)
+done permits-b03-tables -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b03-tables.json
+uploading permits-b04-car (attempt 1/8)
+done permits-b04-car -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b04-car.json
+uploading permits-b04-tables (attempt 1/8)
+done permits-b04-tables -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b04-tables.json
+uploading permits-b05-car (attempt 1/8)
+done permits-b05-car -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b05-car.json
+uploading permits-b05-tables (attempt 1/8)
+failed permits-b05-tables: exit 1: 🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+uploading permits-b05-tables (attempt 2/8)
+failed permits-b05-tables: exit 1: 🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+uploading permits-b05-tables (attempt 3/8)
+failed permits-b05-tables: exit 1: 🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: dag/import failed: 500 Internal Server Error:
+uploading permits-b05-tables (attempt 4/8)
+done permits-b05-tables -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b05-tables.json
+  permits-b01-car: ok    kubo add: Hash bafybeig2mt236mb5jtd7elx3lyeqn6wjem2qqnufhx3eynnjrjddcpphli matches manifest carCid, size=5926834
+  permits-b01-car: ok    https://gateway.pinata.cloud/ipfs/bafybeig2mt236mb5jtd7elx3lyeqn6wjem2qqnufhx3eynnjrjddcpphli size match
+  permits-b01-car: ok    https://ipfs.filebase.io/ipfs/bafybeig2mt236mb5jtd7elx3lyeqn6wjem2qqnufhx3eynnjrjddcpphli size match
+  permits-b01-tables: ok    kubo add: Hash bafkreif22owdnazsxwd5o4btq65ydfxk4fx26uvt7wpeublcpdmog6sxbq matches manifest carCid, size=1284
+  permits-b01-tables: ok    https://gateway.pinata.cloud/ipfs/bafkreif22owdnazsxwd5o4btq65ydfxk4fx26uvt7wpeublcpdmog6sxbq size match
+  permits-b01-tables: ok    https://ipfs.filebase.io/ipfs/bafkreif22owdnazsxwd5o4btq65ydfxk4fx26uvt7wpeublcpdmog6sxbq size match
+  permits-b02-car: ok    kubo add: Hash bafybeigal7z73gcmqzousghiuhvo643zcfypwc6bjmvjlo62tz2yvc524i matches manifest carCid, size=5723703
+  permits-b02-car: WARN  https://gateway.pinata.cloud/ipfs/bafybeigal7z73gcmqzousghiuhvo643zcfypwc6bjmvjlo62tz2yvc524i HTTP 429 (rate limited, not counted against the file)
+  permits-b02-car: ok    https://ipfs.filebase.io/ipfs/bafybeigal7z73gcmqzousghiuhvo643zcfypwc6bjmvjlo62tz2yvc524i size match
+  permits-b02-tables: ok    kubo add: Hash bafkreiggofr4n6wqosucymj65k7oju332sqkkqfq7c77hdidk6sgelhy5q matches manifest carCid, size=1284
+  permits-b02-tables: ok    https://gateway.pinata.cloud/ipfs/bafkreiggofr4n6wqosucymj65k7oju332sqkkqfq7c77hdidk6sgelhy5q size match
+  permits-b02-tables: ok    https://ipfs.filebase.io/ipfs/bafkreiggofr4n6wqosucymj65k7oju332sqkkqfq7c77hdidk6sgelhy5q size match
+  permits-b03-car: ok    kubo add: Hash bafybeiao6axm7ncas2nrx3422lzvkt5cnwgjifastbdmkvly6b64vqwrwa matches manifest carCid, size=5890259
+  permits-b03-car: WARN  https://gateway.pinata.cloud/ipfs/bafybeiao6axm7ncas2nrx3422lzvkt5cnwgjifastbdmkvly6b64vqwrwa HTTP 429 (rate limited, not counted against the file)
+  permits-b03-car: ok    https://ipfs.filebase.io/ipfs/bafybeiao6axm7ncas2nrx3422lzvkt5cnwgjifastbdmkvly6b64vqwrwa size match
+  permits-b03-tables: ok    kubo add: Hash bafkreigt6x24azimu67agkzxk7l22y2ec6wkjk2iu3icqakjjuvyn6besu matches manifest carCid, size=1284
+  permits-b03-tables: ok    https://gateway.pinata.cloud/ipfs/bafkreigt6x24azimu67agkzxk7l22y2ec6wkjk2iu3icqakjjuvyn6besu size match
+  permits-b03-tables: ok    https://ipfs.filebase.io/ipfs/bafkreigt6x24azimu67agkzxk7l22y2ec6wkjk2iu3icqakjjuvyn6besu size match
+  permits-b04-car: ok    kubo add: Hash bafybeibod2oenizanboxk2isbrwbuqnalwgtvlbffyykftczmkalkfgtrm matches manifest carCid, size=6432685
+  permits-b04-car: WARN  https://gateway.pinata.cloud/ipfs/bafybeibod2oenizanboxk2isbrwbuqnalwgtvlbffyykftczmkalkfgtrm HTTP 429 (rate limited, not counted against the file)
+  permits-b04-car: ok    https://ipfs.filebase.io/ipfs/bafybeibod2oenizanboxk2isbrwbuqnalwgtvlbffyykftczmkalkfgtrm size match
+  permits-b04-tables: ok    kubo add: Hash bafkreicl7g4n42inplcrmv4qbj6exeyua7woistx4zfu54ncsl2loxe37i matches manifest carCid, size=1284
+  permits-b04-tables: ok    https://gateway.pinata.cloud/ipfs/bafkreicl7g4n42inplcrmv4qbj6exeyua7woistx4zfu54ncsl2loxe37i size match
+  permits-b04-tables: ok    https://ipfs.filebase.io/ipfs/bafkreicl7g4n42inplcrmv4qbj6exeyua7woistx4zfu54ncsl2loxe37i size match
+  permits-b05-car: ok    kubo add: Hash bafybeicaivt6gcoinefyanw4bcmim6ng7llca7cmcvycemmpntaczfm5tq matches manifest carCid, size=6488442
+  permits-b05-car: WARN  https://gateway.pinata.cloud/ipfs/bafybeicaivt6gcoinefyanw4bcmim6ng7llca7cmcvycemmpntaczfm5tq HTTP 429 (rate limited, not counted against the file)
+  permits-b05-car: ok    https://ipfs.filebase.io/ipfs/bafybeicaivt6gcoinefyanw4bcmim6ng7llca7cmcvycemmpntaczfm5tq size match
+  permits-b05-tables: ok    kubo add: Hash bafkreihxr3igk263thj2kz6pxnqa2736fzwgsczuyrl3drveleoetom3be matches manifest carCid, size=1284
+  permits-b05-tables: ok    https://gateway.pinata.cloud/ipfs/bafkreihxr3igk263thj2kz6pxnqa2736fzwgsczuyrl3drveleoetom3be size match
+  permits-b05-tables: ok    https://ipfs.filebase.io/ipfs/bafkreihxr3igk263thj2kz6pxnqa2736fzwgsczuyrl3drveleoetom3be size match
+  manifest: kubo add ok: Hash bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute matches the local CID, pinned on Filebase
+  manifest: ok   https://gateway.pinata.cloud/ipfs/bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute size=87672 sha256 match
+  manifest: FAIL https://ipfs.filebase.io/ipfs/bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute HTTP 504
+run travis-full-run2-20261024  manifest bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute  mode run
+[gate] done: 0 skip, 1 to run
+  RUN  gate  (no identity gate PASS receipt for manifest bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute)
+[filebase] done: 25 skip, 5 to run
+  skip county-b01-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b01-car.json records this CID)
+  skip county-b01-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b01-tables.json records this CID)
+  skip county-b02-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b02-car.json records this CID)
+  skip county-b02-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b02-tables.json records this CID)
+  skip county-b03-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b03-car.json records this CID)
+  skip county-b03-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b03-tables.json records this CID)
+  skip county-b04-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b04-car.json records this CID)
+  skip county-b04-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b04-tables.json records this CID)
+  skip county-b05-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b05-car.json records this CID)
+  skip county-b05-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b05-tables.json records this CID)
+  skip county-b06-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b06-car.json records this CID)
+  skip county-b06-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b06-tables.json records this CID)
+  skip county-b07-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b07-car.json records this CID)
+  skip county-b07-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b07-tables.json records this CID)
+  skip county-b08-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b08-car.json records this CID)
+  skip county-b08-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b08-tables.json records this CID)
+  skip county-b09-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b09-car.json records this CID)
+  skip county-b09-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b09-tables.json records this CID)
+  skip county-b10-car  (receipt specs/011-publish-and-runs/upload-receipts/county-b10-car.json records this CID)
+  skip county-b10-tables  (receipt specs/011-publish-and-runs/upload-receipts/county-b10-tables.json records this CID)
+  skip permits-b01-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b01-car.json)
+  skip permits-b01-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b01-tables.json)
+  skip permits-b02-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b02-car.json)
+  skip permits-b02-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b02-tables.json)
+  skip permits-b03-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b03-car.json)
+  RUN  permits-b03-tables  (no receipt records this CID)
+  RUN  permits-b04-car  (no receipt records this CID)
+  RUN  permits-b04-tables  (no receipt records this CID)
+  RUN  permits-b05-car  (no receipt records this CID)
+  RUN  permits-b05-tables  (no receipt records this CID)
+[car-files] done: 20 skip, 10 to run
+  skip county-b01-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b01-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b02-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b02-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b03-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b03-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b04-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b04-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b05-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b05-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b06-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b06-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b07-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b07-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b08-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b08-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b09-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b09-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b10-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b10-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  RUN  permits-b01-car  (not confirmed by the gateways)
+  RUN  permits-b01-tables  (not confirmed by the gateways)
+  RUN  permits-b02-car  (not confirmed by the gateways)
+  RUN  permits-b02-tables  (not confirmed by the gateways)
+  RUN  permits-b03-car  (not confirmed by the gateways)
+  RUN  permits-b03-tables  (not confirmed by the gateways)
+  RUN  permits-b04-car  (not confirmed by the gateways)
+  RUN  permits-b04-tables  (not confirmed by the gateways)
+  RUN  permits-b05-car  (not confirmed by the gateways)
+  RUN  permits-b05-tables  (not confirmed by the gateways)
+[manifest] failed
+  ERROR manifest readback: not both gateways served identical bytes
+FAILED: fix the error above and rerun; finished items are skipped

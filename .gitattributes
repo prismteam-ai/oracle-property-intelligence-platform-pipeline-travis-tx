@@ -1,0 +1,3 @@
+# Published run manifests are exact JCS bytes (LF, no trailing newline): never normalise them
+# (A-03 research R-08, AD-03).
+runs/** -text

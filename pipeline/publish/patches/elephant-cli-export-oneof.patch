@@ -1,0 +1,44 @@
+--- a/node_modules/@elephant-xyz/cli/dist/services/tables-export.service.js	2026-10-20 23:16:50
++++ b/node_modules/@elephant-xyz/cli/dist/services/tables-export.service.js	2026-10-26 00:50:16
+@@ -89,6 +89,30 @@
+         .concat(property?.type ?? [])
+         .find((item) => item !== 'null');
+     return KINDS[String(type)] ?? 'STRING';
++}
++/**
++ * Columns of a class: its own `properties`, or, for a class that is a top-level `oneOf`/`anyOf`
++ * of object shapes (the lexicon `address` class), the union of the branches' properties in
++ * first-seen order. A field the branches type differently becomes STRING.
++ * [patch: countylens oneof-columns, from elephant-cli 44bb182]
++ */
++function classColumns(schema) {
++    if (schema.properties) {
++        return Object.entries(schema.properties).map(([field, property]) => ({ name: field, kind: kind(property) }));
++    }
++    const columns = [];
++    for (const branch of [...(schema.oneOf ?? []), ...(schema.anyOf ?? [])]) {
++        for (const [field, property] of Object.entries(branch?.properties ?? {})) {
++            const known = columns.find((column) => column.name === field);
++            if (!known) {
++                columns.push({ name: field, kind: kind(property) });
++            }
++            else if (known.kind !== kind(property)) {
++                known.kind = 'STRING';
++            }
++        }
++    }
++    return columns;
+ }
+ function cell(value, column, where) {
+     if (value === null || value === undefined) {
+\ No newline at end of file
+@@ -280,7 +304,7 @@
+             if (!name) {
+                 return fail(`class schema ${cid} has no title`);
+             }
+-            const columns = Object.entries(schema.properties ?? {}).map(([field, property]) => ({ name: field, kind: kind(property) }));
++            const columns = classColumns(schema);
+             for (const extra of EXTRAS) {
+                 if (!columns.some((column) => column.name === extra)) {
+                     columns.push({ name: extra, kind: 'STRING' });
+\ No newline at end of file

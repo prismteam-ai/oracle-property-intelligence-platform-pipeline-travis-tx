@@ -1,0 +1,84 @@
+{
+  "gate": {
+    "manifest": "runs/travis-full-run3-20261025/manifest.json",
+    "v_roofing_permit": 15025,
+    "meta_permit": 15025,
+    "permits_emitted": 15025,
+    "permit_side_properties": 10792,
+    "unmatched_properties": 0,
+    "pids_checked": 0,
+    "pids_unmatched": 0,
+    "result": "PASS",
+    "failures": [],
+    "previous": {
+      "previous_properties": 441961,
+      "previous_permits": 15025,
+      "missing_properties": 0,
+      "missing_permits": 0,
+      "changed_identifier": 0,
+      "remapped": 0,
+      "cid_map": [],
+      "lost": []
+    }
+  },
+  "headline": [
+    {
+      "run": "travis-full-run3-20261025",
+      "localParts": 255,
+      "v_property": {
+        "n_rows": "441961",
+        "roof_age_nonnull": "389528",
+        "tenure_nonnull": "420411",
+        "tenure_deed": "372455",
+        "tenure_sale": "47956",
+        "coords": "434016",
+        "coords_addr": "43955",
+        "owner_named": "409389"
+      },
+      "sources": [
+        { "coordinate_source": "gis_centroid", "n": "390061" },
+        { "coordinate_source": "address_point", "n": "43955" },
+        { "coordinate_source": "none", "n": "7945" }
+      ],
+      "basis": [
+        { "tenure_basis": "deed_date", "n": "372455" },
+        { "tenure_basis": "sale_date", "n": "47956" },
+        { "tenure_basis": "unknown", "n": "21550" }
+      ],
+      "permit": {
+        "n_rows": "15025",
+        "contractor_printed": "4139",
+        "open_days_nonnull": "795",
+        "long_open_5y": "548"
+      }
+    },
+    {
+      "run": "travis-full-run2-20261024",
+      "localParts": 225,
+      "v_property": {
+        "n_rows": "441961",
+        "roof_age_nonnull": "9510",
+        "tenure_nonnull": "175408",
+        "tenure_deed": "0",
+        "tenure_sale": "175408",
+        "coords": "390061",
+        "coords_addr": "0",
+        "owner_named": "23556"
+      },
+      "sources": [
+        { "coordinate_source": "gis_centroid", "n": "390061" },
+        { "coordinate_source": "none", "n": "51900" }
+      ],
+      "basis": [
+        { "tenure_basis": "unknown", "n": "266553" },
+        { "tenure_basis": "sale_date", "n": "175408" }
+      ],
+      "permit": {
+        "n_rows": "15025",
+        "contractor_printed": "0",
+        "open_days_nonnull": "795",
+        "long_open_5y": "548"
+      }
+    }
+  ]
+}

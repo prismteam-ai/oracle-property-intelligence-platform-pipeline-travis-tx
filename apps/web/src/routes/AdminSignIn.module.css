@@ -1,0 +1,268 @@
+/* Admin sign-in (A-16 T042; boards AdminSignIn1440/768/390; field and toggle pattern copied from
+   Task B's SignIn.module.css): one outlined Atlas card, 440 px wide, at the top on compact and
+   centred in the main column (both ways) from 600 px, as the 768 and 1440 boards draw it. Atlas
+   § 7 Card, Text field (outlined, 48 px as on the board), filled button (48 px target), Banner.
+   Every colour, font, spacing and radius is a tokens.css custom property. */
+
+.page {
+  display: grid;
+  justify-items: center;
+}
+
+.card {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: calc(var(--space-8) * 11);
+  padding: var(--space-6);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* From 600 px the card is centred vertically in the main column (the scroll container; the route
+   is its direct child), with roomier padding, as on the 768 and 1440 boards. */
+@media (min-width: 600px) {
+  .page {
+    box-sizing: border-box;
+    min-height: 100%;
+    align-content: center;
+    padding: var(--space-6) 0;
+  }
+
+  .card {
+    padding: var(--space-7);
+  }
+}
+
+.hero {
+  font-size: var(--md-sys-typescale-headline-large-size);
+  color: var(--md-sys-color-primary);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--md-sys-typescale-headline-small-font);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+  line-height: var(--md-sys-typescale-headline-small-line-height);
+}
+
+.lead,
+.helper,
+.provenance {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+/* The board's note: a small lock on its own line, the text below it. */
+.provenance {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-1);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.provenanceText {
+  min-width: 0;
+}
+
+.form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.field input {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+}
+
+.field input:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 0;
+}
+
+.field input[aria-invalid="true"] {
+  border-color: var(--md-sys-color-error);
+}
+
+/* Task B's password field: the toggle sits inside the field's right end. */
+.passwordWrap {
+  position: relative;
+  display: flex;
+}
+
+.field .passwordInput {
+  flex: 1;
+  min-width: 0;
+  /* 64 px: room for the Show toggle; a single token so the Atlas audit (TC-080) accepts it. */
+  padding-right: var(--space-10);
+}
+
+/* Atlas text button inside the field: 48 px target, transparent (a fill would cover the field's
+   outline); underlined while pressed, i.e. while the password shows. */
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.toggle[aria-pressed="true"] {
+  text-decoration: underline;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px;
+}
+
+.fieldError {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--md-sys-color-error);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+.bannerText {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.toneInfo {
+  background: var(--status-info-container);
+  color: var(--status-info);
+}
+
+.toneWarning {
+  background: var(--status-warning-container);
+  color: var(--status-warning);
+}
+
+.toneError {
+  background: var(--status-danger-container);
+  color: var(--status-danger);
+}
+
+.sending {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+}
+
+.progress {
+  overflow: hidden;
+  height: var(--space-1);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.indicator {
+  width: 40%;
+  height: 100%;
+  background: var(--md-sys-color-primary);
+  animation: as-slide 1.2s linear infinite;
+}
+
+@keyframes as-slide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indicator {
+    animation: none;
+  }
+}
+
+.filled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-6);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.filled:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.filled:disabled {
+  cursor: default;
+  opacity: 0.38;
+}

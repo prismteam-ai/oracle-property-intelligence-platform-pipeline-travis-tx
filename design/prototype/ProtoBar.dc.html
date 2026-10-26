@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prototype controls</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.pb-dev{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex:1;min-height:56px;border-radius:var(--md-sys-shape-corner-medium);font:500 12px/16px var(--font-plain);text-decoration:none;color:var(--md-sys-color-on-surface)}
+.pb-dev:hover{background:var(--md-sys-color-surface-container-high)}
+.pb-dev.is-here{background:var(--md-sys-color-secondary-container);color:var(--md-sys-color-on-secondary-container)}
+.pb-dev.is-off{color:var(--md-sys-color-on-surface-variant);border:1px dashed var(--md-sys-color-outline-variant)}
+.pb-sw{display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:8px;box-sizing:border-box;border:1px dashed var(--md-sys-color-outline);border-radius:var(--md-sys-shape-corner-small);background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.pb-sw:hover{background:var(--md-sys-color-surface-container)}
+.pb-sw:focus-visible{outline:3px solid var(--md-sys-color-primary);outline-offset:-3px}
+.pb-track{flex:none;position:relative;width:52px;height:32px;box-sizing:border-box;border-radius:var(--md-sys-shape-corner-full);border:2px solid var(--md-sys-color-outline);background:var(--md-sys-color-surface-container-highest)}
+.pb-thumb{position:absolute;top:6px;left:6px;width:16px;height:16px;border-radius:var(--md-sys-shape-corner-full);background:var(--md-sys-color-outline)}
+.pb-sw[aria-checked="true"] .pb-track{border-color:var(--md-sys-color-primary);background:var(--md-sys-color-primary)}
+.pb-sw[aria-checked="true"] .pb-thumb{top:2px;left:22px;width:24px;height:24px;background:var(--md-sys-color-on-primary)}
+.pb-on{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:var(--md-sys-shape-corner-full);background:var(--md-sys-color-tertiary);border:2px solid var(--md-sys-color-surface)}
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 8px; font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<button aria-expanded="{{openStr}}" aria-label="{{fabLabel}}" onClick="{{toggle}}" style="position: relative; width: 48px; height: 48px; padding: 0; border: 0; border-radius: var(--md-sys-shape-corner-full); background: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface); box-shadow: var(--md-sys-elevation-level2); display: grid; place-items: center; cursor: pointer"><span class="material-symbols-rounded" aria-hidden="true">{{icon}}</span><sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><span class="pb-on" aria-hidden="true"></span></sc-if></button>
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-label="Prototype" style="width: 264px; box-sizing: border-box; padding: 12px; border-radius: var(--md-sys-shape-corner-large); background: var(--md-sys-color-surface-container-lowest); box-shadow: var(--md-sys-elevation-level3); display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px; line-height: 20px; font-weight: 500">Prototype · Sample data</b><span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">{{here}}</span></div>
+<a class="atlas-list-item atlas-list-item--action" href="Main.dc.html" style="min-height: 48px; padding: 4px 8px; border-radius: var(--md-sys-shape-corner-small); text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px"><span class="material-symbols-rounded" aria-hidden="true">info</span><span style="flex: 1; font-size: 14px">Site map and all boards</span><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">arrow_forward</span></a>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; line-height: 16px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)">View this screen on</span>
+<div role="group" aria-label="Device" style="display: flex; gap: 6px">
+<sc-for list="{{devices}}" as="d" hint-placeholder-count="3">
+<sc-if value="{{d.on}}" hint-placeholder-val="{{ true }}"><a class="pb-dev {{d.cls}}" href="{{d.href}}" aria-current="{{d.cur}}"><span class="material-symbols-rounded" aria-hidden="true">{{d.icon}}</span>{{d.label}}</a></sc-if>
+<sc-if value="{{d.off}}" hint-placeholder-val="{{ false }}"><span class="pb-dev is-off" title="Not drawn at this size"><span class="material-symbols-rounded" aria-hidden="true">{{d.icon}}</span>{{d.label}}<span class="atlas-sr">, not drawn</span></span></sc-if>
+</sc-for>
+</div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; line-height: 16px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)">Prototype only</span>
+<button class="pb-sw" role="switch" aria-checked="{{mapStr}}" aria-label="Map view (CRM preview) · prototype only, not in CountyLens" onClick="{{toggleMap}}"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px; line-height: 20px; font-weight: 500">Map view (CRM preview)</b><span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">· prototype only, not in CountyLens</span></span><span class="pb-track" aria-hidden="true"><span class="pb-thumb"></span></span></button>
+<span style="font-size: 11px; line-height: 14px; color: var(--md-sys-color-on-surface-variant)">{{mapHint}}</span>
+</div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"here":{"editor":"text","default":"Explore · 1440"},"desktop":{"editor":"text","default":"Explore1440.dc.html"},"tablet":{"editor":"text","default":"Explore768.dc.html"},"mobile":{"editor":"text","default":"Explore390.dc.html"},"current":{"editor":"enum","options":["desktop","tablet","mobile","none"],"default":"desktop"},"startOpen":{"editor":"boolean","default":false},"$preview":{"width":280,"height":440}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: null, mapTick: 0 }; }
+  // Prototype-only switch, shared by every board in this browser. Not part of CountyLens: do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.setState({ mapTick: (this.state.mapTick || 0) + 1 }); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const mapOn = Component.mapOn();
+    const open = this.state.open === null ? !!this.props.startOpen : this.state.open;
+    const cur = this.props.current ?? 'none';
+    const defs = [['desktop', 'Desktop', 'computer'], ['tablet', 'Tablet', 'tablet'], ['mobile', 'Mobile', 'smartphone']];
+    const devices = defs.map(([k, label, icon]) => {
+      const href = this.props[k] || '';
+      return { label: label, icon: icon, href: href, on: !!href, off: !href, cur: String(cur === k), cls: cur === k ? 'is-here' : '' };
+    });
+    const toggleMap = () => { const v = !mapOn; try { window.localStorage.setItem('countylens.proto.mapView', v ? '1' : '0'); } catch (e) {} try { window.__clMapView = v; } catch (e) {} try { window.dispatchEvent(new CustomEvent('cl-mapview', { detail: v })); } catch (e) {} this.setState({ mapTick: this.state.mapTick + 1 }); };
+    return { mapOn: mapOn, mapStr: String(mapOn), toggleMap: toggleMap, fabLabel: 'Prototype controls: site map, device switcher' + (mapOn ? ', Map view (CRM preview) is on' : ''), mapHint: mapOn ? 'On: Explore shows the CRM map preview. CountyLens ships List view only.' : 'Off: CountyLens as it ships. Explore opens in List view.', open: open, openStr: String(open), icon: open ? 'close' : 'devices', here: this.props.here || '', devices: devices, toggle: () => this.setState({ open: !open }) };
+  }
+}
+</script>
+</body>
+</html>

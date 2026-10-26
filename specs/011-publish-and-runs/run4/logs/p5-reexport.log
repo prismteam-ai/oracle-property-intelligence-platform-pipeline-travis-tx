@@ -1,0 +1,35 @@
+pids=   13087
+npm notice run oracle-travis-local-stack@1.0.0 npx
+npm notice run 'tsx' scripts/reexport-permits.ts --pids /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/specs/011-publish-and-runs/run4/permit-pids.txt --job travis-a11-permits-run4-20261026 --chunk 500 --concurrency 6
+{"ts":"2026-10-26T11:41:15.574Z","level":"info","event":"source.capture","url":"https://lexicon.elephant.xyz/api/manifest","method":"GET","status":200,"bytes":18499,"sha256":"7084b9334e66eb525d729e2d399f7216960abf30900081aaed194210be760640","captured_at":"2026-10-26T11:41:13.314Z","user_agent":"oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)","attempts":1,"outcome":"ok","geo_signal":"none","app_token_used":false,"timeout_ms":null,"blocked_reason":null,"rate_limits_observed":null}
+[reexport] job=travis-a11-permits-run4-20261026 pids=13087 chunk=500 concurrency=6
+[reexport] group dir /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/pipeline/data/runs/travis-a11-permits-run4-20261026/groups/property_improvement
+[reexport] chunk 1/27 pids=500 written=435 reused=0 redone=497 empty=65
+[reexport] chunk 2/27 pids=500 written=438 reused=0 redone=500 empty=62
+[reexport] chunk 3/27 pids=500 written=420 reused=0 redone=499 empty=80
+[reexport] chunk 4/27 pids=500 written=426 reused=0 redone=500 empty=74
+[reexport] chunk 5/27 pids=500 written=458 reused=0 redone=499 empty=42
+[reexport] chunk 6/27 pids=500 written=477 reused=0 redone=500 empty=23
+[reexport] chunk 7/27 pids=500 written=466 reused=0 redone=499 empty=34
+[reexport] chunk 8/27 pids=500 written=405 reused=0 redone=500 empty=95
+[reexport] chunk 9/27 pids=500 written=468 reused=0 redone=500 empty=32
+[reexport] chunk 10/27 pids=500 written=466 reused=0 redone=499 empty=34
+[reexport] chunk 11/27 pids=500 written=445 reused=0 redone=499 empty=55
+[reexport] chunk 12/27 pids=500 written=464 reused=0 redone=499 empty=36
+[reexport] chunk 13/27 pids=500 written=460 reused=0 redone=500 empty=40
+[reexport] chunk 14/27 pids=500 written=457 reused=0 redone=500 empty=43
+[reexport] chunk 15/27 pids=500 written=466 reused=0 redone=500 empty=34
+[reexport] chunk 16/27 pids=500 written=444 reused=0 redone=499 empty=56
+[reexport] chunk 17/27 pids=500 written=386 reused=0 redone=499 empty=114
+[reexport] chunk 18/27 pids=500 written=471 reused=0 redone=500 empty=29
+[reexport] chunk 19/27 pids=500 written=448 reused=0 redone=498 empty=52
+[reexport] chunk 20/27 pids=500 written=450 reused=0 redone=500 empty=50
+[reexport] chunk 21/27 pids=500 written=464 reused=0 redone=499 empty=36
+[reexport] chunk 22/27 pids=500 written=360 reused=0 redone=498 empty=140
+[reexport] chunk 23/27 pids=87 written=10 reused=0 redone=87 empty=77
+[reexport] chunk 24/27 pids=500 written=58 reused=0 redone=499 empty=442
+[reexport] chunk 25/27 pids=500 written=345 reused=0 redone=497 empty=155
+[reexport] chunk 26/27 pids=500 written=399 reused=0 redone=498 empty=101
+[reexport] chunk 27/27 pids=500 written=206 reused=0 redone=495 empty=294
+[reexport] summary total=13087 done=27 reused=0 redone=13060 empty=2295 folders_written=10792 property_improvement_files=15025
+exit=0

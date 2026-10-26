@@ -1,0 +1,4 @@
+[split] /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/pipeline/data/runs/travis-a11-permits-run4-20261026/groups/property_improvement -> /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/pipeline/data/runs/travis-a11-permits-run4-20261026/publish-run4/permits-batched/batches (5 batches)
+[split] done, see /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/pipeline/data/runs/travis-a11-permits-run4-20261026/publish-run4/permits-batched/logs/split.log
+[batch-hash-validate-export] all 5 batches finished for travis-permits; logs in /Users/hebagaber/Github/oracle-property-intelligence-platform-pipeline-travis-tx/pipeline/data/runs/travis-a11-permits-run4-20261026/publish-run4/permits-batched/logs
+exit=0

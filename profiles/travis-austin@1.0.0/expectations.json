@@ -1,0 +1,121 @@
+{
+  "profile": {
+    "name": "travis-austin",
+    "version": "1.0.0"
+  },
+  "rules_sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+  "dataset": "https://data.austintexas.gov/resource/3syk-w9eu.json",
+  "measured_at": "2026-10-20T21:33:32.783Z",
+  "finished_at": "2026-10-20T21:34:07.341Z",
+  "attempts": 1,
+  "dataset_rows": 2380939,
+  "include_matches": 22084,
+  "include_matches_recount": 22084,
+  "fetched_rows": 22084,
+  "excluded": {
+    "aux_power": 3,
+    "solar_pv": 21,
+    "rtu": 10,
+    "roof_mounted": 0,
+    "roof_deck": 4
+  },
+  "trade_permits": 3015,
+  "needs_review": 0,
+  "candidates": 19031,
+  "formula": "candidates = include_matches - sum(excluded) - trade_permits - needs_review",
+  "aux_power_check": {
+    "soql_permit_numbers": ["2019-030807 EP", "2021-068116 EP", "2026-060952 EP"],
+    "classifier_permit_numbers": ["2019-030807 EP", "2021-068116 EP", "2026-060952 EP"],
+    "equal": true,
+    "candidates_with_aux_power": 0,
+    "roof_mentions_aux_power": 10322
+  },
+  "candidates_by_status_class": {
+    "open": 98,
+    "stalled": 2016,
+    "closed": 14885,
+    "exclude": 2032,
+    "needs_review": 0
+  },
+  "query_urls": [
+    "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n",
+    "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29",
+    "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=permit_number%2Cpermittype%2Cwork_class%2Cstatus_current%2Cdescription&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29&%24order=permit_number&%24limit=50000",
+    "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=permit_number&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29+AND+work_class+%3D+%27Auxiliary+Power%27&%24order=permit_number&%24limit=50000",
+    "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n&%24where=%28upper%28description%29+like+%27%25ROOF%25%27+OR+upper%28work_class%29+like+%27%25ROOF%25%27%29+AND+work_class+%3D+%27Auxiliary+Power%27"
+  ],
+  "receipts": [
+    {
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n",
+      "method": "GET",
+      "status": 200,
+      "bytes": 18,
+      "sha256": "ce9cefdd3ab4d173cb890ab25ad7bb9bf991a0a7c26b0fe84081b7b159c547be",
+      "captured_at": "2026-10-20T21:33:32.784Z",
+      "user_agent": "countylens-profile/1.0.0 (PrismTeam CountyLens travis-austin profile measurement; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)",
+      "app_token_used": false,
+      "outcome": "ok",
+      "blocked_reason": null
+    },
+    {
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29",
+      "method": "GET",
+      "status": 200,
+      "bytes": 16,
+      "sha256": "39e045992d6cd363ba6e12b9183ab9f7ced37e5012938c04ece463d126480e12",
+      "captured_at": "2026-10-20T21:33:34.364Z",
+      "user_agent": "countylens-profile/1.0.0 (PrismTeam CountyLens travis-austin profile measurement; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)",
+      "app_token_used": false,
+      "outcome": "ok",
+      "blocked_reason": null
+    },
+    {
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=permit_number%2Cpermittype%2Cwork_class%2Cstatus_current%2Cdescription&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29&%24order=permit_number&%24limit=50000",
+      "method": "GET",
+      "status": 200,
+      "bytes": 3746481,
+      "sha256": "2014b5b7debb29a2c23c32c45698aabced5eb06a048ec392b68375a202eba981",
+      "captured_at": "2026-10-20T21:33:44.232Z",
+      "user_agent": "countylens-profile/1.0.0 (PrismTeam CountyLens travis-austin profile measurement; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)",
+      "app_token_used": false,
+      "outcome": "ok",
+      "blocked_reason": null
+    },
+    {
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29",
+      "method": "GET",
+      "status": 200,
+      "bytes": 16,
+      "sha256": "39e045992d6cd363ba6e12b9183ab9f7ced37e5012938c04ece463d126480e12",
+      "captured_at": "2026-10-20T21:33:56.958Z",
+      "user_agent": "countylens-profile/1.0.0 (PrismTeam CountyLens travis-austin profile measurement; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)",
+      "app_token_used": false,
+      "outcome": "ok",
+      "blocked_reason": null
+    },
+    {
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=permit_number&%24where=%28upper%28description%29+like+%27%25REROOF%25%27+OR+upper%28description%29+like+%27%25RE-ROOF%25%27+OR+upper%28description%29+like+%27%25ROOF+REPLACE%25%27%29+AND+work_class+%3D+%27Auxiliary+Power%27&%24order=permit_number&%24limit=50000",
+      "method": "GET",
+      "status": 200,
+      "bytes": 109,
+      "sha256": "5f75f2f45182cf061b8d43b56bb6b5cda4512af7cd68d9551ad8949313d8f51f",
+      "captured_at": "2026-10-20T21:34:05.876Z",
+      "user_agent": "countylens-profile/1.0.0 (PrismTeam CountyLens travis-austin profile measurement; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)",
+      "app_token_used": false,
+      "outcome": "ok",
+      "blocked_reason": null
+    },
+    {
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json?%24select=count%28*%29+AS+n&%24where=%28upper%28description%29+like+%27%25ROOF%25%27+OR+upper%28work_class%29+like+%27%25ROOF%25%27%29+AND+work_class+%3D+%27Auxiliary+Power%27",
+      "method": "GET",
+      "status": 200,
+      "bytes": 16,
+      "sha256": "8c803d6db517bbe59a042e68562b76d820c8602e3c9246c7d4d480a1e516b093",
+      "captured_at": "2026-10-20T21:34:06.977Z",
+      "user_agent": "countylens-profile/1.0.0 (PrismTeam CountyLens travis-austin profile measurement; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)",
+      "app_token_used": false,
+      "outcome": "ok",
+      "blocked_reason": null
+    }
+  ]
+}

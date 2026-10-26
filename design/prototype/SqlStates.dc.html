@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SQL states and errors</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 820px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 14px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface); font-size: 13px; line-height: 18px">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">SQL states</h2>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+<section aria-label="Loading" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column"><div class="atlas-progress" role="progressbar" aria-label="Downloading data" aria-valuenow="62"><i style="width: 62%"></i></div><div style="padding: 14px; display: flex; flex-direction: column; gap: 6px"><b style="font-weight: 500">Loading</b><span>Starting DuckDB in your browser. Range reads of <span class="atlas-cid">property_improvement.parquet</span>, the elephant-cli table behind <span class="atlas-cid">v_roofing_permit</span>, from its CID-named copy first (public gateway fallback): <span class="num">3.6 of 412 MB</span> (only the columns and row groups this query needs, after a bounding-box filter). Cached for next time.</span></div></section>
+<section aria-label="Running" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column"><div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Running query"><i></i></div><div style="padding: 14px; display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Running</b><span class="num">Running for 1.4 s…</span><button class="atlas-btn atlas-btn--outlined" style="align-self: flex-start" onClick="{{__say.k1}}">Cancel</button></div></section>
+<section aria-label="Empty" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Empty · 0 rows</b><span>The query ran in 41 ms but no rows match. Try loosening a WHERE condition, such as roof_age_years &gt;= 15.</span></section>
+<section aria-label="Rate-limited" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Rate-limited</b><div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><div class="atlas-banner__body">The gateway is busy. Fetching the file again in 4 s (attempt 2 of 3).</div></div></section>
+<section aria-label="Partial" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 14px; display: flex; flex-direction: column; gap: 8px"><b style="font-weight: 500">Partial</b><div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div class="atlas-banner__body">v_contractor is not loaded yet. Queries on the other 3 views work.</div></div></section>
+</div>
+
+<h2 style="margin: 12px 0 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Errors in plain words</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Each error says what went wrong and what to try. The DuckDB message stays one tap away for experts.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; flex: 1; min-height: 0">
+<div class="atlas-banner atlas-banner--error" role="alert" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body" style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 500">There is no column called “roof_age”.</b><span>Did you mean roof_age_years? The schema on the left lists every column.</span><span class="atlas-cid" style="font-size: 12px">Details: Binder Error: Referenced column "roof_age" not found</span></div></div>
+<div class="atlas-banner atlas-banner--error" role="alert" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body" style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 500">Something is missing near line 3, “ORDER”.</b><span>Check for a missing comma or a stray word before ORDER BY.</span><span class="atlas-cid" style="font-size: 12px">Details: Parser Error: syntax error at or near "ORDER"</span></div></div>
+<div class="atlas-banner atlas-banner--error" role="alert" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body" style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 500">This panel is read-only.</b><span>Only SELECT queries can run, so nothing was changed.</span></div></div>
+<div class="atlas-banner atlas-banner--error" role="alert" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body" style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 500">This result is too big for your browser’s memory.</b><span>Add a LIMIT or narrow the WHERE clause, then run it again.</span><span class="atlas-cid" style="font-size: 12px">Details: Out of Memory Error</span></div></div>
+<div class="atlas-banner atlas-banner--error" role="alert" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body" style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 500">A date was compared with text.</b><span>Write dates as DATE '2020-01-01' so DuckDB reads them as dates.</span><span class="atlas-cid" style="font-size: 12px">Details: Conversion Error</span></div></div>
+<div class="atlas-banner atlas-banner--error" role="alert" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body" style="display: flex; flex-direction: column; gap: 4px"><b style="font-weight: 500">DuckDB could not start in this browser.</b><span>Try a recent Chrome, Edge, Firefox or Safari. The rest of CountyLens still works.</span></div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k2}}">Retry</button></div>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="SQL · states and plain-language errors" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Cancel” is drawn but not wired in this prototype.", "k2": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

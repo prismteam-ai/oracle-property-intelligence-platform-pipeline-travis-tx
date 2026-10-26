@@ -1,0 +1,12 @@
+gate PASS: v_roofing_permit 15025, 10792 permit-side properties all county properties
+uploading permits-b01-car (attempt 1/8)
+done permits-b01-car -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b01-car.json
+uploading permits-b01-tables (attempt 1/8)
+done permits-b01-tables -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b01-tables.json
+uploading permits-b02-car (attempt 1/8)
+done permits-b02-car -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b02-car.json
+uploading permits-b02-tables (attempt 1/8)
+done permits-b02-tables -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b02-tables.json
+uploading permits-b03-car (attempt 1/8)
+done permits-b03-car -> specs/011-publish-and-runs/upload-receipts/travis-full-run2-20261024/permits-b03-car.json
+uploading permits-b03-tables (attempt 1/8)

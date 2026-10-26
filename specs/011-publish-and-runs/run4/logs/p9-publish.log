@@ -1,0 +1,101 @@
+[p9] 2026-10-26T12:22:44Z step gate start
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/publish-run.ts --manifest runs/travis-full-run4-20261026/manifest.json --run-id travis-full-run4-20261026 --copy-host d2xsqoqv09bd0q.cloudfront.net --step gate
+gate PASS: v_roofing_permit 15025, 10792 permit-side properties all county properties
+run travis-full-run4-20261026  manifest bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha  mode run
+[gate] done: 0 skip, 1 to run
+  RUN  gate  (no identity gate PASS receipt for manifest bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha)
+ok
+[p9] 2026-10-26T12:23:05Z step gate exit=0
+[p9] 2026-10-26T12:23:05Z step filebase start
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/publish-run.ts --manifest runs/travis-full-run4-20261026/manifest.json --run-id travis-full-run4-20261026 --copy-host d2xsqoqv09bd0q.cloudfront.net --step filebase
+run travis-full-run4-20261026  manifest bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha  mode run
+[gate] already-done: 1 skip, 0 to run
+  skip gate  (PASS receipt specs/011-publish-and-runs/upload-receipts/travis-full-run4-20261026/gate.json)
+[filebase] already-done: 30 skip, 0 to run
+  skip county-b01-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b01-car.json records this CID)
+  skip county-b01-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b01-tables.json records this CID)
+  skip county-b02-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b02-car.json records this CID)
+  skip county-b02-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b02-tables.json records this CID)
+  skip county-b03-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b03-car.json records this CID)
+  skip county-b03-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b03-tables.json records this CID)
+  skip county-b04-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b04-car.json records this CID)
+  skip county-b04-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b04-tables.json records this CID)
+  skip county-b05-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b05-car.json records this CID)
+  skip county-b05-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b05-tables.json records this CID)
+  skip county-b06-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b06-car.json records this CID)
+  skip county-b06-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b06-tables.json records this CID)
+  skip county-b07-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b07-car.json records this CID)
+  skip county-b07-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b07-tables.json records this CID)
+  skip county-b08-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b08-car.json records this CID)
+  skip county-b08-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b08-tables.json records this CID)
+  skip county-b09-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b09-car.json records this CID)
+  skip county-b09-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b09-tables.json records this CID)
+  skip county-b10-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-20261025/county-b10-car.json records this CID)
+  skip county-b10-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/county-b10-tables.json records this CID)
+  skip permits-b01-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b01-car.json records this CID)
+  skip permits-b01-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b01-tables.json records this CID)
+  skip permits-b02-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b02-car.json records this CID)
+  skip permits-b02-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b02-tables.json records this CID)
+  skip permits-b03-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b03-car.json records this CID)
+  skip permits-b03-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b03-tables.json records this CID)
+  skip permits-b04-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b04-car.json records this CID)
+  skip permits-b04-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b04-tables.json records this CID)
+  skip permits-b05-car  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b05-car.json records this CID)
+  skip permits-b05-tables  (receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/permits-b05-tables.json records this CID)
+ok
+[p9] 2026-10-26T12:23:10Z step filebase exit=0
+[p9] 2026-10-26T12:23:10Z step car-files start
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/publish-run.ts --manifest runs/travis-full-run4-20261026/manifest.json --run-id travis-full-run4-20261026 --copy-host d2xsqoqv09bd0q.cloudfront.net --step car-files
+run travis-full-run4-20261026  manifest bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha  mode run
+[gate] already-done: 1 skip, 0 to run
+  skip gate  (PASS receipt specs/011-publish-and-runs/upload-receipts/travis-full-run4-20261026/gate.json)
+[car-files] already-done: 30 skip, 0 to run
+  skip county-b01-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b01-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b02-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b02-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b03-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b03-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b04-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b04-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b05-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b05-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b06-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b06-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b07-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b07-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b08-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b08-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b09-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b09-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b10-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip county-b10-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b01-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b01-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b02-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b02-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b03-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b03-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b04-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b04-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b05-car  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+  skip permits-b05-tables  (a gateway serves this carCid at the manifest size and none disagrees (a rate-limited one is not counted against it))
+ok
+[p9] 2026-10-26T12:25:10Z step car-files exit=0
+[p9] 2026-10-26T12:25:10Z step manifest start
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/publish-run.ts --manifest runs/travis-full-run4-20261026/manifest.json --run-id travis-full-run4-20261026 --copy-host d2xsqoqv09bd0q.cloudfront.net --step manifest
+  manifest: kubo add ok: Hash bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha matches the local CID, pinned on Filebase
+  manifest: ok   https://gateway.pinata.cloud/ipfs/bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha size=104190 sha256 match
+  manifest: FAIL https://ipfs.filebase.io/ipfs/bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha HTTP 504
+run travis-full-run4-20261026  manifest bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha  mode run
+[gate] already-done: 1 skip, 0 to run
+  skip gate  (PASS receipt specs/011-publish-and-runs/upload-receipts/travis-full-run4-20261026/gate.json)
+[manifest] failed
+  ERROR manifest readback: not both gateways served identical bytes
+FAILED: fix the error above and rerun; finished items are skipped
+[p9] 2026-10-26T12:27:20Z step manifest exit=1
+[p9] STOPPED at manifest

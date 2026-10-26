@@ -1,0 +1,24 @@
+/* Icon (A-03 T055): the glyph is generated content, so the element has no text of its own.
+   tokens.css sets the symbols font and the 24 px default on .material-symbols-rounded. */
+
+.icon {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.icon::before {
+  content: attr(data-icon);
+}
+
+.small {
+  font-size: var(--space-4);
+}
+
+.medium {
+  font-size: var(--space-5);
+}

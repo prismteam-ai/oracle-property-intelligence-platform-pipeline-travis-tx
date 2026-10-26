@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Run chain</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.rc-node{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0;width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--md-sys-color-outline-variant);border-radius:var(--md-sys-shape-corner-medium);background:var(--md-sys-color-surface);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.rc-node:hover{background:var(--md-sys-color-surface-container)}
+.rc-node[aria-pressed="true"]{background:var(--md-sys-color-secondary-container);color:var(--md-sys-color-on-secondary-container);border-color:transparent}
+.rc-node:focus-visible{outline:3px solid var(--md-sys-color-primary);outline-offset:-3px}
+.rc-link{flex:none;display:grid;place-items:center;color:var(--md-sys-color-on-surface-variant)}
+</style>
+</helmet>
+<section aria-labelledby="rc-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; font-family: var(--font-plain); color: var(--md-sys-color-on-surface); font-size: 13px; line-height: 18px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px"><h3 id="rc-h" class="atlas-card__title" style="margin: 0">Run chain</h3><span style="color: var(--md-sys-color-on-surface-variant)">Newest first · each manifest links to the one before it (previousManifestCid)</span></div>
+<ol aria-label="Runs, newest first" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: {{dir}}; align-items: stretch; gap: 6px">
+<sc-for list="{{runs}}" as="r" hint-placeholder-count="3">
+<li style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: {{dir}}; align-items: {{liAlign}}; gap: 6px">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<button class="rc-node" aria-pressed="{{r.on}}" aria-label="{{r.aria}}" onClick="{{r.pick}}"><span style="display: flex; align-items: center; gap: 6px; width: 100%"><b style="font-weight: 500; font-size: 14px">{{r.title}}</b><sc-if value="{{r.isThis}}" hint-placeholder-val="{{ false }}"><span class="atlas-pill atlas-pill--info" style="height: 20px">This run</span></sc-if></span><span class="atlas-cid" style="background: none; padding: 0">{{r.cid}}</span><span style="font-size: 12px; color: inherit; opacity: .85">{{r.when}}</span></button>
+<div style="display: flex; align-items: center; gap: 4px"><a class="atlas-btn atlas-btn--text" href="{{verifyHref}}" aria-label="Verify the Run {{r.n}} manifest on two public gateways" style="height: 32px; padding: 0 8px; text-decoration: none"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">verified</span>Verify</a><button class="atlas-icon-btn" aria-label="Copy the Run {{r.n}} manifest CID" onClick="{{r.copy}}" style="width: 32px; height: 32px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">content_copy</span></button></div>
+</div>
+<sc-if value="{{r.hasPrev}}" hint-placeholder-val="{{ true }}"><span class="rc-link" aria-hidden="true" style="{{linkStyle}}"><span class="material-symbols-rounded atlas-icon-20">{{linkIcon}}</span></span></sc-if>
+</li>
+</sc-for>
+<li style="flex: 0 0 auto; display: flex; align-items: center; padding: 0 4px; color: var(--md-sys-color-on-surface-variant); font-size: 12px">First run · no previous manifest</li>
+</ol>
+<div role="status" aria-live="polite" style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 8px 10px; border-radius: var(--md-sys-shape-corner-small); background: var(--md-sys-color-surface-container); font-size: 12px; line-height: 16px">
+<span><b style="font-weight: 500">{{sel.title}}</b> manifest <span class="atlas-cid" style="background: none; padding: 0">{{sel.cid}}</span></span>
+<span>Previous: <span class="atlas-cid" style="background: none; padding: 0">{{sel.prev}}</span></span>
+<span>{{sel.meta}}</span>
+</div>
+<span class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>The run list is <code>runs/index.json</code>, committed to git and published with each release; the app finds the latest run there. Sample CIDs.</span>
+<sc-if value="{{toastOn}}" hint-placeholder-val="{{ false }}"><span role="status" style="font-size: 12px; color: var(--md-sys-color-primary)">{{toast}}</span></sc-if>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"device":{"editor":"enum","options":["desktop","mobile"],"default":"desktop"},"verifyHref":{"editor":"text","default":"DataVerify1440.dc.html"},"$preview":{"width":1296,"height":260}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { sel: 3, toast: '' }; }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() {
+    const mob = (this.props.device ?? 'desktop') === 'mobile', s = this.state;
+    const R = [
+      { n: 3, cid: 'bafybeih…q7n3', prev: 'bafybeig…k2p8 (Run 2)', when: '2026-10-17 · published 11:43 UTC', meta: '13 artifacts · 1.31 GB · verified on ipfs.io and dweb.link' },
+      { n: 2, cid: 'bafybeig…k2p8', prev: 'bafybeia…m1r1 (Run 1)', when: '2026-10-08 · published 03:18 UTC', meta: '13 artifacts · 1.30 GB · still resolves on ipfs.io and dweb.link' },
+      { n: 1, cid: 'bafybeia…m1r1', prev: 'none, first run', when: '2026-10-01 · published 03:42 UTC', meta: '13 artifacts · 1.29 GB · still resolves on ipfs.io and dweb.link' }
+    ];
+    const sel = R.find((r) => r.n === s.sel) || R[0];
+    return {
+      dir: mob ? 'column' : 'row', liAlign: mob ? 'stretch' : 'flex-start', linkIcon: mob ? 'arrow_downward' : 'arrow_forward', linkStyle: mob ? 'align-self: center' : 'align-self: flex-start; margin-top: 22px',
+      verifyHref: this.props.verifyHref || 'DataVerify1440.dc.html',
+      runs: R.map((r) => ({ n: String(r.n), title: 'Run ' + r.n, cid: r.cid, when: r.when, isThis: r.n === 3, hasPrev: r.n > 1, on: String(r.n === sel.n), aria: 'Run ' + r.n + ', manifest ' + r.cid + ', ' + r.when + '. Show details',
+        pick: () => this.setState({ sel: r.n }), copy: () => { this.setState({ toast: 'Run ' + r.n + ' manifest CID copied (Sample).' }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ toast: '' }), 2400); } })),
+      sel: { title: 'Run ' + sel.n, cid: sel.cid, prev: sel.prev, meta: sel.meta },
+      toastOn: !!s.toast, toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

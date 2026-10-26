@@ -1,0 +1,8 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/publish-run.ts --manifest runs/travis-full-run3-1-20261025/manifest.json --run-id travis-full-run3-1-20261025 --copy-host d2xsqoqv09bd0q.cloudfront.net --step manifest
+run travis-full-run3-1-20261025  manifest bafkreidbqsav3rsbxqy5fx3li73uskfth254nz5zw34xwac5w3fd4tmbai  mode run
+[gate] already-done: 1 skip, 0 to run
+  skip gate  (PASS receipt specs/011-publish-and-runs/upload-receipts/travis-full-run3-1-20261025/gate.json)
+[manifest] already-done: 1 skip, 0 to run
+  skip manifest  (a gateway serves the manifest bytes and none disagrees (a rate-limited one is not counted against it))
+ok

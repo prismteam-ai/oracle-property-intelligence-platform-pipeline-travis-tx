@@ -1,0 +1,443 @@
+/* Coverage page styles (A-16 T041; PO note 2026-10-26). The tables come from Runs.module.css.
+   - `.compact` (Source speed, read path, Cost): full card width, fixed column shares, cells
+     clamped to three lines; the row's native Details disclosure lifts the clamp in CSS (no
+     script: the JS bundle budget is nearly spent, so the rules below key on structure).
+   - `.stack`: below 840 px each row stacks as label/value lines (board Coverage390).
+   Tokens only; no auto margins. */
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--status-info-container);
+  color: var(--status-info);
+}
+
+.noticeText {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* Gross, credits and budget side by side from 600 px (board: "Last bill" and "Budget alert"). */
+.costTiles {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 600px) {
+  .costTiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---- compact tables ---- */
+.compact td {
+  min-width: 0;
+}
+
+.compact td > div {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.compact tr:has(details[open]) td > div {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: none;
+  line-clamp: none;
+}
+
+.compact tr:has(details[open]) {
+  background: var(--md-sys-color-surface-container-low);
+}
+
+/* B-1: a long "not available" pill shows its short label on one line; an opened row shows the
+   full reason as normal wrapping text instead. */
+.compact tr:has(details[open]) [data-short] {
+  white-space: normal;
+}
+
+.compact tr:has(details[open]) [data-short]::after {
+  content: none;
+}
+
+.compact tr:has(details[open]) [data-short] > span:last-child {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
+}
+
+/* Name cell: the short name bold, the doc's parenthetical as a helper line. */
+.compact td:first-child > span {
+  overflow-wrap: anywhere;
+}
+
+.compact td:first-child b {
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.compact td:first-child > span > span {
+  display: block;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.compact td:last-child,
+.compact th:last-child {
+  text-align: end;
+}
+
+/* The toggle column's header is named for screen readers only. */
+.compact th:last-child > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Atlas text button on a native summary, 48 px target; no disclosure marker. */
+.compact summary,
+[data-section="limitations"] summary {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  list-style: none;
+  cursor: pointer;
+}
+
+.compact summary::-webkit-details-marker,
+[data-section="limitations"] summary::-webkit-details-marker {
+  display: none;
+}
+
+.compact summary:hover,
+[data-section="limitations"] summary:hover {
+  background: var(--md-sys-color-surface-container-high);
+}
+
+.compact summary:focus-visible,
+[data-section="limitations"] summary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.compact details[open] summary,
+[data-section="limitations"] details[open] summary {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+[data-section="limitations"] details {
+  justify-self: start;
+}
+
+/* Known limitations: the first five items until "Show all" is open. */
+[data-section="limitations"]:not(:has(details[open])) li:nth-child(n + 6) {
+  display: none;
+}
+
+/* From 840 px: the table spans the card, columns share it evenly, the name column a bit wider. */
+@media (min-width: 840px) {
+  .compact {
+    table-layout: fixed;
+  }
+
+  .compact th:first-child {
+    width: 18%;
+  }
+
+  .compact th:last-child {
+    width: calc(var(--space-10) + var(--space-6));
+  }
+}
+
+@media (max-width: 839px) {
+  .stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .stack,
+  .stack tbody,
+  .stack tr {
+    display: block;
+  }
+
+  .stack tr {
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  /* One label/value line per cell: the column name on the left, the value on the right. */
+  .stack td {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--space-3);
+    padding: var(--space-1) 0;
+    border-top: 0;
+    text-align: start;
+  }
+
+  .stack td::before {
+    content: attr(data-label);
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: var(--md-sys-typescale-body-small-font);
+    font-size: var(--md-sys-typescale-body-small-size);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
+  }
+
+  /* The disclosure needs no label line on a phone: it sits under the row's values. */
+  .compact td:last-child {
+    display: block;
+    text-align: start;
+  }
+
+  .compact td:last-child::before {
+    content: none;
+  }
+
+  /* Collapsed, a stacked row shows its key figures; Details opens the rest. */
+  .compact[aria-label="Source limits"]
+    tr:not(:has(details[open]))
+    td:is(:nth-child(2), :nth-child(4), :nth-child(6)),
+  .compact[aria-label="Deployed resources and idle cost"]
+    tr:not(:has(details[open]))
+    td:is(:nth-child(4), :nth-child(5)) {
+    display: none;
+  }
+}
+
+/* "Publication and read path": a folded section; its summary is a 48 px target. */
+[data-section="source-limits"] > details > summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+}
+
+[data-section="source-limits"] > details > summary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* ---- A-16 style pass (PO 2026-10-26 06:25, boards Coverage1440/768/390) ---- */
+
+/* Page head: title and intro on the left, the run button and Download CSV on the right; the
+   actions wrap under the intro below 840 px. */
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  min-width: 0;
+}
+
+.head > div:first-child {
+  flex: 1 1 calc(var(--space-10) * 6);
+  min-width: 0;
+}
+
+.headActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Atlas outlined button, 48 px target: Download CSV (the run is the shared RunSelect). */
+.outlined {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.outlined:hover {
+  background: var(--md-sys-color-surface-container-high);
+}
+
+.outlined:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* KPI "Counted from": the Published pill with the run id beside it. */
+.pillLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Loaded vs total: board header (label-medium, on-surface-variant, no fill, rule below). */
+.flat th {
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+
+.flat td {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  vertical-align: middle;
+}
+/* Cost tiles (board "Last bill" and "Budget alert"): filled, no outline. */
+.costTiles > div {
+  border-color: transparent;
+  background: var(--md-sys-color-surface-container);
+}
+
+/* Source speed: the board's header band and outlined table frame. */
+[data-section="source-limits"] > div:nth-child(2) {
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+}
+
+/* Cost from 840 px: the board's resource list (one column, two from 1200 px). Each row is a
+   small grid: the name (and the doc's parenthetical) with the per-use line under it on the left,
+   the fixed figure and the Details toggle on the right; who pays and the bill line show, with
+   their labels, only when Details is open. The element stays a table with one row per resource. */
+@media (min-width: 840px) {
+  .costList,
+  .costList tbody {
+    display: block;
+  }
+
+  .costList thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .costList tbody {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--space-7);
+  }
+
+  .costList tr {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-areas:
+      "name fixed"
+      "use toggle"
+      "who who"
+      "seen seen";
+    align-items: start;
+    gap: 0 var(--space-4);
+    padding: var(--space-2) 0;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .costList td {
+    padding: 0;
+    border-top: 0;
+  }
+
+  .costList td:nth-child(1) {
+    grid-area: name;
+  }
+
+  .costList td:nth-child(2) {
+    grid-area: fixed;
+    text-align: end;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .costList td:nth-child(3) {
+    grid-area: use;
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: var(--md-sys-typescale-body-small-font);
+    font-size: var(--md-sys-typescale-body-small-size);
+    line-height: var(--md-sys-typescale-body-small-line-height);
+  }
+
+  .costList td:nth-child(4) {
+    grid-area: who;
+  }
+
+  .costList td:nth-child(5) {
+    grid-area: seen;
+  }
+
+  .costList td:nth-child(6) {
+    grid-area: toggle;
+  }
+
+  .costList tr:not(:has(details[open])) td:is(:nth-child(4), :nth-child(5)) {
+    display: none;
+  }
+
+  .costList td:is(:nth-child(4), :nth-child(5)) {
+    padding-top: var(--space-2);
+  }
+
+  .costList td:is(:nth-child(4), :nth-child(5))::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: var(--md-sys-typescale-label-medium-font);
+    font-size: var(--md-sys-typescale-label-medium-size);
+    line-height: var(--md-sys-typescale-label-medium-line-height);
+  }
+
+  /* Fixed and per-use lines stay short in the list (two lines) until Details opens the row. */
+  .costList td:is(:nth-child(2), :nth-child(3)) > div {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .costList tbody {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

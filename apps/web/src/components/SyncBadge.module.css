@@ -1,0 +1,61 @@
+/* Header sync badge (ShellStates board): Atlas § 7 assist chip, 32 px, corner-full, label-medium;
+   success colours when a run is published, danger when the index is unreadable. */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  min-height: var(--space-7);
+  padding: 0 var(--space-3) 0 var(--space-2);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-container);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* The link is a 48 px target (Atlas § 14.1) around the 32 px chip. */
+.target {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-9);
+  color: inherit;
+  text-decoration: none;
+}
+
+.ready {
+  color: var(--status-success);
+  background-color: var(--status-success-container);
+}
+
+.error {
+  color: var(--status-danger);
+  background-color: var(--status-danger-container);
+}
+
+.icon {
+  font-size: var(--md-sys-typescale-title-medium-size);
+}
+
+.text {
+  padding: var(--space-1) 0;
+}
+
+.retry {
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  margin: 0;
+  padding: 0 var(--space-1);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

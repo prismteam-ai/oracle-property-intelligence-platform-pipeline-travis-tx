@@ -1,0 +1,109 @@
+/* County selector as the app bar's location chip (Shell boards; A-13 T042, A-16 T050; Task B's
+   county chip): from 600 px an outlined chip, corner-small, label-large, pin + county + caret;
+   below 600 px the pin alone as a 48 px control with the select laid over it (Welcome390). The
+   "County" label stays for assistive tech. Tokens only. */
+.location {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Compact: a 48 px icon control; the transparent select covers it, so a tap opens the picker. */
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.chip:focus-within {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.select {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  appearance: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  cursor: pointer;
+}
+
+.select:focus-visible {
+  outline: none;
+}
+
+.caret {
+  display: none;
+}
+
+/* The Travis-only message floats under the chip as an inverse-surface snackbar (Atlas § 7). */
+.message {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  width: max-content;
+  max-width: calc(var(--space-10) * 5);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  box-shadow: var(--md-sys-elevation-level3);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+/* From 600 px: the outlined chip with the county name and its caret (Shell1440 board). */
+@media (min-width: 600px) {
+  .chip {
+    gap: var(--space-1);
+    padding: 0 0 0 var(--space-3);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-sys-shape-corner-small);
+    background: var(--md-sys-color-surface);
+  }
+
+  .select {
+    position: static;
+    width: auto;
+    padding: 0 var(--space-7) 0 var(--space-1);
+    opacity: 1;
+  }
+
+  /* The caret is drawn over the select's end padding; a tap on it still reaches the select. */
+  .caret {
+    position: absolute;
+    right: var(--space-2);
+    display: inline-flex;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@countylens/bridge",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A-16 laptop bridge: pulls admin run commands from SQS and drives the gated Run 3 path on the operator's machine. Never started by CI or Lambda.",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "typecheck": "node ../../node_modules/typescript-7/bin/tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1154.0",
+    "@aws-sdk/client-sns": "^3.1156.0",
+    "@aws-sdk/client-sqs": "^3.1154.0",
+    "@countylens/contract": "workspace:*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "vitest": "^5.0.5"
+  }
+}

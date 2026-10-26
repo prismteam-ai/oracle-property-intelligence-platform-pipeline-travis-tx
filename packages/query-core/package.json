@@ -1,0 +1,30 @@
+{
+  "name": "@countylens/query-core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./builders": "./src/query-builders.ts",
+    "./places": "./src/places.ts",
+    "./explore": "./src/explore.ts",
+    "./gazetteer": "./gazetteer/travis-places@1.0.0/index.ts"
+  },
+  "scripts": {
+    "build": "pnpm run gen",
+    "gen": "tsx scripts/gen-sql.ts",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests",
+    "build-gazetteer": "tsx scripts/build-gazetteer.ts",
+    "cut-sample": "tsx scripts/cut-sample.ts"
+  },
+  "dependencies": {
+    "@countylens/contract": "workspace:*",
+    "@countylens/profile-travis-austin": "workspace:*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@duckdb/node-api": "1.5.6-r.2"
+  }
+}

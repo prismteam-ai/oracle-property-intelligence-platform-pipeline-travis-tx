@@ -1,0 +1,20 @@
+{
+  "plugins": ["stylelint-declaration-strict-value"],
+  "ignoreFiles": ["src/styles/tokens.css", "src/styles/fonts.css"],
+  "rules": {
+    "scale-unlimited/declaration-strict-value": [
+      [
+        "/color/",
+        "font",
+        "font-family",
+        "font-size",
+        "/^(margin|padding|gap|inset)/",
+        "border-radius"
+      ],
+      {
+        "ignoreValues": ["0", "auto", "inherit", "transparent", "currentColor", "none"],
+        "message": "Atlas § 13 rule 4: use a tokens.css custom property, never a literal value."
+      }
+    ]
+  }
+}

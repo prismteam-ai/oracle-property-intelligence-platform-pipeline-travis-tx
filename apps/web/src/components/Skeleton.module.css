@@ -1,0 +1,71 @@
+/* Skeletons (A-03 T055): Atlas § 9 Loading. Rows are 52 px with outline-variant dividers (the
+   data-table row height); cards are corner-medium surfaces with padding 16. The pulse animation
+   is disabled by tokens.css under prefers-reduced-motion. */
+
+.rows,
+.cards {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--md-sys-shape-corner-medium);
+}
+
+.rows {
+  background-color: var(--md-sys-color-surface-container-lowest);
+}
+
+.cards {
+  gap: var(--space-3);
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  animation: pulse var(--md-sys-motion-duration-extra-long) var(--md-sys-motion-easing-standard)
+    infinite alternate;
+}
+
+.rows .placeholder {
+  min-height: calc(var(--space-9) + var(--space-1));
+  padding: 0 var(--space-4);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.rows .placeholder:first-child {
+  border-top: 0;
+}
+
+.cards .placeholder {
+  min-height: calc(var(--space-10) + var(--space-9));
+  padding: var(--space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background-color: var(--md-sys-color-surface-container-lowest);
+}
+
+.line,
+.lineShort {
+  display: block;
+  height: var(--space-3);
+  border-radius: var(--md-sys-shape-corner-small);
+  background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.line {
+  width: 100%;
+}
+
+.lineShort {
+  width: 40%;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.55;
+  }
+}

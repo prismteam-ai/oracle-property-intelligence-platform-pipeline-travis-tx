@@ -1,0 +1,4 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/build-run-manifest.ts --config specs/011-publish-and-runs/run4/config.json
+carryAddressPoints is for a run with no new capture
+exit=1

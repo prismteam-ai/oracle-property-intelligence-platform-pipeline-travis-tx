@@ -1,0 +1,19 @@
+{
+  "name": "pipeline/data/runs/travis-a11-permits-fix-20261024/publish/permits-batched/tables/b04",
+  "carCid": "bafkreicl7g4n42inplcrmv4qbj6exeyua7woistx4zfu54ncsl2loxe37i",
+  "size": 1284,
+  "adopted": false,
+  "gateways": [
+    {
+      "gateway": "https://gateway.pinata.cloud",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "recordedAt": "2026-10-24T18:57:55.849Z"
+}

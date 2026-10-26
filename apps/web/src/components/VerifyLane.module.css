@@ -1,0 +1,95 @@
+/* Verify lane (A-13 T023): Atlas § 7 outlined card, title-medium operator name with the ✓ in
+   the success colour, the URL and digests in the mono face (wrapping, never a horizontal scroll),
+   values as a two-column description list from 600 px. Atlas tokens only. */
+
+.lane {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+}
+
+.check {
+  color: var(--status-success);
+}
+
+.url,
+.status {
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  overflow-wrap: anywhere;
+}
+
+.url code,
+.digest {
+  font-family: var(--md-ref-typeface-mono);
+  overflow-wrap: anywhere;
+}
+
+.values {
+  display: grid;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+}
+
+.values dd {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 600px) {
+  .values {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  /* A 64-character SHA-256 sits on its own full-width line under its label (board DataVerify1440
+     stacks long values); beside the label it broke off its last characters at 1440. */
+  .values .digest {
+    grid-column: 1 / -1;
+  }
+}
+
+.role {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+}
+
+.reason {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--md-sys-color-on-surface-variant);
+}

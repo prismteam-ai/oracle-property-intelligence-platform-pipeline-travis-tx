@@ -1,0 +1,84 @@
+{
+  "tag": "run-travis-full-run3-20261025",
+  "manifestCid": "bafkreifndsdibdllvgpzwmif6getzwvc6rupk5tgeak4eypccaw3t7vlfm",
+  "adopted": false,
+  "reusedFrom": {},
+  "assets": [
+    {
+      "name": "travis-county-b01.car",
+      "size": 403862839,
+      "sha256": "07385b684df56f98c6a6db50bc5d8241f471100ea32e2d70452a78a7b3cb433d"
+    },
+    {
+      "name": "travis-county-b02.car",
+      "size": 414497863,
+      "sha256": "58613d3148eb0308a955f677de84df8cd0d88ef785e27f5a22fb5dea303bc1b9"
+    },
+    {
+      "name": "travis-county-b03.car",
+      "size": 427930341,
+      "sha256": "9377102ee35f64297256474996beef64495acdeff63cdaec8a5d6cf5545c25cf"
+    },
+    {
+      "name": "travis-county-b04.car",
+      "size": 430652623,
+      "sha256": "d063f77edf8acb3c7b4460e3e10cd2f549e70dcded019887608fcd9df671d0c4"
+    },
+    {
+      "name": "travis-county-b05.car",
+      "size": 426939485,
+      "sha256": "b15510e87c6a86acfddd160e6f2e6163ce5d50cb052afbb460238fc575d84e7c"
+    },
+    {
+      "name": "travis-county-b06.car",
+      "size": 409865233,
+      "sha256": "81e0e73125b3355b415366b3fdad37d01678356ced57f3ca5dc44c4ef505e953"
+    },
+    {
+      "name": "travis-county-b07.car",
+      "size": 392177838,
+      "sha256": "d7b0b2e5f057abe5ba8f3533f32104fc2511aa696011df88fc2c70b30174153f"
+    },
+    {
+      "name": "travis-county-b08.car",
+      "size": 372854478,
+      "sha256": "ed6bcd9881acfa83ef8d4fb0d851b4467ca6a99174d888d85ea3ae2639412c47"
+    },
+    {
+      "name": "travis-county-b09.car",
+      "size": 358056745,
+      "sha256": "0e89f427413f5344e6edd17521823feb0318e4c7f28b0690bf536c870159f369"
+    },
+    {
+      "name": "travis-county-b10.car",
+      "size": 336229196,
+      "sha256": "f417d48a1060ada419393d07493cae5641940d954d1951e208aa36fe47892d17"
+    },
+    {
+      "name": "travis-permits-b01.car",
+      "size": 6284000,
+      "sha256": "3b605c5e0faba5df310706accf4790f8867dc2e0ad917bb6efd1708432144f64"
+    },
+    {
+      "name": "travis-permits-b02.car",
+      "size": 6007849,
+      "sha256": "02020941a17858e7e0673ea93cc6184c8efa101e54cfe49130ce2b424b71ff8f"
+    },
+    {
+      "name": "travis-permits-b03.car",
+      "size": 6235273,
+      "sha256": "1638207ed81cbd0c4ccaa2a3ce6e3807c47c068cbc6f58b32ce704b3a43e56d9"
+    },
+    {
+      "name": "travis-permits-b04.car",
+      "size": 6960186,
+      "sha256": "034c061124c11ea1b742172d72dbe1bd3b50248533d1bbd766a6b2bcd159685e"
+    },
+    {
+      "name": "travis-permits-b05.car",
+      "size": 7384239,
+      "sha256": "d94c39f70e73c4375ea7454a8a32760e0a97b0045c2dfda95e808e1d02dfc43b"
+    }
+  ],
+  "recordedAt": "2026-10-25T22:25:52.193Z"
+}

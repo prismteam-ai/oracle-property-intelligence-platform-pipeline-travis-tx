@@ -1,0 +1,34 @@
+|  grp   |             tbl             | run3_rows | run3_1_rows | only_run3 | only_run3_1 |
+|--------|-----------------------------|----------:|------------:|----------:|------------:|
+| county | address                     | 851166    | 851166      | 0         | 0           |
+| county | address_has_parcel          | 441961    | 441961      | 0         | 0           |
+| county | company                     | 91090     | 91090       | 0         | 0           |
+| county | company_has_mailing_address | 90927     | 90927       | 0         | 0           |
+| county | company_has_property        | 91090     | 91090       | 0         | 0           |
+| county | geometry                    | 434016    | 434016      | 0         | 0           |
+| county | parcel                      | 441961    | 441961      | 0         | 0           |
+| county | parcel_has_geometry         | 434016    | 434016      | 0         | 0           |
+| county | person                      | 470692    | 470692      | 0         | 0           |
+| county | person_has_mailing_address  | 470597    | 470597      | 0         | 0           |
+| county | person_has_property         | 470692    | 470692      | 0         | 0           |
+| county | properties                  | 441961    | 441961      | 0         | 0           |
+| county | property                    | 441961    | 441961      | 0         | 0           |
+| county | property_has_address        | 441961    | 441961      | 0         | 0           |
+| county | property_has_parcel         | 441961    | 441961      | 0         | 0           |
+| county | property_has_sales_history  | 1702536   | 1702536     | 0         | 0           |
+| county | property_has_structure      | 441961    | 441961      | 0         | 0           |
+| county | sales_history               | 1702536   | 1702536     | 0         | 0           |
+| county | sales_history_has_company   | 74859     | 74859       | 0         | 0           |
+| county | sales_history_has_person    | 465304    | 465304      | 0         | 0           |
+| county | structure                   | 441961    | 441961      | 0         | 0           |
+|   grp   |                 tbl                 | run3_rows | run3_1_rows | only_run3 | only_run3_1 |
+|---------|-------------------------------------|----------:|------------:|----------:|------------:|
+| permits | address                             | 10792     | 10792       | 0         | 0           |
+| permits | address_has_parcel                  | 10792     | 10792       | 0         | 0           |
+| permits | company                             | 4139      | 4552        | 0         | 413         |
+| permits | parcel                              | 10792     | 10792       | 0         | 0           |
+| permits | properties                          | 10792     | 10792       | 327       | 327         |
+| permits | property                            | 10792     | 10792       | 0         | 0           |
+| permits | property_has_property_improvement   | 15025     | 15025       | 0         | 0           |
+| permits | property_improvement                | 15025     | 15025       | 0         | 0           |
+| permits | property_improvement_has_contractor | 4139      | 4552        | 0         | 413         |

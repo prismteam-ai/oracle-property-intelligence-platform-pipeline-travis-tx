@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Explore results states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 760px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Results pane states</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Populated: “Explore · 1440”. Empty: “Empty state · 390”. In every state Filters, SQL and the list keep working.</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; flex: 1; min-height: 0">
+
+<section aria-label="Loading" style="display: flex; flex-direction: column; gap: 8px; min-height: 0">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Loading</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); display: flex; flex-direction: column">
+<div class="atlas-progress" role="progressbar" aria-label="Reading the columns needed" aria-valuemin="0" aria-valuemax="18.4" aria-valuenow="11.2" aria-valuetext="11.2 of 18.4 MB"><i style="width: 61%"></i></div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 6px"><span aria-live="polite" style="font-weight: 500">Counting properties in 5 mi…</span><span class="num" style="font-size: 13px; line-height: 18px">11.2 of 18.4 MB of the columns needed · Run 3</span><span class="atlas-prov" style="font-size: 12px; line-height: 16px">Range reads of the elephant-cli tables through the views, from the CID-named copy (public gateway fallback). Cached for next time.</span></div>
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 16px">
+<div class="atlas-skeleton" style="height: 18px; width: 70%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 28px; width: 90%; border-radius: var(--md-sys-shape-corner-small)"></div><div class="atlas-skeleton" style="height: 14px; width: 60%; border-radius: var(--md-sys-shape-corner-extra-small)"></div>
+<div class="atlas-skeleton" style="height: 18px; width: 65%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 28px; width: 85%; border-radius: var(--md-sys-shape-corner-small)"></div><div class="atlas-skeleton" style="height: 14px; width: 55%; border-radius: var(--md-sys-shape-corner-extra-small)"></div>
+</div>
+</div>
+</section>
+
+<section aria-label="Partial data" style="display: flex; flex-direction: column; gap: 8px; min-height: 0">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Partial data</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); display: flex; flex-direction: column; gap: 12px; padding: 16px">
+<div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div class="atlas-banner__body">Showing 3 of 4 sources. BBB: Blocked · bbb.org refused the check (403) on 2026-10-17.</div></div>
+<span style="font-weight: 500"><span class="num">128</span> properties in 5 mi</span>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px; padding: 10px 12px; border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium)"><b style="font-weight: 500">101 Sample Ln · Austin 78753</b><div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="atlas-chip atlas-chip--signal" style="height: 28px">Roof 23 yrs<span class="atlas-pill atlas-pill--success">High</span></span><span class="atlas-chip atlas-chip--signal" style="height: auto; min-height: 28px; white-space: normal; text-align: left; max-width: 100%; box-sizing: border-box"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">description</span>Open 6.4 yrs · source says Active</span></div><span>Basis: reroof permit 2003</span><span>Contractor <b style="font-weight: 500">“Sample Roofing Co.”</b> <span style="color: var(--md-sys-color-on-surface-variant)">as printed on permit</span></span><span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px"><span class="atlas-pill atlas-pill--info" title="Name matches stay Candidate. Only an official ID resolves a contractor."><span class="material-symbols-rounded" aria-hidden="true">help</span>Candidate</span><span>Likely match on name and address, not proof</span></span><span style="color: var(--md-sys-color-on-surface-variant)">BBB: Blocked · bbb.org refused the check (403)</span></div>
+</div>
+</section>
+
+<section aria-label="Rate-limited" style="display: flex; flex-direction: column; gap: 8px; min-height: 0">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Rate-limited</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); display: flex; flex-direction: column; gap: 12px; padding: 16px">
+<div class="atlas-banner atlas-banner--info" role="status"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><div class="atlas-banner__body">Too many requests. Retrying in 4 s (attempt 2 of 3).</div></div>
+<span style="font-weight: 500"><span class="num">128</span> properties in 5 mi <span style="font-weight: 400; color: var(--md-sys-color-on-surface-variant)">· from 10:42</span></span>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">history</span>Last results kept until the new radius loads</div>
+</div>
+</section>
+
+<section aria-label="Error" style="display: flex; flex-direction: column; gap: 8px; min-height: 0">
+<h3 style="margin: 0; font-size: 14px; line-height: 20px; font-weight: 500">Error</h3>
+<div style="flex: 1; border-radius: var(--md-sys-shape-corner-medium); overflow: hidden; background: var(--md-sys-color-surface); display: flex; flex-direction: column; gap: 12px; padding: 16px">
+<div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body">Results could not load: the query layer did not respond.</div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k1}}">Retry</button></div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Filters, SQL and the list still work. You can also ask the helper or open the SQL panel.</p>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none; align-self: flex-start" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask the helper</a>
+</div>
+</section>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Explore · results pane states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

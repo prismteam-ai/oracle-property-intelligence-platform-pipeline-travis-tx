@@ -1,0 +1,152 @@
+{
+  "request": {
+    "method": "tools/call",
+    "params": {
+      "name": "get_coverage",
+      "arguments": {
+        "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i"
+      }
+    }
+  },
+  "status": 200,
+  "ms": 324,
+  "body": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"coverage\":{\"confidential_suppressed\":{\"count\":0,\"derivation\":\"capture_receipt\",\"note\":\"owner name and mailing withheld before validate (P0-15)\"},\"contractor_ambiguous\":{\"count\":0,\"derivation\":\"aggregate_match\"},\"contractor_candidate\":{\"count\":0,\"derivation\":\"aggregate_match\"},\"contractor_conflicting\":{\"count\":0,\"derivation\":\"aggregate_match\"},\"contractor_resolved\":{\"count\":0,\"derivation\":\"aggregate_match\"},\"contractor_unresolved\":{\"count\":35,\"derivation\":\"aggregate_match\",\"note\":\"Comptroller baseline not loaded (A-07)\"},\"owner_confidential\":{\"count\":0,\"derivation\":\"capture_receipt\",\"note\":\"owner name and mailing withheld: a confidentiality flag on the TCAD record (P0-15)\"},\"owner_no_dated_sale\":{\"count\":7,\"derivation\":\"capture_receipt\",\"note\":\"owners[] present but no dated sale to link them to\"},\"owner_no_record\":{\"count\":0,\"derivation\":\"capture_receipt\",\"note\":\"the TCAD record has no owners[]\"},\"owner_unparsed\":{\"count\":3,\"derivation\":\"capture_receipt\",\"note\":\"a dated sale, but no owner name splits into a person or reads as a company\"},\"parcels_matched\":{\"count\":14,\"derivation\":\"aggregate_match\"},\"parcels_published\":{\"count\":14,\"derivation\":\"published_rows\"},\"parcels_unmapped_property_type\":{\"count\":0,\"derivation\":\"aggregate_match\",\"note\":\"TCAD state code with no lexicon property_type mapping; not published\"},\"parcels_without_emitted_permit\":{\"count\":0,\"derivation\":\"aggregate_match\"},\"permits_accepted\":{\"count\":38,\"derivation\":\"aggregate_match\",\"note\":\"the profile would publish them; a parcel match is still needed\"},\"permits_ambiguous_geoid\":{\"count\":1,\"derivation\":\"aggregate_match\"},\"permits_captured\":{\"count\":42,\"derivation\":\"capture_receipt\"},\"permits_emitted\":{\"count\":35,\"derivation\":\"published_rows\"},\"permits_emitted_stalled\":{\"count\":0,\"derivation\":\"aggregate_match\",\"note\":\"Expired: improvement_status null (D-4a)\"},\"permits_excluded\":{\"count\":4,\"derivation\":\"aggregate_match\",\"note\":\"not emitted\"},\"permits_matched_parcel\":{\"count\":35,\"derivation\":\"aggregate_match\"},\"permits_needs_review\":{\"count\":0,\"derivation\":\"aggregate_match\",\"note\":\"not emitted\"},\"permits_no_tcad_geoid\":{\"count\":1,\"derivation\":\"aggregate_match\"},\"permits_tcad_id_unmatched\":{\"count\":1,\"derivation\":\"aggregate_match\",\"note\":\"tcad_id printed but no residential account carries that geoID\"},\"roof_age_built_year\":{\"count\":7,\"derivation\":\"published_rows\",\"note\":\"estimator confidence low; caveats: partial_history\"},\"roof_age_permit_anchor\":{\"count\":7,\"derivation\":\"published_rows\",\"note\":\"estimator confidence high; caveats: partial_history\"}},\"run\":{\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\"}}"
+        }
+      ],
+      "structuredContent": {
+        "coverage": {
+          "confidential_suppressed": {
+            "count": 0,
+            "derivation": "capture_receipt",
+            "note": "owner name and mailing withheld before validate (P0-15)"
+          },
+          "contractor_ambiguous": {
+            "count": 0,
+            "derivation": "aggregate_match"
+          },
+          "contractor_candidate": {
+            "count": 0,
+            "derivation": "aggregate_match"
+          },
+          "contractor_conflicting": {
+            "count": 0,
+            "derivation": "aggregate_match"
+          },
+          "contractor_resolved": {
+            "count": 0,
+            "derivation": "aggregate_match"
+          },
+          "contractor_unresolved": {
+            "count": 35,
+            "derivation": "aggregate_match",
+            "note": "Comptroller baseline not loaded (A-07)"
+          },
+          "owner_confidential": {
+            "count": 0,
+            "derivation": "capture_receipt",
+            "note": "owner name and mailing withheld: a confidentiality flag on the TCAD record (P0-15)"
+          },
+          "owner_no_dated_sale": {
+            "count": 7,
+            "derivation": "capture_receipt",
+            "note": "owners[] present but no dated sale to link them to"
+          },
+          "owner_no_record": {
+            "count": 0,
+            "derivation": "capture_receipt",
+            "note": "the TCAD record has no owners[]"
+          },
+          "owner_unparsed": {
+            "count": 3,
+            "derivation": "capture_receipt",
+            "note": "a dated sale, but no owner name splits into a person or reads as a company"
+          },
+          "parcels_matched": {
+            "count": 14,
+            "derivation": "aggregate_match"
+          },
+          "parcels_published": {
+            "count": 14,
+            "derivation": "published_rows"
+          },
+          "parcels_unmapped_property_type": {
+            "count": 0,
+            "derivation": "aggregate_match",
+            "note": "TCAD state code with no lexicon property_type mapping; not published"
+          },
+          "parcels_without_emitted_permit": {
+            "count": 0,
+            "derivation": "aggregate_match"
+          },
+          "permits_accepted": {
+            "count": 38,
+            "derivation": "aggregate_match",
+            "note": "the profile would publish them; a parcel match is still needed"
+          },
+          "permits_ambiguous_geoid": {
+            "count": 1,
+            "derivation": "aggregate_match"
+          },
+          "permits_captured": {
+            "count": 42,
+            "derivation": "capture_receipt"
+          },
+          "permits_emitted": {
+            "count": 35,
+            "derivation": "published_rows"
+          },
+          "permits_emitted_stalled": {
+            "count": 0,
+            "derivation": "aggregate_match",
+            "note": "Expired: improvement_status null (D-4a)"
+          },
+          "permits_excluded": {
+            "count": 4,
+            "derivation": "aggregate_match",
+            "note": "not emitted"
+          },
+          "permits_matched_parcel": {
+            "count": 35,
+            "derivation": "aggregate_match"
+          },
+          "permits_needs_review": {
+            "count": 0,
+            "derivation": "aggregate_match",
+            "note": "not emitted"
+          },
+          "permits_no_tcad_geoid": {
+            "count": 1,
+            "derivation": "aggregate_match"
+          },
+          "permits_tcad_id_unmatched": {
+            "count": 1,
+            "derivation": "aggregate_match",
+            "note": "tcad_id printed but no residential account carries that geoID"
+          },
+          "roof_age_built_year": {
+            "count": 7,
+            "derivation": "published_rows",
+            "note": "estimator confidence low; caveats: partial_history"
+          },
+          "roof_age_permit_anchor": {
+            "count": 7,
+            "derivation": "published_rows",
+            "note": "estimator confidence high; caveats: partial_history"
+          }
+        },
+        "run": {
+          "run_id": "travis-202609-permits-20261021t103516z",
+          "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+          "as_of": "2026-10-21T10:40:04.543Z"
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 10
+  }
+}

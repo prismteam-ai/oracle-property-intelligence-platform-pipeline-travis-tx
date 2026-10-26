@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pipeline history log, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 960px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 896px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 896px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px">
+<a class="atlas-icon-btn" href="Runs1440.dc.html" aria-label="Back to runs" style="display: grid; place-items: center; color: var(--md-sys-color-on-surface)"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span></a>
+<h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Pipeline history log</h2>
+<button class="atlas-btn atlas-btn--outlined" onClick="{{__say.k2}}"><span class="material-symbols-rounded" aria-hidden="true">download</span>Download CSV</button>
+</div>
+<div role="toolbar" aria-label="Filter events" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<button class="atlas-chip" aria-pressed="{{allOn}}" onClick="{{pickAll}}"><span class="material-symbols-rounded" aria-hidden="true">{{allIcon}}</span>All events</button>
+<sc-for list="{{evChips}}" as="t" hint-placeholder-count="6"><button class="atlas-chip" aria-pressed="{{t.on}}" onClick="{{t.pick}}"><sc-if value="{{t.checked}}" hint-placeholder-val="{{ false }}"><span class="material-symbols-rounded" aria-hidden="true">check</span></sc-if>{{t.label}} <span class="num" style="opacity: .8">· {{t.n}}</span></button></sc-for>
+<sc-if value="{{anyFilter}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--text" onClick="{{clearFilters}}"><span class="material-symbols-rounded" aria-hidden="true">filter_alt_off</span>Clear filters</button></sc-if>
+<span style="flex: 1"></span>
+<div role="group" aria-label="Run" style="display: flex; gap: 6px"><sc-for list="{{runChips}}" as="r" hint-placeholder-count="4"><button class="atlas-chip" aria-pressed="{{r.on}}" onClick="{{r.pick}}">{{r.label}}</button></sc-for></div>
+</div>
+
+<div class="atlas-table-wrap" style="flex: 1; min-height: 0; overflow: hidden; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface)">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th aria-sort="descending"><button class="atlas-th-sort" onClick="{{__say.k11}}">Time (UTC)<span class="material-symbols-rounded" aria-hidden="true">arrow_downward</span></button></th><th>Run</th><th>Event</th><th>Source</th><th class="num">Count</th><th>Status</th></tr></thead>
+<tbody>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="12"><tr><td class="num">{{r.t}}</td><td>{{r.run}}</td><td>{{r.ev}}</td><td>{{r.src}}</td><td class="num">{{r.n}}</td><td><span class="{{r.cls}}"><span class="material-symbols-rounded" aria-hidden="true">{{r.icon}}</span>{{r.st}}</span></td></tr></sc-for>
+</tbody>
+</table>
+<sc-if value="{{noRows}}" hint-placeholder-val="{{ false }}"><div style="padding: 24px 16px; display: flex; align-items: center; gap: 12px; font-size: 14px"><span style="flex: 1; color: var(--md-sys-color-on-surface-variant)">No events match these filters.</span><button class="atlas-btn atlas-btn--tonal" onClick="{{clearFilters}}"><span class="material-symbols-rounded" aria-hidden="true">filter_alt_off</span>Clear filters</button></div></sc-if>
+</div>
+<div class="atlas-table-footer" style="display: flex; align-items: center; gap: 8px"><span class="atlas-prov" style="flex: 1; font-size: 12px">Read from the run history in each manifest · Sample events</span><dc-import name="Pager" pages="{{pages}}" page="{{page}}" text="{{pageText}}" label="Log pages" on-page="{{setPage}}" hint-size="320px,40px"></dc-import></div>
+</main>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Runs · pipeline history log" desktop="RunsLog1440.dc.html" tablet="RunsLog768.dc.html" mobile="Runs390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k2": "Downloaded pipeline_log.csv (Sample).", "k11": "“Time (UTC)” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { ev: {}, run: 'all', page: 1 };
+    const E = (t, run, ev, src, n, st) => ({ t, run, ev, src, n, st });
+    const ok = 'done', run = (r, d, a) => [
+      E(d + ' ' + a[0], r, 'Verified', 'Manifest ' + a[1], '2 gateways', 'verified'), E(d + ' ' + a[2], r, 'Published', 'Manifest and run index', '13 artifacts', ok)];
+    this.rows = [
+      E('2026-10-17 11:51', 3, 'Verified', 'Manifest bafybeih…q7n3', '2 gateways', 'verified'), E('2026-10-17 11:43', 3, 'Published', 'Manifest and run index', '13 artifacts', ok),
+      E('2026-10-17 11:38', 3, 'Records added', 'Roof age derived', '412,860', ok), E('2026-10-17 11:20', 3, 'Records added', 'Austin permits', '+1,563', ok),
+      E('2026-10-17 11:05', 3, 'Source fetched', 'Contractors', '18,240', ok), E('2026-10-17 11:02', 3, 'Records added', 'TX Comptroller businesses', '+310', ok),
+      E('2026-10-17 10:52', 3, 'Source fetched', 'Coordinates', '410,402', ok), E('2026-10-17 10:48', 3, 'Source fetched', 'TCAD properties, owners', '412,860', ok),
+      E('2026-10-17 10:41', 3, 'Warning', 'Austin permits API', '2 retries', 'ratelimit'), E('2026-10-17 10:31', 3, 'Warning', 'BBB', '0', 'blocked'),
+      E('2026-10-17 10:24', 3, 'Source fetched', 'Austin permits', '2,380,507', ok), E('2026-10-17 10:22', 3, 'Run started', 'Manual', '7 sources', 'started'),
+      E('2026-10-08 03:26', 2, 'Verified', 'Manifest bafybeig…k2p8', '2 gateways', 'verified'), E('2026-10-08 03:18', 2, 'Published', 'Manifest and run index', '13 artifacts', ok),
+      E('2026-10-08 03:10', 2, 'Records added', 'Roof age derived', '412,779', ok), E('2026-10-08 02:52', 2, 'Records added', 'Austin permits', '+1,734', ok),
+      E('2026-10-08 02:44', 2, 'Source fetched', 'Contractors', '18,218', ok), E('2026-10-08 02:40', 2, 'Warning', 'TX Comptroller businesses', '0 new', 'notrefreshed'),
+      E('2026-10-08 02:31', 2, 'Source fetched', 'Coordinates', '412,779', ok), E('2026-10-08 02:26', 2, 'Source fetched', 'TCAD properties, owners', '412,779', ok),
+      E('2026-10-08 02:09', 2, 'Warning', 'BBB', '0', 'blocked'), E('2026-10-08 02:04', 2, 'Source fetched', 'Austin permits', '2,378,944', ok),
+      E('2026-10-08 02:00', 2, 'Run started', 'Manual', '7 sources', 'started'),
+      E('2026-10-01 03:51', 1, 'Verified', 'Manifest bafybeia…m1r1', '2 gateways', 'verified'), E('2026-10-01 03:42', 1, 'Published', 'Manifest and run index', '13 artifacts', ok),
+      E('2026-10-01 03:36', 1, 'Records added', 'Roof age derived', '412,705', ok), E('2026-10-01 03:20', 1, 'Records added', 'Austin permits', '+2,377,210', ok),
+      E('2026-10-01 03:12', 1, 'Records added', 'TCAD properties', '+412,705', ok), E('2026-10-01 03:09', 1, 'Records added', 'TCAD owners and sales', '+397,980', ok),
+      E('2026-10-01 03:04', 1, 'Records added', 'TX Comptroller businesses', '+61,036', ok), E('2026-10-01 03:01', 1, 'Records added', 'Contractors', '+18,190', ok),
+      E('2026-10-01 02:58', 1, 'Source fetched', 'Contractors', '18,190', ok), E('2026-10-01 02:51', 1, 'Source fetched', 'TX Comptroller businesses', '61,036', ok),
+      E('2026-10-01 02:44', 1, 'Source fetched', 'Coordinates', '412,705', ok), E('2026-10-01 02:31', 1, 'Source fetched', 'TCAD properties, owners', '412,705', ok),
+      E('2026-10-01 02:16', 1, 'Warning', 'Austin permits API', '1 retry', 'ratelimit'), E('2026-10-01 02:11', 1, 'Warning', 'BBB', '0', 'blocked'),
+      E('2026-10-01 02:05', 1, 'Source fetched', 'Austin permits', '2,377,210', ok), E('2026-10-01 02:03', 1, 'Schema checked', 'All sources', '0 errors', ok),
+      E('2026-10-01 02:01', 1, 'Store created', 'IPFS pin set', '0 artifacts', ok), E('2026-10-01 02:00', 1, 'Run started', 'Manual, first run', '7 sources', 'started')
+    ];
+    this.ST = { done: ['atlas-pill atlas-pill--success', 'check', 'Done'], verified: ['atlas-pill atlas-pill--success', 'verified', 'Digest matches'], ratelimit: ['atlas-pill atlas-pill--info', 'schedule', 'Rate-limited, recovered'], blocked: ['atlas-pill atlas-pill--warning', 'warning', 'Source blocked'], notrefreshed: ['atlas-pill atlas-pill--warning', 'warning', 'Not refreshed, Run 1 kept'], started: ['atlas-pill atlas-pill--info', 'play_circle', 'Started'] };
+    this.EV = ['Run started', 'Source fetched', 'Records added', 'Published', 'Verified', 'Warning'];
+  }
+  __rv() {
+    const s = this.state, size = 12, ST = this.ST;
+    const sel = this.EV.filter((e) => s.ev[e]);
+    const groupOf = (r) => (r.ev === 'Schema checked' || r.ev === 'Store created') ? 'Source fetched' : r.ev;
+    const inRun = (r) => s.run === 'all' || String(r.run) === s.run;
+    const fit = this.rows.filter((r) => inRun(r) && (!sel.length || sel.indexOf(groupOf(r)) >= 0));
+    const pages = Math.max(1, Math.ceil(fit.length / size)), page = Math.min(pages, s.page), start = (page - 1) * size;
+    return {
+      allOn: String(!sel.length), allIcon: sel.length ? 'select_all' : 'check', pickAll: () => this.setState({ ev: {}, page: 1 }),
+      evChips: this.EV.map((e) => ({ label: e === 'Warning' ? 'Warnings' : e, n: String(this.rows.filter((r) => inRun(r) && groupOf(r) === e).length), on: String(!!s.ev[e]), checked: !!s.ev[e], pick: () => this.setState({ ev: { ...s.ev, [e]: !s.ev[e] }, page: 1 }) })),
+      runChips: [['all', 'All runs'], ['3', 'Run 3'], ['2', 'Run 2'], ['1', 'Run 1']].map((r) => ({ label: r[1], on: String(s.run === r[0]), pick: () => this.setState({ run: r[0], page: 1 }) })),
+      anyFilter: sel.length > 0 || s.run !== 'all', clearFilters: () => this.setState({ ev: {}, run: 'all', page: 1 }),
+      rows: fit.slice(start, start + size).map((r) => ({ t: r.t, run: String(r.run), ev: r.ev, src: r.src, n: r.n, cls: ST[r.st][0], icon: ST[r.st][1], st: ST[r.st][2] })), noRows: fit.length === 0,
+      pages: pages, page: page, pageText: fit.length ? (start + 1) + '–' + Math.min(fit.length, start + size) + ' of ' + fit.length : '0 of 0', setPage: (n) => this.setState({ page: n })
+    };
+  }
+}
+</script>
+</body>
+</html>

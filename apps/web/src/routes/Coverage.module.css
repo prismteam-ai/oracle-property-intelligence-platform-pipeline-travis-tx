@@ -1,0 +1,305 @@
+/* Coverage (PO 2026-10-26 "more readable, no big spacing"): dense Atlas sections, mobile first.
+   Tokens only; the shared card, table and tile classes come from Runs.module.css. */
+
+/* A section card: tighter padding and gaps than the shared `.card`. */
+.section,
+.card {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+}
+
+@media (min-width: 600px) {
+  .section {
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+/* Section head: the title, then the one provenance line of the section. */
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 var(--space-4);
+  min-width: 0;
+}
+
+.sectionHead > h3 {
+  margin: 0;
+}
+
+/* KPI tiles: same four tiles, less padding (two classes beat the shared `.tile`). */
+.tiles > div {
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .tiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---- Counts by record kind ---- */
+/* Kinds with counts flow into balanced columns (two from 768 px) so a short card never waits for
+   a tall neighbour; kinds without a count sit in a row of small cards below. */
+.kindGrid {
+  columns: 1;
+  column-gap: var(--space-2);
+  min-width: 0;
+}
+
+.kindGrid > article {
+  margin-bottom: var(--space-2);
+  break-inside: avoid;
+}
+
+.gapGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .kindGrid {
+    columns: 2;
+  }
+
+  .gapGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .gapGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card {
+  gap: var(--space-1);
+  align-content: start;
+  background: var(--md-sys-color-surface-container-low);
+  border-color: transparent;
+}
+
+.kindTitle {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* The derivation, once per group of rows. */
+.derivation {
+  margin: var(--space-1) 0 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-small-font);
+  font-size: var(--md-sys-typescale-label-small-size);
+  font-weight: var(--md-sys-typescale-label-small-weight);
+  line-height: var(--md-sys-typescale-label-small-line-height);
+  letter-spacing: var(--md-sys-typescale-label-small-tracking);
+}
+
+/* One coverage key: label · count right-aligned, a hairline between rows. */
+.rows {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.rows li > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.rows li > span:last-child {
+  white-space: nowrap;
+}
+
+/* Small fact lines: source · records · collected · total; the table and its parts. */
+.fact {
+  min-width: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+.fact:first-of-type {
+  padding-top: var(--space-1);
+}
+
+/* A kind with no count: title and one short reason. */
+.gap {
+  background: transparent;
+  border-color: var(--md-sys-color-outline-variant);
+}
+
+/* The short reason may wrap on a phone instead of overflowing. */
+.reason [data-short] {
+  white-space: normal;
+}
+
+/* Disclosures (Notes, N parts, Show all): a 48 px text-button target. */
+.details > summary {
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  cursor: pointer;
+}
+
+.details > summary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.fact > .details {
+  display: inline;
+}
+
+.fact > .details > summary {
+  margin-left: var(--space-2);
+}
+
+.cidList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notes {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+.notes dt {
+  color: var(--md-sys-color-on-surface);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.notes dd {
+  margin: 0;
+}
+
+/* ---- Published vs each source's own total ---- */
+.sourceTable td {
+  vertical-align: baseline;
+}
+
+.sourceName {
+  display: grid;
+  min-width: 0;
+}
+
+.sourceName > b {
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.sourceName > code,
+.sub {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.sourceName > code {
+  overflow-wrap: anywhere;
+}
+
+.share {
+  display: grid;
+  grid-template-columns: minmax(var(--space-10), 1fr) auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Coverage by area: one line ---- */
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+}
+
+.notice > h3 {
+  margin: 0;
+}
+
+/* Known limitations: three lines per item while "Show all" is closed. */
+[data-section="limitations"]:has(details):not(:has(details[open]))
+  .limitations
+  li:nth-child(-n + 5) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Words kept for screen readers and the hosted checks, not drawn. */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  font: inherit;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -1,0 +1,3 @@
+[split] pipeline/data/runs/travis-a11-permits-fix-20261024/groups/property_improvement -> pipeline/data/runs/travis-a11-permits-fix-20261024/publish-pilot/permits-batched/batches (1 batches)
+[split] done, see pipeline/data/runs/travis-a11-permits-fix-20261024/publish-pilot/permits-batched/logs/split.log
+[batch-hash-validate-export] all 1 batches finished for travis-permits; logs in pipeline/data/runs/travis-a11-permits-fix-20261024/publish-pilot/permits-batched/logs

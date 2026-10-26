@@ -1,0 +1,75 @@
+{
+  "request": {
+    "method": "tools/call",
+    "params": {
+      "name": "search_properties",
+      "arguments": {
+        "area": {
+          "place": "Pflugerville"
+        },
+        "radius_mi": 5,
+        "roof_age_years_min": 15,
+        "limit": 1000,
+        "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i"
+      }
+    }
+  },
+  "status": 200,
+  "ms": 2558,
+  "body": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"rows\":[],\"returned\":0,\"total\":0,\"truncated\":false,\"empty_reason\":\"no_match\",\"unknown_excluded\":{\"roof_age_years\":0},\"area\":{\"label\":\"Pflugerville city · Census 2024 Gazetteer · 30.447765, -97.602116\",\"point\":{\"lat\":30.447765,\"lon\":-97.602116},\"kind\":\"place\",\"id\":\"4857176\",\"partial_in_travis\":true,\"source\":{\"url\":\"https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip\",\"file_date\":\"2024-08-30T18:40:42.000Z\",\"sha256\":\"cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06\"},\"gazetteer\":{\"version\":\"travis-places@1.0.0\",\"sha256\":\"0f4c08a8bda573737adecc7d62e84d629aadc5005b987f2f787e4fd31ab5d17f\"}},\"run\":{\"run_id\":\"travis-202609-permits-20261021t103516z\",\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"as_of\":\"2026-10-21T10:40:04.543Z\"},\"applied\":{\"manifest_cid\":\"bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i\",\"area\":{\"place\":\"Pflugerville\"},\"radius_mi\":5,\"roof_age_years_min\":15,\"sort\":\"nearest\",\"limit\":1000}}"
+        }
+      ],
+      "structuredContent": {
+        "rows": [],
+        "returned": 0,
+        "total": 0,
+        "truncated": false,
+        "empty_reason": "no_match",
+        "unknown_excluded": {
+          "roof_age_years": 0
+        },
+        "area": {
+          "label": "Pflugerville city · Census 2024 Gazetteer · 30.447765, -97.602116",
+          "point": {
+            "lat": 30.447765,
+            "lon": -97.602116
+          },
+          "kind": "place",
+          "id": "4857176",
+          "partial_in_travis": true,
+          "source": {
+            "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip",
+            "file_date": "2024-08-30T18:40:42.000Z",
+            "sha256": "cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06"
+          },
+          "gazetteer": {
+            "version": "travis-places@1.0.0",
+            "sha256": "0f4c08a8bda573737adecc7d62e84d629aadc5005b987f2f787e4fd31ab5d17f"
+          }
+        },
+        "run": {
+          "run_id": "travis-202609-permits-20261021t103516z",
+          "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+          "as_of": "2026-10-21T10:40:04.543Z"
+        },
+        "applied": {
+          "manifest_cid": "bafkreiasycmsr2qdlxqcfg3yc2conpn3jxmohz7gs55hkseipplhpqsk5i",
+          "area": {
+            "place": "Pflugerville"
+          },
+          "radius_mi": 5,
+          "roof_age_years_min": 15,
+          "sort": "nearest",
+          "limit": 1000
+        }
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 7
+  }
+}

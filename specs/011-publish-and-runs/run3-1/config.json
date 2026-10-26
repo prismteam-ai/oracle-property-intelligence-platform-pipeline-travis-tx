@@ -1,0 +1,52 @@
+{
+  "runId": "travis-full-run3-1-20261025",
+  "startedAt": "2026-10-25T21:17:00.000Z",
+  "finishedAt": "2026-10-25T22:55:00.000Z",
+  "previousManifestCid": "bafkreifndsdibdllvgpzwmif6getzwvc6rupk5tgeak4eypccaw3t7vlfm",
+  "baseManifest": "runs/travis-full-run3-20261025/manifest.json",
+  "countyDir": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched",
+  "permitsDir": "pipeline/data/runs/travis-a11-permits-run3-1-20261026/publish-run3-1-oneof/permits-batched",
+  "austinReceipt": "specs/011-publish-and-runs/run3/austin-receipt.json",
+  "addressPointsReceipt": "specs/011-publish-and-runs/run3/address-points-receipt.json",
+  "carryAddressPoints": true,
+  "linkedPermits": 2008095,
+  "dropLimitationPrefixes": [
+    "Incremental refresh of the Austin permits source",
+    "property_improvement published scope"
+  ],
+  "sourceLimitations": {
+    "austin-3syk-w9eu": [
+      "No new capture since Run 3 (travis-full-run3-20261025): these are Run 3's source facts (incremental pass, 2381886 rows read, watermark 2026-10-24T14:51:37.805Z)"
+    ]
+  },
+  "registryNote": "Comptroller registry loaded 2026-10-22 (342333 rows, data.texas.gov 9cir-efmm, watermark 2026-10-17T10:35:22.788Z, snapshot sha256 53c5974aca826273a03b97a352c4e65609bd71ebce8126b912638e103e8a1cef); each published contractor name was matched by normalised legal name (normalize-name-v1) on 2026-10-25; the result is a run-level count only, never a per-permit identity",
+  "coverageOverrides": {
+    "contractor_resolved": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "0 of 15025 published permits: resolved needs an identifier crosswalk to a registry record and none exists (D-10); a name match is never resolved"
+    },
+    "contractor_candidate": {
+      "count": 130,
+      "derivation": "aggregate_match",
+      "note": "published name matches exactly one active registry legal name; not published per permit, the company stays as printed"
+    },
+    "contractor_ambiguous": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "published name matches two or more active registry legal names"
+    },
+    "contractor_conflicting": {
+      "count": 112,
+      "derivation": "aggregate_match",
+      "note": "published name matches a registry legal name whose status is not active"
+    },
+    "contractor_unresolved": {
+      "count": 14783,
+      "derivation": "aggregate_match",
+      "note": "10473 permits print no contractor (contractor_not_printed); 4310 published names match no registry legal name"
+    }
+  },
+  "correctionNote": "Run 3.1 corrects Run 3 (travis-full-run3-20261025) with no new source capture. County group: every CAR is Run 3's, byte for byte (same CIDs): structure.roof_date is the TCAD built year; owner names are parsed into persons and companies linked by person_has_property and company_has_property; tenure is read from dated sales and TCAD transfer deeds; accounts without a GIS point take a City of Austin address point only on a unique exact match. Property Improvement group (published scope: roofing-classified, decided-status permits only, 15025 rows of 2008095 permits linked to a TCAD account) rebuilt from the same Query DB rows: all 15025 permit records are unchanged; 413 permits that print no contractor company but print a contractor person now carry that name as the contractor company's name, as printed on the permit and not verified (PO 2026-10-26, ERR-72), so 4552 published permits name a contractor. The contractor_* coverage counts are now matched against the loaded Comptroller registry (ERR-73); no per-permit resolution is published. Tables (contract v1.2, ERR-74, PO 2026-10-26): every table of both groups is re-exported from these CARs by elephant-cli export-tables 44bb182 with one patch (pipeline/publish/patches/elephant-cli-export-oneof.patch, sha256 70dfadbe842933f165998860c6c32d80d1a77e4c72243de153d957413abff7c8; it turns dist/services/tables-export.service.js sha256 af8c9c05f1d33872c6e1a0b60afbcf10ae2a93100109395fc2d342de3948207b into sha256 4b5e6a4a28f27a2bb672e80baec2b11c0e5a6798e782bf755ddfeefaee6258fb): a top-level oneOf class (address) gets the union of its branches' properties as columns, so the address table now carries unnormalized_address, city_name, state_code, postal_code and the other address fields. Checked row for row against Run 3 (specs/011-publish-and-runs/run3-1/table-compare.md): every County table holds exactly Run 3's rows (address on its Run 3 columns); the Property Improvement tables hold Run 3's rows plus the 413 contractor companies and links above, and 327 properties rows whose data-group root changed with them. County part bytes and CIDs change only because export-tables cuts row groups by the pending bytes of all tables together. Situs text: 441940 of 441961 properties; owner mailing ZIP: 408833 of 409205 mailing addresses.",
+  "contractorCoverage": "specs/011-publish-and-runs/run3-1/contractor-coverage.json"
+}

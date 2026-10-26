@@ -1,0 +1,41 @@
+{
+  "name": "countylens",
+  "version": "0.0.0",
+  "private": true,
+  "description": "CountyLens Turborepo workspace: data contract, query core, profiles, publish sequence, apps, infra and hosted tests (A-02 R-11, A-03 plan § Project Structure). pipeline/oracle-runtime is its own npm project outside this graph.",
+  "type": "module",
+  "packageManager": "pnpm@10.34.7",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "turbo run typecheck lint test synth",
+    "build": "turbo run build",
+    "synth": "turbo run synth",
+    "typecheck": "node node_modules/typescript-7/bin/tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "test:root": "vitest run --root scripts --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests",
+    "format": "prettier --write --no-error-on-unmatched-pattern packages profiles pipeline/publish apps infra tests/e2e scripts \"*.{json,ts,js,yaml}\"",
+    "format:check": "prettier --check --no-error-on-unmatched-pattern packages profiles pipeline/publish apps infra tests/e2e scripts \"*.{json,ts,js,yaml}\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "@vitest/coverage-v8": "^5.0.5",
+    "dependency-cruiser": "^18.7.0",
+    "elephant-cli": "github:elephant-xyz/elephant-cli#44bb182b9f7f904662e9b33e1fde70bdeab62322",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "stylelint": "^17.16.0",
+    "stylelint-declaration-strict-value": "^1.12.1",
+    "tsx": "^4.23.15",
+    "turbo": "^2.11.10",
+    "typescript": "~6.0.3",
+    "typescript-7": "npm:typescript@^7.0.2",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  }
+}

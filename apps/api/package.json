@@ -1,0 +1,52 @@
+{
+  "name": "@countylens/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "CountyLens tRPC API on Lambda (A-03 plan § Project Structure): runs.summary, query.radius, query.roofAge over @duckdb/node-api and presigned S3 reads of the CID copy; Powertools observability. Bundled by the CDK Api stack (infra, T074) from src/handlers/trpc.ts.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage --passWithNoTests"
+  },
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "5.0.123",
+    "@ai-sdk/provider": "4.0.33",
+    "@aws-lambda-powertools/jmespath": "2.36.0",
+    "@aws-lambda-powertools/logger": "2.36.0",
+    "@aws-lambda-powertools/metrics": "2.36.0",
+    "@aws-lambda-powertools/parameters": "2.36.0",
+    "@aws-lambda-powertools/tracer": "2.36.0",
+    "@aws-sdk/client-cloudwatch-logs": "3.1154.0",
+    "@aws-sdk/client-cognito-identity-provider": "3.1154.0",
+    "@aws-sdk/client-dynamodb": "3.1154.0",
+    "@aws-sdk/client-s3": "3.1154.0",
+    "@aws-sdk/client-sqs": "3.1154.0",
+    "@aws-sdk/client-ssm": "3.1154.0",
+    "@aws-sdk/lib-dynamodb": "3.1154.0",
+    "@aws-sdk/s3-request-presigner": "3.1154.0",
+    "@countylens/contract": "workspace:*",
+    "@countylens/query-core": "workspace:*",
+    "@duckdb/node-api": "1.5.6-r.2",
+    "@middy/core": "7.9.2",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@trpc/server": "11.19.0",
+    "ai": "7.0.150",
+    "aws-jwt-verify": "5.2.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@countylens/profile-travis-austin": "workspace:*",
+    "@types/aws-lambda": "8.10.164",
+    "@types/node": "26.6.5",
+    "aws-sdk-client-mock": "4.1.0",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

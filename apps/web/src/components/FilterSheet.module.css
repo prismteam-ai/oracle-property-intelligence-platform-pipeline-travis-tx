@@ -1,0 +1,436 @@
+/* Explore filter sheet (A-13 T025, FR-018): Atlas § 7 outlined text fields and filter chips,
+   48 px targets. Compact (< 840 px): a "Filters" button opens the controls as a sheet in the
+   flow; expanded (≥ 840 px): the controls always show and the button is hidden. Atlas tokens. */
+
+.sheet {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.toggle,
+.chip {
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface-container-low);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.toggle:focus-visible,
+.chip:focus-visible,
+.input:focus-visible,
+.box:focus-visible,
+.option:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.panel {
+  display: none;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.open {
+  display: grid;
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.label {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+}
+
+/* Explore1440 board: "Open ≥ [any time]" and "Tenure [ ] yrs" sit on one line. */
+.inline {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--space-3);
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.unit,
+.hint,
+.definition {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.unit {
+  flex: none;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--space-9);
+}
+
+/* A 48 × 48 hit area (§ 14.1) around a drawn 20 px box: the native glyph is replaced
+   (appearance: none) so the control is large to touch but not to look at. `font: inherit` stops
+   the UA font (Arial) the control would otherwise compute (ERR-12). */
+.box {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--space-9);
+  height: var(--space-9);
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.box::before {
+  content: "";
+  box-sizing: border-box;
+  width: var(--space-5);
+  height: var(--space-5);
+  border: 2px solid var(--md-sys-color-on-surface-variant);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+}
+
+.box:checked::before {
+  border-color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-primary);
+}
+
+.box:checked::after {
+  content: "";
+  grid-area: 1 / 1;
+  box-sizing: border-box;
+  width: var(--space-2);
+  height: var(--space-3);
+  margin-bottom: var(--space-1);
+  border: solid var(--md-sys-color-on-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.box::before {
+  grid-area: 1 / 1;
+}
+
+.options {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface-container-highest);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  overflow-wrap: anywhere;
+}
+
+/* A-16 T050 (Explore1440 board): chip rows, segmented permit, suggestions, footer. */
+.group {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.group > legend {
+  margin-bottom: var(--space-1);
+  padding: 0;
+}
+
+.chips,
+.segmented,
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.chip,
+.segment,
+.suggestion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.chip {
+  padding: 0 var(--space-3);
+  border-color: var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface);
+}
+
+/* The roof presets and "Other" share one row (Explore1440 board). */
+.chips > .number {
+  width: calc(var(--space-10) + var(--space-5));
+}
+
+.chip.chipOn,
+.segment.segmentOn {
+  border-color: transparent;
+  color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+}
+
+label.chip:focus-within,
+.segment:focus-within,
+.suggestion:focus-visible,
+.textButton:focus-visible,
+.slider:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.segmented {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.segment {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  text-align: center;
+}
+
+.segment + .segment {
+  border-left: 0;
+}
+
+.segment:first-child {
+  border-radius: var(--md-sys-shape-corner-full) 0 0 var(--md-sys-shape-corner-full);
+}
+
+.segment:last-child {
+  border-radius: 0 var(--md-sys-shape-corner-full) var(--md-sys-shape-corner-full) 0;
+}
+
+.number {
+  width: calc(var(--space-10) + var(--space-6));
+  flex: none;
+}
+
+/* D-4: room for the "any time" placeholder of Open ≥ (it was cut to "any tim"). */
+.number[id$="-openYrs"] {
+  width: calc(var(--space-10) * 2);
+}
+
+/* TC-009: a segment / chip's native input covers its whole label (the visible 48 px target),
+   invisible but hit-testable, so a real click (and Playwright's setChecked) reaches it.
+   TC-072: content-box sizing, so the 48 px min-height is the padding box the input fills (with
+   border-box the 1 px borders left the input 46 px tall). */
+.segment,
+label.chip {
+  position: relative;
+  box-sizing: content-box;
+}
+
+.segment > input,
+label.chip > input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  appearance: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.slider {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font: inherit;
+  min-height: var(--space-9);
+  accent-color: var(--md-sys-color-primary);
+}
+
+.suggestions {
+  display: grid;
+}
+
+.suggestion {
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  text-align: left;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.count {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+/* Explore1440 board: the number reads as a title, the words after it as body text. */
+.count > strong {
+  font-family: var(--md-sys-typescale-title-large-font);
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+}
+
+.textButton {
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-primary);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  border-radius: 0;
+  font: inherit;
+  appearance: none;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 840px) {
+  .toggle {
+    display: none;
+  }
+
+  /* Inside the Explore drawer the panel is the drawer's own surface, not a card in a card. */
+  .panel {
+    display: grid;
+    gap: var(--space-3);
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  /* The match count and Clear stay in view at the drawer's foot. */
+  .footer {
+    position: sticky;
+    bottom: calc(-1 * var(--space-3));
+    padding-bottom: var(--space-2);
+    background: var(--md-sys-color-surface);
+  }
+
+  .hiddenWide {
+    display: none;
+  }
+
+  /* Property drawer open (Property1440 board): the controls fold behind the button again. */
+  .folded .toggle {
+    display: block;
+    justify-self: start;
+  }
+
+  .folded .panel {
+    display: none;
+  }
+
+  .folded .panel.open {
+    display: grid;
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "overall": "PASS",
+  "catalog": {
+    "county": "Travis",
+    "slug": "travis",
+    "state": "TX",
+    "fips": "48453"
+  },
+  "gates": [
+    {
+      "gate": "catalog_metadata",
+      "status": "PASS",
+      "evidence": "Travis TX slug=travis fips=48453",
+      "required_action": null
+    },
+    {
+      "gate": "parcel",
+      "status": "PASS",
+      "evidence": "canonical=tcad 2026 certified roll assessed=493246.0 gis=373683.0 discrepancy=24.24%",
+      "required_action": null
+    },
+    {
+      "gate": "permit",
+      "status": "PASS",
+      "evidence": "23/23 jurisdictions classified",
+      "required_action": null
+    },
+    {
+      "gate": "destination",
+      "status": "PASS",
+      "evidence": "destination independently proven",
+      "required_action": null
+    },
+    {
+      "gate": "enrichment",
+      "status": "PASS",
+      "evidence": "BBB advertised-count claim is bounded",
+      "required_action": null
+    }
+  ],
+  "preparation_allowed": true,
+  "execution_allowed": true,
+  "auto_advance_required": true,
+  "required_blocker_actions": [],
+  "next_automated_actions": [
+    "Start the next dependency-ready stage from the durable run manifest without operator confirmation"
+  ],
+  "next_automated_action": "Start the next dependency-ready stage from the durable run manifest without operator confirmation",
+  "next_permissible_automated_action": "Start the next dependency-ready stage from the durable run manifest without operator confirmation",
+  "seed_allowed": true,
+  "ingest_allowed": true,
+  "catalog_path": "pipeline/docs/travis-sources.yaml"
+}

@@ -1,0 +1,20 @@
+Self-hosted web fonts (ERR-46)
+
+Roboto (latin subset, variable, weights 400-700)
+  Source: Google Fonts, https://fonts.google.com/specimen/Roboto
+  Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-3-classic)
+  License: Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+
+Roboto Mono (latin subset, variable, weights 400-500)
+  Source: Google Fonts, https://fonts.google.com/specimen/Roboto+Mono
+  Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)
+  License: Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+
+Material Symbols Rounded (subset of the icon names listed in icons.json; opsz 24, wght 400, FILL 0, GRAD 0)
+  Source: Google Fonts, https://fonts.google.com/icons ; https://github.com/google/material-design-icons
+  Copyright Google LLC
+  License: Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+
+Licensed under the Apache License, Version 2.0; you may not use these files except in compliance
+with the License. Unless required by applicable law or agreed to in writing, the fonts are
+distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.

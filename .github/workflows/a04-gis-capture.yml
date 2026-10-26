@@ -1,0 +1,97 @@
+# A-04 D-2 (contracts/gis-runner.md, ARD § 8): page the Travis County GIS parcel layer from a
+# GitHub-hosted US runner, because the operator machine never reaches the host (geo block,
+# docs/evidence/A-01-us-gis-runner.md). Fetch-only: IDs + geometry through the vendored kit
+# ArcGIS adapter (travis/gis/runner-fetch.ts); no transform, no Query DB, no publish, no secret.
+#
+# Push-triggered on the story branch when this file or runner-config.json changes (a manual
+# dispatch input would need the file on main). The mode is the `mode` field of
+# runner-config.json: push 1 "pilot" (metadata, count, ids, one page), push 2 "full". The lead
+# sets `"enabled": false` in runner-config.json after the full run: the `gate` job reads it and
+# the capture job runs only while it is true (default true), so a later touch of the workflow or
+# the config cannot repeat a finished full capture. The artifact is downloaded with
+# `gh run download <id> -D pipeline/data/raw/gis/us-runner-<id>` and imported offline.
+name: a04-gis-capture
+
+on:
+  push:
+    branches: ["004-property-backbone"]
+    paths:
+      - ".github/workflows/a04-gis-capture.yml"
+      - "pipeline/oracle-runtime/travis/gis/runner-config.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gis-pages
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      enabled: ${{ steps.cfg.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read runner-config.json enabled flag (default true)
+        id: cfg
+        run: |
+          enabled=$(jq -r 'if .enabled == false then "false" else "true" end' pipeline/oracle-runtime/travis/gis/runner-config.json)
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
+
+  capture:
+    needs: gate
+    if: ${{ needs.gate.outputs.enabled == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: pipeline/oracle-runtime
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Egress country only; the runner IP is never logged.
+      - name: Runner egress location
+        run: |
+          mkdir -p out
+          curl -s -m 10 https://www.cloudflare.com/cdn-cgi/trace | grep '^loc=' | tee out/egress.txt
+
+      - name: Install
+        run: npm ci
+
+      # Resume (AC-11): completed pages and their checkpoints from an earlier attempt. The kit
+      # re-checks each checkpoint's snapshot and objectIds digests, so a stale one is refetched.
+      - name: Restore page checkpoints
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            pipeline/oracle-runtime/out/checkpoints
+            pipeline/oracle-runtime/out/pages
+          key: gis-pages-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            gis-pages-
+
+      - name: Page the GIS layer (IDs + geometry only)
+        run: npx tsx travis/gis/runner-fetch.ts --config travis/gis/runner-config.json --out out
+
+      - name: Save page checkpoints
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            pipeline/oracle-runtime/out/checkpoints
+            pipeline/oracle-runtime/out/pages
+          key: gis-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Keep the capture as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a04-gis-capture
+          path: pipeline/oracle-runtime/out/
+          retention-days: 7

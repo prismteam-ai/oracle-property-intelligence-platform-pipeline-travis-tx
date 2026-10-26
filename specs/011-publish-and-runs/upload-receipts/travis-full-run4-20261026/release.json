@@ -1,0 +1,100 @@
+{
+  "tag": "run-travis-full-run4-20261026",
+  "manifestCid": "bafkreig76n7d6oiaxwmzu2mpoww4lttnr2mkawmgkqqnekxl7x7cf4hsha",
+  "adopted": true,
+  "reusedFrom": {
+    "travis-county-b01.car": "run-travis-full-run3-20261025",
+    "travis-county-b02.car": "run-travis-full-run3-20261025",
+    "travis-county-b03.car": "run-travis-full-run3-20261025",
+    "travis-county-b04.car": "run-travis-full-run3-20261025",
+    "travis-county-b05.car": "run-travis-full-run3-20261025",
+    "travis-county-b06.car": "run-travis-full-run3-20261025",
+    "travis-county-b07.car": "run-travis-full-run3-20261025",
+    "travis-county-b08.car": "run-travis-full-run3-20261025",
+    "travis-county-b09.car": "run-travis-full-run3-20261025",
+    "travis-county-b10.car": "run-travis-full-run3-20261025",
+    "travis-permits-b01.car": "run-travis-full-run3-1-20261025",
+    "travis-permits-b02.car": "run-travis-full-run3-1-20261025",
+    "travis-permits-b03.car": "run-travis-full-run3-1-20261025",
+    "travis-permits-b04.car": "run-travis-full-run3-1-20261025",
+    "travis-permits-b05.car": "run-travis-full-run3-1-20261025"
+  },
+  "assets": [
+    {
+      "name": "travis-county-b01.car",
+      "size": 403862839,
+      "sha256": "07385b684df56f98c6a6db50bc5d8241f471100ea32e2d70452a78a7b3cb433d"
+    },
+    {
+      "name": "travis-county-b02.car",
+      "size": 414497863,
+      "sha256": "58613d3148eb0308a955f677de84df8cd0d88ef785e27f5a22fb5dea303bc1b9"
+    },
+    {
+      "name": "travis-county-b03.car",
+      "size": 427930341,
+      "sha256": "9377102ee35f64297256474996beef64495acdeff63cdaec8a5d6cf5545c25cf"
+    },
+    {
+      "name": "travis-county-b04.car",
+      "size": 430652623,
+      "sha256": "d063f77edf8acb3c7b4460e3e10cd2f549e70dcded019887608fcd9df671d0c4"
+    },
+    {
+      "name": "travis-county-b05.car",
+      "size": 426939485,
+      "sha256": "b15510e87c6a86acfddd160e6f2e6163ce5d50cb052afbb460238fc575d84e7c"
+    },
+    {
+      "name": "travis-county-b06.car",
+      "size": 409865233,
+      "sha256": "81e0e73125b3355b415366b3fdad37d01678356ced57f3ca5dc44c4ef505e953"
+    },
+    {
+      "name": "travis-county-b07.car",
+      "size": 392177838,
+      "sha256": "d7b0b2e5f057abe5ba8f3533f32104fc2511aa696011df88fc2c70b30174153f"
+    },
+    {
+      "name": "travis-county-b08.car",
+      "size": 372854478,
+      "sha256": "ed6bcd9881acfa83ef8d4fb0d851b4467ca6a99174d888d85ea3ae2639412c47"
+    },
+    {
+      "name": "travis-county-b09.car",
+      "size": 358056745,
+      "sha256": "0e89f427413f5344e6edd17521823feb0318e4c7f28b0690bf536c870159f369"
+    },
+    {
+      "name": "travis-county-b10.car",
+      "size": 336229196,
+      "sha256": "f417d48a1060ada419393d07493cae5641940d954d1951e208aa36fe47892d17"
+    },
+    {
+      "name": "travis-permits-b01.car",
+      "size": 6315233,
+      "sha256": "31269d5fa493a00e37da898a1a2a8430d496d3639ad8ace698f8cb8733a20a86"
+    },
+    {
+      "name": "travis-permits-b02.car",
+      "size": 6061999,
+      "sha256": "1c04a4942e21d6a6296094af628b4b51effdfd27e7df0f25c982f2bf5d850673"
+    },
+    {
+      "name": "travis-permits-b03.car",
+      "size": 6262888,
+      "sha256": "b559c190f97936b9f1b2795cc1d54fdccd1054a79e367af105b67df828a94eda"
+    },
+    {
+      "name": "travis-permits-b04.car",
+      "size": 7014571,
+      "sha256": "17f76a59dda388879a48f4d80fffb806eba58c2924dfaca1542763f6d3ca3b1b"
+    },
+    {
+      "name": "travis-permits-b05.car",
+      "size": 7457916,
+      "sha256": "4c4aea3c62f2f88c11852de7f9a7826b74c30724d956b5bfc86aecb276258c6e"
+    }
+  ],
+  "recordedAt": "2026-10-26T12:38:03.934Z"
+}

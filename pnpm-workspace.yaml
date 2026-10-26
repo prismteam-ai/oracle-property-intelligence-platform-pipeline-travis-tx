@@ -1,0 +1,26 @@
+# Turborepo workspace (A-03 plan § Project Structure, AD-23). pipeline/oracle-runtime stays its
+# own npm project outside this graph (A-02 research R-11): the vendored kit runtime runs as
+# provided and its package-lock.json is the pinned A-01 evidence. Members that do not exist yet
+# (apps/*, infra, tests/e2e) are created by later A-03 tasks.
+packages:
+  - packages/*
+  - profiles/*
+  - pipeline/publish
+  - pipeline/bridge
+  - apps/*
+  - infra
+  - tests/e2e
+  - tests/agent
+
+# Packages allowed to run install/build scripts. The pinned elephant-cli GitHub build
+# compiles itself on install (prepare); esbuild is used by tsx.
+onlyBuiltDependencies:
+  - "@elephant-xyz/cli@https://codeload.github.com/elephant-xyz/elephant-cli/tar.gz/44bb182b9f7f904662e9b33e1fde70bdeab62322"
+  - esbuild
+
+# Resolve the linux-arm64 (glibc) variants of platform-specific packages next to the current
+# machine's, so the Lambda asset (arm64, research R-03) and CI build from the same lockfile.
+supportedArchitectures:
+  os: [current, linux]
+  cpu: [current, arm64]
+  libc: [current, glibc]

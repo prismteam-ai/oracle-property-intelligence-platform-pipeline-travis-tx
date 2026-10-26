@@ -1,0 +1,29 @@
+/* Provenance line (A-03 T055): Atlas § 8, body-small, on-surface-variant, leading icon. Long
+   URLs and CIDs wrap inside the line (no horizontal scroll at 390 px). */
+
+/* The icon sits on the first text line's baseline: a 48 px CID copy button in that line made it
+   48 px tall, and a top-aligned icon floated above the text. */
+.line {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  overflow-wrap: anywhere;
+}
+
+.text {
+  min-width: 0;
+}
+
+/* ERR-47: the source link is a 48 px target (D5) made of block padding on an inline box, so the
+   line keeps the 16 px text height (an inline-flex min-height box made its line 48 px high). */
+.link {
+  display: inline;
+  padding-block: var(--space-4);
+  color: var(--md-sys-color-primary);
+}

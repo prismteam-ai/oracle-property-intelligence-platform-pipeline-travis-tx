@@ -1,0 +1,52 @@
+/* Error banner (A-03 T055): Atlas § 9 Error, error-container with the on-error-container text,
+   corner-medium, padding 16; "Retry" is an Atlas text button with a 48 px touch target. */
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  padding: var(--space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  color: var(--md-sys-color-on-error-container);
+  background-color: var(--md-sys-color-error-container);
+}
+
+.message {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  /* A CID or URL in the message wraps inside the banner instead of widening the page. */
+  overflow-wrap: anywhere;
+}
+
+.retry {
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-error-container);
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
+
+.retry:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-error-container) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}

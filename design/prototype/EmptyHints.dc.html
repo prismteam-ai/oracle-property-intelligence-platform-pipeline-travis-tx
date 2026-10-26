@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empty-state hints</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 960px; height: 900px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 12px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Empty-state hints</h2>
+<p style="margin: 0 0 4px; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Every empty state has a title, one line that says why it is empty, and one next step. An empty result is never shown as “no”.</p>
+<div class="atlas-table-wrap" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Where</th><th>Title</th><th>One-line hint</th><th>Next step</th></tr></thead>
+<tbody>
+<tr><td>Explore, no matches</td><td>No properties match here</td><td>Nothing within 5 mi has a roof 15 yrs or older; 3 places miss by one filter.</td><td>Widen to 7 mi</td></tr>
+<tr><td>Search, before typing</td><td>Search the whole county</td><td>Try an address, owner, contractor, permit number or a plain question.</td><td>Suggested starting points</td></tr>
+<tr><td>Search, no results</td><td>No exact match for “[query]”</td><td>Check the spelling, or let the helper look for something close.</td><td>Ask the helper instead</td></tr>
+<tr><td>Property, permits</td><td>No permits on record</td><td>Austin permits list none for this parcel at Run 3; that does not prove no work was done.</td><td>Open the source</td></tr>
+<tr><td>Property, BBB</td><td>BBB: Blocked · bbb.org refused the check (403) on 2026-10-17</td><td>BBB: Blocked · bbb.org refused the check (403) on 2026-10-17.</td><td>See source limits</td></tr>
+<tr><td>Runs</td><td>No runs yet</td><td>The first pipeline run will appear here with its sources, counts and CID.</td><td>How runs work</td></tr>
+<tr><td>Coverage, one source</td><td>No records from this source</td><td>It did not load in Run 3; other sources are unaffected.</td><td>See limitations</td></tr>
+<tr><td>Manifest</td><td>Nothing published yet</td><td>Files appear when a run publishes, each with a CID you can verify.</td><td>Open Runs</td></tr>
+<tr><td>SQL</td><td>Run a query to see rows</td><td>Start from a sample query, or browse the four tables in the schema.</td><td>Insert a sample query</td></tr>
+<tr><td>Activity</td><td>Not enough activity yet</td><td>The weekly summary appears once a week of searches is logged.</td><td>Start a search</td></tr>
+<tr><td>AI helper</td><td>Ask about what is on screen</td><td>I answer from the published data and cite every record I use.</td><td>Suggested questions</td></tr>
+</tbody>
+</table>
+</div>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Empty-state hints" desktop="EmptyHints.dc.html" tablet="" mobile="Explore390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":960,"height":900}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

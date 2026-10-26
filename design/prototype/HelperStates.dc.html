@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Helper states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.st{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:var(--md-sys-shape-corner-large);background:var(--md-sys-color-surface-container);font-size:14px;line-height:20px}
+.st h2{margin:0;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--md-sys-color-on-surface-variant);font-weight:500}
+.step{display:flex;align-items:center;gap:8px;font-size:13px}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1080px; box-sizing: border-box; padding: 32px; background: var(--md-sys-color-surface); font-family: var(--font-plain); color: var(--md-sys-color-on-surface); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px">
+
+<section class="st" aria-label="Working state">
+<h2>Working · one answer, no streaming</h2>
+<div class="atlas-msg atlas-msg--user" style="align-self: flex-end">Roofs older than 15 years within 5 mi of Pflugerville</div>
+<div class="atlas-msg atlas-msg--agent" style="max-width: 100%; display: flex; flex-direction: column; gap: 8px">
+<div class="step" role="status"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true" style="color: var(--md-sys-color-primary)">progress_activity</span><b style="font-weight: 500">Working…</b><span class="num" aria-label="7 seconds elapsed" style="color: var(--md-sys-color-on-surface-variant)">7 s</span></div>
+<div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Working"><i></i></div>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">The answer and all its steps arrive together. Up to 6 steps; it stops at 25 s.</span>
+<button class="atlas-btn atlas-btn--text" style="align-self: flex-start" onClick="{{__say.k1}}">Cancel</button>
+</div>
+</section>
+
+<section class="st" aria-label="Empty state">
+<h2>Empty · no matches, close ones offered</h2>
+<div class="atlas-msg atlas-msg--user" style="align-self: flex-end">Roofs older than 40 years within 1 mi of Pflugerville</div>
+<div class="atlas-msg atlas-msg--agent" style="max-width: 100%; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0">No properties match. The oldest roof within 1 mi is <b>31 years</b> <a class="atlas-cite" href="ExploreQ-ai.dc.html">[1]</a>.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><button class="atlas-chip" onClick="{{__say.k2}}">Try older than 25 yrs · 42</button><button class="atlas-chip" onClick="{{__say.k3}}">Widen to 5 mi</button></div>
+</div>
+</section>
+
+<section class="st" aria-label="Error state">
+<h2>Error</h2>
+<div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body"><b style="font-weight: 500">The query couldn't finish.</b> Run 3 data didn't load in your browser. Your question is kept.</div></div>
+<div style="display: flex; gap: 8px"><button class="atlas-btn atlas-btn--filled" onClick="{{__say.k4}}">Try again</button><a class="atlas-btn atlas-btn--text" style="text-decoration: none" href="ExploreQ-sql.dc.html">Open in SQL</a></div>
+</section>
+
+<section class="st" aria-label="Partial state">
+<h2>Partial · a source is missing</h2>
+<div class="atlas-msg atlas-msg--agent" style="max-width: 100%; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0">14 long-open permits found <a class="atlas-cite" href="ExploreQ-ai.dc.html">[1–14]</a>. Contractor ratings are left out.</p>
+<div class="atlas-missing" role="note" style="font-size: 13px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">warning</span><div>BBB: Blocked · bbb.org refused the check (403) on 2026-10-17, so no ratings. <a href="Coverage1440.dc.html">See Coverage</a></div></div>
+</div>
+</section>
+
+<section class="st" aria-label="Rate-limited state">
+<h2>Rate-limited</h2>
+<div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">hourglass_top</span><div class="atlas-banner__body"><b style="font-weight: 500">Too many questions in a short time.</b> You can ask again in 40 s. Filters, SQL and the list keep working.</div></div>
+<div class="atlas-progress" role="progressbar" aria-label="Wait time" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><i style="width: 60%"></i></div>
+<label class="atlas-chat-input" style="border-radius: var(--md-sys-shape-corner-extra-large); background: var(--md-sys-color-surface-container-high); opacity: .6"><input placeholder="Available in 40 s" aria-label="Message the helper" disabled><button class="atlas-icon-btn" aria-label="Send" disabled><span class="material-symbols-rounded" aria-hidden="true">send</span></button></label>
+</section>
+
+<section class="st" aria-label="Cannot answer state">
+<h2>Can't answer · no data for it</h2>
+<div class="atlas-msg atlas-msg--user" style="align-self: flex-end">What did 101 Sample Ln sell for?</div>
+<div class="atlas-msg atlas-msg--agent" style="max-width: 100%; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0">I can't answer that. CountyLens has no sale-price data: Texas does not require prices to be disclosed. I can give the last sale date, 2011-07-18 <a class="atlas-cite" href="ExploreQ-ai.dc.html">[1]</a>.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><button class="atlas-chip" onClick="{{__say.k5}}">How long has the owner held it?</button><button class="atlas-chip" onClick="{{__say.k6}}">What data is there?</button></div>
+</div>
+</section>
+
+<section class="st" aria-label="Took too long state">
+<h2>Took too long · stopped at 25 s</h2>
+<div class="atlas-msg atlas-msg--user" style="align-self: flex-end">Every out-of-area owner with an open permit and a BBB rating in the county</div>
+<div class="atlas-banner atlas-banner--warning" role="alert"><span class="material-symbols-rounded" aria-hidden="true">timer_off</span><div class="atlas-banner__body"><b style="font-weight: 500">Took too long.</b> The answer stopped at the 25 s limit. Nothing was counted against your questions, and your question is kept.</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><button class="atlas-btn atlas-btn--filled" onClick="{{__say.k7}}">Try again</button><button class="atlas-btn atlas-btn--outlined" onClick="{{__say.k8}}">Use Filters instead</button></div>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Use Filters instead keeps the area, radius and the parts already read from the question.</span>
+</section>
+<p style="grid-column: 1 / -1; margin: 0; font-size: 13px; color: var(--md-sys-color-on-surface-variant)">Populated state: Explore in AI mode (ExploreQ-ai). These are its working, empty, error, partial, rate-limited, can't-answer and took-too-long states. Live board with the timeout: ExploreQ-aislow. All answers in these boards are Sample.</p>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Helper · states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1109}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Cancel” is drawn but not wired in this prototype.", "k2": "“Try older than 25 yrs · 42” is drawn but not wired in this prototype.", "k3": "“Widen to 5 mi” is drawn but not wired in this prototype.", "k4": "“Try again” is drawn but not wired in this prototype.", "k5": "“How long has the owner held it?” is drawn but not wired in this prototype.", "k6": "“What data is there?” is drawn but not wired in this prototype.", "k7": "“Try again” is wired in ExploreQ-aislow.", "k8": "“Use Filters instead” is wired in ExploreQ-aislow."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

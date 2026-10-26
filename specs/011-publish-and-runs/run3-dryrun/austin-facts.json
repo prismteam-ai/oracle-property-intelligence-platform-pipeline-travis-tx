@@ -1,0 +1,27 @@
+{
+  "schema": "oracle-travis-austin-incremental-facts.v1",
+  "jobId": "travis-a04-permits-incremental-20261025014305-dryrun",
+  "watermarkUsed": "2026-10-21T14:42:23.154Z",
+  "watermarkNew": "2026-10-24T14:51:37.805Z",
+  "recordsRead": 2381886,
+  "totalAfter": 2381886,
+  "totalBefore": 2381226,
+  "capturedAt": "2026-10-25T02:40:03.928Z",
+  "mode": "full_pass",
+  "restampDetected": true,
+  "delta": {
+    "added": 660,
+    "changed": 9922,
+    "removed": 0
+  },
+  "unchanged": 2371304,
+  "removalDetection": "keyset_diff",
+  "permitLink": {
+    "linkedPermits": 2008095,
+    "permits_no_tcad_geoid": 275830,
+    "permits_no_tcad_id": 31824,
+    "permits_ambiguous_geoid": 36568,
+    "permits_address_unmatched": 29480,
+    "permits_ambiguous_address": 89
+  }
+}

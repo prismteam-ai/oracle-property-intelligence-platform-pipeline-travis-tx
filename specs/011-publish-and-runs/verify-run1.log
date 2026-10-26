@@ -1,0 +1,11 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' scripts/verify-manifest.ts runs/travis-full-run1-20261023/manifest.json --verbose
+GET https://gateway.pinata.cloud/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu
+FAIL https://gateway.pinata.cloud manifest cid=bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu HTTP 404
+GET https://ipfs.filebase.io/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu
+GET https://ipfs.filebase.io/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu (attempt 2)
+GET https://ipfs.filebase.io/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu (attempt 3)
+GET https://ipfs.filebase.io/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu (attempt 4)
+GET https://ipfs.filebase.io/ipfs/bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu (attempt 5)
+FAIL https://ipfs.filebase.io manifest cid=bafkreiddef7ssybq6m4wpmah7adposaxbiawaxcmqndzk36wyhd7k4h6gu HTTP 504 after 5 attempts
+VERIFICATION FAILED: manifest bytes differ or are unreachable; artifacts not checked

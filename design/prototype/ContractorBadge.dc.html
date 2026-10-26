@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contractor badge</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.cb{display:flex;flex-direction:column;gap:4px;min-width:0;font-family:var(--font-plain);font-size:13px;line-height:18px;color:var(--md-sys-color-on-surface)}
+.cb-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-width:0}
+.cb-sub{color:var(--md-sys-color-on-surface-variant)}
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: {{pad}}; box-sizing: border-box; background: var(--md-sys-color-surface)">
+<sc-if value="{{showHead}}" hint-placeholder-val="{{ false }}"><div style="display: flex; flex-direction: column; gap: 2px"><b style="font: 500 16px/24px var(--font-plain); color: var(--md-sys-color-on-surface)">Contractor badge · five identity states (AD-05)</b><span style="font: 13px/18px var(--font-plain); color: var(--md-sys-color-on-surface-variant)">The name is shown as printed on the permit and never becomes a company record. Only an official registry identifier (the TX Comptroller taxpayer number) resolves a contractor; a name match, even exact and unique, stays Candidate (PO, 2026-10-19). There is no licence line: no Texas roofing licence register exists (AD-06). BBB has four states: Rated (with its letter), Not found, Blocked, Not checked (AD-07); in Run 3 bbb.org refused every check.</span></div></sc-if>
+<ul aria-label="Contractor identity" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: {{cols}}; gap: 12px">
+<sc-for list="{{items}}" as="b" hint-placeholder-count="1">
+<li class="cb" role="group" aria-label="Contractor: {{b.label}}" style="{{b.box}}">
+<sc-if value="{{b.named}}" hint-placeholder-val="{{ true }}"><span>Contractor <b style="font-weight: 500">“{{b.printed}}”</b> <span class="cb-sub">as printed on permit</span></span>
+<span class="cb-row"><span class="atlas-pill {{b.cls}}" title="{{b.tip}}"><span class="material-symbols-rounded" aria-hidden="true">{{b.icon}}</span>{{b.label}}</span><span>{{b.reason}}</span></span>
+<sc-if value="{{b.hasCo}}" hint-placeholder-val="{{ false }}"><span class="cb-sub">Company {{b.co}} · <span class="atlas-cid" style="background: none; padding: 0">{{b.cid}}</span></span></sc-if>
+<span class="cb-sub">BBB: {{b.bbb}}</span></sc-if>
+<sc-if value="{{b.none}}" hint-placeholder-val="{{ false }}"><span class="cb-sub">No contractor printed on permit</span><span class="cb-sub">No badge and no BBB line: there is no name to match.</span></sc-if>
+</li>
+</sc-for>
+</ul>
+<sc-if value="{{showHead}}" hint-placeholder-val="{{ false }}"><div style="display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap">
+<div style="width: 390px; flex: none; box-sizing: border-box; padding: 16px; background: var(--md-sys-color-surface-container-low); border-radius: var(--md-sys-shape-corner-medium); display: flex; flex-direction: column; gap: 8px">
+<span class="cb-sub" style="font-size: 12px; font-weight: 500">390 · inside a key–value card (Property detail, permits)</span>
+<div class="cb" role="group" aria-label="Permit 2020-047812 BP" style="padding: 12px 14px; border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px"><b style="flex: 1; font-weight: 500">2020-047812 BP</b><span class="atlas-pill atlas-pill--warning">Stalled · source says Expired</span></div>
+<div class="atlas-kv"><span>Contractor, as printed on permit</span><span>SAMPLE ROOFING CO</span></div>
+<div class="atlas-kv" style="align-items: flex-start"><span>Identity</span><span class="cb-row" style="justify-content: flex-end"><span class="atlas-pill atlas-pill--info" title="Name matches stay Candidate. Only an official ID resolves a contractor."><span class="material-symbols-rounded" aria-hidden="true">help</span>Candidate</span><span>Likely match on name and address, not proof</span></span></div>
+<div class="atlas-kv"><span>BBB</span><span>Blocked · bbb.org refused the check (403)</span></div>
+</div>
+</div>
+<span class="cb-sub" style="flex: 1; min-width: 240px; padding-top: 16px">Below 600 px the badge sits in the value column of a key–value card and wraps under its pill; the reason never truncates. Hover or focus a Candidate pill for “Name matches stay Candidate. Only an official ID resolves a contractor.”</span>
+</div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["all","resolved","candidate","ambiguous","conflicting","unresolved","none"],"default":"all"},"printed":{"editor":"text","default":""},"bbb":{"editor":"enum","options":["rated","not_found","blocked","not_checked"],"default":"not_checked"},"device":{"editor":"enum","options":["desktop","mobile"],"default":"desktop"},"$preview":{"width":1296,"height":648}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.props.state ?? 'all', mob = (this.props.device ?? 'desktop') === 'mobile';
+    // Shared definition: Explore1440 uses the same five variants (Component.CB there).
+    const V = {
+      resolved: { cls: 'atlas-pill--success', icon: 'verified', label: 'Resolved', reason: 'Comptroller taxpayer no. 32041178552 matched', printed: 'EXAMPLE ROOFING LLC', co: 'Example Roofing, LLC', cid: 'bafybei…c0m1', bbb: 'blocked' },
+      candidate: { cls: 'atlas-pill--info', icon: 'help', label: 'Candidate', reason: 'Likely match on name and address, not proof', printed: 'SAMPLE ROOFING CO', bbb: 'blocked' },
+      ambiguous: { cls: 'atlas-pill--warning', icon: 'call_split', label: 'Ambiguous', reason: '2 Comptroller companies fit this name', printed: 'SAMPLE EXTERIORS', bbb: 'blocked' },
+      conflicting: { cls: 'atlas-pill--danger', icon: 'sync_problem', label: 'Conflicting', reason: 'Sources disagree on which company this is', printed: 'PLACEHOLDER ROOF & GUTTER', bbb: 'blocked' },
+      unresolved: { cls: 'atlas-pill--unavailable', icon: 'link_off', label: 'Unresolved', reason: 'No Comptroller match. No Texas roofing licence register exists', printed: 'J EXAMPLE', bbb: 'not_checked' },
+      none: { cls: '', icon: '', label: 'No contractor', reason: '', printed: '', bbb: 'not_checked' }
+    };
+    const TIP = 'Name matches stay Candidate. Only an official ID resolves a contractor.';
+    const BBB = { rated: 'Rated A−', not_found: 'Not found', blocked: 'Blocked · bbb.org refused the check (403), 2026-10-17', not_checked: 'Not checked' };
+    const all = st === 'all';
+    const keys = all ? Object.keys(V) : [V[st] ? st : 'unresolved'];
+    const box = all ? 'padding: 12px; border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium)' : '';
+    return {
+      showHead: all, pad: all ? '16px' : '0', cols: all && !mob ? 'repeat(3, minmax(0, 1fr))' : 'minmax(0, 1fr)',
+      items: keys.map((k) => { const v = V[k]; return { ...v, named: k !== 'none', none: k === 'none', tip: k === 'candidate' ? TIP : '', printed: (!all && this.props.printed) || v.printed, hasCo: k === 'resolved', bbb: BBB[(!all && this.props.bbb) || v.bbb], box: box }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

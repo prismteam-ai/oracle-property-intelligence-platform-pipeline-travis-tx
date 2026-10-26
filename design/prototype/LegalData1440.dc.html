@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data use and licences</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1000px; overflow: hidden; background: var(--md-sys-color-surface); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-haspopup="dialog" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 936px; box-sizing: border-box; padding-top: 16px">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 896px; box-sizing: border-box; padding: 40px 80px; display: flex; gap: 56px; background: var(--md-sys-color-surface-container-low); overflow: hidden">
+<nav aria-label="On this page" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 20px">
+<span style="font-weight: 500; color: var(--md-sys-color-on-surface-variant); margin-bottom: 8px">On this page</span>
+<a href="#">Your rights</a><a href="#">Sources and licences</a><a href="#">How to cite</a><a href="#">Corrections</a>
+<span style="margin-top: 24px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)">Related</span>
+<a href="LegalTerms1440.dc.html">Terms</a><a href="LegalPrivacy1440.dc.html">Privacy</a>
+</nav>
+<article style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Data use and licences</h2>
+<div class="atlas-prov">Last updated [DATE] · licences checked at Run 3</div>
+<div class="atlas-banner atlas-banner--info"><span class="material-symbols-rounded" aria-hidden="true">info</span><div class="atlas-banner__body">Sample text. Licence names in brackets are placeholders until each source is confirmed.</div></div>
+<h3 style="margin: 8px 0 0; font-size: 18px; line-height: 24px; font-weight: 500">Your rights</h3>
+<p style="margin: 0; max-width: 760px">You may reuse each dataset under its own licence below. Files CountyLens derives from them are published by CID under [LICENCE FOR DERIVED DATA].</p>
+<h3 style="margin: 8px 0 0; font-size: 18px; line-height: 24px; font-weight: 500">Sources and licences</h3>
+<div class="atlas-table-wrap" style="border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Source</th><th>Provides</th><th>Licence or terms</th><th>Use notes</th></tr></thead>
+<tbody>
+<tr><td>City of Austin open data</td><td>Building permits, <span class="num">2,380,507</span> rows</td><td>[Licence as published]</td><td>Roofing classified from descriptions</td></tr>
+<tr><td>Travis Central Appraisal District</td><td>Property, owner, sale</td><td>[Terms as published]</td><td>Owner names are public records</td></tr>
+<tr><td>BBB</td><td>Contractor ratings, where available</td><td>[Terms]</td><td><span class="atlas-pill atlas-pill--unavailable"><span class="material-symbols-rounded" aria-hidden="true">do_not_disturb_on</span>Source blocked at Run 3</span></td></tr>
+<tr><td>TX Comptroller franchise-tax (9cir-efmm)</td><td>Businesses</td><td>Public open data</td><td>[Confirm terms]</td></tr><tr><td>Overture places</td><td>Places</td><td>CDLA-Permissive-2.0 / ODbL by theme</td><td>Attribution in Data use</td></tr>
+<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"><tr><td>OpenStreetMap · CRM preview</td><td>Base map (Map view, prototype only)</td><td>ODbL</td><td>Credit shown on the map</td></tr></sc-if>
+</tbody>
+</table>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 18px; line-height: 24px; font-weight: 500">How to cite</h3>
+<p style="margin: 0; max-width: 760px">Name the source and the CID, for example: “Austin permits, collected [DATE], CID bafybei…q4xa (Sample).”</p>
+</article>
+</main>
+
+<footer style="position: absolute; left: 80px; top: 960px; width: 1360px; height: 40px; box-sizing: border-box; padding: 0 24px; display: flex; align-items: center; gap: 24px; background: var(--md-sys-color-surface); border-top: 1px solid var(--md-sys-color-outline-variant); font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">
+<a href="LegalTerms1440.dc.html">Terms</a><a href="LegalPrivacy1440.dc.html">Privacy</a><a href="#" aria-current="page" style="font-weight: 500">Data licences</a>
+<span style="flex: 1"></span>
+<span>Street View: coming soon<sc-if value="{{mapOn}}" hint-placeholder-val="{{ false }}"> · Map © OpenStreetMap contributors (CRM preview)</sc-if></span>
+</footer>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Data use and licences · 1440" desktop="LegalData1440.dc.html" tablet="LegalData768.dc.html" mobile="LegalData390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  // Prototype-only Map view switch (ProtoBar): map-only content shows only when it is on. Do not ship.
+  static mapOn() { try { if (typeof window.__clMapView === 'boolean') return window.__clMapView; } catch (e) {} try { const u = new URLSearchParams(window.location.search).get('mapView'); if (u === '1' || u === 'on') return true; if (u === '0' || u === 'off') return false; } catch (e) {} try { return window.localStorage.getItem('countylens.proto.mapView') === '1'; } catch (e) { return false; } }
+  componentDidMount() { this.onMap = (e) => { try { if (e && e.type === 'storage') window.__clMapView = undefined; } catch (er) {} this.forceUpdate(); }; try { window.addEventListener('storage', this.onMap); window.addEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  componentWillUnmount() { try { window.removeEventListener('storage', this.onMap); window.removeEventListener('cl-mapview', this.onMap); } catch (e) {} }
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { mapOn: Component.mapOn(), mapOff: !Component.mapOn(), __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

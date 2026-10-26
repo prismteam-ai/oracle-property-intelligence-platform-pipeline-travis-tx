@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin sign-in</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}
+.as-field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--md-sys-color-on-surface-variant)}
+.as-field input{height:48px;box-sizing:border-box;padding:0 12px;border:1px solid var(--md-sys-color-outline);border-radius:var(--md-sys-shape-corner-extra-small);background:var(--md-sys-color-surface);color:var(--md-sys-color-on-surface);font:400 16px var(--font-plain)}
+.as-field input[aria-invalid="true"]{border-color:var(--md-sys-color-error)}
+</style>
+</helmet>
+<div style="position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: {{W}}px; box-sizing: border-box; padding: 0 {{pad}}px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<a class="atlas-icon-btn" aria-label="Back to Explore" href="{{backHref}}" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span></a>
+<h1 class="atlas-top-app-bar__title" style="margin: 0; flex: 1">CountyLens</h1>
+</header>
+<main style="position: absolute; left: 0; top: 64px; width: {{W}}px; height: {{mainH}}px; box-sizing: border-box; padding: 16px; display: grid; place-items: {{place}}">
+<section class="atlas-card atlas-card--outlined" aria-labelledby="as-h" style="width: 100%; max-width: 440px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; padding: 28px; background: var(--md-sys-color-surface); border-radius: var(--md-sys-shape-corner-extra-large)">
+<span class="material-symbols-rounded" aria-hidden="true" style="font-size: 32px; color: var(--md-sys-color-primary)">{{heroIcon}}</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><h2 id="as-h" style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">{{title}}</h2><p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">{{lead}}</p></div>
+<div role="note" class="atlas-banner atlas-banner--info" style="font-size: 13px; line-height: 18px"><span class="material-symbols-rounded" aria-hidden="true">info</span><div class="atlas-banner__body">{{note}}</div></div>
+<sc-if value="{{stEmail}}" hint-placeholder-val="{{ true }}">
+<label class="as-field">{{emailLabel}}<input type="email" autocomplete="email" value="{{email}}" onInput="{{onEmail}}" onChange="{{onEmail}}" aria-invalid="{{bad}}" aria-describedby="as-err"></label>
+<sc-if value="{{showErr}}" hint-placeholder-val="{{ false }}"><span id="as-err" role="alert" style="display: flex; gap: 6px; font-size: 12px; line-height: 16px; color: var(--md-sys-color-error)"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">error</span>{{err}}</span></sc-if>
+<button class="atlas-btn atlas-btn--filled" onClick="{{send}}" style="align-self: stretch"><span class="material-symbols-rounded" aria-hidden="true">mail</span>Email me a code</button>
+</sc-if>
+<sc-if value="{{stSending}}" hint-placeholder-val="{{ false }}">
+<div role="status" aria-live="polite" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px"><div class="atlas-progress atlas-progress--indeterminate" aria-label="Sending the code"><i></i></div><span>Sending a 6-digit code to {{email}}…</span></div>
+</sc-if>
+<sc-if value="{{stCode}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 14px; line-height: 20px">We sent a 6-digit code to <b style="font-weight: 500">{{email}}</b>. It works once, for 5 minutes. <span style="color: var(--md-sys-color-on-surface-variant)">(Prototype: any 6 digits sign in.)</span></span>
+<label class="as-field">Code<input inputmode="numeric" autocomplete="one-time-code" maxlength="6" value="{{code}}" onInput="{{onCode}}" onChange="{{onCode}}" aria-invalid="{{codeBad}}" aria-describedby="as-code-err" style="letter-spacing: 6px; font-family: var(--font-mono)"></label>
+<sc-if value="{{codeErr}}" hint-placeholder-val="{{ false }}"><span id="as-code-err" role="alert" style="display: flex; gap: 6px; font-size: 12px; line-height: 16px; color: var(--md-sys-color-error)"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">error</span>{{codeErrText}}</span></sc-if>
+<button class="atlas-btn atlas-btn--filled" onClick="{{verify}}" style="align-self: stretch"><span class="material-symbols-rounded" aria-hidden="true">login</span>Sign in</button>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><button class="atlas-btn atlas-btn--text" onClick="{{resend}}">Send a new code</button><button class="atlas-btn atlas-btn--text" onClick="{{again}}">Use another email</button></div>
+</sc-if>
+<sc-if value="{{stExpired}}" hint-placeholder-val="{{ false }}">
+<div role="alert" class="atlas-banner atlas-banner--warning" style="font-size: 14px; line-height: 20px"><span class="material-symbols-rounded" aria-hidden="true">timer_off</span><div class="atlas-banner__body">That code has expired. Codes work for 5 minutes.</div></div>
+<button class="atlas-btn atlas-btn--filled" onClick="{{resend}}" style="align-self: stretch"><span class="material-symbols-rounded" aria-hidden="true">mail</span>Send a new code</button>
+</sc-if>
+<sc-if value="{{stDone}}" hint-placeholder-val="{{ false }}">
+<div role="status" class="atlas-banner atlas-banner--success" style="font-size: 14px; line-height: 20px"><span class="material-symbols-rounded" aria-hidden="true">verified_user</span><div class="atlas-banner__body">{{doneText}}</div></div>
+<a class="atlas-btn atlas-btn--filled" href="{{adminHref}}" style="text-decoration: none; align-self: stretch; justify-content: center"><span class="material-symbols-rounded" aria-hidden="true">{{doneIcon}}</span>{{doneCta}}</a>
+</sc-if>
+<sc-if value="{{stLocked}}" hint-placeholder-val="{{ false }}">
+<div role="alert" class="atlas-banner atlas-banner--error" style="font-size: 14px; line-height: 20px"><span class="material-symbols-rounded" aria-hidden="true">lock_clock</span><div class="atlas-banner__body">Too many attempts. Try again in 15 minutes.</div></div>
+<button class="atlas-btn atlas-btn--text" onClick="{{again}}" style="align-self: flex-start">Back to the start</button>
+</sc-if>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">lock</span>{{foot}}</div>
+<div role="group" aria-label="Preview a state" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px; border-radius: var(--md-sys-shape-corner-medium); border: 1px dashed var(--md-sys-color-outline)"><span style="font-size: 11px; color: var(--md-sys-color-on-surface-variant)">Prototype:</span><sc-for list="{{stOpts}}" as="o" hint-placeholder-count="6"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 28px; font-size: 12px">{{o.label}}</button></sc-for></div>
+</section>
+</main>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="{{pbHere}}" desktop="{{pbD}}" tablet="{{pbT}}" mobile="{{pbM}}" current="{{cur}}" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"role":{"editor":"enum","options":["admin","user"],"default":"admin"},"device":{"editor":"enum","options":["desktop","tablet","mobile"],"default":"desktop"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { email: props.role === 'user' ? 'you@example.com' : 'admin@countylens.example', st: 'email', tried: false, code: '', tries: 0 }; }
+  componentWillUnmount() { clearTimeout(this.t); }
+  go(st, extra) { clearTimeout(this.t); this.setState(Object.assign({ st: st }, extra || {})); if (st === 'sending') this.t = setTimeout(() => this.setState({ st: 'code', code: '', tries: 0 }), 1200); }
+  renderVals() {
+    const s = this.state, dv = this.props.device ?? 'desktop', mob = dv === 'mobile', tab = dv === 'tablet', user = this.props.role === 'user';
+    const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s.email);
+    const wrong = s.st === 'code' && s.tries > 0;
+    const opts = [['email', 'Email'], ['sending', 'Sending'], ['code', 'Code'], ['wrong', 'Wrong code'], ['expired', 'Expired'], ['locked', 'Too many attempts']];
+    return { W: mob ? 390 : tab ? 768 : 1440, H: mob ? 844 : tab ? 1024 : 900, pad: mob ? 4 : 24, mainH: mob ? 780 : tab ? 960 : 836, place: mob ? 'start center' : 'center', backHref: mob ? 'Explore390.dc.html' : tab ? 'Explore768.dc.html' : 'Explore1440.dc.html', cur: dv,
+      email: s.email, onEmail: (e) => this.setState({ email: e.target.value, tried: false }), bad: String(s.tried && !ok), showErr: s.tried && !ok, err: 'Enter an email address, like name@example.com.',
+      stEmail: s.st === 'email', stSending: s.st === 'sending', stCode: s.st === 'code', stExpired: s.st === 'expired', stLocked: s.st === 'locked', stDone: s.st === 'done',
+      adminHref: user ? (mob ? 'ExploreQ390-ai.dc.html' : tab ? 'Explore768.dc.html' : 'ExploreQ-ai.dc.html') : 'RunsAdmin1440.dc.html',
+      heroIcon: user ? 'auto_awesome' : 'admin_panel_settings', title: user ? 'Sign in to keep asking' : 'Admin sign-in',
+      lead: user ? 'Coming soon. You have used this session’s 10 AI questions. Signing in for more AI questions is planned; the limit for signed-in users is not set yet. Filters and SQL have no limit.' : 'Admins can start, stop and retry runs and see Activity. Every other page is public and needs no sign-in.',
+      note: user ? 'Coming soon: AI-user sign-in is not in the first release. This screen shows the planned flow; Filters, SQL and the map never need sign-in.' : 'The demo needs no admin access. Every demo step runs on the public pages.',
+      emailLabel: user ? 'Email' : 'Admin email', doneText: user ? 'Signed in (planned flow, coming soon).' : 'Signed in as an admin.', doneIcon: user ? 'auto_awesome' : 'history', doneCta: user ? 'Back to AI mode' : 'Go to Runs',
+      foot: user ? 'Cognito email code. No password, no profile; the account only raises the AI question limit.' : 'Only addresses on the admin list get a code (Cognito email code, no self sign-up). Admin sits at the end of the main navigation.',
+      pbHere: user ? 'Sign in to keep asking (AI users)' : 'Admin sign-in (admins only)', pbD: user ? 'UserSignIn1440.dc.html' : 'AdminSignIn1440.dc.html', pbT: user ? 'UserSignIn768.dc.html' : 'AdminSignIn768.dc.html', pbM: user ? 'UserSignIn390.dc.html' : 'AdminSignIn390.dc.html',
+      send: () => { if (ok) this.go('sending'); else this.setState({ tried: true }); },
+      code: s.code, onCode: (e) => this.setState({ code: e.target.value.replace(/\D/g, '').slice(0, 6) }),
+      codeBad: String(wrong), codeErr: wrong, codeErrText: 'That code is not right. ' + (3 - s.tries) + ' tries left.',
+      verify: () => { if (s.code.length === 6 && s.code !== '120456') { this.go('done'); return; } const n = s.tries + 1; if (n >= 3) this.go('locked'); else this.setState({ tries: n }); },
+      resend: () => this.go('sending'), again: () => this.go('email', { tries: 0, code: '' }),
+      stOpts: opts.map((o) => ({ label: o[1], on: String((o[0] === 'wrong' ? wrong : s.st === o[0] && !(o[0] === 'code' && wrong))), pick: () => { if (o[0] === 'wrong') this.go('code', { tries: 1, code: '120456' }); else if (o[0] === 'code') this.go('code', { tries: 0, code: '' }); else this.go(o[0]); } })) };
+  }
+}
+</script>
+</body>
+</html>

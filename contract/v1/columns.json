@@ -1,0 +1,1584 @@
+{
+  "contract": "contract/v1",
+  "generatedFrom": "packages/contract/src/columns.ts",
+  "views": {
+    "v_property": [
+      {
+        "name": "property_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The property record's CID; the key v_roofing_permit.property_cid joins on",
+        "source": "property.cid (the from_cid of every property_has_* edge; the export extra `property_cid` is the Seed root, not this)",
+        "missingReason": null
+      },
+      {
+        "name": "request_identifier",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "TCAD pID exactly as printed (P0-5)",
+        "source": "property.request_identifier",
+        "missingReason": null
+      },
+      {
+        "name": "parcel_identifier",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Parcel identifier",
+        "source": "property.parcel_identifier",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "property_type",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Property type",
+        "source": "property.property_type (lexicon enum)",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "property_usage_type",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Usage type",
+        "source": "property.property_usage_type (lexicon enum)",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "property_structure_built_year",
+        "type": "INTEGER",
+        "kind": "integer",
+        "nullable": true,
+        "meaning": "Year the main structure was built",
+        "source": "property.property_structure_built_year",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "latitude",
+        "type": "DOUBLE",
+        "kind": "double",
+        "nullable": true,
+        "meaning": "Latitude",
+        "source": "geometry.latitude via property_has_parcel → parcel_has_geometry",
+        "missingReason": "no_coordinates"
+      },
+      {
+        "name": "longitude",
+        "type": "DOUBLE",
+        "kind": "double",
+        "nullable": true,
+        "meaning": "Longitude",
+        "source": "geometry.longitude via property_has_parcel → parcel_has_geometry",
+        "missingReason": "no_coordinates"
+      },
+      {
+        "name": "coordinate_source",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "gis_centroid",
+          "address_point",
+          "permit_point",
+          "none"
+        ],
+        "meaning": "Where the coordinates came from",
+        "source": "derived: geometry → gis_centroid, or address_point when geometry.source_http_request is the City of Austin address-point layer (ADR 0004), permit address → permit_point (address not in export), else none",
+        "missingReason": null
+      },
+      {
+        "name": "roof_date",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Roof date, YYYY[-MM[-DD]]",
+        "source": "latest accepted terminal date (completion_date or permit_close_date, ≤ as_of, ≥ issue date) of a closed Roofing permit via property_has_property_improvement (Replacement, else New); else structure.roof_date via property_has_structure (TCAD built year only)",
+        "missingReason": "no_roof_date"
+      },
+      {
+        "name": "roof_age_years",
+        "type": "INTEGER",
+        "kind": "integer",
+        "nullable": true,
+        "meaning": "Roof age in whole years; 0 allowed",
+        "source": "derived: whole years from roof_date to as_of (never structure.roof_age_years)",
+        "missingReason": "no_roof_date"
+      },
+      {
+        "name": "roof_age_basis",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "permit",
+          "new_construction",
+          "built_year",
+          "unknown"
+        ],
+        "meaning": "Evidence behind roof_date",
+        "source": "derived (mew B.5)",
+        "missingReason": null
+      },
+      {
+        "name": "roof_age_confidence",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "high",
+          "medium",
+          "low",
+          "none"
+        ],
+        "meaning": "Confidence of roof_age_years",
+        "source": "derived (mew B.5)",
+        "missingReason": null
+      },
+      {
+        "name": "last_ownership_transfer_date",
+        "type": "DATE",
+        "kind": "date",
+        "nullable": true,
+        "meaning": "Latest dated ownership transfer",
+        "source": "latest dated sales_history.ownership_transfer_date (TCAD sale or transfer deed) via property_has_sales_history",
+        "missingReason": "no_dated_sale"
+      },
+      {
+        "name": "tenure_years",
+        "type": "INTEGER",
+        "kind": "integer",
+        "nullable": true,
+        "meaning": "Owner tenure",
+        "source": "derived: whole years from last_ownership_transfer_date to as_of",
+        "missingReason": "no_dated_sale"
+      },
+      {
+        "name": "tenure_basis",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "sale_date",
+          "deed_date",
+          "unknown"
+        ],
+        "meaning": "Evidence behind tenure_years",
+        "source": "derived: deed_date when the latest transfer is a TCAD transfer deed, sale_date when it is a TCAD sale, else unknown",
+        "missingReason": null
+      },
+      {
+        "name": "is_long_tenure",
+        "type": "BOOLEAN",
+        "kind": "boolean",
+        "nullable": true,
+        "meaning": "Long tenure flag",
+        "source": "derived: tenure_years > 10; null when unknown",
+        "missingReason": "no_dated_sale"
+      },
+      {
+        "name": "owner_kind",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "person",
+          "company",
+          "unknown"
+        ],
+        "meaning": "Owner kind",
+        "source": "derived from person_has_property / company_has_property (the current owners of the property): company when any company, else person, else unknown",
+        "missingReason": null
+      },
+      {
+        "name": "owner_name",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Owner display name; reason owner_unparsed, owner_confidential, no_owner_record or needs_review",
+        "source": "person.first_name + last_name (by last, first name), then company.name (by name), each once, '; '-separated, read through person_has_property / company_has_property (ERR-69; independent of any sale)",
+        "missingReason": "no_owner_record"
+      },
+      {
+        "name": "owner_area_class",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "in_county",
+          "regional",
+          "out_of_area",
+          "unknown"
+        ],
+        "meaning": "Owner mailing area class",
+        "source": "derived: the current owners' mailing ZIP (address.postal_code via person_has_mailing_address / company_has_mailing_address) against the travis-places area lists; most local class among co-owners; unknown with reason no_mailing_address, zip_not_zcta, out_of_scope (no area list in the run) or not_in_export (the export emits no address.postal_code: Runs 1 to 3; from Run 3.1 it does, v1.2); a mailing address without a ZIP reads source_missing",
+        "missingReason": null
+      },
+      {
+        "name": "owner_is_out_of_area",
+        "type": "BOOLEAN",
+        "kind": "boolean",
+        "nullable": true,
+        "meaning": "Owner mails from outside Travis",
+        "source": "derived: true for regional/out_of_area, false for in_county, null for unknown",
+        "missingReason": "not_in_export"
+      },
+      {
+        "name": "area_list_sha256",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Digest of the ZIP and regional lists",
+        "source": "manifest profiles[] (travis-places)",
+        "missingReason": null
+      },
+      {
+        "name": "unnormalized_address",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Property (situs) address as printed",
+        "source": "address.unnormalized_address via property_has_address: the situs as TCAD prints it, one line (street, city, state, ZIP)",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "owner_mailing_postal_code",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Owner mailing ZIP",
+        "source": "address.postal_code (first 5 characters) of the current owners' mailing addresses via person_has_property / company_has_property and person_has_mailing_address / company_has_mailing_address; distinct values sorted, '; '-separated; reasons no_mailing_address, source_missing (address without a ZIP), not_in_export (Runs 1 to 3) or the owner reason",
+        "missingReason": "no_mailing_address"
+      },
+      {
+        "name": "owner_mailing_state_code",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Owner mailing state",
+        "source": "address.state_code of the same mailing addresses; distinct values sorted, '; '-separated",
+        "missingReason": "no_mailing_address"
+      },
+      {
+        "name": "cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The record's CID",
+        "source": "export extra column `cid`",
+        "missingReason": null
+      },
+      {
+        "name": "source_url",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "URL of the request that fetched the record's source page",
+        "source": "source_http_request: url + its multiValueQueryString (URL-encoded); else the data group's manifest sources[].url (no missing entry for the fallback)",
+        "missingReason": "not_in_export"
+      },
+      {
+        "name": "captured_at",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "When that source was captured (source-level, not per record)",
+        "source": "manifest sources[].captured_at of the source whose url the record's request uses, else of the data group's source (source-level: the latest successful receipt)",
+        "missingReason": null
+      },
+      {
+        "name": "table",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "The export table the row's main record came from",
+        "source": "export table name",
+        "missingReason": null
+      },
+      {
+        "name": "table_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "CIDv1 of the Parquet part holding the row",
+        "source": "tables.car CountyTables part link → manifest artifacts[]",
+        "missingReason": null
+      },
+      {
+        "name": "run_id",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "The run that produced the row",
+        "source": "manifest runId",
+        "missingReason": null
+      },
+      {
+        "name": "manifest_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The run manifest's CID",
+        "source": "CIDv1 of the manifest JCS bytes",
+        "missingReason": null
+      },
+      {
+        "name": "as_of",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "The run's finish time; every derivation uses it, never now()",
+        "source": "manifest finishedAt",
+        "missingReason": null
+      },
+      {
+        "name": "missing",
+        "type": "STRUCT(field VARCHAR, reason VARCHAR)[]",
+        "kind": "missing",
+        "nullable": false,
+        "meaning": "One {field, reason} entry for every null or uncarried field in the row",
+        "source": "built per row",
+        "missingReason": null
+      }
+    ],
+    "v_roofing_permit": [
+      {
+        "name": "permit_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The permit's CID",
+        "source": "property_improvement.cid",
+        "missingReason": null
+      },
+      {
+        "name": "property_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The permit's property",
+        "source": "from_cid of property_has_property_improvement",
+        "missingReason": null
+      },
+      {
+        "name": "jurisdiction",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Issuing jurisdiction",
+        "source": "derived: source_http_request host → profile jurisdiction map",
+        "missingReason": "needs_review"
+      },
+      {
+        "name": "permit_number",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Permit number as printed",
+        "source": "property_improvement.permit_number",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "request_identifier",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Permit request identifier: the stable key of the permit record across runs (equals permit_number in Run 2)",
+        "source": "property_improvement.request_identifier",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "improvement_type",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Lexicon improvement type",
+        "source": "property_improvement.improvement_type (set only by the profile)",
+        "missingReason": null
+      },
+      {
+        "name": "improvement_action",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Lexicon improvement action",
+        "source": "property_improvement.improvement_action (set only by the profile)",
+        "missingReason": null
+      },
+      {
+        "name": "improvement_status",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Lexicon status; null for Expired (D-4a)",
+        "source": "property_improvement.improvement_status",
+        "missingReason": "enum_lacks_value"
+      },
+      {
+        "name": "status_class",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": true,
+        "enum": [
+          "open",
+          "stalled",
+          "closed"
+        ],
+        "meaning": "Open, stalled or closed; null only when it cannot be derived",
+        "source": "generated status map on (jurisdiction, improvement_status): Austin Permitted/Planned/OnHold → open, Completed → closed, null status + issue date → stalled (D-4a); no map row (other jurisdiction, unmapped status, null status without issue date) → null",
+        "missingReason": "needs_review"
+      },
+      {
+        "name": "is_open",
+        "type": "BOOLEAN",
+        "kind": "boolean",
+        "nullable": false,
+        "meaning": "Open flag",
+        "source": "derived: status_class = 'open'",
+        "missingReason": null
+      },
+      {
+        "name": "issue_date",
+        "type": "DATE",
+        "kind": "date",
+        "nullable": true,
+        "meaning": "Issue date (frozen alias)",
+        "source": "property_improvement.permit_issue_date",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "final_date",
+        "type": "DATE",
+        "kind": "date",
+        "nullable": true,
+        "meaning": "Final date (frozen alias)",
+        "source": "property_improvement.completion_date",
+        "missingReason": "not_closed"
+      },
+      {
+        "name": "permit_close_date",
+        "type": "DATE",
+        "kind": "date",
+        "nullable": true,
+        "meaning": "Close date",
+        "source": "property_improvement.permit_close_date",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "final_inspection_date",
+        "type": "DATE",
+        "kind": "date",
+        "nullable": true,
+        "meaning": "Final inspection date",
+        "source": "property_improvement.final_inspection_date",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "open_days",
+        "type": "INTEGER",
+        "kind": "integer",
+        "nullable": true,
+        "meaning": "Days open (never counted for a finished permit)",
+        "source": "derived: as_of − issue_date for open and stalled permits that have no final_date; null when final_date is set (finished, reason not_open) or implausible (before issue_date or after as_of, reason needs_review)",
+        "missingReason": "not_open"
+      },
+      {
+        "name": "contractor_resolution",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "resolved",
+          "unresolved"
+        ],
+        "meaning": "Contractor identity state (AD-24)",
+        "source": "derived: resolved only when the contractor company carries an official registry id (company.sunbiz_document_number); a company published from the printed permit name has none, so it stays unresolved (v1.1, ERR-66)",
+        "missingReason": null
+      },
+      {
+        "name": "contractor_company_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": true,
+        "meaning": "Contractor company as printed (unverified; resolved only with a registry id)",
+        "source": "to_cid of the only property_improvement_has_contractor edge",
+        "missingReason": "contractor_unresolved"
+      },
+      {
+        "name": "contractor_name_as_printed",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Contractor as printed on the permit (unverified)",
+        "source": "company.name via the only property_improvement_has_contractor edge: the contractor the permit prints (the company, else the contractor person, ERR-72), AS PRINTED, UNVERIFIED (not a registry identity)",
+        "missingReason": "contractor_unresolved"
+      },
+      {
+        "name": "bbb_status",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "rated",
+          "not_found",
+          "blocked",
+          "not_checked"
+        ],
+        "meaning": "BBB lookup state",
+        "source": "blocked when the permit prints a contractor name (BBB is never contacted, A-01 403 challenge), else not_checked",
+        "missingReason": null
+      },
+      {
+        "name": "bbb_status_reason",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Why there is no BBB rating",
+        "source": "bbb_blocked when a contractor name is printed, else contractor_unresolved",
+        "missingReason": null
+      },
+      {
+        "name": "bbb_rating",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "BBB rating not published (BBB blocked the lookup)",
+        "source": "always null: BBB blocks the lookup (A-01), no rating is published",
+        "missingReason": "bbb_blocked"
+      },
+      {
+        "name": "bbb_url",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Search BBB for this contractor",
+        "source": "derived: BBB search URL built from contractor_name_as_printed and city Austin; never fetched; shape unverified",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "profile_version",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Classification profile version",
+        "source": "manifest profiles[] (travis-austin)",
+        "missingReason": null
+      },
+      {
+        "name": "profile_sha256",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Classification profile digest",
+        "source": "manifest profiles[] (travis-austin)",
+        "missingReason": null
+      },
+      {
+        "name": "cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The record's CID",
+        "source": "export extra column `cid`",
+        "missingReason": null
+      },
+      {
+        "name": "source_url",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "URL of the request that fetched the record's source page",
+        "source": "source_http_request: url + its multiValueQueryString (URL-encoded); else the data group's manifest sources[].url (no missing entry for the fallback)",
+        "missingReason": "not_in_export"
+      },
+      {
+        "name": "captured_at",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "When that source was captured (source-level, not per record)",
+        "source": "manifest sources[].captured_at of the source whose url the record's request uses, else of the data group's source (source-level: the latest successful receipt)",
+        "missingReason": null
+      },
+      {
+        "name": "table",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "The export table the row's main record came from",
+        "source": "export table name",
+        "missingReason": null
+      },
+      {
+        "name": "table_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "CIDv1 of the Parquet part holding the row",
+        "source": "tables.car CountyTables part link → manifest artifacts[]",
+        "missingReason": null
+      },
+      {
+        "name": "run_id",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "The run that produced the row",
+        "source": "manifest runId",
+        "missingReason": null
+      },
+      {
+        "name": "manifest_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The run manifest's CID",
+        "source": "CIDv1 of the manifest JCS bytes",
+        "missingReason": null
+      },
+      {
+        "name": "as_of",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "The run's finish time; every derivation uses it, never now()",
+        "source": "manifest finishedAt",
+        "missingReason": null
+      },
+      {
+        "name": "missing",
+        "type": "STRUCT(field VARCHAR, reason VARCHAR)[]",
+        "kind": "missing",
+        "nullable": false,
+        "meaning": "One {field, reason} entry for every null or uncarried field in the row",
+        "source": "built per row",
+        "missingReason": null
+      }
+    ],
+    "v_contractor": [
+      {
+        "name": "contractor_company_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The company's CID",
+        "source": "company.cid",
+        "missingReason": null
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Company name",
+        "source": "company.name",
+        "missingReason": "source_missing"
+      },
+      {
+        "name": "contractor_resolution",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "resolved",
+          "unresolved"
+        ],
+        "meaning": "Contractor identity state",
+        "source": "derived: resolved only with an official registry id on the company; a printed-name company stays unresolved (v1.1)",
+        "missingReason": null
+      },
+      {
+        "name": "identity_source",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Official identity source",
+        "source": "derived: company.source_http_request host",
+        "missingReason": "needs_review"
+      },
+      {
+        "name": "bbb_status",
+        "type": "VARCHAR",
+        "kind": "enum",
+        "nullable": false,
+        "enum": [
+          "rated",
+          "not_found",
+          "blocked",
+          "not_checked"
+        ],
+        "meaning": "BBB lookup state",
+        "source": "blocked when the permit prints a contractor name (BBB is never contacted, A-01 403 challenge), else not_checked",
+        "missingReason": null
+      },
+      {
+        "name": "bbb_status_reason",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "Why there is no BBB rating",
+        "source": "as v_roofing_permit",
+        "missingReason": null
+      },
+      {
+        "name": "permit_count",
+        "type": "INTEGER",
+        "kind": "integer",
+        "nullable": false,
+        "meaning": "Permits",
+        "source": "count of property_improvement_has_contractor rows",
+        "missingReason": null
+      },
+      {
+        "name": "roofing_permit_count",
+        "type": "INTEGER",
+        "kind": "integer",
+        "nullable": false,
+        "meaning": "Roofing permits",
+        "source": "the same count limited to v_roofing_permit",
+        "missingReason": null
+      },
+      {
+        "name": "cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The record's CID",
+        "source": "export extra column `cid`",
+        "missingReason": null
+      },
+      {
+        "name": "source_url",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": true,
+        "meaning": "URL of the request that fetched the record's source page",
+        "source": "source_http_request: url + its multiValueQueryString (URL-encoded); else the data group's manifest sources[].url (no missing entry for the fallback)",
+        "missingReason": "not_in_export"
+      },
+      {
+        "name": "captured_at",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "When that source was captured (source-level, not per record)",
+        "source": "manifest sources[].captured_at of the source whose url the record's request uses, else of the data group's source (source-level: the latest successful receipt)",
+        "missingReason": null
+      },
+      {
+        "name": "table",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "The export table the row's main record came from",
+        "source": "export table name",
+        "missingReason": null
+      },
+      {
+        "name": "table_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "CIDv1 of the Parquet part holding the row",
+        "source": "tables.car CountyTables part link → manifest artifacts[]",
+        "missingReason": null
+      },
+      {
+        "name": "run_id",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "The run that produced the row",
+        "source": "manifest runId",
+        "missingReason": null
+      },
+      {
+        "name": "manifest_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "The run manifest's CID",
+        "source": "CIDv1 of the manifest JCS bytes",
+        "missingReason": null
+      },
+      {
+        "name": "as_of",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "The run's finish time; every derivation uses it, never now()",
+        "source": "manifest finishedAt",
+        "missingReason": null
+      },
+      {
+        "name": "missing",
+        "type": "STRUCT(field VARCHAR, reason VARCHAR)[]",
+        "kind": "missing",
+        "nullable": false,
+        "meaning": "One {field, reason} entry for every null or uncarried field in the row",
+        "source": "built per row",
+        "missingReason": null
+      }
+    ],
+    "v_run": [
+      {
+        "name": "run_id",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Run ID",
+        "source": "manifest runId",
+        "missingReason": null
+      },
+      {
+        "name": "county_fips",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "County FIPS",
+        "source": "manifest fips",
+        "missingReason": null
+      },
+      {
+        "name": "started_at",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "Run start",
+        "source": "manifest startedAt",
+        "missingReason": null
+      },
+      {
+        "name": "finished_at",
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "kind": "timestamptz",
+        "nullable": false,
+        "meaning": "Run finish",
+        "source": "manifest finishedAt (= as_of)",
+        "missingReason": null
+      },
+      {
+        "name": "manifest_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": false,
+        "meaning": "Manifest CID",
+        "source": "CIDv1 of the manifest",
+        "missingReason": null
+      },
+      {
+        "name": "previous_manifest_cid",
+        "type": "VARCHAR",
+        "kind": "cid",
+        "nullable": true,
+        "meaning": "Previous run's manifest",
+        "source": "manifest previousManifestCid",
+        "missingReason": "first_run"
+      },
+      {
+        "name": "tables_root_cids",
+        "type": "STRUCT(data_group VARCHAR, cid VARCHAR)[]",
+        "kind": "list",
+        "nullable": false,
+        "meaning": "export-tables roots per data group",
+        "source": "manifest artifacts[] kind=directory",
+        "missingReason": null
+      },
+      {
+        "name": "sources",
+        "type": "STRUCT(\"name\" VARCHAR, watermark VARCHAR, captured_at VARCHAR, records BIGINT, added BIGINT, changed BIGINT, removed BIGINT, limitations VARCHAR[])[]",
+        "kind": "list",
+        "nullable": false,
+        "meaning": "Sources with counts and deltas",
+        "source": "manifest sources[]",
+        "missingReason": null
+      },
+      {
+        "name": "coverage",
+        "type": "JSON",
+        "kind": "json",
+        "nullable": false,
+        "meaning": "Coverage counts with derivations (AD-04, AD-28)",
+        "source": "manifest coverage",
+        "missingReason": null
+      },
+      {
+        "name": "profile_version",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Classification profile version",
+        "source": "manifest profiles[] (travis-austin)",
+        "missingReason": null
+      },
+      {
+        "name": "profile_sha256",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Classification profile digest",
+        "source": "manifest profiles[] (travis-austin)",
+        "missingReason": null
+      },
+      {
+        "name": "area_list_sha256",
+        "type": "VARCHAR",
+        "kind": "string",
+        "nullable": false,
+        "meaning": "Area list digest",
+        "source": "manifest profiles[] (travis-places)",
+        "missingReason": null
+      },
+      {
+        "name": "limitations",
+        "type": "VARCHAR[]",
+        "kind": "list",
+        "nullable": false,
+        "meaning": "The run's stated limitations, in manifest order (empty list when none)",
+        "source": "manifest limitations[]",
+        "missingReason": null
+      },
+      {
+        "name": "missing",
+        "type": "STRUCT(field VARCHAR, reason VARCHAR)[]",
+        "kind": "missing",
+        "nullable": false,
+        "meaning": "One {field, reason} entry for every null column (previous_manifest_cid on a first run); every other v_run column is never null",
+        "source": "built per row",
+        "missingReason": null
+      }
+    ]
+  },
+  "sample": [
+    {
+      "name": "permit_cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": false,
+      "meaning": "The permit's CID",
+      "source": "property_improvement.cid",
+      "missingReason": null
+    },
+    {
+      "name": "property_cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": false,
+      "meaning": "The permit's property",
+      "source": "from_cid of property_has_property_improvement",
+      "missingReason": null
+    },
+    {
+      "name": "jurisdiction",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Issuing jurisdiction",
+      "source": "derived: source_http_request host → profile jurisdiction map",
+      "missingReason": "needs_review"
+    },
+    {
+      "name": "permit_number",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Permit number as printed",
+      "source": "property_improvement.permit_number",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "improvement_type",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "Lexicon improvement type",
+      "source": "property_improvement.improvement_type (set only by the profile)",
+      "missingReason": null
+    },
+    {
+      "name": "improvement_action",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "Lexicon improvement action",
+      "source": "property_improvement.improvement_action (set only by the profile)",
+      "missingReason": null
+    },
+    {
+      "name": "improvement_status",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Lexicon status; null for Expired (D-4a)",
+      "source": "property_improvement.improvement_status",
+      "missingReason": "enum_lacks_value"
+    },
+    {
+      "name": "status_class",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": true,
+      "enum": [
+        "open",
+        "stalled",
+        "closed"
+      ],
+      "meaning": "Open, stalled or closed; null only when it cannot be derived",
+      "source": "generated status map on (jurisdiction, improvement_status): Austin Permitted/Planned/OnHold → open, Completed → closed, null status + issue date → stalled (D-4a); no map row (other jurisdiction, unmapped status, null status without issue date) → null",
+      "missingReason": "needs_review"
+    },
+    {
+      "name": "is_open",
+      "type": "BOOLEAN",
+      "kind": "boolean",
+      "nullable": false,
+      "meaning": "Open flag",
+      "source": "derived: status_class = 'open'",
+      "missingReason": null
+    },
+    {
+      "name": "issue_date",
+      "type": "DATE",
+      "kind": "date",
+      "nullable": true,
+      "meaning": "Issue date (frozen alias)",
+      "source": "property_improvement.permit_issue_date",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "final_date",
+      "type": "DATE",
+      "kind": "date",
+      "nullable": true,
+      "meaning": "Final date (frozen alias)",
+      "source": "property_improvement.completion_date",
+      "missingReason": "not_closed"
+    },
+    {
+      "name": "permit_close_date",
+      "type": "DATE",
+      "kind": "date",
+      "nullable": true,
+      "meaning": "Close date",
+      "source": "property_improvement.permit_close_date",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "final_inspection_date",
+      "type": "DATE",
+      "kind": "date",
+      "nullable": true,
+      "meaning": "Final inspection date",
+      "source": "property_improvement.final_inspection_date",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "open_days",
+      "type": "INTEGER",
+      "kind": "integer",
+      "nullable": true,
+      "meaning": "Days open (never counted for a finished permit)",
+      "source": "derived: as_of − issue_date for open and stalled permits that have no final_date; null when final_date is set (finished, reason not_open) or implausible (before issue_date or after as_of, reason needs_review)",
+      "missingReason": "not_open"
+    },
+    {
+      "name": "contractor_resolution",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "resolved",
+        "unresolved"
+      ],
+      "meaning": "Contractor identity state (AD-24)",
+      "source": "derived: resolved only when the contractor company carries an official registry id (company.sunbiz_document_number); a company published from the printed permit name has none, so it stays unresolved (v1.1, ERR-66)",
+      "missingReason": null
+    },
+    {
+      "name": "contractor_company_cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": true,
+      "meaning": "Contractor company as printed (unverified; resolved only with a registry id)",
+      "source": "to_cid of the only property_improvement_has_contractor edge",
+      "missingReason": "contractor_unresolved"
+    },
+    {
+      "name": "contractor_name_as_printed",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Contractor as printed on the permit (unverified)",
+      "source": "company.name via the only property_improvement_has_contractor edge: the contractor the permit prints (the company, else the contractor person, ERR-72), AS PRINTED, UNVERIFIED (not a registry identity)",
+      "missingReason": "contractor_unresolved"
+    },
+    {
+      "name": "bbb_status",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "rated",
+        "not_found",
+        "blocked",
+        "not_checked"
+      ],
+      "meaning": "BBB lookup state",
+      "source": "blocked when the permit prints a contractor name (BBB is never contacted, A-01 403 challenge), else not_checked",
+      "missingReason": null
+    },
+    {
+      "name": "bbb_status_reason",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Why there is no BBB rating",
+      "source": "bbb_blocked when a contractor name is printed, else contractor_unresolved",
+      "missingReason": null
+    },
+    {
+      "name": "bbb_rating",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "BBB rating not published (BBB blocked the lookup)",
+      "source": "always null: BBB blocks the lookup (A-01), no rating is published",
+      "missingReason": "bbb_blocked"
+    },
+    {
+      "name": "bbb_url",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Search BBB for this contractor",
+      "source": "derived: BBB search URL built from contractor_name_as_printed and city Austin; never fetched; shape unverified",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "profile_version",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "Classification profile version",
+      "source": "manifest profiles[] (travis-austin)",
+      "missingReason": null
+    },
+    {
+      "name": "profile_sha256",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "Classification profile digest",
+      "source": "manifest profiles[] (travis-austin)",
+      "missingReason": null
+    },
+    {
+      "name": "cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": false,
+      "meaning": "The record's CID",
+      "source": "export extra column `cid`",
+      "missingReason": null
+    },
+    {
+      "name": "source_url",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "URL of the request that fetched the record's source page",
+      "source": "source_http_request: url + its multiValueQueryString (URL-encoded); else the data group's manifest sources[].url (no missing entry for the fallback)",
+      "missingReason": "not_in_export"
+    },
+    {
+      "name": "captured_at",
+      "type": "TIMESTAMP WITH TIME ZONE",
+      "kind": "timestamptz",
+      "nullable": false,
+      "meaning": "When that source was captured (source-level, not per record)",
+      "source": "manifest sources[].captured_at of the source whose url the record's request uses, else of the data group's source (source-level: the latest successful receipt)",
+      "missingReason": null
+    },
+    {
+      "name": "table",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "The export table the row's main record came from",
+      "source": "export table name",
+      "missingReason": null
+    },
+    {
+      "name": "table_cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": false,
+      "meaning": "CIDv1 of the Parquet part holding the row",
+      "source": "tables.car CountyTables part link → manifest artifacts[]",
+      "missingReason": null
+    },
+    {
+      "name": "run_id",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "The run that produced the row",
+      "source": "manifest runId",
+      "missingReason": null
+    },
+    {
+      "name": "manifest_cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": false,
+      "meaning": "The run manifest's CID",
+      "source": "CIDv1 of the manifest JCS bytes",
+      "missingReason": null
+    },
+    {
+      "name": "as_of",
+      "type": "TIMESTAMP WITH TIME ZONE",
+      "kind": "timestamptz",
+      "nullable": false,
+      "meaning": "The run's finish time; every derivation uses it, never now()",
+      "source": "manifest finishedAt",
+      "missingReason": null
+    },
+    {
+      "name": "missing",
+      "type": "STRUCT(field VARCHAR, reason VARCHAR)[]",
+      "kind": "missing",
+      "nullable": false,
+      "meaning": "One {field, reason} entry for every null or uncarried field in the row",
+      "source": "built per row",
+      "missingReason": null
+    },
+    {
+      "name": "request_identifier",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "TCAD pID exactly as printed (P0-5)",
+      "source": "property.request_identifier",
+      "missingReason": null
+    },
+    {
+      "name": "parcel_identifier",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Parcel identifier",
+      "source": "property.parcel_identifier",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "property_type",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Property type",
+      "source": "property.property_type (lexicon enum)",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "property_usage_type",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Usage type",
+      "source": "property.property_usage_type (lexicon enum)",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "property_structure_built_year",
+      "type": "INTEGER",
+      "kind": "integer",
+      "nullable": true,
+      "meaning": "Year the main structure was built",
+      "source": "property.property_structure_built_year",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "latitude",
+      "type": "DOUBLE",
+      "kind": "double",
+      "nullable": true,
+      "meaning": "Latitude",
+      "source": "geometry.latitude via property_has_parcel → parcel_has_geometry",
+      "missingReason": "no_coordinates"
+    },
+    {
+      "name": "longitude",
+      "type": "DOUBLE",
+      "kind": "double",
+      "nullable": true,
+      "meaning": "Longitude",
+      "source": "geometry.longitude via property_has_parcel → parcel_has_geometry",
+      "missingReason": "no_coordinates"
+    },
+    {
+      "name": "coordinate_source",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "gis_centroid",
+        "address_point",
+        "permit_point",
+        "none"
+      ],
+      "meaning": "Where the coordinates came from",
+      "source": "derived: geometry → gis_centroid, or address_point when geometry.source_http_request is the City of Austin address-point layer (ADR 0004), permit address → permit_point (address not in export), else none",
+      "missingReason": null
+    },
+    {
+      "name": "roof_date",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Roof date, YYYY[-MM[-DD]]",
+      "source": "latest accepted terminal date (completion_date or permit_close_date, ≤ as_of, ≥ issue date) of a closed Roofing permit via property_has_property_improvement (Replacement, else New); else structure.roof_date via property_has_structure (TCAD built year only)",
+      "missingReason": "no_roof_date"
+    },
+    {
+      "name": "roof_age_years",
+      "type": "INTEGER",
+      "kind": "integer",
+      "nullable": true,
+      "meaning": "Roof age in whole years; 0 allowed",
+      "source": "derived: whole years from roof_date to as_of (never structure.roof_age_years)",
+      "missingReason": "no_roof_date"
+    },
+    {
+      "name": "roof_age_basis",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "permit",
+        "new_construction",
+        "built_year",
+        "unknown"
+      ],
+      "meaning": "Evidence behind roof_date",
+      "source": "derived (mew B.5)",
+      "missingReason": null
+    },
+    {
+      "name": "roof_age_confidence",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "none"
+      ],
+      "meaning": "Confidence of roof_age_years",
+      "source": "derived (mew B.5)",
+      "missingReason": null
+    },
+    {
+      "name": "last_ownership_transfer_date",
+      "type": "DATE",
+      "kind": "date",
+      "nullable": true,
+      "meaning": "Latest dated ownership transfer",
+      "source": "latest dated sales_history.ownership_transfer_date (TCAD sale or transfer deed) via property_has_sales_history",
+      "missingReason": "no_dated_sale"
+    },
+    {
+      "name": "tenure_years",
+      "type": "INTEGER",
+      "kind": "integer",
+      "nullable": true,
+      "meaning": "Owner tenure",
+      "source": "derived: whole years from last_ownership_transfer_date to as_of",
+      "missingReason": "no_dated_sale"
+    },
+    {
+      "name": "tenure_basis",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "sale_date",
+        "deed_date",
+        "unknown"
+      ],
+      "meaning": "Evidence behind tenure_years",
+      "source": "derived: deed_date when the latest transfer is a TCAD transfer deed, sale_date when it is a TCAD sale, else unknown",
+      "missingReason": null
+    },
+    {
+      "name": "is_long_tenure",
+      "type": "BOOLEAN",
+      "kind": "boolean",
+      "nullable": true,
+      "meaning": "Long tenure flag",
+      "source": "derived: tenure_years > 10; null when unknown",
+      "missingReason": "no_dated_sale"
+    },
+    {
+      "name": "owner_kind",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "person",
+        "company",
+        "unknown"
+      ],
+      "meaning": "Owner kind",
+      "source": "derived from person_has_property / company_has_property (the current owners of the property): company when any company, else person, else unknown",
+      "missingReason": null
+    },
+    {
+      "name": "owner_name",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Owner display name; reason owner_unparsed, owner_confidential, no_owner_record or needs_review",
+      "source": "person.first_name + last_name (by last, first name), then company.name (by name), each once, '; '-separated, read through person_has_property / company_has_property (ERR-69; independent of any sale)",
+      "missingReason": "no_owner_record"
+    },
+    {
+      "name": "owner_area_class",
+      "type": "VARCHAR",
+      "kind": "enum",
+      "nullable": false,
+      "enum": [
+        "in_county",
+        "regional",
+        "out_of_area",
+        "unknown"
+      ],
+      "meaning": "Owner mailing area class",
+      "source": "derived: the current owners' mailing ZIP (address.postal_code via person_has_mailing_address / company_has_mailing_address) against the travis-places area lists; most local class among co-owners; unknown with reason no_mailing_address, zip_not_zcta, out_of_scope (no area list in the run) or not_in_export (the export emits no address.postal_code: Runs 1 to 3; from Run 3.1 it does, v1.2); a mailing address without a ZIP reads source_missing",
+      "missingReason": null
+    },
+    {
+      "name": "owner_is_out_of_area",
+      "type": "BOOLEAN",
+      "kind": "boolean",
+      "nullable": true,
+      "meaning": "Owner mails from outside Travis",
+      "source": "derived: true for regional/out_of_area, false for in_county, null for unknown",
+      "missingReason": "not_in_export"
+    },
+    {
+      "name": "area_list_sha256",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "Digest of the ZIP and regional lists",
+      "source": "manifest profiles[] (travis-places)",
+      "missingReason": null
+    },
+    {
+      "name": "unnormalized_address",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Property (situs) address as printed",
+      "source": "address.unnormalized_address via property_has_address: the situs as TCAD prints it, one line (street, city, state, ZIP)",
+      "missingReason": "source_missing"
+    },
+    {
+      "name": "owner_mailing_postal_code",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Owner mailing ZIP",
+      "source": "address.postal_code (first 5 characters) of the current owners' mailing addresses via person_has_property / company_has_property and person_has_mailing_address / company_has_mailing_address; distinct values sorted, '; '-separated; reasons no_mailing_address, source_missing (address without a ZIP), not_in_export (Runs 1 to 3) or the owner reason",
+      "missingReason": "no_mailing_address"
+    },
+    {
+      "name": "owner_mailing_state_code",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "Owner mailing state",
+      "source": "address.state_code of the same mailing addresses; distinct values sorted, '; '-separated",
+      "missingReason": "no_mailing_address"
+    },
+    {
+      "name": "property_source_url",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": true,
+      "meaning": "The property's uRL of the request that fetched the record's source page",
+      "source": "source_http_request: url + its multiValueQueryString (URL-encoded); else the data group's manifest sources[].url (no missing entry for the fallback)",
+      "missingReason": "not_in_export"
+    },
+    {
+      "name": "property_captured_at",
+      "type": "TIMESTAMP WITH TIME ZONE",
+      "kind": "timestamptz",
+      "nullable": false,
+      "meaning": "The property's when that source was captured (source-level, not per record)",
+      "source": "manifest sources[].captured_at of the source whose url the record's request uses, else of the data group's source (source-level: the latest successful receipt)",
+      "missingReason": null
+    },
+    {
+      "name": "property_table",
+      "type": "VARCHAR",
+      "kind": "string",
+      "nullable": false,
+      "meaning": "The property's the export table the row's main record came from",
+      "source": "export table name",
+      "missingReason": null
+    },
+    {
+      "name": "property_table_cid",
+      "type": "VARCHAR",
+      "kind": "cid",
+      "nullable": false,
+      "meaning": "The property's cIDv1 of the Parquet part holding the row",
+      "source": "tables.car CountyTables part link → manifest artifacts[]",
+      "missingReason": null
+    },
+    {
+      "name": "property_missing",
+      "type": "STRUCT(field VARCHAR, reason VARCHAR)[]",
+      "kind": "missing",
+      "nullable": false,
+      "meaning": "The property's one {field, reason} entry for every null or uncarried field in the row",
+      "source": "built per row",
+      "missingReason": null
+    }
+  ],
+  "uncarried": "see README.md § No-carrier and not-emitted fields",
+  "aliases": {
+    "issue_date": "property_improvement.permit_issue_date",
+    "final_date": "property_improvement.completion_date"
+  },
+  "missingReasons": [
+    "no_lexicon_carrier",
+    "not_in_export",
+    "source_missing",
+    "no_coordinates",
+    "no_roof_date",
+    "basis_unmatched",
+    "no_dated_sale",
+    "no_owner_record",
+    "no_mailing_address",
+    "zip_not_zcta",
+    "not_open",
+    "not_closed",
+    "contractor_unresolved",
+    "bbb_blocked",
+    "bbb_not_found",
+    "needs_review",
+    "first_run",
+    "out_of_scope",
+    "enum_lacks_value",
+    "owner_unparsed",
+    "owner_confidential",
+    "superseded_by_later_permit"
+  ]
+}

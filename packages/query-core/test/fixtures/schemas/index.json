@@ -1,0 +1,42 @@
+{
+  "property": {
+    "cid": "bafkreidmp2ndoc2efglfjezsr3jhzuk25ihunuagwqcpt6dtf2sf36cjau",
+    "source": "~/.elephant-cli/schema-cache/bafkreidmp2ndoc2efglfjezsr3jhzuk25ihunuagwqcpt6dtf2sf36cjau.json"
+  },
+  "address": {
+    "cid": "bafkreiebzvyy6prnwf3dcippii7yysrjesnbxpvcpyqmbs2b67hm2taf2a",
+    "source": "~/.elephant-cli/schema-cache/bafkreiebzvyy6prnwf3dcippii7yysrjesnbxpvcpyqmbs2b67hm2taf2a.json"
+  },
+  "parcel": {
+    "cid": "bafkreih3cczzb2m4bkh5kody6wscmwjwlmpea3q6y5hvsokuqb5vg7qt3a",
+    "source": "~/.elephant-cli/schema-cache/bafkreih3cczzb2m4bkh5kody6wscmwjwlmpea3q6y5hvsokuqb5vg7qt3a.json"
+  },
+  "geometry": {
+    "cid": "bafkreibwkj4mvtrrsbrunzx37p3vwumnx2pu3ugh5b664wbz6puyushw2y",
+    "source": "~/.elephant-cli/schema-cache/bafkreibwkj4mvtrrsbrunzx37p3vwumnx2pu3ugh5b664wbz6puyushw2y.json"
+  },
+  "structure": {
+    "cid": "bafkreidmellpslg6wc4xchnmtobt6g3xjs3sdx2m6crcfzsomsaakrwtim",
+    "source": "~/.elephant-cli/schema-cache/bafkreidmellpslg6wc4xchnmtobt6g3xjs3sdx2m6crcfzsomsaakrwtim.json"
+  },
+  "sales_history": {
+    "cid": "bafkreifxchneb27o64d2bokhpkqiompw3lyoctqeooe5vq5m6dsyvyxgku",
+    "source": "~/.elephant-cli/schema-cache/bafkreifxchneb27o64d2bokhpkqiompw3lyoctqeooe5vq5m6dsyvyxgku.json"
+  },
+  "company": {
+    "cid": "bafkreifpgr7nbrcmdrjocuys34yjgdtttynt3pwrkpv47mlheklykmopjy",
+    "source": "~/.elephant-cli/schema-cache/bafkreifpgr7nbrcmdrjocuys34yjgdtttynt3pwrkpv47mlheklykmopjy.json"
+  },
+  "person": {
+    "cid": "bafkreig5vowakcuc6ropc4wfs5mgq5n3zbplegqqnsznwlogdjlat5z3nq",
+    "source": "~/.elephant-cli/schema-cache/bafkreig5vowakcuc6ropc4wfs5mgq5n3zbplegqqnsznwlogdjlat5z3nq.json"
+  },
+  "property_improvement": {
+    "cid": "bafkreid5jnt3qgp4qmb4iea6klbdpprd6evpgrpc3gofseol4s3kdljeam",
+    "source": "~/.elephant-cli/schema-cache/bafkreid5jnt3qgp4qmb4iea6klbdpprd6evpgrpc3gofseol4s3kdljeam.json"
+  },
+  "fact_sheet": {
+    "cid": "bafkreifn5fzcitm4i4p4psgdyrpltnw3riusffrkmlvz4qb3euclsdj4ri",
+    "source": "~/.elephant-cli/schema-cache/bafkreifn5fzcitm4i4p4psgdyrpltnw3riusffrkmlvz4qb3euclsdj4ri.json"
+  }
+}

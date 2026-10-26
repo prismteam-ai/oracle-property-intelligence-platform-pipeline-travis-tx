@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface); font-size: 13px; line-height: 18px">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Gateway lane states</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">A lane only says “verified” when the received SHA-256 matches the manifest. A rate limit stays inside the lane as a countdown.</p>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">ipfs.io<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">downloading</span>Checking</span></div><div class="atlas-progress" role="progressbar" aria-label="Bytes received" aria-valuenow="38"><i style="width: 38%"></i></div><span class="num">14.5 of 38.2 MB · 2.3 s</span></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">dweb.link<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>Rate-limited</span></div><div class="atlas-progress" role="progressbar" aria-label="Bytes received" aria-valuenow="0"><i style="width: 0%"></i></div><span>Retrying in 4 s (attempt 2 of 3)</span></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">dweb.link<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">refresh</span>Retrying</span></div><div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Retrying"><i></i></div><span>Attempt 3 of 3</span></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">dweb.link<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--danger"><span class="material-symbols-rounded" aria-hidden="true">error</span>Digest mismatch</span></div><div class="atlas-progress" role="progressbar" aria-label="Bytes received" aria-valuenow="100"><i style="width: 100%"></i></div><span>Got <span class="atlas-cid">0b77…e19f</span>, expected <span class="atlas-cid">7d1e…c09a</span></span></div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; align-items: center"><b style="flex: 1; font-weight: 500">ipfs.io<span style="font-weight: 400; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"> · Interplanetary Shipyard</span></b><span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verified</span></div><div class="atlas-progress" role="progressbar" aria-label="Bytes received" aria-valuenow="100"><i style="width: 100%"></i></div><span>38.2 MB · 6.5 s · SHA-256 matches</span></div>
+</div>
+<div class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 6px"><b style="font-weight: 500">All retries used</b><span>If a gateway is still rate-limited after 3 attempts, the lane shows “Not checked: gateway busy” with a Try again button. It never shows verified or failed. Files over 50 MB and directories never race: they show “Verify via CAR”.</span></div>
+
+<h2 style="margin: 16px 0 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Screen states</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; flex: 1; min-height: 0">
+<section aria-label="Loading" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); overflow: hidden; display: flex; flex-direction: column"><div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Loading manifest"><i></i></div><div style="padding: 16px; display: flex; flex-direction: column; gap: 12px"><b style="font-weight: 500">Loading</b><span style="color: var(--md-sys-color-on-surface-variant)">Reading the Run 3 manifest…</span><div class="atlas-skeleton" style="height: 14px; width: 80%; border-radius: var(--md-sys-shape-corner-extra-small)"></div><div class="atlas-skeleton" style="height: 14px; width: 65%; border-radius: var(--md-sys-shape-corner-extra-small)"></div></div></section>
+<section aria-label="Partial" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px"><b style="font-weight: 500">Partial</b><div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">warning</span><div class="atlas-banner__body">The Run 1 manifest did not load from the public gateway. The run chain shows Runs 3 and 2; Run 1 retries on dweb.link.</div></div></section>
+<section aria-label="Error" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px"><b style="font-weight: 500">Error</b><div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body">The manifest could not be read.</div><button class="atlas-btn atlas-btn--text" onClick="{{__say.k1}}">Retry</button></div><span style="color: var(--md-sys-color-on-surface-variant)">The catalog still works; it reads the frozen data contract.</span></section>
+<section aria-label="Empty" style="border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface); padding: 16px; display: flex; flex-direction: column; gap: 10px"><b style="font-weight: 500">Empty</b><b style="font-family: var(--font-brand); font-size: 18px; line-height: 24px; font-weight: 400">Nothing published yet</b><span style="color: var(--md-sys-color-on-surface-variant)">Files appear when a run publishes, each with a CID you can verify.</span><a href="Runs1440.dc.html">Open Runs</a></section>
+</div>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Data · lane and screen states" desktop="" tablet="" mobile="" current="none" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "“Retry” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+return {};
+}
+}
+</script>
+</body>
+</html>

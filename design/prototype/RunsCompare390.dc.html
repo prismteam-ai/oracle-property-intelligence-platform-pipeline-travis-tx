@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Runs · compare · 390</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+<link rel="stylesheet" href="ds/countylens/compact.css">
+</head>
+<body>
+<x-dc>
+<helmet><style>
+body{margin:0}
+.rc-card{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border:1px solid var(--md-sys-color-outline-variant);border-radius:var(--md-sys-shape-corner-medium);background:var(--md-sys-color-surface);font-size:13px;line-height:18px}
+.rc-t{font-size:14px;line-height:20px;font-weight:500}
+.rc-sub{color:var(--md-sys-color-on-surface-variant);font-size:12px;line-height:16px}
+.rc-proto{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:6px 8px;border:1px dashed var(--md-sys-color-outline);border-radius:var(--md-sys-shape-corner-small);font-size:12px;color:var(--md-sys-color-on-surface-variant)}
+</style></helmet>
+<div style="position: relative; width: 390px; min-height: 844px; display: flex; flex-direction: column; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<header class="atlas-top-app-bar" style="flex: none; box-sizing: border-box; padding: 0 4px 0 16px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="flex: 1; margin: 0">CountyLens</h1>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="mobile" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell390More.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub390.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<main style="flex: 1; box-sizing: border-box; padding: 12px 16px 96px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 4px"><a class="atlas-icon-btn" href="Runs390.dc.html" aria-label="Back to runs" style="display: grid; place-items: center; color: var(--md-sys-color-on-surface)"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span></a><h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 24px; line-height: 32px; font-weight: 400">Run 3 vs Run 2</h2></div>
+<div role="group" aria-label="Prototype only: screen state" class="rc-proto"><span>Prototype · state</span><sc-for list="{{stateOpts}}" as="o" hint-placeholder-count="6"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 32px">{{o.label}}</button></sc-for></div>
+
+<sc-if value="{{isLoading}}" hint-placeholder-val="{{ false }}"><div class="rc-card" aria-busy="true"><div class="atlas-progress atlas-progress--indeterminate" role="progressbar" aria-label="Reading both manifests"><i></i></div><span role="status">Reading the Run 3 and Run 2 manifests…</span><div class="atlas-skeleton" style="height: 18px; width: 70%"></div><div class="atlas-skeleton" style="height: 14px; width: 90%"></div><div class="atlas-skeleton" style="height: 14px; width: 60%"></div></div><div class="rc-card"><div class="atlas-skeleton" style="height: 18px; width: 55%"></div><div class="atlas-skeleton" style="height: 14px; width: 85%"></div></div></sc-if>
+
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}"><div class="rc-card" style="align-items: flex-start"><span class="material-symbols-rounded" aria-hidden="true" style="color: var(--md-sys-color-on-surface-variant)">compare_arrows</span><b class="rc-t">Only one run so far</b><span>Compare needs two published runs. It opens here after Run 2 publishes.</span><a class="atlas-btn atlas-btn--tonal" href="Runs390.dc.html" style="text-decoration: none">See runs</a></div></sc-if>
+
+<sc-if value="{{isError}}" hint-placeholder-val="{{ false }}"><div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body"><b style="font-weight: 500">Couldn’t read the Run 2 manifest.</b> Neither ipfs.io nor dweb.link answered. The Run 3 data is unaffected.</div><button class="atlas-btn atlas-btn--text" onClick="{{retry}}">Retry</button></div></sc-if>
+
+<sc-if value="{{banner}}" hint-placeholder-val="{{ false }}"><div class="{{bannerCls}}" role="status"><span class="material-symbols-rounded" aria-hidden="true">{{bannerIcon}}</span><div class="atlas-banner__body">{{bannerText}}</div></div></sc-if>
+
+<sc-if value="{{hasData}}" hint-placeholder-val="{{ true }}">
+<section aria-label="Run 2" class="rc-card"><span class="rc-t">Run 2 · previous</span><span class="rc-sub">2026-10-08 · 02:00–03:18 UTC</span><span>Manifest <span class="atlas-cid">bafybeig…k2p8<button aria-label="Copy the Run 2 manifest CID" onClick="{{copy}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span></section>
+<section aria-label="Run 3" class="rc-card" style="border-color: var(--md-sys-color-primary)"><span class="rc-t">Run 3 · current</span><span class="rc-sub">2026-10-17 · 10:22–11:43 UTC</span><span>Manifest <span class="atlas-cid">bafybeih…q7n3<button aria-label="Copy the Run 3 manifest CID" onClick="{{copy}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span></section>
+<section aria-labelledby="ch-h" class="rc-card">
+<b id="ch-h" class="rc-t">New manifest, linked to the old one</b>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px"><span>Run 3 <span class="atlas-cid">bafybeih…q7n3</span></span><span style="display: inline-flex; align-items: center; gap: 4px; padding-left: 8px; color: var(--md-sys-color-on-surface-variant)"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">arrow_downward</span>previousManifestCid</span><span>Run 2 <span class="atlas-cid">bafybeig…k2p8</span></span></div>
+<span class="{{rsCls}}" role="status" style="align-self: flex-start; height: auto; min-height: 24px; white-space: normal"><span class="material-symbols-rounded" aria-hidden="true">{{rsIcon}}</span>{{rsText}}</span>
+<a href="Data390.dc.html" style="display: inline-flex; align-items: center; gap: 4px; min-height: 48px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">inventory_2</span>CAR available · Run 3 · 1.31 GB · GitHub Release copy</a>
+</section>
+<section aria-labelledby="sr-h" class="rc-card">
+<b id="sr-h" class="rc-t">What changed, per source</b>
+<ul aria-label="Changes per source" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="6"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-top: {{r.bt}}"><span style="font-weight: 500">{{r.src}}</span><span class="num">{{r.n}}</span><span class="rc-sub">{{r.cid}}</span></li></sc-for>
+</ul>
+<span class="rc-sub">A changed CID always means changed bytes · Sample except Austin permits in Run 3</span>
+</section>
+</sc-if>
+<sc-if value="{{toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: fixed; left: 16px; right: 16px; bottom: 96px; z-index: 90">{{toast}}</div></sc-if>
+</main>
+<nav class="atlas-bottom-nav" aria-label="Main" style="flex: none">
+<a class="atlas-nav-item" href="Explore390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs390.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Data390.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="Shell390More.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">more_horiz</span></span>More</a>
+</nav>
+<div style="position: absolute; left: 12px; bottom: 92px; z-index: 80"><dc-import name="ProtoBar" here="Runs · compare · 390 (D-7)" desktop="RunsCompare1440.dc.html" tablet="RunsCompare768.dc.html" mobile="RunsCompare390.dc.html" current="mobile" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["populated","loading","empty","error","partial","ratelimited"],"default":"populated"},"$preview":{"width":390,"height":1427}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { st: props.state || 'populated', retry: 4, toast: '' }; }
+  componentDidMount() { if (this.state.st === 'ratelimited') this.tick(); }
+  componentWillUnmount() { clearInterval(this.cd); clearTimeout(this.tt); }
+  tick() { clearInterval(this.cd); this.cd = setInterval(() => this.setState((p) => ({ retry: p.retry <= 1 ? 4 : p.retry - 1 })), 1000); }
+  say(t) { this.setState({ toast: t }); clearTimeout(this.tt); this.tt = setTimeout(() => this.setState({ toast: '' }), 2400); }
+  renderVals() {
+    const s = this.state, st = s.st;
+    const R = (src, n, cid) => ({ src, n, cid });
+    const rows = [R('Austin permits · property_improvement', '2,378,944 → 2,380,507 · +1,563 · ~412 · −0', '…p3ua → …q4xa'), R('TCAD properties · properties', '412,779 → 412,860 · +118 · ~2,904 · −37', '…6k1b → …7m2c'), R('TCAD owners and sales · person, sales_history', '398,051 → 398,114 · +63 · ~1,240 · −0', '…n1vb → …o2wn, …s4lh'), R('Contractor names on permits · company', '22,188 → 22,210 · +22 · ~9 · −0', '…u2kq → …w3nd'), R('BBB ratings', '0 → 0', 'Same CID: nothing fetched, source blocked'), R('TX Comptroller businesses · company', '61,036 → 61,305 · +310 · ~95 · −41', '…u2kq → …w3nd')].map((r, i) => ({ ...r, bt: i ? '1px solid var(--md-sys-color-outline-variant)' : '0' }));
+    const RS = { populated: ['atlas-pill atlas-pill--success', 'check_circle', 'Old manifest still resolves on ipfs.io and dweb.link'], partial: ['atlas-pill atlas-pill--warning', 'warning', 'Old manifest resolves on ipfs.io · dweb.link failed, retrying'], ratelimited: ['atlas-pill atlas-pill--info', 'hourglass_top', 'Checking ipfs.io and dweb.link…'] }[st] || ['atlas-pill atlas-pill--info', 'hourglass_top', 'Checking ipfs.io and dweb.link…'];
+    const BN = { partial: ['atlas-banner atlas-banner--warning', 'warning', 'dweb.link did not answer for the Run 2 manifest. Compared using ipfs.io; dweb.link retries in the background.'], ratelimited: ['atlas-banner atlas-banner--info', 'hourglass_top', 'The gateways are rate-limited. Checking again in ' + s.retry + ' s (attempt 2 of 3). Nothing has failed.'] }[st];
+    const opts = [['populated', 'Populated'], ['loading', 'Loading'], ['empty', 'Empty'], ['error', 'Error'], ['partial', 'Partial'], ['ratelimited', 'Rate-limited']];
+    return {
+      stateOpts: opts.map((o) => ({ label: o[1], on: String(st === o[0]), pick: () => { clearInterval(this.cd); this.setState({ st: o[0], retry: 4 }); if (o[0] === 'ratelimited') this.tick(); } })),
+      isLoading: st === 'loading', isEmpty: st === 'empty', isError: st === 'error', hasData: ['populated', 'partial', 'ratelimited'].indexOf(st) >= 0,
+      banner: !!BN, bannerCls: BN ? BN[0] : '', bannerIcon: BN ? BN[1] : '', bannerText: BN ? BN[2] : '',
+      rsCls: RS[0], rsIcon: RS[1], rsText: RS[2], rows: rows,
+      retry: () => this.setState({ st: 'populated' }), copy: () => this.say('Manifest CID copied (Sample).'),
+      toastOn: !!s.toast, toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

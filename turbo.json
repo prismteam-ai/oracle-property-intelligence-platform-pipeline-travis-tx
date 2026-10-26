@@ -1,0 +1,79 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "stream",
+  "globalDependencies": [
+    "tsconfig.base.json",
+    "tsconfig.json",
+    "eslint.config.js",
+    ".prettierrc.json",
+    "vitest.config.ts"
+  ],
+  "globalPassThroughEnv": [
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "AWS_SESSION_TOKEN",
+    "AWS_CONFIG_FILE",
+    "AWS_SHARED_CREDENTIALS_FILE",
+    "GITHUB_SHA",
+    "GITHUB_REF_NAME"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["NODE_ENV", "VITE_*"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {},
+    "test": {
+      "dependsOn": ["^build", "//#test:root"],
+      "outputs": ["coverage/**"],
+      "env": [
+        "CI",
+        "RUNTIME_URL",
+        "CDK_DEFAULT_REGION",
+        "CDK_DEFAULT_ACCOUNT",
+        "OPERATOR_EMAIL",
+        "AWS_REGION",
+        "COUNTYLENS_BUNDLE"
+      ]
+    },
+    "synth": {
+      "dependsOn": ["^build"],
+      "outputs": ["cdk.out/**"],
+      "env": [
+        "AWS_PROFILE",
+        "AWS_REGION",
+        "AWS_DEFAULT_REGION",
+        "CDK_DEFAULT_ACCOUNT",
+        "CDK_DEFAULT_REGION",
+        "OPERATOR_EMAIL"
+      ]
+    },
+    "//#typecheck": {
+      "cache": false
+    },
+    "//#lint": {
+      "cache": false
+    },
+    "//#test:root": {
+      "cache": false
+    },
+    "@countylens/infra#test": {
+      "dependsOn": ["^build", "//#test:root"],
+      "outputs": ["coverage/**"],
+      "env": [
+        "CI",
+        "RUNTIME_URL",
+        "CDK_DEFAULT_REGION",
+        "CDK_DEFAULT_ACCOUNT",
+        "OPERATOR_EMAIL",
+        "AWS_REGION",
+        "COUNTYLENS_BUNDLE"
+      ],
+      "cache": false
+    }
+  }
+}

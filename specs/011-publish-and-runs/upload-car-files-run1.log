@@ -1,0 +1,66 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/upload-car-files.ts runs/travis-full-run1-20261023/manifest.json
+manifest: runs/travis-full-run1-20261023/manifest.json
+carCid artifacts to upload: 24
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car
+FAIL  kubo add: The operation was aborted due to timeout
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/tables.car
+ok    kubo add: Hash bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u matches manifest carCid, size=3072, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u size match
+ok    https://ipfs.filebase.io/ipfs/bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car
+FAIL  kubo add: The operation was aborted due to timeout
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/tables.car
+ok    kubo add: Hash bafkreiholjuwuz5htszd5l4qnvjx3lwnh4fnq7pucyl3wvkcx2nhjy3x3i matches manifest carCid, size=3072, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreiholjuwuz5htszd5l4qnvjx3lwnh4fnq7pucyl3wvkcx2nhjy3x3i size match
+ok    https://ipfs.filebase.io/ipfs/bafkreiholjuwuz5htszd5l4qnvjx3lwnh4fnq7pucyl3wvkcx2nhjy3x3i size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b03.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b03.car
+FAIL  kubo add: The operation was aborted due to timeout
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/tables.car
+ok    kubo add: Hash bafkreihunekrqpxthr5jnwg34v72k6bykovjohkds7vhlt5fbua6qj3ixy matches manifest carCid, size=3066, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreihunekrqpxthr5jnwg34v72k6bykovjohkds7vhlt5fbua6qj3ixy size match
+ok    https://ipfs.filebase.io/ipfs/bafkreihunekrqpxthr5jnwg34v72k6bykovjohkds7vhlt5fbua6qj3ixy size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b04.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b04.car
+FAIL  kubo add: The operation was aborted due to timeout
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/tables.car
+ok    kubo add: Hash bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e matches manifest carCid, size=3066, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e size match
+ok    https://ipfs.filebase.io/ipfs/bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b05.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b05.car
+FAIL  kubo add: The operation was aborted due to timeout
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/tables.car
+ok    kubo add: Hash bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji matches manifest carCid, size=3072, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji size match
+ok    https://ipfs.filebase.io/ipfs/bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b06.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b06.car
+FAIL  kubo add: The operation was aborted due to timeout
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/tables.car
+ok    kubo add: Hash bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma matches manifest carCid, size=3072, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma size match
+ok    https://ipfs.filebase.io/ipfs/bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b07.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b07.car
+FAIL  kubo add: add of travis-county-b07.car failed: 403 Forbidden: {"Message":"You have exceeded your storage quota.","Code":2,"Type":"error"}
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/tables.car
+ok    kubo add: Hash bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 matches manifest carCid, size=3066, pinned on Filebase
+ok    https://gateway.pinata.cloud/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 size match
+ok    https://ipfs.filebase.io/ipfs/bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4 size match
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b08.car (car) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b08.car
+FAIL  kubo add: add of travis-county-b08.car failed: 403 Forbidden: {"Message":"You have exceeded your storage quota.","Code":2,"Type":"error"}
+
+pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08 (directory) -> pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/tables.car
+ok    kubo add: Hash bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre matches manifest carCid, size=3051, pinned on Filebase

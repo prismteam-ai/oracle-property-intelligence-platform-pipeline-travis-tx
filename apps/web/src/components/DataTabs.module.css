@@ -1,0 +1,41 @@
+/* Data pages tab bar (Data boards): Atlas § 7 primary tabs, 48 px targets, 3 px primary
+   indicator under the current tab, outline-variant divider. Tokens only. */
+
+.tabs {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-4);
+  color: var(--md-sys-color-on-surface-variant);
+  text-decoration: none;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  line-height: var(--md-sys-typescale-title-small-line-height);
+}
+
+a.tab:hover {
+  color: var(--md-sys-color-on-surface);
+}
+
+a.tab:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.current {
+  border-bottom: 3px solid var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary);
+}
+
+.tab[aria-disabled="true"] {
+  opacity: var(--md-sys-state-disabled-opacity);
+}

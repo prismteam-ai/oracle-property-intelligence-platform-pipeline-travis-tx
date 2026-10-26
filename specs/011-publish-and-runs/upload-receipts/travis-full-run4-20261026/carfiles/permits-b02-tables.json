@@ -1,0 +1,20 @@
+{
+  "name": "pipeline/data/runs/travis-a11-permits-run4-20261026/publish-run4/permits-batched/tables/b02",
+  "carCid": "bafkreihrchey7clcf7tj37dsirwvqtfr5zjo3frq3ujxrfgitvcmaowc7m",
+  "size": 1580,
+  "adopted": true,
+  "gateways": [
+    {
+      "gateway": "https://gateway.pinata.cloud",
+      "ok": true,
+      "status": 206
+    },
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 206
+    }
+  ],
+  "deferredGateways": [],
+  "recordedAt": "2026-10-26T12:25:09.972Z"
+}

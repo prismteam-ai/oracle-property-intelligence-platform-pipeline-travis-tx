@@ -1,0 +1,330 @@
+/* Explore · AI (A-14 T033, FR-012): mobile-first single column; Atlas § 7 text field, buttons,
+   chips and cards; 48 px targets; tokens only. */
+
+.panel {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.form,
+.result,
+.answerMain,
+.sources,
+.how,
+.missing,
+.working {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.label,
+.heading {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: calc(var(--space-9) * 2);
+  padding: var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ask,
+.cancel {
+  box-sizing: border-box;
+  min-width: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0 var(--space-5);
+  border: 1px solid var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.ask {
+  color: var(--md-sys-color-on-primary);
+  background: var(--md-sys-color-primary);
+}
+
+.cancel {
+  color: var(--md-sys-color-primary);
+  background: transparent;
+}
+
+/* ExploreQ-ai board "Suggestions": outlined assist chips that fill the question box. */
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.suggestion {
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.suggestion:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.ask:disabled {
+  opacity: var(--md-sys-state-disabled-opacity);
+  cursor: default;
+}
+
+.input:focus-visible,
+.ask:focus-visible,
+.cancel:focus-visible,
+.chipInput:focus-visible,
+.cite:focus-visible,
+.match:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.counter,
+.note,
+.facts {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  overflow-wrap: anywhere;
+}
+
+.workingText {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Explore · AI board: the question title, the prose (body-medium paragraphs, title-small
+   headings, item lines), the amber caveat banner and the check-list of steps. */
+.answer {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+.answer p {
+  margin: 0;
+}
+
+.question {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  overflow-wrap: anywhere;
+}
+
+.question > [data-icon] {
+  color: var(--md-sys-color-primary);
+}
+
+.answerHeading {
+  margin: var(--space-2) 0 0;
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.answer .answerItem {
+  padding: var(--space-1) 0 var(--space-1) var(--space-3);
+  border-left: 2px solid var(--md-sys-color-outline-variant);
+}
+
+.answer .caveat {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  color: var(--status-warning);
+  background: var(--status-warning-container);
+}
+
+/* A citation is a link inside a sentence, sized by its line of text (WCAG 2.5.8 inline exception);
+   the numbered rows it jumps to are the full-size targets. */
+.cite {
+  display: inline;
+  color: var(--md-sys-color-primary);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+.chips,
+.list,
+.matches {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.chip,
+.chipFixed {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+}
+
+.chipFixed {
+  align-content: center;
+  min-height: var(--space-9);
+  box-sizing: border-box;
+}
+
+.chipInput {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--space-9);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+}
+
+/* ExploreQ-ai board: the matches are the numbered rows of one outlined card, divided by lines. */
+.matches {
+  gap: 0;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-lowest);
+  overflow: hidden;
+}
+
+.match {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  color: var(--md-sys-color-on-surface);
+}
+
+.match + .match {
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.match:target,
+.match:focus {
+  background: var(--md-sys-color-secondary-container);
+}
+
+/* The board's filled number badge; the [n] citations in the answer jump to it. */
+.matchNo {
+  box-sizing: border-box;
+  min-width: var(--space-6);
+  height: var(--space-6);
+  /* Centred on the first line of the row: the CID with its 48 px copy button. */
+  margin-top: var(--space-3);
+  padding: 0 var(--space-1);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-primary);
+  background: var(--md-sys-color-primary);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--space-6);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.matchBody {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+/* From 1240 px (the Explore results table width) the answer and its matches sit side by side;
+   the matches scroll inside a sticky column instead of running for thousands of pixels. */
+@media (min-width: 1240px) {
+  .result {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-4);
+  }
+
+  .sources {
+    position: sticky;
+    top: var(--space-4);
+    max-height: calc(100dvh - var(--space-10) * 2);
+    overflow-y: auto;
+  }
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+/* The Explore drawer is collapsed: from 840 px the question box is hidden (kept in the DOM). */
+@media (min-width: 840px) {
+  .hiddenWide {
+    display: none;
+  }
+}

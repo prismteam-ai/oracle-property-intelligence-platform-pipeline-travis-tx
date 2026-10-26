@@ -1,0 +1,8 @@
+npm notice run countylens@0.0.0 npx
+npm notice run 'tsx' pipeline/publish/scripts/publish-run.ts --manifest runs/travis-full-run3-1-20261025/manifest.json --run-id travis-full-run3-1-20261025 --copy-host d2xsqoqv09bd0q.cloudfront.net --step filebase
+uploading permits-b05-tables (attempt 1/8)
+failed permits-b05-tables: exit 1: 🐘 Elephant Network CLI - Upload to IPFS
+
+
+❌ Upload failed: fetch failed
+uploading permits-b05-tables (attempt 2/8)

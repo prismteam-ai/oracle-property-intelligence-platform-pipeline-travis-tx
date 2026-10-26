@@ -1,0 +1,1950 @@
+{
+  "schema": "oracle-travis-run-manifest.v1",
+  "runId": "travis-full-run1-20261023",
+  "county": "travis",
+  "state": "TX",
+  "fips": "48453",
+  "startedAt": "2026-10-23T10:27:00.000Z",
+  "finishedAt": "2026-10-23T15:41:00.000Z",
+  "previousManifestCid": null,
+  "sources": [
+    {
+      "name": "austin-3syk-w9eu",
+      "url": "https://data.austintexas.gov/resource/3syk-w9eu.json",
+      "watermark": "2026-10-21T14:42:23.154Z",
+      "captured_at": "2026-10-21T22:32:55.000Z",
+      "records": 2381226,
+      "added": 2381226,
+      "changed": 0,
+      "removed": 0,
+      "limitations": [
+        "Comptroller baseline not loaded (A-07)"
+      ]
+    },
+    {
+      "name": "tcad-2026-certified-json",
+      "url": "https://traviscad.org/publicinformation",
+      "watermark": "entry@sha256:6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346",
+      "captured_at": "2026-10-22T05:48:41.000Z",
+      "records": 493246,
+      "added": 493246,
+      "changed": 0,
+      "removed": 0,
+      "limitations": [
+        "Confidential owner records redacted (Texas Tax Code §25.025): 15410"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car",
+      "cid": "baguqeeradxb3jlta4am3t6wtnuyf3223fc7kje5cvpdrl25clwaf2vsdziba",
+      "codec": "dag-json",
+      "size": 232735494,
+      "sha256": "25e2ccf63415e5b2ca1ffd3912544cda8dbcf79089bdeca56f7246565905f2cd",
+      "kind": "car",
+      "carCid": "bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01",
+      "cid": "baguqeeramqgfppfibeizne4hz63c4sgzi3jyercbc6ao2jif75jjq5xbp7pa",
+      "codec": "dag-json",
+      "size": 3072,
+      "sha256": "f821afe62f6591138a46557f3e3f5929bc58f5a808ff7e26dbe0985e9663e7d5",
+      "kind": "directory",
+      "carCid": "bafkreihyegx6ml3fsejyursvp47d6wjjxrmplkai757cnw7atbpjmy7h2u"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/address/part-00000.parquet",
+      "cid": "bafybeicfyesy527ylqbv775pocfvxak7z7rgxleh5s5jaw277w5mxd4y2m",
+      "codec": "dag-pb",
+      "size": 3158845,
+      "sha256": "c482b1a83116779e22f7506d56ba57b6a329df448b109e5de7dc6d17c107a40f",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeifgunreoeaet47lsir4hggxojc4nn2ams3cxw6zsktktq2yirbzju",
+      "codec": "dag-pb",
+      "size": 5952985,
+      "sha256": "cf88513dfab339f0317e04d3d723546a34fc5685ee3af2622891df7ea67b8d66",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/company/part-00000.parquet",
+      "cid": "bafybeibdlv4pb5mty6k24qtuz2nouitnjxjjzmlesxnjovyt5fk2q4edhe",
+      "codec": "dag-pb",
+      "size": 265834,
+      "sha256": "4f6f2cc3e6b44408a8259d99fcd2a074c28593e339c629658215a7f3004a64dd",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeifytsoyhl6u6gqj6kfu3tdo5bf377hcslmvfxfjircb7yznzlskiy",
+      "codec": "dag-pb",
+      "size": 442749,
+      "sha256": "48503fd07d31f16a0fc7a6d8b834c2f344630ef7832da52205bff02fa34dee38",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/geometry/part-00000.parquet",
+      "cid": "bafybeiblnbh6uj6vi44qopctwgxb4afbtweumsjmhtxegzeye3oivpvnmm",
+      "codec": "dag-pb",
+      "size": 3314465,
+      "sha256": "323be7d61e0b41c2deb61647bcc1244bebdbebd6090320fdbe2d946204d0d18b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/parcel/part-00000.parquet",
+      "cid": "bafybeibmoxflcdvtdshr7lb2uezyhl5vzvs76mbgeqavm23dyqofqkze2q",
+      "codec": "dag-pb",
+      "size": 3078913,
+      "sha256": "07247567177e6c246d40458ef40436d8351de068acbdf92c0c89b96ff1aeaa05",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeidok332bdzkp546svv6mdtbhkb5kyjbnxsbzcr4x4xojfzmcwjrru",
+      "codec": "dag-pb",
+      "size": 5472028,
+      "sha256": "e88fe33d942f962ebe9b20d6954d70d24b1fcbd350f6c3d79b275dcea7c175e8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/person/part-00000.parquet",
+      "cid": "bafkreihv6jm3pfbsluxj5u2srzcktbjfddxprhtobevdtw2cqofdffihza",
+      "codec": "raw",
+      "size": 14892,
+      "sha256": "f5f259b794325d2e9ed3528e44a9852518eef89e6e092a39db42838a329507c8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreid4cdhsfr4kgk2ozzpcky37pickxdef3zmscz2hnq67th2dtpxqje",
+      "codec": "raw",
+      "size": 18081,
+      "sha256": "7c10cf22c78a32b4ece5e25637f7a04ab8c85de592167476c3df99f439bef049",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/properties/part-00000.parquet",
+      "cid": "bafybeifhsaivfzzm43lvskjevfeqt67jlirad4penbf2z2edf3rdrgjgwy",
+      "codec": "dag-pb",
+      "size": 4465031,
+      "sha256": "686b3e59467c7a42bc8b8f05211ccedaf7a29e5cf9b8f2ab3f987ce0712d3310",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property/part-00000.parquet",
+      "cid": "bafybeihy3mgwqwdidlunzluxulzffvzparfmsmqjhcyopr5x5yhc4xqswe",
+      "codec": "dag-pb",
+      "size": 3395853,
+      "sha256": "e0e4ce6c8d25edba63bb84e26370040eaf45d4a883dd65eefd4443dec79a6440",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_address/part-00000.parquet",
+      "cid": "bafybeie3avbj3ntijykmbgtdoftwunra2a6xnp53mkenzciamtmjgqmkve",
+      "codec": "dag-pb",
+      "size": 5953418,
+      "sha256": "012893411465cb598cf8ce6d2acba56af6401cbb90d39fad2e71e25b2c939f74",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeidsq2l3cgim4qhu2haj7ig7ye2ghaygfz6fkg6opheuanhj6d2qku",
+      "codec": "dag-pb",
+      "size": 5953396,
+      "sha256": "ed971762099b30f24d791e30f143bdc2bb188ec7c8d9e830eb63c8541b112fdb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeie2ztpnyf4cg27qodrc3pxgnybov2kmgnmv2gmcmkldvs7hixicze",
+      "codec": "dag-pb",
+      "size": 3996570,
+      "sha256": "93d44205788cac4b4bfcdc79e214a5e2106bc09847b5d81c5d75e37a39463418",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/property_has_structure/part-00000.parquet",
+      "cid": "bafybeifrr6kixhgii2ckkczln5wvcw2phuow7h4f3cmqtlqs4xtpv6p75i",
+      "codec": "dag-pb",
+      "size": 5953641,
+      "sha256": "182ffb97b42369bc93b3ae71d25e3db96f37129228caf8b660edfc15fc6e5eef",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history/part-00000.parquet",
+      "cid": "bafybeiaj4oua2gdvcki3uokbpik2qmch7jhacbeepsdkx2ogxzmse7zng4",
+      "codec": "dag-pb",
+      "size": 2151330,
+      "sha256": "3a0a5189ddff7608f7654f31c801a5bb9e7451e6ec27d1c717496d8e6d881b31",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeiej5tvwnrsa4aul52pzpng474nkfvhtwnegl7ejzklruaj3agsjyi",
+      "codec": "dag-pb",
+      "size": 443075,
+      "sha256": "9bbc4b112a7e45d2e9267bb8aa321061f11a1c5f96ccd7ad2bb79066c29ed912",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreifha2ymiwyv7lv5vvtnvuh57ph3ml3bg7sltwcbeoaoq3nj2wsy7i",
+      "codec": "raw",
+      "size": 18076,
+      "sha256": "a706b0c45b15faebdad66dad0fdfbcfb62f6137e4b9d8412380e86da9d5a58fa",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b01/structure/part-00000.parquet",
+      "cid": "bafybeih7zbb5qnwo5nfihgdirjhq3vimwtxvrex2dadvvwg3wjqvfqrlya",
+      "codec": "dag-pb",
+      "size": 3050947,
+      "sha256": "79d3cdf6d31098433435e59b6182af95328ffed474a86c1c5c7eef6202120e55",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b02.car",
+      "cid": "baguqeerawhwkcxymsi4gzfdgzb5g5fokrtaeanfkcowkyetgqdien2jzmtca",
+      "codec": "dag-json",
+      "size": 231763448,
+      "sha256": "567187829f6f7a43852c3a0ef077bb6660c93618c8249a8ce834226b4e03666f",
+      "kind": "car",
+      "carCid": "bafybeiffqsk66kr3qcl6sf6i7u5a7zzekwyhcbekdz2p3lag3ztjjedbs4"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02",
+      "cid": "baguqeeraujt3r57nm4nkwyn5c7tchid7xyuext5g7fax6zj22us4c6sqi4iq",
+      "codec": "dag-json",
+      "size": 3072,
+      "sha256": "ee5a696a67a79cb23eaf906d537daecd3f0ad87df41617bb5542be9a74e377da",
+      "kind": "directory",
+      "carCid": "bafkreiholjuwuz5htszd5l4qnvjx3lwnh4fnq7pucyl3wvkcx2nhjy3x3i"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/address/part-00000.parquet",
+      "cid": "bafybeigobqdobhimqqpjq6rqounotpmoughfqmkcm2l2dibhbpp3wnws34",
+      "codec": "dag-pb",
+      "size": 3148820,
+      "sha256": "b63f6449ca75e7ee06f6003e07ddd8dba711c1ef78dc675230e292cc5bdcea6d",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeif2m5hiwioseduby5hkshv37hvnajxbhopkulm77cwfgqtiftejpa",
+      "codec": "dag-pb",
+      "size": 5953481,
+      "sha256": "c3b6d1583db4d9286e6a87efc7b4652a536685ab2d58e0dc3a95533f9829be96",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/company/part-00000.parquet",
+      "cid": "bafkreigzlq3cxsekr4e74pe4cxzy7bjriwlzynsihduodvja62qrnctsvq",
+      "codec": "raw",
+      "size": 240130,
+      "sha256": "d95c362bc88a8f09fe3c9c15f38f853145979c364838e8e1d520f6a1168a72ac",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeigyjzzwbuascfbgfiwgc5tiqawjc6yw4g4c7ee3tcrvoz4hkpsdwq",
+      "codec": "dag-pb",
+      "size": 401116,
+      "sha256": "55d6ed4ad41fe09a7788c48111626fdcde5d5ab856ae2ec2c4b189d8574eb86c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/geometry/part-00000.parquet",
+      "cid": "bafybeihcrgqkvi5na6px3hcz5t6es2pzfd454fzthdyn4uwcsi4ezhnfqe",
+      "codec": "dag-pb",
+      "size": 3606591,
+      "sha256": "53a0f13496c1360ede49d1cf14cdb0747886e6179a9d9616646446f02873933f",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/parcel/part-00000.parquet",
+      "cid": "bafybeich5kljiclpz65o7dyxjctv4mqucdthcjnlc54lrwe3rwh5qpdoii",
+      "codec": "dag-pb",
+      "size": 3084122,
+      "sha256": "14bad46f948c9e184dd6411db621ce61ecfdab648a771c6e0d33a74d4c6d3779",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeibx6qurpkyxbdtz5wcfozmppkeyoa3fume3yskkgatsylpwumizj4",
+      "codec": "dag-pb",
+      "size": 5934289,
+      "sha256": "45096396f0fac2c648f3f84c44ed9ae6843753d3802c41b636f29025046dcc1c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/person/part-00000.parquet",
+      "cid": "bafkreidfk5yud55djo7hemgsevcogiuezot4kg5i7yx25k76n74il4eibm",
+      "codec": "raw",
+      "size": 14804,
+      "sha256": "65577141f7a34bbe7230d22544e32284cba7c51ba8fe2faeabfe6ff885f0880b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreidoy55s7ok63ybnkf6mspxmccnht33jixlsizykgyxwz56xtrnzpe",
+      "codec": "raw",
+      "size": 17943,
+      "sha256": "6ec77b2fb95ede02d517cc93eec109a79ef6945d724670a362f6cf7d79c5b979",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/properties/part-00000.parquet",
+      "cid": "bafybeiegwiogxvt7xaica52q4rphikfl4juobxajm6wkfhweixrfplm7xe",
+      "codec": "dag-pb",
+      "size": 4465097,
+      "sha256": "03a8d9e0d277221ff39ef0cae8ce05038f2b6ad372466fd1695f3538e36bb07a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property/part-00000.parquet",
+      "cid": "bafybeibz4shyeuw62nibp7u35epdkkhacjog7ojk6k7zrnwcfvbvuy3l7q",
+      "codec": "dag-pb",
+      "size": 3407896,
+      "sha256": "31a9bcd326bc1e48987746695e202baf2c28c56fcc1585fb2c7dd8424ebb7597",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_address/part-00000.parquet",
+      "cid": "bafybeidvhxpvxfbtbkhrai2kaxgn7usqm4f3fjrjidjjo3vpqcizv2b47u",
+      "codec": "dag-pb",
+      "size": 5953495,
+      "sha256": "2e2830f2bf2d6cf1d009f5cb60f3d1dec23defd511ccebb07be169fc54f25ad2",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeifxblkftpuwzk4xvcmkgiegiyckim5ytm76w4uweb7l5y6asoud2y",
+      "codec": "dag-pb",
+      "size": 5953471,
+      "sha256": "8d61c011134b8f4d8387e0c4d5be6e369af17f56534ce2567f7d3d4f91da4740",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeie57gen4v6xiwak25ulbjl66rpkg2sje47opi77jfcnijouwe7kzq",
+      "codec": "dag-pb",
+      "size": 3652823,
+      "sha256": "a9eab8ada23b93573c4fcfbc20f96fb725287aa7e092a50d2c8ab902ddefcf9b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/property_has_structure/part-00000.parquet",
+      "cid": "bafybeia4twzxmsgxqfxmy7hyq35tb562ngj33pkyveizkbvsaerlbikiie",
+      "codec": "dag-pb",
+      "size": 5953417,
+      "sha256": "6debc7d64db1af41baae016647468954a8e483dba57ff708f662df9a6a9895c7",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history/part-00000.parquet",
+      "cid": "bafybeidcmwj7uwo4khicoyjr5zbq5ml7igpqvmbcf2sksxgblt54flq6vy",
+      "codec": "dag-pb",
+      "size": 1975680,
+      "sha256": "1fe3fd0aa5fd708397ef323ce1162db5e2493d485568b5c01c346a8365f91209",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeie26p47v3qm46bdn6ivnmsxatwyjm2od3imlga7iptwtn7av2dmpy",
+      "codec": "dag-pb",
+      "size": 401239,
+      "sha256": "561a59d3495f3a08fc954c97a04659fad6a783a8be930bb8122d65f88d1893b9",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreifcdnffzlbg3wfizdxbnvqpztxqibmm32n6bsiaggnp7un4r6uaie",
+      "codec": "raw",
+      "size": 17941,
+      "sha256": "a21b4a5cac26dd8a8c8ee16d60fccef04058cde9be0c900319affd1bc8fa8041",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b02/structure/part-00000.parquet",
+      "cid": "bafybeibyzbz4bxam4cs6uffds6rkrucu5ykjeodcqtbvrtvr3o2mpdp7l4",
+      "codec": "dag-pb",
+      "size": 3053205,
+      "sha256": "502355b178d144d52cccc58a6860e17b690a8334c516a3d99ef531a5454797d4",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b03.car",
+      "cid": "baguqeeraevjarnn4wemqbpedsy3t6fmnhcwjyfdixmcgqfqouzrs6nsg5tga",
+      "codec": "dag-json",
+      "size": 235001712,
+      "sha256": "c19f4e6dc65420f5276a6868e7fa4975e736fbc703532e38f3b9e50ea874fcef",
+      "kind": "car",
+      "carCid": "bafybeiggj2v7dpycckkuugcqo6yqcqgsxx2aldlqy2vpq5bix5ed27anfa"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03",
+      "cid": "baguqeerak4ghi2yamlbjthmpxocevpons5gd5t2w75ncyxderb5pggb7vv6a",
+      "codec": "dag-json",
+      "size": 3066,
+      "sha256": "f46915183ef33c7a96d8dbe57fa5783853aa971d4397ea75cfa50d01e82768be",
+      "kind": "directory",
+      "carCid": "bafkreihunekrqpxthr5jnwg34v72k6bykovjohkds7vhlt5fbua6qj3ixy"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/address/part-00000.parquet",
+      "cid": "bafybeibrft4iivrvyj2zi2elpl4kxmm6w7b23tnk5gpt5tyjlqjua2vjka",
+      "codec": "dag-pb",
+      "size": 3162960,
+      "sha256": "bf66b36bb76f72d035dee8d5c518dc9b629d48132aad7b3d5d39d095f2aa37f8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeibxyu4sa4e35tkskd2ffzykz6agu4733zyacvadnusiejgm4qleqa",
+      "codec": "dag-pb",
+      "size": 5953270,
+      "sha256": "e8bc91fce352a56e9da5cb086f5d1c31509a78237326590a5bdc96d81b659ac6",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/company/part-00000.parquet",
+      "cid": "bafybeiaon66nag6tbmdby4zu7xxcairwsxo7zquc27rhaz3nkezyk3kt4e",
+      "codec": "dag-pb",
+      "size": 288664,
+      "sha256": "c2fe3bf4d35a4ca8080ec8b5530f7774ef41aebc01ef8bd3a527d6d2c43f250c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeig6qr5yqnsqlbcgrrucgg6ofrbdzhbaakv2uxhmz72oev6c52gl64",
+      "codec": "dag-pb",
+      "size": 484167,
+      "sha256": "1ed2faebb2c65547bb8c239d168d21a9676351c15c6b4320b80a6470a9a774ef",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/geometry/part-00000.parquet",
+      "cid": "bafybeiat5zbhnogzmn7qoehgqavixaoohonr64db4neqhsmg4ninzikzhy",
+      "codec": "dag-pb",
+      "size": 3518215,
+      "sha256": "08f2b29485b4f8ce3092c11a880669ba8826cf554248c62daadbfe16cc370572",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/parcel/part-00000.parquet",
+      "cid": "bafybeibkabaaufbiibcmafwpoxiiecr7s4rmwo6xcbx2zbusscaycsxsri",
+      "codec": "dag-pb",
+      "size": 3064410,
+      "sha256": "47ae655e5c5ab779769173bb82411c9a47e0fc97dbe8f72481b895a9a008b7c1",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeih6vzstfp4qlvfejp4fbqzss77iiv2fxni4arg3mxqenomd7do2ye",
+      "codec": "dag-pb",
+      "size": 5850798,
+      "sha256": "9843a64dbdcef11875da4c18e22f357dc71995b4ba1fc93fc7795e304b4d1bcb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/person/part-00000.parquet",
+      "cid": "bafkreid3xchupdgam477vnhahors644xprunnjyz5a33shbbgclgjiccci",
+      "codec": "raw",
+      "size": 12234,
+      "sha256": "7bb88f478cc0673ffab4e03ba32f73977c68d6a719e837b91c21309664a04212",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreigphn7y66z26v46wztb4gi4inyhl2l5h4kz2vtmzjxvdsabz24hsa",
+      "codec": "raw",
+      "size": 13674,
+      "sha256": "cf3b7f8f7b3af579eb6661e191c437075e97d3f159d566cca6f51c801ceb8790",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/properties/part-00000.parquet",
+      "cid": "bafybeicizl3tp7jbjl7lvb5qdkwxzg575podaeb3xw42zveynf7evsldha",
+      "codec": "dag-pb",
+      "size": 4465071,
+      "sha256": "4d9ce267e42ea139fa20650ae5cf8b3d5a69fbeb49ba33bbd2ceda091337a205",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property/part-00000.parquet",
+      "cid": "bafybeiaroqh3wskq3ti4dspw7qxfud2qglkxnj62zukcmdwvooqz7vgguq",
+      "codec": "dag-pb",
+      "size": 3366147,
+      "sha256": "7e6c53ab76cc0850f76c4938e9aa34f9c12e24ed0c240fb5b804c24c59d9fa0e",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_address/part-00000.parquet",
+      "cid": "bafybeiaqj46ugjkquaovlyqrtphpomv2pfuibnmnungau5hgrrudknla7e",
+      "codec": "dag-pb",
+      "size": 5953287,
+      "sha256": "62d0f1ff0ffddf51213330506f67b95fbfca448ff60810ac2e5fc33f9ba25c24",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeigxeprvpf5bojfbcnfemovhqnnlfa6va23du4yfbpcixgr7mzvg74",
+      "codec": "dag-pb",
+      "size": 5953422,
+      "sha256": "ae1d3f51e34f528a5f5b9a9e342925eece332aecab628ee3d95f26da78890ddf",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeieoaj44dq44stvoznntvcwl24zy3fgjmzcraswy4345zubdtonz4e",
+      "codec": "dag-pb",
+      "size": 4168637,
+      "sha256": "49f9332614af9b9159c269e931f67e37cfe5ff56f9bf6d2c75e56b3d659cc3f4",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/property_has_structure/part-00000.parquet",
+      "cid": "bafybeidqyoutwy4qb4d2hybpccebjtrixducglmptc3urhmszlbb7ewyxu",
+      "codec": "dag-pb",
+      "size": 5953428,
+      "sha256": "547799354085b71a2a33ceeb0ce7fcc3665373d40d4583f29ace711578caaa0a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history/part-00000.parquet",
+      "cid": "bafybeig4ygvhlxe7kxk6zoeabpmgk7j6pxrdnffh4e4xmwxsqh7oi224pq",
+      "codec": "dag-pb",
+      "size": 2253658,
+      "sha256": "56633180ebad22b97f6c9b47dbf7d738612097f62ec350990c4977bed1d003ec",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeibulzr3sxkt4gjkcsr5e6sofaldmcbejpjh3huao4hibhh4hsiniy",
+      "codec": "dag-pb",
+      "size": 484137,
+      "sha256": "0f7b3823a5f1752eeeafc21b497322e00c90c32c622309b23a8ea484608430cb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreibqmfzrj5ou4i7vfudw3ea3rea7xhlmjx7fq6trnocyukriahgf3y",
+      "codec": "raw",
+      "size": 13667,
+      "sha256": "30617314f5d4e23f52d076d901b8901fb9d6c4dfe587a716b858a2a2801cc5de",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b03/structure/part-00000.parquet",
+      "cid": "bafybeiazss6uvr3rhararl2s67eoypqcp4lr3vq6sz6ok5covunmsvzece",
+      "codec": "dag-pb",
+      "size": 3043469,
+      "sha256": "dfd049e532cc0f968246a552418487774fd8f4dd92941f8f07c401a9511b5808",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b04.car",
+      "cid": "baguqeerazqin3l7ea5ckr27x3rw533h3sabvmpevhyowij6x4jzomewwfhfa",
+      "codec": "dag-json",
+      "size": 236157967,
+      "sha256": "5e9510b6427339b7d17c5a58caf81c785dfca16fab347464db5c5a673c7d9fbe",
+      "kind": "car",
+      "carCid": "bafybeifgaowcnzvuteoy7hpwl3wzhulh3rl6wwgxcwvyxqe7wlh5zmcuqm"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04",
+      "cid": "baguqeera2wa6lny3idnsoksgsoio6wbxx5dmuqrfmt5z5fkjvzufomxsyd4q",
+      "codec": "dag-json",
+      "size": 3066,
+      "sha256": "6f0dcbc32ecea50f3a17df36214945eb065196b3f548568e4ffc152e134d67d1",
+      "kind": "directory",
+      "carCid": "bafkreidpbxf4glwouuhtuf67gyqusrplaziznm7vjbli4t74cuxbgtlh2e"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/address/part-00000.parquet",
+      "cid": "bafybeia5um7bmnexb6xsp2hra3xd2h4b5ltvgujqjsqhahbzfpyebschda",
+      "codec": "dag-pb",
+      "size": 3159433,
+      "sha256": "c9a42e01d365178b3b93c05cf9ebe96420995e8e374cdaf824e864c25a2c5a9a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeidagsffddfme6hjmoezwwevy2m2xmmrcgdgpoejcavltykzntji4q",
+      "codec": "dag-pb",
+      "size": 5954531,
+      "sha256": "e6fa9c0a09296e8b64516a68cc5b227ee93da074ba9107a30d42bfc5000d4cbe",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/company/part-00000.parquet",
+      "cid": "bafybeigrn2lsheedjjvjd4osnjwctx4ux6jexie4rxwyywz6tbx3r7bo7u",
+      "codec": "dag-pb",
+      "size": 275894,
+      "sha256": "601d2f7aabd366371bc62b1086dda85dde274de6fa049eb702beaa5fea5e040c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeib34fzl6dpbmtdu7yz4j7pkltgalvdnwg33bqjb4c4kj5e34sj64y",
+      "codec": "dag-pb",
+      "size": 465593,
+      "sha256": "701d054ca40d6d007b1d9c4304f1d60e897ba978573546d8af1a992543f5b0cd",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/geometry/part-00000.parquet",
+      "cid": "bafybeiczym77slsmrpwtwq5zptpobjampw6z6bapxpt4aancyl75osbk2m",
+      "codec": "dag-pb",
+      "size": 3604118,
+      "sha256": "0e3cbf4a18a0ce4f957c07dc46695ff8ad60eef127df117bcd61d43de2e2a511",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/parcel/part-00000.parquet",
+      "cid": "bafybeiasr4d4tvsne5v6peag37ypvjb6i2wr3ndcdffgknz7wuvh5wcvzm",
+      "codec": "dag-pb",
+      "size": 3068757,
+      "sha256": "091722194a0156d40a00b59658df1ed482007c301cfe245a927b6cfa7a73e737",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeifdo2nsxaja6htz4hmtvdwnvkjixtw57xultetouk7vaa4bf7gamm",
+      "codec": "dag-pb",
+      "size": 5954317,
+      "sha256": "5071c222a8be861e8dffba5a2a64dc01c5838c67e544a1dd9b44dbd512c5b23e",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/person/part-00000.parquet",
+      "cid": "bafkreieyvwsehldkz5occbim3eq24gjrpcujs4cxsgdljyf3mpzevb7nta",
+      "codec": "raw",
+      "size": 12891,
+      "sha256": "98ada443ac6acf5c21050cd921ae193178a89970579186b4e0bb63f24a87ed98",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreieanrrlkpxjkhf32zeuu3ixr7p362noekxk522ekwf6kg5i2u3u4a",
+      "codec": "raw",
+      "size": 14734,
+      "sha256": "806c62b53ee951cbbd6494a6d178fdfbf69ae22aeaeeb44558be51ba8d5374e0",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/properties/part-00000.parquet",
+      "cid": "bafybeih6xwdrxmguu2dxdbqqmzs6stzmndgozttlhfnzccrqcmgh6fkzzm",
+      "codec": "dag-pb",
+      "size": 4465444,
+      "sha256": "9c59e81fe02e2d891aa32268c4925e200e274d4bf92c077b03cb288b4cbb0d91",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property/part-00000.parquet",
+      "cid": "bafybeidbx3wondsvmabtlfv55ee33dpfqgr7ilztxkumrzlkjmcda46yfm",
+      "codec": "dag-pb",
+      "size": 3357153,
+      "sha256": "6e1c2a90d59245f653f46be7ac606538d9f324711419c4a7f281ab3238ebd9f8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_address/part-00000.parquet",
+      "cid": "bafybeiftng55av2gvafchy5b2q6bodcium633rd3456kexzm5pd2vshyye",
+      "codec": "dag-pb",
+      "size": 5954072,
+      "sha256": "c2065a21a0ad5ab4309d22d23ea4fbf6fa51399f8cf08a4f31f0f9489ad30c4a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeiayaqtku3l5uwxg5kvyrtsy4opxzep5ueqsihfhcpdjth4qpukvwa",
+      "codec": "dag-pb",
+      "size": 5954568,
+      "sha256": "0d063d342c1bd4748ba8703f7c2302cf17e91b964a043249426b4a6f5d8e47e8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeign76y5nclfkrcq3aso6jjgyj4luj5wfpc4d4mnzioa54w7g4ls3u",
+      "codec": "dag-pb",
+      "size": 4347261,
+      "sha256": "4aaf54be4d88b548de166e94d47d11d62aceca5476750f5ad2e939c92e0818d9",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/property_has_structure/part-00000.parquet",
+      "cid": "bafybeicrlu6aq2tmergbssdb3zv3fpqtms4hmb3dhbvit44v7ejwushztm",
+      "codec": "dag-pb",
+      "size": 5954347,
+      "sha256": "de36beb688e154548fb695f3f9f5ea21a0227ac1d973d0ff53547437aec8950b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history/part-00000.parquet",
+      "cid": "bafybeiglhxtb3i7o3y34467dgjotjca3leulfs4wl6ceacfweid344j4hm",
+      "codec": "dag-pb",
+      "size": 2340379,
+      "sha256": "dd4fd1f7bbd39f0a51c9769493067f56b51b772fba100f496c04ea44f6488edc",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeigdskzkhcazbya54el4ffqonb3qzvxnzrto4zeariubgf5mq5vgsa",
+      "codec": "dag-pb",
+      "size": 465596,
+      "sha256": "b0cc9224058bea38458586975db0715bb55a3a11edf188887b1c65ad1b1fcf22",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreifmxbo7gdik2en73cck5etj63spazost6xea7zhfwlrrooriik3nm",
+      "codec": "raw",
+      "size": 14739,
+      "sha256": "acb85df30d0ad11bfd884ae9269f6e4f065d29fae407f272d9718b9d14215b6b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b04/structure/part-00000.parquet",
+      "cid": "bafybeid6mcenmyhlo2whuuvigpn3wkgfoi6u2s63uijfduwzwbxvovzmm4",
+      "codec": "dag-pb",
+      "size": 3052380,
+      "sha256": "9b4a09218ce612bc306b540ef871bdce294f0a00f4d3a34848bec40dfcea0b51",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b05.car",
+      "cid": "baguqeerayoh44bszi7m3ybgbsh3e7ivuv454wlfwkzkz6g2gqmm4mkgz74na",
+      "codec": "dag-json",
+      "size": 238047212,
+      "sha256": "81a7339d5d6ca8794dcee6d1d7509a82cd6536479fdd1d04ae195ebd099d2246",
+      "kind": "car",
+      "carCid": "bafybeieifh63kuiavyeab7pdykloqbhujdjb2i4g6nrt2t6ntqoq4bn4tm"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05",
+      "cid": "baguqeeraudr7xmckaerncecqoji3yqfekhx6lh7wiuphoch5fih2a4rknzcq",
+      "codec": "dag-json",
+      "size": 3072,
+      "sha256": "dfaa371279e0a78d20da4d9c2016b8a2034b6eaa24b0de246a2426a252d4ea4a",
+      "kind": "directory",
+      "carCid": "bafkreig7vi3re6pau6gsbwsntqqbnofcanfw5krewdpci2ree2rffvhkji"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/address/part-00000.parquet",
+      "cid": "bafybeiauqbk6lm423ne37ii5vqfzqn7knayennfdt5z3ej7n2agsikpohm",
+      "codec": "dag-pb",
+      "size": 3141355,
+      "sha256": "ab2630eb41926b2dbc0bc4b67358c7122bf30b8f6664ec46fe5ce03016f6a0cf",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeiciaknlke4ook7b5i3nuspwefwgwssgwomnvuohxgb2vlh42dhfni",
+      "codec": "dag-pb",
+      "size": 5953852,
+      "sha256": "46d86da08209f7f2222c7ebeda5e18ff79a398a8bb08f554dab5f0c721c29e35",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/company/part-00000.parquet",
+      "cid": "bafkreiawbvuhcrgwncyh6nln2chkoh26fvc3p76s6xe6qzwz353hwlovri",
+      "codec": "raw",
+      "size": 238027,
+      "sha256": "160d687144d668b07f356dd08ea71f5e2d45b7ffd2f5c9e866d9df767b2dd58a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeig5ypglkll3txf5d4wsk6bcyj2xqoszcldypagfgkipmsbtv57ek4",
+      "codec": "dag-pb",
+      "size": 397584,
+      "sha256": "200359f93dd8901fa8a1c064a4b96522eeac5884c95be60896d00472b05963a4",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/geometry/part-00000.parquet",
+      "cid": "bafybeie6nm6maaeq5xkdlkzdw2ofajdixivjyh7twojmqwrylpggypivve",
+      "codec": "dag-pb",
+      "size": 3613229,
+      "sha256": "32c1de6a0d370462a7fc174f79449d293254f3104bbc6c5f264a2e9e67cfb99c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/parcel/part-00000.parquet",
+      "cid": "bafybeifzgyndiylensqg6ysjoebnaoopotrwetm4zd45ixmoitgtwnfloi",
+      "codec": "dag-pb",
+      "size": 3065417,
+      "sha256": "c442052b3cd19badd6b2899c30ae8bfce849851bb579f74633b42f724efcc410",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeifdkexaeauemesqyyn2arnxtmjqokzi7gxtfizp3ax7k72qq5zozi",
+      "codec": "dag-pb",
+      "size": 5947616,
+      "sha256": "8898e50c7d27a2cbcc0c513573bf628e48824e326bdba289b4131f567c12a364",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/person/part-00000.parquet",
+      "cid": "bafkreibbdptsnfnktfgwf77t2ce6oef5432hpapksoy3l4yqhobbthnf7y",
+      "codec": "raw",
+      "size": 17820,
+      "sha256": "211be72695aa994d62fff3d089e710bde6f47781ea93b1b5f3103b82199da5fe",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreiamqqta5neox4pz7dl5lwcmprtdfwfqkfc2eizw4u7trmdd243dje",
+      "codec": "raw",
+      "size": 21014,
+      "sha256": "0c84260eb48ebf1f9f8d7d5d84c7c6632d8b05145a22336e53f38b063d736349",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/properties/part-00000.parquet",
+      "cid": "bafybeiddfpy4gbtw2xh5kygulzmxoqr4wgzlpsfvw6zqoiw7pa2jwfgslq",
+      "codec": "dag-pb",
+      "size": 4465523,
+      "sha256": "cf7ccf134cd99d4e86c5f65d206f890713be2a0b1057f8d88fc32475e4009f20",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property/part-00000.parquet",
+      "cid": "bafybeidfts77qq33pvbe4xbxmr45kjc2eyccis666capjiw3fs2mgymhwm",
+      "codec": "dag-pb",
+      "size": 3322657,
+      "sha256": "6ae84f354221d1bc1b89b5c340dd8091355bd3ddcb7d37f4830fa798ecafe6c5",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_address/part-00000.parquet",
+      "cid": "bafybeiequ34gc6b3m4jcdcqdf4syfodqjm3vvg4timk6ljfbtg5umf7os4",
+      "codec": "dag-pb",
+      "size": 5953965,
+      "sha256": "b66d5bffd80ca6e57f30ac9abd16604475a26ba02d4e2b80da1628700e9c7745",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeigwbzbc2lecyq5rczidp4m7rkckwbaaztkpel74sgr2lvd7gixruu",
+      "codec": "dag-pb",
+      "size": 5954251,
+      "sha256": "a364f55ee8bad65678099cc101f502f6860169128f653b97658c20bad889f5eb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeieil7atblnybvznacozahrf32hd4vr5gsmvhkd7kdflvhcku5tmby",
+      "codec": "dag-pb",
+      "size": 4847293,
+      "sha256": "0e0ed0cb73cfcef2cefb4cbcd564f0b61123ef828a5dbceab7214bb34f906f3e",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/property_has_structure/part-00000.parquet",
+      "cid": "bafybeid3rpnkasr2djhjhhmrev5m54ycyh6fe6utqcy4aoxifhwikqi3lu",
+      "codec": "dag-pb",
+      "size": 5954165,
+      "sha256": "bf7e0b9ba8100c49516ba5b3f7338466b1cbf6704cd6532b4235ed287fed1c58",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history/part-00000.parquet",
+      "cid": "bafybeieupov52d23morsdb5uzwgjubg76r27qq2g2sxygos6mjzut5l4yq",
+      "codec": "dag-pb",
+      "size": 2600168,
+      "sha256": "4905d88a4fd7f5ad323327b2e9cedcb5cf07851817c87f78c4a33757ec2185e2",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeib62oj4vxdacybuhammx7hwluqvsl5c3l3huseugf5e2v32drnvxu",
+      "codec": "dag-pb",
+      "size": 397526,
+      "sha256": "bfebc730f7debb1e904a5b23dc4891baf9abc1e4fbfb74c68e45894c9ebc48bf",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreifbyhoecvorlwrkarodef754q3d74fztbzne6yduwgswvvk3jtrcq",
+      "codec": "raw",
+      "size": 21021,
+      "sha256": "a1c1dc4155d15da2a045c3217fde4363ff0b99872d27b03a58d2b56aada67114",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b05/structure/part-00000.parquet",
+      "cid": "bafybeiegrtt3kitv7sypdffehkzyrb7hhgq3qqgaqusjwl7lveu3niiw24",
+      "codec": "dag-pb",
+      "size": 3050877,
+      "sha256": "99d9133889341fc04133f28a1fd2c5a6588c0a6921cc46a1fb48d2a3d7fe5239",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b06.car",
+      "cid": "baguqeeragp3jmy64674sgwufa32b5uchz3sts23t5hc5vb4t6m4wqhym33nq",
+      "codec": "dag-json",
+      "size": 235274287,
+      "sha256": "1389065345140fb436c24ad5e559a7cbb83c9ab5041fcb294bb4ee457d954a3a",
+      "kind": "car",
+      "carCid": "bafybeiep5ms2br2rj5bra4ludka74fn7cr5q6ag3xcytlwt5zltf4place"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06",
+      "cid": "baguqeeraz52bygicvl3i5nwtxwodf5p3wl3t4ujwkrdaa2vbxypb7jh5dyyq",
+      "codec": "dag-json",
+      "size": 3072,
+      "sha256": "02946cedf3531752b3f4e90276d7cccc260a442413403723498586780341b560",
+      "kind": "directory",
+      "carCid": "bafkreiacsrwo342tc5jlh5hjaj3nptgmeyfeijatia3sgsmfqz4agqnvma"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/address/part-00000.parquet",
+      "cid": "bafybeienjdqctalz5ao3hcr3vtp3anafcqeihd6yfljjmsg4v23ekvu7ae",
+      "codec": "dag-pb",
+      "size": 3143654,
+      "sha256": "89a05ff0cefb5a8d12f5835088529a8cbb5f41664d842fe524432fe76e205a25",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeicctzxzzpgi75bwfr4wdu242hcpiyvwz47g22d47ucktqddfz2aua",
+      "codec": "dag-pb",
+      "size": 5953578,
+      "sha256": "e91a43dee12ccd26d5883dbed1e1423a497b9a0ce632718237923bf8670947e1",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/company/part-00000.parquet",
+      "cid": "bafkreicsf22cdcpv5h7cg63zbk2uocj76ibqdsfewotwfryrzcf5r4w5jq",
+      "codec": "raw",
+      "size": 242658,
+      "sha256": "522eb42189f5e9fe237b790ab547093ff20301c8a4b3a762c711c88bd8f2dd4c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafybeif7roaqcoc5uhvvbsenjbl6i4svtoyu2ouzvieyyvwxlo747hudia",
+      "codec": "dag-pb",
+      "size": 402900,
+      "sha256": "44409076f2398a407f66d016fed71a364580f058fda0f5d132be49733e01ff86",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/geometry/part-00000.parquet",
+      "cid": "bafybeidjno3bjbb37wbk5bhyd3nft64ipgokjutw3txwk5kxvr2ymvwwf4",
+      "codec": "dag-pb",
+      "size": 3562845,
+      "sha256": "8e5fbb363f32f271cedc8a447041251133b796264b79802de38ecaa873d979a7",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/parcel/part-00000.parquet",
+      "cid": "bafybeicdvsluan5yo5dkbizjo7decotv4djy5ikq3h3yxkmtbl6qajinym",
+      "codec": "dag-pb",
+      "size": 3067387,
+      "sha256": "97308b331438c0608a3d45038067ef5a72660f0d35f2fab78d9d1f526db37ec3",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeigepmbdxfyjfi55ifrwwfzgtcn2ydq3vik66lyxur6uchqpssefy4",
+      "codec": "dag-pb",
+      "size": 5874240,
+      "sha256": "bf1abb838257ba2000d42d0d2eaaada146c12ff98cdaa1bb7c1b75ec18829eb9",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/person/part-00000.parquet",
+      "cid": "bafkreigijgpztuety5bkviordjyie3hkef56kdtz47bnwdse45pvsoopkq",
+      "codec": "raw",
+      "size": 16279,
+      "sha256": "c8499f99d093c742aaa1d11a70826cea217be50e79e7c2db0e44e75f5939cf54",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreigkkyuvrag6sskmvqj6mi256wtfbhbtbpwmbojasmgvrj2v7u657i",
+      "codec": "raw",
+      "size": 20307,
+      "sha256": "ca56295880de9494cac13e6235df5a6509c330becc0b920930d58a755fd3ddfa",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/properties/part-00000.parquet",
+      "cid": "bafybeiahoc5yq2k6itiqs2nr6itpewufnzz5uru47a4u2zz5ssomz2kgg4",
+      "codec": "dag-pb",
+      "size": 4464824,
+      "sha256": "8b7d7ed2842c2b7e02e1af05332637049540efa47cfcd110f15a9e169aee20af",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property/part-00000.parquet",
+      "cid": "bafybeidsl3ejzpxnnpqxxdaaxtvchoxbwrnio6uervcgz3rapbe6egfsta",
+      "codec": "dag-pb",
+      "size": 3337331,
+      "sha256": "501e041b3be9b2d9e33b962a36c6cbc004d54d892ef062649a3e34cc67731506",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_address/part-00000.parquet",
+      "cid": "bafybeicbao75wnsa6rsudhw43frmrohffh7ndhwmndfpfymy6gju3rn5yi",
+      "codec": "dag-pb",
+      "size": 5953447,
+      "sha256": "f71cf8d542f19be2d94bd5c374f15b6821c75411578f508edf7e5aa48169fb0c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeifi3m6r4ag35fb2fz43l43c7kxc4yqoq4mnnf2hz5ffr7ucdw2vkm",
+      "codec": "dag-pb",
+      "size": 5953119,
+      "sha256": "1c9a12b41886f6791d3e1276888a979f3df3e6ac962e524c9a28fd616dbf14b4",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeiag5kiooru2kp3xsyohhnw5qcpu6yb4fozd5olak24bqbktmpe5am",
+      "codec": "dag-pb",
+      "size": 4445858,
+      "sha256": "87404335ea77adbb80fd4318f71406824ee073fb9262b9ddea478c7e7d47289b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/property_has_structure/part-00000.parquet",
+      "cid": "bafybeiaafpascvb6t2rqk6ktn2enp22pjnn4jfmh4ekykuvgesqg2jpavm",
+      "codec": "dag-pb",
+      "size": 5952990,
+      "sha256": "974d549fa8ddb8f0b5df9b9d9693a612384840249a4498d267ad2e8cdc46177d",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history/part-00000.parquet",
+      "cid": "bafybeiedrdeqf7kcwarqroqxx7gfozxjvxhfginmig7gl6ik2a7iwwzjc4",
+      "codec": "dag-pb",
+      "size": 2388955,
+      "sha256": "aa1c05447bbae803af37bbc3015542194a08efd5b3d28b545bafcaefc2e047fe",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history_has_company/part-00000.parquet",
+      "cid": "bafybeicggvwm53wu4rsk4nodjhrfbs6lmd3j6kcgdkxlgxtzadwmhp7l3q",
+      "codec": "dag-pb",
+      "size": 403164,
+      "sha256": "7520da27e69c3555f0c3e7978ccb45e98c46fec8c6940dbc6de5cff667bddee5",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreidjbgqkblt4awheenarkblvowshpq7qneaebgqz5igjp6dfalumuy",
+      "codec": "raw",
+      "size": 20313,
+      "sha256": "6909a0a0ae7c058e4234115057575a477c3f06900409a19ea0c97f86502e8ca6",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b06/structure/part-00000.parquet",
+      "cid": "bafybeifdvrsdjdvffr43rsngfkr3clxdmstwibs2gnxueylrnhzgbqvueq",
+      "codec": "dag-pb",
+      "size": 3044826,
+      "sha256": "441a8d5774d715dc87b7e2bcbe8ce568fe18b35f7e76436bd02b5429625ce691",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b07.car",
+      "cid": "baguqeeradlivqbczyhlxb7aqzvgiawxzg7rwjzi2aks3qpdpfrxm2eo4zivq",
+      "codec": "dag-json",
+      "size": 219921548,
+      "sha256": "3179487145754e206f0f4b9626955068ee8e5a3e273b527046cca46baba8431e",
+      "kind": "car",
+      "carCid": "bafybeih4d2jpiv4modvltjnnm7tbx2cgnfzaxzdlu7yspxwqn5nfh6h4bq"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07",
+      "cid": "baguqeeragms3vqa7wpq23xtukq7tyjfsx6khqx2voizc5stzlm2sjyiwo3oa",
+      "codec": "dag-json",
+      "size": 3066,
+      "sha256": "98d9a6b7c870aeb6a24c7f3d0300c399100a45c68fc422b231d1fa34d96d9617",
+      "kind": "directory",
+      "carCid": "bafkreiey3gtlpsdqv23ketd7hubqbq4zcafelrupyqrlemor7i2ns3mwc4"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/address/part-00000.parquet",
+      "cid": "bafybeifl7gm2rkfdvlsemejcvripr34wzhoisrnncid6ywbgs4jug737ya",
+      "codec": "dag-pb",
+      "size": 3096630,
+      "sha256": "b7eee71e9ea143835d5e2c482cea76c417a9f2b95f18385c435b19dbf311d075",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeid3xsgqccfbm2sngsvcc7rokqe5ooh4c6sojx6tnkgyorwfa64wqu",
+      "codec": "dag-pb",
+      "size": 5953093,
+      "sha256": "2cf4369e038ce2c479185e3e6ac7d1851f8d9ca133b1e7d85b7b71103919882e",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/company/part-00000.parquet",
+      "cid": "bafkreiexhvwkwbmluzmdtjhc3tdo7fufnjilgcotha7c66f6jpdw3nzu2m",
+      "codec": "raw",
+      "size": 150717,
+      "sha256": "973d6cab058ba65839a4e2dcc6ef96856a50b309d3383e2f78be4bc76db734d3",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreia7o2alpqzaweirobrsaitivljmul5kiab4alkpmdnmnvmmizxv2u",
+      "codec": "raw",
+      "size": 249180,
+      "sha256": "1f7680b7c320b11117063202268aad2ca2faa4003c02d4f60dac6d58c466f5d5",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/geometry/part-00000.parquet",
+      "cid": "bafybeihwqvdmvnydiibgaxkqmj2rx74m5472yenync3w6yuxsuv57jq6f4",
+      "codec": "dag-pb",
+      "size": 2974016,
+      "sha256": "f7cc7e70bb1868817d0f8b871b94c4b738371bf789eb890a94756e64e70808e0",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/parcel/part-00000.parquet",
+      "cid": "bafybeieu6p6m37xgj4b7xjpvuvl2phbw63ewd2azjephplxh7fe7r6oijy",
+      "codec": "dag-pb",
+      "size": 3062417,
+      "sha256": "81f161444fd7a0490ea368dbd371483e3882d0dcc671cbb85ae209d72ad97165",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeiez6o3vp2xfc6wgsn6v2lz6gnjpoxfnverejgdpfmm3w4sgvpnkem",
+      "codec": "dag-pb",
+      "size": 4879522,
+      "sha256": "80364f764e057d99a58bf9be3765bab86ced462e189573a811132aff35527ce9",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/person/part-00000.parquet",
+      "cid": "bafkreie2tsrguwbibnjxft6edyn557xu24h35nfncb37o73ow2tqdtr7cu",
+      "codec": "raw",
+      "size": 12401,
+      "sha256": "9a9ca26a58280b5372cfc41e1bdefef4d70fbeb4ad1077f77f6eb6a701ce3f15",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreihevyk2vx36gemol43lcaqhdvcgj5wjwiyaijshxxg3iwg4co4mue",
+      "codec": "raw",
+      "size": 13952,
+      "sha256": "e4ae15aadf7e3118e5f36b102071d4464f6c9b230042647bdcdb458dc13b8ca1",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/properties/part-00000.parquet",
+      "cid": "bafybeigskzyzsgcamgnpniakferwvbptso6maeuyetrunlxh6px2twkr3i",
+      "codec": "dag-pb",
+      "size": 4464548,
+      "sha256": "055c9338eb6f6f76b7cbc12d1778141aabe89f6b49d79fe8207cb33fb7a92ff4",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property/part-00000.parquet",
+      "cid": "bafybeidi7ztwq2ngnwupucfjz62uag2e3xk2zalwgpjnhprp5hwhdn5ipi",
+      "codec": "dag-pb",
+      "size": 3307046,
+      "sha256": "eb332ffd3c8d5ad61d36b68349e60f62043517bc05b80893c3818c1f19f99456",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_address/part-00000.parquet",
+      "cid": "bafybeibkeokuszauinr5o5vtcp6aihlvksga6gm44vnkvsxc7feqpb6t5q",
+      "codec": "dag-pb",
+      "size": 5953108,
+      "sha256": "62fd27b6e8b6f91ebe6bd32f5c36391337477d8ce2e7ee527d07daf63ccb288e",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeid6mi27wfi3z2us6l2k7u5vofyg2wqomcxbz6kt5ctidyquxnw67y",
+      "codec": "dag-pb",
+      "size": 5952687,
+      "sha256": "57ae4f7c9566f190957ecfeaf4bca137aa3b43a426a3eb93c4604d07027c0d91",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeidozkk5fvaqtbigh4evt4bisdwf4bdunbn3b6zt4harwjc2hbfaau",
+      "codec": "dag-pb",
+      "size": 2539599,
+      "sha256": "f271e4c9f8315643cb3dc0809314b78236ad3cd0a76a4f2de74f4115d4610710",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/property_has_structure/part-00000.parquet",
+      "cid": "bafybeicvtr7uvf2tihpxbzarbjuuo7tj4yd4c4lsymupxkwafqfdukt3mq",
+      "codec": "dag-pb",
+      "size": 5953006,
+      "sha256": "871c1f06e440380d28ffeab82d705ab4d0be1f2b8be5944e785bb0dfdcf1a933",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history/part-00000.parquet",
+      "cid": "bafybeidxchvatkepifqzetfufj3lbxbpfpgdtool22nlnf7ahdrvf6ty5y",
+      "codec": "dag-pb",
+      "size": 1373575,
+      "sha256": "779a9c077bb6773721d78af6a8024c8b6068b736fa872aa4089bc3b53e1882fc",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history_has_company/part-00000.parquet",
+      "cid": "bafkreib23aoxlpmhf47fhzlpzd3vnwer4wiqnp3zxrhpdwcfu6a2ewy7ni",
+      "codec": "raw",
+      "size": 249328,
+      "sha256": "3ad81d75bd872f3e53e56fc8f756d891e59106bf79bc4ef1d845a781a25b1f6a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreihxptyzdurg66sr5zxe2pmpquawzwhl7qsgwc2u32wwdtd3bjxku4",
+      "codec": "raw",
+      "size": 13945,
+      "sha256": "f77cf191d226f7a51ee6e4d3d8f85016cd8ebfc246b0b54dead61cc7b0a6eaa7",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b07/structure/part-00000.parquet",
+      "cid": "bafybeid3ektnl7gant2lzjwbuefltuwxbrepmy7swzyugvvcfc6sd6gxfi",
+      "codec": "dag-pb",
+      "size": 3042414,
+      "sha256": "25c4c3d968c5f22922ee8c5647ff9b053a3362344121d18296f2bb32faf3ad77",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b08.car",
+      "cid": "baguqeerac6sk6eyfxayqglxejnwqcy26gxpflj3zpxsfvea7w5wsyexhfjbq",
+      "codec": "dag-json",
+      "size": 209531900,
+      "sha256": "0ae727a91fc4733b07cf959e08426a780784ebb7f9b98a74ae403389ad81af18",
+      "kind": "car",
+      "carCid": "bafybeifjpa3esocj2y3m7jxbtabc533m5njqa62poztte74c6e3qdqgfiq"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08",
+      "cid": "baguqeeraojmkvbcdcyjrozkjis6cl35qn4j6eqnnbdcqjr3ztgip2rifaria",
+      "codec": "dag-json",
+      "size": 3051,
+      "sha256": "a6a486f6d319392ebdc5963cffe29ac940d69a9e48a9168e77ad5c3b616c6b89",
+      "kind": "directory",
+      "carCid": "bafkreifgusdpnuyzhexl3rmwht76fgwjidljvhsiveli455nlq5wc3dlre"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/address/part-00000.parquet",
+      "cid": "bafybeif73d2nk2ureqxzwmyptjxg7gpcuyupsnmhr7cf4kof3pr2vs5zv4",
+      "codec": "dag-pb",
+      "size": 3064280,
+      "sha256": "598aaf8dee373956a2753a72d5fe26b15112120119845efabc23fbd4e75edc58",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeiazmhdnvx3gxoxhehpt2te3jwdirx7qfru6ncu63bbdlmhxionhyi",
+      "codec": "dag-pb",
+      "size": 5953994,
+      "sha256": "f0d774068739aa6f86928c4eb126531e17ae48eac7c52c1a57c9732c05ca7db5",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/company/part-00000.parquet",
+      "cid": "bafkreiecnyhgxpslas5uajte5dwzdxtxhtw5ejnwhlfhan5ebfgvxidstm",
+      "codec": "raw",
+      "size": 66989,
+      "sha256": "826e0e6bbe4b04bb402664e8ed91de773cedd225b63aca7037a4094d5ba0729b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreiahrdupibmuyzfkjh55rugekungafrp3he2vfidmfe2nkaxy57ix4",
+      "codec": "raw",
+      "size": 106932,
+      "sha256": "0788e8f40594c64aa49fbd8d0c4551a60162fd9c9aa95036149a6a817c77e8bf",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/geometry/part-00000.parquet",
+      "cid": "bafybeie7y2jeic5dd4h3zof7fpidwaij2sh5tdrerxw2pogw7nvjtiq6xi",
+      "codec": "dag-pb",
+      "size": 2664695,
+      "sha256": "9b37a3a47da4da38ae081e3f70972d8dc434cc94cad72900c2b48602d737db7a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/parcel/part-00000.parquet",
+      "cid": "bafybeibknrop7yuby6eslpdkya4kuz72oxqhxjfcbvlfolj2nfpcusnoee",
+      "codec": "dag-pb",
+      "size": 3087840,
+      "sha256": "b4318239a5a4826314bf61e060e22c03302bdaaa0d17158a39971c1bed78a3e5",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeietukymtez33xhidciy4kcmpaas32nurhahmvlj6akilooucmw65y",
+      "codec": "dag-pb",
+      "size": 4340670,
+      "sha256": "44ac57e8de3483d8137c41f86a7a255fb1a38a3285a588e9dc0a35e2598067c6",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/person/part-00000.parquet",
+      "cid": "bafkreic6jvddpxan6ltvp2v6nvhrpbm4yfczbz6cs3u4mtguil4dxqs4we",
+      "codec": "raw",
+      "size": 8889,
+      "sha256": "5e4d4637dc0df2e757eabe6d4f17859cc14590e7c296e9c64cd442f83bc25cb1",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreif3cdbeezjxof4llcgw5h7yrnsesqt7gzj7sk66hptoy7li3fae54",
+      "codec": "raw",
+      "size": 8240,
+      "sha256": "bb10c24265377178b588d6e9ff88b6449427f3653f92bde3be6ec7d68d9404ef",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/properties/part-00000.parquet",
+      "cid": "bafybeiguowhsbhc3wx5covhp6th65fhyw2t4t4hkehnpbj3m3nzzb6c6re",
+      "codec": "dag-pb",
+      "size": 4465400,
+      "sha256": "b896a12a94a32e135c7825321212fb115a4ba3e9e13ce470ad41e29ad6fc74bc",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property/part-00000.parquet",
+      "cid": "bafybeibl4mva5uzezbqlxdzvtm62264ut5223i53bmfpwltoef7xvtlnu4",
+      "codec": "dag-pb",
+      "size": 3360063,
+      "sha256": "06bc107faebd7e8735c1e6870f626b5f896de8db0d13796f6f48559606de3b24",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_address/part-00000.parquet",
+      "cid": "bafybeibx6uw7u7eknchsoaocjeyqlupltlxvm6riy4aacx2gfg2ok6yvra",
+      "codec": "dag-pb",
+      "size": 5954006,
+      "sha256": "19f4772a0bf39e7c57bb931c4785ba53facbe96edd324a0ffa8236e5ac66c0c0",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeibwowhyuacup65lj55ifvzjti3kgsdrvpgjtf37nhmuxv4gbfo5pm",
+      "codec": "dag-pb",
+      "size": 5954490,
+      "sha256": "799441217cd1200c4ebef0d06cd6e08e9b75b22eab0b1b277302be78253b5824",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeidmly5niggpexhmjiw23alenfrphwsy2shbozotok4ehnmiqhngea",
+      "codec": "dag-pb",
+      "size": 1138469,
+      "sha256": "28ede5ad55104c82ca22a20d7de74fd23448ed46e5dd4dfd68e1682996c750aa",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/property_has_structure/part-00000.parquet",
+      "cid": "bafybeicue74wnt552pg7bzehevkzj4mk77bm4q3hbfizqv4phtu4xrqqhq",
+      "codec": "dag-pb",
+      "size": 5954208,
+      "sha256": "5b9d5c8dc2e667db693ef658b5a8d013591c20c7224a20f20f35dd5e1ff25101",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history/part-00000.parquet",
+      "cid": "bafybeifojpjqjzpeywmrx6nr62hmtj6o3v2rpawzb23l7yk5v33wmzydjq",
+      "codec": "dag-pb",
+      "size": 616374,
+      "sha256": "b6a73ff6f4071335a94fd118b98573820b2f5d99666b835ad983aca90b7c4bcc",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history_has_company/part-00000.parquet",
+      "cid": "bafkreifcdko2irzvytfoscufe63lp6xmsjcklqwh3eiqpqctovozs67ev4",
+      "codec": "raw",
+      "size": 107097,
+      "sha256": "a21a9da44735c4cae90a8527b6b7faec9244a5c2c7d91107c053755d997be4af",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreib6qjku2ztogvkmdhn2fokecnwzrvm4ey5wdbze5d5zpntjk2xubi",
+      "codec": "raw",
+      "size": 8241,
+      "sha256": "3e82554d666e3554c19dba2b944136d98d59c263b618724e8fb97b66956af40a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b08/structure/part-00000.parquet",
+      "cid": "bafybeieqvt2kvjc2dgckhpkybyl4voznnjh6it4zftrumlw3xifm2svhyu",
+      "codec": "dag-pb",
+      "size": 3055323,
+      "sha256": "fc0fd2b189094b4fecf16d68383a18670a2bf6d1f4c13f3acaac683ee8da8eeb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b09.car",
+      "cid": "baguqeerak5weshki3v4dso775fgz2k23lzxkv5o5sool3hcpkdy6dolk5iva",
+      "codec": "dag-json",
+      "size": 204688966,
+      "sha256": "aa209b084c651938b95e1c0c15c95233c6d2f11bf2cfb58349dde54237868902",
+      "kind": "car",
+      "carCid": "bafybeidv7xhlwmxx4csjq45mn3ldxprjqxadp7lmirv5n56j4udu5jejiy"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09",
+      "cid": "baguqeeralq3pvvu4qygchfvdlyckaen2f6piqrjm6f3igized2u3uymip2ja",
+      "codec": "dag-json",
+      "size": 3048,
+      "sha256": "7c8b43453a32993776235c4625aa94c517765ce0fb38a3695d921d83587b6811",
+      "kind": "directory",
+      "carCid": "bafkreid4rnbukorste3xmi24iys2vfgfc53fzyh3hcrwsxmsdwbvq63ice"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/address/part-00000.parquet",
+      "cid": "bafybeidt4cesp4u2vgtmrutp4e2iyvu6uyvbg6s62243uwuqzkm7l6ol6i",
+      "codec": "dag-pb",
+      "size": 3043232,
+      "sha256": "0dea1d027194eb56d66312d2086661979381db04343512f5b217d15e7b9ac1d8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeihmh4rbhks4g55cd4hnah7gis5zpkksnvq777nxtkiixcahzvcr54",
+      "codec": "dag-pb",
+      "size": 5953672,
+      "sha256": "7e2001cff9691828423092db81c9e99724a0e283f9e99008ac2d6527a52388eb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/company/part-00000.parquet",
+      "cid": "bafkreiaqb7ccxi45rqo4a7pmjqncgsikr4enhirtcau5tot67d5wwdalmu",
+      "codec": "raw",
+      "size": 35024,
+      "sha256": "100fc42ba39d8c1dc07dec4c1a23490a8f08d3a2331029d9ba7ef8fb6b0c0b65",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreige2w7hzrg46jgfoxxfg55dc2ds744zt2miq2xooflksg4yulebgq",
+      "codec": "raw",
+      "size": 54124,
+      "sha256": "c4d5be7cc4dcf24c575ee5377a316872ff3999e98886aee7156a91b98a2c8134",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/geometry/part-00000.parquet",
+      "cid": "bafybeictssbaa3vfpc4qcde6iqo5472gw5rdjjxcutqfbhx62lvomglgfu",
+      "codec": "dag-pb",
+      "size": 2441583,
+      "sha256": "ecdd29240ba01110842a0dce5ff1779f104dbc5d0b1e67c8801f3b72c478cbab",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/parcel/part-00000.parquet",
+      "cid": "bafybeicz5swpiw7t4jlyggfvtrxzppzgm7kb5pnkguhx5x2edjs2amjoje",
+      "codec": "dag-pb",
+      "size": 3078112,
+      "sha256": "e59b118bb65fd2980d151c48784651edc59b0a41f91aaa664f6389254b90f0cd",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeiestdiyqqzzbevnhxauzk2g3egut7676ibxfbmpejkfiiwvnlibw4",
+      "codec": "dag-pb",
+      "size": 3986819,
+      "sha256": "6d1018cb80a754d22ddc65e1b6a7ddc2b4cdd2d754e34cb12bbde0ddafddf5f7",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/person/part-00000.parquet",
+      "cid": "bafkreifz7o56pd5hvelupfdvqod74gjhqcc3ntyvzwohr7qnhtfjdg2isq",
+      "codec": "raw",
+      "size": 8304,
+      "sha256": "b9fbbbe78fa7a9174794758387fe19278085b6cf15cd9c78fe0d3cca919b4894",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreicdfmctz4n2sifbwm55obugqqtl3owvgrnazk3dnmet4qcd27j5e4",
+      "codec": "raw",
+      "size": 7257,
+      "sha256": "432b053cf1ba920a1b33bd706868426bdbad5345a0cab636b093e4043d7d3d27",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/properties/part-00000.parquet",
+      "cid": "bafybeibxijoop7z4okwceewasaa2uslkakjqtz4zg5r22hlsnczkrdxwpy",
+      "codec": "dag-pb",
+      "size": 4464905,
+      "sha256": "f36d2090d563b42a395fcd91d22db8565f07fd5c13fdfb30f7d63e81cbb891f3",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property/part-00000.parquet",
+      "cid": "bafybeiczu6xvx6udy7j7uot7anxkayqqlp7swxlljjsgeifii2ke42ehqi",
+      "codec": "dag-pb",
+      "size": 3317934,
+      "sha256": "6ba3ec3cdf742edb78a5aea2d5f48f3a13dadcc03c225d90044694c2a38cdea8",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_address/part-00000.parquet",
+      "cid": "bafybeigljd3tz2jq4tnc6qznlocpqmokbo52ukut75ngo6etiv4ezpvp64",
+      "codec": "dag-pb",
+      "size": 5953448,
+      "sha256": "11e0acfeda9482ad5aa1a5f5afdbf8cb4740cd2d8592b5038460982bd37deb3c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeids5q7kf4desnfav4ywgldrg3ub4mu2ikojouyrrzxdvykvbb3ogm",
+      "codec": "dag-pb",
+      "size": 5953603,
+      "sha256": "668bae3367f6cd28b265f663fcbe03cb30a5134fc756b1f837f497e7846b1f18",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeig7c2kvujuh4djaae4nrhyj4w7porkxnr5tqrxnrl6dxpwe6up5ma",
+      "codec": "dag-pb",
+      "size": 502121,
+      "sha256": "37068ed940e9f3d56d44bb6f398307b33bf17615939f86215afb2d3dd8843a89",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/property_has_structure/part-00000.parquet",
+      "cid": "bafybeidtjgkviqhekh4j2pvu4rbae7es3mwewatropqnpdvtpwhl23ykai",
+      "codec": "dag-pb",
+      "size": 5953431,
+      "sha256": "eab0df005c88b3b796682e74c19db1160eb3edb26a8bdaf032381070fff69784",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history/part-00000.parquet",
+      "cid": "bafybeibhi75kavqzzccz7y4ir6vwt3fsolpy7333fewkgrqdjtdkkqfqke",
+      "codec": "dag-pb",
+      "size": 271946,
+      "sha256": "81fee1da759765751c618fa333311738f182292e7ddfbfbc5cc24eba41424f61",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history_has_company/part-00000.parquet",
+      "cid": "bafkreib7m5mh5vo6vuj6pfm2ifpxvo3m7gnjc7w3sirddcijab4nvq4b4e",
+      "codec": "raw",
+      "size": 54124,
+      "sha256": "3f67587ed5dead13e7959a415f7abb6cf99a917edb92223189090078dac381e1",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreictwchxnohwkazrca22yqbiag2qgf54fwncz6zac4lccwmwqlypke",
+      "codec": "raw",
+      "size": 7256,
+      "sha256": "53b08f76b8f6503311035ac402801b50317bc2d9a2cfb20171621599682f0f51",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b09/structure/part-00000.parquet",
+      "cid": "bafybeigiw3qiaprbdhckqtdajt4d2pmqq5pegpw2d6tt3hwbnbbhuusmm4",
+      "codec": "dag-pb",
+      "size": 3050252,
+      "sha256": "8553aab401971d088ad65a50937b00a0881098e3764ae0f7ec107c1d9da2ef9c",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b10.car",
+      "cid": "baguqeeravsvqhmfjrwb7j3kzhye5srotsad6ym3hxoxkb6ri5hma55wptwmq",
+      "codec": "dag-json",
+      "size": 205506833,
+      "sha256": "8fc9b7fef1b16b16dd936a1701b73a4b011886fc7e5d9a112517d228b7bf7bb8",
+      "kind": "car",
+      "carCid": "bafybeihot4rabfu3bejhanzaf56753csl6upc4iubdcan424biljy5gghu"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10",
+      "cid": "baguqeeradg7mmzlowjk774t3h4guetjrmzb6kxeyu6pnvmbovluzf7ermc7q",
+      "codec": "dag-json",
+      "size": 3048,
+      "sha256": "dfc3da32872aa7c1dabf2bc54191ff3319e6767e02f898fe34c6def8013de5f8",
+      "kind": "directory",
+      "carCid": "bafkreig7ypndfbzku7a5vpzlyvazd7ztdhthm7qc7cmp4ngg334acppf7a"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/address/part-00000.parquet",
+      "cid": "bafybeifqu43cyq436vhhgb4psmg4qlrbq66foziq7vehbnnjdwbsp6cji4",
+      "codec": "dag-pb",
+      "size": 3050843,
+      "sha256": "74ccd5c40b7715173540eb3cc57fcaca4dd02e4923792814e9ea86657aa851bc",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeiayvyqm7fygdqlh6boybcflruxy35fdwe6bwstnz4gq7d2siw4pgq",
+      "codec": "dag-pb",
+      "size": 5953538,
+      "sha256": "197d142e5c869407768d3cae4dcd4e8705e6ce8c6a172f9f7c1111cf3594294a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/company/part-00000.parquet",
+      "cid": "bafkreihbm6mvsr47wu66lov5uzrhr5f6dl47clun2lsxyns46ep73mz434",
+      "codec": "raw",
+      "size": 49861,
+      "sha256": "e1679959479fb53de5babda66278f4be1af9f12e8dd2e57c365cf11ffdb33cdf",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/company_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreidujsmfgpr2fg4ism6jgimit6tewwnttfjd42doalrcl2u7b7w6u4",
+      "codec": "raw",
+      "size": 81205,
+      "sha256": "744c98533e3a29b88933c9321889fa64b59b399523e686e02e225ea9f0fedea7",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/geometry/part-00000.parquet",
+      "cid": "bafybeifsp6nc5y3tsyw244pg5g4ubytn3r33zxzj5utfktd7fhqs37jhz4",
+      "codec": "dag-pb",
+      "size": 2634962,
+      "sha256": "2bf281add0e7f522d45e65113d3d9ce47c7e658e9d530a639d084293743e6aeb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/parcel/part-00000.parquet",
+      "cid": "bafybeibnc6bw4wide5qyskrrlcxfikogeugrig3pjalz3dm6p6bmivrzty",
+      "codec": "dag-pb",
+      "size": 3075980,
+      "sha256": "2929135066083b1e8f41677f336fb77425e268333ab871e4962015058e86f5b7",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/parcel_has_geometry/part-00000.parquet",
+      "cid": "bafybeih2wb2tlfsgniqn7irgnaes5e3xzxuh6ktzro66aq2uiz5oqfcd5a",
+      "codec": "dag-pb",
+      "size": 4307016,
+      "sha256": "54107e49b58c41c9dd1bd52337246f9f0ed9bb3c1e71ee69ed83c0856ceab528",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/person/part-00000.parquet",
+      "cid": "bafkreidsbpzmmgotvk5jbsgdqzr5ave6x75itkviwnk2juq3nl5rczivhm",
+      "codec": "raw",
+      "size": 9673,
+      "sha256": "720bf2c619d3aaba90c8c38663d0549ebffa89aaa8b355a4d21b6afb1165153b",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/person_has_mailing_address/part-00000.parquet",
+      "cid": "bafkreidkoojgvg43ai6d6oqrfauic7qk5fzywqzexhqt4wmq33ban5jzmu",
+      "codec": "raw",
+      "size": 9496,
+      "sha256": "6a73926a9b9b023c3f3a112828817e0ae9738b4324b9e13e5990dec206f53965",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/properties/part-00000.parquet",
+      "cid": "bafybeihqe4fqlhdh7ppp3vbius2cllh4h5skkux7es7lsbnnfx6jnplaru",
+      "codec": "dag-pb",
+      "size": 4465087,
+      "sha256": "c5d66221537d4fb9685754e308295a60e70fa801b6aca4df9db297a8cba1f0f2",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property/part-00000.parquet",
+      "cid": "bafybeihyxdm73psyosl4dan7ls2nywztasfsjj5rvgwxvsdeedtzlqhzre",
+      "codec": "dag-pb",
+      "size": 3317167,
+      "sha256": "f3dbd8bdd87f1a39ab03c48dcb34300fe4c1160e0a260bf2c9d69d1c0abc9fef",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_address/part-00000.parquet",
+      "cid": "bafybeihtew3uboydxvfa6tvde5r44b3uryoncz427staau6dwaosy6jhe4",
+      "codec": "dag-pb",
+      "size": 5953802,
+      "sha256": "0b0af078d67ad2b1ca1d2c8c65961895d604d310529b17af701d7cc9a33edda9",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_parcel/part-00000.parquet",
+      "cid": "bafybeignefqxqjzho5dqdbwokfztwtmbzeanbwquosuic7tgh63mlrhf3q",
+      "codec": "dag-pb",
+      "size": 5953572,
+      "sha256": "9cdf82e0b0d12fe519e0af25ef858acfdcb064b980c114c135cd1ba8432cf314",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_sales_history/part-00000.parquet",
+      "cid": "bafybeicpqpledrwp6hjewlzrfnzlfb7idh2iipoccmqii6ejcrfboy3lom",
+      "codec": "dag-pb",
+      "size": 449480,
+      "sha256": "02924d54922006d54b889eb09a396508b7e98615924004476abc9296fe83f4d0",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/property_has_structure/part-00000.parquet",
+      "cid": "bafybeic53jus3jfecijtybpgtldiyrj3art34wieyxvkknnttz5bniuira",
+      "codec": "dag-pb",
+      "size": 5953610,
+      "sha256": "8e872b51b794e5e052dad37a32f8331ffc666af6adb5c7005f6e49eda131a2c3",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/sales_history/part-00000.parquet",
+      "cid": "bafkreibz5vacvygx2scsml332lkjnjpcwimry4er3hvmrj3sse6b5pqsgq",
+      "codec": "raw",
+      "size": 241331,
+      "sha256": "39ed402ae0d7d485262f7bd2d496a5e2b2191c7091d9eac8a772913c1ebe1234",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/sales_history_has_company/part-00000.parquet",
+      "cid": "bafkreigovwjc36equxjnd3jwga7eqwduwtmdkds2lv5jb2ms654jkskjje",
+      "codec": "raw",
+      "size": 81217,
+      "sha256": "cead922df890a5d2d1ed36303e485874b4d8350e5a5d7a90e992f77895494949",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/sales_history_has_person/part-00000.parquet",
+      "cid": "bafkreid2o3xyknahcpq3yrs2xaqkzampefrai3r6bxzkfcce2xodbyxaxm",
+      "codec": "raw",
+      "size": 9484,
+      "sha256": "7a76ef85340713e1bc465ab820ac818f2162046e3e0df2a28844d5dc30e2e0bb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/tables/b10/structure/part-00000.parquet",
+      "cid": "bafybeicqttfgyh3k6m6fzixpcjsyk2x5yx2fhtqwwsq6qgg64baulo3qg4",
+      "codec": "dag-pb",
+      "size": 3049290,
+      "sha256": "16a7fd810f8073a40e9db738e2cb035493f38e709104dbb614d0ef987b59f357",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/cars/travis-permits-b01.car",
+      "cid": "baguqeera52wmaorirm2jvh7rgr7em6lfnzdrklmraxdsmy46hfv5qhj6stsa",
+      "codec": "dag-json",
+      "size": 15325739,
+      "sha256": "6c91698eb48defe771fe7b9af8845ab5174ced5fc8c6a4cdad6e9127e0110f35",
+      "kind": "car",
+      "carCid": "bafybeiha3l6bixvfzcoq6vdil7sehdoax2fzbf5dat7oousp32dogc5usu"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01",
+      "cid": "baguqeerapbdnywiv5vjebrrd5gvnr4atcpt6o4isvjanm4lw4kcxwq7ceuda",
+      "codec": "dag-json",
+      "size": 1284,
+      "sha256": "91cb6b9101dfd331b8af524a0b21e5ce2e26678e23bc4aa9ffb020b246549e59",
+      "kind": "directory",
+      "carCid": "bafkreierznvzcao72my3rl2sjifsdzoofytgpdrdxrfkt75qeczemve6le"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/address/part-00000.parquet",
+      "cid": "bafybeidh5vkpaavqe3n5ziqs6qz7wjtunedgj6rvbq4e6zuzpalsb2ylsy",
+      "codec": "dag-pb",
+      "size": 381866,
+      "sha256": "dce1908474577f076d6c04a068c8801f1862a023be26431ea79e19cc2a8a99e1",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeif4bpi3e223w5dlb2zh7s6fbodhtw3tdzcxbxxrhinspupqod6dbi",
+      "codec": "dag-pb",
+      "size": 732685,
+      "sha256": "e4636f0bf20b720215ecda89932d806807ee09fefde75890bd65e1983d2bf783",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/parcel/part-00000.parquet",
+      "cid": "bafybeig7o4mb3vvtj3i2ie7ycireqowuqne2nl72wedqlwr44tmmeobazq",
+      "codec": "dag-pb",
+      "size": 397361,
+      "sha256": "dc4bcba8135c8936a7ecded9651109d56473f0c140e3e74d8d2e4cbcef8f5ad5",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/properties/part-00000.parquet",
+      "cid": "bafybeiek62fos2wk3jnveoctgzhnham3qmu23xnujotgf5vw7xl24kvbo4",
+      "codec": "dag-pb",
+      "size": 549604,
+      "sha256": "781748f277838ad750bbed0c775c4c91a551cae454a7c86e139926068feab41a",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/property/part-00000.parquet",
+      "cid": "bafybeialsbxrmpby7ybv5l2kmzzd6aegj6a5j535ddwusacclgshdn2rku",
+      "codec": "dag-pb",
+      "size": 406895,
+      "sha256": "de4b45004fb5a01beca395c0cca58824ee40cb3115312cb4d61bc8d8f53349f3",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeic2au4dwe4w52donksnq3rxdsxxkxkekppowx2jjlgqcjngzbhsh4",
+      "codec": "dag-pb",
+      "size": 900039,
+      "sha256": "f205df85aa2aec502ae10036510474d06ab826bfa44345d8330b1689ce43eb37",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b01/property_improvement/part-00000.parquet",
+      "cid": "bafybeib22falah2evakqdqos5rpfu6deyxxbssxdzbxght7usxi3qpkbd4",
+      "codec": "dag-pb",
+      "size": 619670,
+      "sha256": "eb007715c3a6a29c593d566dbd6be405155230176a4d473a19b5d74b245ecb0d",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/cars/travis-permits-b02.car",
+      "cid": "baguqeerakhi6fxurmml6cfy55zfxa2t72jyqa3cxudfguue2qnugyi7jerja",
+      "codec": "dag-json",
+      "size": 16564157,
+      "sha256": "0bdfeca658027a55aa75e3c7df45a8b74e81085ff26d613b772136e42ae0c261",
+      "kind": "car",
+      "carCid": "bafybeickmnuwcynhxmx3barllkr64bn5pywagzq5pp2u4hse4a52hrmqey"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02",
+      "cid": "baguqeera5wkdln7xxscbyydrhhcqwlrxsh5qcfubdqeh4izcxybxxophpe4q",
+      "codec": "dag-json",
+      "size": 1285,
+      "sha256": "2f89de541fabf5e8689d06205f47b0184cbedb736d582d6243448c731aafbd72",
+      "kind": "directory",
+      "carCid": "bafkreibprhpfih5l6xugrhigebpupmayjs7nw43nlawweq2errzrvl55oi"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/address/part-00000.parquet",
+      "cid": "bafybeiabqkpfvzqsx6uibyzw6hnq62dzoqnvkx5c65rcmfqcllz6abundm",
+      "codec": "dag-pb",
+      "size": 382240,
+      "sha256": "440727171f67769c16f51791d4582c8366d23e31a650006b873f0038a0e0310e",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/address_has_parcel/part-00000.parquet",
+      "cid": "bafybeic43wyhg6n77ejnaw6tyqni7aqe6prmmaswwb4e3yaz4hrdv7biuq",
+      "codec": "dag-pb",
+      "size": 732574,
+      "sha256": "ad09cd4266ca8494601446136a74aeceb345b21ece85cbf4a3b378a2f74113dc",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/parcel/part-00000.parquet",
+      "cid": "bafybeif523wg5z3pqdwctwfr2d3d5vwpvmumdgwmqjrvm5pxprsworbuxy",
+      "codec": "dag-pb",
+      "size": 398316,
+      "sha256": "e10d556fef5810836f4de6749713df7d223726b5417a625f9ffd07fc79f53942",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/properties/part-00000.parquet",
+      "cid": "bafybeicfxoc3tlyku4etq7aqdh2pqcwj74coswbi54olop2ewhgwohdcbq",
+      "codec": "dag-pb",
+      "size": 549413,
+      "sha256": "0dc0459c29ad52123c6d4bb601e98ebcc7f72d2b2c7d95c076c70f34fefd7de3",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/property/part-00000.parquet",
+      "cid": "bafybeigvkzzrywe25y5vhthbn6nrh7or7esfizpe4nd72xpuy5tw4hctqe",
+      "codec": "dag-pb",
+      "size": 407973,
+      "sha256": "608188e55ef7d527b785ad8c9dadeee7fd0e7e6319d032e49b618af46edae45f",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/property_has_property_improvement/part-00000.parquet",
+      "cid": "bafybeidghod4cef3adwkybfqqeagn34s5f3fyouqaqexsdnlhifp6iivyy",
+      "codec": "dag-pb",
+      "size": 1015695,
+      "sha256": "06b9b45dcd2cdf12e960867dbb71f5212340b9d59bf4ff4a35a75673930c63bb",
+      "kind": "table"
+    },
+    {
+      "name": "pipeline/data/runs/travis-a11-permits-full-20261023114303/publish-dry-run/permits-batched/tables/b02/property_improvement/part-00000.parquet",
+      "cid": "bafybeibmnptsxnfcjoc4ekl4drgblbvbbdnbqcb6ws3puxavd5e3zlzesm",
+      "codec": "dag-pb",
+      "size": 696939,
+      "sha256": "45504669fd89811db64d09e924b38c55c27893fc27d7cfd9c5cb9a85096d9608",
+      "kind": "table"
+    }
+  ],
+  "profiles": [
+    {
+      "name": "travis-austin",
+      "version": "1.0.0",
+      "sha256": "c8fd15cf8deb654c2959d7cca3b05560bc9830de2518c56a092bd87bdf53dfa6",
+      "path": "profiles/travis-austin@1.0.0/rules.json",
+      "gitCommit": "0421ac2"
+    }
+  ],
+  "coverage": {
+    "permits_emitted": {
+      "count": 17387,
+      "derivation": "published_rows",
+      "note": "b01 7834 + b02 9553, roofing-classified decided-status permits only (PO 2026-10-23)"
+    },
+    "permits_no_tcad_geoid": {
+      "count": 275764,
+      "derivation": "aggregate_match",
+      "note": "Query DB property_improvements.unmatched_reason='no_tcad_geoid', request_identifier IS NULL, all captured Austin permits"
+    },
+    "permits_no_tcad_id": {
+      "count": 31824,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='no_tcad_id'"
+    },
+    "permits_ambiguous_geoid": {
+      "count": 36560,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='ambiguous_geoid'"
+    },
+    "permits_address_unmatched": {
+      "count": 29475,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='address_unmatched'"
+    },
+    "permits_ambiguous_address": {
+      "count": 89,
+      "derivation": "aggregate_match",
+      "note": "unmatched_reason='ambiguous_address'"
+    },
+    "contractor_resolved": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "Comptroller registry not wired for this run (NO_REGISTRY default); every emitted permit resolves unresolved"
+    },
+    "contractor_candidate": {
+      "count": 0,
+      "derivation": "aggregate_match",
+      "note": "same NO_REGISTRY default as contractor_resolved"
+    },
+    "contractor_unresolved": {
+      "count": 17387,
+      "derivation": "aggregate_match",
+      "note": "all 17387 emitted permits: registry_unavailable (NO_REGISTRY default, A-07 Comptroller baseline not loaded)"
+    }
+  },
+  "limitations": [
+    "DRAFT for Stage 6 S6a.2 pre-publish review -- not uploaded, not the final publish manifest",
+    "county published_rows is R-only (441961 of the 493246-parcel roll); P/MH/MN out of scope, unchanged since A-04",
+    "property_improvement published scope is roofing-classified, decided-status permits only (17387 rows), not all 2007514 linked permits",
+    "export-tables re-run with --part-size 48m (ADR-0001 D-4) after the original dry run used elephant-cli's 1 GiB default; table splitting itself was unaffected (every table's parquet was already under 48m), only the recorded part_size_bytes changed from 1073741824 to 50331648"
+  ]
+}

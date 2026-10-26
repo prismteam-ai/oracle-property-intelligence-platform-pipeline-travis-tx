@@ -1,0 +1,19 @@
+{
+  "name": "pipeline/data/runs/travis-a04-20261022052658/publish-dry-run/county-batched/cars/travis-county-b01.car",
+  "carCid": "bafybeibrvx445d4qs3lqq445layk5ohwyyo2x4ioqks6rqgflxos27ppu4",
+  "size": 232735494,
+  "adopted": true,
+  "gateways": [
+    {
+      "gateway": "https://gateway.pinata.cloud",
+      "ok": true,
+      "status": 206
+    },
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 206
+    }
+  ],
+  "recordedAt": "2026-10-24T18:55:39.425Z"
+}

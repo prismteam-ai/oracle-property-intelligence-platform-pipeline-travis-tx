@@ -1,0 +1,20 @@
+{
+  "name": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3-1/county-batched/tables/b04",
+  "carCid": "bafkreigkcgh6sxhj3adfeer6t43dqddrjhhqp2uwvbnhq7dw53ti7ajr4i",
+  "size": 3401,
+  "adopted": true,
+  "gateways": [
+    {
+      "gateway": "https://gateway.pinata.cloud",
+      "ok": true,
+      "status": 206
+    },
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 206
+    }
+  ],
+  "deferredGateways": [],
+  "recordedAt": "2026-10-26T12:25:09.967Z"
+}

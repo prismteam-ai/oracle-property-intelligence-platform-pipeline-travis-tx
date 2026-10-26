@@ -1,0 +1,1413 @@
+county: "Travis"
+state: "TX"
+slug: "travis"
+fips: "48453"
+snapshot_time: "2026-10-20T05:43:09.323Z"
+discovery_run_id: "travis-2"
+waiting_human_hours: 7.722531
+parcel:
+  canonical_source: "TCAD 2026 certified roll"
+  assessed_parcel_count: 493246
+  assessed_parcel_count_measurement:
+    value: 493246
+    source_url: "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip"
+    captured_at: "2026-10-19T21:33:41.241Z"
+    method: "streaming count"
+  roll_year: 2026
+  certification_date_measurement:
+    value: null
+    missing_reason: "the TCAD public-information page captured at 2026-10-20T06:19:52.331Z does not state a certification date; the export file name's date is not used (PO decision 2026-10-20)"
+    source_url: "https://traviscad.org/publicinformation"
+    captured_at: "2026-10-20T06:19:52.331Z"
+    method: "certification date as stated in the page text"
+    page_path: "pipeline/data/raw/tcad/publicinformation-20261020T061952Z.html"
+    page_sha256: "1d5dd5c3c4fe4ae4800023bcd9d0365f42316090839a4323c23b6cf61f9a27bf"
+  gis_feature_count: 373683
+  gis_feature_count_measurement:
+    value: 373683
+    source_url: "https://gis.traviscountytx.gov/server1/rest/services/CIPStoryMap/Main_Location_Map2/MapServer/6/query?where=1%3D1&returnCountOnly=true&f=json"
+    captured_at: "2026-10-20T07:31:05Z"
+    method: "returnCountOnly"
+    captured_via: "US GitHub Actions runner (ARD § 8, PO approval 2026-10-20)"
+    run_url: "https://github.com/HebaGaber/oracle-property-intelligence-platform-pipeline-travis-tx/actions/runs/39387019700"
+    body_sha256: "751ea63e3a6565108c8af9faa18aedf81990818d913a97002fcd8887aa160b6f"
+    egress_country: "US"
+  gap_pct: 24.24
+  gap_reason: "GIS 373683 features vs certified roll 493246 (119563 fewer, 24.24% below the roll), counted from a US GitHub Actions runner (ARD § 8, PO approval 2026-10-20) at 2026-10-20T07:31:05Z; reconciled by count from the certified export (streaming count of the certified export, receipt captured_at 2026-10-19T21:33:41.241Z): 51285 non land accounts + 56139 condo accounts without export point + 3534 inventory accounts without export point = 110958 of the 119563; the residual 8605 (1.74% of the roll) is unexplained; consistent with the county GIS refreshing every 1 to 2 months while the roll is certified once (a likely cause, not verified); this is a count-level reconciliation, not a feature-to-account join"
+  discrepancy_threshold_pct: 2
+  discrepancy_explanation: "GIS 373683 features vs certified roll 493246 (119563 fewer, 24.24% below the roll), counted from a US GitHub Actions runner (ARD § 8, PO approval 2026-10-20) at 2026-10-20T07:31:05Z; the raw gap is above the 2% threshold, so GIS-only seeding is blocked; reconciled by count from the certified export (streaming count of the certified export, receipt captured_at 2026-10-19T21:33:41.241Z): 51285 non land accounts + 56139 condo accounts without export point + 3534 inventory accounts without export point = 110958 of the 119563; the residual 8605 (1.74% of the roll) is unexplained; consistent with the county GIS refreshing every 1 to 2 months while the roll is certified once (a likely cause, not verified); this is a count-level reconciliation, not a feature-to-account join; the certified roll stays the canonical denominator and GIS is never substituted"
+  separately_assessed_without_geometry: "acknowledged"
+  account_breakdown:
+    source_url: "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip"
+    captured_at: "2026-10-19T21:33:41.241Z"
+    method: "streaming count of the certified export"
+    export_sha256: "6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346"
+    zip_entry: "Travis-protaxExport-20260719.json"
+    records: 493246
+    inactive_flagged: 0
+    by_prop_type:
+      - prop_type: "R"
+        count: 441961
+        meaning: "real property"
+      - prop_type: "P"
+        count: 39536
+        meaning: "business personal property"
+      - prop_type: "MH"
+        count: 11744
+        meaning: "mobile home"
+      - prop_type: "MN"
+        count: 5
+        meaning: "mineral"
+    prop_type_meaning_source: "TCAD Export Layouts (Legacy 8.0.33 Appraisal Export Layout, prop_type_cd: R = Real, P = Business Personal Property, M = Mobile Home, MN = Mineral); the 2026 JSON export prints the mobile-home type as MH"
+    real_estate:
+      prop_type: "R"
+      accounts: 441961
+      distinct_geo_ids: 431536
+      accounts_sharing_a_geo_id: 11589
+      accounts_without_geo_id: 0
+      with_geometry_point: 380461
+      without_geometry_point: 61500
+      without_geometry_by_state_cd:
+        - state_cd: "A4"
+          count: 53324
+          with_condo_unit: 7346
+          meaning: "residential condominium (state-code reading, unverified)"
+        - state_cd: "O1"
+          count: 3534
+          with_condo_unit: 3143
+          meaning: "inventory; mostly condo inventory by the condoUnit field (89% filled; state-code reading, unverified)"
+        - state_cd: "F4"
+          count: 2815
+          with_condo_unit: 534
+          meaning: "commercial condominium (state-code reading, unverified)"
+        - state_cd: "C1"
+          count: 696
+          with_condo_unit: 414
+          meaning: "vacant lots and tracts (state-code reading, unverified)"
+        - state_cd: "F1"
+          count: 405
+          with_condo_unit: 96
+        - state_cd: "B1"
+          count: 287
+          with_condo_unit: 40
+        - state_cd: "A1"
+          count: 154
+          with_condo_unit: 18
+        - state_cd: "E1"
+          count: 108
+          with_condo_unit: 0
+        - state_cd: "F3"
+          count: 39
+          with_condo_unit: 2
+        - state_cd: "D1"
+          count: 25
+          with_condo_unit: 0
+        - state_cd: "A2"
+          count: 21
+          with_condo_unit: 0
+        - state_cd: "A3"
+          count: 20
+          with_condo_unit: 3
+        - state_cd: "F5"
+          count: 18
+          with_condo_unit: 3
+        - state_cd: "F2"
+          count: 14
+          with_condo_unit: 3
+        - state_cd: "E2"
+          count: 10
+          with_condo_unit: 0
+        - state_cd: "B2"
+          count: 9
+          with_condo_unit: 0
+        - state_cd: "A5"
+          count: 8
+          with_condo_unit: 3
+        - state_cd: "E3"
+          count: 5
+          with_condo_unit: 0
+        - state_cd: "J5"
+          count: 5
+          with_condo_unit: 0
+        - state_cd: "M1"
+          count: 2
+          with_condo_unit: 0
+        - state_cd: "J4"
+          count: 1
+          with_condo_unit: 0
+    state_cd_meaning_source: "Category letters follow the Texas Comptroller property categories (A residential, C vacant lots and tracts, F commercial, O residential inventory); the subcodes A4, F4, O1 and C1 are TCAD codes whose descriptions are not printed in the JSON export (the Export Layouts define a STATE_CD file but it is not part of the download), and no official TCAD or Comptroller table defining them was found (web search 2026-10-20), so each subcode meaning is a state-code reading, unverified; with_condo_unit shows how often propertyCharacteristics[].condoUnit is filled and is not used as proof"
+  gap_reconciliation:
+    gap: 119563
+    components:
+      - component: "non_land_accounts"
+        count: 51285
+        reason: "business personal property, mobile-home and mineral accounts (P 39536, MH 11744, MN 5) are appraisal accounts, not land parcels, so they are not expected to have a parcel polygon of their own in the GIS"
+      - component: "condo_accounts_without_export_point"
+        count: 56139
+        reason: "real-property accounts with state codes A4 53324, F4 2815 and no export geometry point, read as condominium units that share their building's parcel polygon (state-code reading, unverified; condoUnit filled on 7880 of 56139)"
+      - component: "inventory_accounts_without_export_point"
+        count: 3534
+        reason: "real-property accounts with state code O1 and no export geometry point: inventory; mostly condo inventory by the condoUnit field (condoUnit filled on 3143 of 3534; state-code reading, unverified)"
+    explained: 110958
+    residual: 8605
+    residual_pct_of_roll: 1.74
+    method: "count-level: category totals from the certified export subtracted from roll minus GIS; not a feature-to-account join"
+    residual_note: "unexplained; consistent with the county GIS refreshing every 1 to 2 months while the roll is certified once (a likely cause, not verified)"
+  identifier_name: "pID"
+  identifier_layout_name: "prop_id"
+  identifier_proven: true
+  identifier_format: "integer, 6-7 digits"
+  deed_or_sale_dates_present: true
+  export_receipt:
+    url: "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip"
+    method: "GET"
+    status: 200
+    bytes: 3554021795
+    sha256: "6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346"
+    captured_at: "2026-10-19T21:33:41.241Z"
+    user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+    attempts: 1
+    outcome: "ok"
+    resumes: 1
+    file_path: "pipeline/data/raw/tcad/2026_20Certified_20JSON_20SUPP_200_2007182026.zip"
+    seconds: 649.754
+    megabytes_per_minute: 328.188
+    roll_year: 2026
+permits:
+  expected_jurisdiction_count: 23
+  assumes_unified_countywide_history: false
+  jurisdictions:
+    - jurisdiction: "Travis County unincorporated"
+      key: "travis_unincorporated"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      portal: "https://mgoconnect.org/cp?JID=125"
+      vendor: "MyGovernmentOnline (MGO) / MyPermitNow (2014 to present); TNR Public Search Portal (records before January 2014)"
+      evidence_url: "https://www.traviscountytx.gov/tnr/tnr-open-records"
+      evidence_captured_at: "2026-10-19T21:09:00.548Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: MyGovernmentOnline (MGO) / MyPermitNow (2014 to present); TNR Public Search Portal (records before January 2014)). Tried: one identified request to the official page https://www.traviscountytx.gov/tnr/tnr-open-records on 2026-10-19 answered HTTP 200. To unblock: a records request to Travis County Transportation & Natural Resources (TNR), Records Management (Travis County has no central open-records office) via https://www.traviscountytx.gov/tnr/tnr-open-records/open-records-request; not filed (PO decision 2026-10-20)."
+      notes: "TNR processes permits through an account-based MGO/MyPermitNow application portal; its Public Search Portal exposes some document images created before January 2014. unverified: earliest permit date, and whether the Public Search Portal's terms allow capture (if so, records before 2014 could be reclassified as supported from that date)"
+      records_request:
+        recipient_office: "Travis County Transportation & Natural Resources (TNR), Records Management (Travis County has no central open-records office)"
+        system_scope: "TNR development permits in MyGovernmentOnline/MyPermitNow and pre-2014 TNR business records (construction plans, permits, septic); all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.traviscountytx.gov/tnr/tnr-open-records/open-records-request"
+    - jurisdiction: "Austin"
+      key: "austin"
+      census_placefp: "05000"
+      spec_class: "supported"
+      status: "supported"
+      historical_records: true
+      portal_kind: "open-data-api"
+      portal: "https://data.austintexas.gov/resource/3syk-w9eu.json"
+      vendor: "Socrata open data (City of Austin, Issued Construction Permits 3syk-w9eu)"
+      evidence_url: "https://data.austintexas.gov/d/3syk-w9eu"
+      evidence_captured_at: "2026-10-20T08:52:56.645Z"
+      evidence_http_status: 200
+      earliest_record_date: "1921-09-20"
+      reprobe_count: 1
+      reprobed_at: "2026-10-20T08:52:56.645Z"
+      reprobe_url_changed: false
+      notes: "earliest_record_date is min(issue_date) of 3syk-w9eu observed 2026-10-19; the Austin source row carries the full measurements and the Austin-issued records located in other jurisdictions"
+      records_request:
+        recipient_office: "City of Austin Public Information Office (Public Records Center)"
+        system_scope: "issued construction permits behind open dataset 3syk-w9eu; all building permit records held, earliest available to present"
+        route: "api-first"
+        request_portal_url: "https://austintexas.gov/pir"
+      superseded_evidence:
+        - evidence_path: "docs/evidence/blocked/jurisdiction-austin-20261019T210901Z.md"
+          superseded_by: "re-probe at 2026-10-20T08:52:56.645Z answered HTTP 200 (no new evidence file)"
+    - jurisdiction: "Bee Cave"
+      key: "bee_cave"
+      census_placefp: "07156"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "MyGovernmentOnline (MGO)"
+      evidence_url: "https://beecavetexas.gov/government/departments/planning_development/building/index.php"
+      evidence_captured_at: "2026-10-20T08:53:06.060Z"
+      evidence_http_status: 200
+      reprobe_count: 1
+      reprobed_at: "2026-10-20T08:53:06.060Z"
+      reprobe_url_changed: true
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: MyGovernmentOnline (MGO)); Bee Cave's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 4822 permits inside the city limits (full purpose), 3568 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://beecavetexas.gov/government/departments/planning_development/building/index.php on 2026-10-20 answered HTTP 200. To unblock: a records request to City of Bee Cave City Secretary (public information requests) via https://cityofbeecavetx.nextrequest.com/; not filed (PO decision 2026-10-20)."
+      notes: "permits are filed and tracked by applicants in MyGovernmentOnline (account-based). evidence_url updated 2026-10-20: the earlier MGO application-center page answered HTTP 404 on 2026-10-19; the city's Building Permits & Inspections page says all applications go through MyGovernmentOnline (account-based). unverified: date MGO was adopted and whether any public history search exists"
+      records_request:
+        recipient_office: "City of Bee Cave City Secretary (public information requests)"
+        system_scope: "Planning & Development building and MEP permits in MyGovernmentOnline; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://cityofbeecavetx.nextrequest.com/"
+      austin_issued_located_here:
+        value: 8390
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): BEE CAVE ETJ=3568; BEE CAVE FULL PURPOSE=4822"
+      austin_issued_full_purpose:
+        value: 4822
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): BEE CAVE FULL PURPOSE=4822"
+      austin_issued_etj:
+        value: 3568
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): BEE CAVE ETJ=3568"
+      superseded_evidence:
+        - evidence_path: "docs/evidence/blocked/jurisdiction-bee_cave-20261019T210913Z.md"
+          superseded_by: "probe of a new evidence URL at 2026-10-20T08:53:06.060Z answered HTTP 200 (no new evidence file)"
+    - jurisdiction: "Briarcliff"
+      key: "briarcliff"
+      census_placefp: "10197"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://www.briarclifftx.com/"
+      evidence_captured_at: "2026-10-19T21:09:14.238Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permit files are kept on paper or in the office and no online permit system was found; Briarcliff's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 1 permit inside the city limits (full purpose), 2 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://www.briarclifftx.com/ on 2026-10-19 answered HTTP 200. To unblock: a records request to Village of Briarcliff, Village Secretary (public information officer) via https://www.briarclifftx.com/; not filed (PO decision 2026-10-20)."
+      notes: "the village website's menu lists Building Permits; no online permit system found. unverified: permit custodian, request channel (the village homepage is used until a records-request page or email is confirmed), earliest record date"
+      records_request:
+        recipient_office: "Village of Briarcliff, Village Secretary (public information officer)"
+        system_scope: "Village of Briarcliff building permit files; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.briarclifftx.com/"
+      austin_issued_located_here:
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): BRIARCLIFF ETJ=2; BRIARCLIFF FULL PURPOSE=1"
+      austin_issued_full_purpose:
+        value: 1
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): BRIARCLIFF FULL PURPOSE=1"
+      austin_issued_etj:
+        value: 2
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): BRIARCLIFF ETJ=2"
+    - jurisdiction: "Cedar Park"
+      key: "cedar_park"
+      census_placefp: "13552"
+      spec_class: "records request"
+      status: "blocked"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "MyGovernmentOnline (MGO) Connect"
+      evidence_url: "https://www.cedarparktexas.gov/676/Search-for-a-Permit-PDF"
+      evidence_captured_at: "2026-10-19T21:09:16.263Z"
+      evidence_http_status: 403
+      blocked_explanation: "No permit history was captured: the official site refused automated access with HTTP 403 (a Cloudflare challenge) on 2026-10-19, and it is not requested again (no retry, no identity change, no challenge solved); Cedar Park's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 16 permits inside the city limits (full purpose), 2 permits in its ETJ (outside the city limits). Tried: one identified request to https://www.cedarparktexas.gov/676/Search-for-a-Permit-PDF on 2026-10-19 (HTTP 403); evidence docs/evidence/blocked/jurisdiction-cedar_park-20261019T210916Z.md. To unblock: a records request to City of Cedar Park City Secretary (public information requests) via https://www.cedarparktexas.gov/283/Information-Disclosure; not filed (PO decision 2026-10-20)."
+      notes: "evidence page blocked at the live run (blocked: challenge seen (HTTP 403; title: 'Attention Required! | Cloudflare') at 2026-10-19T21:09:16.263Z); classified records request; the records request is not filed (PO decision 2026-10-20). Profile: Travis County part only. The city's guide says permit search runs inside MGO Connect after login and phone verification. unverified: history depth of that search and whether its terms allow capture; the request page URL (cedarparktexas.gov answered HTTP 403 to the project user agent on 2026-10-19, not retried)"
+      records_request:
+        recipient_office: "City of Cedar Park City Secretary (public information requests)"
+        system_scope: "Building Permits & Inspections records in MGO Connect; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.cedarparktexas.gov/283/Information-Disclosure"
+      austin_issued_located_here:
+        value: 18
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): CEDAR PARK ETJ=2; CEDAR PARK FULL PURPOSE=16"
+      austin_issued_full_purpose:
+        value: 16
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): CEDAR PARK FULL PURPOSE=16"
+      austin_issued_etj:
+        value: 2
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): CEDAR PARK ETJ=2"
+      blocked_evidence:
+        http_status: 403
+        captured_at: "2026-10-19T21:09:16.263Z"
+        url: "https://www.cedarparktexas.gov/676/Search-for-a-Permit-PDF"
+        evidence_path: "docs/evidence/blocked/jurisdiction-cedar_park-20261019T210916Z.md"
+        body_sha256: "aecf4712f8bcedb9f65d9974bf94d092aee047ea6d26c4f664e85f2f218b1cd9"
+        attempts: 1
+        user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+        outcome: "blocked"
+        geo_signal: "none"
+    - jurisdiction: "Creedmoor"
+      key: "creedmoor"
+      census_placefp: "17612"
+      spec_class: "records request"
+      status: "blocked"
+      historical_records: false
+      evidence_url: "https://cityofcreedmoortx.gov/wp-content/uploads/01-Residential-permit-Packet-5.pdf"
+      evidence_captured_at: "2026-10-19T21:09:16.768Z"
+      evidence_http_status: 403
+      blocked_explanation: "No permit history was captured: the official site refused automated access with HTTP 403 (a Cloudflare challenge) on 2026-10-19, and it is not requested again (no retry, no identity change, no challenge solved); Creedmoor's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 12 permits inside the city limits (full purpose), 36 permits in its ETJ (outside the city limits). Tried: one identified request to https://cityofcreedmoortx.gov/wp-content/uploads/01-Residential-permit-Packet-5.pdf on 2026-10-19 (HTTP 403); evidence docs/evidence/blocked/jurisdiction-creedmoor-20261019T210916Z.md. To unblock: a records request to City of Creedmoor City Secretary (public information officer) via https://www.cityofcreedmoortx.gov/; not filed (PO decision 2026-10-20)."
+      notes: "evidence page blocked at the live run (blocked: challenge seen (HTTP 403; title: 'Attention Required! | Cloudflare') at 2026-10-19T21:09:16.768Z); classified records request; the records request is not filed (PO decision 2026-10-20). Profile: permits are applied for with a paper packet; no online permit system found. unverified: request channel (homepage used; it answered HTTP 403 to the project user agent on 2026-10-19, not retried), earliest record date"
+      records_request:
+        recipient_office: "City of Creedmoor City Secretary (public information officer)"
+        system_scope: "City of Creedmoor building permit files (paper permit packets); all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.cityofcreedmoortx.gov/"
+      austin_issued_located_here:
+        value: 48
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): CREEDMOOR ETJ=36; CREEDMOOR FULL PURPOSE=12"
+      austin_issued_full_purpose:
+        value: 12
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): CREEDMOOR FULL PURPOSE=12"
+      austin_issued_etj:
+        value: 36
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): CREEDMOOR ETJ=36"
+      blocked_evidence:
+        http_status: 403
+        captured_at: "2026-10-19T21:09:16.768Z"
+        url: "https://cityofcreedmoortx.gov/wp-content/uploads/01-Residential-permit-Packet-5.pdf"
+        evidence_path: "docs/evidence/blocked/jurisdiction-creedmoor-20261019T210916Z.md"
+        body_sha256: "805020169a68279bec8649c57f2668bbbe7489b3285dfe592691d66fdb9a00b4"
+        attempts: 1
+        user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+        outcome: "blocked"
+        geo_signal: "none"
+    - jurisdiction: "Elgin"
+      key: "elgin"
+      census_placefp: "23044"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      portal: "https://www.mgoconnect.org/auth/login"
+      vendor: "MyGovernmentOnline (MGO)"
+      evidence_url: "https://www.elgintexas.gov/908/Building-Division"
+      evidence_captured_at: "2026-10-19T21:09:18.075Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: MyGovernmentOnline (MGO)). Tried: one identified request to the official page https://www.elgintexas.gov/908/Building-Division on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Elgin Building Division (permit records custodian) via permits@elgintexas.gov; not filed (PO decision 2026-10-20)."
+      notes: "Travis County part only (most of Elgin is in Bastrop County). unverified: the Travis part has land area (the Census file has no land column); the city's public information officer channel (the Building Division permits email is used until confirmed); earliest record date"
+      records_request:
+        recipient_office: "City of Elgin Building Division (permit records custodian)"
+        system_scope: "Building Division permits in MyGovernmentOnline; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_email: "permits@elgintexas.gov"
+    - jurisdiction: "Jonestown"
+      key: "jonestown"
+      census_placefp: "38020"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "MyGovernmentOnline (MGO)"
+      evidence_url: "https://www.jonestowntx.gov/234/Permitting-Inspections"
+      evidence_captured_at: "2026-10-19T21:09:19.563Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: MyGovernmentOnline (MGO)). Tried: one identified request to the official page https://www.jonestowntx.gov/234/Permitting-Inspections on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Jonestown City Secretary (public information officer) via https://www.jonestowntx.gov/; not filed (PO decision 2026-10-20)."
+      notes: "the city uses MyGovernmentOnline for all building permits (online application). unverified: request channel (homepage used until a records-request page is confirmed), earliest record date"
+      records_request:
+        recipient_office: "City of Jonestown City Secretary (public information officer)"
+        system_scope: "Development Services building permits in MyGovernmentOnline; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.jonestowntx.gov/"
+    - jurisdiction: "Lago Vista"
+      key: "lago_vista"
+      census_placefp: "40264"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "MyGovernmentOnline (MGO) Project Permitting Portal"
+      evidence_url: "https://lagovistatexas.gov/101/Services"
+      evidence_captured_at: "2026-10-19T21:09:21.755Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: MyGovernmentOnline (MGO) Project Permitting Portal); Lago Vista's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 23 permits in its ETJ (outside the city limits), none inside the city limits (full purpose). Tried: one identified request to the official page https://lagovistatexas.gov/101/Services on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Lago Vista City Secretary (open records) via https://lagovistatexas.gov/247/Open-Records-Request; not filed (PO decision 2026-10-20)."
+      notes: "Development Services also publishes monthly permit reports (PDF), which are summaries, not permit history. unverified: earliest record date"
+      records_request:
+        recipient_office: "City of Lago Vista City Secretary (open records)"
+        system_scope: "Development Services permits in the MGO Project Permitting Portal; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://lagovistatexas.gov/247/Open-Records-Request"
+      austin_issued_located_here:
+        value: 23
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): LAGO VISTA ETJ=23"
+      austin_issued_full_purpose:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): no LAGO VISTA FULL PURPOSE group, so 0"
+      austin_issued_etj:
+        value: 23
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): LAGO VISTA ETJ=23"
+    - jurisdiction: "Lakeway"
+      key: "lakeway"
+      census_placefp: "40984"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "Civic Self Service"
+      evidence_url: "https://www.lakeway-tx.gov/1165"
+      evidence_captured_at: "2026-10-19T21:09:24.227Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: Civic Self Service); Lakeway's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 6825 permits inside the city limits (full purpose), 1559 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://www.lakeway-tx.gov/1165 on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Lakeway City Secretary's Office (public information requests) via https://cityoflakewaytx.nextrequest.com/; not filed (PO decision 2026-10-20)."
+      notes: "permit applications and inspection requests moved to Civic Self Service (registration required). unverified: portal URL and vendor, whether it offers a public history search, earliest record date"
+      records_request:
+        recipient_office: "City of Lakeway City Secretary's Office (public information requests)"
+        system_scope: "Building and Development Services permits (Civic Self Service and the system before it); all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://cityoflakewaytx.nextrequest.com/"
+      austin_issued_located_here:
+        value: 8384
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): LAKEWAY ETJ=1559; LAKEWAY FULL PURPOSE=6825"
+      austin_issued_full_purpose:
+        value: 6825
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): LAKEWAY FULL PURPOSE=6825"
+      austin_issued_etj:
+        value: 1559
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): LAKEWAY ETJ=1559"
+    - jurisdiction: "Leander"
+      key: "leander"
+      census_placefp: "42016"
+      spec_class: "records request"
+      status: "blocked"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "Development Hub"
+      evidence_url: "https://www.leandertx.gov/permits"
+      evidence_captured_at: "2026-10-19T21:09:26.853Z"
+      evidence_http_status: 403
+      blocked_explanation: "No permit history was captured: the official site refused automated access with HTTP 403 (a Cloudflare challenge) on 2026-10-19, and it is not requested again (no retry, no identity change, no challenge solved); Leander's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 1 permit inside the city limits (full purpose). Tried: one identified request to https://www.leandertx.gov/permits on 2026-10-19 (HTTP 403); evidence docs/evidence/blocked/jurisdiction-leander-20261019T210926Z.md. To unblock: a records request to City of Leander City Secretary's Office (open records) via https://www.leandertx.gov/orr; not filed (PO decision 2026-10-20)."
+      notes: "evidence page blocked at the live run (blocked: challenge seen (HTTP 403; title: 'Attention Required! | Cloudflare') at 2026-10-19T21:09:26.853Z); classified records request; the records request is not filed (PO decision 2026-10-20). Profile: Travis County part only. All building permit applications are processed in the Development Hub, which also shows the status of an existing permit. unverified: whether the Hub has a public history search, earliest record date (leandertx.gov answered a Cloudflare HTTP 403 to the project user agent on 2026-10-19, not retried). The current permits page is https://www.leandertx.gov/760/Permits (found by web search on 2026-10-20, not requested)"
+      records_request:
+        recipient_office: "City of Leander City Secretary's Office (open records)"
+        system_scope: "building permits processed in the Development Hub; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.leandertx.gov/orr"
+      austin_issued_located_here:
+        value: 1
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): LEANDER FULL PURPOSE=1"
+      austin_issued_full_purpose:
+        value: 1
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): LEANDER FULL PURPOSE=1"
+      austin_issued_etj:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): no LEANDER ETJ group, so 0"
+      blocked_evidence:
+        http_status: 403
+        captured_at: "2026-10-19T21:09:26.853Z"
+        url: "https://www.leandertx.gov/permits"
+        evidence_path: "docs/evidence/blocked/jurisdiction-leander-20261019T210926Z.md"
+        body_sha256: "3ef1727166a221d0a27bab412c6eac6b7afb905ac24a5365050d306d476d6171"
+        attempts: 1
+        user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+        outcome: "blocked"
+        geo_signal: "none"
+    - jurisdiction: "Manor"
+      key: "manor"
+      census_placefp: "46440"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      portal: "https://app.govwell.com/manor"
+      vendor: "GovWell"
+      evidence_url: "https://www.manortx.gov/187/Building-Permits"
+      evidence_captured_at: "2026-10-19T21:09:27.298Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: GovWell); Manor's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 10 permits inside the city limits (full purpose), 3 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://www.manortx.gov/187/Building-Permits on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Manor City Secretary (public records) via https://manortx.justfoia.com/publicportal/home/newrequest; not filed (PO decision 2026-10-20)."
+      notes: "unverified: earliest record date and the system used before GovWell"
+      records_request:
+        recipient_office: "City of Manor City Secretary (public records)"
+        system_scope: "Development Services building permits in GovWell and earlier systems; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://manortx.justfoia.com/publicportal/home/newrequest"
+      austin_issued_located_here:
+        value: 13
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): MANOR ETJ=3; MANOR FULL PURPOSE=10"
+      austin_issued_full_purpose:
+        value: 10
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): MANOR FULL PURPOSE=10"
+      austin_issued_etj:
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): MANOR ETJ=3"
+    - jurisdiction: "Mustang Ridge"
+      key: "mustang_ridge"
+      census_placefp: "50200"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://www.mustangridgetx.gov/planning/page/forms"
+      evidence_captured_at: "2026-10-19T21:09:28.717Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permit files are kept on paper or in the office and no online permit system was found; Mustang Ridge's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 9 permits inside the city limits (full purpose), 4 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://www.mustangridgetx.gov/planning/page/forms on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Mustang Ridge Planning & Permitting office / City Secretary via https://www.mustangridgetx.gov/planning; not filed (PO decision 2026-10-20)."
+      notes: "permits use downloadable checklists submitted to the Planning & Permitting office; no online permit system found. unverified: request channel (Planning & Permitting page used), earliest record date"
+      records_request:
+        recipient_office: "City of Mustang Ridge Planning & Permitting office / City Secretary"
+        system_scope: "City of Mustang Ridge building permit files; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.mustangridgetx.gov/planning"
+      austin_issued_located_here:
+        value: 13
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): MUSTANG RIDGE ETJ=4; MUSTANG RIDGE FULL PURPOSE=9"
+      austin_issued_full_purpose:
+        value: 9
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): MUSTANG RIDGE FULL PURPOSE=9"
+      austin_issued_etj:
+        value: 4
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): MUSTANG RIDGE ETJ=4"
+    - jurisdiction: "Pflugerville"
+      key: "pflugerville"
+      census_placefp: "57176"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      portal: "https://ams.pflugervilletx.gov/PublicAccess/template/login.aspx"
+      vendor: "PublicAccess permits and licensing portal"
+      evidence_url: "https://pflugervilletx.gov/online-services"
+      evidence_captured_at: "2026-10-19T21:09:29.509Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: PublicAccess permits and licensing portal); Pflugerville's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 1117 permits inside the city limits (full purpose), 592 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://pflugervilletx.gov/online-services on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Pflugerville City Secretary (open records) via https://pflugervilletx.gov/open-records-request; not filed (PO decision 2026-10-20)."
+      notes: "the portal opens on a login page. unverified: vendor, whether it offers a guest permit search with history (if so, reclassify as supported from its earliest date), earliest record date"
+      records_request:
+        recipient_office: "City of Pflugerville City Secretary (open records)"
+        system_scope: "Building Inspection and Permits records in the permits and licensing portal; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://pflugervilletx.gov/open-records-request"
+      austin_issued_located_here:
+        value: 1709
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): PFLUGERVILLE ETJ=592; PFLUGERVILLE FULL PURPOSE=1117"
+      austin_issued_full_purpose:
+        value: 1117
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): PFLUGERVILLE FULL PURPOSE=1117"
+      austin_issued_etj:
+        value: 592
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): PFLUGERVILLE ETJ=592"
+    - jurisdiction: "Point Venture"
+      key: "point_venture"
+      census_placefp: "58586"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://vopv.municipalimpact.com/building-and-permits"
+      evidence_captured_at: "2026-10-19T21:09:30.695Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permit files are kept on paper or in the office and no online permit system was found; Point Venture's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 3 permits inside the city limits (full purpose). Tried: one identified request to the official page https://vopv.municipalimpact.com/building-and-permits on 2026-10-19 answered HTTP 200. To unblock: a records request to Village of Point Venture, Village Office (public information requests) via https://vopv.municipalimpact.com/public-information-request; not filed (PO decision 2026-10-20)."
+      notes: "permit packets are accepted in person at the Village Office. unverified: earliest record date"
+      records_request:
+        recipient_office: "Village of Point Venture, Village Office (public information requests)"
+        system_scope: "Village building permit applications and project packets; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://vopv.municipalimpact.com/public-information-request"
+      austin_issued_located_here:
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): POINT VENTURE FULL PURPOSE=3"
+      austin_issued_full_purpose:
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): POINT VENTURE FULL PURPOSE=3"
+      austin_issued_etj:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): no POINT VENTURE ETJ group, so 0"
+    - jurisdiction: "Rollingwood"
+      key: "rollingwood"
+      census_placefp: "63008"
+      spec_class: "records request"
+      status: "blocked"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "MyGovernmentOnline (MGO)"
+      evidence_url: "https://rollingwoodtx.gov/node/9124"
+      evidence_captured_at: "2026-10-20T08:53:09.863Z"
+      evidence_http_status: 404
+      reprobe_count: 1
+      reprobed_at: "2026-10-20T08:53:09.863Z"
+      reprobe_url_changed: true
+      blocked_explanation: "No permit history was captured: the official evidence page could not be read on 2026-10-20 (HTTP 404), so the permit system is known only from research; Rollingwood's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 1996 permits inside the city limits (full purpose). Tried: one identified request to https://rollingwoodtx.gov/node/9124 on 2026-10-20 (HTTP 404); evidence docs/evidence/blocked/jurisdiction-rollingwood-20261020T085309Z.md. To unblock: a records request to City of Rollingwood Development Services (permit records custodian) via developmentservices@rollingwoodtx.gov; not filed (PO decision 2026-10-20)."
+      notes: "evidence page blocked at the live run (failed: HTTP 404 after 1 attempt(s) at 2026-10-20T08:53:09.863Z); classified records request; the records request is not filed (PO decision 2026-10-20). Profile: all permit applications and issuance run through MyGovernmentOnline. evidence_url updated 2026-10-20: the earlier planning-development page answered HTTP 404 on 2026-10-19; the Permitting Process for Residential and Commercial Building page (node 9124) says all applications go through MyGovernmentOnline. The city also posts dated active-permit PDF lists (for example https://www.rollingwoodtx.gov/sites/default/files/fileattachments/building/page/133/active_permits_4.29.2024.pdf); they are snapshots, not a history. unverified: those lists as a source for A-06, the city's public information officer channel (the Development Services email is used until confirmed), earliest record date"
+      records_request:
+        recipient_office: "City of Rollingwood Development Services (permit records custodian)"
+        system_scope: "building permits in MyGovernmentOnline; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_email: "developmentservices@rollingwoodtx.gov"
+      austin_issued_located_here:
+        value: 1996
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): ROLLINGWOOD FULL PURPOSE=1996"
+      austin_issued_full_purpose:
+        value: 1996
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): ROLLINGWOOD FULL PURPOSE=1996"
+      austin_issued_etj:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): no ROLLINGWOOD ETJ group, so 0"
+      blocked_evidence:
+        http_status: 404
+        captured_at: "2026-10-20T08:53:09.863Z"
+        url: "https://rollingwoodtx.gov/node/9124"
+        evidence_path: "docs/evidence/blocked/jurisdiction-rollingwood-20261020T085309Z.md"
+        body_sha256: "655c45cc6d714f2ed693bfba6785273f9f9b4346e9c9f94373a55832825219cd"
+        attempts: 1
+        user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+        outcome: "failed"
+        geo_signal: "none"
+      superseded_evidence:
+        - evidence_path: "docs/evidence/blocked/jurisdiction-rollingwood-20261019T210933Z.md"
+          superseded_by: "docs/evidence/blocked/jurisdiction-rollingwood-20261020T085309Z.md"
+    - jurisdiction: "Round Rock"
+      key: "round_rock"
+      census_placefp: "63500"
+      spec_class: "records request"
+      status: "manual-only"
+      historical_records: false
+      portal_kind: "application-intake"
+      portal: "https://permits.roundrocktexas.gov/"
+      vendor: "Round Rock Permit Portal (replaced TRAKiT/eTRAKiT)"
+      evidence_url: "https://www.roundrocktexas.gov/city-departments/administration/permit-portal-help/"
+      evidence_captured_at: "2026-10-19T21:09:34.813Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permits are filed in an account-based application portal that shows no public permit history (portal: Round Rock Permit Portal (replaced TRAKiT/eTRAKiT)); Round Rock's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 2 permits inside the city limits (full purpose), 2662 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://www.roundrocktexas.gov/city-departments/administration/permit-portal-help/ on 2026-10-19 answered HTTP 200. To unblock: a records request to City of Round Rock City Clerk's Office (Open Records) via https://roundrocktx.mycusthelp.com/webapp/_rs/supporthome.aspx; not filed (PO decision 2026-10-20)."
+      notes: "Travis County part only. The portal requires an account; the old eTRAKiT site now only announces the new system. unverified: whether the Permit Portal's permit search works without an account and how far back it goes (if public, reclassify as supported)"
+      records_request:
+        recipient_office: "City of Round Rock City Clerk's Office (Open Records)"
+        system_scope: "Permit Portal records and records migrated from TRAKiT/eTRAKiT; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://roundrocktx.mycusthelp.com/webapp/_rs/supporthome.aspx"
+      austin_issued_located_here:
+        value: 2664
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): ROUND ROCK ETJ=2662; ROUND ROCK FULL PURPOSE=2"
+      austin_issued_full_purpose:
+        value: 2
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): ROUND ROCK FULL PURPOSE=2"
+      austin_issued_etj:
+        value: 2662
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): ROUND ROCK ETJ=2662"
+    - jurisdiction: "San Leanna"
+      key: "san_leanna"
+      census_placefp: "65552"
+      spec_class: "records request"
+      status: "blocked"
+      historical_records: false
+      evidence_url: "https://sanleannatx.com/wp-content/uploads/2023/07/Packet-for-July-20-2023.pdf"
+      evidence_captured_at: "2026-10-20T08:53:13.590Z"
+      evidence_http_status: 406
+      reprobe_count: 1
+      reprobed_at: "2026-10-20T08:53:13.590Z"
+      reprobe_url_changed: false
+      blocked_explanation: "No permit history was captured: blocked by the site's web application firewall (Mod Security), HTTP 406, on 2026-10-20, and it is not requested again (no retry, no identity change); San Leanna's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 5 permits inside the city limits (full purpose). Tried: one identified request to https://sanleannatx.com/wp-content/uploads/2023/07/Packet-for-July-20-2023.pdf on 2026-10-20 (HTTP 406); evidence docs/evidence/blocked/jurisdiction-san_leanna-20261020T085313Z.md. To unblock: a records request to Village of San Leanna, Village Administrator via https://sanleannatx.com/; not filed (PO decision 2026-10-20)."
+      notes: "evidence page blocked at the live run (failed: HTTP 406 after 1 attempt(s) at 2026-10-20T08:53:13.590Z); classified records request; the records request is not filed (PO decision 2026-10-20). Profile: board packets carry monthly zoning reports listing building permits; no online permit system found (the board packets are the only public trace). The HTTP 406 answers of 2026-10-19 and 2026-10-20 say the request was blocked by Mod Security: the site's web application firewall blocks the project user agent, so the site is not requested again (corrected in review on 2026-10-20: it was first read as a content-negotiation refusal). unverified: request channel (homepage used), earliest record date"
+      records_request:
+        recipient_office: "Village of San Leanna, Village Administrator"
+        system_scope: "Village building, driveway and certificate-of-occupancy permit files; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://sanleannatx.com/"
+      austin_issued_located_here:
+        value: 5
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): SAN LEANNA FULL PURPOSE=5"
+      austin_issued_full_purpose:
+        value: 5
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): SAN LEANNA FULL PURPOSE=5"
+      austin_issued_etj:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): no SAN LEANNA ETJ group, so 0"
+      blocked_evidence:
+        http_status: 406
+        captured_at: "2026-10-20T08:53:13.590Z"
+        url: "https://sanleannatx.com/wp-content/uploads/2023/07/Packet-for-July-20-2023.pdf"
+        evidence_path: "docs/evidence/blocked/jurisdiction-san_leanna-20261020T085313Z.md"
+        body_sha256: "8970d3ea6059606600e849b7d48adcae7d56b01a70cc5fa34b558cab199eb021"
+        attempts: 1
+        user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+        outcome: "failed"
+        geo_signal: "none"
+      superseded_evidence:
+        - evidence_path: "docs/evidence/blocked/jurisdiction-san_leanna-20261019T210935Z.md"
+          superseded_by: "docs/evidence/blocked/jurisdiction-san_leanna-20261020T085313Z.md"
+    - jurisdiction: "Sunset Valley"
+      key: "sunset_valley"
+      census_placefp: "71324"
+      spec_class: "records request"
+      status: "blocked"
+      historical_records: false
+      portal_kind: "application-intake"
+      vendor: "GovBuilt (earlier MyGovernmentOnline / MyPermitNow)"
+      evidence_url: "https://www.sunsetvalley.gov/departments/planning-development/building-and-sign-permits"
+      evidence_captured_at: "2026-10-19T21:09:36.308Z"
+      evidence_http_status: 403
+      blocked_explanation: "No permit history was captured: the official site refused automated access with HTTP 403 (an Access Denied page) on 2026-10-19, and it is not requested again (no retry, no identity change, no challenge solved); Sunset Valley's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 1128 permits inside the city limits (full purpose), 61 permits in its ETJ (outside the city limits). Tried: one identified request to https://www.sunsetvalley.gov/departments/planning-development/building-and-sign-permits on 2026-10-19 (HTTP 403); evidence docs/evidence/blocked/jurisdiction-sunset_valley-20261019T210936Z.md. To unblock: a records request to City of Sunset Valley Planning & Development (permit records custodian) via permits@sunsetvalley.gov; not filed (PO decision 2026-10-20)."
+      notes: "evidence page blocked at the live run (blocked: challenge seen (HTTP 403; title: 'Access Denied') at 2026-10-19T21:09:36.308Z); classified records request; the records request is not filed (PO decision 2026-10-20). Profile: applications are submitted through the GovBuilt portal. unverified: GovBuilt portal URL, the city's public information officer channel (the permits email is used until confirmed), earliest record date (sunsetvalley.gov answered HTTP 403 to the project user agent on 2026-10-19, not retried)"
+      records_request:
+        recipient_office: "City of Sunset Valley Planning & Development (permit records custodian)"
+        system_scope: "building and sign permits in GovBuilt and the earlier MyGovernmentOnline system; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_email: "permits@sunsetvalley.gov"
+      austin_issued_located_here:
+        value: 1189
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): SUNSET VALLEY ETJ=61; SUNSET VALLEY FULL PURPOSE=1128"
+      austin_issued_full_purpose:
+        value: 1128
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): SUNSET VALLEY FULL PURPOSE=1128"
+      austin_issued_etj:
+        value: 61
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): SUNSET VALLEY ETJ=61"
+      blocked_evidence:
+        http_status: 403
+        captured_at: "2026-10-19T21:09:36.308Z"
+        url: "https://www.sunsetvalley.gov/departments/planning-development/building-and-sign-permits"
+        evidence_path: "docs/evidence/blocked/jurisdiction-sunset_valley-20261019T210936Z.md"
+        body_sha256: "7f2268a632d6df3244d3509a292f04bdd47ad745d6f42d7bb68b08366103cf22"
+        attempts: 1
+        user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+        outcome: "blocked"
+        geo_signal: "none"
+    - jurisdiction: "The Hills"
+      key: "the_hills"
+      census_placefp: "72578"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://www.villageofthehills.org/"
+      evidence_captured_at: "2026-10-19T21:09:37.200Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permit files are kept on paper or in the office and no online permit system was found; The Hills' own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 1253 permits inside the city limits (full purpose). Tried: one identified request to the official page https://www.villageofthehills.org/ on 2026-10-19 answered HTTP 200. To unblock: a records request to Village of The Hills, Village Secretary (public information officer) via https://www.villageofthehills.org/; not filed (PO decision 2026-10-20)."
+      notes: "unverified: whether the village issues building permits itself or another body does (if another body, reclassify as no public history / delegated with issued_by), the permit custodian, request channel (homepage used), earliest record date"
+      records_request:
+        recipient_office: "Village of The Hills, Village Secretary (public information officer)"
+        system_scope: "Village of The Hills building permit files; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.villageofthehills.org/"
+      austin_issued_located_here:
+        value: 1253
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): THE HILLS FULL PURPOSE=1253"
+      austin_issued_full_purpose:
+        value: 1253
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): THE HILLS FULL PURPOSE=1253"
+      austin_issued_etj:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): no THE HILLS ETJ group, so 0"
+    - jurisdiction: "Volente"
+      key: "volente"
+      census_placefp: "75752"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://www.villageofvolente-tx.gov/planning-permitting"
+      evidence_captured_at: "2026-10-19T21:09:38.956Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permit files are kept on paper or in the office and no online permit system was found; Volente's own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 3 permits inside the city limits (full purpose). Tried: one identified request to the official page https://www.villageofvolente-tx.gov/planning-permitting on 2026-10-19 answered HTTP 200. To unblock: a records request to Village of Volente, Village Office (public information requests) via https://www.villageofvolente-tx.gov/index.asp?SEC=2B4DB589-502A-49BA-927D-1DF5BE8AE1E3; not filed (PO decision 2026-10-20)."
+      notes: "permit applications are paper forms submitted to the village office. unverified: earliest record date"
+      records_request:
+        recipient_office: "Village of Volente, Village Office (public information requests)"
+        system_scope: "Village site development and building permit applications; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.villageofvolente-tx.gov/index.asp?SEC=2B4DB589-502A-49BA-927D-1DF5BE8AE1E3"
+      austin_issued_located_here:
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): VOLENTE FULL PURPOSE=3"
+      austin_issued_full_purpose:
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): VOLENTE FULL PURPOSE=3"
+      austin_issued_etj:
+        value: 0
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): no VOLENTE ETJ group, so 0"
+    - jurisdiction: "Webberville"
+      key: "webberville"
+      census_placefp: "76924"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://www2.census.gov/geo/docs/reference/codes2020/place_by_cou/st48_tx_place_by_county2020.txt"
+      evidence_captured_at: "2026-10-19T21:09:41.137Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: the village site did not answer; permit system unknown. Tried: no village site answered on 2026-10-19 (see notes); the only evidence is the Census place listing https://www2.census.gov/geo/docs/reference/codes2020/place_by_cou/st48_tx_place_by_county2020.txt, which answered HTTP 200 and names the place but says nothing about its permits. To unblock: a records request to Village of Webberville, Village Hall (public information officer) via https://www.webberville.org/village_commission/ (channel unverified: it did not answer); not filed (PO decision 2026-10-20)."
+      notes: "the village site did not answer on 2026-10-19 (webbervilletx.gov did not resolve and webberville.org did not answer), so the permit system is unknown and the row rests only on the Census place listing, which names the village but is not a permit page. unverified: the permit system, the custodian, whether the village issues permits at all (delegated?) and the request channel (the webberville.org page did not answer)"
+      records_request:
+        recipient_office: "Village of Webberville, Village Hall (public information officer)"
+        system_scope: "Village of Webberville building permit files; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://www.webberville.org/village_commission/"
+        channel_verified: false
+    - jurisdiction: "West Lake Hills"
+      key: "west_lake_hills"
+      census_placefp: "77632"
+      spec_class: "records request"
+      status: "custodian-only"
+      historical_records: false
+      evidence_url: "https://www.westlakehills.org/"
+      evidence_captured_at: "2026-10-19T21:09:41.946Z"
+      evidence_http_status: 200
+      blocked_explanation: "No permit history can be captured: permit files are kept on paper or in the office and no online permit system was found; West Lake Hills' own permits are not captured, but Austin-issued permits located here are captured through Austin dataset 3syk-w9eu: 5113 permits inside the city limits (full purpose), 868 permits in its ETJ (outside the city limits). Tried: one identified request to the official page https://www.westlakehills.org/ on 2026-10-19 answered HTTP 200. To unblock: a records request to City of West Lake Hills (public information requests) via https://cityofwestlakehillstx.nextrequest.com/; not filed (PO decision 2026-10-20)."
+      notes: "the city homepage links its NextRequest records portal. unverified: the city's permit system and vendor, whether any public permit search exists, earliest record date"
+      records_request:
+        recipient_office: "City of West Lake Hills (public information requests)"
+        system_scope: "City of West Lake Hills building permit records; all building permit records held, earliest available to present"
+        route: "records-first"
+        request_portal_url: "https://cityofwestlakehillstx.nextrequest.com/"
+      austin_issued_located_here:
+        value: 5981
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued (3syk-w9eu jurisdiction group-by): WEST LAKE HILLS ETJ=868; WEST LAKE HILLS FULL PURPOSE=5113"
+      austin_issued_full_purpose:
+        value: 5113
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued inside the city limits (full purpose) (3syk-w9eu jurisdiction group-by): WEST LAKE HILLS FULL PURPOSE=5113"
+      austin_issued_etj:
+        value: 868
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+        method: "Austin-issued in the extraterritorial jurisdiction (ETJ, outside the city limits) (3syk-w9eu jurisdiction group-by): WEST LAKE HILLS ETJ=868"
+destination:
+  writes_in_scope: true
+  proven: true
+  independent_identity_sources:
+    - "docker-side: container 14bb700cfcb0 of compose service postgres runs image postgres:16 (image digest sha256:ca0bd484cb98bf4b24eb1010e73fb3fcbd6714d240fbc1a10eea5b7dbecb641d)"
+    - "sql-side: pg_control_system system_identifier 7697569567862181926, database elephant, server version 16.15"
+    - "config-side: the configured loader connection (environment, not recorded) reports system_identifier 7697569567862181926, equal to the sql-side identity"
+  captured_at: "2026-10-20T15:11:48Z"
+enrichment:
+  bbb:
+    status: "blocked"
+    evidence_url: "https://www.bbb.org/us/tx/austin/category/roofing-contractors"
+    evidence_captured_at: "2026-10-19T21:08:55.628Z"
+    evidence_path: "docs/evidence/blocked/bbb-20261019T210855Z.md"
+    next_step: "The official BBB API application (BBB API Registration Form at developer.bbb.org) is not filed (PO decision 2026-10-20); the challenge is never solved; a bounded bbb-harvest that stops on 403 is the A-08 fallback"
+census_reference:
+  dataset: "U.S. Census Bureau, 2020 FIPS Codes for Places: Place by County (Texas), st48_tx_place_by_county2020.txt"
+  vintage: "2020"
+  source_url: "https://www2.census.gov/geo/docs/reference/codes2020/place_by_cou/st48_tx_place_by_county2020.txt"
+  captured_at: "2026-10-19T21:08:59.715Z"
+  place_count: 22
+  notes: "incorporated places (CLASSFP C*) listed for county 48453; the file has no land-area column, so the land-area filter is not applied (a water-only county part would be kept)"
+approved_exceptions:
+  - gate: "parcel"
+    reason: "PO-approved 2026-10-20 (HebaGaber) for the raw GIS-vs-roll gap 24.24% (GIS 373,683 vs certified roll 493,246; 119,563 accounts). 110,958 are explained by count from the certified export: 51,285 non-land accounts (business personal property, mobile homes, minerals), 56,139 real-estate accounts with state codes A4 or F4 and no export geometry point, read as condominium units (state-code reading, unverified), and 3,534 with state code O1 and no export geometry point (inventory; mostly condo inventory by the condoUnit field; state-code reading, unverified); the residual 8,605 (1.74% of the roll) is unexplained. This is a count-level reconciliation, not a feature-to-account join. The exception is bound to these values (check-catalog rule 10); the certified roll stays the denominator and GIS never seeds alone."
+    approved_by: "HebaGaber"
+    approved_at: "2026-10-20"
+    approved_gap_pct: 24.24
+    approved_gis_count: 373683
+    approved_assessed_count: 493246
+    coverage_effect: "The certified roll (493,246 accounts) stays the denominator and GIS never seeds alone or replaces it; 51,285 non-land accounts and about 56,139 accounts read as condominium units are not expected to get a parcel polygon of their own, so A-05 reports coordinate coverage against real-estate accounts and says how condominium units get coordinates; 8,605 accounts remain unexplained."
+    decision_ref: "docs/decisions/DEC-A-01-parcel-gap-exception.md"
+sources:
+  - key: "tcad_certified"
+    url: "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip"
+    status: "available"
+    anti_bot: "rate limits observed: none observed; challenge: none seen; app token used: false; requests: 3"
+    projected_full_capture_hours: 0.18
+    decision: "bulk download"
+    decision_reason: "single certified export file downloaded once in 10.8 min (328.2 MB/min); A-04 loads it"
+    captured_at: "2026-10-19T21:33:41.241Z"
+    denominator:
+      value: 493246
+      source_url: "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip"
+      captured_at: "2026-10-19T21:33:41.241Z"
+      method: "streaming count"
+    download_rate:
+      megabytes_per_minute: 328.18796228254513
+      bytes: 3554021795
+      seconds: 649.753593084
+      source_url: "https://traviscad.org/wp-content/largefiles/2026%20Certified%20JSON%20SUPP%200%2007182026.zip"
+      captured_at: "2026-10-19T21:33:41.241Z"
+  - key: "tcad_supplemental"
+    url: "https://traviscad.org/wp-content/largefiles/travis_SUPP%20335_2026_WEBSITE%20EXPORT_Renamed.zip"
+    status: "available"
+    anti_bot: "rate limits observed: none observed; challenge: none seen; app token used: false; requests: 1"
+    decision: "bulk download"
+    decision_reason: "supplemental roll exports are the incremental property feed (A-12); listed only in A-01"
+    captured_at: "2026-10-19T21:33:40.071Z"
+    denominator:
+      value: null
+      missing_reason: "listed, not downloaded in A-01: 2 supplemental export file(s) listed"
+      source_url: "https://traviscad.org/publicinformation"
+      captured_at: "2026-10-19T21:33:40.071Z"
+  - key: "tcad_gis"
+    url: "https://gis.traviscountytx.gov/server1/rest/services/CIPStoryMap/Main_Location_Map2/MapServer/6"
+    status: "available"
+    anti_bot: "challenge: none seen; requests: 1 from US runner; operator egress EG: TCP connect never completes"
+    decision: "ingest"
+    decision_reason: "count-only probe in A-01; GIS is not the population; coordinates are paged at 2,000 features per request in A-05 through the kit arcgis-feature-service adapter, and that paging must run from a US runner (the operator egress never connects)"
+    captured_at: "2026-10-20T07:31:05Z"
+    denominator:
+      value: 373683
+      source_url: "https://gis.traviscountytx.gov/server1/rest/services/CIPStoryMap/Main_Location_Map2/MapServer/6/query?where=1%3D1&returnCountOnly=true&f=json"
+      captured_at: "2026-10-20T07:31:05Z"
+      method: "returnCountOnly"
+      captured_via: "US GitHub Actions runner (ARD § 8, PO approval 2026-10-20)"
+      run_url: "https://github.com/HebaGaber/oracle-property-intelligence-platform-pipeline-travis-tx/actions/runs/39387019700"
+      body_sha256: "751ea63e3a6565108c8af9faa18aedf81990818d913a97002fcd8887aa160b6f"
+      egress_country: "US"
+    operator_blocked_evidence:
+      timeout_ms: 60000
+      captured_at: "2026-10-20T07:22:23Z"
+      url: "https://gis.traviscountytx.gov/server1/rest/services/CIPStoryMap/Main_Location_Map2/MapServer/6/query?where=1%3D1&returnCountOnly=true&f=json"
+      evidence_path: "docs/evidence/blocked/tcad_gis-20261020T072223Z.md"
+      body_sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      attempts: 1
+      user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+      outcome: "blocked"
+      geo_signal: "suspected: TCP connect to gis.traviscountytx.gov:443 never completes from egress loc=EG, while www.traviscountytx.gov answers HTTP 200 in 1.0 s from the same egress"
+    superseded_evidence:
+      - evidence_path: "docs/evidence/blocked/tcad_gis-20261019T210845Z.md"
+        superseded_by: "docs/evidence/blocked/tcad_gis-20261020T072223Z.md"
+      - evidence_path: "docs/evidence/blocked/tcad_gis-20261019T212423Z.md"
+        superseded_by: "docs/evidence/blocked/tcad_gis-20261020T072223Z.md"
+      - evidence_path: "docs/evidence/blocked/tcad_gis-20261020T053344Z.md"
+        superseded_by: "docs/evidence/blocked/tcad_gis-20261020T072223Z.md"
+  - key: "austin_permits"
+    url: "https://data.austintexas.gov/resource/3syk-w9eu.json"
+    status: "available"
+    anti_bot: "rate limits observed: none observed; challenge: none seen; app token used: false; requests: 6"
+    projected_full_capture_hours: 0.331
+    decision: "ingest"
+    decision_reason: "Austin issued permits: full backfill projected 0.33 h at a median 120043 rows/min (within 48 h); incremental by :updated_at"
+    captured_at: "2026-10-19T20:59:36.244Z"
+    denominator:
+      value: 2380725
+      source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=count(*)"
+      captured_at: "2026-10-19T20:59:36.244Z"
+      method: "count(*)"
+    throughput:
+      rows_per_minute_median: 120043.21555760074
+      pages_read: 3
+      page_size: 50000
+      window_start: "2026-10-19T20:59:40.260Z"
+      window_end: "2026-10-19T21:00:38.067Z"
+      app_token_used: false
+      rate_limits_observed: "none observed"
+    tcad_id_null_count:
+      value: 63019
+      source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=count(*)&$where=tcad_id%20IS%20NULL"
+      captured_at: "2026-10-19T20:59:38.890Z"
+      method: "count(*)"
+      query: "$where=tcad_id IS NULL"
+    located_in_other_jurisdictions:
+      - jurisdiction: "BASTROP ETJ"
+        value: 46
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "BEAR CREEK FULL PURPOSE"
+        value: 1
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "BEE CAVE ETJ"
+        value: 3568
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "BEE CAVE FULL PURPOSE"
+        value: 4822
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "BRIARCLIFF ETJ"
+        value: 2
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "BRIARCLIFF FULL PURPOSE"
+        value: 1
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "CEDAR PARK ETJ"
+        value: 2
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "CEDAR PARK FULL PURPOSE"
+        value: 16
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "CREEDMOOR ETJ"
+        value: 36
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "CREEDMOOR FULL PURPOSE"
+        value: 12
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "LAGO VISTA ETJ"
+        value: 23
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "LAKEWAY ETJ"
+        value: 1559
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "LAKEWAY FULL PURPOSE"
+        value: 6825
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "LEANDER FULL PURPOSE"
+        value: 1
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "MANOR ETJ"
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "MANOR FULL PURPOSE"
+        value: 10
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "MUSTANG RIDGE ETJ"
+        value: 4
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "MUSTANG RIDGE FULL PURPOSE"
+        value: 9
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "OTHER"
+        value: 1276
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "PFLUGERVILLE ETJ"
+        value: 592
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "PFLUGERVILLE FULL PURPOSE"
+        value: 1117
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "POINT VENTURE FULL PURPOSE"
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "ROLLINGWOOD FULL PURPOSE"
+        value: 1996
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "ROUND ROCK ETJ"
+        value: 2662
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "ROUND ROCK FULL PURPOSE"
+        value: 2
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "SAN LEANNA FULL PURPOSE"
+        value: 5
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "SB 2038 ETJ RELEASE"
+        value: 1715
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "SUNSET VALLEY ETJ"
+        value: 61
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "SUNSET VALLEY FULL PURPOSE"
+        value: 1128
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "THE HILLS FULL PURPOSE"
+        value: 1253
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "VOLENTE FULL PURPOSE"
+        value: 3
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "WEST LAKE HILLS ETJ"
+        value: 868
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+      - jurisdiction: "WEST LAKE HILLS FULL PURPOSE"
+        value: 5113
+        source_url: "https://data.austintexas.gov/resource/3syk-w9eu.json?$select=jurisdiction%2Ccount(*)&$group=jurisdiction&$limit=50000"
+        captured_at: "2026-10-19T20:59:39.645Z"
+  - key: "other_jurisdictions"
+    url: "https://www.traviscountytx.gov/tnr/development-services"
+    status: "available"
+    anti_bot: "not probed as one source; each jurisdiction's evidence page is probed in US2"
+    decision: "runtime retrieval"
+    decision_reason: "no countywide bulk source; each jurisdiction's own system is classified supported, records request or no public history in the permits block"
+    captured_at: "2026-10-20T05:43:09.323Z"
+    denominator:
+      value: null
+      missing_reason: "per jurisdiction: each Census place with land in Travis County is classified in the permits block (US2); no countywide count exists"
+      source_url: "https://www.traviscountytx.gov/tnr/development-services"
+      captured_at: "2026-10-20T05:43:09.323Z"
+  - key: "tx_comptroller"
+    url: "https://data.texas.gov/resource/9cir-efmm.json"
+    status: "available"
+    anti_bot: "rate limits observed: none observed; challenge: none seen; app token used: false; requests: 5"
+    projected_full_capture_hours: 0.017
+    decision: "ingest"
+    decision_reason: "Comptroller franchise-tax holders (Travis-coded): full backfill projected 0.02 h at a median 327439 rows/min (within 48 h); incremental by :updated_at; statewide rows are the A-07 identity lookup set"
+    captured_at: "2026-10-19T21:00:38.081Z"
+    denominator:
+      value: 342334
+      source_url: "https://data.texas.gov/resource/9cir-efmm.json?$select=count(*)&$where=taxpayer_county_code%3D'227'"
+      captured_at: "2026-10-19T21:00:38.081Z"
+      method: "count(*)"
+      query: "$where=taxpayer_county_code='227'"
+    travis_coded_rows:
+      value: 342334
+      source_url: "https://data.texas.gov/resource/9cir-efmm.json?$select=count(*)&$where=taxpayer_county_code%3D'227'"
+      captured_at: "2026-10-19T21:00:38.081Z"
+      method: "count(*)"
+      query: "$where=taxpayer_county_code='227'"
+    statewide_rows:
+      value: 3487662
+      source_url: "https://data.texas.gov/resource/9cir-efmm.json?$select=count(*)"
+      captured_at: "2026-10-19T21:00:39.145Z"
+      method: "count(*)"
+    throughput:
+      rows_per_minute_median: 327439.4237066143
+      pages_read: 3
+      page_size: 50000
+      window_start: "2026-10-19T21:00:39.616Z"
+      window_end: "2026-10-19T21:01:06.797Z"
+      app_token_used: false
+      rate_limits_observed: "none observed"
+  - key: "bbb"
+    url: "https://www.bbb.org/us/tx/austin/category/roofing-contractors"
+    status: "blocked"
+    anti_bot: "rate limits observed: none observed; challenge: seen (HTTP 403; cf-mitigated: challenge); app token used: false; requests: 1; stopped: blocked: challenge seen (HTTP 403; cf-mitigated: challenge) at 2026-10-19T21:08:55.628Z"
+    decision: "runtime retrieval"
+    decision_reason: "challenge-protected listing; the official BBB API application is not filed (PO decision 2026-10-20), so the route is a bounded bbb-harvest that stops on 403 (A-08); a challenge is never solved"
+    captured_at: "2026-10-19T21:08:55.628Z"
+    next_step: "The official BBB API application (BBB API Registration Form at developer.bbb.org) is not filed (PO decision 2026-10-20); the challenge is never solved; a bounded bbb-harvest that stops on 403 is the A-08 fallback"
+    denominator:
+      value: null
+      missing_reason: "not counted: blocked: challenge seen (HTTP 403; cf-mitigated: challenge) at 2026-10-19T21:08:55.628Z; advertised listing totals are not harvestable counts"
+      source_url: "https://www.bbb.org/us/tx/austin/category/roofing-contractors"
+      captured_at: "2026-10-19T21:08:55.628Z"
+    blocked_evidence:
+      http_status: 403
+      captured_at: "2026-10-19T21:08:55.628Z"
+      url: "https://www.bbb.org/us/tx/austin/category/roofing-contractors"
+      evidence_path: "docs/evidence/blocked/bbb-20261019T210855Z.md"
+      body_sha256: "ccee505125a1e607bf4fdb0ef4cd54da53f5cecdfa1a65f91c4cac7f6ae7fb33"
+      attempts: 1
+      user_agent: "oracle-travis-discovery/0.1 (PrismTeam Oracle Travis County pipeline; +https://github.com/prismteam-ai/oracle-property-intelligence-platform-pipeline-travis-tx)"
+      outcome: "blocked"
+      geo_signal: "none"
+    records_request:
+      recipient_office: "IABBB (International Association of Better Business Bureaus), BBB API program"
+      system_scope: "BBB business profiles (accreditation, rating, complaints) for Travis County contractors through the official BBB API, requested with the BBB API Registration Form"
+      route: "api-first"
+      request_portal_url: "https://developer.bbb.org/"
+  - key: "overture"
+    url: "https://docs.overturemaps.org/attribution/"
+    status: "available"
+    anti_bot: "rate limits observed: none observed; challenge: none seen; app token used: false; requests: 1"
+    decision: "bulk download"
+    decision_reason: "optional source distributed as bulk files; licence gate decided in A-09"
+    captured_at: "2026-10-19T21:08:56.142Z"
+    denominator:
+      value: null
+      missing_reason: "not measured in A-01: optional source; licence gate decided in A-09"
+      source_url: "https://docs.overturemaps.org/attribution/"
+      captured_at: "2026-10-19T21:08:56.142Z"
+  - key: "contractor_licensing"
+    url: "https://www.tdlr.texas.gov/"
+    status: "available"
+    anti_bot: "rate limits observed: none observed; challenge: none seen; app token used: false; requests: 2"
+    decision: "runtime retrieval"
+    decision_reason: "no statewide roofing licence: Texas has no state roofing-contractor licence (TDLR licensing programs evidence https://www.tdlr.texas.gov/ (HTTP 200 at 2026-10-19T21:08:56.863Z); HB 3344 reroofing-licence bill status evidence https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3344 (HTTP 200 at 2026-10-19T21:08:58.207Z)); contractor identity comes from official Comptroller records, otherwise unresolved (A-07)"
+    captured_at: "2026-10-19T21:08:56.863Z"
+    denominator:
+      value: null
+      missing_reason: "no statewide roofing licence: there is no statewide roofing licence register to count"
+      source_url: "https://www.tdlr.texas.gov/"
+      captured_at: "2026-10-19T21:08:56.863Z"
+amendments:
+  - command: "rescan-tcad"
+    at: "2026-10-20T06:12:39Z"
+    ref: "pipeline/data/raw/tcad/2026_20Certified_20JSON_20SUPP_200_2007182026.zip (export SHA-256 6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346)"
+    venue: "operator"
+    note: "recorded by backfill-amendments; time is the commit time of b93bc44; the command ran shortly before it"
+    fields:
+      - "parcel.identifier_name"
+      - "parcel.identifier_layout_name"
+      - "parcel.identifier_proven"
+      - "parcel.identifier_format"
+  - command: "refresh-tcad-landing"
+    at: "2026-10-20T06:19:52.331Z"
+    ref: "pipeline/data/raw/tcad/publicinformation-20261020T061952Z.html (SHA-256 1d5dd5c3c4fe4ae4800023bcd9d0365f42316090839a4323c23b6cf61f9a27bf)"
+    venue: "operator"
+    note: "recorded by backfill-amendments; time is the page capture time; one identified request, egress not recorded (made before the egress check existed)"
+    fields:
+      - "parcel.certification_date_measurement"
+  - command: "record-gis-runner"
+    at: "2026-10-20T08:05:12Z"
+    ref: "https://github.com/HebaGaber/oracle-property-intelligence-platform-pipeline-travis-tx/actions/runs/39387019700 (body SHA-256 751ea63e3a6565108c8af9faa18aedf81990818d913a97002fcd8887aa160b6f)"
+    egress_country: "US"
+    venue: "runner"
+    note: "recorded by backfill-amendments; time is the commit time of fdf16d8; the command ran shortly before it; the request ran on the US GitHub Actions runner at 2026-10-20T07:31:05Z"
+    fields:
+      - "parcel.gis_feature_count"
+      - "parcel.gis_feature_count_measurement"
+      - "parcel.gap_pct"
+      - "parcel.gap_reason"
+      - "parcel.discrepancy_explanation"
+      - "sources[tcad_gis]"
+  - command: "reprobe-jurisdictions"
+    at: "2026-10-20T08:53:13.590Z"
+    ref: "docs/evidence/blocked/jurisdiction-rollingwood-20261020T085309Z.md, docs/evidence/blocked/jurisdiction-san_leanna-20261020T085313Z.md"
+    egress_country: "EG"
+    venue: "operator"
+    note: "recorded by backfill-amendments; time is the last re-probe capture; egress EG (operator network, VPN off) per docs/decisions/DEC-A-01-source-access.md D-3, not checked by the command at the time; the San Leanna re-probe was a request to a firewall-blocked site (deviation D-3)"
+    fields:
+      - "permits.jurisdictions[austin]"
+      - "permits.jurisdictions[bee_cave]"
+      - "permits.jurisdictions[rollingwood]"
+      - "permits.jurisdictions[san_leanna]"
+  - command: "explain-blocked"
+    at: "2026-10-20T08:56:20Z"
+    ref: "PO decision 2026-10-20 (no request filed); committed evidence files; no request made"
+    venue: "operator"
+    note: "recorded by backfill-amendments; time is the commit time of 9ae3f5f; the command ran shortly before it"
+    fields:
+      - "permits.jurisdictions[*].blocked_explanation"
+      - "permits.jurisdictions[*].notes"
+      - "sources[bbb].next_step"
+      - "enrichment.bbb.next_step"
+  - command: "reconcile-parcel-gap"
+    at: "2026-10-20T10:46:22Z"
+    ref: "pipeline/data/raw/tcad/2026_20Certified_20JSON_20SUPP_200_2007182026.zip (export SHA-256 6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346)"
+    venue: "operator"
+    note: "recorded by backfill-amendments; time is the commit time of 14b88ee; the command ran shortly before it"
+    fields:
+      - "parcel.account_breakdown"
+      - "parcel.gap_reconciliation"
+      - "parcel.gap_reason"
+      - "parcel.discrepancy_explanation"
+      - "parcel.separately_assessed_without_geometry"
+  - command: "hand edit (no command)"
+    at: "2026-10-20T11:10:06Z"
+    ref: "PO approval 2026-10-20 (HebaGaber)"
+    venue: "operator"
+    note: "recorded by backfill-amendments; time is the commit time of e5f5d77; the command ran shortly before it; the entry was written by hand and is replaced by approve-exception"
+    fields:
+      - "approved_exceptions[parcel]"
+  - command: "backfill-amendments"
+    at: "2026-10-20T14:50:57.848Z"
+    ref: "git history (b93bc44, 0f5922a, fdf16d8, 9ae3f5f, 14b88ee, e5f5d77) and docs/evidence/"
+    venue: "operator"
+    note: "one-off migration for the review findings; no measured value changed"
+    fields:
+      - "amendments (history)"
+      - "discovery_run_id"
+      - "sources[tcad_gis].operator_blocked_evidence"
+      - "sources[tcad_gis].superseded_evidence"
+      - "permits.jurisdictions[austin,bee_cave,rollingwood,san_leanna].reprobe_*"
+  - command: "explain-blocked"
+    at: "2026-10-20T14:50:58.413Z"
+    ref: "profile pipeline/oracle-runtime/travis/profiles/jurisdictions.ts and the committed evidence files; no request made"
+    venue: "operator"
+    fields:
+      - "permits.jurisdictions[*].blocked_explanation"
+      - "permits.jurisdictions[*].notes"
+      - "permits.jurisdictions[*].records_request"
+      - "permits.jurisdictions[*].austin_issued_full_purpose"
+      - "permits.jurisdictions[*].austin_issued_etj"
+      - "sources[bbb].next_step"
+      - "enrichment.bbb.next_step"
+  - command: "reconcile-parcel-gap"
+    at: "2026-10-20T15:11:24.650Z"
+    ref: "pipeline/data/raw/tcad/2026_20Certified_20JSON_20SUPP_200_2007182026.zip (export SHA-256 6f7a758568fd03fa200e996d2756559eb53e13241238a004cbadac09ff4c2346)"
+    venue: "operator"
+    fields:
+      - "parcel.account_breakdown"
+      - "parcel.gap_reconciliation"
+      - "parcel.gap_reason"
+      - "parcel.discrepancy_explanation"
+      - "parcel.separately_assessed_without_geometry"
+  - command: "approve-exception"
+    at: "2026-10-20T15:11:48.216Z"
+    ref: "docs/decisions/DEC-A-01-parcel-gap-exception.md"
+    venue: "operator"
+    note: "approved by HebaGaber on 2026-10-20; bound to gap 24.24%, GIS 373683, roll 493246"
+    fields:
+      - "approved_exceptions[parcel]"
+  - command: "prove-destination"
+    at: "2026-10-20T15:11:49.452Z"
+    ref: "local stack: compose service postgres, SQL inside its container, and the configured loader connection"
+    venue: "operator"
+    note: "three identities; the configured connection reports the same system identifier"
+    fields:
+      - "destination"
+  - command: "backfill-amendments --venue"
+    at: "2026-10-20T15:23:40.828Z"
+    ref: "docs/reviews/CR-A-01.md CR2-3 / OR-N2; the record-gis-runner amendment note (US GitHub Actions runner)"
+    venue: "operator"
+    note: "offline migration; record-gis-runner is runner, every other command operator; no measured value changed"
+    fields:
+      - "amendments[*].venue"

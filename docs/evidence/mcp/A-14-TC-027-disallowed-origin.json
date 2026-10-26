@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "tools/list",
+    "params": null
+  },
+  "status": 403,
+  "ms": 314,
+  "body": {
+    "error": "origin_not_allowed"
+  }
+}

@@ -1,0 +1,229 @@
+/* Explore results table (Explore1440 board): Atlas § 7 data table, compact rows, one line of
+   values per row, tabular numbers right-aligned. The Lat/lon and Source columns give way first
+   when the results pane is narrow (container query). Atlas tokens only. */
+
+.box {
+  container-type: inline-size;
+  min-width: 0;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+.table th {
+  padding: var(--space-2) var(--space-1);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: var(--space-1);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr:hover {
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.table tbody tr:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px;
+}
+
+.table tbody tr.selected {
+  background: var(--md-sys-color-secondary-container);
+}
+
+.num,
+.right {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.num {
+  width: var(--space-6);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.mono {
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-label-small-size);
+}
+
+.stack {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+}
+
+.address {
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.sub {
+  color: var(--md-sys-color-on-surface-variant);
+  overflow-wrap: anywhere;
+}
+
+.roof {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  white-space: nowrap;
+}
+
+.marker {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+}
+
+.roofOld {
+  background: var(--md-sys-color-error);
+}
+
+.roofAged {
+  background: var(--md-sys-color-tertiary);
+}
+
+.roofYoung {
+  background: var(--md-sys-color-outline);
+}
+
+.conf {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--space-2);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.confHigh {
+  color: var(--status-success);
+  background: var(--status-success-container);
+}
+
+.confMedium,
+.confLow {
+  color: var(--status-warning);
+  background: var(--status-warning-container);
+}
+
+.permit,
+.party {
+  max-width: calc(var(--space-10) * 3);
+}
+
+/* The provenance wraps inside its column so the table fits its pane (a one-line cell ran past
+   the card edge and under the Details button). */
+.source {
+  min-width: calc(var(--space-10) * 2);
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-label-small-size);
+  overflow-wrap: anywhere;
+}
+
+/* Every row of a page comes from the same run, named once in the caption: the row keeps its run
+   line for screen readers and the tests (textContent), not on screen. */
+.source [data-provenance] {
+  display: grid;
+  gap: 0;
+}
+
+.source [data-provenance] > :last-child {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.caption {
+  padding: var(--space-2);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-small-font);
+  font-size: var(--md-sys-typescale-label-small-size);
+  text-align: left;
+  caption-side: bottom;
+}
+
+.basis {
+  white-space: nowrap;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-9);
+  height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* A missing contractor: a visible dash; the reason is in the cell for screen readers. */
+.dash::before {
+  content: "—";
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  font: inherit;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* A narrow results pane (a property open beside it): Lat/lon and Source move to the drawer. */
+@container (max-width: 760px) {
+  .optional {
+    display: none;
+  }
+}

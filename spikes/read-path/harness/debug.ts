@@ -1,0 +1,20 @@
+// One traced run: logs each data request's method, Range header, status, content-range, content-length (no URLs).
+import { readFileSync } from "node:fs";
+import { getSignedUrl } from "@aws-sdk/cloudfront-signer";
+import { chromium } from "playwright";
+const [harnessPath, key] = process.argv.slice(2); const dom = process.env.CF_DOMAIN!;
+const policy = JSON.stringify({ Statement: [{ Resource: `https://${dom}/cid/*`, Condition: { DateLessThan: { "AWS:EpochTime": Math.floor(Date.now() / 1000) + 3600 } } }] });
+const s = getSignedUrl({ url: `https://${dom}/cid/*`, keyPairId: process.env.CF_KEY_PAIR_ID!, privateKey: readFileSync(process.env.CF_KEY_FILE!, "utf8"), policy });
+const url = key.startsWith("https://") ? key : `https://${dom}/${key}${s.slice(s.indexOf("?"))}`;
+const b = await chromium.launch(); const ctx = await b.newContext(); const p = await ctx.newPage();
+const t0 = Date.now();
+await ctx.route(/\/(cid|ipfs)\//, (route) => { const h = route.request().headers(); console.log(Date.now() - t0, "ROUTE", route.request().method(), JSON.stringify({ range: h["range"], enc: h["accept-encoding"], cc: h["cache-control"] })); return route.continue(); });
+p.on("worker", (w) => console.log("worker", w.url().slice(-40)));
+p.on("requestfinished", async (rq) => { if (!rq.url().includes("/cid/") && !rq.url().includes("/ipfs/")) return; const r = await rq.response(); const h = r ? await r.allHeaders() : {};
+  console.log(Date.now() - t0, rq.method(), "range=" + ((await rq.allHeaders())["range"] ?? "-"), r?.status(), h["content-range"] ?? "", "len=" + (h["content-length"] ?? "?"), h["x-cache"] ?? ""); });
+p.on("console", (m) => console.log("console:", m.text().slice(0, 200)));
+await p.goto(`https://${dom}/${harnessPath}#${encodeURIComponent(JSON.stringify([url]))}`);
+await p.waitForFunction(() => (window as any).__result || (window as any).__error, null, { timeout: 180000 });
+console.log("result", JSON.stringify(await p.evaluate(() => (window as any).__result ?? (window as any).__error)));
+console.log("radius", JSON.stringify(await p.evaluate(() => (window as any).__run("radius").then((r: any) => r.ms))));
+await b.close();

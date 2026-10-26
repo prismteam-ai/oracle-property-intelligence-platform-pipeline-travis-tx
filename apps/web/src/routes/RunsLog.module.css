@@ -1,0 +1,268 @@
+/* Runs · Log (A-13 T040; A-16 T046): the event table's small pieces; the table, chips and pager
+   come from Runs.module.css. Tokens only. */
+.sort {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.sortUp [data-icon] {
+  transform: rotate(180deg);
+}
+
+.sort:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* D-6: the shared `.table td` sets `overflow-wrap: anywhere`, which lets a cell's min-content
+   shrink to one letter, so at 390/768 the auto table layout crushed every column to 2–3
+   characters. Log cells wrap at word (and hyphen) boundaries only; the table then keeps its
+   natural minimum and scrolls sideways inside `.tableWrap` instead. */
+table.log td {
+  overflow-wrap: break-word;
+}
+
+/* Run: "Run N" on one line over the run ID; Event: room for the label; Status pill: one line. */
+.log td:nth-child(2) {
+  min-width: calc(var(--space-10) + var(--space-6));
+}
+
+.log [data-run-number] {
+  display: block;
+  white-space: nowrap;
+}
+
+/* The run ID is secondary (board shows only the number): one line, cut with an ellipsis, full in
+   the title. */
+.runId {
+  display: block;
+  max-width: calc(var(--space-10) * 3);
+  overflow: hidden;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-mono);
+  font-size: var(--md-sys-typescale-body-small-size);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Time (UTC): the header names the zone, so the cell stays on one line. */
+.log td:first-child {
+  white-space: nowrap;
+}
+
+/* Board RunsLog1440: event chips on the left, run chips and Download CSV on the right. */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+/* Atlas outlined button (board "Download CSV"): 48 px target, corner-full. */
+.download {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  min-height: var(--space-9);
+  padding: 0 var(--space-5);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.download:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.log td:nth-child(3) {
+  min-width: calc(var(--space-10) * 2);
+}
+
+.log td:last-child {
+  white-space: nowrap;
+}
+
+/* A finish event's limitations, collapsed behind a 48 px disclosure. */
+.log details {
+  margin: var(--space-1) 0 0;
+}
+
+.log summary {
+  min-height: var(--space-9);
+  line-height: var(--space-9);
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+
+.log summary:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.notes {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-1) 0 0;
+  padding-left: var(--space-5);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+}
+
+/* Compact widths below 600 px (D-6; board 390 stacks the log): each event is a small card. The
+   card shows time and status on top, then run, event, source and count. The table roles stay for
+   assistive tech; the header row is visually hidden. */
+@media (max-width: 599px) {
+  .log thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .log,
+  .log tbody {
+    display: block;
+  }
+
+  .log tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "time status"
+      "run run"
+      "event event"
+      "source count";
+    gap: var(--space-1) var(--space-3);
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .log td,
+  .log td:nth-child(2),
+  .log td:nth-child(3) {
+    min-width: 0;
+    padding: 0;
+    border-top: 0;
+    text-align: start;
+  }
+
+  .log td:nth-child(1) {
+    grid-area: time;
+    font-weight: var(--md-sys-typescale-title-small-weight);
+  }
+
+  .log td:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 var(--space-2);
+    grid-area: run;
+  }
+
+  .log td:nth-child(3) {
+    grid-area: event;
+  }
+
+  .log td:nth-child(4) {
+    grid-area: source;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .log td:nth-child(5) {
+    grid-area: count;
+    text-align: end;
+  }
+
+  .log td:nth-child(6) {
+    grid-area: status;
+  }
+
+  .runId {
+    max-width: 100%;
+  }
+}
+
+/* Medium widths 600–1023 px (board RunsLog768, review B-4): the six columns stay a table, but each
+   row is a grid with fixed shares (Task B's list-row pattern), so cells wrap inside their column
+   and Count and Status are never pushed behind a sideways scroll. */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .log,
+  .log thead,
+  .log tbody {
+    display: block;
+  }
+
+  .log tr {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(0, 1.6fr) minmax(0, 0.9fr)
+      minmax(0, 1.4fr);
+    gap: 0 var(--space-2);
+    align-items: start;
+    padding-inline: var(--space-2);
+  }
+
+  .log thead tr {
+    background: var(--md-sys-color-surface-container-high);
+  }
+
+  .log tbody tr {
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .log th,
+  .log td,
+  .log td:nth-child(2),
+  .log td:nth-child(3) {
+    min-width: 0;
+    padding-inline: 0;
+    border-top: 0;
+    white-space: normal;
+  }
+
+  /* Date over time, as on the board; the pill may take two lines ("Done with limitations"). */
+  .log td:first-child,
+  .log td:last-child,
+  .log td:last-child > * {
+    white-space: normal;
+  }
+
+  /* Icons are ligature glyphs: they never wrap. */
+  .log [data-icon] {
+    white-space: nowrap;
+  }
+
+  /* "Limitations (4)" may wrap in the narrow Event column; the 48 px target stays. */
+  .log summary {
+    box-sizing: border-box;
+    padding-block: var(--space-3);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+  }
+
+  .runId {
+    max-width: 100%;
+  }
+}

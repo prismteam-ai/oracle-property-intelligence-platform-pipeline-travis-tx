@@ -1,0 +1,13 @@
+{
+  "runId": "travis-full-run3-20261025",
+  "startedAt": "2026-10-25T07:36:00.000Z",
+  "finishedAt": "2026-10-25T12:44:21Z",
+  "previousManifestCid": "bafkreife3vk3cgcod3v6tue2xes3hvl2vndqoshbhrhsnjtriskihpcute",
+  "baseManifest": "runs/travis-full-run2-20261024/manifest.json",
+  "countyDir": "pipeline/data/runs/travis-a11-county-run3-20261025/publish-run3/county-batched",
+  "permitsDir": "pipeline/data/runs/travis-a11-permits-run3-20261025/publish-run3/permits-batched",
+  "austinFacts": "specs/011-publish-and-runs/run3/austin-facts.json",
+  "austinReceipt": "specs/011-publish-and-runs/run3/austin-receipt.json",
+  "addressPointsReceipt": "specs/011-publish-and-runs/run3/address-points-receipt.json",
+  "correctionNote": "Incremental refresh of the Austin permits source (watermark 2026-10-21T14:42:23.154Z to 2026-10-24T14:51:37.805Z): added 660, changed 9922, removed 0 permits by content digest. Both groups were rebuilt from the Query DB; their previous CIDs stay fetchable. This run also changes how the TCAD export is published: structure.roof_date is the built year from the roof-age ledger (anchored to the TCAD export, no permit date is stamped on it); owner names are parsed into persons and companies, with person_has_property and company_has_property relationships; each property's tenure is read from dated sales and from TCAD transfer deeds (deed rows carry source_http_request.multiValueQueryString.transfer_source = deed, no price); accounts without a GIS point get a point from the City of Austin address-point layer when exactly one point matches the situs (source austin-address-points); and each published permit that prints a contractor name now has a company record with a property_improvement_has_contractor relationship, as printed on the permit and not verified against any license or corporate registry."
+}

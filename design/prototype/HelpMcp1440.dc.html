@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MCP and API docs</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.mc-h{margin:0;font-size:16px;line-height:24px;font-weight:500}
+.mc-sub{font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant)}
+.mc-code{margin:0;padding:12px 14px;border-radius:var(--md-sys-shape-corner-medium);background:var(--md-sys-color-surface-container-high);font:400 12px/18px var(--font-mono);white-space:pre-wrap;word-break:break-word;color:var(--md-sys-color-on-surface)}
+.mc-codehd{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant)}
+.mc-tool{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;min-height:48px;box-sizing:border-box;padding:8px 12px;border:0;border-radius:var(--md-sys-shape-corner-medium);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.mc-tool:hover{background:var(--md-sys-color-surface-container-high)}
+.mc-tool[aria-current="true"]{background:var(--md-sys-color-secondary-container);color:var(--md-sys-color-on-secondary-container)}
+.mc-tool:focus-visible{outline:2px solid var(--md-sys-color-primary);outline-offset:2px}
+.mc-field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--md-sys-color-on-surface-variant)}
+.mc-field input,.mc-field select{height:48px;box-sizing:border-box;padding:0 12px;border:1px solid var(--md-sys-color-outline);border-radius:var(--md-sys-shape-corner-extra-small);background:var(--md-sys-color-surface);color:var(--md-sys-color-on-surface);font:400 14px var(--font-plain)}
+</style>
+</helmet>
+<div style="position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: {{W}}px; box-sizing: border-box; padding: 0 {{pad}}px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<a class="atlas-icon-btn" aria-label="Back to Explore" href="{{backHref}}" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span></a>
+<h1 class="atlas-top-app-bar__title" style="margin: 0; flex: 1">CountyLens · Help</h1>
+<sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span></sc-if>
+<a class="atlas-icon-btn" aria-label="Apps" href="{{hubHref}}" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+
+<main style="position: absolute; left: 0; top: 64px; width: {{W}}px; box-sizing: border-box; padding: {{mainPad}}; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="mc-sub">/help/mcp</span>
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: {{h2}}px; line-height: 1.3; font-weight: 400">MCP and API</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Ask CountyLens from Claude Desktop, MCP Inspector or any MCP client. The tools read the same published Run 3 data as the site. Free-form SQL is not a tool: it runs only in your browser.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: {{topCols}}; gap: 16px">
+<section aria-labelledby="ep-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 20px">
+<h3 id="ep-h" class="mc-h">Endpoint</h3>
+<div style="display: flex; align-items: center; gap: 8px; min-width: 0"><code class="atlas-cid" style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px">https://countylens.aldarraj.com/mcp</code><button class="atlas-icon-btn" aria-label="Copy endpoint URL" onClick="{{copyEp}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></div>
+<div class="atlas-kv"><span>Transport</span><span>Streamable HTTP</span></div>
+<div class="atlas-kv"><span>Runs on</span><span>Its own stateless Lambda handler, sharing query-core; CORS and Origin checks</span></div>
+<div class="atlas-kv"><span>Data</span><span>Run 3 · manifest bafybeih…q7n3</span></div>
+<span class="mc-sub">Endpoint URL is Sample until deploy</span>
+</section>
+<section aria-labelledby="au-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 20px">
+<h3 id="au-h" class="mc-h">Access</h3>
+<div class="atlas-kv"><span><code>tools/list</code></span><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">key</span>Bearer token</span></div>
+<div class="atlas-kv"><span><code>tools/call</code></span><span class="atlas-pill atlas-pill--info"><span class="material-symbols-rounded" aria-hidden="true">key</span>Bearer token · read-only</span></div>
+<span><b style="font-weight: 500">Bearer token required, shared privately with reviewers.</b> <span style="color: var(--md-sys-color-on-surface-variant)">Send it as <code>Authorization: Bearer &lt;token&gt;</code>. Every tool only reads published Run 3 data, and calls are throttled (API Gateway stage rate limit). You don’t paste a token here: the CountyLens API adds it on the server.</span></span>
+<code class="atlas-cid" style="font-size: 12px">No or wrong token: 401 Unauthorized · throttled: 429 Too Many Requests</code>
+</section>
+<section aria-labelledby="cf-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; min-width: 0; grid-column: {{span}}">
+<div style="display: flex; align-items: center; gap: 8px"><h3 id="cf-h" class="mc-h" style="flex: 1">Connect a client</h3></div>
+<div role="tablist" aria-label="Client" style="display: flex; gap: 8px"><sc-for list="{{clients}}" as="c" hint-placeholder-count="2"><button class="atlas-chip" role="tab" aria-selected="{{c.on}}" aria-pressed="{{c.on}}" onClick="{{c.pick}}" style="height: 32px">{{c.label}}</button></sc-for></div>
+<div class="mc-codehd"><span style="flex: 1">{{cfgLabel}}</span><button class="atlas-btn atlas-btn--text" onClick="{{copyCfg}}" style="height: 32px; padding: 0 8px"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span>Copy</button></div>
+<pre class="mc-code" role="tabpanel">{{cfg}}</pre>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: {{toolCols}}; gap: 16px; align-items: start">
+<section aria-labelledby="tl-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 6px; padding: 16px 12px">
+<div style="display: flex; align-items: center; gap: 8px; padding: 0 8px"><h3 id="tl-h" class="mc-h" style="flex: 1">Tools</h3><span class="atlas-pill atlas-pill--unavailable">{{nTools}}</span></div>
+<sc-if value="{{mob}}" hint-placeholder-val="{{ false }}"><label class="mc-field" style="padding: 0 8px">Tool<select aria-label="Tool" onChange="{{pickSel}}" value="{{toolName}}"><sc-for list="{{tools}}" as="t" hint-placeholder-count="6"><option value="{{t.name}}">{{t.name}}</option></sc-for></select></label></sc-if>
+<sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><sc-for list="{{tools}}" as="t" hint-placeholder-count="6"><button class="mc-tool" aria-current="{{t.on}}" onClick="{{t.pick}}"><code style="font: 500 13px/18px var(--font-mono)">{{t.name}}</code><span class="mc-sub">{{t.short}}</span></button></sc-for></sc-if>
+</section>
+
+<section aria-labelledby="td-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap"><h3 id="td-h" class="mc-h" style="font-family: var(--font-mono); flex: 1">{{toolName}}</h3><span class="atlas-pill atlas-pill--info">Read-only</span></div>
+<p style="margin: 0; font-size: 14px; line-height: 20px">{{toolDesc}}</p>
+<div style="display: grid; grid-template-columns: {{schemaCols}}; gap: 12px; min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><div class="mc-codehd"><span style="flex: 1">Input schema</span></div><div role="table" aria-label="Input schema" style="display: flex; flex-direction: column; border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); font-size: 13px; line-height: 18px"><sc-for list="{{schemaRows}}" as="r" hint-placeholder-count="4"><div role="row" style="display: flex; gap: 8px; align-items: baseline; padding: 6px 12px; border-top: {{r.bt}}"><code role="cell" style="font: 500 12px/18px var(--font-mono); flex: none">{{r.k}}</code><span role="cell" class="mc-sub" style="flex: 1; min-width: 0">{{r.t}}</span><sc-if value="{{r.req}}" hint-placeholder-val="{{ false }}"><span role="cell" class="atlas-pill atlas-pill--info" style="height: 20px; font-size: 11px">Required</span></sc-if></div></sc-for></div></div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><div class="mc-codehd"><span style="flex: 1">Example request (tools/call)</span><button class="atlas-btn atlas-btn--text" onClick="{{copyEx}}" style="height: 32px; padding: 0 8px"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span>Copy</button></div><pre class="mc-code">{{example}}</pre></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><div class="mc-codehd"><span style="flex: 1">Response</span><span class="atlas-pill atlas-pill--unavailable" style="height: 20px; font-size: 11px">Sample</span></div><pre class="mc-code">{{response}}</pre></div>
+</section>
+
+<section aria-labelledby="tr-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 12px; min-width: 0; grid-column: {{span}}">
+<div style="display: flex; align-items: center; gap: 8px"><span class="material-symbols-rounded" aria-hidden="true" style="color: var(--md-sys-color-primary)">play_circle</span><h3 id="tr-h" class="mc-h" style="flex: 1">Try a tool</h3></div>
+<span class="mc-sub">Runs through the CountyLens API, which adds the token for you. Read-only and throttled. Runs {{toolName}} against Run 3.</span>
+<div role="group" aria-label="Prototype only: how the API replies" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px 8px; border: 1px dashed var(--md-sys-color-outline); border-radius: var(--md-sys-shape-corner-small); font-size: 12px; color: var(--md-sys-color-on-surface-variant)"><span>Prototype · reply as</span><sc-for list="{{replyOpts}}" as="o" hint-placeholder-count="3"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 32px">{{o.label}}</button></sc-for></div>
+<sc-for list="{{fields}}" as="f" hint-placeholder-count="3"><label class="mc-field">{{f.label}}<input value="{{f.v}}" onInput="{{f.set}}" onChange="{{f.set}}" inputmode="{{f.mode}}" aria-label="{{f.label}}"></label></sc-for>
+<button class="atlas-btn atlas-btn--filled" onClick="{{run}}" disabled="{{busy}}" style="align-self: flex-start"><span class="material-symbols-rounded" aria-hidden="true">play_arrow</span>{{runLabel}}</button>
+<div role="status" aria-live="polite" aria-busy="{{busyStr}}" style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<sc-if value="{{hasOut}}" hint-placeholder-val="{{ false }}"><div class="mc-codehd"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true" style="color: var(--status-success)">check_circle</span><span style="flex: 1">{{outHead}}</span></div><pre class="mc-code" style="max-height: {{outMax}}px; overflow: hidden">{{out}}</pre></sc-if>
+<sc-if value="{{errOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-banner atlas-banner--error" role="alert"><span class="material-symbols-rounded" aria-hidden="true">error</span><div class="atlas-banner__body"><b style="font-weight: 500">Couldn’t run: 401 Unauthorized.</b> The server’s MCP token is misconfigured, so nothing ran.</div><button class="atlas-btn atlas-btn--text" onClick="{{retryRun}}">Try again</button></div></sc-if>
+<sc-if value="{{thrOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-banner atlas-banner--warning" role="status"><span class="material-symbols-rounded" aria-hidden="true">hourglass_top</span><div class="atlas-banner__body"><b style="font-weight: 500">429 · throttled.</b> {{thrText}}</div></div></sc-if>
+<sc-if value="{{noOut}}" hint-placeholder-val="{{ true }}"><span class="mc-sub">The response appears here.</span></sc-if>
+</div>
+</section>
+</div>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Tool results are the same rows Explore shows, with their source IDs and CIDs. Values on this page are Sample.</div>
+</main>
+<sc-if value="{{toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{toast}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Help · MCP and API docs (D-12)" desktop="HelpMcp1440.dc.html" tablet="HelpMcp768.dc.html" mobile="HelpMcp390.dc.html" current="{{cur}}" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tryReply":{"editor":"enum","options":["live","error","throttled"],"default":"live"},"device":{"editor":"enum","options":["desktop","tablet","mobile"],"default":"desktop"},"$preview":{"width":1440,"height":1440}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tool: 'search_properties', client: 'desktop', args: {}, out: '', busy: false, toast: '', reply: props.tryReply || 'live', err: '', wait: 0 };
+    const J = (o, d) => { const lim = d == null ? 2 : d; const f = (v, lv) => { if (v === null || typeof v !== 'object' || lv >= lim) return JSON.stringify(v).replace(/,"/g, ', "').replace(/":/g, '": '); const pad = '  '.repeat(lv + 1), end = '  '.repeat(lv); if (Array.isArray(v)) return v.length ? '[\n' + v.map((x) => pad + f(x, lv + 1)).join(',\n') + '\n' + end + ']' : '[]'; const ks = Object.keys(v); return ks.length ? '{\n' + ks.map((k) => pad + JSON.stringify(k) + ': ' + f(v[k], lv + 1)).join(',\n') + '\n' + end + '}' : '{}'; }; return f(o, 0); };
+    this.TOOLS = [
+      { name: 'resolve_place', short: 'Place name to coordinates', desc: 'Turns a place, ZIP or address in Travis County into coordinates, using the places gazetteer.',
+        schema: { type: 'object', required: ['query'], properties: { query: { type: 'string', example: 'Pflugerville' } } },
+        fields: [['query', 'Place, ZIP or address', 'Pflugerville', 'text']],
+        resp: (a) => ({ place: a.query || 'Pflugerville', lat: 30.4394, lon: -97.62, kind: 'census_place', source: 'gazetteer · Run 3' }) },
+      { name: 'search_properties', short: 'Properties near a point, with filters', desc: 'Finds properties within a radius of a point and filters by roof age, permit status and owner location. Each row carries its coordinates, source ID and CID.',
+        schema: { type: 'object', required: ['lat', 'lon', 'radius_mi'], properties: { lat: { type: 'number' }, lon: { type: 'number' }, radius_mi: { type: 'number', minimum: 0.5, maximum: 25 }, roof_age_years_min: { type: 'integer' }, status_class: { type: 'array', items: { enum: ['open', 'stalled', 'closed'] } }, owner_is_out_of_area: { type: 'boolean' }, limit: { type: 'integer', maximum: 50 } } },
+        fields: [['lat', 'Latitude', '30.4394', 'decimal'], ['lon', 'Longitude', '-97.6200', 'decimal'], ['radius_mi', 'Radius (mi)', '5', 'decimal'], ['roof_age_years_min', 'Roof age at least (yrs)', '15', 'numeric']],
+        resp: (a) => ({ count: Number(a.radius_mi) >= 5 ? 128 : 41, returned: 2, rows: [{ property_cid: 'bafkrei…58ex', address: '58 Example Rd, Pflugerville 78660', lat: 30.4473, lon: -97.6151, coordinate_source: 'tcad_parcel_centroid', roof_age_years: 31, roof_age_basis: 'built_year', roof_age_confidence: 'low', source_url: 'https://travis.prodigycad.com/property-detail/102146' }, { property_cid: 'bafkrei…03pl', address: '3 Placeholder Pl, Austin 78753', lat: 30.4012, lon: -97.6533, coordinate_source: 'tcad_parcel_centroid', roof_age_years: 24, roof_age_basis: 'permit', roof_age_confidence: 'high', source_url: 'https://travis.prodigycad.com/property-detail/100111' }], run: 3, manifest: 'bafybeih…q7n3' }) },
+      { name: 'get_property', short: 'One property, with its sources', desc: 'Returns one property with roof-age evidence, permits and owner fields. owner_merged_from is optional; present only when the published owner record names its source accounts.',
+        schema: { type: 'object', required: ['property_cid'], properties: { property_cid: { type: 'string', example: 'bafkrei…101a' } } },
+        fields: [['property_cid', 'Property CID', 'bafkrei…101a', 'text']],
+        resp: (a) => ({ property_cid: a.property_cid || 'bafkrei…101a', address: '101 Sample Ln, Austin 78753', lat: 30.4031, lon: -97.6608, coordinate_source: 'tcad_parcel_centroid', roof_age_years: 23, roof_age_confidence: 'high', tenure_years: 15, tenure_basis: 'sale_date', owner_is_out_of_area: true, owner_area_class: 'out_of_area', owner_merged_from: ['TCAD account 1184207', 'TCAD account 1530918'], cids: { property_improvement: 'bafybei…q4xa', properties: 'bafybei…7m2c', person: 'bafybei…o2wn' } }) },
+      { name: 'list_permits', short: 'Permits for a property or contractor', desc: 'Lists roofing permits by property or contractor: the class next to the source status word, days open, the contractor as printed on the permit with its identity state, and the BBB state.',
+        schema: { type: 'object', properties: { property_cid: { type: 'string' }, contractor_company_cid: { type: 'string' }, status_class: { enum: ['open', 'stalled', 'closed'] } } },
+        fields: [['property_cid', 'Property CID', 'bafkrei…101a', 'text']],
+        resp: (a) => ({ property_cid: a.property_cid || 'bafkrei…101a', permits: [{ permit_number: '2020-047812 BP', status_class: 'stalled', status_raw: 'Expired', open_days: 2333, contractor_name_raw: 'SAMPLE ROOFING CO', contractor_resolution: 'candidate', contractor_company_cid: null, bbb_status: 'blocked', bbb_rating: null }] }) },
+      { name: 'get_coverage', short: 'Loaded vs source totals', desc: 'Returns coverage for each record kind in a run from the run manifest’s coverage section: denominators, collected times, merge counts, the five contractor identity counts and permit-to-property matching.',
+        schema: { type: 'object', properties: { run: { type: 'integer', example: 3 } } },
+        fields: [['run', 'Run', '3', 'numeric']],
+        resp: (a) => ({ run: Number(a.run) || 3, source: 'run manifest · coverage section', kinds: [{ kind: 'property', loaded: 412860, of: 412860 }, { kind: 'permit', reroof: 22083, matched_to_property: 21640, unmatched_kept: 443 }, { kind: 'ownership', loaded: 398114, of: 412860, merged: 6866 }, { kind: 'contractor', names: 22210, contractor_resolution: { resolved: 0, candidate: 14880, ambiguous: 2140, conflicting: 390, unresolved: 4800 }, bbb_status: 'blocked' }], pct_of_roll: 99.4, sample: true }) },
+      { name: 'list_runs', short: 'Runs and their CIDs', desc: 'Lists published runs from runs/index.json with dates, window bounds, manifest CIDs and each previous manifest CID.',
+        schema: { type: 'object', properties: { limit: { type: 'integer', example: 3 } } },
+        fields: [['limit', 'How many', '3', 'numeric']],
+        resp: () => ({ index: 'runs/index.json', runs: [{ run: 3, date: '2026-10-17', manifest: 'bafybeih…q7n3', previous: 'bafybeig…k2p8' }, { run: 2, date: '2026-10-08', manifest: 'bafybeig…k2p8', previous: 'bafybeia…m1r1' }, { run: 1, date: '2026-10-01', manifest: 'bafybeia…m1r1', previous: null }] }) }
+    ];
+    this.J = J;
+    this.CFG = {
+      desktop: ['claude_desktop_config.json', J({ mcpServers: { countylens: { command: 'npx', args: ['mcp-remote', 'https://countylens.aldarraj.com/mcp', '--header', 'Authorization: Bearer <token>'] } } }, 5)],
+      code: ['Terminal', 'claude mcp add --transport http countylens https://countylens.aldarraj.com/mcp \\\n  --header "Authorization: Bearer <token>"'],
+      inspector: ['Terminal', 'npx @modelcontextprotocol/inspector\n# Transport: Streamable HTTP\n# URL: https://countylens.aldarraj.com/mcp\n# Header: Authorization: Bearer <token>\n# The token is shared privately with reviewers']
+    };
+  }
+  componentWillUnmount() { clearTimeout(this.tt); clearTimeout(this.rt); clearInterval(this.wt); }
+  say(t) { this.setState({ toast: t }); clearTimeout(this.tt); this.tt = setTimeout(() => this.setState({ toast: '' }), 2800); }
+  renderVals() {
+    const s = this.state, J = this.J, dv = this.props.device ?? 'desktop', mob = dv === 'mobile', tab = dv === 'tablet';
+    const T = this.TOOLS.find((t) => t.name === s.tool) || this.TOOLS[1];
+    const args = {}; T.fields.forEach((f) => { args[f[0]] = s.args[T.name + '.' + f[0]] ?? f[2]; });
+    const typed = {}; T.fields.forEach((f) => { const v = args[f[0]]; typed[f[0]] = (f[3] === 'text') ? v : (isNaN(Number(v)) ? v : Number(v)); });
+    const pick = (n) => { clearTimeout(this.rt); this.setState({ tool: n, out: '', busy: false, err: '' }); };
+    const cfg = this.CFG[s.client];
+    return {
+      W: mob ? 390 : tab ? 768 : 1440, H: mob ? 3220 : tab ? 2620 : 1440, pad: mob ? 4 : 24, mainPad: mob ? '16px 16px 80px' : tab ? '24px 24px 80px' : '24px 80px 24px', h2: mob ? 24 : 28, desk: !mob, mob: mob, cur: dv, span: tab ? '1 / -1' : 'auto',
+      topCols: mob ? '1fr' : tab ? 'minmax(0, 1fr) minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr)', toolCols: mob ? '1fr' : tab ? '220px minmax(0, 1fr)' : '260px minmax(0, 1fr) 360px', schemaCols: mob || tab ? '1fr' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      backHref: mob ? 'Explore390.dc.html' : tab ? 'Explore768.dc.html' : 'Explore1440.dc.html', hubHref: mob ? 'Hub390.dc.html' : tab ? 'Hub768.dc.html' : 'Hub1440.dc.html',
+      copyEp: () => this.say('Endpoint URL copied (Sample).'), copyCfg: () => this.say('Config copied.'), copyEx: () => this.say('Example request copied.'),
+      clients: [['desktop', 'Claude Desktop'], ['code', 'Claude Code'], ['inspector', 'MCP Inspector']].map((c) => ({ label: c[1], on: String(s.client === c[0]), pick: () => this.setState({ client: c[0] }) })),
+      cfgLabel: cfg[0], cfg: cfg[1],
+      nTools: String(this.TOOLS.length),
+      tools: this.TOOLS.map((t) => ({ name: t.name, short: t.short, on: String(t.name === T.name), pick: () => pick(t.name) })),
+      pickSel: (e) => pick(e.target.value),
+      toolName: T.name, toolDesc: T.desc, schemaRows: Object.keys(T.schema.properties).map((k, i) => { const p = T.schema.properties[k]; const t = p.enum ? p.enum.join(' | ') : p.type === 'array' ? 'array of ' + (p.items.enum || []).join(' | ') : p.type + (p.minimum != null ? ' ' + p.minimum + '–' + p.maximum : p.maximum != null ? ' ≤ ' + p.maximum : '') + (p.example != null ? ' · e.g. ' + p.example : ''); return { k: k, t: t, req: (T.schema.required || []).indexOf(k) >= 0, bt: i ? '1px solid var(--md-sys-color-outline-variant)' : '0' }; }),
+      example: J({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: T.name, arguments: typed } }, 3),
+      response: J({ result: { structuredContent: T.resp(Object.fromEntries(T.fields.map((f) => [f[0], f[2]]))) } }, 4),
+      fields: T.fields.map((f) => ({ label: f[1], v: String(args[f[0]]), mode: f[3] === 'text' ? 'text' : f[3], set: (e) => { const k = T.name + '.' + f[0]; this.setState({ args: Object.assign({}, this.state.args, { [k]: e.target.value }), out: '' }); } })),
+      run: this._run = () => { if (this.state.wait > 0) return; this.setState({ busy: true, out: '', err: '' }); clearTimeout(this.rt); this.rt = setTimeout(() => {
+        // #104 / AD-10: the API can fail (401 when the server token is misconfigured) or throttle (429)
+        if (this.state.reply === 'error') { this.setState({ busy: false, err: 'error' }); return; }
+        if (this.state.reply === 'throttled') { clearInterval(this.wt); this.setState({ busy: false, err: 'throttled', wait: 12 }); this.wt = setInterval(() => { const w = this.state.wait - 1; if (w <= 0) { clearInterval(this.wt); this.setState({ wait: 0 }); } else this.setState({ wait: w }); }, 1000); return; }
+        this.setState({ busy: false, out: J(T.resp(args), 2) }); }, 600); },
+      busy: s.busy || s.wait > 0, busyStr: String(s.busy), runLabel: s.busy ? 'Running…' : s.wait > 0 ? 'Try again in ' + s.wait + ' s' : 'Run ' + T.name,
+      errOn: s.err === 'error', thrOn: s.err === 'throttled', waitS: String(s.wait), thrText: s.wait > 0 ? 'Too many calls, try again in ' + s.wait + ' s.' : 'Too many calls. You can run it again now.',
+      replyOpts: [['live', 'Live reply'], ['error', 'Error · 401'], ['throttled', 'Throttled · 429']].map((o) => ({ label: o[1], on: String(s.reply === o[0]), pick: () => { clearInterval(this.wt); this.setState({ reply: o[0], err: '', out: '', wait: 0 }); } })),
+      retryRun: () => this._run && this._run(),
+      hasOut: !!s.out, noOut: !s.out && !s.err, out: s.out, outHead: 'Prototype sample response · the build shows the live reply from /mcp', outMax: mob ? 520 : 300,
+      toastOn: !!s.toast, toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

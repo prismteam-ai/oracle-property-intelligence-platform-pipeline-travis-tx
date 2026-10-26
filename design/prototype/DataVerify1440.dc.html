@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Verify on public gateways, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div class="{{motionClass}}" style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 836px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 836px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; display: flex; align-items: center; gap: 12px">
+<h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Data</h2>
+<a class="atlas-chip" aria-haspopup="menu" style="text-decoration: none" href="Runs1440.dc.html">Run 3 · current<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></a>
+</div>
+<div class="atlas-tabs" role="tablist" aria-label="Data views">
+<a class="atlas-tab" role="tab" aria-selected="false" href="DataManifest1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Manifest</a>
+<a class="atlas-tab" role="tab" aria-selected="true" href="DataVerify1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Verify</a>
+<a class="atlas-tab" role="tab" aria-selected="false" href="DataCatalog1440.dc.html" style="display: inline-flex; align-items: center; text-decoration: none">Catalog</a>
+</div>
+
+<section aria-labelledby="art-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 18px">
+<div role="radiogroup" aria-label="Artifact to verify" style="display: flex; gap: 8px; flex-wrap: wrap"><sc-for list="{{arts}}" as="o" hint-placeholder-count="3"><button class="atlas-chip" role="radio" aria-checked="{{o.on}}" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 32px"><span class="material-symbols-rounded" aria-hidden="true">{{o.icon}}</span>{{o.label}}</button></sc-for></div>
+<div style="display: flex; align-items: center; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0">
+<h3 id="art-h" class="atlas-card__title">{{art.name}}</h3>
+<span style="color: var(--md-sys-color-on-surface-variant)">CID <span class="atlas-cid">{{art.cid}}<button aria-label="Copy CID" onClick="{{__say.k3}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span> · {{art.size}} · {{art.kind}} · from the Run 3 manifest</span>
+</div>
+<sc-if value="{{canHash}}" hint-placeholder-val="{{ true }}"><button class="atlas-btn atlas-btn--filled" onClick="{{start}}"><span class="material-symbols-rounded" aria-hidden="true">play_arrow</span>{{startLabel}}</button></sc-if>
+<sc-if value="{{viaCar}}" hint-placeholder-val="{{ false }}"><a class="atlas-btn atlas-btn--tonal" href="DataManifest1440.dc.html" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Verify via CAR</a></sc-if>
+</div>
+</section>
+
+<sc-if value="{{viaCar}}" hint-placeholder-val="{{ false }}"><section class="atlas-card atlas-card--outlined" role="status" style="display: flex; gap: 16px; align-items: flex-start; font-size: 14px; line-height: 20px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size: 32px; color: var(--md-sys-color-primary)">inventory_2</span><div style="display: flex; flex-direction: column; gap: 6px"><b style="font-weight: 500">{{carTitle}}</b><span style="color: var(--md-sys-color-on-surface-variant)">{{carText}}</span><code class="atlas-cid" style="font-size: 12px">ipfs-car verify run3.car --root {{art.cid}}</code><span style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">CAR file: https://github.com/…/releases/download/run-3/run3.car · CID bafybeic…r3car</span></div></section></sc-if>
+<sc-if value="{{canHash}}" hint-placeholder-val="{{ true }}"><div role="status" aria-live="polite" class="atlas-banner {{bannerClass}}"><span class="material-symbols-rounded" aria-hidden="true">{{bannerIcon}}</span><div class="atlas-banner__body">{{bannerText}}</div></div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<section aria-label="Lane 1, ipfs.io" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 18px">
+<div style="display: flex; align-items: center; gap: 8px"><span class="material-symbols-rounded" aria-hidden="true">public</span><b style="flex: 1; font-size: 16px; line-height: 24px; font-weight: 500">Lane A · ipfs.io</b><span class="atlas-pill {{a.pillClass}}"><span class="material-symbols-rounded" aria-hidden="true">{{a.icon}}</span>{{a.status}}</span></div>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Operator: Interplanetary Shipyard · path gateway</span>
+<span style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Fetched URL</span><code class="atlas-cid" style="font-size: 12px; word-break: break-all">{{urlA}}</code>
+<sc-if value="{{showBars}}" hint-placeholder-val="{{ true }}"><div class="atlas-progress" role="progressbar" aria-label="ipfs.io bytes received" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{a.pct}}"><i style="width: {{a.pct}}%"></i></div></sc-if><sc-if value="{{showSteps}}" hint-placeholder-val="{{ false }}"><div class="atlas-kv" style="padding: 8px 12px; border-radius: var(--md-sys-shape-corner-small); border: 1px solid var(--md-sys-color-outline-variant)"><span>Received</span><span class="num" style="font-weight: 500">{{a.pct}}%</span></div></sc-if>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px"><div class="atlas-kv"><span>Bytes</span><span class="num">{{a.bytes}}</span></div><div class="atlas-kv"><span>Time</span><span class="num">{{a.time}}</span></div></div>
+<div style="padding: 8px 12px; border-radius: var(--md-sys-shape-corner-small); background: var(--md-sys-color-surface-container)">{{a.note}}</div>
+</section>
+
+<section aria-label="Lane 2, dweb.link" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 18px">
+<div style="display: flex; align-items: center; gap: 8px"><span class="material-symbols-rounded" aria-hidden="true">public</span><b style="flex: 1; font-size: 16px; line-height: 24px; font-weight: 500">Lane B · dweb.link</b><span class="atlas-pill {{b.pillClass}}"><span class="material-symbols-rounded" aria-hidden="true">{{b.icon}}</span>{{b.status}}</span></div>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Operator: Interplanetary Shipyard · subdomain gateway</span>
+<span style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">Fetched URL</span><code class="atlas-cid" style="font-size: 12px; word-break: break-all">{{urlB}}</code>
+<sc-if value="{{showBars}}" hint-placeholder-val="{{ true }}"><div class="atlas-progress" role="progressbar" aria-label="dweb.link bytes received" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{b.pct}}"><i style="width: {{b.pct}}%"></i></div></sc-if><sc-if value="{{showSteps}}" hint-placeholder-val="{{ false }}"><div class="atlas-kv" style="padding: 8px 12px; border-radius: var(--md-sys-shape-corner-small); border: 1px solid var(--md-sys-color-outline-variant)"><span>Received</span><span class="num" style="font-weight: 500">{{b.pct}}%</span></div></sc-if>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px"><div class="atlas-kv"><span>Bytes</span><span class="num">{{b.bytes}}</span></div><div class="atlas-kv"><span>Time</span><span class="num">{{b.time}}</span></div></div>
+<div style="padding: 8px 12px; border-radius: var(--md-sys-shape-corner-small); background: var(--md-sys-color-surface-container)">{{b.note}}</div>
+</section>
+</div>
+
+</sc-if>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>Lane A is ipfs.io and lane B is dweb.link, the pair the README names. Both are public gateways operated by Interplanetary Shipyard (one operator, two gateways), and neither is run by CountyLens. Filebase stores and pins the files; its own gateway is never one of the two lanes. Each lane fetches the plain file URL (the whole file, not one raw block) and hashes files under 50 MB as a stream in your browser; directories and larger files verify via CAR. Sample timings.</div>
+</main>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Data · gateway race (D-6), press Verify" desktop="DataVerify1440.dc.html" tablet="DataVerify768.dc.html" mobile="Data390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"scenario":{"editor":"enum","options":["match","mismatch"],"default":"match"},"motion":{"editor":"enum","options":["system","full","reduced"],"default":"system"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k3": "Copied to the clipboard (Sample)."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { tick: 12, running: false };
+    this.timer = null;
+  }
+  componentWillUnmount() { if (this.timer) clearInterval(this.timer); }
+  lane(t, startDl, dlTicks, rlFrom, rlTo, mismatch) {
+    const size = 38.2, S = ' MB of 38.2 MB';
+    const done = startDl + dlTicks + 2;
+    const time = (Math.min(t, done) * 0.25).toFixed(1) + ' s';
+    if (rlFrom !== null && t < rlFrom) return { status: 'Connecting', pillClass: 'atlas-pill--info', icon: 'sync', pct: 0, bytes: '0' + S, time, note: 'Opening a connection to the gateway.' };
+    if (rlFrom !== null && t < rlTo) { const s = Math.ceil((rlTo - t) / 4); return { status: 'Rate-limited', pillClass: 'atlas-pill--info', icon: 'schedule', pct: 0, bytes: '0' + S, time, note: 'The gateway asked us to wait. Retrying in ' + s + ' s (attempt 2 of 3). This is not an error.' }; }
+    if (rlFrom !== null && t < startDl) return { status: 'Retrying', pillClass: 'atlas-pill--info', icon: 'refresh', pct: 0, bytes: '0' + S, time, note: 'Retrying now.' };
+    if (t < startDl + dlTicks) { const p = Math.max(0, (t - startDl) / dlTicks); return { status: 'Checking', pillClass: 'atlas-pill--info', icon: 'downloading', pct: Math.round(p * 100), bytes: (p * size).toFixed(1) + S, time, note: 'Receiving bytes. The digest is checked when the download ends.' }; }
+    if (t < done) return { status: 'Checking digest', pillClass: 'atlas-pill--info', icon: 'fingerprint', pct: 100, bytes: '38.2' + S, time, note: 'Hashing the received bytes with SHA-256.' };
+    if (mismatch) return { status: 'Digest mismatch', pillClass: 'atlas-pill--danger', icon: 'error', pct: 100, bytes: '38.2' + S, time, note: 'Received SHA-256 0b77…e19f does not match the manifest’s 7d1e…c09a. Not verified.' };
+    return { status: 'Verified', pillClass: 'atlas-pill--success', icon: 'verified', pct: 100, bytes: '38.2' + S, time, note: 'Size 38.2 MB and SHA-256 7d1e…c09a match the manifest.' };
+  }
+  __rv() {
+    const t = this.state.tick;
+    const mismatch = (this.props.scenario ?? 'match') === 'mismatch';
+    const a = this.lane(t, 0, 24, null, null, false);
+    const b = this.lane(t, 22, 18, 4, 20, mismatch);
+    const finished = t >= 42;
+    let bannerClass = 'atlas-banner--info', bannerIcon = 'sync', bannerText = 'Checking on 2 public gateways…';
+    if (finished && !mismatch) { bannerClass = 'atlas-banner--success'; bannerIcon = 'verified'; bannerText = 'Verified on 2 independent public gateways: the bytes match the manifest’s size and SHA-256.'; }
+    if (finished && mismatch) { bannerClass = 'atlas-banner--error'; bannerIcon = 'error'; bannerText = 'Not verified: dweb.link returned bytes that do not match the manifest. ipfs.io matched. Try another gateway.'; }
+    const sysReduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motion = this.props.motion ?? 'system';
+    const reduced = motion === 'reduced' || (motion === 'system' && sysReduce);
+    const start = () => {
+      if (this.timer) clearInterval(this.timer);
+      // Reduced motion: same real timing, but no moving bars. The status text updates once a second.
+      const every = reduced ? 1000 : 250, by = reduced ? 4 : 1;
+      this.setState({ tick: 0, running: true });
+      this.timer = setInterval(() => {
+        const n = this.state.tick + by;
+        if (n >= 44) { clearInterval(this.timer); this.timer = null; this.setState({ tick: 44, running: false }); }
+        else this.setState({ tick: n });
+      }, every);
+    };
+    const ART = { file: { name: 'structure.parquet', cid: 'bafybeigr7…r8fp', size: '38.2 MB', kind: 'file · expected SHA-256 7d1e…c09a', icon: 'description', label: 'structure.parquet · 38.2 MB' },
+      big: { name: 'property_improvement.parquet', cid: 'bafybei…q4xa', size: '412 MB', kind: 'file over 50 MB', icon: 'description', label: 'property_improvement.parquet · 412 MB' },
+      dir: { name: 'relationships/ (directory)', cid: 'bafybei…r1ls', size: '11 tables · 96 MB', kind: 'directory', icon: 'folder', label: 'relationships/ · directory' } };
+    const ak = this.state.art || 'file', art = ART[ak], viaCar = ak !== 'file';
+    const arts = Object.keys(ART).map((k) => ({ label: ART[k].label, icon: ART[k].icon, on: String(k === ak), pick: () => { if (this.timer) clearInterval(this.timer); this.timer = null; this.setState({ art: k, tick: 12, running: false }); } }));
+    const carTitle = ak === 'dir' ? 'Directories verify via CAR' : 'Too large to hash in your browser: verify via CAR';
+    const carText = ak === 'dir' ? 'A gateway returns an HTML listing for a directory CID, so its bytes cannot be compared. Download the run’s CAR file and check it against the root CID.' : 'Files over 50 MB are not hashed in the browser. Download the run’s CAR file and check it against the root CID, or pick a file under 50 MB.';
+    return { art: art, arts: arts, viaCar: viaCar, canHash: !viaCar, carTitle: carTitle, carText: carText, urlA: 'https://ipfs.io/ipfs/bafybeigr7mdx2…r8fp', urlB: 'https://bafybeigr7mdx2…r8fp.ipfs.dweb.link/', motionClass: reduced ? 'motion-reduced' : '', showBars: !reduced, showSteps: reduced, a, b, bannerClass, bannerIcon, bannerText, start, startLabel: this.state.running ? 'Checking…' : (t === 12 ? 'Verify' : 'Verify again') };
+  }
+}
+</script>
+</body>
+</html>

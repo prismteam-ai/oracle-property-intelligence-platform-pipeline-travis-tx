@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Compare runs, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 960px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{__say.k1}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">cloud_done</span>Run 3 · Oct 17</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 896px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 896px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<a class="atlas-icon-btn" href="Runs1440.dc.html" aria-label="Back to runs" style="display: grid; place-items: center; color: var(--md-sys-color-on-surface)"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span></a>
+<h2 style="flex: 1; margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Run 3 vs Run 2</h2>
+<button class="atlas-chip" aria-haspopup="menu" onClick="{{__say.k2}}">Run 3<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button><span>vs</span><button class="atlas-chip" aria-haspopup="menu" onClick="{{__say.k3}}">Run 2<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<section aria-label="Run 2" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px">
+<span class="atlas-card__title">Run 2 · previous</span>
+<span style="color: var(--md-sys-color-on-surface-variant)">2026-10-08 02:00–03:18 UTC</span>
+<span>Manifest <span class="atlas-cid">bafybeig…k2p8<button aria-label="Copy CID" onClick="{{__say.k4}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span>
+<span class="{{rsCls}}" style="align-self: flex-start"><span class="material-symbols-rounded" aria-hidden="true">{{rsIcon}}</span>{{rsText}}</span>
+</section>
+<section aria-label="Run 3" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px; border-color: var(--md-sys-color-primary)">
+<span class="atlas-card__title">Run 3 · current</span>
+<span style="color: var(--md-sys-color-on-surface-variant)">2026-10-17 10:22–11:43 UTC</span>
+<span>Manifest <span class="atlas-cid">bafybeih…q7n3<button aria-label="Copy CID" onClick="{{__say.k5}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span>
+<span class="atlas-pill atlas-pill--success" style="align-self: flex-start"><span class="material-symbols-rounded" aria-hidden="true">verified</span>New, distinct CID · verified</span>
+</section>
+<section aria-label="CAR file" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px">
+<span class="atlas-card__title">CAR available</span>
+<span>Run 3 CAR <span class="atlas-cid">bafybei…car3<button aria-label="Copy CAR CID" onClick="{{__say.k4}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span>
+<span style="color: var(--md-sys-color-on-surface-variant)">1.31 GB · same CID on IPFS and as a GitHub Release copy</span>
+<span class="atlas-pill atlas-pill--success" style="align-self: flex-start"><span class="material-symbols-rounded" aria-hidden="true">link</span>Run 3 manifest links to Run 2</span>
+</section>
+</div>
+
+<section aria-labelledby="cmp-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 10px">
+<h3 id="cmp-h" class="atlas-card__title">What changed, per source and artifact</h3>
+<div class="atlas-table-wrap" style="border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); overflow: hidden">
+<table class="atlas-table atlas-table--dense" style="width: 100%">
+<thead><tr><th>Source</th><th class="num">Run 2</th><th class="num">Run 3</th><th class="num">Added</th><th class="num">Changed</th><th class="num">Removed</th><th>Artifact CID, Run 2 → Run 3</th></tr></thead>
+<tbody>
+<tr><td>Austin permits · property_improvement</td><td class="num">2,378,944</td><td class="num">2,380,507</td><td class="num">+1,563</td><td class="num">~412</td><td class="num">−0</td><td><span class="atlas-cid">…p3ua</span> → <span class="atlas-cid">…q4xa</span></td></tr>
+<tr><td>TCAD properties · properties</td><td class="num">412,779</td><td class="num">412,860</td><td class="num">+118</td><td class="num">~2,904</td><td class="num">−37</td><td><span class="atlas-cid">…6k1b</span> → <span class="atlas-cid">…7m2c</span></td></tr>
+<tr><td>TCAD owners and sales · person, sales_history</td><td class="num">398,051</td><td class="num">398,114</td><td class="num">+63</td><td class="num">~1,240</td><td class="num">−0</td><td><span class="atlas-cid">…n1vb</span> → <span class="atlas-cid">…o2wn</span>, <span class="atlas-cid">…s4lh</span></td></tr>
+<tr><td>Contractor names on permits · company</td><td class="num">22,188</td><td class="num">22,210</td><td class="num">+22</td><td class="num">~9</td><td class="num">−0</td><td><span class="atlas-cid">…u2kq</span> → <span class="atlas-cid">…w3nd</span></td></tr>
+<tr><td>BBB ratings</td><td class="num">0</td><td class="num">0</td><td class="num">+0</td><td class="num">~0</td><td class="num">−0</td><td><span class="atlas-pill atlas-pill--unavailable">Same CID: nothing fetched, source blocked</span></td></tr>
+<tr><td>TX Comptroller businesses · company</td><td class="num">61,036</td><td class="num">61,305</td><td class="num">+310</td><td class="num">~95</td><td class="num">−41</td><td><span class="atlas-cid">…u2kq</span> → <span class="atlas-cid">…w3nd</span></td></tr>
+</tbody>
+</table>
+</div>
+<div class="atlas-prov" style="font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">info</span>An unchanged file keeps the same CID, so a changed CID always means changed bytes · counts and CIDs are Sample except Austin permits in Run 3</div>
+</section>
+
+<section aria-labelledby="chk-h" class="atlas-card atlas-card--outlined" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<h3 id="chk-h" class="atlas-card__title" style="width: 100%">Immutability checks</h3>
+<span class="{{rsCls}}" role="status" aria-live="polite" title="Prior CID bafybeig…k2p8, checked on ipfs.io and dweb.link"><span class="material-symbols-rounded" aria-hidden="true">{{rsIcon}}</span>{{rsText}}</span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">check</span>New run has a distinct CID</span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">check</span>New manifest links to the old one (previousManifestCid)</span>
+<span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">check</span>Both runs listed in runs/index.json</span><span class="atlas-pill atlas-pill--success"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>CAR available</span>
+<span style="flex: 1"></span>
+<span role="group" aria-label="Preview the prior-CID check" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: var(--md-sys-shape-corner-medium); border: 1px dashed var(--md-sys-color-outline)"><span style="font-size: 12px; color: var(--md-sys-color-on-surface-variant); margin-right: 2px">Prototype</span><sc-for list="{{rsOpts}}" as="o" hint-placeholder-count="3"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 32px">{{o.label}}</button></sc-for></span>
+<button class="atlas-btn atlas-btn--outlined" onClick="{{__say.k6}}"><span class="material-symbols-rounded" aria-hidden="true">download</span>Directory CAR, Run 3</button>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="DataVerify1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">verified</span>Verify both on gateways</a>
+</section>
+</main>
+<sc-if value="{{__toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{__toastText}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Runs · compare Run 3 vs Run 2 (D-7)" desktop="RunsCompare1440.dc.html" tablet="RunsCompare768.dc.html" mobile="RunsCompare390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"resolve":{"editor":"enum","options":["checking","ok","failed"],"default":"ok"},"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const __o = this.__rv() || {};
+    const __k = this.__k || (this.__k = { t: {}, msg: '' });
+    const __P = {};
+    const __S = {"k1": "Travis County, TX is the only live county. Others show as Coming soon.", "k2": "“Run 3” is drawn but not wired in this prototype.", "k3": "“Run 2” is drawn but not wired in this prototype.", "k4": "Copied to the clipboard (Sample).", "k5": "Copied to the clipboard (Sample).", "k6": "“Directory CAR, Run 3” is drawn but not wired in this prototype."};
+    const __p = {}, __tg = {}, __say = {};
+    Object.keys(__P).forEach((k) => { const v = k in __k.t ? __k.t[k] : __P[k]; __p[k] = String(v); __tg[k] = () => { __k.t[k] = !v; this.forceUpdate(); }; });
+    Object.keys(__S).forEach((k) => { __say[k] = () => { __k.msg = __S[k]; this.forceUpdate(); clearTimeout(__k.h); __k.h = setTimeout(() => { __k.msg = ''; this.forceUpdate(); }, 2800); }; });
+    return Object.assign({}, __o, { __p: __p, __tg: __tg, __say: __say, __toastOn: !!__k.msg, __toastText: __k.msg });
+  }
+
+__rv() {
+const st = this.__rs || this.props.resolve || 'ok';
+const M = { checking: ['atlas-pill atlas-pill--info', 'progress_activity', 'Checking ipfs.io and dweb.link…'], ok: ['atlas-pill atlas-pill--success', 'check', 'Prior CID resolves on ipfs.io and dweb.link'], failed: ['atlas-pill atlas-pill--danger', 'error', 'Prior CID failed on dweb.link'] }[st];
+return { rsCls: M[0], rsIcon: M[1], rsText: M[2], rsOpts: [['checking', 'Checking'], ['ok', 'Resolves'], ['failed', 'Failed']].map((o) => ({ label: o[1], on: String(st === o[0]), pick: () => { this.__rs = o[0]; this.forceUpdate(); } })) };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "pipeline/data/runs/travis-a11-permits-run3-20261025/publish-run3/permits-batched/tables/b03",
+  "carCid": "bafkreidmnxvksqefvesjhtmgsqu2zo2vjf5gmhj7gm2wwv2b6gi4nyekzy",
+  "size": 1580,
+  "adopted": false,
+  "gateways": [
+    {
+      "gateway": "https://ipfs.filebase.io",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "recordedAt": "2026-10-25T21:37:53.984Z"
+}

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Runs, 1440</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/atlas/tokens.css">
+<link rel="stylesheet" href="ds/atlas/components/bundle.css">
+<link rel="stylesheet" href="ds/countylens/a11y.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:var(--md-sys-color-primary)}a:hover{color:var(--md-sys-color-on-primary-container)}
+.rn-h{margin:0;font-size:16px;line-height:24px;font-weight:500}
+.rsel{display:flex;align-items:center;gap:12px;min-height:56px;max-width:100%;box-sizing:border-box;padding:6px 8px 6px 14px;border:1px solid var(--md-sys-color-outline);border-radius:var(--md-sys-shape-corner-small);background:var(--md-sys-color-surface);color:var(--md-sys-color-on-surface);font:inherit;text-align:left;cursor:pointer}
+.rsel:hover{background:var(--md-sys-color-surface-container)}.rsel:focus-visible{outline:3px solid var(--md-sys-color-primary);outline-offset:-3px}
+.rsel-t{display:flex;flex-direction:column;min-width:0}.rsel-t>b{font:500 16px/22px var(--font-plain);white-space:nowrap}.rsel-t>span{font-size:13px;line-height:18px;color:var(--md-sys-color-on-surface-variant);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rsel-menu{position:absolute;left:0;top:calc(100% + 4px);z-index:40;width:420px;max-width:calc(100vw - 32px);box-sizing:border-box;padding:8px;border-radius:var(--md-sys-shape-corner-small);background:var(--md-sys-color-surface-container);box-shadow:var(--md-sys-elevation-level2);display:flex;flex-direction:column;gap:6px}
+.rsel-list{max-height:320px;overflow:auto;display:flex;flex-direction:column;gap:2px}
+.rsel-it{display:flex;align-items:flex-start;gap:10px;width:100%;min-height:56px;box-sizing:border-box;padding:8px 10px;border:0;border-radius:var(--md-sys-shape-corner-small);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.rsel-it:hover{background:var(--md-sys-color-surface-container-high)}.rsel-it[aria-selected="true"]{background:var(--md-sys-color-secondary-container);color:var(--md-sys-color-on-secondary-container)}.rsel-it:focus-visible{outline:3px solid var(--md-sys-color-primary);outline-offset:-3px}
+.rsel-it .atlas-pill{height:20px;font-size:11px}
+.rn-sub{font-size:12px;line-height:16px;color:var(--md-sys-color-on-surface-variant)}
+.rn-src{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;column-gap:8px;width:100%;min-height:36px;padding:4px 8px;border:0;border-radius:var(--md-sys-shape-corner-small);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;font-size:13px;line-height:18px}
+.rn-src:hover{background:var(--md-sys-color-surface-container)}
+.rn-src[aria-pressed="true"]{background:var(--md-sys-color-secondary-container);color:var(--md-sys-color-on-secondary-container)}
+.rn-src .bar{grid-column:2/4;height:3px;border-radius:var(--md-sys-shape-corner-full);background:var(--md-sys-color-surface-container-highest);overflow:hidden;margin-top:2px}
+.rn-src .bar>i{display:block;height:100%;border-radius:inherit}
+.rn-node{position:relative;display:flex;flex-direction:column;gap:6px;width:100%;box-sizing:border-box;padding:14px;border-radius:var(--md-sys-shape-corner-large);border:1px solid var(--md-sys-color-outline-variant);background:var(--md-sys-color-surface);font:inherit;color:inherit;text-align:left;cursor:pointer}
+.rn-node:hover{background:var(--md-sys-color-surface-container-low)}
+.rn-node[aria-pressed="true"]{outline:2px solid var(--md-sys-color-primary);outline-offset:-1px}
+.rn-node.is-queued,.rn-node.is-none,.rn-node.is-skipped{border-style:dashed}
+.rn-ic{width:40px;height:40px;border-radius:var(--md-sys-shape-corner-full);display:grid;place-items:center}
+.rn-arrow{flex:1;min-width:24px;height:2px;position:relative;align-self:center}
+.rn-arrow::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:7px solid currentColor;border-right:0}
+.rn-stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px);background-size:17px 17px;animation:rn-move 1s linear infinite}
+@keyframes rn-move{to{background-position:17px 0}}
+@media (prefers-reduced-motion: reduce){.rn-stripes{animation:none}}
+.motion-reduced .rn-stripes{animation:none}
+.rn-gbar{position:absolute;height:14px;border-radius:var(--md-sys-shape-corner-extra-small);box-sizing:border-box}
+.rn-row{position:absolute;left:0;right:0;height:26px;display:flex;align-items:center;font-size:12px;line-height:16px}
+.rn-hit{position:absolute;top:0;height:26px;border:0;padding:0;background:transparent;cursor:pointer}
+.rn-tip{position:absolute;z-index:5;padding:8px 10px;border-radius:var(--md-sys-shape-corner-small);background:var(--md-sys-color-inverse-surface);color:var(--md-sys-color-inverse-on-surface);font-size:12px;line-height:16px;pointer-events:none;white-space:nowrap;box-shadow:var(--md-sys-elevation-level2)}
+.rn-seg{height:16px;border-radius:var(--md-sys-shape-corner-extra-small)}
+.rn-seg:first-child{border-top-left-radius:4px;border-bottom-left-radius:4px}
+.rn-seg:last-child{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.rn-sw{display:inline-block;width:10px;height:10px;border-radius:var(--md-sys-shape-corner-extra-small);flex:none}
+:root{--chg-add:var(--viz-cat-1);--chg-mod:var(--viz-cat-6);--chg-del:var(--viz-cat-2)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--chg-add:var(--viz-cat-3);--chg-mod:var(--viz-cat-1);--chg-del:var(--viz-cat-4)}}
+[data-theme="dark"]{--chg-add:var(--viz-cat-3);--chg-mod:var(--viz-cat-1);--chg-del:var(--viz-cat-4)}
+.rn-mk{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:var(--md-sys-shape-corner-extra-small);color:var(--md-sys-color-on-primary);font:700 12px/1 var(--font-mono);flex:none}
+.rn-seg{display:grid;place-items:center;overflow:hidden;color:var(--md-sys-color-on-primary);font:700 11px/1 var(--font-mono)}
+</style>
+</helmet>
+<div class="{{rootClass}}" style="position: relative; width: 1440px; height: 1940px; overflow: hidden; background: var(--md-sys-color-surface-container-low); font-family: var(--font-plain); color: var(--md-sys-color-on-surface)">
+
+<header class="atlas-top-app-bar" style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 0 24px; gap: 12px; background: var(--md-sys-color-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant)">
+<h1 class="atlas-top-app-bar__title" style="margin: 0 8px 0 0; flex: none">CountyLens</h1>
+<button class="atlas-chip" aria-label="Location: Travis County, TX. Change location" onClick="{{sayCounty}}"><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Travis County, TX<span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<span style="flex: 1"></span>
+<sc-if value="{{isAdmin}}" hint-placeholder-val="{{ false }}"><span class="atlas-pill atlas-pill--info" title="Signed in as an admin"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span>Admin</span></sc-if>
+<span class="{{topPillCls}}"><span class="material-symbols-rounded" aria-hidden="true">{{topPillIcon}}</span>{{topPillText}}</span>
+<div style="position: relative; z-index: 30"><dc-import name="SearchBox" variant="icon" device="desktop" value="" start-open="{{ false }}" hint-size="48px,48px"></dc-import></div>
+<a class="atlas-icon-btn" aria-label="Help" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Shell1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">help</span></a>
+<a class="atlas-btn atlas-btn--tonal" style="text-decoration: none" href="ExploreQ-ai.dc.html"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span>Ask</a>
+<a class="atlas-icon-btn" aria-label="Apps" style="text-decoration: none; display: grid; place-items: center; color: var(--md-sys-color-on-surface)" href="Hub1440.dc.html"><span class="material-symbols-rounded" aria-hidden="true">apps</span></a>
+</header>
+<nav class="atlas-nav-rail" aria-label="Main" style="position: absolute; left: 0; top: 64px; height: 1876px; box-sizing: border-box; padding-top: 16px; background: var(--md-sys-color-surface)">
+<a class="atlas-nav-item" href="Explore1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">map</span></span>Explore</a>
+<a class="atlas-nav-item" href="Runs1440.dc.html" aria-current="page"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">history</span></span>Runs</a>
+<a class="atlas-nav-item" href="Coverage1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">donut_small</span></span>Coverage</a>
+<a class="atlas-nav-item" href="DataManifest1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">dataset</span></span>Data</a>
+<sc-if value="{{isAdmin}}" hint-placeholder-val="{{ false }}"><a class="atlas-nav-item" href="Activity1440.dc.html"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">query_stats</span></span>Activity</a></sc-if>
+<sc-if value="{{isPublic}}" hint-placeholder-val="{{ true }}"><a class="atlas-nav-item" href="AdminSignIn1440.dc.html" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span></span>Admin</a></sc-if><sc-if value="{{isAdmin}}" hint-placeholder-val="{{ false }}"><a class="atlas-nav-item" href="RunsAdmin1440.dc.html" aria-label="Signed in as an admin" style="margin-top: 12px"><span class="atlas-nav-ind"><span class="material-symbols-rounded" aria-hidden="true">verified_user</span></span>Signed in</a></sc-if>
+</nav>
+
+<main style="position: absolute; left: 80px; top: 64px; width: 1360px; height: 1876px; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 16px">
+
+<!-- Title + sync status -->
+<div style="display: flex; gap: 24px; align-items: stretch">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 4px; justify-content: center">
+<h2 style="margin: 0; font-family: var(--font-brand); font-size: 28px; line-height: 36px; font-weight: 400">Pipeline runs</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 8px 0 6px">
+<div style="position: relative; max-width: 100%" onKeyDown="{{rmKey}}">
+<button class="rsel" aria-haspopup="listbox" aria-expanded="{{rmOpenStr}}" aria-label="{{rselAria}}" onClick="{{toggleRm}}"><span class="material-symbols-rounded" aria-hidden="true" style="color: {{rselC}}">{{rselIcon}}</span><span class="rsel-t"><b>{{rselTitle}}</b><span class="num">{{rselTime}}</span></span><span class="{{rselPill}}" style="flex: none">{{rselStatus}}</span><span class="material-symbols-rounded" aria-hidden="true">arrow_drop_down</span></button>
+<sc-if value="{{rmOpen}}" hint-placeholder-val="{{ false }}"><div class="rsel-menu" role="dialog" aria-label="Choose a run">
+<label class="atlas-search" style="height: 44px; padding: 0 12px; gap: 8px; display: flex; align-items: center; border-radius: var(--md-sys-shape-corner-full); background: var(--md-sys-color-surface-container-high)"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">search</span><input ref="{{rqRef}}" value="{{rq}}" onInput="{{onRq}}" placeholder="Run number or date, e.g. 2026-10-08" aria-label="Find a run by number or date" style="flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 400 14px/20px var(--font-plain); color: var(--md-sys-color-on-surface)"></label>
+<div class="rsel-list" role="listbox" aria-label="Runs, newest first"><sc-for list="{{runOpts}}" as="o" hint-placeholder-count="3"><button class="rsel-it" role="option" aria-selected="{{o.on}}" onClick="{{o.pick}}"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true" style="color: {{o.c}}; margin-top: 2px">{{o.icon}}</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap"><b style="font-weight: 500; font-size: 14px">{{o.title}}</b><span class="{{o.pill}}">{{o.status}}</span></span><span class="num" style="font-size: 12px; line-height: 16px">{{o.time}}</span><span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant)">Manifest {{o.cid}}</span></span><sc-if value="{{o.sel}}" hint-placeholder-val="{{ false }}"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true">check</span></sc-if></button></sc-for>
+<sc-if value="{{rqNone}}" hint-placeholder-val="{{ false }}"><span style="padding: 8px 10px; font-size: 13px">No run matches. Try a run number or a date such as 2026-10-08.</span></sc-if></div>
+<span class="rn-sub" style="padding: 0 10px 4px">{{rmFoot}}</span>
+</div></sc-if>
+</div>
+<sc-if value="{{older}}" hint-placeholder-val="{{ false }}"><span class="rn-sub" style="display: inline-flex; align-items: center; gap: 4px">Viewing an earlier run. Sync status always shows the latest.<button class="atlas-btn atlas-btn--text" onClick="{{toLatest}}" style="height: 32px; padding: 0 8px; font-size: 12px">Show the latest run</button></span></sc-if>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">Each run fetches every source, checks and joins them, derives roof age and contractors, then publishes a new manifest CID. A run never changes an earlier one. Run data is Sample except the Austin permit counts.</p>
+</div>
+<section aria-labelledby="sync-h" class="atlas-card atlas-card--outlined" style="flex: 0 0 460px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 8px"><h3 id="sync-h" class="atlas-card__title" style="flex: 1">Sync status</h3><span class="{{syncPillCls}}"><span class="material-symbols-rounded" aria-hidden="true">{{syncIcon}}</span>{{syncPill}}</span></div>
+<div class="atlas-kv"><span>{{kv1k}}</span><span>{{kv1v}}</span></div>
+<div class="atlas-kv"><span>{{kv2k}}</span><span>{{kv2v}}</span></div>
+<div class="atlas-kv"><span>County coverage</span><span class="num" title="Parcels with data and coordinates, out of the TCAD roll">{{rollPct}}</span></div>
+<div style="display: flex; align-items: center; gap: 8px; margin-top: 4px">
+<span class="atlas-prov" style="flex: 1; font-size: 12px; line-height: 16px"><span class="material-symbols-rounded" aria-hidden="true">{{provIcon}}</span>{{provText}}</span>
+<sc-if value="{{showAlt}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--text" onClick="{{altAct}}">{{altLabel}}</button></sc-if>
+<sc-if value="{{isAdmin}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--filled" onClick="{{mainAct}}"><span class="material-symbols-rounded" aria-hidden="true">{{mainIcon}}</span>{{mainLabel}}</button></sc-if>
+<sc-if value="{{isPublic}}" hint-placeholder-val="{{ true }}"><a class="atlas-btn atlas-btn--text" href="AdminSignIn1440.dc.html" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">admin_panel_settings</span>Admin sign-in</a></sc-if>
+</div>
+<sc-if value="{{cmdOn}}" hint-placeholder-val="{{ false }}"><div role="status" aria-live="polite" class="{{cmdCls}}" style="font-size: 13px; line-height: 18px"><span class="material-symbols-rounded" aria-hidden="true">{{cmdIcon}}</span><div class="atlas-banner__body"><b style="font-weight: 500">{{cmdTitle}}</b> {{cmdText}}</div><sc-if value="{{cmdCancel}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--text" onClick="{{cancelCmd}}">Cancel</button></sc-if></div></sc-if>
+<sc-if value="{{isAdmin}}" hint-placeholder-val="{{ false }}"><div role="group" aria-label="Preview the pipeline host" style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--md-sys-color-on-surface-variant)"><span>Prototype · pipeline host:</span><button class="atlas-chip" aria-pressed="{{hostOnStr}}" onClick="{{hostOnline}}" style="height: 28px; font-size: 12px">Online</button><button class="atlas-chip" aria-pressed="{{hostOffStr}}" onClick="{{hostOffline}}" style="height: 28px; font-size: 12px">Offline</button></div></sc-if>
+</section>
+</div>
+
+<!-- State preview (prototype control) -->
+<div role="group" aria-label="Preview a state" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--md-sys-shape-corner-medium); border: 1px dashed var(--md-sys-color-outline); background: var(--md-sys-color-surface)">
+<span class="rn-sub" style="display: inline-flex; align-items: center; gap: 4px; margin-right: 4px"><span class="material-symbols-rounded atlas-icon-18" aria-hidden="true">science</span>Prototype · preview a state</span>
+<sc-for list="{{stateOpts}}" as="o" hint-placeholder-count="7"><button class="atlas-chip" aria-pressed="{{o.on}}" onClick="{{o.pick}}" style="height: 32px"><span class="material-symbols-rounded" aria-hidden="true" style="color: {{o.c}}">{{o.icon}}</span>{{o.label}}</button></sc-for>
+</div>
+
+<sc-if value="{{banner}}" hint-placeholder-val="{{ false }}"><div class="{{bannerCls}}" role="{{bannerRole}}"><span class="material-symbols-rounded" aria-hidden="true">{{bannerIcon}}</span><div class="atlas-banner__body" style="font-size: 14px; line-height: 20px"><b style="font-weight: 500">{{bannerTitle}}</b> {{bannerText}}</div></div></sc-if>
+
+<!-- Pipeline flow -->
+<section aria-labelledby="pf-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 14px; padding: 16px 24px; position: relative">
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; display: flex; flex-direction: column"><h3 id="pf-h" class="rn-h">{{flowTitle}}</h3><span class="rn-sub">{{flowSub}}</span></div>
+<div aria-hidden="true" style="display: flex; gap: 14px; font-size: 12px; color: var(--md-sys-color-on-surface-variant)"><sc-for list="{{legend}}" as="l" hint-placeholder-count="5"><span style="display: inline-flex; align-items: center; gap: 4px"><span class="material-symbols-rounded atlas-icon-16" style="color: {{l.c}}">{{l.icon}}</span>{{l.label}}</span></sc-for></div>
+</div>
+<div class="rn-flow" style="display: flex; align-items: stretch; gap: 0">
+<div role="group" aria-labelledby="src-h" style="flex: 0 0 340px; display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: var(--md-sys-shape-corner-large); background: var(--md-sys-color-surface-container-low); border: 1px solid var(--md-sys-color-outline-variant); box-sizing: border-box">
+<div style="display: flex; align-items: center; gap: 8px; padding: 0 8px 6px"><span style="width: 22px; height: 22px; border-radius: var(--md-sys-shape-corner-full); display: grid; place-items: center; font-size: 12px; font-weight: 500; background: var(--md-sys-color-surface-container-highest)">1</span><b id="src-h" style="flex: 1; font-weight: 500; font-size: 14px">Fetch sources</b><span class="rn-sub num">{{srcSummary}}</span></div>
+<sc-for list="{{sources}}" as="s" hint-placeholder-count="7">
+<button class="rn-src" aria-pressed="{{s.sel}}" aria-label="{{s.aria}}" onClick="{{s.pick}}"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true" style="color: {{s.c}}">{{s.icon}}</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{s.name}}</span><span class="num" style="font-size: 12px; color: var(--md-sys-color-on-surface-variant)">{{s.right}}</span><span class="bar"><i class="{{s.barCls}}" style="width: {{s.pct}}%; background: {{s.c}}"></i></span></button>
+</sc-for>
+</div>
+<div aria-hidden="true" class="rn-arrow" style="color: {{arrow0}}; background: {{arrow0}}; max-width: 44px; margin-left: 8px"></div>
+<sc-for list="{{stages}}" as="g" hint-placeholder-count="4">
+<div class="rn-stage" style="flex: 0 1 184px; min-width: 0; display: flex; align-items: center; margin-left: 8px">
+<button class="{{g.cls}}" aria-pressed="{{g.sel}}" aria-label="{{g.aria}}" onClick="{{g.pick}}">
+<div style="display: flex; align-items: center; gap: 10px"><span class="rn-ic" style="background: {{g.bg}}; color: {{g.c}}"><span class="material-symbols-rounded" aria-hidden="true">{{g.icon}}</span></span><span style="width: 22px; height: 22px; border-radius: var(--md-sys-shape-corner-full); display: grid; place-items: center; font-size: 12px; font-weight: 500; background: var(--md-sys-color-surface-container-highest); margin-left: auto">{{g.n}}</span></div>
+<b style="font-weight: 500; font-size: 15px; line-height: 20px">{{g.name}}</b>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-sys-color-on-surface-variant); min-height: 32px">{{g.metric}}</span>
+<div class="atlas-progress" aria-hidden="true"><i class="{{g.barCls}}" style="width: {{g.pct}}%; background: {{g.c}}"></i></div>
+<span style="display: flex; align-items: center; gap: 4px; font-size: 12px; line-height: 16px; font-weight: 500; color: {{g.c}}">{{g.statusText}}<span class="num" style="margin-left: auto; font-weight: 400; color: var(--md-sys-color-on-surface-variant)">{{g.time}}</span></span>
+</button>
+</div>
+<sc-if value="{{g.arrow}}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" class="rn-arrow" style="color: {{g.arrowC}}; background: {{g.arrowC}}; margin-left: 8px"></div></sc-if>
+</sc-for>
+</div>
+<!-- detail of the selected step -->
+<div aria-live="polite" style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); font-size: 13px; line-height: 18px">
+<span class="material-symbols-rounded" aria-hidden="true" style="color: {{det.c}}">{{det.icon}}</span>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-weight: 500; font-size: 14px">{{det.name}} · <span style="color: {{det.c}}">{{det.status}}</span></b><span style="color: var(--md-sys-color-on-surface-variant)">{{det.note}}</span></div>
+<div style="display: flex; gap: 20px"><sc-for list="{{det.kv}}" as="d" hint-placeholder-count="3"><div style="display: flex; flex-direction: column"><span class="rn-sub">{{d.k}}</span><span class="num" style="font-weight: 500">{{d.v}}</span></div></sc-for></div>
+<a class="atlas-btn atlas-btn--text" href="RunsLog1440.dc.html" style="text-decoration: none"><span class="material-symbols-rounded" aria-hidden="true">receipt_long</span>Log</a>
+</div>
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 64px 24px 16px; border-radius: var(--md-sys-shape-corner-large); background: color-mix(in srgb, var(--md-sys-color-surface) 86%, transparent); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center">
+<span class="material-symbols-rounded" aria-hidden="true" style="font-size: 40px; color: var(--md-sys-color-primary)">rocket_launch</span>
+<b style="font-family: var(--font-brand); font-size: 22px; line-height: 28px; font-weight: 400">No runs yet</b>
+<span style="max-width: 460px; font-size: 14px; line-height: 20px; color: var(--md-sys-color-on-surface-variant)">The first run fetches all 8 sources (about 1 h 20 m), then publishes a manifest CID you can verify. Explore stays empty until it finishes.</span>
+<div style="display: flex; gap: 8px"><sc-if value="{{isAdmin}}" hint-placeholder-val="{{ false }}"><button class="atlas-btn atlas-btn--filled" onClick="{{startRun}}"><span class="material-symbols-rounded" aria-hidden="true">play_arrow</span>Start the first run</button></sc-if><sc-if value="{{isPublic}}" hint-placeholder-val="{{ true }}"><span class="atlas-pill atlas-pill--unavailable"><span class="material-symbols-rounded" aria-hidden="true">lock</span>An admin starts the first run</span></sc-if><a class="atlas-btn atlas-btn--text" href="RunsLog1440.dc.html" style="text-decoration: none">How runs work</a></div>
+</div>
+</sc-if>
+</section>
+
+<!-- Timeline + events -->
+<div style="display: flex; gap: 16px">
+<section aria-labelledby="gt-h" class="atlas-card atlas-card--outlined" style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 16px 24px">
+<div style="display: flex; align-items: center; gap: 12px"><div style="flex: 1; display: flex; flex-direction: column"><h3 id="gt-h" class="rn-h">Timeline · {{flowRun}}</h3><span class="rn-sub">Start and end of every step, UTC. Hover a bar for details.</span></div><button class="atlas-btn atlas-btn--text" aria-pressed="{{tableOn}}" onClick="{{toggleTable}}"><span class="material-symbols-rounded" aria-hidden="true">table</span>{{tableLabel}}</button></div>
+<sc-if value="{{ganttEmpty}}" hint-placeholder-val="{{ false }}"><div style="padding: 24px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); font-size: 14px; color: var(--md-sys-color-on-surface-variant)">The timeline fills in as the first run moves through its steps.</div></sc-if>
+<sc-if value="{{chartOn}}" hint-placeholder-val="{{ true }}">
+<div role="img" aria-label="{{ganttAria}}" style="position: relative; height: {{ganttH}}px">
+<sc-for list="{{ticks}}" as="t" hint-placeholder-count="7"><div aria-hidden="true" style="position: absolute; left: {{t.x}}px; top: 0; bottom: 22px; width: 1px; background: var(--md-sys-color-outline-variant); opacity: .6"></div><span aria-hidden="true" class="num" style="position: absolute; left: {{t.lx}}px; bottom: 0; width: 48px; text-align: center; font-size: 11px; color: var(--md-sys-color-on-surface-variant)">{{t.label}}</span></sc-for>
+<sc-for list="{{gRows}}" as="r" hint-placeholder-count="11">
+<div class="rn-row" style="top: {{r.y}}px"><span style="width: 160px; flex: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: {{r.lc}}; font-weight: {{r.fw}}">{{r.name}}</span></div>
+<div class="{{r.cls}}" aria-hidden="true" style="left: {{r.x}}px; top: {{r.by}}px; width: {{r.w}}px; background: {{r.bg}}; border: {{r.bd}}"></div>
+<span aria-hidden="true" class="num" style="position: absolute; left: {{r.tx}}px; top: {{r.ty}}px; font-size: 11px; line-height: 16px; color: var(--md-sys-color-on-surface-variant); white-space: nowrap">{{r.dur}}</span>
+<button class="rn-hit" aria-label="{{r.aria}}" onMouseEnter="{{r.hover}}" onMouseLeave="{{unhover}}" onFocus="{{r.hover}}" onBlur="{{unhover}}" onClick="{{r.pick}}" style="left: {{r.hx}}px; top: {{r.y}}px; width: {{r.hw}}px"></button>
+</sc-for>
+<sc-if value="{{nowOn}}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; left: {{nowX}}px; top: -4px; bottom: 18px; width: 2px; background: var(--md-sys-color-primary)"></div><span class="atlas-pill atlas-pill--info num" style="position: absolute; left: {{nowLX}}px; top: -14px; font-size: 11px">now {{nowLabel}}</span></sc-if>
+<sc-if value="{{tipOn}}" hint-placeholder-val="{{ false }}"><div class="rn-tip" role="tooltip" style="left: {{tip.x}}px; top: {{tip.y}}px"><b style="font-weight: 500">{{tip.name}}</b><br>{{tip.status}} · <span class="num">{{tip.range}}</span><br>{{tip.note}}</div></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{tableOn2}}" hint-placeholder-val="{{ false }}">
+<table class="atlas-table atlas-table--dense stack gl" style="width: 100%; font-size: 12px"><thead><tr><th>Step</th><th>Status</th><th class="num">Start</th><th class="num">End</th><th class="num">Duration</th></tr></thead><tbody><sc-for list="{{gRows}}" as="r" hint-placeholder-count="11"><tr><td data-label="Step">{{r.name}}</td><td data-label="Status">{{r.statusText}}</td><td class="num" data-label="Start">{{r.start}}</td><td class="num" data-label="End">{{r.end}}</td><td class="num" data-label="Took">{{r.dur}}</td></tr></sc-for></tbody></table>
+</sc-if>
+</section>
+
+<section aria-labelledby="ev-h" class="atlas-card atlas-card--outlined" style="flex: 0 0 400px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center"><h3 id="ev-h" class="atlas-card__title" style="flex: 1">Latest events</h3><a class="atlas-btn atlas-btn--text" href="RunsLog1440.dc.html">Full log</a></div>
+<ul class="atlas-list" style="font-size: 13px; line-height: 18px">
+<sc-for list="{{events}}" as="e" hint-placeholder-count="5"><li class="atlas-list-item" style="min-height: 0; padding: 8px 0; gap: 10px"><span class="material-symbols-rounded atlas-icon-20" aria-hidden="true" style="color: {{e.c}}">{{e.icon}}</span><div style="flex: 1">{{e.t}}<div class="atlas-prov" style="font-size: 12px">{{e.m}}</div></div></li></sc-for>
+</ul>
+<sc-if value="{{noEvents}}" hint-placeholder-val="{{ false }}"><span class="rn-sub">Nothing yet. Events appear as soon as a run starts.</span></sc-if>
+</section>
+</div>
+
+<!-- History -->
+<section aria-labelledby="hi-h" class="atlas-card atlas-card--outlined" style="display: flex; flex-direction: column; gap: 14px; padding: 16px 24px">
+<div style="display: flex; align-items: center; gap: 12px"><div style="flex: 1; display: flex; flex-direction: column"><h3 id="hi-h" class="rn-h">What Run {{runId}} changed</h3><span class="rn-sub">Counted against {{prevLabel}}. Pick another run from the Run menu at the top of the page.</span></div><sc-if value="{{cmpOn}}" hint-placeholder-val="{{ true }}"><a class="atlas-btn atlas-btn--text" href="{{compareHref}}"><span class="material-symbols-rounded" aria-hidden="true">compare_arrows</span>Compare Run {{runId}} with Run {{prevId}}</a></sc-if></div>
+<sc-if value="{{histOn}}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: 520px minmax(0, 1fr); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px">Changes in Run {{runId}} vs {{prevLabel}} · <b class="num" style="font-weight: 500">{{totalChg}}</b> records</span>
+<div role="img" aria-label="{{mixAria}}" style="display: flex; gap: 2px"><sc-for list="{{mix}}" as="m" hint-placeholder-count="3"><div class="rn-seg" aria-hidden="true" style="flex: {{m.f}} 1 0; background: {{m.c}}">{{m.mk}}</div></sc-for></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px"><sc-for list="{{mixLegend}}" as="m" hint-placeholder-count="3"><span style="display: inline-flex; align-items: center; gap: 6px"><span class="rn-mk" aria-hidden="true" style="background: {{m.c}}">{{m.mk}}</span>{{m.label}} <b class="num" style="font-weight: 500">{{m.v}}</b></span></sc-for></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; font-size: 13px; line-height: 18px">
+<div style="padding: 10px 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); display: flex; flex-direction: column; gap: 4px"><span style="color: var(--md-sys-color-on-surface-variant)">Manifest CID</span><span style="display: flex; align-items: center; gap: 4px"><span class="atlas-cid">{{cid}}<button aria-label="Copy manifest CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span><a href="DataVerify1440.dc.html" style="margin-left: auto; display: inline-flex; align-items: center; gap: 2px"><span class="material-symbols-rounded atlas-icon-16" aria-hidden="true">verified</span>Verify</a></span></div>
+<div style="padding: 10px 12px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); display: flex; flex-direction: column; gap: 4px"><span style="color: var(--md-sys-color-on-surface-variant)">Previous manifest CID</span><span style="display: flex; align-items: center; gap: 4px"><span class="atlas-cid">{{prevCid}}<button aria-label="Copy previous manifest CID" onClick="{{copied}}"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span></button></span></span></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div class="tg rn-chg" style="display: grid; grid-template-columns: 170px 90px minmax(0, 1fr) 150px; gap: 12px; align-items: center; padding: 0 0 6px; border-bottom: 1px solid var(--md-sys-color-outline-variant); font-size: 12px; font-weight: 500; color: var(--md-sys-color-on-surface-variant)"><span>Source</span><span style="text-align: right">Records</span><span>Changed records (one scale for this run)</span><span style="text-align: right">+ / ~ / −</span></div>
+<sc-for list="{{srcChg}}" as="r" hint-placeholder-count="7">
+<div class="tg rn-chg" style="display: grid; grid-template-columns: 170px 90px minmax(0, 1fr) 150px; gap: 12px; align-items: center; min-height: 30px; font-size: 13px; line-height: 18px">
+<span>{{r.name}}</span><span class="num" style="text-align: right">{{r.records}}</span>
+<div role="img" aria-label="{{r.aria}}" style="display: flex; gap: 2px; height: 14px"><sc-for list="{{r.segs}}" as="sg" hint-placeholder-count="2"><div class="rn-seg" style="height: 14px; width: {{sg.w}}%; background: {{sg.c}}"></div></sc-for><sc-if value="{{r.none}}" hint-placeholder-val="{{ false }}"><span class="rn-sub">{{r.noneText}}</span></sc-if></div>
+<span class="num" style="text-align: right; font-size: 12px; color: var(--md-sys-color-on-surface-variant)">{{r.nums}}</span>
+</div>
+</sc-for>
+<span class="rn-sub" style="margin-top: 4px">{{histNote}}</span>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{histPending}}" hint-placeholder-val="{{ false }}"><div style="padding: 24px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); font-size: 14px; color: var(--md-sys-color-on-surface-variant)">{{histPendingText}}</div></sc-if>
+<sc-if value="{{histEmpty}}" hint-placeholder-val="{{ false }}"><div style="padding: 24px; border-radius: var(--md-sys-shape-corner-medium); background: var(--md-sys-color-surface-container); font-size: 14px; color: var(--md-sys-color-on-surface-variant)">No history yet. After two runs, this shows what each run added, changed and removed.</div></sc-if>
+</section>
+
+</main>
+<sc-if value="{{toastOn}}" hint-placeholder-val="{{ false }}"><div class="atlas-snackbar" role="status" style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 90; max-width: 90%">{{toast}}</div></sc-if>
+<div style="position: absolute; left: 12px; bottom: 12px; z-index: 80"><dc-import name="ProtoBar" here="Runs · 1440 · pipeline, timeline and states" desktop="Runs1440.dc.html" tablet="Runs768.dc.html" mobile="Runs390.dc.html" current="desktop" hint-size="48px,48px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"admin":{"editor":"boolean","default":false},"device":{"editor":"enum","options":["desktop","tablet","mobile"],"default":"desktop"},"state":{"editor":"enum","options":["completed","running","partial","stale","ratelimited","failed","empty"],"default":"completed"},"motion":{"editor":"enum","options":["system","reduced"],"default":"system"},"$preview":{"width":1440,"height":1940}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cmd: null, hostOff: false, st: props.state || 'completed', now: 40, sel: 'permits', run: 3, view: 0, rm: false, rq: '', hov: null, table: props.device === 'mobile', toast: '', retry: 4 };
+    // Minutes from 10:20 UTC. Sample timings from the Run 3 log.
+    this.SRC = [
+      { k: 'permits', name: 'Austin permits', t0: 4, t1: 52, rec: '2,380,507', note: 'Open data API, paged · 2 retries' },
+      { k: 'tcadp', name: 'TCAD properties', t0: 4, t1: 28, rec: '412,860', note: 'Bulk export file' },
+      { k: 'tcado', name: 'TCAD owners and sales', t0: 10, t1: 28, rec: '398,114', note: 'Bulk export file · confidential owners withheld' },
+      { k: 'bbb', name: 'BBB ratings', t0: 11, t1: 12, rec: '0', note: 'Source refuses automated access', blocked: true },
+      { k: 'coords', name: 'Coordinates', t0: 28, t1: 32, rec: '412,860', note: 'TCAD parcel geometry' },
+      { k: 'comptroller', name: 'TX Comptroller businesses', t0: 38, t1: 42, rec: '61,305', note: 'Comptroller API (9cir-efmm)' },
+      { k: 'overture', name: 'Overture places', t0: 34, t1: 37, rec: '52,870', note: 'GeoParquet release, one download' },
+      { k: 'contr', name: 'Contractors', t0: 40, t1: 45, rec: '18,240', note: 'Names on Austin permits, resolved' }
+    ];
+    this.STG = [
+      { k: 'join', n: 2, name: 'Check and join', t0: 52, t1: 65, metric: '3.69 M rows checked · 0 schema errors', note: 'Types, keys and duplicates checked, then joined on parcel ID' },
+      { k: 'derive', n: 3, name: 'Derive', t0: 65, t1: 78, metric: 'Roof age for 412,860 parcels · 18,240 contractors', note: 'Reroof permit, then new build, then year built' },
+      { k: 'publish', n: 4, name: 'Publish', t0: 78, t1: 83, metric: '13 artifacts · manifest bafybeih…q7n3', note: 'Pinned to IPFS; the new manifest links to the previous one, and runs/index.json lists it' },
+      { k: 'verify', n: 5, name: 'Verify', t0: 83, t1: 91, metric: '2 public gateways', note: 'CID fetched and re-hashed on two independent gateways' }
+    ];
+    this.ST = {
+      done: { icon: 'check_circle', c: 'var(--status-success)', bg: 'var(--status-success-container)', label: 'Done' },
+      running: { icon: 'sync', c: 'var(--status-info)', bg: 'var(--status-info-container)', label: 'Running' },
+      queued: { icon: 'schedule', c: 'var(--status-unavailable)', bg: 'var(--status-unavailable-container)', label: 'Queued' },
+      blocked: { icon: 'block', c: 'var(--status-danger)', bg: 'var(--status-danger-container)', label: 'Blocked' },
+      failed: { icon: 'error', c: 'var(--status-danger)', bg: 'var(--status-danger-container)', label: 'Failed' },
+      pending: { icon: 'hourglass_top', c: 'var(--status-info)', bg: 'var(--status-info-container)', label: 'Retrying' },
+      skipped: { icon: 'remove_circle_outline', c: 'var(--status-unavailable)', bg: 'var(--status-unavailable-container)', label: 'Skipped' },
+      none: { icon: 'radio_button_unchecked', c: 'var(--status-unavailable)', bg: 'var(--status-unavailable-container)', label: 'Not run' }
+    };
+    const row = (name, records, a, c, r) => ({ name, records, a, c, r });
+    this.RUNS = {
+      1: { date: 'Oct 1', cid: 'bafybeia…m1r1', prevCid: 'none, first run', prevLabel: 'an empty store', a: 3679826, c: 0, r: 0, note: 'Run 1 is the first full load, so every record counts as added.',
+        rows: [row('Austin permits', '2,377,210', 2377210, 0, 0), row('TCAD properties', '412,705', 412705, 0, 0), row('TCAD owners and sales', '397,980', 397980, 0, 0), row('BBB ratings', '0', 0, 0, 0), row('Coordinates', '412,705', 412705, 0, 0), row('TX Comptroller businesses', '61,036', 61036, 0, 0), row('Overture places', '52,410', 52410, 0, 0), row('Contractors', '18,190', 18190, 0, 0)] },
+      2: { date: 'Oct 8', cid: 'bafybeig…k2p8', prevCid: 'bafybeia…m1r1', prevLabel: 'Run 1', a: 2025, c: 3814, r: 44, note: 'Comptroller businesses were not refreshed in Run 2; its Run 1 records carried over.',
+        rows: [row('Austin permits', '2,378,944', 1734, 388, 0), row('TCAD properties', '412,779', 96, 2310, 22), row('TCAD owners and sales', '398,051', 71, 1102, 0), row('BBB ratings', '0', 0, 0, 0), row('Coordinates', '412,779', 96, 0, 22), row('TX Comptroller businesses', '61,036', 0, 0, 0), row('Overture places', '52,410', 0, 0, 0), row('Contractors', '18,218', 28, 14, 0)] },
+      3: { date: 'Oct 17', cid: 'bafybeih…q7n3', prevCid: 'bafybeig…k2p8', prevLabel: 'Run 2', a: 2194, c: 4660, r: 115, note: 'BBB: Blocked · bbb.org refused the check (403) on 2026-10-17; 0 records in every run.',
+        rows: [row('Austin permits', '2,380,507', 1563, 412, 0), row('TCAD properties', '412,860', 118, 2904, 37), row('TCAD owners and sales', '398,114', 63, 1240, 0), row('BBB ratings', '0', 0, 0, 0), row('Coordinates', '412,860', 118, 0, 37), row('TX Comptroller businesses', '61,305', 310, 95, 41), row('Overture places', '52,870', 512, 140, 52), row('Contractors', '18,240', 22, 9, 0)] }
+    };
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.tt); clearInterval(this.cd); clearTimeout(this.ct); }
+  // Review #42: admin commands go through the run-command queue; the pipeline host acknowledges, or times out when it is off.
+  queueCmd(label, act) {
+    clearTimeout(this.ct); const id = 'cmd-' + Math.random().toString(16).slice(2, 6); this.setState({ cmd: { phase: 'queued', label: label, id: id } });
+    this.ct = setTimeout(() => {
+      if (this.state.hostOff) { this.setState({ cmd: { phase: 'offline', label: label, id: id } }); return; }
+      this.setState({ cmd: { phase: 'ack', label: label, id: id } }); act();
+      this.ct = setTimeout(() => this.setState({ cmd: null }), 3500);
+    }, 1600);
+  }
+  say(t) { this.setState({ toast: t }); clearTimeout(this.tt); this.tt = setTimeout(() => this.setState({ toast: '' }), 2800); }
+  setSt(st) {
+    clearInterval(this.timer); clearInterval(this.cd);
+    const s = { st: st, hov: null };
+    if (st === 'running') s.now = 40;
+    if (st === 'partial') s.sel = 'comptroller';
+    if (st === 'failed') s.sel = 'publish';
+    if (st === 'ratelimited') { s.sel = 'verify'; s.retry = 4; this.cd = setInterval(() => this.setState((p) => ({ retry: p.retry <= 1 ? 4 : p.retry - 1 })), 1000); }
+    if (st === 'completed' || st === 'stale' || st === 'empty') s.sel = 'permits';
+    this.setState(s);
+  }
+  startSim() {
+    clearInterval(this.timer); clearInterval(this.cd);
+    this.setState({ st: 'running', now: 0, sel: 'permits' });
+    this.timer = setInterval(() => {
+      const n = this.state.now + 2;
+      if (n >= 92) { clearInterval(this.timer); this.setState({ st: 'completed', now: 38 }); this.say('Run 4 finished (prototype). Numbers shown are still Run 3 Sample data.'); }
+      else this.setState({ now: n });
+    }, 220);
+  }
+  // Times are UTC minutes after the viewed run's start (this.vb, minutes after 00:00).
+  fmt(t) { const m = (this.vb || 620) + Math.round(t); return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); }
+  dur(a, b) { const d = Math.round(b - a); return d < 1 ? '<1 m' : d + ' m'; }
+  status(it, st, now) {
+    if (st === 'empty') return { s: 'none', pct: 0 };
+    if (it.blocked) return (st === 'running' && now < it.t0) ? { s: 'queued', pct: 0 } : { s: 'blocked', pct: 100 };
+    if (st === 'running') { if (now >= it.t1) return { s: 'done', pct: 100 }; if (now >= it.t0) return { s: 'running', pct: Math.round((now - it.t0) / (it.t1 - it.t0) * 100) }; return { s: 'queued', pct: 0 }; }
+    if (st === 'partial' && it.k === 'comptroller') return { s: 'failed', pct: 40, end: 39.5 };
+    if (st === 'ratelimited' && it.k === 'verify') return { s: 'pending', pct: 50, end: 87 };
+    if (st === 'failed' && it.k === 'publish') return { s: 'failed', pct: 70, end: 81.5 };
+    if (st === 'failed' && it.k === 'verify') return { s: 'skipped', pct: 0 };
+    return { s: 'done', pct: 100 };
+  }
+  renderVals() {
+    const s = this.state, stNow = s.st, ST = this.ST;
+    // Run picker (first control on the page): every run with its own timestamp, newest first. Sample runs.
+    const run4Now = stNow === 'running' || stNow === 'partial' || stNow === 'failed';
+    const latest = stNow === 'empty' ? 0 : (run4Now ? 4 : 3);
+    const vr = latest ? Math.min(latest, s.view || latest) : 0;
+    const older = !!latest && vr < latest;
+    const st = older ? 'completed' : stNow, now = older ? 91 : s.now;
+    const RM = { 1: { date: '2026-10-01', base: 544, cid: 'bafybeia…m1r1' }, 2: { date: '2026-10-08', base: 613, cid: 'bafybeig…k2p8' }, 3: { date: '2026-10-17', base: 620, cid: 'bafybeih…q7n3' }, 4: { date: '2026-10-25', base: 620, cid: stNow === 'partial' ? 'bafybeif…r4w2' : 'not published' } };
+    const clock = (base, t) => { const m = base + Math.round(t); return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); };
+    const runInfo = (i) => {
+      const b = RM[i].base, d = RM[i].date;
+      if (i === 4) return { running: ['Running', 'atlas-pill atlas-pill--info', 'sync', 'var(--status-info)', d + ' · started ' + clock(b, 2) + ' UTC · in progress'], partial: ['Published with 1 failure', 'atlas-pill atlas-pill--warning', 'warning', 'var(--status-warning)', d + ' · ' + clock(b, 2) + '–' + clock(b, 91) + ' UTC · 1 h 29 m'], failed: ['Failed at Publish', 'atlas-pill atlas-pill--danger', 'error', 'var(--status-danger)', d + ' · ' + clock(b, 2) + '–' + clock(b, 81) + ' UTC · stopped'] }[stNow];
+      const cur = i === 3 && !run4Now;
+      if (cur && stNow === 'stale') return ['Completed · stale', 'atlas-pill atlas-pill--warning', 'schedule', 'var(--status-warning)', d + ' · ' + clock(b, 2) + '–' + clock(b, 91) + ' UTC · 1 h 29 m'];
+      if (cur && stNow === 'ratelimited') return ['Verifying', 'atlas-pill atlas-pill--info', 'hourglass_top', 'var(--status-info)', d + ' · ' + clock(b, 2) + ' UTC · published ' + clock(b, 83) + ', verifying'];
+      return ['Completed', 'atlas-pill atlas-pill--success', 'check_circle', 'var(--status-success)', d + ' · ' + clock(b, 2) + '–' + clock(b, 91) + ' UTC · 1 h 29 m'];
+    };
+    const runIds = []; for (let i = latest; i >= 1; i--) runIds.push(i);
+    const rq = (s.rq || '').trim().toLowerCase().replace(/^run\s*/, '');
+    const runShown = runIds.filter((i) => !rq || String(i) === rq || RM[i].date.indexOf(rq) >= 0 || runInfo(i)[4].toLowerCase().indexOf(rq) >= 0);
+    const vi = vr ? runInfo(vr) : null;
+    this.vb = vr ? RM[vr].base : 620;
+    const isRun4 = st === 'running' || st === 'partial' || st === 'failed' || st === 'ratelimited' && false;
+    const all = this.SRC.concat(this.STG);
+    const stat = {}; all.forEach((it) => { stat[it.k] = this.status(it, st, now); });
+    const srcDone = this.SRC.filter((it) => stat[it.k].s === 'done').length;
+    const runPct = st === 'running' ? Math.round(now / 91 * 100) : 0;
+    const extraNote = (it, x) => {
+      if (it.k === 'comptroller' && x.s === 'failed') return 'Failed after 3 retries (HTTP 503). Its Run 3 records carry over, labelled “carried over”.';
+      if (it.k === 'publish' && x.s === 'failed') return 'IPFS pin timed out after 5 min. Nothing was published; Run 3 stays current.';
+      if (it.k === 'verify' && x.s === 'pending') return 'Gateway rate-limited the check. Retrying in ' + s.retry + ' s (attempt 2 of 3). Shown as pending, never as failed.';
+      if (it.k === 'verify' && x.s === 'skipped') return 'Skipped because Publish failed.';
+      if (it.k === 'publish' && st === 'partial') return '13 artifacts · 7 of 8 sources refreshed, Comptroller carried over';
+      return it.note;
+    };
+    const sources = this.SRC.map((it) => { const x = stat[it.k], m = ST[x.s];
+      const right = x.s === 'running' ? x.pct + '%' : x.s === 'done' ? it.rec : x.s === 'blocked' ? 'Blocked' : x.s === 'failed' ? 'Failed' : m.label;
+      return { name: it.name, icon: m.icon, c: m.c, right: right, pct: x.s === 'queued' || x.s === 'none' ? 0 : x.pct, barCls: x.s === 'running' ? 'rn-stripes' : '', sel: String(s.sel === it.k), pick: () => this.setState({ sel: it.k }), aria: it.name + ': ' + m.label + (x.s === 'running' ? ', ' + x.pct + ' percent' : '') + '. Show details' }; });
+    const stages = this.STG.map((it, i) => { const x = stat[it.k], m = ST[x.s];
+      const nxt = i < this.STG.length - 1;
+      const metric = x.s === 'done' || x.s === 'pending' ? (it.k === 'publish' && st === 'partial' ? '13 artifacts · Comptroller carried over' : it.k === 'publish' && older ? '13 artifacts · manifest ' + RM[vr].cid : it.metric) : x.s === 'failed' ? 'IPFS pin timed out' : x.s === 'running' ? 'In progress' : x.s === 'skipped' ? 'Not reached' : 'Waits for step ' + (it.n - 1);
+      const statusText = x.s === 'running' ? 'Running · ' + x.pct + '%' : x.s === 'pending' ? 'Retrying in ' + s.retry + ' s' : m.label;
+      const time = x.s === 'done' ? this.dur(it.t0, it.t1) : x.s === 'failed' ? this.fmt(x.end) : '';
+      return { n: String(it.n), name: it.name, icon: m.icon, c: m.c, bg: m.bg, metric: metric, statusText: statusText, time: time, pct: x.s === 'queued' || x.s === 'none' || x.s === 'skipped' ? 0 : x.pct, barCls: x.s === 'running' || x.s === 'pending' ? 'rn-stripes' : '', cls: 'rn-node is-' + x.s, sel: String(s.sel === it.k), pick: () => this.setState({ sel: it.k }), aria: 'Step ' + it.n + ', ' + it.name + ': ' + statusText + '. Show details', arrow: nxt, arrowC: x.s === 'done' ? 'var(--md-sys-color-on-surface-variant)' : 'var(--md-sys-color-outline-variant)' }; });
+    const selIt = all.find((it) => it.k === s.sel) || all[0], sx = stat[selIt.k], sm = ST[sx.s];
+    const det = { name: selIt.name, status: sx.s === 'running' ? 'Running · ' + sx.pct + '%' : sm.label, icon: sm.icon, c: sm.c, note: extraNote(selIt, sx),
+      kv: st === 'empty' ? [{ k: 'Last run', v: '—' }] : [{ k: 'Start', v: sx.s === 'queued' || sx.s === 'skipped' ? '—' : this.fmt(selIt.t0) }, { k: 'End', v: sx.s === 'done' || sx.s === 'blocked' ? this.fmt(selIt.t1) : sx.end ? this.fmt(sx.end) : '—' }, { k: selIt.rec ? 'Records' : 'Duration', v: selIt.rec ? (sx.s === 'done' || sx.s === 'blocked' ? selIt.rec : sx.s === 'failed' ? '61,305 carried over' : '—') : (sx.s === 'done' ? this.dur(selIt.t0, selIt.t1) : '—') }] };
+    // Gantt
+    const PW = (this.props.device ?? 'desktop') === 'tablet' ? 400 : 600, LX = 168, rowH = 26, scale = PW / 95;
+    const gRows = all.map((it, i) => { const x = stat[it.k], m = ST[x.s];
+      const end = x.s === 'running' ? now : x.end || it.t1, t0 = it.t0;
+      const w = x.s === 'queued' || x.s === 'none' || x.s === 'skipped' ? Math.max(6, (it.t1 - t0) * scale) : Math.max(6, (end - t0) * scale);
+      const xx = LX + t0 * scale, y = i * rowH + (i >= this.SRC.length ? 10 : 0);
+      const hollow = x.s === 'queued' || x.s === 'none' || x.s === 'skipped';
+      return { name: (i >= this.SRC.length ? (it.n + ' · ') : '') + it.name, y: y, by: y + 6, x: Math.round(xx), w: Math.round(w), bg: hollow ? 'transparent' : m.c, bd: hollow ? '1.5px dashed var(--md-sys-color-outline)' : '0', cls: 'rn-gbar' + (x.s === 'running' || x.s === 'pending' ? ' rn-stripes' : ''),
+        tx: Math.round(xx + w + 6), ty: y + 5, dur: hollow ? '' : x.s === 'blocked' ? 'blocked' : x.s === 'failed' ? 'failed' : x.s === 'running' ? x.pct + '%' : this.dur(t0, end),
+        lc: i >= this.SRC.length ? 'var(--md-sys-color-on-surface)' : 'var(--md-sys-color-on-surface-variant)', fw: i >= this.SRC.length ? 500 : 400,
+        statusText: m.label, start: hollow ? '—' : this.fmt(t0), end: hollow || x.s === 'running' ? '—' : this.fmt(end),
+        hx: LX, hw: PW + 60, aria: it.name + ', ' + m.label + (hollow ? '' : ', ' + this.fmt(t0) + ' to ' + this.fmt(end)),
+        hover: () => this.setState({ hov: it.k }), pick: () => this.setState({ sel: it.k }) }; });
+    const hv = s.hov && all.find((it) => it.k === s.hov), hr = hv && gRows[all.indexOf(hv)], hx = hv && stat[hv.k];
+    const tip = hv ? { x: Math.min(hr.tx + 40, LX + PW - 120), y: hr.y + 22, name: hv.name, status: ST[hx.s].label, range: hr.start + '–' + hr.end, note: extraNote(hv, hx) } : null;
+    const ticks = [0, 15, 30, 45, 60, 75, 90].map((t) => ({ x: Math.round(LX + t * scale), lx: Math.round(LX + t * scale - 24), label: this.fmt(t) }));
+    const ganttH = all.length * rowH + 10 + 26;
+    // Events
+    const E = (icon, c, t, m) => ({ icon, c, t, m });
+    const events = {
+      completed: [E('verified', 'var(--status-success)', 'Verified on 2 public gateways', '11:51 UTC · manifest'), E('publish', 'var(--md-sys-color-on-surface-variant)', 'Published manifest, 13 artifacts', '11:43 UTC · new manifest CID, linked to Run 2'), E('add_circle', 'var(--md-sys-color-on-surface-variant)', 'Records added: Austin permits +1,563', '11:12 UTC'), E('block', 'var(--status-danger)', 'BBB: Blocked · bbb.org refused the check (403) on 2026-10-17', '10:31 UTC · 0 records'), E('play_circle', 'var(--md-sys-color-on-surface-variant)', 'Run 3 started, manual', '10:22 UTC')],
+      running: [E('sync', 'var(--status-info)', 'Fetching Austin permits · ' + (stat.permits.pct) + '%', this.fmt(now) + ' UTC · page ' + Math.max(1, Math.round(stat.permits.pct * 0.48)) + ' of 48'), E('check_circle', 'var(--status-success)', 'TCAD properties and owners loaded', '10:48 UTC · 810,974 records'), E('block', 'var(--status-danger)', 'BBB: Blocked · bbb.org refused the check (403) on 2026-10-17', '10:31 UTC · 0 records'), E('play_circle', 'var(--md-sys-color-on-surface-variant)', 'Run 4 started, manual', '10:22 UTC · Run 3 stays current')],
+      partial: [E('verified', 'var(--status-success)', 'Verified on 2 public gateways', '11:51 UTC · manifest'), E('publish', 'var(--md-sys-color-on-surface-variant)', 'Published Run 4 with 7 of 8 sources', '11:43 UTC'), E('error', 'var(--status-danger)', 'Comptroller fetch failed after 3 retries', '10:59 UTC · HTTP 503 · Run 3 records carried over'), E('play_circle', 'var(--md-sys-color-on-surface-variant)', 'Run 4 started, manual', '10:22 UTC')],
+      ratelimited: [E('hourglass_top', 'var(--status-info)', 'Gateway check rate-limited, retrying', 'Now · attempt 2 of 3'), E('publish', 'var(--md-sys-color-on-surface-variant)', 'Published manifest, 13 artifacts', '11:43 UTC · new manifest CID, linked to Run 2'), E('block', 'var(--status-danger)', 'BBB: Blocked · bbb.org refused the check (403) on 2026-10-17', '10:31 UTC · 0 records'), E('play_circle', 'var(--md-sys-color-on-surface-variant)', 'Run 3 started, manual', '10:22 UTC')],
+      failed: [E('error', 'var(--status-danger)', 'Publish failed: IPFS pin timed out', '11:41 UTC · nothing published'), E('check_circle', 'var(--status-success)', 'Derive finished', '11:38 UTC'), E('check_circle', 'var(--status-success)', 'All sources fetched except BBB', '11:05 UTC'), E('play_circle', 'var(--md-sys-color-on-surface-variant)', 'Run 4 started, manual', '10:22 UTC')],
+      stale: [E('schedule', 'var(--status-warning)', 'No run for 9 days', 'Freshness window is 8 days'), E('verified', 'var(--status-success)', 'Run 3 verified on 2 public gateways', 'Oct 17, 11:51 UTC'), E('publish', 'var(--md-sys-color-on-surface-variant)', 'Published manifest, 13 artifacts', 'Oct 17, 11:43 UTC')],
+      empty: []
+    }[st];
+    if (older) events.splice(0, events.length, E('verified', 'var(--status-success)', 'Verified on 2 public gateways', RM[vr].date + ' ' + clock(RM[vr].base, 91) + ' UTC · manifest'), E('publish', 'var(--md-sys-color-on-surface-variant)', 'Published manifest ' + RM[vr].cid, RM[vr].date + ' ' + clock(RM[vr].base, 83) + ' UTC · new manifest CID'), E('check_circle', 'var(--status-success)', 'Derive finished', RM[vr].date + ' ' + clock(RM[vr].base, 78) + ' UTC'), E('play_arrow', 'var(--md-sys-color-on-surface-variant)', 'Run ' + vr + ' started', RM[vr].date + ' ' + clock(RM[vr].base, 2) + ' UTC'));
+    // Sync card
+    const SY = {
+      completed: ['atlas-pill atlas-pill--success', 'cloud_done', 'Fresh', 'Last sync', '2026-10-17 11:43 UTC · Run 3', 'Next sync', 'None · scheduler off by default', 'Start run', 'play_arrow', '', 'Run 3 · Oct 17'],
+      running: ['atlas-pill atlas-pill--info', 'sync', 'Run 4 · ' + runPct + '%', 'Started', '2026-10-25 10:22 UTC · ' + this.fmt(now) + ' now', 'Current data', 'Run 3 until Run 4 publishes', 'Stop run', 'stop', '', 'Run 4 running · ' + runPct + '%'],
+      partial: ['atlas-pill atlas-pill--warning', 'warning', 'Published with 1 failure', 'Last sync', '2026-10-25 11:43 UTC · Run 4', 'Failed', 'TX Comptroller businesses, Run 3 records carried over', 'Retry Comptroller', 'refresh', '', 'Synced · Run 4 · 1 source failed'],
+      stale: ['atlas-pill atlas-pill--warning', 'schedule', 'Stale · 9 days', 'Last sync', '2026-10-17 11:43 UTC · 9 days ago · Run 3', 'Freshness', 'Past the 8-day window', 'Start run', 'play_arrow', '', 'Stale · synced 9 days ago'],
+      ratelimited: ['atlas-pill atlas-pill--info', 'hourglass_top', 'Verifying · retry in ' + s.retry + ' s', 'Last sync', '2026-10-17 11:43 UTC · Run 3', 'Gateway check', 'Rate-limited, attempt 2 of 3', 'Retry now', 'refresh', '', 'Synced · verifying'],
+      failed: ['atlas-pill atlas-pill--danger', 'error', 'Run 4 failed', 'Failed at', '2026-10-25 11:41 UTC · Publish', 'Current data', 'Run 3, unchanged', 'Retry publish', 'refresh', 'Open log', 'Run 4 failed · Run 3 current'],
+      empty: ['atlas-pill atlas-pill--unavailable', 'cloud_off', 'Never synced', 'Last sync', 'None', 'Sources', '8 configured · 0 loaded', 'Start first run', 'play_arrow', '', 'No data yet']
+    }[stNow];
+    const topCls = { completed: 'atlas-pill atlas-pill--success', running: 'atlas-pill atlas-pill--info', partial: 'atlas-pill atlas-pill--warning', stale: 'atlas-pill atlas-pill--warning', ratelimited: 'atlas-pill atlas-pill--info', failed: 'atlas-pill atlas-pill--danger', empty: 'atlas-pill atlas-pill--unavailable' }[stNow];
+    const BN = {
+      running: ['atlas-banner atlas-banner--info', 'status', 'sync', 'Run 4 is running.', 'Explore, Search and SQL keep using Run 3 until Run 4 publishes a new manifest.'],
+      partial: ['atlas-banner atlas-banner--warning', 'status', 'warning', 'Run 4 published 7 of 8 sources.', 'Comptroller businesses failed; its Run 3 records carry over and are labelled “carried over” wherever they show.'],
+      stale: ['atlas-banner atlas-banner--warning', 'status', 'schedule', 'Data is 9 days old.', 'Run 3 is past the 8-day freshness window. Values still show; each count keeps its own date. Start a run to refresh.'],
+      ratelimited: ['atlas-banner atlas-banner--info', 'status', 'hourglass_top', 'Gateway check is waiting.', 'A public gateway rate-limited the check. Retrying in ' + s.retry + ' s (attempt 2 of 3). Run 3 is published; only verification is pending.'],
+      failed: ['atlas-banner atlas-banner--error', 'alert', 'error', 'Run 4 failed at Publish.', 'Nothing was published, so Explore and Search keep using Run 3. Retry publishes the same checked data again.']
+    }[stNow];
+    const opts = [['completed', 'Completed', 'check_circle', 'var(--status-success)'], ['running', 'Running', 'sync', 'var(--status-info)'], ['partial', 'Partial', 'warning', 'var(--status-warning)'], ['stale', 'Stale', 'schedule', 'var(--status-warning)'], ['ratelimited', 'Rate-limited', 'hourglass_top', 'var(--status-info)'], ['failed', 'Failed', 'error', 'var(--status-danger)'], ['empty', 'No runs', 'cloud_off', 'var(--status-unavailable)']];
+    const mainAct = { completed: () => this.startSim(), stale: () => this.startSim(), empty: () => this.startSim(), running: () => { this.setSt('completed'); this.say('Run 4 stopped. Nothing was published; Run 3 stays current.'); }, partial: () => { this.setSt('completed'); this.say('Comptroller fetch retried and loaded (prototype).'); }, ratelimited: () => { this.setSt('completed'); this.say('Verified on 2 public gateways (prototype).'); }, failed: () => { this.setSt('completed'); this.say('Publish retried and succeeded (prototype).'); } }[stNow];
+    // History
+    const n = Math.min(3, Math.max(1, vr || 3)), R = this.RUNS[n];
+    const run4 = { running: ['Run 4', 'sync', 'var(--status-info)', 'var(--status-info-container)', 'running'], partial: ['Run 4', 'warning', 'var(--status-warning)', 'var(--status-warning-container)', 'partial'], failed: ['Run 4', 'error', 'var(--status-danger)', 'var(--status-danger-container)', 'failed'] }[st];
+    const xs = this.props.device === 'mobile' ? { 1: 48, 2: 125, 3: 205, 4: 282 } : { 1: 12, 2: 150, 3: 340, 4: 470 }, dates = { 1: 'Oct 1', 2: 'Oct 8', 3: 'Oct 17', 4: 'Oct 25' };
+    const hist = [1, 2, 3].map((i) => ({ x: xs[i], label: 'Run ' + i + (i === 3 && !run4 ? ' · current' : ''), date: dates[i], icon: i === 3 && st === 'stale' ? 'schedule' : 'check_circle', bg: n === i ? 'var(--md-sys-color-primary)' : 'var(--status-success-container)', c: n === i ? 'var(--md-sys-color-on-primary)' : 'var(--status-success)', ring: n === i ? '0 0 0 4px var(--md-sys-color-primary-container)' : 'none', on: String(n === i), off: false, pick: () => this.setState({ run: i }), aria: 'Run ' + i + ', ' + dates[i] + ', completed. Show its changes' }));
+    if (run4) hist.push({ x: xs[4] + 20, label: run4[0] + ' · ' + run4[4], date: dates[4], icon: run4[1], bg: run4[3], c: run4[2], ring: 'none', on: 'false', off: true, pick: () => {}, aria: 'Run 4, ' + run4[4] + '. Changes show once it publishes' });
+    const tot = R.a + R.c + R.r, f = (v) => v.toLocaleString('en-US');
+    const mix = [['Added', R.a, 'var(--chg-add)', '+'], ['Changed', R.c, 'var(--chg-mod)', '~'], ['Removed', R.r, 'var(--chg-del)', '−']];
+    const maxChg = Math.max.apply(null, R.rows.map((r) => r.a + r.c + r.r)) || 1;
+    const srcChg = R.rows.map((r) => { const t = r.a + r.c + r.r;
+      const segs = [[r.a, 'var(--chg-add)'], [r.c, 'var(--chg-mod)'], [r.r, 'var(--chg-del)']].filter((x) => x[0] > 0).map((x) => ({ w: Math.max(0.6, x[0] / maxChg * 100).toFixed(2), c: x[1] }));
+      const blocked = r.name === 'BBB ratings';
+      return { name: r.name, records: blocked ? '0 · blocked' : r.records, segs: segs, none: t === 0, noneText: blocked ? 'Blocked, nothing fetched' : n === 2 && r.name === 'TX Comptroller businesses' ? 'Carried over from Run 1' : 'No changes', nums: t === 0 ? '—' : '+' + f(r.a) + ' ~' + f(r.c) + ' −' + f(r.r), aria: r.name + ': ' + f(r.a) + ' added, ' + f(r.c) + ' changed, ' + f(r.r) + ' removed' }; });
+    const flowRun = older ? 'Run ' + vr + ' · ' + RM[vr].date : { completed: 'Run 3 · Oct 17', stale: 'Run 3 · Oct 17', ratelimited: 'Run 3 · Oct 17', running: 'Run 4 · in progress', partial: 'Run 4 · Oct 25', failed: 'Run 4 · Oct 25', empty: 'no runs yet' }[st];
+    const totalDur = older ? '1 h 29 m · ' + clock(RM[vr].base, 2) + '–' + clock(RM[vr].base, 91) + ' UTC' : { completed: '1 h 29 m', stale: '1 h 29 m', ratelimited: 'publish 11:43, verifying', running: this.fmt(now) + ' so far', partial: '1 h 29 m', failed: 'stopped at 11:41', empty: '' }[st];
+    return { compareHref: ({ mobile: 'RunsCompare390.dc.html', tablet: 'RunsCompare768.dc.html' })[this.props.device ?? 'desktop'] || 'RunsCompare1440.dc.html',
+      rootClass: (this.props.motion === 'reduced' ? 'motion-reduced' : ''),
+      sayCounty: () => this.say('Travis County, TX is the only live county. Others show as Coming soon.'),
+      topPillCls: topCls, topPillIcon: SY[1], topPillText: SY[10],
+      syncPillCls: SY[0], syncIcon: SY[1], syncPill: SY[2], kv1k: SY[3], kv1v: SY[4], kv2k: SY[5], kv2v: SY[6], rollPct: stNow === 'empty' ? 'None yet' : (stNow === 'partial' ? '99.4% of roll · Run 4' : '99.4% of roll · 410,402 of 412,860 parcels'), mainLabel: SY[7], mainIcon: SY[8], mainAct: () => this.queueCmd(SY[7], mainAct),
+      cmdOn: !!s.cmd, cmdCancel: !!s.cmd && s.cmd.phase !== 'ack', cancelCmd: () => { clearTimeout(this.ct); const was = s.cmd; this.setState({ cmd: null }); this.say('Cancel sent for ' + (was ? was.id : 'the command') + '. The host skips it if it has not started.'); },
+      cmdCls: !s.cmd ? '' : { queued: 'atlas-banner atlas-banner--info', ack: 'atlas-banner atlas-banner--success', offline: 'atlas-banner atlas-banner--warning' }[s.cmd.phase],
+      cmdIcon: !s.cmd ? '' : { queued: 'schedule_send', ack: 'task_alt', offline: 'cloud_off' }[s.cmd.phase],
+      cmdTitle: !s.cmd ? '' : { queued: '“' + s.cmd.label + '” queued.', ack: 'Acknowledged.', offline: 'Host offline.' }[s.cmd.phase],
+      cmdText: !s.cmd ? '' : { queued: 'Command ' + s.cmd.id + ' · waiting for the pipeline host to pick it up. It expires after 15 min.', ack: 'The pipeline host picked up “' + s.cmd.label + '” (' + s.cmd.id + ').', offline: 'No answer from the pipeline host after 60 s. Command ' + s.cmd.id + ' expires 15 min after it was sent; start the host, or run it from the pipeline CLI.' }[s.cmd.phase],
+      hostOnStr: String(!s.hostOff), hostOffStr: String(!!s.hostOff), hostOnline: () => this.setState({ hostOff: false }), hostOffline: () => this.setState({ hostOff: true }),
+      isAdmin: !!this.props.admin, isPublic: !this.props.admin, showAlt: !!SY[9] && !!this.props.admin, provIcon: this.props.admin ? 'info' : 'lock', provText: this.props.admin ? 'Runs start by hand. Stale after 8 days (Sample threshold).' : 'Admins start runs from the pipeline. Stale after 8 days (Sample threshold).', altLabel: SY[9], altAct: () => this.say('The full log opens from “Full log” under Latest events.'),
+      stateOpts: opts.map((o) => ({ label: o[1], icon: o[2], c: o[3], on: String(stNow === o[0]), pick: () => { this.setState({ view: 0 }); this.setSt(o[0]); } })),
+      banner: !!BN, bannerCls: BN ? BN[0] : '', bannerRole: BN ? BN[1] : 'status', bannerIcon: BN ? BN[2] : '', bannerTitle: BN ? BN[3] : '', bannerText: BN ? BN[4] : '',
+      flowTitle: 'Pipeline · ' + flowRun, flowSub: st === 'empty' ? '8 sources configured, 5 steps' : '8 sources → check and join → derive → publish → verify · ' + totalDur, flowRun: flowRun,
+      legend: ['done', 'running', 'queued', 'blocked', 'failed'].map((k) => ({ icon: ST[k].icon, c: ST[k].c, label: ST[k].label })),
+      srcSummary: st === 'empty' ? '0 of ' + this.SRC.length : srcDone + ' of ' + this.SRC.length + ' done', sources: sources, stages: stages,
+      arrow0: srcDone >= 5 && st !== 'running' ? 'var(--md-sys-color-on-surface-variant)' : 'var(--md-sys-color-outline-variant)',
+      det: det, isEmpty: st === 'empty', startRun: () => this.startSim(),
+      chartOn: !s.table && st !== 'empty', tableOn2: s.table && st !== 'empty', ganttEmpty: st === 'empty', tableOn: String(s.table), tableLabel: s.table ? 'Show chart' : 'Show as table', toggleTable: () => this.setState({ table: !s.table }),
+      ganttH: ganttH, ganttAria: 'Timeline of ' + flowRun + '. ' + gRows.map((r) => r.name + ' ' + r.statusText).join('; '), ticks: ticks, gRows: gRows, unhover: () => this.setState({ hov: null }),
+      tipOn: !!tip, tip: tip || { x: 0, y: 0, name: '', status: '', range: '', note: '' },
+      nowOn: st === 'running', nowX: Math.round(LX + now * scale), nowLX: Math.round(LX + now * scale - 34), nowLabel: this.fmt(now),
+      events: events, noEvents: events.length === 0,
+      histOn: stNow !== 'empty' && vr !== 4, histEmpty: stNow === 'empty', histPending: vr === 4, cmpOn: stNow !== 'empty' && vr > 1 && vr !== 4,
+      histPendingText: { running: 'Run 4 is still running. Its changes show here once it publishes.', partial: 'Run 4 published 7 of 8 sources (Comptroller carried over). Its change counts are written when Verify finishes (Sample: not drawn).', failed: 'Run 4 published nothing, so there are no changes. Run 3 stays current.' }[stNow] || '',
+      older: older, toLatest: () => this.setState({ view: 0, rm: false }),
+      rmOpen: !!s.rm && !!latest, rmOpenStr: String(!!s.rm), toggleRm: () => { this.setState({ rm: !s.rm, rq: '' }); clearTimeout(this.rqT); this.rqT = setTimeout(() => { if (this.rqIn) this.rqIn.focus(); }, 40); },
+      rmKey: (e) => { if (e && e.key === 'Escape' && s.rm) { e.preventDefault(); this.setState({ rm: false }); } if (e && e.key === 'Enter' && s.rm && e.target === this.rqIn && runShown.length) { e.preventDefault(); this.setState({ view: runShown[0], rm: false, rq: '' }); } },
+      rqRef: (el) => { this.rqIn = el; }, rq: s.rq, onRq: (e) => this.setState({ rq: e && e.target ? e.target.value : '' }), rqNone: runShown.length === 0,
+      rmFoot: latest + ' runs · newest first · times in UTC · Sample',
+      runOpts: runShown.map((i) => { const r = runInfo(i); return { title: 'Run ' + i + (i === latest ? ' · latest' : ''), status: r[0], pill: r[1], icon: r[2], c: r[3], time: r[4], cid: RM[i].cid, on: String(i === vr), sel: i === vr, pick: () => this.setState({ view: i, rm: false, rq: '', sel: 'permits' }) }; }),
+      rselTitle: vr ? 'Run ' + vr + (vr === latest ? ' · latest' : '') : 'No runs yet', rselTime: vi ? vi[4] : 'Start the first run to see it here', rselStatus: vi ? vi[0] : 'Never synced', rselPill: vi ? vi[1] : 'atlas-pill atlas-pill--unavailable', rselIcon: vi ? vi[2] : 'cloud_off', rselC: vi ? vi[3] : 'var(--status-unavailable)',
+      rselAria: vr ? 'Run: Run ' + vr + ', ' + vi[4] + ', ' + vi[0] + '. Change run' : 'No runs yet', hist: hist, run: n, runId: String(n), prevId: String(n === 1 ? 1 : n - 1), prevLabel: R.prevLabel,
+      onScrub: (e) => this.setState({ run: Math.min(3, Math.max(1, parseInt(e.target.value, 10) || 3)) }),
+      totalChg: f(tot), mixAria: 'Run ' + n + ': ' + f(R.a) + ' added, ' + f(R.c) + ' changed, ' + f(R.r) + ' removed',
+      mix: mix.filter((m) => m[1] > 0).map((m) => ({ f: Math.max(m[1] / tot * 100, 1.5).toFixed(2), c: m[2], mk: m[1] / tot > 0.04 ? m[3] : '' })),
+      mixLegend: mix.map((m) => ({ label: m[0], v: f(m[1]), c: m[2], mk: m[3] })),
+      srcChg: srcChg, histNote: R.note, cid: R.cid, prevCid: R.prevCid, copied: () => this.say('Copied to the clipboard (Sample).'),
+      toastOn: !!s.toast, toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

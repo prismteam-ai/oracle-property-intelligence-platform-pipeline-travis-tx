@@ -1,0 +1,50 @@
+/* CID display (A-03 T055): Atlas § 3 mono face; the copy button is an icon button with the
+   48 × 48 touch target (§ 14.1) and the state-layer hover of the Atlas components. */
+
+.cid {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  vertical-align: middle;
+}
+
+.text {
+  font-family: var(--md-ref-typeface-mono);
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: none;
+  width: var(--space-9);
+  min-width: var(--space-9);
+  height: var(--space-9);
+  min-height: var(--space-9);
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  /* ERR-12: a <button> does not inherit the page font (UA default Arial 13.33px); take the
+     surrounding Atlas typescale (a tokens.css font) instead. */
+  font: inherit;
+}
+
+.copy:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) calc(var(--md-sys-state-hover-opacity) * 100%),
+    transparent
+  );
+}
+
+.copy:active {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) calc(var(--md-sys-state-pressed-opacity) * 100%),
+    transparent
+  );
+}
