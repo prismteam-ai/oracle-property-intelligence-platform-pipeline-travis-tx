@@ -1,0 +1,33 @@
+name: R2 credentials
+description: Derive R2's S3 credentials from the Cloudflare API token and expose them to later steps.
+
+inputs:
+  api-token:
+    description: Cloudflare API token with R2 access
+    required: true
+  account-id:
+    description: Cloudflare account ID
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ inputs.api-token }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ inputs.account-id }}
+      run: |
+        token_id="$(curl --silent --fail --max-time 30 \
+          --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+          "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/tokens/verify" | jq -r .result.id)"
+        secret="$(printf %s "${CLOUDFLARE_API_TOKEN}" | sha256sum | cut -d' ' -f1)"
+        echo "::add-mask::${token_id}"
+        echo "::add-mask::${secret}"
+        {
+          echo "AWS_ACCESS_KEY_ID=${token_id}"
+          echo "AWS_SECRET_ACCESS_KEY=${secret}"
+          echo "AWS_DEFAULT_REGION=auto"
+          echo "AWS_REQUEST_CHECKSUM_CALCULATION=when_required"
+          echo "AWS_RESPONSE_CHECKSUM_VALIDATION=when_required"
+          echo "R2_ENDPOINT=https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com"
+        } >> "$GITHUB_ENV"

@@ -1,0 +1,60 @@
+name: explorer
+
+on:
+  push:
+    branches: [travis-pipeline]
+    paths:
+      - packages/explorer/**
+      - packages/query-core/**
+      - package-lock.json
+      - .github/workflows/explorer.yml
+  workflow_dispatch:
+
+concurrency:
+  group: explorer-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  EXPLORER_URL: https://travis-oracle-explorer.curiousily.workers.dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      - name: Test the query tools and the explorer
+        run: |
+          npm test -w @travis-oracle/query-core
+          npm test -w @travis-oracle/explorer
+          npm run typecheck -w @travis-oracle/explorer
+
+      - name: Build and deploy the Worker
+        working-directory: packages/explorer
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npm run build
+          npx wrangler deploy
+
+      - name: Play through every page of the deployed explorer
+        working-directory: packages/explorer
+        run: |
+          npx playwright install --with-deps chromium
+          npm run e2e
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explorer-playthrough
+          path: packages/explorer/test-results

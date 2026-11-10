@@ -1,0 +1,495 @@
+{
+  "publication": {
+    "buildId": "20261027T163102Z",
+    "publishedAt": "2026-10-27T16:33:46.597Z",
+    "manifestCid": "bafkreifwhzunzmldqagvi3ww6kz7su2gnniunxqjqxf625ztrfcsivofou",
+    "rootCid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreifwhzunzmldqagvi3ww6kz7su2gnniunxqjqxf625ztrfcsivofou"
+    }
+  },
+  "manifest": {
+    "schema": "travis-oracle.artifact-manifest.v1",
+    "build_id": "20261027T163102Z",
+    "created_at": "2026-10-27T16:33:45.077Z",
+    "root": {
+      "name": "/",
+      "cid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4",
+      "kind": "directory",
+      "codec": "dag-pb",
+      "size": 170896153
+    },
+    "objects": [
+      {
+        "name": "build.json",
+        "cid": "bafkreihzkv5lpybfwdjvdewa2g46wjyxkfemdsqdqltcimhuh6nviz6xmi",
+        "kind": "file",
+        "codec": "raw",
+        "size": 2506,
+        "sha256": "f9557ab7e025b0d35192c0d1b9eb27175148c1ca0382e62430f43f9b5467d762"
+      },
+      {
+        "name": "coverage.json",
+        "cid": "bafkreihb3bd6rmbjjk5lowcftsl5xo22r4xm6xrxnkmx5bj42ylmjwytay",
+        "kind": "file",
+        "codec": "raw",
+        "size": 2871,
+        "sha256": "e1d847e8b0294abab758459c97dbbb5a8f2ecf5e376a997e853cd616c4db1306"
+      },
+      {
+        "name": "runs.json",
+        "cid": "bafkreibprhm2t5svfcvvpjvt7a3epamlv6vkk5ckxmipia4eluqpzntrha",
+        "kind": "file",
+        "codec": "raw",
+        "size": 27072,
+        "sha256": "2f89d9a9f65528ab57a6b3f83647818bafaaa5744abb10f403845d20fcb67138"
+      },
+      {
+        "name": "samples",
+        "cid": "bafybeibhb2sef3kequmbjirpfqknmnflccotkpycqg7bndiqqz6p45tsni",
+        "kind": "directory",
+        "codec": "dag-pb",
+        "size": 32478
+      },
+      {
+        "name": "samples/aged-roofs.csv",
+        "cid": "bafkreid2not6w2xvs2pqi5akx4znolrdzogjfvvmckecqmuadbvsduma4e",
+        "kind": "file",
+        "codec": "raw",
+        "size": 13010,
+        "sha256": "7a6ba7eb6af5969f04740abf32d72e23cb8c92d6ac1288283280186b21d180e1"
+      },
+      {
+        "name": "samples/long-open-roofing-permits.csv",
+        "cid": "bafkreigubibjxxkeompde576445bo2iz6jyhuvey6zhexa673xzjvvqhca",
+        "kind": "file",
+        "codec": "raw",
+        "size": 19468,
+        "sha256": "d40a029bdd44731e3277fee73a176919f2707a5498f64e4b83dfddf29ad60710"
+      },
+      {
+        "name": "sources.json",
+        "cid": "bafkreifdf364gw3g74rdt6szrnw7lyr3mewhj2id7o45h3ewkaryqppzk4",
+        "kind": "file",
+        "codec": "raw",
+        "size": 8720,
+        "sha256": "a32efdc35b66ff2239fa598b6df5e23b612c74e903fbb9d3ec965023883df957"
+      },
+      {
+        "name": "tables",
+        "cid": "bafybeievgifpf34uwzvq4afalkjrkxayik3ubiovk525rcfbb2v2ggn2p4",
+        "kind": "directory",
+        "codec": "dag-pb",
+        "size": 170822506
+      },
+      {
+        "name": "tables/businesses.parquet",
+        "cid": "bafybeiaz6ukgii2ped2dt2oia3a5czaxl73bx7sa45gvtioneofhoj7bsy",
+        "kind": "file",
+        "codec": "dag-pb",
+        "size": 2710364,
+        "sha256": "e2a5a8869bea19013f0c68f7ccc1bc41294878ca93860ca2a3222c7aaa924dae"
+      },
+      {
+        "name": "tables/contractors.parquet",
+        "cid": "bafybeidhtat2d62vfds6pgotrugjlyh2txdbeqrld6hkx5zb7y5l3uyx5a",
+        "kind": "file",
+        "codec": "dag-pb",
+        "size": 1809477,
+        "sha256": "c08331cd64f71751da088f4b36e6281dbd6fc5f7f34637b61a027a1d71f9ad47"
+      },
+      {
+        "name": "tables/hail_events.parquet",
+        "cid": "bafkreicc2vr3ssq5jgkpelosrmzdl3ktsiq3jm24fi67ltaavwocbnuau4",
+        "kind": "file",
+        "codec": "raw",
+        "size": 17502,
+        "sha256": "42d563b94a1d4994f22dd28b3235ed539221b4b35c2a3df5cc00ad9c20b680a7"
+      },
+      {
+        "name": "tables/owners.parquet",
+        "cid": "bafybeif6onuw3vshyfnfu5nffoqavrkue7bwry2c2yveve26dug3qp2kky",
+        "kind": "file",
+        "codec": "dag-pb",
+        "size": 18482082,
+        "sha256": "a31ef695d9af39d89ded7310a814a797d97ad35daeec418813edcc264f2ee13d"
+      },
+      {
+        "name": "tables/permits.parquet",
+        "cid": "bafybeieuxrwtpho6u6jlf2kcenew6tmohfzmi4af5gupakia6xk55cepki",
+        "kind": "file",
+        "codec": "dag-pb",
+        "size": 107711431,
+        "sha256": "e285944402483b9ac8a5a7c19fa3ae7657932784fdea5e669bc93343c8ec250e"
+      },
+      {
+        "name": "tables/properties.parquet",
+        "cid": "bafybeifjbpb4tbyiyw44oo2n7ccoqupqcghcuz6mt7hvsabr2mem4agey4",
+        "kind": "file",
+        "codec": "dag-pb",
+        "size": 37524718,
+        "sha256": "a961c42aa52d4b365a30dd1b35da2b4333dc97678b505054007267992db8aa42"
+      },
+      {
+        "name": "tables/roofing_permits.parquet",
+        "cid": "bafybeiduiazecx5xoppirvdp62p7yezdnaki7sswrekmqvsrfsejijgjq4",
+        "kind": "file",
+        "codec": "dag-pb",
+        "size": 2566932,
+        "sha256": "e54edd954fd66d5009cf38d3a623013902be257e7b5d2c5df3bc94370ee69c3f"
+      }
+    ],
+    "car": {
+      "name": "travis-oracle-20261027T163102Z.car",
+      "size": 170956314,
+      "sha256": "e8e18d0b0d5613206e8d4696aa5a2a88cf1950b20fd79640c792f53cb9c47bbc",
+      "root": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4",
+      "url": "https://github.com/curiousily/oracle-property-intelligence-platform-pipeline-travis-tx/releases/download/travis-oracle-20261027T163102Z/travis-oracle-20261027T163102Z.car"
+    },
+    "dag": {
+      "cid_version": 1,
+      "multibase": "base32",
+      "hash": "sha2-256",
+      "chunker": "fixed-size, 262144 bytes",
+      "layout": "balanced, 174 links per node",
+      "raw_leaves": true
+    },
+    "pins": [
+      {
+        "provider": "filebase",
+        "cid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4"
+      },
+      {
+        "provider": "pinata",
+        "cid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4"
+      }
+    ],
+    "previous": {
+      "manifest_cid": "bafkreigc7okkwe64r66ow24sdnfhhbmuxiqdmfjdrblrazts7thkfv76vi",
+      "root_cid": "bafybeiaxibexpx4kk7jymlaqs33qtxu4m3qxky5heq2mb52xw7oz3sftmi"
+    }
+  },
+  "verification": [
+    {
+      "name": "/",
+      "cid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 335,
+      "checkedAt": "2026-10-27T16:33:47.243Z"
+    },
+    {
+      "name": "/",
+      "cid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 335,
+      "checkedAt": "2026-10-27T16:33:47.852Z"
+    },
+    {
+      "name": "build.json",
+      "cid": "bafkreihzkv5lpybfwdjvdewa2g46wjyxkfemdsqdqltcimhuh6nviz6xmi",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2506,
+      "checkedAt": "2026-10-27T16:33:48.429Z"
+    },
+    {
+      "name": "build.json",
+      "cid": "bafkreihzkv5lpybfwdjvdewa2g46wjyxkfemdsqdqltcimhuh6nviz6xmi",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2506,
+      "checkedAt": "2026-10-27T16:34:45.884Z"
+    },
+    {
+      "name": "coverage.json",
+      "cid": "bafkreihb3bd6rmbjjk5lowcftsl5xo22r4xm6xrxnkmx5bj42ylmjwytay",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2871,
+      "checkedAt": "2026-10-27T16:34:46.488Z"
+    },
+    {
+      "name": "coverage.json",
+      "cid": "bafkreihb3bd6rmbjjk5lowcftsl5xo22r4xm6xrxnkmx5bj42ylmjwytay",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2871,
+      "checkedAt": "2026-10-27T16:34:46.983Z"
+    },
+    {
+      "name": "runs.json",
+      "cid": "bafkreibprhm2t5svfcvvpjvt7a3epamlv6vkk5ckxmipia4eluqpzntrha",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 27072,
+      "checkedAt": "2026-10-27T16:34:47.425Z"
+    },
+    {
+      "name": "runs.json",
+      "cid": "bafkreibprhm2t5svfcvvpjvt7a3epamlv6vkk5ckxmipia4eluqpzntrha",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 27072,
+      "checkedAt": "2026-10-27T16:34:48.058Z"
+    },
+    {
+      "name": "samples",
+      "cid": "bafybeibhb2sef3kequmbjirpfqknmnflccotkpycqg7bndiqqz6p45tsni",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 138,
+      "checkedAt": "2026-10-27T16:34:48.321Z"
+    },
+    {
+      "name": "samples",
+      "cid": "bafybeibhb2sef3kequmbjirpfqknmnflccotkpycqg7bndiqqz6p45tsni",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 138,
+      "checkedAt": "2026-10-27T16:34:48.393Z"
+    },
+    {
+      "name": "samples/aged-roofs.csv",
+      "cid": "bafkreid2not6w2xvs2pqi5akx4znolrdzogjfvvmckecqmuadbvsduma4e",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 13010,
+      "checkedAt": "2026-10-27T16:34:48.598Z"
+    },
+    {
+      "name": "samples/aged-roofs.csv",
+      "cid": "bafkreid2not6w2xvs2pqi5akx4znolrdzogjfvvmckecqmuadbvsduma4e",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 13010,
+      "checkedAt": "2026-10-27T16:34:48.677Z"
+    },
+    {
+      "name": "samples/long-open-roofing-permits.csv",
+      "cid": "bafkreigubibjxxkeompde576445bo2iz6jyhuvey6zhexa673xzjvvqhca",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 19468,
+      "checkedAt": "2026-10-27T16:34:48.866Z"
+    },
+    {
+      "name": "samples/long-open-roofing-permits.csv",
+      "cid": "bafkreigubibjxxkeompde576445bo2iz6jyhuvey6zhexa673xzjvvqhca",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 19468,
+      "checkedAt": "2026-10-27T16:34:48.895Z"
+    },
+    {
+      "name": "sources.json",
+      "cid": "bafkreifdf364gw3g74rdt6szrnw7lyr3mewhj2id7o45h3ewkaryqppzk4",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 8720,
+      "checkedAt": "2026-10-27T16:34:49.093Z"
+    },
+    {
+      "name": "sources.json",
+      "cid": "bafkreifdf364gw3g74rdt6szrnw7lyr3mewhj2id7o45h3ewkaryqppzk4",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 8720,
+      "checkedAt": "2026-10-27T16:34:49.582Z"
+    },
+    {
+      "name": "tables",
+      "cid": "bafybeievgifpf34uwzvq4afalkjrkxayik3ubiovk525rcfbb2v2ggn2p4",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 457,
+      "checkedAt": "2026-10-27T16:34:49.926Z"
+    },
+    {
+      "name": "tables",
+      "cid": "bafybeievgifpf34uwzvq4afalkjrkxayik3ubiovk525rcfbb2v2ggn2p4",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 457,
+      "checkedAt": "2026-10-27T16:34:50.396Z"
+    },
+    {
+      "name": "tables/businesses.parquet",
+      "cid": "bafybeiaz6ukgii2ped2dt2oia3a5czaxl73bx7sa45gvtioneofhoj7bsy",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2710364,
+      "checkedAt": "2026-10-27T16:34:50.572Z"
+    },
+    {
+      "name": "tables/businesses.parquet",
+      "cid": "bafybeiaz6ukgii2ped2dt2oia3a5czaxl73bx7sa45gvtioneofhoj7bsy",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2710364,
+      "checkedAt": "2026-10-27T16:34:53.046Z"
+    },
+    {
+      "name": "tables/contractors.parquet",
+      "cid": "bafybeidhtat2d62vfds6pgotrugjlyh2txdbeqrld6hkx5zb7y5l3uyx5a",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 1809477,
+      "checkedAt": "2026-10-27T16:34:53.819Z"
+    },
+    {
+      "name": "tables/contractors.parquet",
+      "cid": "bafybeidhtat2d62vfds6pgotrugjlyh2txdbeqrld6hkx5zb7y5l3uyx5a",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 1809477,
+      "checkedAt": "2026-10-27T16:34:55.305Z"
+    },
+    {
+      "name": "tables/hail_events.parquet",
+      "cid": "bafkreicc2vr3ssq5jgkpelosrmzdl3ktsiq3jm24fi67ltaavwocbnuau4",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 17502,
+      "checkedAt": "2026-10-27T16:34:55.941Z"
+    },
+    {
+      "name": "tables/hail_events.parquet",
+      "cid": "bafkreicc2vr3ssq5jgkpelosrmzdl3ktsiq3jm24fi67ltaavwocbnuau4",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 17502,
+      "checkedAt": "2026-10-27T16:34:56.545Z"
+    },
+    {
+      "name": "tables/owners.parquet",
+      "cid": "bafybeif6onuw3vshyfnfu5nffoqavrkue7bwry2c2yveve26dug3qp2kky",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 18482082,
+      "checkedAt": "2026-10-27T16:34:57.309Z"
+    },
+    {
+      "name": "tables/owners.parquet",
+      "cid": "bafybeif6onuw3vshyfnfu5nffoqavrkue7bwry2c2yveve26dug3qp2kky",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 18482082,
+      "checkedAt": "2026-10-27T16:35:00.381Z"
+    },
+    {
+      "name": "tables/permits.parquet",
+      "cid": "bafybeieuxrwtpho6u6jlf2kcenew6tmohfzmi4af5gupakia6xk55cepki",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 107711431,
+      "checkedAt": "2026-10-27T16:35:03.385Z"
+    },
+    {
+      "name": "tables/permits.parquet",
+      "cid": "bafybeieuxrwtpho6u6jlf2kcenew6tmohfzmi4af5gupakia6xk55cepki",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 107711431,
+      "checkedAt": "2026-10-27T16:35:10.317Z"
+    },
+    {
+      "name": "tables/properties.parquet",
+      "cid": "bafybeifjbpb4tbyiyw44oo2n7ccoqupqcghcuz6mt7hvsabr2mem4agey4",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 37524718,
+      "checkedAt": "2026-10-27T16:35:28.283Z"
+    },
+    {
+      "name": "tables/properties.parquet",
+      "cid": "bafybeifjbpb4tbyiyw44oo2n7ccoqupqcghcuz6mt7hvsabr2mem4agey4",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 37524718,
+      "checkedAt": "2026-10-27T16:35:35.027Z"
+    },
+    {
+      "name": "tables/roofing_permits.parquet",
+      "cid": "bafybeiduiazecx5xoppirvdp62p7yezdnaki7sswrekmqvsrfsejijgjq4",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2566932,
+      "checkedAt": "2026-10-27T16:35:42.996Z"
+    },
+    {
+      "name": "tables/roofing_permits.parquet",
+      "cid": "bafybeiduiazecx5xoppirvdp62p7yezdnaki7sswrekmqvsrfsejijgjq4",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 2566932,
+      "checkedAt": "2026-10-27T16:35:44.918Z"
+    },
+    {
+      "name": "manifest.json",
+      "cid": "bafkreifwhzunzmldqagvi3ww6kz7su2gnniunxqjqxf625ztrfcsivofou",
+      "gateway": "https://ipfs.orbitor.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 5390,
+      "checkedAt": "2026-10-27T16:35:46.345Z"
+    },
+    {
+      "name": "manifest.json",
+      "cid": "bafkreifwhzunzmldqagvi3ww6kz7su2gnniunxqjqxf625ztrfcsivofou",
+      "gateway": "https://gw.ipfs-lens.dev",
+      "status": "verified",
+      "httpStatus": 200,
+      "bytes": 5390,
+      "checkedAt": "2026-10-27T16:35:46.816Z"
+    }
+  ],
+  "unpinned": [
+    {
+      "provider": "pinata",
+      "label": "travis-oracle-20261027T080415Z"
+    },
+    {
+      "provider": "pinata",
+      "label": "travis-oracle-20261027T082005Z"
+    },
+    {
+      "provider": "pinata",
+      "label": "travis-oracle-20261027T100024Z"
+    }
+  ]
+}

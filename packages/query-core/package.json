@@ -1,0 +1,18 @@
+{
+  "name": "@travis-oracle/query-core",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@duckdb/node-api": "^2.0.0-r.1"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

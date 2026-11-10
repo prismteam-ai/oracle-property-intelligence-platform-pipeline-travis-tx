@@ -1,0 +1,82 @@
+[
+  {
+    "buildId": "20261027T080415Z",
+    "publishedAt": "2026-10-27T08:05:27.364Z",
+    "manifestCid": "bafkreibpvo7cuvyxiacbstqzu263n2h3zz4knlfjgi532pzssw2u2xgjy4",
+    "rootCid": "bafybeifc26ersb2yyvogk74ismsebs5vqw67r7jzzgwxj4shapy2mkzkee",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreibpvo7cuvyxiacbstqzu263n2h3zz4knlfjgi532pzssw2u2xgjy4"
+    }
+  },
+  {
+    "buildId": "20261027T082005Z",
+    "publishedAt": "2026-10-27T08:21:33.509Z",
+    "manifestCid": "bafkreibzo5l57bgzkwtypxkbcg72n3mez6gcdjaon65lnsfxywptt3dqm4",
+    "rootCid": "bafybeigw2tcsb4aa3br7622u3oqxbk3trcvxc2iza6gkohnltefkt5ewwq",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreibzo5l57bgzkwtypxkbcg72n3mez6gcdjaon65lnsfxywptt3dqm4"
+    }
+  },
+  {
+    "buildId": "20261027T100024Z",
+    "publishedAt": "2026-10-27T10:01:55.286Z",
+    "manifestCid": "bafkreifvwkazir7b4qmewtv5q6nsxkoxbq23f6usshshkbbmgfju3kdypm",
+    "rootCid": "bafybeicoluracttpsh4wv23hwamtxrnse2ttwute2fmw45j7xffp47nwgi",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreifvwkazir7b4qmewtv5q6nsxkoxbq23f6usshshkbbmgfju3kdypm"
+    }
+  },
+  {
+    "buildId": "20261027T145411Z",
+    "publishedAt": "2026-10-27T14:56:43.853Z",
+    "manifestCid": "bafkreiddt3p62u3px2iclvgtzritjisx2f74cu3tkwethx3ccnzdh46emu",
+    "rootCid": "bafybeiewr675hsu73dwtwvnr2rmo3ppcanzkmwwmaj4w2uetgusxz2bqq4",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreiddt3p62u3px2iclvgtzritjisx2f74cu3tkwethx3ccnzdh46emu"
+    }
+  },
+  {
+    "buildId": "20261027T154926Z",
+    "publishedAt": "2026-10-27T15:52:04.968Z",
+    "manifestCid": "bafkreigc7okkwe64r66ow24sdnfhhbmuxiqdmfjdrblrazts7thkfv76vi",
+    "rootCid": "bafybeiaxibexpx4kk7jymlaqs33qtxu4m3qxky5heq2mb52xw7oz3sftmi",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreigc7okkwe64r66ow24sdnfhhbmuxiqdmfjdrblrazts7thkfv76vi"
+    }
+  },
+  {
+    "buildId": "20261027T163102Z",
+    "publishedAt": "2026-10-27T16:33:46.597Z",
+    "manifestCid": "bafkreifwhzunzmldqagvi3ww6kz7su2gnniunxqjqxf625ztrfcsivofou",
+    "rootCid": "bafybeia4xkvxrgyw4frovgxjzpnd6st7horayv6cuotoc3kizylvouigm4",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreifwhzunzmldqagvi3ww6kz7su2gnniunxqjqxf625ztrfcsivofou"
+    }
+  },
+  {
+    "buildId": "20261103T000743Z",
+    "publishedAt": "2026-11-03T00:10:10.446Z",
+    "manifestCid": "bafkreiaxwdyvcgzd2obbwnbb62if3oi4glv3uc6k7d6stvu4f5wr3ws2b4",
+    "rootCid": "bafybeibodgjxepnboushpxqpuhgt3akib26ghd2irlv5p3gjzmcibod354",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreiaxwdyvcgzd2obbwnbb62if3oi4glv3uc6k7d6stvu4f5wr3ws2b4"
+    }
+  },
+  {
+    "buildId": "20261110T005731Z",
+    "publishedAt": "2026-11-10T01:00:01.742Z",
+    "manifestCid": "bafkreiehcpbkg7yp2dobb24plu5lj2io76mtbbwuebqrhsugtd737jwdti",
+    "rootCid": "bafybeigvigqrkirmc7ksem2g2atm75ckdhxz5tnkqahtxutexhj6sztx3e",
+    "ipns": {
+      "name": "k51qzi5uqu5dkkce5c4ypc8o1xsrybtdhfae3ec2f3nbhz5ht1c4msv89ftm5c",
+      "resolvedCid": "bafkreiehcpbkg7yp2dobb24plu5lj2io76mtbbwuebqrhsugtd737jwdti"
+    }
+  }
+]
