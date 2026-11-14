@@ -1,0 +1,121 @@
+#!/usr/bin/env node
+// Incremental build: start from the previous published snapshot (read by CID from IPFS, or a local
+// run directory), layer a City of Austin permit window on top, and recompute what depends on it.
+// Produces the same tables as the full build, so export/deltas/publish run unchanged. Runs without
+// the multi-GB raw sources, which is what lets the scheduled refresh run on a free CI runner.
+//   - permits: window rows replace their previous versions (same normalization, classifier and
+//     deterministic parcel links as the full build); open durations recomputed as of today
+//   - roof_age: recomputed from all permits
+//   - owners: owner entities and portfolios re-derived from properties (same SQL as the full build)
+//   - contractors: re-aggregated from permits; registry identity carried over by contractor key,
+//     new contractors marked pending_registry_refresh until the next full identity refresh
+// Usage: node src/build/incremental.mjs <out.duckdb> <prev-manifest.json> <window.ndjson>
+//          [--prev-dir <run-dir>] [--gateway https://ipfs.filebase.io] [--hail <recent hail-events.parquet>]
+import { DuckDBInstance } from "@duckdb/node-api";
+import { existsSync, statSync } from "node:fs";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { businessLocationsSql, contractorsCarrySql, hailEventsMergeSql, hailExposureSql, lakewayPermitsSql, linkSql, lit, normalizePermitsSql, normName, openDaysSql, ownerRegionFallbackSql, ownersSql, rawPermitsSql, reclassifySql, roofAgeSql, upsertByKeySql, windowSourceSql } from "./permit-sql.mjs";
+
+const [out, prevManifestPath, windowFile, ...rest] = process.argv.slice(2);
+const opt = (n) => (rest.includes(n) ? rest[rest.indexOf(n) + 1] : null);
+if (!out || !prevManifestPath || !windowFile) {
+  console.error("usage: incremental.mjs <out.duckdb> <prev-manifest.json> <window.ndjson> [--prev-dir d] [--gateway url]");
+  process.exit(2);
+}
+const prev = JSON.parse(await readFile(prevManifestPath, "utf8"));
+const prevDir = opt("--prev-dir");
+const gateway = opt("--gateway") ?? "https://ipfs.filebase.io";
+const receipt = { file: windowFile, ...JSON.parse(await readFile(`${windowFile}.receipt.json`, "utf8")) };
+
+const source = (name) => {
+  if (prevDir && existsSync(join(prevDir, name))) {
+    const p = join(prevDir, name);
+    return lit(statSync(p).isDirectory() ? join(p, "**", "*.parquet") : p);
+  }
+  const objs = prev.objects.filter((o) => o.codec === "file" && (o.name === name || o.name.startsWith(`${name}/`)));
+  if (!objs.length) throw new Error(`previous manifest has no ${name}`);
+  return `[${objs.map((o) => lit(`${gateway}/ipfs/${o.cid}`)).join(", ")}]`;
+};
+
+const db = await DuckDBInstance.create(out);
+const c = await db.connect();
+const step = async (label, sql) => {
+  const t = Date.now();
+  await c.run(sql);
+  console.error(`${label} (${((Date.now() - t) / 1000).toFixed(1)}s)`);
+};
+if (!prevDir) await step("httpfs", "install httpfs; load httpfs");
+
+for (const t of ["properties", "owner_signals", "businesses", "licenses", "contractors"]) {
+  await step(`load ${t}`, `create or replace table ${t} as select * from read_parquet(${source(`tables/${t}.parquet`)})`);
+}
+// Partition files fetched by CID carry no year=/ path, so the partition column may be absent.
+await step("load permits", `create or replace table permits as select * from read_parquet(${source("tables/permits")});
+alter table permits drop column if exists year;
+-- open_days is derived, not published (stable snapshots); recreate it before window rows are merged.
+alter table permits add column if not exists open_days integer;`);
+const before = Number((await c.runAndReadAll("select count(*) as n from permits")).getRowObjectsJson()[0].n);
+// Carried permits get the current classifier and status rules (the window gets them in normalize).
+await step("reclassify carried permits", reclassifySql("permits"));
+
+// Window rows through the same transform as the full build.
+await step("window normalize", rawPermitsSql([windowFile]) + ";\n" + normalizePermitsSql("permits_window"));
+await step("window links", openDaysSql("permits_window") + linkSql("permits_window") + windowSourceSql("permits_window", [receipt]));
+await step("window county + contractor key", `
+alter table permits_window add column county_fips varchar;
+-- ZIP -> county from the existing permits (avoids a census download in CI); linked rows are Travis.
+update permits_window w set county_fips = case when w.prop_id is not null then '48453' else z.county_fips end
+from (select zip, mode(county_fips) as county_fips from permits where zip is not null group by 1) z where z.zip = w.zip;
+update permits_window set county_fips = '48453' where prop_id is not null and county_fips is null;
+alter table permits_window add column contractor_key varchar;
+update permits_window set contractor_key = 'contractor:' || md5(${normName("contractor_company_name")}) where contractor_company_name is not null`);
+const win = (await c.runAndReadAll(`
+  select count(*) as window_rows, count(*) filter (permit_key in (select permit_key from permits)) as updated_existing
+  from permits_window`)).getRowObjectsJson()[0];
+await step("upsert", upsertByKeySql("permits", "permits_window"));
+// City of Lakeway permits (Tyler EnerGov harvest): same columns and rules, upserted by permit_key.
+const lakewayFile = opt("--lakeway");
+await step("permits source_request_json", "alter table permits add column if not exists source_request_json varchar");
+if (lakewayFile) {
+  await step("lakeway normalize", lakewayPermitsSql("lakeway_window", lakewayFile));
+  await step("lakeway links", openDaysSql("lakeway_window") + linkSql("lakeway_window") + `
+-- The portal publishes no coordinates: a linked permit takes its parcel's centroid so radius
+-- queries find it (coordinate source documented in the data contract).
+alter table lakeway_window add column if not exists latitude double;
+alter table lakeway_window add column if not exists longitude double;
+update lakeway_window w set latitude = pr.latitude, longitude = pr.longitude from properties pr where pr.prop_id = w.prop_id;`);
+  await step("lakeway upsert", upsertByKeySql("permits", "lakeway_window"));
+}
+await step("open days (all)", openDaysSql("permits"));
+
+await step("roof_age", roofAgeSql);
+
+// Hail: previous snapshot's reports plus a recent NOAA harvest (newer rows win by event_id).
+const hailRecent = opt("--hail");
+const prevHail = (() => { try { return source("tables/hail_events.parquet"); } catch { return null; } })();
+const hailParts = [prevHail && `select * from read_parquet(${prevHail})`, hailRecent && `select * from read_parquet(${lit(hailRecent)})`].filter(Boolean);
+await step("hail", hailEventsMergeSql(hailParts) + ";\n" + hailExposureSql);
+// Overture places: rebuilt from a fresh extract (--places), else carried from the previous snapshot.
+// Overture releases are monthly and the extract scans S3, so the weekly run normally carries them.
+const placesFile = opt("--places");
+const prevPlaces = (() => { try { return source("tables/business_locations.parquet"); } catch { return null; } })();
+if (placesFile) await step("business_locations", businessLocationsSql(placesFile));
+else if (prevPlaces) await step("business_locations", `create or replace table business_locations as select * from read_parquet(${prevPlaces})`);
+// Older snapshots carried a calendar-dependent years_since_deed; tenure is now computed at query time.
+await step("owner_signals", "alter table owner_signals drop column if exists years_since_deed;\n" + ownerRegionFallbackSql);
+await step("owners", ownersSql + `;
+alter table owner_signals add column if not exists owner_key varchar;
+update owner_signals o set owner_key = po.owner_key from prop_owner po where po.prop_id = o.prop_id`);
+
+await step("contractors", contractorsCarrySql);
+// export.mjs expects the build's list/derived columns.
+await step("shape for export", `
+alter table licenses add column if not exists name_norm varchar;
+update licenses set name_norm = ${normName("business_name")};`);
+
+const after = (await c.runAndReadAll(`select count(*) as permits,
+  count(*) filter (roofing_work in ('roof_replacement','roof_repair') and status_bucket in ('open','expired_unfinaled')) as roofing_open,
+  (select count(*) from contractors where identity_status = 'pending_registry_refresh') as contractors_pending
+  from permits`)).getRowObjectsJson()[0];
+console.log(JSON.stringify({ previous_run: prev.run_id, window_since: receipt.window_since, permits_before: before, ...win, ...after }));
