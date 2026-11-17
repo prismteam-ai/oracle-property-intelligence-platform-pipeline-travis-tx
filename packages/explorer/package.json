@@ -1,0 +1,42 @@
+{
+  "name": "@travis-oracle/explorer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && wrangler deploy",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.worker.json",
+    "e2e": "playwright test",
+    "demo": "tsx demo/record-demo.ts"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "1.33.1-dev57.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@travis-oracle/mcp": "*",
+    "@travis-oracle/query-core": "*",
+    "apache-arrow": "^17.0.0",
+    "maplibre-gl": "^6.16.0",
+    "multiformats": "^14.0.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.65.0",
+    "@cloudflare/workers-types": "^5.20261027.1",
+    "@playwright/test": "^1.64.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "happy-dom": "^21.0.4",
+    "vite": "^8.3.5",
+    "wrangler": "^4.153.0"
+  }
+}

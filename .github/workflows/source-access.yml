@@ -1,0 +1,73 @@
+name: source-access
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [travis-pipeline]
+    paths: [.github/workflows/source-access.yml]
+
+permissions:
+  contents: read
+
+env:
+  USER_AGENT: travis-oracle-pipeline/0.1 (+https://github.com/curiousily/oracle-property-intelligence-platform-pipeline-travis-tx)
+  MAX_SECONDS_PER_SOURCE: "60"
+  PROBE_BYTE_RANGE: 0-1023
+  REPORT_FILE: source-access.tsv
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Probe each source once from a US-hosted runner
+        run: |
+          cat > sources.txt <<'SOURCES'
+          austin-permits|https://data.austintexas.gov/resource/3syk-w9eu.json?$limit=1
+          tcad-certified-export|https://traviscad.org/wp-content/largefiles/2026%20Certified%20Appraisal%20Export%20Supp%200_07182026.zip
+          tcad-improvement-detail|https://traviscad.org/wp-content/largefiles/improvement_detail_2026.zip
+          tcad-public-information-page|https://traviscad.org/publicinformation/
+          tcad-arcgis-parcels|https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/EXTERNAL_tcad_parcel/FeatureServer/0/query?where=1%3D1&returnCountOnly=true&f=json
+          travis-gis-tcad-public|https://gis.traviscountytx.gov/server1/rest/services/Boundaries_and_Jurisdictions/TCAD_public/MapServer/0?f=json
+          travis-tax-office|https://tax-office.traviscountytx.gov/pages/property.php
+          travis-tnr-development-services|https://www.traviscountytx.gov/tnr/development-services
+          tx-comptroller-franchise-holders|https://data.texas.gov/resource/9cir-efmm.json?$limit=1
+          tdlr-license-files|https://www.tdlr.texas.gov/LicenseSearch/licfile.asp
+          wayback-cdx-bbb-profiles|https://web.archive.org/cdx/search/cdx?url=bbb.org/us/tx/austin/profile/roofing-contractors/&matchType=prefix&limit=1&output=json
+          commoncrawl-index|https://index.commoncrawl.org/collinfo.json
+          overture-releases|https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/?list-type=2&prefix=release/&delimiter=/
+          elephant-lexicon-manifest|https://lexicon.elephant.xyz/api/manifest
+          SOURCES
+
+          printf 'source\thttp_status\tseconds\tbytes\n' > "$REPORT_FILE"
+          while IFS='|' read -r name url; do
+            name="$(echo "$name" | xargs)"
+            [ -z "$name" ] && continue
+            result="$(curl --silent --location --output /dev/null \
+              --range "$PROBE_BYTE_RANGE" \
+              --user-agent "$USER_AGENT" \
+              --max-time "$MAX_SECONDS_PER_SOURCE" \
+              --write-out '%{http_code}\t%{time_total}\t%{size_download}' \
+              "$url" || true)"
+            printf '%s\t%s\n' "$name" "$result" >> "$REPORT_FILE"
+          done < sources.txt
+
+          egress_country="$(curl --silent --max-time 20 https://ipinfo.io/country || echo unknown)"
+          {
+            echo "### Source access from a GitHub-hosted runner"
+            echo
+            echo "Runner egress country: \`${egress_country}\` · run at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo
+            echo "| Source | HTTP status | Seconds | Bytes |"
+            echo "|---|---|---|---|"
+            tail -n +2 "$REPORT_FILE" | awk -F'\t' '{ printf "| %s | %s | %s | %s |\n", $1, $2, $3, $4 }'
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "egress_country=${egress_country}" > egress.txt
+
+      - name: Keep the report
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-access
+          path: |
+            ${{ env.REPORT_FILE }}
+            egress.txt

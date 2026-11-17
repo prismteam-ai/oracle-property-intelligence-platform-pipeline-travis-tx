@@ -1,0 +1,161 @@
+{
+  "schema": "travis-oracle.artifact-manifest.v1",
+  "build_id": "20261110T005731Z",
+  "created_at": "2026-11-10T01:00:00.702Z",
+  "root": {
+    "name": "/",
+    "cid": "bafybeigvigqrkirmc7ksem2g2atm75ckdhxz5tnkqahtxutexhj6sztx3e",
+    "kind": "directory",
+    "codec": "dag-pb",
+    "size": 171132473
+  },
+  "objects": [
+    {
+      "name": "build.json",
+      "cid": "bafkreigt5juxlie7rtcx7n35gbq5glajzn7c4zzavt2bqv52jse7lrj6ea",
+      "kind": "file",
+      "codec": "raw",
+      "size": 2501,
+      "sha256": "d3ea6975a09f8cc57fb77d3061d32c09cb7e2e6720acf41857ba4c89f5c53e20"
+    },
+    {
+      "name": "coverage.json",
+      "cid": "bafkreifwhho2lzgzy23pkui4cnijqrax7emfzo6zj7ozwbouodq7xzn7t4",
+      "kind": "file",
+      "codec": "raw",
+      "size": 2871,
+      "sha256": "b639dda5e4d9c6b6f5511c1350984417f9185cbbd94fdd9b05d470e1fbe5bf9f"
+    },
+    {
+      "name": "runs.json",
+      "cid": "bafkreifdneyxexiwmv7rnq2pe6ked7anlx25n7djb4ubm4qawzy2n626ee",
+      "kind": "file",
+      "codec": "raw",
+      "size": 119393,
+      "sha256": "a36931725d16657f16c34f279441fc0d5df5d6fc690f28167200b671a6fb5e21"
+    },
+    {
+      "name": "samples",
+      "cid": "bafybeihgp3i3oumqfrxfbvas7oitvf7vwt4vft75s5ckrjxr7rpzxjgx5a",
+      "kind": "directory",
+      "codec": "dag-pb",
+      "size": 32488
+    },
+    {
+      "name": "samples/aged-roofs.csv",
+      "cid": "bafkreicgi5mkomxi7cg6w4ncjqrbbjie76sgehb7udiaoamyt4qnofjk6y",
+      "kind": "file",
+      "codec": "raw",
+      "size": 13020,
+      "sha256": "464758a732e8f88deb71a24c2210a504ffa4621c3fa0d00701989f20d7152af6"
+    },
+    {
+      "name": "samples/long-open-roofing-permits.csv",
+      "cid": "bafkreieomutghdngclvgngon2ls4ke2nswwo776srrmr4yctdhewrsidje",
+      "kind": "file",
+      "codec": "raw",
+      "size": 19468,
+      "sha256": "8e6526638da612ea6699cdd2e5c5134d95acefffd28c591e605319c968c90349"
+    },
+    {
+      "name": "sources.json",
+      "cid": "bafkreifdf364gw3g74rdt6szrnw7lyr3mewhj2id7o45h3ewkaryqppzk4",
+      "kind": "file",
+      "codec": "raw",
+      "size": 8720,
+      "sha256": "a32efdc35b66ff2239fa598b6df5e23b612c74e903fbb9d3ec965023883df957"
+    },
+    {
+      "name": "tables",
+      "cid": "bafybeifmfakce4vizifyh43ykujecttfbyckmnu2e4fi5agd5gep6hnk6i",
+      "kind": "directory",
+      "codec": "dag-pb",
+      "size": 170966500
+    },
+    {
+      "name": "tables/businesses.parquet",
+      "cid": "bafybeif2cv2l72x7a72cucikv7upu4ovbv3qmowdmlvpms2ydbgvlzlbye",
+      "kind": "file",
+      "codec": "dag-pb",
+      "size": 2695280,
+      "sha256": "96c04bd59c899b7dbd29bfae87e9505d1cc4cc33e6ddf9f1eed38c3d68367e79"
+    },
+    {
+      "name": "tables/contractors.parquet",
+      "cid": "bafybeigjhidgzketdgcdwxa6jxrr7ujycly673nvehxxdkyxle2lfuzzze",
+      "kind": "file",
+      "codec": "dag-pb",
+      "size": 1816776,
+      "sha256": "d910c34e6bfbc6043ef2c6111eb1744be0382090eafedf017286aae6a98d7905"
+    },
+    {
+      "name": "tables/hail_events.parquet",
+      "cid": "bafkreicc2vr3ssq5jgkpelosrmzdl3ktsiq3jm24fi67ltaavwocbnuau4",
+      "kind": "file",
+      "codec": "raw",
+      "size": 17502,
+      "sha256": "42d563b94a1d4994f22dd28b3235ed539221b4b35c2a3df5cc00ad9c20b680a7"
+    },
+    {
+      "name": "tables/owners.parquet",
+      "cid": "bafybeihpimf6zdi3h3oyvhtpe67ism3jodkt56nozzygjmzhv54cnazm6q",
+      "kind": "file",
+      "codec": "dag-pb",
+      "size": 18480446,
+      "sha256": "7976f46a31843353759fad091ce3f317a9895d0d175b3837697efef1140a0dfb"
+    },
+    {
+      "name": "tables/permits.parquet",
+      "cid": "bafybeihvnp63cbe5aohkj4xgo5mggicoi7oszwkmurokk4c6w4juik4qzq",
+      "kind": "file",
+      "codec": "dag-pb",
+      "size": 107858003,
+      "sha256": "e36a815de2fc1e017385af74d3207dfd2f36426fb3021dfae69ad732fa9015ef"
+    },
+    {
+      "name": "tables/properties.parquet",
+      "cid": "bafybeibd6pripicj6cfix2mhlyvjfjsnwve24ppwgrsfsm2tthel2qskvm",
+      "kind": "file",
+      "codec": "dag-pb",
+      "size": 37526416,
+      "sha256": "7a62e84a7ec707c11e0eba0c3caeb073d1af2ff06fe84002bf91bb5a2e1f4b3e"
+    },
+    {
+      "name": "tables/roofing_permits.parquet",
+      "cid": "bafybeigcj4k3jm4kx2vji4njkvmfws34kfklv5qhk3laax27krkxkq73cq",
+      "kind": "file",
+      "codec": "dag-pb",
+      "size": 2572077,
+      "sha256": "0313432a838b8308a1779efc0b74e3207cf20dba9e94c2e31d9c5eb9b3b0338b"
+    }
+  ],
+  "car": {
+    "name": "travis-oracle-20261110T005731Z.car",
+    "size": 171192723,
+    "sha256": "a3c9997c97cd5890fc53709554647283825ee44d898783a891cc69d8ba16d33c",
+    "root": "bafybeigvigqrkirmc7ksem2g2atm75ckdhxz5tnkqahtxutexhj6sztx3e",
+    "url": "https://github.com/curiousily/oracle-property-intelligence-platform-pipeline-travis-tx/releases/download/travis-oracle-20261110T005731Z/travis-oracle-20261110T005731Z.car"
+  },
+  "dag": {
+    "cid_version": 1,
+    "multibase": "base32",
+    "hash": "sha2-256",
+    "chunker": "fixed-size, 262144 bytes",
+    "layout": "balanced, 174 links per node",
+    "raw_leaves": true
+  },
+  "pins": [
+    {
+      "provider": "filebase",
+      "cid": "bafybeigvigqrkirmc7ksem2g2atm75ckdhxz5tnkqahtxutexhj6sztx3e"
+    },
+    {
+      "provider": "pinata",
+      "cid": "bafybeigvigqrkirmc7ksem2g2atm75ckdhxz5tnkqahtxutexhj6sztx3e"
+    }
+  ],
+  "previous": {
+    "manifest_cid": "bafkreiaxwdyvcgzd2obbwnbb62if3oi4glv3uc6k7d6stvu4f5wr3ws2b4",
+    "root_cid": "bafybeibodgjxepnboushpxqpuhgt3akib26ghd2irlv5p3gjzmcibod354"
+  }
+}

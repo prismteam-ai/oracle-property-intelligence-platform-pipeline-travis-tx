@@ -1,0 +1,265 @@
+name: ingest
+
+on:
+  schedule:
+    # The city republishes the whole permits dataset daily at about 14:40–15:05 UTC.
+    - cron: "30 16 * * *"
+    # Weekly publication to IPFS keeps vendor egress inside the free tiers.
+    - cron: "45 17 * * 1"
+  workflow_dispatch:
+    inputs:
+      since:
+        description: Austin permits only. Re-read business dates on or after this day (YYYY-MM-DD). Empty uses the watermark.
+        required: false
+      publish:
+        description: Publish the new build to IPFS (Filebase + Pinata), point IPNS at it and attach the CAR to a release.
+        type: boolean
+        default: false
+      sources:
+        description: JSON list of sources to ingest. Empty ingests every source.
+        required: false
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  RAW_BUCKET: travis-oracle-raw
+  MIRROR_BUCKET: travis-oracle-mirror
+  BBB_BUDGET_MINUTES: "20"
+  DATA_DIR: ${{ github.workspace }}/data
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        source: ${{ fromJSON(inputs.sources || '["austin-permits", "tcad-appraisal-export", "tcad-parcels", "travis-address-points", "bbb-archive", "tx-sales-tax-permits", "tx-franchise-taxpayers", "tdlr-licenses", "noaa-storm-events"]') }}
+    env:
+      SOURCE: ${{ matrix.source }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - uses: ./.github/actions/r2-credentials
+        with:
+          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Restore the source's watermark
+        run: |
+          state="state/${SOURCE}.json"
+          mkdir -p "$DATA_DIR/state"
+          if aws s3 ls "s3://$RAW_BUCKET/$state" --endpoint-url "$R2_ENDPOINT" > /dev/null; then
+            aws s3 cp "s3://$RAW_BUCKET/$state" "$DATA_DIR/$state" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          fi
+
+      - name: Restore archived BBB snapshots and the latest contractors to prioritize
+        if: matrix.source == 'bbb-archive'
+        run: |
+          aws s3 sync "s3://$RAW_BUCKET/raw/bbb-archive" "$DATA_DIR/raw/bbb-archive" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          build_id="$(aws s3 ls "s3://$RAW_BUCKET/build/" --endpoint-url "$R2_ENDPOINT" | awk '$1 == "PRE" { print $2 }' | tr -d '/' | sort | tail -1)"
+          if [ -n "$build_id" ]; then
+            aws s3 cp "s3://$RAW_BUCKET/build/${build_id}/contractors.parquet" "$DATA_DIR/build/${build_id}/contractors.parquet" \
+              --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          fi
+
+      - name: Ingest
+        env:
+          SINCE: ${{ inputs.since }}
+        run: |
+          run_id="$(date -u +%Y%m%dT%H%M%SZ)"
+          echo "RUN_ID=${run_id}" >> "$GITHUB_ENV"
+          mkdir -p "$DATA_DIR/runs/${run_id}"
+          npm run ingest -w @travis-oracle/pipeline --silent -- "$SOURCE" \
+            --data-dir "$DATA_DIR" --run-id "${run_id}" --budget-minutes "$BBB_BUDGET_MINUTES" ${SINCE:+--since "$SINCE"} \
+            | tee "$DATA_DIR/runs/${run_id}/${SOURCE}.json"
+
+      - name: Upload raw files and tables, then the run result, then the watermark
+        run: |
+          for dir in raw tables runs; do
+            if [ -d "$DATA_DIR/$dir" ]; then
+              aws s3 sync "$DATA_DIR/$dir" "s3://$RAW_BUCKET/$dir" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+            fi
+          done
+          state="state/${SOURCE}.json"
+          if [ -f "$DATA_DIR/$state" ]; then
+            aws s3 cp "$DATA_DIR/$state" "s3://$RAW_BUCKET/$state" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          fi
+
+      - name: Summarize the run
+        run: |
+          {
+            echo "### ${SOURCE} \`${RUN_ID}\`"
+            echo
+            echo '```json'
+            cat "$DATA_DIR/runs/${RUN_ID}/${SOURCE}.json"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  build:
+    needs: source
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - uses: ./.github/actions/r2-credentials
+        with:
+          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Fetch every permit page, the latest TCAD tables and parcels, the run history and the previous build
+        run: |
+          latest_run() {
+            aws s3 ls "s3://$RAW_BUCKET/$1/" --endpoint-url "$R2_ENDPOINT" | awk '$1 == "PRE" { print $2 }' | tr -d '/' | sort | tail -1
+          }
+          fetch() {
+            aws s3 sync "s3://$RAW_BUCKET/$1" "$DATA_DIR/$1" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          }
+          fetch raw/austin-permits
+          fetch raw/bbb-archive
+          fetch "tables/tcad-appraisal-export/$(latest_run tables/tcad-appraisal-export)"
+          fetch "raw/tcad-parcels/$(latest_run raw/tcad-parcels)"
+          for snapshot in travis-address-points tx-sales-tax-permits tx-franchise-taxpayers tdlr-licenses noaa-storm-events; do
+            run="$(latest_run "raw/$snapshot")"
+            if [ -n "$run" ]; then fetch "raw/$snapshot/$run"; fi
+          done
+          fetch runs
+          aws s3 sync "s3://$RAW_BUCKET/build" "$DATA_DIR/build" --endpoint-url "$R2_ENDPOINT" --only-show-errors \
+            --exclude "*" --include "*/build.json"
+          previous="$(latest_run build)"
+          if [ -n "$previous" ]; then fetch "build/$previous"; fi
+
+      - name: Build the lead tables
+        run: |
+          build_id="$(date -u +%Y%m%dT%H%M%SZ)"
+          echo "BUILD_ID=${build_id}" >> "$GITHUB_ENV"
+          npm run build-leads -w @travis-oracle/pipeline --silent -- --data-dir "$DATA_DIR" --run-id "${build_id}"
+
+      - name: Upload the build
+        run: |
+          aws s3 sync "$DATA_DIR/build/${BUILD_ID}" "s3://$RAW_BUCKET/build/${BUILD_ID}" \
+            --endpoint-url "$R2_ENDPOINT" --only-show-errors
+
+      - name: Summarize the build
+        run: |
+          {
+            echo "### Lead tables \`${BUILD_ID}\`"
+            echo
+            echo '```json'
+            cat "$DATA_DIR/build/${BUILD_ID}/build.json"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' && (inputs.publish || github.event.schedule == '45 17 * * 1') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - uses: ./.github/actions/r2-credentials
+        with:
+          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Fetch the latest build and the publication history
+        run: |
+          build_id="$(aws s3 ls "s3://$RAW_BUCKET/build/" --endpoint-url "$R2_ENDPOINT" | awk '$1 == "PRE" { print $2 }' | tr -d '/' | sort | tail -1)"
+          echo "BUILD_ID=${build_id}" >> "$GITHUB_ENV"
+          aws s3 sync "s3://$RAW_BUCKET/build/${build_id}" "$DATA_DIR/build/${build_id}" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          if aws s3 ls "s3://$RAW_BUCKET/published/history.json" --endpoint-url "$R2_ENDPOINT" > /dev/null; then
+            aws s3 cp "s3://$RAW_BUCKET/published/history.json" "$DATA_DIR/published/history.json" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          fi
+
+      - name: Publish to IPFS and verify through public gateways
+        env:
+          FILEBASE_ACCESS_KEY_ID: ${{ secrets.FILEBASE_ACCESS_KEY_ID }}
+          FILEBASE_SECRET_ACCESS_KEY: ${{ secrets.FILEBASE_SECRET_ACCESS_KEY }}
+          FILEBASE_BUCKET: ${{ secrets.FILEBASE_BUCKET }}
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+        run: npm run publish -w @travis-oracle/pipeline --silent -- --data-dir "$DATA_DIR" --run-id "$BUILD_ID" > /dev/null
+
+      - name: Keep the manifest, publication record and history in R2
+        run: |
+          publish_dir="$DATA_DIR/publish/${BUILD_ID}"
+          for file in manifest.json publication.json; do
+            aws s3 cp "$publish_dir/$file" "s3://$RAW_BUCKET/published/${BUILD_ID}/$file" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          done
+          aws s3 cp "$DATA_DIR/published/history.json" "s3://$RAW_BUCKET/published/history.json" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+
+      - name: Mirror the publication into R2 by CID for the explorer
+        run: |
+          publish_dir="$DATA_DIR/publish/${BUILD_ID}"
+          build_dir="$DATA_DIR/build/${BUILD_ID}"
+          root="$(jq -r .publication.rootCid "$publish_dir/publication.json")"
+          manifest="$(jq -r .publication.manifestCid "$publish_dir/publication.json")"
+          jq -r '.manifest.objects[] | select(.kind == "file") | .name' "$publish_dir/publication.json" |
+            while read -r name; do
+              aws s3 cp "$build_dir/${name#tables/}" "s3://$MIRROR_BUCKET/ipfs/$root/$name" \
+                --endpoint-url "$R2_ENDPOINT" --only-show-errors
+            done
+          aws s3 cp "$publish_dir/manifest.json" "s3://$MIRROR_BUCKET/ipfs/$manifest" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          aws s3 cp "$publish_dir/publication.json" "s3://$MIRROR_BUCKET/publications/${BUILD_ID}.json" \
+            --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          aws s3 cp "$DATA_DIR/published/history.json" "s3://$MIRROR_BUCKET/publications.json" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+
+      - name: Commit the publication record to the repository
+        run: |
+          publish_dir="$DATA_DIR/publish/${BUILD_ID}"
+          git fetch --quiet origin "$GITHUB_REF_NAME"
+          git checkout --quiet -B "$GITHUB_REF_NAME" "origin/$GITHUB_REF_NAME"
+          mkdir -p "publications/${BUILD_ID}"
+          cp "$publish_dir/manifest.json" "$publish_dir/publication.json" "publications/${BUILD_ID}/"
+          cp "$DATA_DIR/published/history.json" publications/history.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publications
+          git commit --quiet -m "Record publication ${BUILD_ID}: manifest, gateway verification and history"
+          git push --quiet origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Attach the CAR and manifest to a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          publish_dir="$DATA_DIR/publish/${BUILD_ID}"
+          label="travis-oracle-${BUILD_ID}"
+          root="$(jq -r .publication.rootCid "$publish_dir/publication.json")"
+          manifest="$(jq -r .publication.manifestCid "$publish_dir/publication.json")"
+          gh release create "$label" "$publish_dir/$label.car" "$publish_dir/manifest.json" "$publish_dir/publication.json" \
+            --target "$GITHUB_SHA" --title "Travis County dataset ${BUILD_ID}" \
+            --notes "Dataset root \`${root}\`, manifest \`${manifest}\`. Import the CAR into any IPFS node to serve the snapshot without re-encoding."
+
+      - name: Summarize the publication
+        run: |
+          publication="$DATA_DIR/publish/${BUILD_ID}/publication.json"
+          {
+            echo "### IPFS publication \`${BUILD_ID}\`"
+            echo
+            jq -r '"Dataset root `\(.publication.rootCid)` · manifest `\(.publication.manifestCid)` · IPNS `\(.publication.ipns.name)` → `\(.publication.ipns.resolvedCid)`"' "$publication"
+            echo
+            echo "| Object | CID | Gateway | Status | HTTP | Bytes |"
+            echo "|---|---|---|---|---|---|"
+            jq -r '.verification[] | "| \(.name) | `\(.cid)` | \(.gateway) | \(.status) | \(.httpStatus // "-") | \(.bytes // "-") |"' "$publication"
+          } >> "$GITHUB_STEP_SUMMARY"
