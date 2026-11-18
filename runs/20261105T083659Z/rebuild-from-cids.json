@@ -1,8 +1,8 @@
 {
   "run_id": "20261105T083659Z",
   "manifest_sha256": "ae2efe7969fe1bb080553e8c1e05f697f91e25c6f8d5e330aeea67e5607d0e2b",
-  "rebuilt_at": "2026-11-11T09:30:35.853Z",
-  "verifier": "github-actions run 42995723603",
+  "rebuilt_at": "2026-11-18T09:35:54.683Z",
+  "verifier": "github-actions run 44277359500",
   "gateways": [
     "https://ipfs.orbitor.dev",
     "https://dget.top"
@@ -763,7 +763,7 @@
     }
   },
   "bytes_downloaded": 272170566,
-  "seconds": 125,
+  "seconds": 148,
   "failures": 0,
   "all_ok": true
 }
