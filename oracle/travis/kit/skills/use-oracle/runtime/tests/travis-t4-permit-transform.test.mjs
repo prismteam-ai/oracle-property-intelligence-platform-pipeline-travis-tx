@@ -15,6 +15,7 @@ import {
   PERMIT_DATA_DIRNAME,
   PERMIT_SOURCE_PAYLOAD_FILENAME,
   buildTravisPermitOutput,
+  contractorNameOf,
   partitionPermits,
   permitDates,
   resolvePermitGroupCids,
@@ -147,6 +148,9 @@ describe("T4 permit transform (Property Improvement group)", () => {
           "relationship_address_has_parcel.json",
           "relationship_property_has_property_improvement_1.json",
           "relationship_property_has_property_improvement_2.json",
+          "company_1.json",
+          "relationship_property_improvement_has_contractor_1.json",
+          "relationship_property_improvement_has_contractor_2.json",
         ].sort(),
       );
       const files = Object.fromEntries(await Promise.all(names.map(async (name) => [name, JSON.parse(await readFile(path.join(result.dataDir, name), "utf8"))])));
@@ -155,8 +159,14 @@ describe("T4 permit transform (Property Improvement group)", () => {
       expect(() => assertTravisIdentity({ row: seedRows[0], files, roots: { countyCid: propertyImprovementCid, seedCid } })).toThrow(/data\.austintexas\.gov/);
       expect(files[`${propertyImprovementCid}.json`]).toEqual({
         label: "Property Improvement",
-        relationships: { property_has_property_improvement: [{ "/": "./relationship_property_has_property_improvement_1.json" }, { "/": "./relationship_property_has_property_improvement_2.json" }] },
+        relationships: {
+          property_has_property_improvement: [{ "/": "./relationship_property_has_property_improvement_1.json" }, { "/": "./relationship_property_has_property_improvement_2.json" }],
+          property_improvement_has_contractor: [{ "/": "./relationship_property_improvement_has_contractor_1.json" }, { "/": "./relationship_property_improvement_has_contractor_2.json" }],
+        },
       });
+      // Both permits print the same contractor under the same request: one company, two links.
+      expect(files["company_1.json"]).toEqual({ name: "ACME ROOFING LLC", sunbiz_document_number: null, source_http_request: REQUEST, request_identifier: "900001" });
+      expect(files["relationship_property_improvement_has_contractor_2.json"]).toEqual({ from: { "/": "./property_improvement_2.json" }, to: { "/": "./company_1.json" } });
       // Ordered by permit number: the EP permit of 2019 first.
       expect(files["property_improvement_1.json"]).toEqual({
         permit_number: "2019-000001 EP",
@@ -179,6 +189,12 @@ describe("T4 permit transform (Property Improvement group)", () => {
       expect(sidecar.published[1]).toMatchObject({ printed: { description: "RE-ROOF RESIDENCE", contractor_company_name: "ACME ROOFING LLC" }, profile: { roofWorkClass: "primary_roof_replacement" }, capture: { file: "partition-BP-2021.csv", row_index: 3 } });
       expect(JSON.stringify(sidecar)).not.toMatch(/applicant/);
     });
+  });
+
+  it("names the contractor from the company, else the person, and writes no company when neither is printed", () => {
+    expect(contractorNameOf({ contractor_company_name: "Clear Choice of Austin  **MAIN**", contractor_full_name: "Rabun Wilson" })).toBe("Clear Choice of Austin **MAIN**");
+    expect(contractorNameOf({ contractor_company_name: " ", contractor_full_name: "Victor  Fredlund" })).toBe("Victor Fredlund");
+    expect(contractorNameOf({})).toBeNull();
   });
 
   it("writes no group for a parcel without publishable permits and refuses a row linked elsewhere", async () => {
