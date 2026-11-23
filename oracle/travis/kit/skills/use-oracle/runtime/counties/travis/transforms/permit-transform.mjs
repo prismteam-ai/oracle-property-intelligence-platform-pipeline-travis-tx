@@ -20,8 +20,14 @@
  * 25.7): an unlisted printed value is null. Provenance: `source_http_request` is the partition GET that captured the row (method, URL,
  * query; never reconstructed), `request_identifier` the linked parcel's PROP_ID as printed (decisions.md section 3).
  *
- * Everything without a lexicon home (description, printed status, expiry, permit class and work class, the printed
- * contractor fields, coordinates, the public permit page, valuations, the profile's classification and evidence, the
+ * The printed contractor is published as a `company` (`name` = `contractor_company_name`, else `contractor_full_name`
+ * for a sole contractor, whitespace collapsed; `sunbiz_document_number` null) linked by `property_improvement_has_contractor`
+ * (one company per distinct name and request on the parcel, so a contractor on several permits is one record).
+ *
+ * Everything without a lexicon home (description, printed status, expiry, permit class and work class, the other printed
+ * contractor fields (trade, phone, contractor address), coordinates, the public permit page, valuations (the class has
+ * only `fee`, the permit fee, so `total_job_valuation` has no home), the permit's own address (`property_improvement_has_address`
+ * is single-valued per group root and cannot carry one address per permit; the parcel's address is the Seed `address.json`), the profile's classification and evidence, the
  * link and its evidence - for a `tcad_permit_listing` link, TCAD's listed entries on the linked account - and the row
  * digest and locator) goes to the sidecar `permit-source-payload.json` beside `data/`, never into the archive.
  *
@@ -36,7 +42,7 @@ import path from "node:path";
 
 import { IMPROVEMENT_ENUMS_VERSION, classifyDateEvidence, classifyLifecycleStatus, mapImprovementEnums } from "../../../src/counties/travis/permit-profile.mjs";
 
-export const PERMIT_TRANSFORM_VERSION = "travis-permit-transform-v2";
+export const PERMIT_TRANSFORM_VERSION = "travis-permit-transform-v3";
 export const PERMIT_SOURCE_PAYLOAD_FILENAME = "permit-source-payload.json";
 export const PERMIT_DATA_DIRNAME = "permit-data";
 /** Files the permit group copies from the parcel's appraisal output (byte for byte). */
@@ -60,6 +66,21 @@ export function resolvePermitGroupCids(manifest) {
 
 /** @param {string} name @returns {{ "/": string }} */
 const link = (name) => ({ "/": `./${name}` });
+
+/**
+ * The contractor name printed on a permit row: the company, else the contractor person (a sole contractor), with
+ * whitespace collapsed. Null when neither is printed.
+ *
+ * @param {Record<string, string>} row - Printed row.
+ * @returns {string | null} Name.
+ */
+export function contractorNameOf(row) {
+  for (const key of ["contractor_company_name", "contractor_full_name"]) {
+    const value = typeof row[key] === "string" ? row[key].replace(/\s+/g, " ").trim() : "";
+    if (value !== "") return value;
+  }
+  return null;
+}
 
 /**
  * @param {Record<string, any>} request - The partition receipt's `source_http_request`.
@@ -146,6 +167,9 @@ export function buildTravisPermitOutput({ propId, entries, manifest, seedRootNam
   /** @type {Record<string, object>} */
   const files = {};
   const relationships = [];
+  const contractorRelationships = [];
+  /** @type {Map<string, string>} company file name by name and request */
+  const companies = new Map();
   const payloadPermits = [];
   publishable.forEach((entry, position) => {
     const ordinal = position + 1;
@@ -165,10 +189,30 @@ export function buildTravisPermitOutput({ propId, entries, manifest, seedRootNam
     const relationshipName = `relationship_property_has_property_improvement_${ordinal}.json`;
     files[relationshipName] = { from: link("property.json"), to: link(name) };
     relationships.push(link(relationshipName));
+    const contractor = contractorNameOf(entry.row);
+    if (contractor !== null) {
+      const request = lexiconRequest(entry.request);
+      const key = JSON.stringify([contractor, request]);
+      let company = companies.get(key);
+      if (company === undefined) {
+        company = `company_${companies.size + 1}.json`;
+        companies.set(key, company);
+        files[company] = { name: contractor, sunbiz_document_number: null, source_http_request: request, request_identifier: propId };
+      }
+      const contractorRelationship = `relationship_property_improvement_has_contractor_${ordinal}.json`;
+      files[contractorRelationship] = { from: link(name), to: link(company) };
+      contractorRelationships.push(link(contractorRelationship));
+    }
     payloadPermits.push({ file: name, ...payloadOf(entry, evidence) });
   });
   if (publishable.length > 0) {
-    files[`${roots.propertyImprovementCid}.json`] = { label: "Property Improvement", relationships: { property_has_property_improvement: relationships } };
+    files[`${roots.propertyImprovementCid}.json`] = {
+      label: "Property Improvement",
+      relationships: {
+        property_has_property_improvement: relationships,
+        ...(contractorRelationships.length > 0 ? { property_improvement_has_contractor: contractorRelationships } : {}),
+      },
+    };
   }
   const sourcePayload = {
     schemaVersion: "travis.permit-source-payload.v1",
