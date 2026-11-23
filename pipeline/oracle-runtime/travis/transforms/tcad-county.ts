@@ -21,7 +21,10 @@
 // (PO decision: a sale-level flag hides the whole owner), or the record carries any other
 // confid* key the transform does not model (fail closed), no owner name and no mailing
 // address is written; the suppression and its basis are counted for the manifest. Sale
-// prices are never written (Texas is a non-disclosure state and the pilot publishes no price).
+// price: a sale-sourced row carries purchase_price_amount = sales[].salePrice when TCAD prints a
+// positive price and that sale is not confidential (confidentialSale unset, no confidentialCode).
+// Texas does not require price disclosure, but TCAD publishes the price it holds in the certified
+// export; a confidential or unpriced sale, and every deed-sourced row, keeps no price.
 import {
   TCAD_EXPORT_REQUEST,
   buildSharedFiles,
@@ -121,6 +124,19 @@ function flagSet(v: unknown): boolean {
   return true;
 }
 
+/** The printed sale price of a non-confidential sale, or null (absent, zero, negative or confidential). */
+export function publishedSalePrice(sale: Record<string, unknown> | undefined): number | null {
+  if (sale === undefined) return null;
+  if (
+    flagSet(sale.confidentialSale) ||
+    nonEmpty(sale.confidentialCode as string | null | undefined)
+  )
+    return null;
+  const price = sale.salePrice;
+  if (typeof price !== "number" || !Number.isFinite(price) || price <= 0) return null;
+  return Math.round(price * 100) / 100;
+}
+
 export interface CountyTransformInput {
   record: TcadRecord;
   seed: SeedRow;
@@ -162,6 +178,8 @@ export interface CountyTransformCounts {
   sales_dated: number;
   /** Of sales_dated, the rows taken from a transfer deed (no sale on that day). */
   transfers_from_deeds: number;
+  /** Of sales_dated, the rows that carry purchase_price_amount (non-confidential priced sales). */
+  sales_priced: number;
   owners_unparsed: number;
   /** Owner entries whose second named party could not be read with certainty (first one kept). */
   owners_co_owner_skipped: number;
@@ -336,11 +354,19 @@ export function transformTcadCounty(input: CountyTransformInput): CountyTransfor
       multiValueQueryString: { transfer_source: ["deed"] },
     },
   };
+  let sales_priced = 0;
+  const salesById = new Map<number, Record<string, unknown>>();
+  for (const sale of record.sales)
+    if (typeof sale.saleID === "number")
+      salesById.set(sale.saleID, sale as Record<string, unknown>);
   dated.forEach((s, i) => {
     const name = `sales_history_${i + 1}.json`;
+    const price = s.source === "sale" ? publishedSalePrice(salesById.get(s.id)) : null;
+    if (price !== null) sales_priced += 1;
     files[name] = jsonFile({
       ...(s.source === "deed" ? deedBase : base),
       ownership_transfer_date: s.date,
+      ...(price !== null ? { purchase_price_amount: price } : {}),
     });
     many(
       "property_has_sales_history",
@@ -502,6 +528,7 @@ export function transformTcadCounty(input: CountyTransformInput): CountyTransfor
       confidential_basis: basis,
       sales_dated: dated.length,
       transfers_from_deeds: dated.filter((e) => e.source === "deed").length,
+      sales_priced,
       owners_unparsed: unparsed,
       owners_co_owner_skipped: skippedCoOwners,
       persons_written: personsWritten,
