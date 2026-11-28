@@ -1,0 +1,1681 @@
+{
+  "run_id": "20261029T082344Z",
+  "manifest_sha256": "c9f82774f83a82999cfc9098a0f13498b95b33eb9b0a63fcb2a3c4addebe0238",
+  "verified_at": "2026-11-02T07:48:58.947Z",
+  "verifier": "github-actions run 41407651227",
+  "gateways": [
+    "https://ipfs.orbitor.dev",
+    "https://dget.top"
+  ],
+  "method": "files: full GET + sha256; directories: CAR with every block re-hashed against its CID, dag-scope=all when the CAR is <= 80 MB, else entity (data files verified individually); Lexicon roots (dag-json): dag-scope=block, root block re-hashed (every-block proof: elephant-cli CAR validation + release CAR)",
+  "objects": 77,
+  "failures": 0,
+  "all_ok": true,
+  "results": [
+    {
+      "name": ".",
+      "cid": "bafybeiaxze6huw2aftrzhsmkcinrbgq3db54ayx6kienqavyvtbanbofoq",
+      "codec": "directory",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "scope": "entity",
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiaxze6huw2aftrzhsmkcinrbgq3db54ayx6kienqavyvtbanbofoq?format=car&dag-scope=entity",
+          "car_bytes": 376,
+          "roots": [
+            "bafybeiaxze6huw2aftrzhsmkcinrbgq3db54ayx6kienqavyvtbanbofoq"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 1464
+        },
+        "https://dget.top": {
+          "ok": true,
+          "scope": "entity",
+          "url": "https://bafybeiaxze6huw2aftrzhsmkcinrbgq3db54ayx6kienqavyvtbanbofoq.ipfs.dget.top/?format=car&dag-scope=entity",
+          "car_bytes": 376,
+          "roots": [
+            "bafybeiaxze6huw2aftrzhsmkcinrbgq3db54ayx6kienqavyvtbanbofoq"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 47004
+        }
+      }
+    },
+    {
+      "name": "tables/permits",
+      "cid": "bafybeihuzb7xiz2vm6nhlswkrg27myaitvq7tyastyielrosg7hwqhw4xy",
+      "codec": "directory",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "scope": "entity",
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihuzb7xiz2vm6nhlswkrg27myaitvq7tyastyielrosg7hwqhw4xy?format=car&dag-scope=entity",
+          "car_bytes": 3152,
+          "roots": [
+            "bafybeihuzb7xiz2vm6nhlswkrg27myaitvq7tyastyielrosg7hwqhw4xy"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 1424
+        },
+        "https://dget.top": {
+          "ok": true,
+          "scope": "entity",
+          "url": "https://bafybeihuzb7xiz2vm6nhlswkrg27myaitvq7tyastyielrosg7hwqhw4xy.ipfs.dget.top/?format=car&dag-scope=entity",
+          "car_bytes": 3152,
+          "roots": [
+            "bafybeihuzb7xiz2vm6nhlswkrg27myaitvq7tyastyielrosg7hwqhw4xy"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 46997
+        }
+      }
+    },
+    {
+      "name": "coverage.json",
+      "cid": "bafkreiekvf4lkzmdvttnj3tb5h6jt7lo3o6g6rlinquhmeqagn3njaeyky",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreiekvf4lkzmdvttnj3tb5h6jt7lo3o6g6rlinquhmeqagn3njaeyky",
+          "bytes": 780,
+          "sha256": "8aa978b56583ace6d4ee61e9fc99fd6edbbc6f45686c287612003376d4809856",
+          "ms": 543
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreiekvf4lkzmdvttnj3tb5h6jt7lo3o6g6rlinquhmeqagn3njaeyky.ipfs.dget.top/",
+          "bytes": 780,
+          "sha256": "8aa978b56583ace6d4ee61e9fc99fd6edbbc6f45686c287612003376d4809856",
+          "ms": 343
+        }
+      }
+    },
+    {
+      "name": "deltas.json",
+      "cid": "bafkreigkht4kieii6nw7hwxpfx7ixffz4le2aeyozx2rpv7ksd7mstjpha",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreigkht4kieii6nw7hwxpfx7ixffz4le2aeyozx2rpv7ksd7mstjpha",
+          "bytes": 1445,
+          "sha256": "ca3cf8a41108f36df3daef2dfe8b94b9e2c9a0130ecdf517d7ea90fec94d2f38",
+          "ms": 533
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreigkht4kieii6nw7hwxpfx7ixffz4le2aeyozx2rpv7ksd7mstjpha.ipfs.dget.top/",
+          "bytes": 1445,
+          "sha256": "ca3cf8a41108f36df3daef2dfe8b94b9e2c9a0130ecdf517d7ea90fec94d2f38",
+          "ms": 438
+        }
+      }
+    },
+    {
+      "name": "run.json",
+      "cid": "bafkreiakuajvtwdy35ogjktevi7jklfszd4q5qko6buytu4foujkbb4lei",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreiakuajvtwdy35ogjktevi7jklfszd4q5qko6buytu4foujkbb4lei",
+          "bytes": 25456,
+          "sha256": "0aa01359d878df5c64aa64aa3e952cb2c8f90ec14ef06989d3857512a0878b22",
+          "ms": 952
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreiakuajvtwdy35ogjktevi7jklfszd4q5qko6buytu4foujkbb4lei.ipfs.dget.top/",
+          "bytes": 25456,
+          "sha256": "0aa01359d878df5c64aa64aa3e952cb2c8f90ec14ef06989d3857512a0878b22",
+          "ms": 333
+        }
+      }
+    },
+    {
+      "name": "samples/contractors-roofing.csv",
+      "cid": "bafkreihcrzghmn6hpyvcvw53ifd2umuhyen7x7x3dyajg5m4cgpibnq4cm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreihcrzghmn6hpyvcvw53ifd2umuhyen7x7x3dyajg5m4cgpibnq4cm",
+          "bytes": 28283,
+          "sha256": "e28e4c7637c77e2a2adbbb4147aa3287c11bfbfefb1e0093759c119e80b61c13",
+          "ms": 547
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreihcrzghmn6hpyvcvw53ifd2umuhyen7x7x3dyajg5m4cgpibnq4cm.ipfs.dget.top/",
+          "bytes": 28283,
+          "sha256": "e28e4c7637c77e2a2adbbb4147aa3287c11bfbfefb1e0093759c119e80b61c13",
+          "ms": 354
+        }
+      }
+    },
+    {
+      "name": "samples/leads-roof-15y-plus.csv",
+      "cid": "bafkreic2twdqoqlsb5b6zaiab75544frlsww56ojarordzs6ez2ncy572e",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreic2twdqoqlsb5b6zaiab75544frlsww56ojarordzs6ez2ncy572e",
+          "bytes": 80478,
+          "sha256": "5a9d870741720f43ec81000ffbde70b15cad6ef9c9045d11e65e2674d163bfd1",
+          "ms": 1085
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreic2twdqoqlsb5b6zaiab75544frlsww56ojarordzs6ez2ncy572e.ipfs.dget.top/",
+          "bytes": 80478,
+          "sha256": "5a9d870741720f43ec81000ffbde70b15cad6ef9c9045d11e65e2674d163bfd1",
+          "ms": 434
+        }
+      }
+    },
+    {
+      "name": "samples/roofing-permits-open.csv",
+      "cid": "bafkreideglu3g3owx6ze2majrte7bxdnveyvqepjdyqdrm6cchuhqk6s7u",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreideglu3g3owx6ze2majrte7bxdnveyvqepjdyqdrm6cchuhqk6s7u",
+          "bytes": 44716,
+          "sha256": "6432e9b36dd6bfb24d30098cc9f0dc6da9315811e91e2038b3c211e8782bd2fd",
+          "ms": 764
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreideglu3g3owx6ze2majrte7bxdnveyvqepjdyqdrm6cchuhqk6s7u.ipfs.dget.top/",
+          "bytes": 44716,
+          "sha256": "6432e9b36dd6bfb24d30098cc9f0dc6da9315811e91e2038b3c211e8782bd2fd",
+          "ms": 389
+        }
+      }
+    },
+    {
+      "name": "tables/business_locations.parquet",
+      "cid": "bafybeicwu34zthzeduoax7rsvdkoitbpajhk3zc4pxjcvf2vn3ezi3d73q",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicwu34zthzeduoax7rsvdkoitbpajhk3zc4pxjcvf2vn3ezi3d73q",
+          "bytes": 6964577,
+          "sha256": "fab6fbaea31b33739992d0ed1fececee6f4b2ff9fc1498eb90487622ab46fa1e",
+          "ms": 4856
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicwu34zthzeduoax7rsvdkoitbpajhk3zc4pxjcvf2vn3ezi3d73q.ipfs.dget.top/",
+          "bytes": 6964577,
+          "sha256": "fab6fbaea31b33739992d0ed1fececee6f4b2ff9fc1498eb90487622ab46fa1e",
+          "ms": 19994
+        }
+      }
+    },
+    {
+      "name": "tables/businesses.parquet",
+      "cid": "bafybeihv6x7y2xihy5tu4qzbrxazp5qlamysnir6j2nyw54l2naucmnju4",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihv6x7y2xihy5tu4qzbrxazp5qlamysnir6j2nyw54l2naucmnju4",
+          "bytes": 14609775,
+          "sha256": "bb0f2f24cdfdb698a02f73226eabec27e4f356d4fbb0b657387745e9f9c9a7eb",
+          "ms": 6548
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeihv6x7y2xihy5tu4qzbrxazp5qlamysnir6j2nyw54l2naucmnju4.ipfs.dget.top/",
+          "bytes": 14609775,
+          "sha256": "bb0f2f24cdfdb698a02f73226eabec27e4f356d4fbb0b657387745e9f9c9a7eb",
+          "ms": 22983
+        }
+      }
+    },
+    {
+      "name": "tables/contractors.parquet",
+      "cid": "bafybeid65lzrcn4z54fvxf5zseail64ytcnnw4g6ikwjeah7a64xvjc7yu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeid65lzrcn4z54fvxf5zseail64ytcnnw4g6ikwjeah7a64xvjc7yu",
+          "bytes": 1937564,
+          "sha256": "c22b207b7cfdad05ad0b013e61190ece7c2c9eb6d51eb2dcb899f625f0704755",
+          "ms": 4268
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeid65lzrcn4z54fvxf5zseail64ytcnnw4g6ikwjeah7a64xvjc7yu.ipfs.dget.top/",
+          "bytes": 1937564,
+          "sha256": "c22b207b7cfdad05ad0b013e61190ece7c2c9eb6d51eb2dcb899f625f0704755",
+          "ms": 16220
+        }
+      }
+    },
+    {
+      "name": "tables/hail_events.parquet",
+      "cid": "bafkreietc4g4twk2gsel7svdq2abjd2gugkwzdjxgqh4fu42xdpzctdkhi",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreietc4g4twk2gsel7svdq2abjd2gugkwzdjxgqh4fu42xdpzctdkhi",
+          "bytes": 12769,
+          "sha256": "93170dc9d95a3488bfcaa38680148f46a1956c8d37340fc2d39ab8df914c6a3a",
+          "ms": 457
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreietc4g4twk2gsel7svdq2abjd2gugkwzdjxgqh4fu42xdpzctdkhi.ipfs.dget.top/",
+          "bytes": 12769,
+          "sha256": "93170dc9d95a3488bfcaa38680148f46a1956c8d37340fc2d39ab8df914c6a3a",
+          "ms": 15357
+        }
+      }
+    },
+    {
+      "name": "tables/leads.parquet",
+      "cid": "bafybeigr2dqvntbsvjvzo2nrtme4atxgh3zwnwvhs2vvcw5te2qmp3ejpe",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeigr2dqvntbsvjvzo2nrtme4atxgh3zwnwvhs2vvcw5te2qmp3ejpe",
+          "bytes": 24902149,
+          "sha256": "a65b316000ccdfd989b109df628e22813023f7d5ecfc2a9db626e79406452506",
+          "ms": 10023
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeigr2dqvntbsvjvzo2nrtme4atxgh3zwnwvhs2vvcw5te2qmp3ejpe.ipfs.dget.top/",
+          "bytes": 24902149,
+          "sha256": "a65b316000ccdfd989b109df628e22813023f7d5ecfc2a9db626e79406452506",
+          "ms": 8179
+        }
+      }
+    },
+    {
+      "name": "tables/licenses.parquet",
+      "cid": "bafybeihxba2exgprx2ilmlspkjuo2urv653eu7tefr3biv3qjd3meu4t6e",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihxba2exgprx2ilmlspkjuo2urv653eu7tefr3biv3qjd3meu4t6e",
+          "bytes": 1499654,
+          "sha256": "f07d7cbab5cc454f1f5b9dc7ad8e145c71e043d1fb387ddd39061a34a454eed1",
+          "ms": 3130
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeihxba2exgprx2ilmlspkjuo2urv653eu7tefr3biv3qjd3meu4t6e.ipfs.dget.top/",
+          "bytes": 1499654,
+          "sha256": "f07d7cbab5cc454f1f5b9dc7ad8e145c71e043d1fb387ddd39061a34a454eed1",
+          "ms": 850
+        }
+      }
+    },
+    {
+      "name": "tables/owner_signals.parquet",
+      "cid": "bafybeigtgmesfqkjyr2m4sqplszqmehxcivyyolxphdvrvbluui5vwgsya",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeigtgmesfqkjyr2m4sqplszqmehxcivyyolxphdvrvbluui5vwgsya",
+          "bytes": 9109563,
+          "sha256": "9f418df8e5d081636e97cd4934cc87a4471b1764ae86d921eb0295cc18220718",
+          "ms": 4627
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeigtgmesfqkjyr2m4sqplszqmehxcivyyolxphdvrvbluui5vwgsya.ipfs.dget.top/",
+          "bytes": 9109563,
+          "sha256": "9f418df8e5d081636e97cd4934cc87a4471b1764ae86d921eb0295cc18220718",
+          "ms": 49415
+        }
+      }
+    },
+    {
+      "name": "tables/owners.parquet",
+      "cid": "bafybeicc27abqr7jg7jfe7yq3nhuer6lr4kc3mpp7tmvb7gm4rrn63ebaq",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicc27abqr7jg7jfe7yq3nhuer6lr4kc3mpp7tmvb7gm4rrn63ebaq",
+          "bytes": 17064401,
+          "sha256": "fd5b2c66608b90e31859f82f68f10627d72e37964a11571851a1167f756a6802",
+          "ms": 6582
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicc27abqr7jg7jfe7yq3nhuer6lr4kc3mpp7tmvb7gm4rrn63ebaq.ipfs.dget.top/",
+          "bytes": 17064401,
+          "sha256": "fd5b2c66608b90e31859f82f68f10627d72e37964a11571851a1167f756a6802",
+          "ms": 21694
+        }
+      }
+    },
+    {
+      "name": "tables/permit_embeddings.parquet",
+      "cid": "bafybeigsgddhj3yf2elck7pfhmf5nshjx3nvi5hp4wpbr6bnf3tb4bk5ty",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeigsgddhj3yf2elck7pfhmf5nshjx3nvi5hp4wpbr6bnf3tb4bk5ty",
+          "bytes": 10175211,
+          "sha256": "be2b4d2fae49bce7a8cafdd3d7a17588305b38bb388195db20b915e6c4fb72a9",
+          "ms": 3399
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeigsgddhj3yf2elck7pfhmf5nshjx3nvi5hp4wpbr6bnf3tb4bk5ty.ipfs.dget.top/",
+          "bytes": 10175211,
+          "sha256": "be2b4d2fae49bce7a8cafdd3d7a17588305b38bb388195db20b915e6c4fb72a9",
+          "ms": 18611
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1921/part0.parquet",
+      "cid": "bafkreica5etpgprrctko6jzdiunpuh6wp5kicicem5vq5wj4u5e5bg6bnu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreica5etpgprrctko6jzdiunpuh6wp5kicicem5vq5wj4u5e5bg6bnu",
+          "bytes": 11138,
+          "sha256": "40e926f33e3114d4ef2723451afa1fd67f54812044676b0ed93ca749d09bc16d",
+          "ms": 532
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreica5etpgprrctko6jzdiunpuh6wp5kicicem5vq5wj4u5e5bg6bnu.ipfs.dget.top/",
+          "bytes": 11138,
+          "sha256": "40e926f33e3114d4ef2723451afa1fd67f54812044676b0ed93ca749d09bc16d",
+          "ms": 15479
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1969/part0.parquet",
+      "cid": "bafkreihgl35oqg3rnselrs72nsjv4jd7eeqsf22wnld4chuwygfpgjciwm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreihgl35oqg3rnselrs72nsjv4jd7eeqsf22wnld4chuwygfpgjciwm",
+          "bytes": 8952,
+          "sha256": "e65efae81b716c88b8cbfa6c935e247f212122eb566ac7c11e96c18af32448b3",
+          "ms": 297
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreihgl35oqg3rnselrs72nsjv4jd7eeqsf22wnld4chuwygfpgjciwm.ipfs.dget.top/",
+          "bytes": 8952,
+          "sha256": "e65efae81b716c88b8cbfa6c935e247f212122eb566ac7c11e96c18af32448b3",
+          "ms": 412
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1970/part0.parquet",
+      "cid": "bafkreiag7lyj3unakjppzsm7xaelydofqvy35qogvfgqw3wnft3fxbdj2i",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreiag7lyj3unakjppzsm7xaelydofqvy35qogvfgqw3wnft3fxbdj2i",
+          "bytes": 10324,
+          "sha256": "06faf09dd1a0525efcc99fb808bc0dc58571bec1c6a94d0b6ecd2cf65b8469d2",
+          "ms": 351
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreiag7lyj3unakjppzsm7xaelydofqvy35qogvfgqw3wnft3fxbdj2i.ipfs.dget.top/",
+          "bytes": 10324,
+          "sha256": "06faf09dd1a0525efcc99fb808bc0dc58571bec1c6a94d0b6ecd2cf65b8469d2",
+          "ms": 652
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1971/part0.parquet",
+      "cid": "bafkreib5lltpmstav4c7tdodswgoen7yndv2clwwt46tkitxommu2tr5nm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreib5lltpmstav4c7tdodswgoen7yndv2clwwt46tkitxommu2tr5nm",
+          "bytes": 10387,
+          "sha256": "3d5ae6f64a60af05f98dc3958ce237f868eba12ed69f3d35227773194d4e3d6b",
+          "ms": 666
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreib5lltpmstav4c7tdodswgoen7yndv2clwwt46tkitxommu2tr5nm.ipfs.dget.top/",
+          "bytes": 10387,
+          "sha256": "3d5ae6f64a60af05f98dc3958ce237f868eba12ed69f3d35227773194d4e3d6b",
+          "ms": 400
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1976/part0.parquet",
+      "cid": "bafkreifj25exsw3tvdpgxi76elm6ec6jh5jerrjz5wjc7id5ja3rcpa4vu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreifj25exsw3tvdpgxi76elm6ec6jh5jerrjz5wjc7id5ja3rcpa4vu",
+          "bytes": 8718,
+          "sha256": "a9d749795b73a8de6ba3fe22d9e20bc93f5248c539ed922fa07d4837113c1cad",
+          "ms": 353
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreifj25exsw3tvdpgxi76elm6ec6jh5jerrjz5wjc7id5ja3rcpa4vu.ipfs.dget.top/",
+          "bytes": 8718,
+          "sha256": "a9d749795b73a8de6ba3fe22d9e20bc93f5248c539ed922fa07d4837113c1cad",
+          "ms": 442
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1977/part0.parquet",
+      "cid": "bafkreiecfklojogby622izk6ukudwn75bpgaqlgqy3ih4svhpo4rasbnou",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreiecfklojogby622izk6ukudwn75bpgaqlgqy3ih4svhpo4rasbnou",
+          "bytes": 13683,
+          "sha256": "822a96e4b8c1c7b5a4655ea2a83b37fd0bcc082cd0c6d07e4aa77bb910482d75",
+          "ms": 314
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreiecfklojogby622izk6ukudwn75bpgaqlgqy3ih4svhpo4rasbnou.ipfs.dget.top/",
+          "bytes": 13683,
+          "sha256": "822a96e4b8c1c7b5a4655ea2a83b37fd0bcc082cd0c6d07e4aa77bb910482d75",
+          "ms": 419
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1978/part0.parquet",
+      "cid": "bafkreiabtlnyviizb67ykaqagzo5hfolfabs5w543io46bulzjlwvzezui",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreiabtlnyviizb67ykaqagzo5hfolfabs5w543io46bulzjlwvzezui",
+          "bytes": 36710,
+          "sha256": "019adb8aa1190fbf850200365dd395cb28032edbbcda1dcf068bca576ae499a2",
+          "ms": 719
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreiabtlnyviizb67ykaqagzo5hfolfabs5w543io46bulzjlwvzezui.ipfs.dget.top/",
+          "bytes": 36710,
+          "sha256": "019adb8aa1190fbf850200365dd395cb28032edbbcda1dcf068bca576ae499a2",
+          "ms": 432
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1979/part0.parquet",
+      "cid": "bafkreibmjn4jwa6nyka2aqjrta5jjf7kmfljnfbe2j72xqvfchwfpcrynm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafkreibmjn4jwa6nyka2aqjrta5jjf7kmfljnfbe2j72xqvfchwfpcrynm",
+          "bytes": 85814,
+          "sha256": "2c4b789b03cdc281a04131983a9497ea6156969424d27fabc2a511ec578a386b",
+          "ms": 1457
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafkreibmjn4jwa6nyka2aqjrta5jjf7kmfljnfbe2j72xqvfchwfpcrynm.ipfs.dget.top/",
+          "bytes": 85814,
+          "sha256": "2c4b789b03cdc281a04131983a9497ea6156969424d27fabc2a511ec578a386b",
+          "ms": 478
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1980/part0.parquet",
+      "cid": "bafybeicyjnyupaxwhdzwm62nspcv6i274rtiih5wkroit2nvldzumtlrla",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicyjnyupaxwhdzwm62nspcv6i274rtiih5wkroit2nvldzumtlrla",
+          "bytes": 735519,
+          "sha256": "96bd2bdc730dae234e4bec6589b0a39018be3c824a9c493e0679c8a25d3b2c39",
+          "ms": 2630
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicyjnyupaxwhdzwm62nspcv6i274rtiih5wkroit2nvldzumtlrla.ipfs.dget.top/",
+          "bytes": 735519,
+          "sha256": "96bd2bdc730dae234e4bec6589b0a39018be3c824a9c493e0679c8a25d3b2c39",
+          "ms": 1069
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1981/part0.parquet",
+      "cid": "bafybeidmcli34hxh453ij624cgkq6vwvwx6hgqthxk53ww65xncc373kye",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeidmcli34hxh453ij624cgkq6vwvwx6hgqthxk53ww65xncc373kye",
+          "bytes": 1694335,
+          "sha256": "a27bced16d70a9e0deb8aa620085a023c1e4f89401022fd315228501d93896ed",
+          "ms": 2442
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeidmcli34hxh453ij624cgkq6vwvwx6hgqthxk53ww65xncc373kye.ipfs.dget.top/",
+          "bytes": 1694335,
+          "sha256": "a27bced16d70a9e0deb8aa620085a023c1e4f89401022fd315228501d93896ed",
+          "ms": 1273
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1982/part0.parquet",
+      "cid": "bafybeiefad65rakbj5vgndefg4m3cclsrza4he2s7foc4s6k7mzwilq5be",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiefad65rakbj5vgndefg4m3cclsrza4he2s7foc4s6k7mzwilq5be",
+          "bytes": 2020047,
+          "sha256": "d997d5cd3ffc19c13dcccbfda1d7bedfc5b2c573619eefd94d6eaed5c38fe4a2",
+          "ms": 1877
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiefad65rakbj5vgndefg4m3cclsrza4he2s7foc4s6k7mzwilq5be.ipfs.dget.top/",
+          "bytes": 2020047,
+          "sha256": "d997d5cd3ffc19c13dcccbfda1d7bedfc5b2c573619eefd94d6eaed5c38fe4a2",
+          "ms": 1017
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1983/part0.parquet",
+      "cid": "bafybeibbqro23cdktzsbmkd5gr7lb4a6weizbb5kthbxxdtyhhekf3bkmy",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeibbqro23cdktzsbmkd5gr7lb4a6weizbb5kthbxxdtyhhekf3bkmy",
+          "bytes": 2510857,
+          "sha256": "9f39ac58062a057cc31fbea01bc4f481d78eeb0ff1424bc359c5ef76aedabc10",
+          "ms": 2358
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeibbqro23cdktzsbmkd5gr7lb4a6weizbb5kthbxxdtyhhekf3bkmy.ipfs.dget.top/",
+          "bytes": 2510857,
+          "sha256": "9f39ac58062a057cc31fbea01bc4f481d78eeb0ff1424bc359c5ef76aedabc10",
+          "ms": 1534
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1984/part0.parquet",
+      "cid": "bafybeifyprbp2svdquheqj5hx4lk32ekqwpshzvpdy37qp2cq4aqckhn4u",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeifyprbp2svdquheqj5hx4lk32ekqwpshzvpdy37qp2cq4aqckhn4u",
+          "bytes": 3043201,
+          "sha256": "6c8eb4f27bfe6706f7c35ea5fe5ced64aa8ca462d94918c3134c165fddff2fc1",
+          "ms": 2826
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeifyprbp2svdquheqj5hx4lk32ekqwpshzvpdy37qp2cq4aqckhn4u.ipfs.dget.top/",
+          "bytes": 3043201,
+          "sha256": "6c8eb4f27bfe6706f7c35ea5fe5ced64aa8ca462d94918c3134c165fddff2fc1",
+          "ms": 1319
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1985/part0.parquet",
+      "cid": "bafybeifiabhuesi5fbnuck2w4qqlr7alenzsr4lc25nrdiuweb3yvtltbm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeifiabhuesi5fbnuck2w4qqlr7alenzsr4lc25nrdiuweb3yvtltbm",
+          "bytes": 3019924,
+          "sha256": "372878697a75a76e04ddae3b2217ef6159859ad995358c9b78738b2204f7f1ff",
+          "ms": 2754
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeifiabhuesi5fbnuck2w4qqlr7alenzsr4lc25nrdiuweb3yvtltbm.ipfs.dget.top/",
+          "bytes": 3019924,
+          "sha256": "372878697a75a76e04ddae3b2217ef6159859ad995358c9b78738b2204f7f1ff",
+          "ms": 1464
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1986/part0.parquet",
+      "cid": "bafybeiecdl5jarugzj7n2u5iu2hclwuizgnkdy2q7n4djyacb4aiwdiwq4",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiecdl5jarugzj7n2u5iu2hclwuizgnkdy2q7n4djyacb4aiwdiwq4",
+          "bytes": 2613670,
+          "sha256": "e1fe4c03b98b744941e6a0b66c2b8e164a89dd3b93369283d6e7f4f84ee4498f",
+          "ms": 3031
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiecdl5jarugzj7n2u5iu2hclwuizgnkdy2q7n4djyacb4aiwdiwq4.ipfs.dget.top/",
+          "bytes": 2613670,
+          "sha256": "e1fe4c03b98b744941e6a0b66c2b8e164a89dd3b93369283d6e7f4f84ee4498f",
+          "ms": 1092
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1987/part0.parquet",
+      "cid": "bafybeighzs4vfesaevx6hcgbygoafmbkglwchz4ieqje6s5rqwvyi2camq",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeighzs4vfesaevx6hcgbygoafmbkglwchz4ieqje6s5rqwvyi2camq",
+          "bytes": 2136110,
+          "sha256": "880330165aeb077a04f86e0531fb8cce0b6a937263be07d46872fe85da1de410",
+          "ms": 2547
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeighzs4vfesaevx6hcgbygoafmbkglwchz4ieqje6s5rqwvyi2camq.ipfs.dget.top/",
+          "bytes": 2136110,
+          "sha256": "880330165aeb077a04f86e0531fb8cce0b6a937263be07d46872fe85da1de410",
+          "ms": 1488
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1988/part0.parquet",
+      "cid": "bafybeia7gmn67x4zg7sqwi53z6sjgb7y3lcpxavheokq4alxl42ycozoge",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeia7gmn67x4zg7sqwi53z6sjgb7y3lcpxavheokq4alxl42ycozoge",
+          "bytes": 1773175,
+          "sha256": "eb957499c0644dd5d978f88fd15afa6e35ff27eeb79ce1a10ada0627e82f7f30",
+          "ms": 1756
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeia7gmn67x4zg7sqwi53z6sjgb7y3lcpxavheokq4alxl42ycozoge.ipfs.dget.top/",
+          "bytes": 1773175,
+          "sha256": "eb957499c0644dd5d978f88fd15afa6e35ff27eeb79ce1a10ada0627e82f7f30",
+          "ms": 1045
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1989/part0.parquet",
+      "cid": "bafybeiawadmzsvwudzurvp24ede7xnpzuwnsxgmiyichn3sau4omhvj6uq",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiawadmzsvwudzurvp24ede7xnpzuwnsxgmiyichn3sau4omhvj6uq",
+          "bytes": 1630877,
+          "sha256": "fe34f67fd33307b267a237d1cf768f12605e2a75ad9f96300a234743b5529b14",
+          "ms": 2477
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiawadmzsvwudzurvp24ede7xnpzuwnsxgmiyichn3sau4omhvj6uq.ipfs.dget.top/",
+          "bytes": 1630877,
+          "sha256": "fe34f67fd33307b267a237d1cf768f12605e2a75ad9f96300a234743b5529b14",
+          "ms": 1307
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1990/part0.parquet",
+      "cid": "bafybeicliewhqbjjehtbjy5mn2lhu2akp7ellb77egemro3ketpcewrhoq",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicliewhqbjjehtbjy5mn2lhu2akp7ellb77egemro3ketpcewrhoq",
+          "bytes": 1549806,
+          "sha256": "d35f928bb4fa7aa0c6f15dae41101b9a7daebd9c27000f142fc727fcc86256ea",
+          "ms": 2792
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicliewhqbjjehtbjy5mn2lhu2akp7ellb77egemro3ketpcewrhoq.ipfs.dget.top/",
+          "bytes": 1549806,
+          "sha256": "d35f928bb4fa7aa0c6f15dae41101b9a7daebd9c27000f142fc727fcc86256ea",
+          "ms": 923
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1991/part0.parquet",
+      "cid": "bafybeieu6cx6ikavgxcehveibzxcoux7zvbrafqcgwaowaalynabgqguqm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeieu6cx6ikavgxcehveibzxcoux7zvbrafqcgwaowaalynabgqguqm",
+          "bytes": 1498738,
+          "sha256": "ff50c01cabc20643b6288b267828cc17fed6590fb31268138e7f9c03f2ef7fa7",
+          "ms": 2189
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeieu6cx6ikavgxcehveibzxcoux7zvbrafqcgwaowaalynabgqguqm.ipfs.dget.top/",
+          "bytes": 1498738,
+          "sha256": "ff50c01cabc20643b6288b267828cc17fed6590fb31268138e7f9c03f2ef7fa7",
+          "ms": 813
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1992/part0.parquet",
+      "cid": "bafybeieg4xk2c2q77j55as5omqzmgbroh62hddnpj2lay3hjmidg4cxxuq",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeieg4xk2c2q77j55as5omqzmgbroh62hddnpj2lay3hjmidg4cxxuq",
+          "bytes": 1629744,
+          "sha256": "c08c9e3abdc136d0d3c74d8e74ef932e47b65ce4ed4779b90783779fbb058ec4",
+          "ms": 3015
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeieg4xk2c2q77j55as5omqzmgbroh62hddnpj2lay3hjmidg4cxxuq.ipfs.dget.top/",
+          "bytes": 1629744,
+          "sha256": "c08c9e3abdc136d0d3c74d8e74ef932e47b65ce4ed4779b90783779fbb058ec4",
+          "ms": 902
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1993/part0.parquet",
+      "cid": "bafybeibgyytimdbrpzp7zukxgyfpacr4x4yzxxtv5467llnl5bw3fmalsa",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeibgyytimdbrpzp7zukxgyfpacr4x4yzxxtv5467llnl5bw3fmalsa",
+          "bytes": 1748648,
+          "sha256": "a3c17a2567803f12c5c757ca02e67f53de5771a4df8899a804f901fc6e7d2833",
+          "ms": 1979
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeibgyytimdbrpzp7zukxgyfpacr4x4yzxxtv5467llnl5bw3fmalsa.ipfs.dget.top/",
+          "bytes": 1748648,
+          "sha256": "a3c17a2567803f12c5c757ca02e67f53de5771a4df8899a804f901fc6e7d2833",
+          "ms": 914
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1994/part0.parquet",
+      "cid": "bafybeiaxevapttlbdqkal7yk2u22srensbajc5c7rzrepabvqh2khiqwa4",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiaxevapttlbdqkal7yk2u22srensbajc5c7rzrepabvqh2khiqwa4",
+          "bytes": 1754484,
+          "sha256": "3631cc68447ec68d06341832be09fec9c8d85109f9961399f045445b3e9d7dfb",
+          "ms": 2156
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiaxevapttlbdqkal7yk2u22srensbajc5c7rzrepabvqh2khiqwa4.ipfs.dget.top/",
+          "bytes": 1754484,
+          "sha256": "3631cc68447ec68d06341832be09fec9c8d85109f9961399f045445b3e9d7dfb",
+          "ms": 2051
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1995/part0.parquet",
+      "cid": "bafybeigpo3ov4f6krgzxj6d5l5ugnyzhr3eec2eakzuv2yue3a64urpa5u",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeigpo3ov4f6krgzxj6d5l5ugnyzhr3eec2eakzuv2yue3a64urpa5u",
+          "bytes": 1788724,
+          "sha256": "57a554676b03d42ef77cdd79819b9778ebda05e4b5a5a438f94c5800b2f22153",
+          "ms": 2602
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeigpo3ov4f6krgzxj6d5l5ugnyzhr3eec2eakzuv2yue3a64urpa5u.ipfs.dget.top/",
+          "bytes": 1788724,
+          "sha256": "57a554676b03d42ef77cdd79819b9778ebda05e4b5a5a438f94c5800b2f22153",
+          "ms": 1619
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1996/part0.parquet",
+      "cid": "bafybeiez36ymmzb3jsbmrnrnjrnxymttfirn7cy7nxukjs2fho3yxpe3c4",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiez36ymmzb3jsbmrnrnjrnxymttfirn7cy7nxukjs2fho3yxpe3c4",
+          "bytes": 1987786,
+          "sha256": "5d55af6b83c6acaa68c04d462d77fe2ea3ecf98be20732d424ad0650949f32db",
+          "ms": 3164
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiez36ymmzb3jsbmrnrnjrnxymttfirn7cy7nxukjs2fho3yxpe3c4.ipfs.dget.top/",
+          "bytes": 1987786,
+          "sha256": "5d55af6b83c6acaa68c04d462d77fe2ea3ecf98be20732d424ad0650949f32db",
+          "ms": 2610
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1997/part0.parquet",
+      "cid": "bafybeie6nnlj5yh6ahszip4viujnm23vnqrkrmhdhmaakr4mtyq7c4zpti",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeie6nnlj5yh6ahszip4viujnm23vnqrkrmhdhmaakr4mtyq7c4zpti",
+          "bytes": 1809236,
+          "sha256": "69834a76c3646d3ef983240afded447666b1b53fde7fa9f9579e6826efc70341",
+          "ms": 2807
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeie6nnlj5yh6ahszip4viujnm23vnqrkrmhdhmaakr4mtyq7c4zpti.ipfs.dget.top/",
+          "bytes": 1809236,
+          "sha256": "69834a76c3646d3ef983240afded447666b1b53fde7fa9f9579e6826efc70341",
+          "ms": 1837
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1998/part0.parquet",
+      "cid": "bafybeifzwvi7hjqlpknenwk2ye5eflichwwukjdbc22ftmufunctdxtkhe",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeifzwvi7hjqlpknenwk2ye5eflichwwukjdbc22ftmufunctdxtkhe",
+          "bytes": 1959971,
+          "sha256": "bef2d965780a866af862b2f341a542af2daceb6b24be5f4aea072f3b60af304a",
+          "ms": 2363
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeifzwvi7hjqlpknenwk2ye5eflichwwukjdbc22ftmufunctdxtkhe.ipfs.dget.top/",
+          "bytes": 1959971,
+          "sha256": "bef2d965780a866af862b2f341a542af2daceb6b24be5f4aea072f3b60af304a",
+          "ms": 2228
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=1999/part0.parquet",
+      "cid": "bafybeif4lxtqo324xmcg42hwux4upnyeqfav7lzvfqrxpk3g7mot5qselm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeif4lxtqo324xmcg42hwux4upnyeqfav7lzvfqrxpk3g7mot5qselm",
+          "bytes": 1962732,
+          "sha256": "3fd8d4f6e313fe4411fa7908664263917c3f92fce16c3a916329b37b00255323",
+          "ms": 2523
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeif4lxtqo324xmcg42hwux4upnyeqfav7lzvfqrxpk3g7mot5qselm.ipfs.dget.top/",
+          "bytes": 1962732,
+          "sha256": "3fd8d4f6e313fe4411fa7908664263917c3f92fce16c3a916329b37b00255323",
+          "ms": 2053
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2000/part0.parquet",
+      "cid": "bafybeie2jnljpf2us27du7gp73wpl6ho3efy4owa2w3i66gp44fsx4wp6e",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeie2jnljpf2us27du7gp73wpl6ho3efy4owa2w3i66gp44fsx4wp6e",
+          "bytes": 2568218,
+          "sha256": "2f7a00f5100ff153b9e894529f0d79540ccc29d60a8c0ec83c11d9fc2e4c905e",
+          "ms": 5674
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeie2jnljpf2us27du7gp73wpl6ho3efy4owa2w3i66gp44fsx4wp6e.ipfs.dget.top/",
+          "bytes": 2568218,
+          "sha256": "2f7a00f5100ff153b9e894529f0d79540ccc29d60a8c0ec83c11d9fc2e4c905e",
+          "ms": 16581
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2001/part0.parquet",
+      "cid": "bafybeic373qkjvvqdug3p6wik43rv3kd6jkfucjqzrxja7grijlxexojru",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeic373qkjvvqdug3p6wik43rv3kd6jkfucjqzrxja7grijlxexojru",
+          "bytes": 2353116,
+          "sha256": "92d1c96825faa154398515dc1564f81c81e8071102523826f4ee46667cda068d",
+          "ms": 4872
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeic373qkjvvqdug3p6wik43rv3kd6jkfucjqzrxja7grijlxexojru.ipfs.dget.top/",
+          "bytes": 2353116,
+          "sha256": "92d1c96825faa154398515dc1564f81c81e8071102523826f4ee46667cda068d",
+          "ms": 16756
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2002/part0.parquet",
+      "cid": "bafybeib4vyl3ptl3u4dc3zdswu6wnwm2kq235aysgskzbjd2r33psj7y4e",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeib4vyl3ptl3u4dc3zdswu6wnwm2kq235aysgskzbjd2r33psj7y4e",
+          "bytes": 2555624,
+          "sha256": "f0671b8a033f719c1fbc3a9251589355e3e6ed1f1027acabfa0d7c0e09c19b84",
+          "ms": 4513
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeib4vyl3ptl3u4dc3zdswu6wnwm2kq235aysgskzbjd2r33psj7y4e.ipfs.dget.top/",
+          "bytes": 2555624,
+          "sha256": "f0671b8a033f719c1fbc3a9251589355e3e6ed1f1027acabfa0d7c0e09c19b84",
+          "ms": 1385
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2003/part0.parquet",
+      "cid": "bafybeig5kgxatd274dy6xvmsp2eb5e5g3qznxt3tjvkwcjnwmibh3u2n3y",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeig5kgxatd274dy6xvmsp2eb5e5g3qznxt3tjvkwcjnwmibh3u2n3y",
+          "bytes": 2652761,
+          "sha256": "0fbe2a6908f8eda0178d34f34e89435057cb9fccd8bd1e752f4bdbe5b5e8f27a",
+          "ms": 2892
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeig5kgxatd274dy6xvmsp2eb5e5g3qznxt3tjvkwcjnwmibh3u2n3y.ipfs.dget.top/",
+          "bytes": 2652761,
+          "sha256": "0fbe2a6908f8eda0178d34f34e89435057cb9fccd8bd1e752f4bdbe5b5e8f27a",
+          "ms": 17780
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2004/part0.parquet",
+      "cid": "bafybeidl3jyhmshwfxqvqcam2evcol3dflgnldexzmpnc2lmpl56cqiepe",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeidl3jyhmshwfxqvqcam2evcol3dflgnldexzmpnc2lmpl56cqiepe",
+          "bytes": 2824493,
+          "sha256": "1e3803b8e9cdf9832ab3286886a2ac7e25aae0cc11bf38e502d683d75b1dc739",
+          "ms": 2950
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeidl3jyhmshwfxqvqcam2evcol3dflgnldexzmpnc2lmpl56cqiepe.ipfs.dget.top/",
+          "bytes": 2824493,
+          "sha256": "1e3803b8e9cdf9832ab3286886a2ac7e25aae0cc11bf38e502d683d75b1dc739",
+          "ms": 17263
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2005/part0.parquet",
+      "cid": "bafybeifzkfwof7chrxlraypjnmqft6zbfcdc33xjh34x5hs7quby2az5cu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeifzkfwof7chrxlraypjnmqft6zbfcdc33xjh34x5hs7quby2az5cu",
+          "bytes": 3373340,
+          "sha256": "f87dfcc67f011203f5627d88a42fc6b92bfeaa188964ef06b7118bb23c39b992",
+          "ms": 2734
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeifzkfwof7chrxlraypjnmqft6zbfcdc33xjh34x5hs7quby2az5cu.ipfs.dget.top/",
+          "bytes": 3373340,
+          "sha256": "f87dfcc67f011203f5627d88a42fc6b92bfeaa188964ef06b7118bb23c39b992",
+          "ms": 17342
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2006/part0.parquet",
+      "cid": "bafybeicgfrkjjbgqz3oogsbohsgjgarjgqgfkjougq4bztlfqroqqj3ilq",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicgfrkjjbgqz3oogsbohsgjgarjgqgfkjougq4bztlfqroqqj3ilq",
+          "bytes": 3837362,
+          "sha256": "ab0a5cc81598890c6a73217369375e4aec3a12cbde87826245545f635438fcf9",
+          "ms": 3486
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicgfrkjjbgqz3oogsbohsgjgarjgqgfkjougq4bztlfqroqqj3ilq.ipfs.dget.top/",
+          "bytes": 3837362,
+          "sha256": "ab0a5cc81598890c6a73217369375e4aec3a12cbde87826245545f635438fcf9",
+          "ms": 17940
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2007/part0.parquet",
+      "cid": "bafybeihlu7r3bs2ewvb26fihz5eskq7cnrzdd4jwi3os4t7sgn5d3wmcoi",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihlu7r3bs2ewvb26fihz5eskq7cnrzdd4jwi3os4t7sgn5d3wmcoi",
+          "bytes": 3607653,
+          "sha256": "33c1b1bfd84f1f80a1e34f93ab1dfbdb291f25bdcc22a8495776082e04c2c093",
+          "ms": 2764
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeihlu7r3bs2ewvb26fihz5eskq7cnrzdd4jwi3os4t7sgn5d3wmcoi.ipfs.dget.top/",
+          "bytes": 3607653,
+          "sha256": "33c1b1bfd84f1f80a1e34f93ab1dfbdb291f25bdcc22a8495776082e04c2c093",
+          "ms": 16909
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2008/part0.parquet",
+      "cid": "bafybeieselrtj7q7lxo3f7zyvngg2lqkyvn75aon7zxbmebcx3kksoaiju",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeieselrtj7q7lxo3f7zyvngg2lqkyvn75aon7zxbmebcx3kksoaiju",
+          "bytes": 3763032,
+          "sha256": "6a86302cda9af5cb050fe835d2528767a9339af83dc90b2c50f1cbe1b3529c1c",
+          "ms": 3097
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeieselrtj7q7lxo3f7zyvngg2lqkyvn75aon7zxbmebcx3kksoaiju.ipfs.dget.top/",
+          "bytes": 3763032,
+          "sha256": "6a86302cda9af5cb050fe835d2528767a9339af83dc90b2c50f1cbe1b3529c1c",
+          "ms": 21962
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2009/part0.parquet",
+      "cid": "bafybeigfrrlvr2zsn5eecgknwpvhbipebqplsaotaxv7oxzb2wksxgrtvm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeigfrrlvr2zsn5eecgknwpvhbipebqplsaotaxv7oxzb2wksxgrtvm",
+          "bytes": 3591271,
+          "sha256": "6f9f4fe923248d2f62f70812d1905096a4f2483c06ea6cfe04af681f0d370704",
+          "ms": 2526
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeigfrrlvr2zsn5eecgknwpvhbipebqplsaotaxv7oxzb2wksxgrtvm.ipfs.dget.top/",
+          "bytes": 3591271,
+          "sha256": "6f9f4fe923248d2f62f70812d1905096a4f2483c06ea6cfe04af681f0d370704",
+          "ms": 91324
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2010/part0.parquet",
+      "cid": "bafybeifxdf6avjzczknvmojwqyadrprfa7tc7g7u2ae2hr63phl4pf7bey",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeifxdf6avjzczknvmojwqyadrprfa7tc7g7u2ae2hr63phl4pf7bey",
+          "bytes": 3955481,
+          "sha256": "bf49e7faa382f1957691102182f841312fefb1b9e25adc7908a3fd8299c815b4",
+          "ms": 4284
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeifxdf6avjzczknvmojwqyadrprfa7tc7g7u2ae2hr63phl4pf7bey.ipfs.dget.top/",
+          "bytes": 3955481,
+          "sha256": "bf49e7faa382f1957691102182f841312fefb1b9e25adc7908a3fd8299c815b4",
+          "ms": 16291
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2011/part0.parquet",
+      "cid": "bafybeih3wpabxccmcru46fjkqchsa6wmisjpbklew6obu6oeicyks4syzy",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeih3wpabxccmcru46fjkqchsa6wmisjpbklew6obu6oeicyks4syzy",
+          "bytes": 4099823,
+          "sha256": "866152f36f6afd6940952238457cdc137e7a5d3c81f1b74856a58c707a3ef2a6",
+          "ms": 4300
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeih3wpabxccmcru46fjkqchsa6wmisjpbklew6obu6oeicyks4syzy.ipfs.dget.top/",
+          "bytes": 4099823,
+          "sha256": "866152f36f6afd6940952238457cdc137e7a5d3c81f1b74856a58c707a3ef2a6",
+          "ms": 15960
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2012/part0.parquet",
+      "cid": "bafybeicgxk3hbarjlkdos5xd3vw3xs7x64w2iypf5wjhpfcxlwnnme5pqu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicgxk3hbarjlkdos5xd3vw3xs7x64w2iypf5wjhpfcxlwnnme5pqu",
+          "bytes": 4354996,
+          "sha256": "6aa18bb1e0adf43c572f3a7e16104215040cd34f6e4943352736dca122adadf2",
+          "ms": 3492
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicgxk3hbarjlkdos5xd3vw3xs7x64w2iypf5wjhpfcxlwnnme5pqu.ipfs.dget.top/",
+          "bytes": 4354996,
+          "sha256": "6aa18bb1e0adf43c572f3a7e16104215040cd34f6e4943352736dca122adadf2",
+          "ms": 16093
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2013/part0.parquet",
+      "cid": "bafybeihawfhreawup3f6edrmqfqqrsgbxhq5e6ozxq2f5n7b4nu63ffv44",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihawfhreawup3f6edrmqfqqrsgbxhq5e6ozxq2f5n7b4nu63ffv44",
+          "bytes": 4731338,
+          "sha256": "bd663e35d700e4a87007be3f9e78e02125cdcce6c261eff252a665919a82eb6d",
+          "ms": 3088
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeihawfhreawup3f6edrmqfqqrsgbxhq5e6ozxq2f5n7b4nu63ffv44.ipfs.dget.top/",
+          "bytes": 4731338,
+          "sha256": "bd663e35d700e4a87007be3f9e78e02125cdcce6c261eff252a665919a82eb6d",
+          "ms": 16389
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2014/part0.parquet",
+      "cid": "bafybeiehyijsyhnk37oxiwp4btwjnupb7za5yes7ztwbmwhepcl7a7g7uy",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiehyijsyhnk37oxiwp4btwjnupb7za5yes7ztwbmwhepcl7a7g7uy",
+          "bytes": 4767524,
+          "sha256": "5b1caa47a9cd9e172c5b6303588064b3953c25d57cb4989508e45f70ae2a59a4",
+          "ms": 2846
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiehyijsyhnk37oxiwp4btwjnupb7za5yes7ztwbmwhepcl7a7g7uy.ipfs.dget.top/",
+          "bytes": 4767524,
+          "sha256": "5b1caa47a9cd9e172c5b6303588064b3953c25d57cb4989508e45f70ae2a59a4",
+          "ms": 1265
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2015/part0.parquet",
+      "cid": "bafybeie6ih5gbsyc57jizwzmtlvvkgvnojggp4l5hum4edyr2pjl2bx4za",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeie6ih5gbsyc57jizwzmtlvvkgvnojggp4l5hum4edyr2pjl2bx4za",
+          "bytes": 4868656,
+          "sha256": "78ca6db6eef5bc2aef80894a7391249d62041b90d071cf78d1552fad136dec33",
+          "ms": 3135
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeie6ih5gbsyc57jizwzmtlvvkgvnojggp4l5hum4edyr2pjl2bx4za.ipfs.dget.top/",
+          "bytes": 4868656,
+          "sha256": "78ca6db6eef5bc2aef80894a7391249d62041b90d071cf78d1552fad136dec33",
+          "ms": 1413
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2016/part0.parquet",
+      "cid": "bafybeicrbyzk452muwvjko7zr6h75wjlh6laz4gfamsnhtnvsyhp6gtdp4",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicrbyzk452muwvjko7zr6h75wjlh6laz4gfamsnhtnvsyhp6gtdp4",
+          "bytes": 5080058,
+          "sha256": "5c3edd99f9474dec6a1bb74afff1b04166d96cb9a1abb6e463ee5066876768c4",
+          "ms": 3611
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicrbyzk452muwvjko7zr6h75wjlh6laz4gfamsnhtnvsyhp6gtdp4.ipfs.dget.top/",
+          "bytes": 5080058,
+          "sha256": "5c3edd99f9474dec6a1bb74afff1b04166d96cb9a1abb6e463ee5066876768c4",
+          "ms": 1428
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2017/part0.parquet",
+      "cid": "bafybeihmmwlro44jrvvv75lmjocfu2f5btexdfannws6s4egriupuvn65q",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihmmwlro44jrvvv75lmjocfu2f5btexdfannws6s4egriupuvn65q",
+          "bytes": 5196789,
+          "sha256": "f402a455495c940cd55a38f6ae50fd7d2ea47d9621b076b0897fbf3fc8c3cb62",
+          "ms": 4135
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeihmmwlro44jrvvv75lmjocfu2f5btexdfannws6s4egriupuvn65q.ipfs.dget.top/",
+          "bytes": 5196789,
+          "sha256": "f402a455495c940cd55a38f6ae50fd7d2ea47d9621b076b0897fbf3fc8c3cb62",
+          "ms": 1248
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2018/part0.parquet",
+      "cid": "bafybeiclhyzai6g3nffb6zwisdscd722njj6ewbwq3xjb3mg4prmeng76a",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiclhyzai6g3nffb6zwisdscd722njj6ewbwq3xjb3mg4prmeng76a",
+          "bytes": 5233071,
+          "sha256": "372c3858c61c347350f2d31be80fb76b78566ffec4994513a5a26f9947f610ed",
+          "ms": 2675
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiclhyzai6g3nffb6zwisdscd722njj6ewbwq3xjb3mg4prmeng76a.ipfs.dget.top/",
+          "bytes": 5233071,
+          "sha256": "372c3858c61c347350f2d31be80fb76b78566ffec4994513a5a26f9947f610ed",
+          "ms": 1543
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2019/part0.parquet",
+      "cid": "bafybeiblop6pagpoe7hwytkazvl6eqcpn6kcgw4whgbm6bw4o2opclmk5e",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeiblop6pagpoe7hwytkazvl6eqcpn6kcgw4whgbm6bw4o2opclmk5e",
+          "bytes": 5752152,
+          "sha256": "11b81aefb46df884c09b3aefd403a1362c339286bf91a3f3a6644f490db32031",
+          "ms": 2679
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeiblop6pagpoe7hwytkazvl6eqcpn6kcgw4whgbm6bw4o2opclmk5e.ipfs.dget.top/",
+          "bytes": 5752152,
+          "sha256": "11b81aefb46df884c09b3aefd403a1362c339286bf91a3f3a6644f490db32031",
+          "ms": 1710
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2020/part0.parquet",
+      "cid": "bafybeid3ynw7mhklm6shpwavzy3636c2aymwjn4ggzp5t7c2hbzysj2dvy",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeid3ynw7mhklm6shpwavzy3636c2aymwjn4ggzp5t7c2hbzysj2dvy",
+          "bytes": 5242646,
+          "sha256": "06477081cd4c7e2e4e44b819c6919916c1573b792429c5e6a4d61190fde0aee7",
+          "ms": 3748
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeid3ynw7mhklm6shpwavzy3636c2aymwjn4ggzp5t7c2hbzysj2dvy.ipfs.dget.top/",
+          "bytes": 5242646,
+          "sha256": "06477081cd4c7e2e4e44b819c6919916c1573b792429c5e6a4d61190fde0aee7",
+          "ms": 1449
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2021/part0.parquet",
+      "cid": "bafybeibzhhap6fiyvyeur4wpezwsricujhqgjgwogrbti3wljhsax5inum",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeibzhhap6fiyvyeur4wpezwsricujhqgjgwogrbti3wljhsax5inum",
+          "bytes": 5879114,
+          "sha256": "6907c57c5d2a68057325659d43ca2bb6e761dc1ffa54fb7bbbaab9dbf52444e1",
+          "ms": 3413
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeibzhhap6fiyvyeur4wpezwsricujhqgjgwogrbti3wljhsax5inum.ipfs.dget.top/",
+          "bytes": 5879114,
+          "sha256": "6907c57c5d2a68057325659d43ca2bb6e761dc1ffa54fb7bbbaab9dbf52444e1",
+          "ms": 1822
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2022/part0.parquet",
+      "cid": "bafybeicliqqqrwe4kdkglmb32pshklyhm56je4iwicun343chcq6xsbrcy",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicliqqqrwe4kdkglmb32pshklyhm56je4iwicun343chcq6xsbrcy",
+          "bytes": 5630786,
+          "sha256": "2cba5a64e76ddb63217e5e80ba7dee07c1ffae535f6d3d87ecd6e29a1bec675b",
+          "ms": 5270
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicliqqqrwe4kdkglmb32pshklyhm56je4iwicun343chcq6xsbrcy.ipfs.dget.top/",
+          "bytes": 5630786,
+          "sha256": "2cba5a64e76ddb63217e5e80ba7dee07c1ffae535f6d3d87ecd6e29a1bec675b",
+          "ms": 17892
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2023/part0.parquet",
+      "cid": "bafybeidghb3fa3zlkryi4yvytnqd3qlsxs4caw4y5jsf6i2eur3txredmu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeidghb3fa3zlkryi4yvytnqd3qlsxs4caw4y5jsf6i2eur3txredmu",
+          "bytes": 5009630,
+          "sha256": "e2a4f0552a74e6719cf81c4a0dc3bd543e5efaeafdf5115db73a2e85e886e3b1",
+          "ms": 3169
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeidghb3fa3zlkryi4yvytnqd3qlsxs4caw4y5jsf6i2eur3txredmu.ipfs.dget.top/",
+          "bytes": 5009630,
+          "sha256": "e2a4f0552a74e6719cf81c4a0dc3bd543e5efaeafdf5115db73a2e85e886e3b1",
+          "ms": 17184
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2024/part0.parquet",
+      "cid": "bafybeieam4azxiwccdsai2t33mhofhcbdyl3bwqllkies7vgdlfribu6ee",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeieam4azxiwccdsai2t33mhofhcbdyl3bwqllkies7vgdlfribu6ee",
+          "bytes": 4613391,
+          "sha256": "155fb31c33df76d96e6a861e27e6fa3d6343023d4c7a5f5fdc66276c378d24b6",
+          "ms": 3304
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeieam4azxiwccdsai2t33mhofhcbdyl3bwqllkies7vgdlfribu6ee.ipfs.dget.top/",
+          "bytes": 4613391,
+          "sha256": "155fb31c33df76d96e6a861e27e6fa3d6343023d4c7a5f5fdc66276c378d24b6",
+          "ms": 1548
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2025/part0.parquet",
+      "cid": "bafybeicat3icwg3gctocpe7jnghpslic7riclxrpqo3553uotduxyoprvm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeicat3icwg3gctocpe7jnghpslic7riclxrpqo3553uotduxyoprvm",
+          "bytes": 4595763,
+          "sha256": "fdddbb898e26adbad3e47d891b56221c8730abe35134508688080660b3af55e7",
+          "ms": 2800
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeicat3icwg3gctocpe7jnghpslic7riclxrpqo3553uotduxyoprvm.ipfs.dget.top/",
+          "bytes": 4595763,
+          "sha256": "fdddbb898e26adbad3e47d891b56221c8730abe35134508688080660b3af55e7",
+          "ms": 16245
+        }
+      }
+    },
+    {
+      "name": "tables/permits/year=2026/part0.parquet",
+      "cid": "bafybeierpzi3bb6jhxtge3d2g7tnhnrgytolzxevmssfom6a27hwnyxxgu",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeierpzi3bb6jhxtge3d2g7tnhnrgytolzxevmssfom6a27hwnyxxgu",
+          "bytes": 4003853,
+          "sha256": "86911682d72caba0fa631f927de3a6faba18b4158572081a7fe075ecb5772386",
+          "ms": 2805
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeierpzi3bb6jhxtge3d2g7tnhnrgytolzxevmssfom6a27hwnyxxgu.ipfs.dget.top/",
+          "bytes": 4003853,
+          "sha256": "86911682d72caba0fa631f927de3a6faba18b4158572081a7fe075ecb5772386",
+          "ms": 152393
+        }
+      }
+    },
+    {
+      "name": "tables/properties.parquet",
+      "cid": "bafybeif5hn4t7y3rwub2wjgt7dodfbhrl75ahdectyqvx3xstjncjxd6ny",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeif5hn4t7y3rwub2wjgt7dodfbhrl75ahdectyqvx3xstjncjxd6ny",
+          "bytes": 28102308,
+          "sha256": "092a5105f751a0c5a21ce3dbb4bb987b6c5ef7bc2e6bc684678975b70b84d64c",
+          "ms": 9046
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeif5hn4t7y3rwub2wjgt7dodfbhrl75ahdectyqvx3xstjncjxd6ny.ipfs.dget.top/",
+          "bytes": 28102308,
+          "sha256": "092a5105f751a0c5a21ce3dbb4bb987b6c5ef7bc2e6bc684678975b70b84d64c",
+          "ms": 24747
+        }
+      }
+    },
+    {
+      "name": "tables/roof_age.parquet",
+      "cid": "bafybeid3ztbigcbb7qhhgumqdhdc2wlay7ke26rorgvpkaepeidyy2vkh4",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeid3ztbigcbb7qhhgumqdhdc2wlay7ke26rorgvpkaepeidyy2vkh4",
+          "bytes": 1346518,
+          "sha256": "a1cfdea50df320e6fa720ec1702a3d177975d21128a24d3023575885c295ec79",
+          "ms": 2404
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeid3ztbigcbb7qhhgumqdhdc2wlay7ke26rorgvpkaepeidyy2vkh4.ipfs.dget.top/",
+          "bytes": 1346518,
+          "sha256": "a1cfdea50df320e6fa720ec1702a3d177975d21128a24d3023575885c295ec79",
+          "ms": 16147
+        }
+      }
+    },
+    {
+      "name": "tables/roofing_permits.parquet",
+      "cid": "bafybeihuoxu4exnzge3zggbudlsxts274ohxjbyejjafpf7wqspawhmgpm",
+      "codec": "file",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "url": "https://ipfs.orbitor.dev/ipfs/bafybeihuoxu4exnzge3zggbudlsxts274ohxjbyejjafpf7wqspawhmgpm",
+          "bytes": 2938497,
+          "sha256": "d76ad831e113d73aa746c0e4106a52d1981e7eb9364f151515dd04119c9dbdb2",
+          "ms": 2412
+        },
+        "https://dget.top": {
+          "ok": true,
+          "url": "https://bafybeihuoxu4exnzge3zggbudlsxts274ohxjbyejjafpf7wqspawhmgpm.ipfs.dget.top/",
+          "bytes": 2938497,
+          "sha256": "d76ad831e113d73aa746c0e4106a52d1981e7eb9364f151515dd04119c9dbdb2",
+          "ms": 1605
+        }
+      }
+    },
+    {
+      "name": "lexicon/property_improvement/archive",
+      "cid": "baguqeeraabcjfnhgmvywt4lmkldznv4jgd2bw7azec4ujpnie2w46vrmf4tq",
+      "codec": "dag-json",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "scope": "block",
+          "url": "https://ipfs.orbitor.dev/ipfs/baguqeeraabcjfnhgmvywt4lmkldznv4jgd2bw7azec4ujpnie2w46vrmf4tq?format=car&dag-scope=block",
+          "car_bytes": 444,
+          "roots": [
+            "baguqeeraabcjfnhgmvywt4lmkldznv4jgd2bw7azec4ujpnie2w46vrmf4tq"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 1188
+        },
+        "https://dget.top": {
+          "ok": true,
+          "scope": "block",
+          "url": "https://baguqeeraabcjfnhgmvywt4lmkldznv4jgd2bw7azec4ujpnie2w46vrmf4tq.ipfs.dget.top/?format=car&dag-scope=block",
+          "car_bytes": 444,
+          "roots": [
+            "baguqeeraabcjfnhgmvywt4lmkldznv4jgd2bw7azec4ujpnie2w46vrmf4tq"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 463
+        }
+      }
+    },
+    {
+      "name": "lexicon/property_improvement/tables",
+      "cid": "baguqeeraddzenc37adtill3pzcxgcjanaqha5xwrnxrgbirb23qhelnmataa",
+      "codec": "dag-json",
+      "gateways": {
+        "https://ipfs.orbitor.dev": {
+          "ok": true,
+          "scope": "block",
+          "url": "https://ipfs.orbitor.dev/ipfs/baguqeeraddzenc37adtill3pzcxgcjanaqha5xwrnxrgbirb23qhelnmataa?format=car&dag-scope=block",
+          "car_bytes": 1606,
+          "roots": [
+            "baguqeeraddzenc37adtill3pzcxgcjanaqha5xwrnxrgbirb23qhelnmataa"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 759
+        },
+        "https://dget.top": {
+          "ok": true,
+          "scope": "block",
+          "url": "https://baguqeeraddzenc37adtill3pzcxgcjanaqha5xwrnxrgbirb23qhelnmataa.ipfs.dget.top/?format=car&dag-scope=block",
+          "car_bytes": 1606,
+          "roots": [
+            "baguqeeraddzenc37adtill3pzcxgcjanaqha5xwrnxrgbirb23qhelnmataa"
+          ],
+          "blocks": 1,
+          "expected_blocks": null,
+          "bad_blocks": 0,
+          "ms": 401
+        }
+      }
+    }
+  ]
+}

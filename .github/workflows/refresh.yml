@@ -1,0 +1,94 @@
+# Twice-weekly incremental refresh on a free GitHub-hosted runner (no Oracle-hosted infrastructure):
+# pull the City of Austin permit window since the last watermark, apply it to the previous snapshot
+# (read by CID from IPFS), republish changed artifacts as new CIDs, and commit the manifest and run
+# history. With no source changes it only records an ingestion check.
+name: refresh
+
+on:
+  schedule:
+    # Twice a week (Mondays and Thursdays): Austin publishes permit changes daily, but each run's
+    # verification downloads the whole snapshot through gateways, and twice weekly keeps that inside
+    # Filebase's free 10 GB/month egress; retention keeps pins inside the free tiers.
+    - cron: "40 7 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --workspace pipeline --include-workspace-root=false --ignore-scripts
+      - name: Incremental run
+        id: run
+        env:
+          FILEBASE_ACCESS_KEY: ${{ secrets.FILEBASE_ACCESS_KEY }}
+          FILEBASE_SECRET_KEY: ${{ secrets.FILEBASE_SECRET_KEY }}
+          FILEBASE_BUCKET: ${{ secrets.FILEBASE_BUCKET }}
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+          SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
+        run: |
+          set -o pipefail  # a pipeline failure must fail the step, not be masked by tee
+          # --no-lakeway: Lakeway is not loaded yet, and its first harvest is the full history since 1995
+          # (about 2.5 h of portal lookups), longer than this job's timeout. The first scheduled run
+          # (2026-10-22) timed out in it before publishing. The harvester runs on its own until a full
+          # history is loaded; incremental Lakeway windows can then be turned back on here.
+          node pipeline/src/run-incremental.mjs --runs runs --no-lakeway | tee run-result.json
+          # The last stdout line is the run result. Anything other than a run id or "no_changes" fails the
+          # step (an assignment, so a failing parse is not masked the way it would be inside echo).
+          RUN_ID=$(node -e '
+            const line = require("fs").readFileSync("run-result.json", "utf8").trim().split("\n").pop();
+            const r = JSON.parse(line);
+            if (r.run_id === null && r.result === "no_changes") console.log("");
+            else if (/^\d{8}T\d{6}Z$/.test(r.run_id ?? "")) console.log(r.run_id);
+            else { console.error(`unexpected run result: ${line}`); process.exit(1); }')
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+      - name: Release CARs for the new run
+        if: steps.run.outputs.run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN=${{ steps.run.outputs.run_id }}
+          C=pipeline/data/publish/cars/$RUN
+          gh release create "run-$RUN" $C/root.car $C/tables_permits.car runs/$RUN/manifest.json \
+            --target "$GITHUB_REF_NAME" --title "Pipeline run $RUN (${{ github.event_name == 'schedule' && 'scheduled' || 'on-demand' }} incremental)" \
+            --notes "Incremental run (${{ github.event_name }}). Root and manifest CIDs are in runs/history.json and manifest.json."
+      # Pushes made with GITHUB_TOKEN do not trigger other workflows, so verify the new run here.
+      # continue-on-error so retention and the commit of the evidence still happen; the last step fails
+      # the job when verification failed.
+      - name: Verify new run on independent public gateways
+        id: verify
+        if: steps.run.outputs.run_id != ''
+        continue-on-error: true
+        run: node pipeline/src/publish/verify-gateways.mjs runs/${{ steps.run.outputs.run_id }}/manifest.json --gateways https://ipfs.orbitor.dev,https://dget.top --budget-min 30
+      - name: Apply pin retention (initial run + latest 7 stay pinned; older runs archived as CARs)
+        if: steps.run.outputs.run_id != ''
+        env:
+          FILEBASE_ACCESS_KEY: ${{ secrets.FILEBASE_ACCESS_KEY }}
+          FILEBASE_SECRET_KEY: ${{ secrets.FILEBASE_SECRET_KEY }}
+          FILEBASE_BUCKET: ${{ secrets.FILEBASE_BUCKET }}
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+        run: node pipeline/src/publish/prune-pins.mjs runs --keep 7 --apply
+      - name: Commit manifest and run history
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add runs
+          git commit -m "Pipeline refresh ${{ steps.run.outputs.run_id || 'check (no changes)' }}" || echo "no change"
+          git pull --rebase -X theirs && git push
+      - name: Fail when gateway verification failed
+        if: steps.verify.outcome == 'failure'
+        run: |
+          echo "::error::Run ${{ steps.run.outputs.run_id }} did not verify on the independent gateways; manifest and evidence were committed above."
+          exit 1

@@ -1,0 +1,18 @@
+node_modules/
+.env
+.env.*
+!.env.example
+# raw county data, archives, and intermediates never get committed (kit rule)
+pipeline/data/
+*.zip
+*.parquet
+*.duckdb
+*.car
+downloads/
+.wrangler/
+dist/
+apps/web/public/runs/
+
+# elephant-cli install and its run logs
+tools/elephant-cli/node_modules/
+elephant-cli*.log

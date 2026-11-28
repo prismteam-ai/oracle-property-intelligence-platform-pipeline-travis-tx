@@ -1,0 +1,142 @@
+#!/usr/bin/env node
+// One incremental pipeline run, end to end, from the previous published snapshot:
+//   1. previous run from runs/history.json; its run.json read by CID under the root (watermark),
+//      sha256-verified against the previous manifest
+//   2. City of Austin permit window since watermark - 1 day (overlap; the upsert de-duplicates)
+//   3. no permit changes -> record an ingestion check in history and stop (no new CIDs)
+//   4. fetch the previous snapshot by CID (sha256-verified), then incremental build -> export ->
+//      record deltas -> run summary -> publish (pins + manifest)
+// Each step is an existing idempotent script; any failure stops the run before publication.
+// Usage: node src/run-incremental.mjs [--runs ../runs] [--gateway https://ipfs.filebase.io] [--dry-run]
+import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { createReadStream } from "node:fs";
+import { readdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const root = resolve(here, "..");
+const args = process.argv.slice(2);
+const opt = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
+const runsDir = resolve(opt("--runs", join(root, "../runs")));
+const gateway = opt("--gateway", "https://ipfs.filebase.io");
+const dryRun = args.includes("--dry-run");
+const data = join(root, "data");
+const node = (script, ...a) => {
+  console.error(`\n$ node ${script} ${a.join(" ")}`);
+  return execFileSync(process.execPath, [join(root, script), ...a], { cwd: root, stdio: ["ignore", "pipe", "inherit"], env: process.env }).toString();
+};
+
+const startedAt = new Date().toISOString();
+const runId = startedAt.replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z");
+const historyPath = join(runsDir, "history.json");
+const history = JSON.parse(await readFile(historyPath, "utf8"));
+const prev = history.runs.at(-1);
+const prevManifestPath = join(runsDir, prev.run_id, "manifest.json");
+
+// Watermark lives in the previous run summary, read by path under its root CID and checked against
+// the previous manifest's SHA-256 before anything is derived from it.
+const sha256 = (b) => createHash("sha256").update(b).digest("hex");
+const prevManifest = JSON.parse(await readFile(prevManifestPath, "utf8"));
+const prevRunObj = prevManifest.objects.find((o) => o.name === "run.json");
+if (!prevRunObj?.sha256) throw new Error(`previous manifest ${prevManifestPath} lists no run.json digest`);
+const prevRunRes = await fetch(`${gateway}/ipfs/${prev.root_cid}/run.json`, { signal: AbortSignal.timeout(60_000) });
+if (!prevRunRes.ok) throw new Error(`cannot read previous run.json (HTTP ${prevRunRes.status})`);
+const prevRunBytes = Buffer.from(await prevRunRes.arrayBuffer());
+if (sha256(prevRunBytes) !== prevRunObj.sha256) throw new Error(`previous run.json from ${gateway} does not match the manifest sha256 ${prevRunObj.sha256}`);
+const prevRun = JSON.parse(prevRunBytes.toString("utf8"));
+const prevRunPath = join(data, "state", `${prev.run_id}.run.json`);
+execFileSync("mkdir", ["-p", join(data, "state")]);
+await writeFile(prevRunPath, prevRunBytes);
+const permits = prevRun.sources.find((s) => s.key === "austin_permits");
+const watermark = permits?.receipt?.next_watermark;
+if (!watermark) throw new Error("previous run has no Austin permit watermark");
+const since = new Date(Date.parse(`${watermark}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10);
+
+const windowFile = join(data, "raw/permits/austin", `window-${runId}.ndjson`);
+const harvest = JSON.parse(node("src/sources/austin-permits.mjs", windowFile, "--since", since).trim().split("\n").pop());
+console.error(`window since ${since}: ${harvest.written} permits`);
+
+if (harvest.written === 0) {
+  history.checks = [...(history.checks ?? []), {
+    checked_at: startedAt, source: "austin_permits", window_since: since, rows: 0,
+    result: "no source changes; snapshot unchanged", current_run_id: prev.run_id,
+  }];
+  if (!dryRun) await writeFile(historyPath, JSON.stringify(history, null, 2) + "\n");
+  console.log(JSON.stringify({ run_id: null, result: "no_changes", window_since: since }));
+  process.exit(0);
+}
+
+// Previous snapshot materialized by CID (verified against the manifest) rather than range-read
+// remotely: public gateways rate-limit the many parallel requests a remote scan would make.
+const prevDir = join(data, "snapshots", prev.run_id);
+node("src/publish/fetch-snapshot.mjs", prevManifestPath, prevDir, "--only", "tables/");
+const db = join(data, "build", `incr-${runId}.duckdb`);
+const runDir = join(data, "publish/runs", runId);
+execFileSync("mkdir", ["-p", join(data, "build")]);
+// NOAA hail: re-harvest the last two years (late reports and revisions); older years are carried
+// from the previous snapshot. If that snapshot has no hail history yet, harvest it all (1996+).
+const year = new Date().getUTCFullYear();
+const hailDir = join(data, "raw/noaa-recent");
+const prevHasHail = prevManifest.objects.some((o) => o.name === "tables/hail_events.parquet");
+node("src/sources/noaa-hail.mjs", hailDir, "--from", prevHasHail ? String(year - 1) : "1996", "--to", String(year));
+// City of Lakeway permits (Tyler EnerGov): changes since the last harvest minus a day, or the full
+// history when the previous run has none. A portal outage carries the previous Lakeway rows forward.
+const lakewayDir = join(data, "raw/permits/lakeway-window");
+const prevLakeway = prevRun.sources?.find((s) => s.key === "lakeway_permits")?.receipt;
+const lakewaySince = prevLakeway?.fetched_at ? new Date(Date.parse(prevLakeway.fetched_at) - 86_400_000).toISOString().slice(0, 10) : null;
+let lakewayArgs = [];
+// --lakeway-from <dir>: use a harvest already made this session (same script, same receipt).
+const lakewayFrom = opt("--lakeway-from", null);
+if (args.includes("--no-lakeway")) {
+  console.error("Lakeway harvest skipped (--no-lakeway); previous Lakeway permits, if any, carried forward");
+} else if (lakewayFrom) {
+  execFileSync("mkdir", ["-p", lakewayDir]);
+  execFileSync("cp", [join(lakewayFrom, "permits.ndjson"), join(lakewayFrom, "receipt.json"), lakewayDir]);
+  lakewayArgs = ["--lakeway", join(lakewayDir, "permits.ndjson")];
+} else try {
+  node("src/sources/tyler-permits.mjs", lakewayDir, "--jurisdiction", "lakeway", ...(lakewaySince ? ["--since", lakewaySince] : ["--from-year", "1995"]));
+  lakewayArgs = ["--lakeway", join(lakewayDir, "permits.ndjson")];
+} catch (e) {
+  console.error(`Lakeway harvest failed (${e.message}); previous Lakeway permits carried forward`);
+}
+// Overture places: rebuilt only when a fresh extract is passed (--places <extract dir>); otherwise
+// the previous snapshot's business_locations are carried.
+const placesDir = opt("--places", null);
+if (placesDir) execFileSync("cp", [join(placesDir, "receipt.json"), join(data, "raw/overture/receipt.json")]);
+node("src/build/incremental.mjs", db, prevManifestPath, windowFile, "--prev-dir", prevDir, "--hail", join(hailDir, "hail-events.parquet"),
+  ...lakewayArgs, ...(placesDir ? ["--places", join(placesDir, "places.parquet")] : []));
+node("src/build/embeddings.mjs", db, "--prev-dir", prevDir);
+node("src/publish/export.mjs", db, runDir);
+// The published schema must match docs/data-contract.md; drift stops the run before anything is pinned.
+node("src/publish/check-contract.mjs", join(runDir, "tables"));
+// The window starts a day before the watermark, so it always returns some rows already published. When
+// every rebuilt table is byte-identical to the previous snapshot's, nothing changed: record a check and
+// publish nothing.
+const fileSha256 = async (path) => {
+  const h = createHash("sha256");
+  for await (const chunk of createReadStream(path)) h.update(chunk);
+  return h.digest("hex");
+};
+const prevTables = new Map(prevManifest.objects.filter((o) => o.codec === "file" && o.name.startsWith("tables/")).map((o) => [o.name, o.sha256]));
+const builtTables = (await readdir(join(runDir, "tables"), { recursive: true })).filter((f) => f.endsWith(".parquet")).map((f) => `tables/${f}`);
+let tablesChanged = builtTables.length !== prevTables.size;
+for (const name of builtTables) {
+  if (tablesChanged) break;
+  if (prevTables.get(name) !== (await fileSha256(join(runDir, name)))) tablesChanged = true;
+}
+if (!tablesChanged) {
+  history.checks = [...(history.checks ?? []), {
+    checked_at: startedAt, source: "austin_permits", window_since: since, rows: harvest.written,
+    result: "window rows already published; every table identical to the previous snapshot", current_run_id: prev.run_id,
+  }];
+  if (!dryRun) await writeFile(historyPath, JSON.stringify(history, null, 2) + "\n");
+  console.log(JSON.stringify({ run_id: null, result: "no_changes", window_since: since }));
+  process.exit(0);
+}
+node("src/publish/deltas.mjs", db, prevManifestPath, runDir, "--prev-dir", prevDir);
+node("src/publish/run-summary.mjs", runDir, runId, join(data, "raw"), "incremental", startedAt, "--prev-run", prevRunPath,
+  "--note", `Austin permit business-date window since ${since} (${harvest.written} permits) layered over run ${prev.run_id}; TCAD roll and identity sources carried forward.`);
+const out = node("src/publish/publish.mjs", runDir, runId, runsDir, join(data, "publish/cars"), ...(dryRun ? ["--dry-run"] : []));
+console.log(out.trim().split("\n").pop());
